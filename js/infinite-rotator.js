@@ -45,44 +45,5 @@ function my_init(container)
 
 }
 
-function InitializeRotator() 
-{	//start after HTML, images have loaded
-
-    var InfiniteRotator =
-	{
-	    init: function () {
-	        my_init('.rotating-item');
-	    }
-	};
-     
-    var InfiniteRotator2 =
-	{
-        init: function () {
-	        my_init('.rotating-item2');
-	    }
-	};
-     
-    var InfiniteRotator3 =
-	{
-        init: function () {
-	        my_init('.rotating-item3');
-	    }
-	};
-     
-    var InfiniteRotator4 =
-	{
-	    init: function () {
-	        my_init('.rotating-item4');
-	    }
-	};
-
-	InfiniteRotator.init();
-	InfiniteRotator2.init();
-	InfiniteRotator3.init();
-    InfiniteRotator4.init();
-
-}
-
-
-
-$(window).load(InitializeRotator);
+ 
+$(window).load(function () { my_init('.rotating-item'); my_init('.rotating-item2'); my_init('.rotating-item3'); my_init('.rotating-item4') });
