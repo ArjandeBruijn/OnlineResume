@@ -48,10 +48,7 @@ function InitializeRotator()
 	        }, itemInterval);
 	    }
 	};
-
-
-    InfiniteRotator.init();
-
+     
     var InfiniteRotator2 =
 	{
 	    init: function () {
@@ -87,10 +84,7 @@ function InitializeRotator()
 	        }, itemInterval);
 	    }
 	};
-
-
-    InfiniteRotator2.init();
-
+     
     var InfiniteRotator3 =
 	{
 	    init: function () {
@@ -126,11 +120,7 @@ function InitializeRotator()
 	        }, itemInterval);
 	    }
 	};
-
-
-    InfiniteRotator3.init();
-
-
+     
     var InfiniteRotator4 =
 	{
 	    init: function () {
@@ -167,7 +157,9 @@ function InitializeRotator()
 	    }
 	};
 
-
+	InfiniteRotator.init();
+	InfiniteRotator2.init();
+	InfiniteRotator3.init();
     InfiniteRotator4.init();
 
 }
