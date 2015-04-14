@@ -10,49 +10,49 @@
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
 // **********************************************************************
 
-$(window).load(function() {	//start after HTML, images have loaded
+function InitializeRotator() 
+{	//start after HTML, images have loaded
 
-	var InfiniteRotator = 
+    var InfiniteRotator =
 	{
-		init: function()
-		{
-			//initial fade-in time (in milliseconds)
-			var initialFadeIn = 1000;
-			
-			//interval between items (in milliseconds)
-			var itemInterval = 2000;
-			
-			//cross-fade time (in milliseconds)
-			var fadeTime = 2500;
-			
-			//count number of items
-			var numberOfItems = $('.rotating-item').length;
+	    init: function () {
+	        //initial fade-in time (in milliseconds)
+	        var initialFadeIn = 1000;
 
-			//set current item
-			var currentItem = 0;
+	        //interval between items (in milliseconds)
+	        var itemInterval = 2000;
 
-			//show first item
-			$('.rotating-item').eq(currentItem).fadeIn(initialFadeIn);
+	        //cross-fade time (in milliseconds)
+	        var fadeTime = 2500;
 
-			//loop through the items		
-			var infiniteLoop = setInterval(function(){
-				$('.rotating-item').eq(currentItem).fadeOut(fadeTime);
+	        //count number of items
+	        var numberOfItems = $('.rotating-item').length;
 
-				if(currentItem == numberOfItems -1){
-					currentItem = 0;
-				}else{
-					currentItem++;
-				}
-				$('.rotating-item').eq(currentItem).fadeIn(fadeTime);
+	        //set current item
+	        var currentItem = 0;
 
-			}, itemInterval);	
-		}	
+	        //show first item
+	        $('.rotating-item').eq(currentItem).fadeIn(initialFadeIn);
+
+	        //loop through the items		
+	        var infiniteLoop = setInterval(function () {
+	            $('.rotating-item').eq(currentItem).fadeOut(fadeTime);
+
+	            if (currentItem == numberOfItems - 1) {
+	                currentItem = 0;
+	            } else {
+	                currentItem++;
+	            }
+	            $('.rotating-item').eq(currentItem).fadeIn(fadeTime);
+
+	        }, itemInterval);
+	    }
 	};
 
-    
-	InfiniteRotator.init();
 
-	var InfiniteRotator2 =
+    InfiniteRotator.init();
+
+    var InfiniteRotator2 =
 	{
 	    init: function () {
 	        //initial fade-in time (in milliseconds)
@@ -89,9 +89,9 @@ $(window).load(function() {	//start after HTML, images have loaded
 	};
 
 
-	InfiniteRotator2.init();
+    InfiniteRotator2.init();
 
-	var InfiniteRotator3 =
+    var InfiniteRotator3 =
 	{
 	    init: function () {
 	        //initial fade-in time (in milliseconds)
@@ -128,10 +128,10 @@ $(window).load(function() {	//start after HTML, images have loaded
 	};
 
 
-	InfiniteRotator3.init();
+    InfiniteRotator3.init();
 
 
-	var InfiniteRotator4 =
+    var InfiniteRotator4 =
 	{
 	    init: function () {
 	        //initial fade-in time (in milliseconds)
@@ -168,6 +168,10 @@ $(window).load(function() {	//start after HTML, images have loaded
 	};
 
 
-	InfiniteRotator4.init();
-	
-});
+    InfiniteRotator4.init();
+
+}
+
+
+
+$(window).load(InitializeRotator);
