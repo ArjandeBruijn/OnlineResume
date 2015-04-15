@@ -253,29 +253,13 @@ img {
 	width: 200px;
 	height: 200px;
 }
-.rotating-item {
+.rotating-item, .rotating-item2, .rotating-item3, .rotating-item4
+{
 	display: none;
 	position: absolute;
 	top: 0;
 	left: 0;
 }
-.rotating-item2 {
-	display: none;
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-.rotating-item3 {
-	display: none;
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-.rotating-item4 {
-	display: none;
-	position: absolute;
-	top: 0;
-	left: 0;
-}
+ 
 
  
