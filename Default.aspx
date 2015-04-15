@@ -37,12 +37,29 @@
            <div class= "column_1_4 fl">
                <center>
                    <div id="rotating-item-wrapper"><!-- START: Rotating Images -->
-	                   <img id= "border" src="images/Rotating/greenpeople.jpg" alt="image" class="rotating-item" width="175" height="175" />
-                       <img id= "border" src="images/Rotating/entrance.jpg" alt="image" class="rotating-item" width="175" height="175" />
-                       <img id= "border" src="images/Rotating/bluepeople.jpg" alt="image" class="rotating-item" width="175" height="175" />
-                       <img id= "border" src="images/Rotating/reflection3.jpg" alt="image" class="rotating-item" width="175" height="175" />
-                       <img id= "border" src="images/Rotating/reflection2.jpg" alt="image" class="rotating-item" width="175" height="175" />
-                       <img id= "border" src="images/Rotating/manequine.jpg" alt="image" class="rotating-item" width="175" height="175" />    
+                       
+                         
+	                   <img id= "border" src="images/ChestnutSpread/10.png" class="rotating-item" />
+                       <img id= "border" src="images/ChestnutSpread/20.png"  class="rotating-item"  />
+                       <img id= "border" src="images/ChestnutSpread/30.png"  class="rotating-item"  />
+                       <img id= "border" src="images/ChestnutSpread/40.png" class="rotating-item"  />
+                       <img id= "border" src="images/ChestnutSpread/50.png" class="rotating-item"  />
+                       <img id= "border" src="images/ChestnutSpread/60.png"  class="rotating-item"  />   
+                       <img id= "border" src="images/ChestnutSpread/70.png"  class="rotating-item"  />  
+                       <img id= "border" src="images/ChestnutSpread/80.png"  class="rotating-item"  />  
+                       <img id= "border" src="images/ChestnutSpread/90.png"  class="rotating-item"  />  
+                       <img id= "border" src="images/ChestnutSpread/100.png"  class="rotating-item"  />  
+                       <img id= "border" src="images/ChestnutSpread/110.png"  class="rotating-item"  />  
+                       <img id= "border" src="images/ChestnutSpread/120.png"  class="rotating-item"  />  
+                       <img id= "border" src="images/ChestnutSpread/130.png"  class="rotating-item"  />  
+                       <img id= "border" src="images/ChestnutSpread/140.png"  class="rotating-item"  />  
+                       <img id= "Img1" src="images/ChestnutSpread/150.png"  class="rotating-item"  />   
+                       <img id= "Img2" src="images/ChestnutSpread/160.png"  class="rotating-item"  />   
+                       <img id= "Img3" src="images/ChestnutSpread/170.png"  class="rotating-item"  />   
+                       <img id= "Img4" src="images/ChestnutSpread/180.png"  class="rotating-item"  />   
+                       <img id= "Img5" src="images/ChestnutSpread/190.png"  class="rotating-item"  />   
+                       <img id= "Img6" src="images/ChestnutSpread/200.png"  class="rotating-item"  />   
+                         
 			        </div><!-- END: Rotating images images -->
                     
                 </center>
