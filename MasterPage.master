@@ -25,9 +25,8 @@
                     <div id="logo"></div>
                 </center>
             </div> <!-- end of banner -->
-
-                      <!-- menu -->
-            <div id="templatemo_menu">
+        
+            <div id="templatemo_menu">  <!-- menu -->
                 <ul>
                     <li><a href="Default.aspx" class="current">Home</a></li>
                     <li><a href="Skills.aspx">Skills</a></li>     
@@ -35,71 +34,73 @@
                     <li><a href="WorkExperience.aspx">Work Experience</a></li>
                     <li><a href="Education.aspx">Education</a></li>
                     <li><a href="Testimonials.aspx">Testimonials</a></li>
-             
                 </ul>   
 	        </div> <!-- end of menu -->
-           
             
-            <div class="margin_bottom_20"></div>    
+            <div class="margin_bottom_20">
+            </div>    
+
             <div class="margin_right_left">
                 <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
                     </asp:ContentPlaceHolder>
-                     </div>
+            </div>
 
-                <div class="margin_bottom_20"></div> 
+            <div class="margin_bottom_20">
+            </div> 
                  
-                
-
-                <div class="column_w920">
-        
-              <div class= "fl">
-            	    <!-- START: Rotating Images -->
+             
+            <div class= "column_1_4 fl">
+                <center>
+                <div id="rotating-item-wrapper"><!-- START: Rotating Images -->
+	                  <img src="images/Rotating/greenpeople.jpg" alt="image" class="rotating-item" width="175" height="175" />
+                      <img src="images/Rotating/entrance.jpg" alt="image" class="rotating-item" width="175" height="175" />
+                      <img src="images/Rotating/bluepeople.jpg" alt="image" class="rotating-item" width="175" height="175" />
+                      <img src="images/Rotating/reflection3.jpg" alt="image" class="rotating-item" width="175" height="175" />
+                      <img src="images/Rotating/reflection2.jpg" alt="image" class="rotating-item" width="175" height="175" />
+                      <img src="images/Rotating/manequine.jpg" alt="image" class="rotating-item" width="175" height="175" />    
+			       </div><!-- END: Rotating images images -->
+                   <p>Straffen Toebak</p>
+                </center>
+            </div>
+            
+            <div class="column_1_4 fl">
+                <center>
                     <div id="rotating-item-wrapper">
-	                    <img src="images/Rotating/greenpeople.jpg" alt="image" class="rotating-item" width="175" height="175" />
-                        <img src="images/Rotating/entrance.jpg" alt="image" class="rotating-item" width="175" height="175" />
-                        <img src="images/Rotating/bluepeople.jpg" alt="image" class="rotating-item" width="175" height="175" />
-                        <img src="images/Rotating/reflection3.jpg" alt="image" class="rotating-item" width="175" height="175" />
-                        <img src="images/Rotating/reflection2.jpg" alt="image" class="rotating-item" width="175" height="175" />
-                        <img src="images/Rotating/manequine.jpg" alt="image" class="rotating-item" width="175" height="175" />    
-			            </div><!-- END: Rotating images images -->
-                     <p>Straffen Toebak</p>
-              </div>
+            	        <img src="images/Rotating/greenpeople.jpg" alt="image" class="rotating-item2" width="175" height="175" /> 
+                        <img src="images/Rotating/bluepeople.jpg" alt="image" class="rotating-item2" width="175" height="175" /> 
+                        <p>Straffen Toebak</p>
+                    </div>
+                </center>
+            </div>   
             
-              <div class="fl">
-                 <div id="rotating-item-wrapper">
-            	     <img src="images/Rotating/greenpeople.jpg" alt="image" class="rotating-item2" width="175" height="175" /> 
-                     <img src="images/Rotating/bluepeople.jpg" alt="image" class="rotating-item2" width="175" height="175" /> 
-                     <p>Straffen Toebak</p>
-                 </div>
-              </div>   
+            <div class="column_1_4 fl">
+                <center>
+                    <div id="rotating-item-wrapper">
+            	        <img src="images/Rotating/greenpeople.jpg" alt="image" class="rotating-item3" width="175" height="175" /> 
+                        <img src="images/Rotating/bluepeople.jpg" alt="image" class="rotating-item3" width="175" height="175" /> 
+                        <p>Straffen Toebak</p>
+                    </div>
+                </center>
+            </div>   
             
-      
-              <div class="fl">
-                 <div id="rotating-item-wrapper">
-            	     <img src="images/Rotating/greenpeople.jpg" alt="image" class="rotating-item3" width="175" height="175" /> 
-                     <img src="images/Rotating/bluepeople.jpg" alt="image" class="rotating-item3" width="175" height="175" /> 
-                     <p>Straffen Toebak</p>
-                 </div>
-              </div>   
-            
-              <div class="fl">
-                 <div id="rotating-item-wrapper">
-            	     <img src="images/Rotating/greenpeople.jpg" alt="image" class="rotating-item4" width="175" height="175" /> 
-                     <img src="images/Rotating/bluepeople.jpg" alt="image" class="rotating-item4" width="175" height="175" /> 
-                     <p>Straffen Toebak</p>
-                 </div>
-              </div>   
-       
+            <div class="column_1_4 fl">
+                <center>
+                    <div id="rotating-item-wrapper">
+            	        <img src="images/Rotating/greenpeople.jpg" alt="image" class="rotating-item4" width="175" height="175" /> 
+                        <img src="images/Rotating/bluepeople.jpg" alt="image" class="rotating-item4" width="175" height="175" /> 
+                        <p>Straffen Toebak</p>
+                    </div>
+                </center>
+            </div>   
+             
+        <div class="margin_bottom_15"></div>
         
-       	  <div class="margin_bottom_15"></div>
-        </div>
-
         <div id="footer">
             <p></p>
             <p></p>
             <p></p>
             <p></p>
-       </div> <!-- End of footer -->   
+        </div> <!-- End of footer -->   
     </body>
 </html>
  
