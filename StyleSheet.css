@@ -9,8 +9,17 @@ body {
 	height:100%;
 }
 
-a:link, a:visited { color: #fcdd31; text-decoration: underline; font-weight: normal; } 
-a:active, a:hover { color: #fcdd31; text-decoration: none; }
+a:link, a:visited  
+{
+    color: #fcdd31; 
+    text-decoration: underline; 
+    font-weight: normal; 
+} 
+a:active, a:hover 
+{ 
+    color: #fcdd31; 
+    text-decoration: none; 
+}
 
 p 
 {
@@ -148,10 +157,6 @@ img {
 	background: url(images/templatemo_menu_hover_left.jpg) no-repeat;
 }
 
-/* end of menu */
-
-/* content */
-
 #content 
 {
     color: White;
@@ -273,20 +278,4 @@ img {
 	left: 0;
 }
 
-#img_container {
-	text-align: justify;
-	}
-#img_container > div {
-	width: 100px; /* Declare your value. Can be in relative units. */
-	display: inline-block;
-	vertical-align: top;
-
-	/* IE fix. */
-	display: inline;
-	/*zoom: 1;*/
-	}
-#img_container:after {
-	content: "";
-	width: 100%;
-	display: inline-block;
-    }
+ 
