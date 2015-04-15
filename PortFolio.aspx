@@ -6,8 +6,17 @@
      <h1>Landis user interface. </h1> 
 
      <p><a href="http://www.landis-ii.org/">Landis-ii</a> is a modular simulation platform that predicts changes in tree species and size composition in the face of growth and desturbances.
-     I developed a module for landis that deals with growth and competition amongst trees that was recently published in xxxx. More recently, I developed 
-     a more elegant user interface than that was currently available for landis. 
+     I developed a module for landis that deals with growth and competition amongst trees that was recently published. 
+     
+     
+     More recently, I developed 
+     a more elegant user interface than that was currently available for landis. It combines a file tree (on the left) where you add your scenario file, 
+     with a work-space (on the right) where you can view img/gis in a map view, graphs and data in a spreadsheet or text editor. It animates your maps as 
+     well (i.e. it iterates through layers in a map view and shows each map for a couple of seconds). It regularly scans your scenario file for 
+     associated input/output files and adds these to the tree view. Changes in the text editor are automatically saved to the file and you can fire a 
+     simulation by right-clicking your scenario file.
+
+
       </p>
 
 

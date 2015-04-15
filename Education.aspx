@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
  
                 
-    <h1>ALBERT LUDWIGS UNIVERSITY – Freiburg im Breisgau, Germany 			2006-2009	</h1>
+    <h1>ALBERT LUDWIGS UNIVERSITY – Freiburg, Germany 			2006-2009	</h1>
 
     <p>PhD in Forest and Environmental Sciences, magna cum laude. </p> 
     
