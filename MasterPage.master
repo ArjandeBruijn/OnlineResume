@@ -49,7 +49,9 @@
             
             <div id="footer">
                 <div class="margin_bottom_20"></div>
-                <p>Contact: AMGdeBruijn@gmail.com 715-401-0799</p>
+                <h1>Fort Collins, CO</h1>
+                <p><a href="mailto:amgdebruijn@gmail.com">AMGdeBruijn@gmail.com</a> 715-401-0799</p>
+                
                 <div class="margin_bottom_20"></div>
             </div> <!-- End of footer -->  
         </div>     

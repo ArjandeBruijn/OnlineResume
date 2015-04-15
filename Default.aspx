@@ -44,7 +44,7 @@
                        <img id= "border" src="images/Rotating/reflection2.jpg" alt="image" class="rotating-item" width="175" height="175" />
                        <img id= "border" src="images/Rotating/manequine.jpg" alt="image" class="rotating-item" width="175" height="175" />    
 			        </div><!-- END: Rotating images images -->
-                    <p>Straffen Toebak</p>
+                    
                 </center>
             </div>
             <div class="column_1_4 fl">
@@ -52,7 +52,7 @@
                     <div id="rotating-item-wrapper">
             	        <img id= "border" src="images/Rotating/greenpeople.jpg" alt="image" class="rotating-item2" width="175" height="175" /> 
                         <img id= "border"src="images/Rotating/bluepeople.jpg" alt="image" class="rotating-item2" width="175" height="175" /> 
-                        <p>Straffen Toebak</p>
+                        
                     </div>
                 </center>
             </div>   
@@ -62,7 +62,7 @@
                     <div id="rotating-item-wrapper">
             	        <img id= "border" src="images/Rotating/greenpeople.jpg" alt="image" class="rotating-item3" width="175" height="175" /> 
                         <img id= "border" src="images/Rotating/bluepeople.jpg" alt="image" class="rotating-item3" width="175" height="175" /> 
-                        <p>Straffen Toebak</p>
+                         
                     </div>
                 </center>
             </div>   
@@ -72,7 +72,7 @@
                     <div id="rotating-item-wrapper">
             	        <img id= "border" src="images/Rotating/greenpeople.jpg" alt="image" class="rotating-item4" width="175" height="175" /> 
                         <img id= "border" src="images/Rotating/bluepeople.jpg" alt="image" class="rotating-item4" width="175" height="175" /> 
-                        <p>Straffen Toebak</p>
+                        
                     </div>
                 </center>
             </div>      
