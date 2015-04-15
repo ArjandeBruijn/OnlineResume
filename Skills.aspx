@@ -14,7 +14,7 @@
 
      
 
-    <div class= "column_1_2 fl" style="font-size: 20pt">
+    <div class= "column_1_3 fl" style="font-size: 20pt">
         <li>
             <p>Visual Studio 2010 
             </p>
@@ -37,11 +37,11 @@
         </li>
     </div>
 
-    <div class= "column_1_2 fl" style="font-size: 20pt">
-        <img src="images\ProgressBars\75.jpg" alt="50" align="top">
-        <img src="images\ProgressBars\75.jpg" alt="50" align="top">
-        <img src="images\ProgressBars\75.jpg" alt="50" align="top">
-        <img src="images\ProgressBars\75.jpg" alt="50" align="top">
+    <div class= "column_2_3 fl" style="font-size: 20pt">
+        <img src="images\ProgressBars\50.png" alt="50" align="top">
+        <img src="images\ProgressBars\50.png" alt="50" align="top">
+        <img src="images\ProgressBars\50.png" alt="50" align="top">
+        <img src="images\ProgressBars\50.png" alt="50" align="top">
     </div>
      
      
