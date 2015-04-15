@@ -11,22 +11,40 @@
                     Simulation software developer
                     Skills Used: C++, .Net -->
 
-    <form id="form1" runat="server">
-        <ul class="category_list">
-            <li>Visual Studio <img src="images\75.jpg" alt="50" style="width:428px;height:37px">
-            </li>
-            <li>C#
-            </li>
-            <li>C++
-            </li>
-            <li>INNO setup
-            </li>
-            <li>Visual Basic
-            </li>
-            <li>Python
-            </li>
-        </ul>
-    </form>
+
+     
+
+    <div class= "column_1_2 fl" style="font-size: 20pt">
+        <li>
+            <p>Visual Studio 2010 
+            </p>
+        </li>
+        <li>
+            <p>Visual Studio 2010 
+            </p>
+        </li>
+        <li>
+            <p>Visual Studio 2010 
+            </p>
+        </li>
+        <li>
+            <p>Visual Studio 2010 
+            </p>
+        </li>
+        <li>
+            <p>Visual Studio 2010 
+            </p>
+        </li>
+    </div>
+
+    <div class= "column_1_2 fl" style="font-size: 20pt">
+        <img src="images\ProgressBars\75.jpg" alt="50" align="top">
+        <img src="images\ProgressBars\75.jpg" alt="50" align="top">
+        <img src="images\ProgressBars\75.jpg" alt="50" align="top">
+        <img src="images\ProgressBars\75.jpg" alt="50" align="top">
+    </div>
+     
+     
 </asp:Content>
 
  
