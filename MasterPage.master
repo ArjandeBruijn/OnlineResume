@@ -52,10 +52,10 @@
 
                  
                   <div id="img_container">
-	                <div><img src="images/Rotating/greenpeople.jpg" alt="image"  width="175" height="175" /></div>
-	                <div><img src="images/Rotating/entrance.jpg" alt="image"  width="175" height="175" /></div>
-	                <div><img src="images/Rotating/bluepeople.jpg" alt="image" width="175" height="175" /></div>
-	                 <div><img src="images/Rotating/bluepeople.jpg" alt="image" width="175" height="175" /></div>
+	                <div id="rotating-item-wrapper"><img src="images/Rotating/greenpeople.jpg" alt="image"  width="175" height="175" /></div>
+	                <div id="rotating-item-wrapper"><img src="images/Rotating/entrance.jpg" alt="image"  width="175" height="175" /></div>
+	                <div id="rotating-item-wrapper"><img src="images/Rotating/bluepeople.jpg" alt="image" width="175" height="175" /></div>
+	                 <div id="rotating-item-wrapper"><img src="images/Rotating/bluepeople.jpg" alt="image" width="175" height="175" /></div>
                 </div>
 
                 <div class="column_w920">
