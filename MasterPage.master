@@ -52,7 +52,7 @@
 
                 <div class="column_w920">
         
-              <div class="column_w190 fl">
+              <div class="fl">
             	    <!-- START: Rotating Images -->
                     <div id="rotating-item-wrapper">
 	                    <img src="images/Rotating/greenpeople.jpg" alt="image" class="rotating-item" width="175" height="175" />
@@ -65,7 +65,7 @@
                      <p>Straffen Toebak</p>
               </div>
             
-              <div class="column_w190 fl">
+              <div class="fl">
                  <div id="rotating-item-wrapper">
             	     <img src="images/Rotating/greenpeople.jpg" alt="image" class="rotating-item2" width="175" height="175" /> 
                      <img src="images/Rotating/bluepeople.jpg" alt="image" class="rotating-item2" width="175" height="175" /> 
@@ -74,7 +74,7 @@
               </div>   
             
       
-              <div class="column_w190 fl">
+              <div class="fl">
                  <div id="rotating-item-wrapper">
             	     <img src="images/Rotating/greenpeople.jpg" alt="image" class="rotating-item3" width="175" height="175" /> 
                      <img src="images/Rotating/bluepeople.jpg" alt="image" class="rotating-item3" width="175" height="175" /> 
@@ -82,7 +82,7 @@
                  </div>
               </div>   
             
-              <div class="column_w190 fl">
+              <div class="fl">
                  <div id="rotating-item-wrapper">
             	     <img src="images/Rotating/greenpeople.jpg" alt="image" class="rotating-item4" width="175" height="175" /> 
                      <img src="images/Rotating/bluepeople.jpg" alt="image" class="rotating-item4" width="175" height="175" /> 
