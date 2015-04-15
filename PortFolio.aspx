@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
      
    
-     <div class="header_01">Landis user interface. </div> 
+     <h1>Landis user interface. </h1> 
 
      <p><a href="http://www.landis-ii.org/">Landis-ii</a> is a modular simulation platform that predicts changes in tree species and size composition in the face of growth and desturbances.
      I developed a module for landis that deals with growth and competition amongst trees that was recently published in xxxx. More recently, I developed 

@@ -3,8 +3,8 @@
 <asp:Content ID="Content1" runat="server" 
     contentplaceholderid="ContentPlaceHolder1">
 
-       <div class="header_01">LIKES SOFTWARE MORE THAN SCIENCE
-       </div>
+       <h1>SOFTWARE AND RESEARCH
+       </h1>
                 
        <p>  I am creative yet my code is minimalistic. I have considerable experience in disseminating new appraches through 
            presentations, workshops, publications, technical and conceptual documentations. I have considerable  experience with geospatial 
@@ -18,10 +18,10 @@
        <div class="margin_bottom_20">
        </div>
        
-       <div class="header_01">SUMMARY OF QUALIFICATIONS
-       </div>
+       <h1>SUMMARY OF QUALIFICATIONS
+       </h1>
            <ul class="category_list">
-               <li>PhD and Msc from internationally accredited universities</li>
+               <li>PhD, Msc and M.A. from internationally accredited universities</li>
                <div class="margin_bottom_10"></div>
                <li>More than 8 years programming experience</li>
                <div class="margin_bottom_10"></div>

@@ -2,7 +2,8 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 <div class="latest_news">
-	        	<div class="header_01">PURDUE UNIVERSITY - West Lafayette, IN - December 2011 to Present</div>
+	        	
+                <h1>PURDUE UNIVERSITY - West Lafayette, IN - December 2011 to Present</h1>
                
                 <p>
                     PURDUE UNIVERSITY 
@@ -18,7 +19,7 @@
                    <div class="margin_bottom_20 h_divider"></div>
                     <div class="margin_bottom_10"></div>
                      
-                <div class="header_01">AGROSCOPE RECKENHOLZ TAENIKON - Zürich, ZH - 2010 to 2011</div>
+                <h1>AGROSCOPE RECKENHOLZ TAENIKON - Zürich, ZH - 2010 to 2011</h1>
 
                  <p>   
                     Accomplishments
@@ -29,7 +30,7 @@
                     <div class="margin_bottom_20 h_divider"></div>
                     <div class="margin_bottom_10"></div>
                 </p>  
-                    <div class="header_01">ALTERRA B.V. - Wageningen - 2009 to 2010</div>
+                    <h1>ALTERRA B.V. - Wageningen - 2009 to 2010</h1>
                     
 
                 <p> 
@@ -45,7 +46,7 @@
                     <div class="margin_bottom_10"></div>
                  </p> 
 
-                    <div class="header_01">IMK-IFU - Garmisch-Partenkirchen - 2006 to 2009</div>
+                    <h1>IMK-IFU - Garmisch-Partenkirchen - 2006 to 2009</h1>
                     
 
                  <p> 
