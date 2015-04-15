@@ -11,38 +11,32 @@
                     Simulation software developer
                     Skills Used: C++, .Net -->
 
+    
+    <div>
+        
+        <p> <img src="images\ProgressBars\50.png" alt="Smiley face"  align="middle"> Visual Studio 2010</p>
+        <p><img src="images\ProgressBars\50.png" alt="Smiley face"  align="middle"> Visual Basic </p>
+        <p><img src="images\ProgressBars\50.png" alt="Smiley face"  align="middle"> FireBird  </p>
+        <p><img src="images\ProgressBars\50.png" alt="Smiley face"  align="middle"> Python  </p>
+        <p><img src="images\ProgressBars\50.png" alt="Smiley face"  align="middle"> Software versioning (SVN)  </p>
+        <p><img src="images\ProgressBars\50.png" alt="Smiley face"  align="middle"> SQL  </p>
+        <p><img src="images\ProgressBars\50.png" alt="Smiley face"  align="middle"> C#  </p>
+        <p><img src="images\ProgressBars\50.png" alt="Smiley face"  align="middle"> C++  </p>
+        <p><img src="images\ProgressBars\50.png" alt="Smiley face"  align="middle"> C  </p>
+        <p><img src="images\ProgressBars\50.png" alt="Smiley face"  align="middle"> ARCGIS 10.0  </p>
+        <p> <img src="images\ProgressBars\50.png" alt="Smiley face"  align="middle"> R </p>
+        <p><img src="images\ProgressBars\50.png" alt="Smiley face"  align="middle"> SPSS  </p>
+        <p><img src="images\ProgressBars\50.png" alt="Smiley face"  align="middle"> INNO setup  </p>
+        <p><img src="images\ProgressBars\50.png" alt="Smiley face"  align="middle"> .Net  </p>
+        <p><img src="images\ProgressBars\50.png" alt="Smiley face"  align="middle"> HTML  </p>
+        <p><img src="images\ProgressBars\50.png" alt="Smiley face"  align="middle"> CSS  </p>
+        <p><img src="images\ProgressBars\50.png" alt="Smiley face"  align="middle"> JavaScript  </p>
+        <p><img src="images\ProgressBars\50.png" alt="Smiley face"  align="middle"> MATLAB  </p>
+    </div>
+   
 
      
 
-    <div class= "column_1_3 fl" style="font-size: 20pt">
-        <li>
-            <p>Visual Studio 2010 
-            </p>
-        </li>
-        <li>
-            <p>Visual Studio 2010 
-            </p>
-        </li>
-        <li>
-            <p>Visual Studio 2010 
-            </p>
-        </li>
-        <li>
-            <p>Visual Studio 2010 
-            </p>
-        </li>
-        <li>
-            <p>Visual Studio 2010 
-            </p>
-        </li>
-    </div>
-
-    <div class= "column_2_3 fl" style="font-size: 20pt">
-        <img src="images\ProgressBars\50.png" alt="50" align="top">
-        <img src="images\ProgressBars\50.png" alt="50" align="top">
-        <img src="images\ProgressBars\50.png" alt="50" align="top">
-        <img src="images\ProgressBars\50.png" alt="50" align="top">
-    </div>
      
      
 </asp:Content>
