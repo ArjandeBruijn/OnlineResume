@@ -52,7 +52,7 @@
 
                 <div class="column_w920">
         
-              <div class="fl">
+              <div class= "fl">
             	    <!-- START: Rotating Images -->
                     <div id="rotating-item-wrapper">
 	                    <img src="images/Rotating/greenpeople.jpg" alt="image" class="rotating-item" width="175" height="175" />
