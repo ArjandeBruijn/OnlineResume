@@ -12,20 +12,25 @@
 
 function my_init(container) 
 {
+    var first_rotating_item = 1; // 0= background
+
     //initial fade-in time (in milliseconds)
-    var initialFadeIn = 1000;
+    var initialFadeIn = 1;
 
     //interval between items (in milliseconds)
-    var itemInterval = 2000;
+    var itemInterval = 1000;
 
     //cross-fade time (in milliseconds)
-    var fadeTime = 2500;
+    var fadeTime = 1;
 
     //count number of items
     var numberOfItems = $(container).length;
 
+    //show first item
+    $(container).eq(0).fadeIn(0);
+
     //set current item
-    var currentItem = 0;
+    var currentItem = first_rotating_item;
 
     //show first item
     $(container).eq(currentItem).fadeIn(initialFadeIn);
@@ -34,9 +39,11 @@ function my_init(container)
     var infiniteLoop = setInterval(function () {
         $(container).eq(currentItem).fadeOut(fadeTime);
 
-        if (currentItem == numberOfItems - 1) {
-            currentItem = 0;
-        } else {
+        if (currentItem == numberOfItems - 1) 
+        {
+            currentItem = first_rotating_item;
+        }
+        else {
             currentItem++;
         }
         $(container).eq(currentItem).fadeIn(fadeTime);

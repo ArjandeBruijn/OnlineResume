@@ -25,7 +25,8 @@
         <p><img src="images\ProgressBars\100.png"   align="middle"> .Net  </p>
         <p><img src="images\ProgressBars\100.png"   align="middle"> ARCGIS 10.0  </p>
         <p><img src="images\ProgressBars\100.png"   align="middle"> Microsoft Office tools</p>
-        
+        <p><img src="images\ProgressBars\100.png"   align="middle"> Gimp</p>
+
         <p><img src="images\ProgressBars\50.png"   align="middle"> C  </p>
         <p><img src="images\ProgressBars\50.png"   align="middle"> HTML  </p>
         <p><img src="images\ProgressBars\50.png"   align="middle"> CSS  </p>

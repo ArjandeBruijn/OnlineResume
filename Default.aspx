@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" runat="server" 
     contentplaceholderid="ContentPlaceHolder1">
 
-       <h1>SOFTWARE AND RESEARCH
+       <h1>RESEARCH SOFTWARE
        </h1>
                 
        <p>  I am creative yet my code is minimalistic. I have considerable experience in disseminating new appraches through 
@@ -37,31 +37,31 @@
            <div class= "column_1_4 fl">
                <center>
                    <div id="rotating-item-wrapper"><!-- START: Rotating Images -->
-                       
-                         
-	                   <img id= "border" src="images/ChestnutSpread/10.png" class="rotating-item" />
-                       <img id= "border" src="images/ChestnutSpread/20.png"  class="rotating-item"  />
-                       <img id= "border" src="images/ChestnutSpread/30.png"  class="rotating-item"  />
-                       <img id= "border" src="images/ChestnutSpread/40.png" class="rotating-item"  />
-                       <img id= "border" src="images/ChestnutSpread/50.png" class="rotating-item"  />
-                       <img id= "border" src="images/ChestnutSpread/60.png"  class="rotating-item"  />   
-                       <img id= "border" src="images/ChestnutSpread/70.png"  class="rotating-item"  />  
-                       <img id= "border" src="images/ChestnutSpread/80.png"  class="rotating-item"  />  
-                       <img id= "border" src="images/ChestnutSpread/90.png"  class="rotating-item"  />  
-                       <img id= "border" src="images/ChestnutSpread/100.png"  class="rotating-item"  />  
-                       <img id= "border" src="images/ChestnutSpread/110.png"  class="rotating-item"  />  
-                       <img id= "border" src="images/ChestnutSpread/120.png"  class="rotating-item"  />  
-                       <img id= "border" src="images/ChestnutSpread/130.png"  class="rotating-item"  />  
-                       <img id= "border" src="images/ChestnutSpread/140.png"  class="rotating-item"  />  
-                       <img id= "Img1" src="images/ChestnutSpread/150.png"  class="rotating-item"  />   
-                       <img id= "Img2" src="images/ChestnutSpread/160.png"  class="rotating-item"  />   
-                       <img id= "Img3" src="images/ChestnutSpread/170.png"  class="rotating-item"  />   
-                       <img id= "Img4" src="images/ChestnutSpread/180.png"  class="rotating-item"  />   
-                       <img id= "Img5" src="images/ChestnutSpread/190.png"  class="rotating-item"  />   
-                       <img id= "Img6" src="images/ChestnutSpread/200.png"  class="rotating-item"  />   
+                      
+                       <img  src="images/ChestnutSpread/Background_water.png" class="rotating-item" />
+	                   <img  src="images/ChestnutSpread/10.png" class="rotating-item" />
+                       <img  src="images/ChestnutSpread/20.png"  class="rotating-item"  />
+                       <img  src="images/ChestnutSpread/30.png"  class="rotating-item"  />
+                       <img  src="images/ChestnutSpread/40.png" class="rotating-item"  />
+                       <img  src="images/ChestnutSpread/50.png" class="rotating-item"  />
+                       <img  src="images/ChestnutSpread/60.png"  class="rotating-item"  />   
+                       <img  src="images/ChestnutSpread/70.png"  class="rotating-item"  />  
+                       <img  src="images/ChestnutSpread/80.png"  class="rotating-item"  />  
+                       <img  src="images/ChestnutSpread/90.png"  class="rotating-item"  />  
+                       <img  src="images/ChestnutSpread/100.png"  class="rotating-item"  />  
+                       <img  src="images/ChestnutSpread/110.png"  class="rotating-item"  />  
+                       <img  src="images/ChestnutSpread/120.png"  class="rotating-item"  />  
+                       <img  src="images/ChestnutSpread/130.png"  class="rotating-item"  />  
+                       <img  src="images/ChestnutSpread/140.png"  class="rotating-item"  />  
+                       <img  src="images/ChestnutSpread/150.png"  class="rotating-item"  />   
+                       <img  src="images/ChestnutSpread/160.png"  class="rotating-item"  />   
+                       <img  src="images/ChestnutSpread/170.png"  class="rotating-item"  />   
+                       <img  src="images/ChestnutSpread/180.png"  class="rotating-item"  />   
+                       <img  src="images/ChestnutSpread/190.png"  class="rotating-item"  />   
+                       <img  src="images/ChestnutSpread/200.png"  class="rotating-item"  />   
                          
 			        </div><!-- END: Rotating images images -->
-                    
+                    200 years simulated colonisation of a landischape by an introduced tree species. 
                 </center>
             </div>
             <div class="column_1_4 fl">
@@ -88,15 +88,13 @@
                 <center>
                     <div id="rotating-item-wrapper">
             	        <img id= "border" src="images/Rotating/greenpeople.jpg" alt="image" class="rotating-item4" width="175" height="175" /> 
-                        <img id= "border" src="images/Rotating/bluepeople.jpg" alt="image" class="rotating-item4" width="175" height="175" /> 
+                        <img  src="images/Rotating/bluepeople.jpg" alt="image" class="rotating-item4" width="175" height="175" /> 
                         
                     </div>
                 </center>
             </div>      
                      
-                     
-                     
-                   
+              
                     
                      
                     
