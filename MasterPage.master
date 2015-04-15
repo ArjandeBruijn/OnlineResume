@@ -48,7 +48,9 @@
             </div> 
             
             <div id="footer">
-                <div class="margin_bottom_60"></div>
+                <div class="margin_bottom_20"></div>
+                <p>Contact: AMGdeBruijn@gmail.com 715-401-0799</p>
+                <div class="margin_bottom_20"></div>
             </div> <!-- End of footer -->  
         </div>     
     </body>
