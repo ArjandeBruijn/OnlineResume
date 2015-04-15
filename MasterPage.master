@@ -49,6 +49,15 @@
                 <div class="margin_bottom_20"></div> 
 
             <div id="footer">
+
+                 
+                  <div id="img_container">
+	                <div><img src="images/Rotating/greenpeople.jpg" alt="image"  width="175" height="175" /></div>
+	                <div><img src="images/Rotating/entrance.jpg" alt="image"  width="175" height="175" /></div>
+	                <div><img src="images/Rotating/bluepeople.jpg" alt="image" width="175" height="175" /></div>
+	                 <div><img src="images/Rotating/bluepeople.jpg" alt="image" width="175" height="175" /></div>
+                </div>
+
                 <div class="column_w920">
         
               <div class="column_w190 fl margin_right_15">

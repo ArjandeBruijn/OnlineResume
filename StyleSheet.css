@@ -269,3 +269,21 @@ img {
 	top: 0;
 	left: 0;
 }
+
+#img_container {
+	text-align: justify;
+	}
+#img_container > div {
+	width: 100px; /* Declare your value. Can be in relative units. */
+	display: inline-block;
+	vertical-align: top;
+
+	/* IE fix. */
+	display: inline;
+	/*zoom: 1;*/
+	}
+#img_container:after {
+	content: "";
+	width: 100%;
+	display: inline-block;
+    }
