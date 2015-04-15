@@ -47,16 +47,8 @@
                      </div>
 
                 <div class="margin_bottom_20"></div> 
-
-            <div id="footer">
-
                  
-                  <div id="img_container">
-	                <div id="rotating-item-wrapper"><img src="images/Rotating/greenpeople.jpg" alt="image"  width="175" height="175" /></div>
-	                <div id="rotating-item-wrapper"><img src="images/Rotating/entrance.jpg" alt="image"  width="175" height="175" /></div>
-	                <div id="rotating-item-wrapper"><img src="images/Rotating/bluepeople.jpg" alt="image" width="175" height="175" /></div>
-	                 <div id="rotating-item-wrapper"><img src="images/Rotating/bluepeople.jpg" alt="image" width="175" height="175" /></div>
-                </div>
+                
 
                 <div class="column_w920">
         
@@ -101,6 +93,12 @@
         
        	  <div class="margin_bottom_15"></div>
         </div>
+
+        <div id="footer">
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
        </div> <!-- End of footer -->   
     </body>
 </html>
