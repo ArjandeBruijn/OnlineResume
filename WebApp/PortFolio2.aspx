@@ -22,17 +22,9 @@
     imageData = c.createImageData(width, height);
 
     // draw random dots
-    for (i = 0; i < 10000; i++) {
-        x = Math.random() * width | 0; // |0 to truncate to Int32
-        y = Math.random() * height | 0;
-        r = Math.random() * 256 | 0;
-        g = Math.random() * 256 | 0;
-        b = Math.random() * 256 | 0;
-        setPixel(imageData, x, y, r, g, b, 255); // 255 opaque
-    }
+    SetPixels();
 
-    // copy the image data back onto the canvas
-    c.putImageData(imageData, 0, 0); // at coords 0,0
+    
 
 </script>
 </asp:Content>
