@@ -38,7 +38,7 @@
                 <ul>
                     <li><a href="Default.aspx" class="current">Home</a></li>
                     <li><a href="Skills.aspx">Skills</a></li>     
-                    <li><a href="PortFolio.aspx">Portfolio</a></li>       
+                    <li><a href="PortFolio2.aspx">Portfolio2</a></li>       
                     <li><a href="WorkExperience.aspx">Work Experience</a></li>
                     <li><a href="Education.aspx">Education</a></li>
                     <li><a href="Testimonials.aspx">Testimonials</a></li>
