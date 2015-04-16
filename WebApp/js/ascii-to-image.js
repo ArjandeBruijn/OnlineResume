@@ -11,8 +11,6 @@ function SetPixels(nrows, ncols)
 {
     for (x = 0; x < nrows ; x++) {
         for (y = 0; y < ncols; y++) {
-            
-            
             r = Math.random() * 256 | 0;
             g = Math.random() * 256 | 0;
             b = Math.random() * 256 | 0;
