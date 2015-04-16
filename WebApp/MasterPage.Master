@@ -49,8 +49,10 @@
             </div>    
 
             <div class="margin_right_left">
-                <asp:ContentPlaceHolder id="ContentPlaceHolder2" runat="server">
-                    </asp:ContentPlaceHolder>
+                 
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+
             </div>
 
             <div class="margin_bottom_30">
@@ -65,9 +67,7 @@
         </div>     
     <form id="form1" runat="server">
     <div>
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         
-        </asp:ContentPlaceHolder>
     </div>
     </form>
 </body>
