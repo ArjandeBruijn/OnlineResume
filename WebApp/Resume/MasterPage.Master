@@ -1,0 +1,74 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="Resume.MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+     
+    <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Arjan de Bruijn</title>
+    <meta name="keywords" content="Arjan de Bruijn" />
+    <meta name="description" content="Arjan de Bruijn" />
+         
+
+    <meta charset="utf-8" />
+    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js?ver=3.0.1'></script>    
+	<script type='text/javascript' src='js/infinite-rotator.js'></script>		
+    <link rel="stylesheet" href="css/StyleSheet.css" type="text/css" media="screen" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div id="container">
+	        <div id="banner">
+                <p><img id = "border" src="images\pass.jpg"   align="right">  </p>
+                
+                <span>
+                    <h1>Arjan de Bruijn</h1>
+                    <h1>(Research) Software Developer</h1>
+                    <h1>Fort Collins, Colorado</h1>
+                </span>
+                   
+                
+            </div> <!-- end of banner -->
+        
+            <div id="templatemo_menu">  <!-- menu -->
+                <ul>
+                    <li><a href="Default.aspx" class="current">Home</a></li>
+                    <li><a href="Skills.aspx">Skills</a></li>     
+                    <li><a href="PortFolio.aspx">Portfolio</a></li>       
+                    <li><a href="WorkExperience.aspx">Work Experience</a></li>
+                    <li><a href="Education.aspx">Education</a></li>
+                    <li><a href="Testimonials.aspx">Testimonials</a></li>
+                </ul>   
+	        </div> <!-- end of menu -->
+            
+            <div class="margin_bottom_20">
+            </div>    
+
+            <div class="margin_right_left">
+                <asp:ContentPlaceHolder id="ContentPlaceHolder2" runat="server">
+                    </asp:ContentPlaceHolder>
+            </div>
+
+            <div class="margin_bottom_30">
+            </div> 
+            
+            <div id="footer">
+                <div class="margin_bottom_20"></div>
+                <p><a href="mailto:amgdebruijn@gmail.com">AMGdeBruijn@gmail.com</a> </p>
+                <p>715-401-0799</p>
+                <div class="margin_bottom_20"></div>
+            </div> <!-- End of footer -->  
+        </div>     
+    <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>
