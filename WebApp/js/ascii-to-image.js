@@ -22,7 +22,24 @@ function SetPixels(nrows, ncols)
     c.putImageData(imageData, 0, 0); // at coords 0,0
 }
 
-function SetImage(canvas) {
+function FileHelper()
+{ }
+{
+    FileHelper.readStringFromFileAtPath = function (pathOfFileToReadFrom) {
+        var request = new XMLHttpRequest();
+        request.open("GET", pathOfFileToReadFrom, false);
+        request.send(null);
+        var returnValue = request.responseText;
+
+        return returnValue;
+    }
+}
+
+
+
+function SetImage(filename, canvas) 
+{
+    var text = FileHelper.readStringFromFileAtPath(filename);
 
     element = document.getElementById(canvas);
     c = element.getContext("2d");

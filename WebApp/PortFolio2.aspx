@@ -11,7 +11,7 @@
 
 
 <script type="text/javascript">
-    SetImage("canvas1");
+    SetImage("images\2000.asc", "canvas1");
 </script>
 
 
