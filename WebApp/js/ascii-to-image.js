@@ -7,9 +7,9 @@ function setPixel(imageData, x, y, r, g, b, a) {
     imageData.data[index + 3] = a;
 }
 
-function SetPixels() 
+function SetPixels(n) 
 {
-    for (i = 0; i < 10000; i++) {
+    for (i = 0; i < n; i++) {
         x = Math.random() * width | 0; // |0 to truncate to Int32
         y = Math.random() * height | 0;
         r = Math.random() * 256 | 0;
