@@ -22,7 +22,7 @@
     imageData = c.createImageData(width, height);
 
     // draw random dots
-    SetPixels(10000);
+    SetPixels(100, 100);
 
     
 
