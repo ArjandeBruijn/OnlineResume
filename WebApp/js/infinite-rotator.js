@@ -10,6 +10,9 @@
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
 // **********************************************************************
 
+
+
+
 function my_init(container) 
 {
     var first_rotating_item = 1; // 0= background
