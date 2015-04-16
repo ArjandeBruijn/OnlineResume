@@ -9,21 +9,11 @@
     </canvas>
 
 <script type="text/javascript">
+
+    SetImage();
+
+
     
-
-    element = document.getElementById("canvas1");
-    c = element.getContext("2d");
-
-    // read the width and height of the canvas
-    width = element.width;
-    height = element.height;
-
-    // create a new pixel array
-    imageData = c.createImageData(width, height);
-
-    // draw random dots
-    SetPixels(width, height);
-
     
 
 </script>

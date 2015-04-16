@@ -21,3 +21,21 @@ function SetPixels(nrows, ncols)
     // copy the image data back onto the canvas
     c.putImageData(imageData, 0, 0); // at coords 0,0
 }
+
+function SetImage() {
+
+    element = document.getElementById("canvas1");
+    c = element.getContext("2d");
+
+    // read the width and height of the canvas
+    width = element.width;
+    height = element.height;
+
+    // create a new pixel array
+    imageData = c.createImageData(width, height);
+
+    // draw random dots
+    SetPixels(width, height);
+
+
+}
