@@ -76,6 +76,7 @@
     </Compile>
     <Compile Include="Education.aspx.cs">
       <DependentUpon>Education.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
