@@ -8,13 +8,11 @@
        Random Canvas
     </canvas>
 
+
+
 <script type="text/javascript">
-
-    SetImage();
-
-
-    
-    
-
+    SetImage("canvas1");
 </script>
+
+
 </asp:Content>

@@ -22,9 +22,9 @@ function SetPixels(nrows, ncols)
     c.putImageData(imageData, 0, 0); // at coords 0,0
 }
 
-function SetImage() {
+function SetImage(canvas) {
 
-    element = document.getElementById("canvas1");
+    element = document.getElementById(canvas);
     c = element.getContext("2d");
 
     // read the width and height of the canvas
