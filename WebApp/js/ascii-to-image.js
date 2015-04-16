@@ -10,9 +10,9 @@ function setPixel(imageData, x, y, r, g, b, a) {
 function SetPixels(nrows, ncols) 
 {
     for (x = 0; x < nrows ; x++) {
-        for (a = 0; a < ncols; a++) {
+        for (y = 0; y < ncols; y++) {
             
-            y = Math.random() * height | 0;
+            
             r = Math.random() * 256 | 0;
             g = Math.random() * 256 | 0;
             b = Math.random() * 256 | 0;
