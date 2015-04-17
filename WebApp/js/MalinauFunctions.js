@@ -29,7 +29,7 @@ function SetImage(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
     for (y = ymin; y < ymax; y++) {
         for (x = xmin; x < xmax; x++) {
 
-            if(x < xmax && x > xmin && y < ymax && y > ymin)
+            if (x < xmax_zm && x > xmin_zm && y < ymax_zm && y > ymin_zm)
             {
                 var MapCode = MalinauMap[counter];
 
