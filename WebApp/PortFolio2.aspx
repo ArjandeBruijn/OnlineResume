@@ -96,7 +96,7 @@
     <script type="text/javascript"> SetImage('canvas1', 0, 415, 0, 561, 0,415,0,561, 1); </script>
     <script type="text/javascript">
 
-        var scale = 1;
+        var scale = 2;
 
 
         SetImage('canvas2', 0, 415, 0, 561, 300, 415, 0, 325, scale);

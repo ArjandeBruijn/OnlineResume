@@ -16,8 +16,8 @@ function SetImage(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
     c = element.getContext("2d");
 
     // read the width and height of the canvas
-    ncols  = ymax - ymin;
-    nrows = xmax - xmin;
+    ncols  = scale *( ymax - ymin);
+    nrows = scale *(xmax - xmin);
 
     // create a new pixel array
     imageData = c.createImageData(nrows, ncols);
@@ -105,8 +105,14 @@ function SetImage(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
                     g = 0;
                     b = 0; //black
                 }
+                var i;
+                for (i = 0; i < scale; i++) {
 
-                setPixel(imageData, x - xmin_zm, y - ymin_zm, r, g, b, 255); // 255 opaque
+                    _x = x - xmin_zm;
+                    _y = y - ymin_zm;
+
+                    setPixel(imageData, _x, _y, r, g, b, 255);  // 255 opaque
+                }
             }
             counter++;
         }
