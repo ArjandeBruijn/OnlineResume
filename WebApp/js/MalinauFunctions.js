@@ -7,16 +7,9 @@ function setPixel(imageData, x, y, r, g, b, a) {
     imageData.data[index + 3] = a;
 }
 
-function ZoomIn(container, xmin, xmax, ymin, ymax, scale) {
-
-    
 
 
-    SetImage(container);
-
-} 
-
-function SetImage(container) 
+function SetImage(container, xmin, xmax, ymin, ymax, scale) 
 {
 
     element = document.getElementById(container);
