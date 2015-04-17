@@ -92,7 +92,7 @@
 	<script src="js/Malinau.js"></script>
     <script type='text/javascript' src='js/MalinauFunctions.js'></script>	
     <script type="text/javascript"> SetImage('canvas1'); </script>
-    <script type="text/javascript">        ZoomIn('canvas2', 3, 3, 3, 3, 1.5); </script>
+    <script type="text/javascript">        ZoomIn('canvas2', 332, 415, 56.1, 168.3, 1.5); </script>
     
     <script type="text/javascript">
         
