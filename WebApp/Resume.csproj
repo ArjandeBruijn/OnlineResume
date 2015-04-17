@@ -55,7 +55,7 @@
   <ItemGroup>
     <Content Include="Default.aspx" />
     <Content Include="Education.aspx" />
-    <Content Include="js\ascii-to-image.js" />
+    <Content Include="js\MalinauFunctions.js" />
     <Content Include="js\infinite-rotator.js" />
     <Content Include="js\Malinau.js" />
     <Content Include="PortFolio.aspx" />

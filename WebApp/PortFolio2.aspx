@@ -24,7 +24,7 @@
 	<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 	<script src="js/Malinau.js"></script>
     <script src="js/demo.js"></script>
-    <script type='text/javascript' src='js/ascii-to-image.js'></script>	
+    <script type='text/javascript' src='js/MalinauFunctions.js'></script>	
     <script type="text/javascript">SetImage(); </script>
     
 </asp:Content>
