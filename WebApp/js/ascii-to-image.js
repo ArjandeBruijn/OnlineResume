@@ -18,12 +18,79 @@ function SetPixelLines(lines)
         for (var x = 0; x < al; x++) {
 
             if (res[x] == -9999) {
-                r = g = b = 255;
+                r = g = b = 255; // white
             }
+            else if (res[x] == 1) {
+                r = 0;
+                g = 0;
+                b = 255; 
+            }
+            else if (res[x] == 2) {
+                r = 0;  
+                g = 255;
+                b = 0; 
+            }
+            else if (res[x] == 3) {
+                r = 255;  
+                g = 0;
+                b = 0;
+            }
+            else if (res[x] == 4) {
+                r = 0;  
+                g = 255;
+                b = 255;  
+            }
+            else if (res[x] == 5) {
+                r = 255;  
+                g = 0;
+                b = 255; 
+            }
+            else if (res[x] == 6) {
+                r = 255;  
+                g = 255;
+                b = 0;
+            }
+             
+            else if (res[x] == 7) {
+                r = 0;
+                g = 0;
+                b = 128;
+            }
+            else if (res[x] == 8) {
+                r = 0;
+                g = 128;
+                b = 0;
+            }
+            else if (res[x] == 9) {
+                r = 128;
+                g = 0;
+                b = 0;
+            }
+            else if (res[x] == 10) {
+                r = 0;
+                g = 128;
+                b = 128;
+            }
+
+ 
+
+            else if (res[x] == 11) {
+                r = 128;
+                g = 0;
+                b = 128;
+            }
+            else if (res[x] == 12) {
+                r = 128;
+                g = 128;
+                b = 0;
+            }
+
+
+
             else {
-                r = 0.3 * 256 | 0;
-                g = 0.2 * 256 | 0;
-                b = 0.1 * 256 | 0;
+                r = 0;
+                g = 0;
+                b = 0; //black
             }
 
             setPixel(imageData, x, y-6, r, g, b, 255); // 255 opaque

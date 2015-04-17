@@ -5,7 +5,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      
-    <canvas id="canvas1" width="623", height="846">Random Canvas</canvas>
+    <canvas id="canvas1" width="623", height="840">Random Canvas</canvas>
     
     <hr><input id="file-select" type="file" name="files[]"  /><hr>
     
