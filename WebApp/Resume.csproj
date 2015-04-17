@@ -56,7 +56,10 @@
     <Content Include="Default.aspx" />
     <Content Include="Education.aspx" />
     <Content Include="js\ascii-to-image.js" />
+    <Content Include="js\demo.js" />
+    <Content Include="js\file-navigator.js" />
     <Content Include="js\infinite-rotator.js" />
+    <Content Include="js\line-navigator.js" />
     <Content Include="PortFolio.aspx" />
     <Content Include="PortFolio2.aspx" />
     <Content Include="Skills.aspx" />
