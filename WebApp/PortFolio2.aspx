@@ -7,9 +7,15 @@
      
     <canvas id="canvas1" width="415", height="561">Random Canvas</canvas>
     
-     <canvas id="canvas2" width="200", height="200">
-        Random Canvas
-        </canvas>
+    <script>
+        var _width = 200;
+        var _height = 200;
+    </script>
+
+
+    <canvas id="canvas2" width= _width, height= _height> Random Canvas</canvas>
+        
+       
 
    
     <p> These simulations are based on arial photographs taken in 2000 and 2009 of the north-eastern region of borneo, Indonesia. 
