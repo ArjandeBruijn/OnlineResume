@@ -1,13 +1,6 @@
 var started, finished;
 
 function InitDemo(title) {
-    $('#meta').html('');
-    
-
-    if ($('#file-select')[0].files.length == 0 || $('#file-select')[0].files[0] == null) {
-        $('#meta').html('Please, choose file!');
-        return null;
-    }
     
     
     var file = $('#file-select')[0].files[0];
@@ -32,6 +25,17 @@ function DemoFinished(metaInfo, results) {
 }
 
 function Read() {
+
+
+    $('#meta').html('');
+
+
+    if ($('#file-select')[0].files.length == 0 || $('#file-select')[0].files[0] == null) {
+        $('#meta').html('Please, choose file!');
+        return null;
+    }
+    
+
     var file = InitDemo('Read all lines');
     if (!file) return;
     
