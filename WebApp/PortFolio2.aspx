@@ -10,6 +10,7 @@
      <canvas id="canvas2" width="400", height="400">
         Random Canvas
         </canvas>
+
    
     <p> These simulations are based on arial photographs taken in 2000 and 2009 of the north-eastern region of borneo, Indonesia. 
     
