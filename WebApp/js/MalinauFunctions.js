@@ -106,7 +106,7 @@ function SetImage(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
                     b = 0; //black
                 }
 
-                setPixel(imageData, x, y, r, g, b, 255); // 255 opaque
+                setPixel(imageData, x - xmin_zm, y - ymin_zm, r, g, b, 255); // 255 opaque
             }
             counter++;
         }
