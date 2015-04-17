@@ -17,7 +17,7 @@
 	<div id="meta">
     </div> 
 
-	<div id="output">RESULTS</div>
+	
 		
 	<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 	<script src="js/line-navigator.js"></script>

@@ -2,7 +2,7 @@ var started, finished;
 
 function InitDemo(title) {
     $('#meta').html('');
-    $('#output').html('');
+    
 
     if ($('#file-select')[0].files.length == 0 || $('#file-select')[0].files[0] == null) {
         $('#meta').html('Please, choose file!');
@@ -28,7 +28,7 @@ function InitDemo(title) {
 
 function DemoFinished(metaInfo, results) {    
     $('#meta').append('Time spent: ' + (finished - started) + 'ms.' + (metaInfo ? '<br>' + metaInfo : ''));
-    $('#output').html(results ? results : 'NO RESULTS');
+   
 }
 
 function Read() {
