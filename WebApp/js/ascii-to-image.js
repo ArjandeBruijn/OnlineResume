@@ -6,16 +6,21 @@ function setPixel(imageData, x, y, r, g, b, a) {
     imageData.data[index + 2] = b;
     imageData.data[index + 3] = a;
 }
+ 
 function SetPixelLines(lines) 
 {
     var arrayLength = lines.length;
 
     for (var y = 0; y < arrayLength; y++) {
 
-        var res = lines[y].split(" ");
+        var res = lines[y].split(",");
 
-        var al = res.length;
-        for (var x = 0; x < al; x++) {
+         
+        for (var x = 0; x < res.length; x++) {
+
+            if (res[x] == "") {
+                continue;
+            }
 
             var MapCode = res[x];
 
@@ -101,12 +106,12 @@ function SetPixelLines(lines)
 }
 function SetPixels(nrows, ncols) {
 
-    var m = MalinauMap;
-
+    
     var counter = 0;
 
-    for (x = 0; x < nrows ; x++) {
-        for (y = 0; y < ncols; y++) {
+
+    for (y = 0; y < ncols; y++) {
+        for (x = 0; x < nrows ; x++) {
 
             var MapCode = MalinauMap[counter];
 
@@ -183,7 +188,7 @@ function SetPixels(nrows, ncols) {
                 b = 0; //black
             }
              
-            setPixel(imageData, x, y, r, g, b, 255); // 255 opaque
+            setPixel(imageData, x,y, r, g, b, 255); // 255 opaque
 
             counter++;
         }
