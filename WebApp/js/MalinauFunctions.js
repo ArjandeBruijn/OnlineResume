@@ -27,7 +27,7 @@ function SetImage(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
 
 
     for (y = ymin; y < ymax; y++) {
-        for (x = 0; x < nrows; x++) {
+        for (x = xmin; x < xmax; x++) {
 
             if(x < xmax && x > xmin && y < ymax && y > ymin)
             {
