@@ -5,15 +5,22 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      
-    <canvas id="canvas1" width="415", height="561">Random Canvas</canvas>
-    
-    <script>
-        var _width = 200;
-        var _height = 200;
+     <script>
+         var width_zoom = 415;
+         var height_zoom = 561;
+
+         
+
     </script>
 
+     
 
-    <canvas id="canvas2" width= _width, height= _height> Random Canvas</canvas>
+    <canvas id="canvas1" width= "415", height="561">Random Canvas</canvas>
+    
+    
+
+
+    <canvas id="canvas2" width= width_zoom, height= height_zoom> Random Canvas</canvas>
         
        
 
@@ -97,8 +104,8 @@
 	
 	<script src="js/Malinau.js"></script>
     <script type='text/javascript' src='js/MalinauFunctions.js'></script>	
-    <script type="text/javascript"> SetImage('canvas1', 0, 415, 0, 561, 1); </script>
-    <script type="text/javascript">        SetImage('canvas2', 0, 415, 0, 561, 1); </script>
+    <script type="text/javascript"> SetImage('canvas1', 0, 415, 0, 561, 0,0,0,0, 1); </script>
+    <script type="text/javascript">        SetImage('canvas2', 0, 415, 0, 561,0,0,0,0, 1); </script>
     
     <script type="text/javascript">
         

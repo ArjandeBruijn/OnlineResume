@@ -9,7 +9,7 @@ function setPixel(imageData, x, y, r, g, b, a) {
 
 
 
-function SetImage(container, xmin, xmax, ymin, ymax, scale) 
+function SetImage(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, ymax_zm,  scale) 
 {
 
     element = document.getElementById(container);
