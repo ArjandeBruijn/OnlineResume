@@ -16,21 +16,16 @@
     <li>People prefer to cultivate land close to their homes and close to the water</li>
 
 	
-    <script>
-        var table = document.createElement("TABLE");
-
-        // Create an empty <thead> element and add it to the table:
-        var header = table.createTHead();
-
-        // Create an empty <tr> element and add it to the first position of <thead>:
-        var row = header.insertRow(0);
-
-        // Insert a new cell (<td>) at the first position of the "new" <tr> element:
-        var cell = row.insertCell(0);
-
-        // Add some bold text in the new cell:
-        cell.innerHTML = "<b>This is a table header</b>";
-    </script>
+     <table>
+        <tr>
+            <th>Value of first column</th>
+            <th>Value of secopnd column</th>
+        </tr>
+        <tr>
+            <th>Value of first row</th>
+            <th>Value of second column </th>
+        </tr>
+     </table>
     
 
 	
