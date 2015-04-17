@@ -7,12 +7,12 @@
      
     <canvas id="canvas1" width="623", height="840">Random Canvas</canvas>
     
-    <hr><input id="file-select" type="file" name="files[]"  /><hr>
-    
-    <hr><button id="read">Read</button><hr>
-		
+     
 	 
-    
+    <p> These simulations are based on arial photographs of the north-eastern region of borneo, Indonesia. It predicts urbanisation and forest 
+    degradation based on a few simple rules, namely:  </p>
+
+
 			
 	<div id="meta">
     </div> 
