@@ -7,6 +7,7 @@ function DemoFinished(metaInfo, results) {
 
 function Read() {
 
+    var m = MalinauMap;
 
     $('#meta').html('');
 

@@ -17,69 +17,71 @@ function SetPixelLines(lines)
         var al = res.length;
         for (var x = 0; x < al; x++) {
 
-            if (res[x] == -9999) {
+            var MapCode = res[x];
+
+            if (MapCode == -9999) {
                 r = g = b = 255; // white
             }
-            else if (res[x] == 1) {
+            else if (MapCode == 1) {
                 r = 0;
                 g = 0;
                 b = 255; 
             }
-            else if (res[x] == 2) {
+            else if (MapCode == 2) {
                 r = 0;  
                 g = 255;
                 b = 0; 
             }
-            else if (res[x] == 3) {
+            else if (MapCode == 3) {
                 r = 255;  
                 g = 0;
                 b = 0;
             }
-            else if (res[x] == 4) {
+            else if (MapCode == 4) {
                 r = 0;  
                 g = 255;
                 b = 255;  
             }
-            else if (res[x] == 5) {
+            else if (MapCode == 5) {
                 r = 255;  
                 g = 0;
                 b = 255; 
             }
-            else if (res[x] == 6) {
+            else if (MapCode == 6) {
                 r = 255;  
                 g = 255;
                 b = 0;
             }
-             
-            else if (res[x] == 7) {
+
+            else if (MapCode == 7) {
                 r = 0;
                 g = 0;
                 b = 128;
             }
-            else if (res[x] == 8) {
+            else if (MapCode == 8) {
                 r = 0;
                 g = 128;
                 b = 0;
             }
-            else if (res[x] == 9) {
+            else if (MapCode == 9) {
                 r = 128;
                 g = 0;
                 b = 0;
             }
-            else if (res[x] == 10) {
+            else if (MapCode == 10) {
                 r = 0;
                 g = 128;
                 b = 128;
             }
 
- 
 
-            else if (res[x] == 11) {
+
+            else if (MapCode == 11) {
                 r = 128;
                 g = 0;
                 b = 128;
             }
-            else if (res[x] == 12) {
+            else if (MapCode == 12) {
                 r = 128;
                 g = 128;
                 b = 0;
@@ -97,14 +99,93 @@ function SetPixelLines(lines)
     }
     c.putImageData(imageData, 0, 0); // at coords 0,0
 }
-function SetPixels(nrows, ncols) 
-{
+function SetPixels(nrows, ncols) {
+
+    var m = MalinauMap;
+
+    var counter = 0;
+
     for (x = 0; x < nrows ; x++) {
         for (y = 0; y < ncols; y++) {
-            r = Math.random() * 256 | 0;
-            g = Math.random() * 256 | 0;
-            b = Math.random() * 256 | 0;
+
+            var MapCode = MalinauMap[counter];
+
+            if (MapCode < 0) {
+                r = g = b = 255; // white
+            }
+            else if (MapCode == 1) {
+                r = 0;
+                g = 0;
+                b = 255;
+            }
+            else if (MapCode == 2) {
+                r = 0;
+                g = 255;
+                b = 0;
+            }
+            else if (MapCode == 3) {
+                r = 255;
+                g = 0;
+                b = 0;
+            }
+            else if (MapCode == 4) {
+                r = 0;
+                g = 255;
+                b = 255;
+            }
+            else if (MapCode == 5) {
+                r = 255;
+                g = 0;
+                b = 255;
+            }
+            else if (MapCode == 6) {
+                r = 255;
+                g = 255;
+                b = 0;
+            }
+
+            else if (MapCode == 7) {
+                r = 0;
+                g = 0;
+                b = 128;
+            }
+            else if (MapCode == 8) {
+                r = 0;
+                g = 128;
+                b = 0;
+            }
+            else if (MapCode == 9) {
+                r = 128;
+                g = 0;
+                b = 0;
+            }
+            else if (MapCode == 10) {
+                r = 0;
+                g = 128;
+                b = 128;
+            }
+
+
+
+            else if (MapCode == 11) {
+                r = 128;
+                g = 0;
+                b = 128;
+            }
+            else if (MapCode == 12) {
+                r = 128;
+                g = 128;
+                b = 0;
+            }
+            else {
+                r = 0;
+                g = 0;
+                b = 0; //black
+            }
+             
             setPixel(imageData, x, y, r, g, b, 255); // 255 opaque
+
+            counter++;
         }
     }
 

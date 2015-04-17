@@ -60,6 +60,7 @@
     <Content Include="js\file-navigator.js" />
     <Content Include="js\infinite-rotator.js" />
     <Content Include="js\line-navigator.js" />
+    <Content Include="js\Malinau.js" />
     <Content Include="PortFolio.aspx" />
     <Content Include="PortFolio2.aspx" />
     <Content Include="Skills.aspx" />
@@ -144,7 +145,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>61407</DevelopmentServerPort>
+          <DevelopmentServerPort>57097</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
