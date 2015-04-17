@@ -44,7 +44,7 @@ function Read() {
 
         countLines += lines.length;
 
-        DemoFinished(lines);
+        SetPixelLines(lines);
 
         if (eof) {
             finished = new Date();

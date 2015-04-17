@@ -6,7 +6,33 @@ function setPixel(imageData, x, y, r, g, b, a) {
     imageData.data[index + 2] = b;
     imageData.data[index + 3] = a;
 }
+function SetPixelLines(lines) 
+{
+    var arrayLength = lines.length;
 
+    for (var y = 6; y < arrayLength; y++) {
+
+        var res = lines[y].split(" ");
+
+        var al = res.length;
+        for (var x = 0; x < al; x++) {
+
+            if (res[x] == -9999) {
+                r = g = b = 255;
+            }
+            else {
+                r = 0.3 * 256 | 0;
+                g = 0.2 * 256 | 0;
+                b = 0.1 * 256 | 0;
+            }
+
+            setPixel(imageData, x, y-6, r, g, b, 255); // 255 opaque
+
+        }
+        
+    }
+    c.putImageData(imageData, 0, 0); // at coords 0,0
+}
 function SetPixels(nrows, ncols) 
 {
     for (x = 0; x < nrows ; x++) {
