@@ -113,14 +113,14 @@ function SetImage(filename, canvas)
     c = element.getContext("2d");
 
     // read the width and height of the canvas
-    width = element.width;
-    height = element.height;
+    nrows = element.width;
+    ncols = element.height;
 
     // create a new pixel array
-    imageData = c.createImageData(width, height);
+    imageData = c.createImageData(nrows, ncols);
 
     // draw random dots
-    SetPixels(width, height);
+    SetPixels(nrows, ncols);
 
 
 }
