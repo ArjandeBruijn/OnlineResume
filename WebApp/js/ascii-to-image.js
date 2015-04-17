@@ -8,7 +8,7 @@ function setPixel(imageData, x, y, r, g, b, a) {
 }
  
 
-function SetImage(filename, canvas) 
+function SetImage(canvas) 
 {
     
     element = document.getElementById(canvas);

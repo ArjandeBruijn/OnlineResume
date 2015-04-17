@@ -17,6 +17,8 @@
 
 			
 	<div id="meta">
+        <asp:Table ID="Table1" runat="server" Height="102px" Width="442px">
+        </asp:Table>
     </div> 
 
 	
@@ -28,7 +30,7 @@
     <script src="js/demo.js"></script>
     <script type='text/javascript' src='js/ascii-to-image.js'></script>	
 
-    <script type="text/javascript">SetImage("images\2000.asc", "canvas1"); </script>
+    <script type="text/javascript">SetImage("canvas1"); </script>
         
    
 
