@@ -34,22 +34,24 @@ function Read() {
     var indexToStartWith = 0;
     
     var countLines = 0;
-    
+
     navigator.readSomeLines(indexToStartWith, function linesReadHandler(err, index, lines, eof, progress) {
-        if (err) { 
+        if (err) {
             finished = new Date();
             DemoFinished('Error: ' + err);
             return;
         }
-        
+
         countLines += lines.length;
-        
-        if (eof)  {
+
+        alert(lines);
+
+        if (eof) {
             finished = new Date();
             DemoFinished('Total ' + countLines + ' lines readed');
             return;
         }
-        
+
         navigator.readSomeLines(index + lines.length, linesReadHandler);
     });
 }
