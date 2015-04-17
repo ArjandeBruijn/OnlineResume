@@ -84,9 +84,6 @@ function SetPixelLines(lines)
                 g = 128;
                 b = 0;
             }
-
-
-
             else {
                 r = 0;
                 g = 0;

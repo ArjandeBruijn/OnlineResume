@@ -11,15 +11,8 @@
     
     <hr><button id="read">Read</button><hr>
 		
-	<button id="search-beginning">Find first</button>
-    <input type="text" id="find-first-pattern" placeholder="Regexp pattern" />
-	<button id="search-next">Find next</button>
-	
-    <hr>
-		<button id="searchAll">Find all</button>
-		<input type="text" id="find-all-pattern" placeholder="Regexp pattern" />
-		(results are limited to 100 lines max)
-	<hr>
+	 
+    
 			
 	<div id="meta">
     </div> 
