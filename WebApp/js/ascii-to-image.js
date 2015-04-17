@@ -11,11 +11,32 @@ function setPixel(imageData, x, y, r, g, b, a) {
 function SetPixels(nrows, ncols) {
 
     
+    
+}
+
+
+
+
+
+function SetImage(filename, canvas) 
+{
+    
+    element = document.getElementById(canvas);
+    c = element.getContext("2d");
+
+    // read the width and height of the canvas
+    nrows = element.width;
+    ncols = element.height;
+
+    // create a new pixel array
+    imageData = c.createImageData(nrows, ncols);
+
+    // draw random dots
     var counter = 0;
 
 
     for (y = 0; y < ncols; y++) {
-        for (x = 0; x < nrows ; x++) {
+        for (x = 0; x < nrows; x++) {
 
             var MapCode = MalinauMap[counter];
 
@@ -91,8 +112,8 @@ function SetPixels(nrows, ncols) {
                 g = 0;
                 b = 0; //black
             }
-             
-            setPixel(imageData, x,y, r, g, b, 255); // 255 opaque
+
+            setPixel(imageData, x, y, r, g, b, 255); // 255 opaque
 
             counter++;
         }
@@ -100,27 +121,5 @@ function SetPixels(nrows, ncols) {
 
     // copy the image data back onto the canvas
     c.putImageData(imageData, 0, 0); // at coords 0,0
-}
-
-
-
-
-
-function SetImage(filename, canvas) 
-{
-    
-    element = document.getElementById(canvas);
-    c = element.getContext("2d");
-
-    // read the width and height of the canvas
-    nrows = element.width;
-    ncols = element.height;
-
-    // create a new pixel array
-    imageData = c.createImageData(nrows, ncols);
-
-    // draw random dots
-    SetPixels(nrows, ncols);
-
 
 }
