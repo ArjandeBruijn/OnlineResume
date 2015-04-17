@@ -8,16 +8,6 @@ function setPixel(imageData, x, y, r, g, b, a) {
 }
  
 
-function SetPixels(nrows, ncols) {
-
-    
-    
-}
-
-
-
-
-
 function SetImage(filename, canvas) 
 {
     
