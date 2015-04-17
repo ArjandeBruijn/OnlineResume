@@ -10,7 +10,7 @@ function SetPixelLines(lines)
 {
     var arrayLength = lines.length;
 
-    for (var y = 6; y < arrayLength; y++) {
+    for (var y = 0; y < arrayLength; y++) {
 
         var res = lines[y].split(" ");
 
@@ -92,7 +92,7 @@ function SetPixelLines(lines)
                 b = 0; //black
             }
 
-            setPixel(imageData, x, y-6, r, g, b, 255); // 255 opaque
+            setPixel(imageData, x, y, r, g, b, 255); // 255 opaque
 
         }
         
@@ -110,7 +110,7 @@ function SetPixels(nrows, ncols) {
 
             var MapCode = MalinauMap[counter];
 
-            if (MapCode < 0) {
+            if (MapCode == -9999) {
                 r = g = b = 255; // white
             }
             else if (MapCode == 1) {
