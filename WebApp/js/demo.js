@@ -3,7 +3,7 @@ var started, finished;
 function InitDemo(title) {
     
     
-    var file = $('#file-select')[0].files[0];
+    
     
     $('#meta').append(title + '<br>');
     $('#meta').append($('#file-select')[0].files[0].name + ' ' + ( Math.round((file.size / 1024 / 1024)*100)/100 ) + ' MB<br>');
@@ -34,9 +34,9 @@ function Read() {
         $('#meta').html('Please, choose file!');
         return null;
     }
-    
+    var file = $('#file-select')[0].files[0];
 
-    var file = InitDemo('Read all lines');
+    //var file = InitDemo('Read all lines');
     if (!file) return;
     
     var navigator = new FileNavigator(file);
