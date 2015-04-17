@@ -1,23 +1,4 @@
-var started, finished;
-
-function InitDemo(title) {
-    
-    
-    
-    
-    $('#meta').append(title + '<br>');
-    $('#meta').append($('#file-select')[0].files[0].name + ' ' + ( Math.round((file.size / 1024 / 1024)*100)/100 ) + ' MB<br>');
-    
-    started = new Date();
-    finished = null;
-
-
-     
-
-    return file;
-
-
-}
+ 
 
 function DemoFinished(metaInfo, results) {    
     $('#meta').append('Time spent: ' + (finished - started) + 'ms.' + (metaInfo ? '<br>' + metaInfo : ''));
