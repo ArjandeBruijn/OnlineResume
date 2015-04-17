@@ -20,19 +20,11 @@
         <asp:Table ID="Table1" runat="server" Height="102px" Width="442px">
         </asp:Table>
     </div> 
-
 	
-		
 	<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-	<script src="js/line-navigator.js"></script>
-	<script src="js/file-navigator.js"></script>
-    <script src="js/Malinau.js"></script>
+	<script src="js/Malinau.js"></script>
     <script src="js/demo.js"></script>
     <script type='text/javascript' src='js/ascii-to-image.js'></script>	
-
     <script type="text/javascript">SetImage(); </script>
-        
-   
-
-
+    
 </asp:Content>
