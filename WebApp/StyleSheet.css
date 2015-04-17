@@ -279,4 +279,11 @@ span {
 	left: 0;
 }
  
+ input, button{
+    margin: 5px;
+ }
  
+#output {
+    border: 1px solid black;	
+    padding: 5px;
+}

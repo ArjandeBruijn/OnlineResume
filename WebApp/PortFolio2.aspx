@@ -1,15 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="PortFolio2.aspx.cs" Inherits="Resume.PortFolio2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <style>
-	    input, button 
-	    {
-		    margin: 5px;
-		}
-		#output {
-			border: 1px solid black;	
-			padding: 5px;
-		}
-	</style>	
+     
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -30,7 +21,9 @@
 		(results are limited to 100 lines max)
 	<hr>
 			
-	<div id="meta"></div><br>
+	<div id="meta">
+    </div> 
+
 	<div id="output">RESULTS</div>
 		
 	<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>

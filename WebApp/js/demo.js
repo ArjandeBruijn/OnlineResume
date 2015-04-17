@@ -44,7 +44,7 @@ function Read() {
 
         countLines += lines.length;
 
-        alert(lines);
+        DemoFinished(lines);
 
         if (eof) {
             finished = new Date();
