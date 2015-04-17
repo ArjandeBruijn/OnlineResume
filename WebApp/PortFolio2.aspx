@@ -90,8 +90,8 @@
 	
 	<script src="js/Malinau.js"></script>
     <script type='text/javascript' src='js/MalinauFunctions.js'></script>	
-    <script type="text/javascript"> SetImage('canvas1',0); </script>
-    <script type="text/javascript">        SetImage2(); </script>
+    <script type="text/javascript"> SetImage('canvas1'); </script>
+    <script type="text/javascript">        SetImage('canvas2'); </script>
     
     <script type="text/javascript">
         

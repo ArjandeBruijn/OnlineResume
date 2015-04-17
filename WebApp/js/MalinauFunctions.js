@@ -34,7 +34,7 @@ function SetImage2() {
     // copy the image data back onto the canvas
     c.putImageData(imageData, 0, 0); // at coords 0,0
 }
-function SetImage(container, shift) 
+function SetImage(container) 
 {
 
     element = document.getElementById(container);
@@ -136,7 +136,7 @@ function SetImage(container, shift)
     }
 
     // copy the image data back onto the canvas
-    c.putImageData(imageData, shift, 0); // at coords 0,0
+    c.putImageData(imageData, 0, 0); // at coords 0,0
 
 
 }
