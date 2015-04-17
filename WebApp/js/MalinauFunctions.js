@@ -29,6 +29,11 @@ function SetImage(container, xmin, xmax, ymin, ymax, scale)
     for (y = 0; y < ncols; y++) {
         for (x = 0; x < nrows; x++) {
 
+            if (x > xmax) continue;
+            if (x < xmin) continue;
+            if (y > ymax) continue;
+            if (y < ymin) continue;
+
             var MapCode = MalinauMap[counter];
 
             if (MapCode == -9999) {
