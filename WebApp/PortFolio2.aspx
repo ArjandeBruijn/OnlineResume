@@ -7,7 +7,7 @@
      
     <canvas id="canvas1" width="415", height="561">Random Canvas</canvas>
     
-     <canvas id="canvas2" width="100", height="100">
+     <canvas id="canvas2" width="400", height="400">
         Random Canvas
         </canvas>
    
