@@ -12,6 +12,8 @@
     <p> These simulations are based on arial photographs of the north-eastern region of borneo, Indonesia. It predicts urbanisation and forest 
     degradation based on a few simple rules, namely:  </p>
 
+    <li>People prefer to live adjacent to water</li>
+    <li>People prefer to cultivate land close to their homes and close to the water</li>
 
 			
 	<div id="meta">
