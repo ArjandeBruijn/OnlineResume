@@ -8,10 +8,10 @@ function setPixel(imageData, x, y, r, g, b, a) {
 }
  
 
-function SetImage(canvas) 
+function SetImage() 
 {
-    
-    element = document.getElementById(canvas);
+
+    element = document.getElementById("canvas1");
     c = element.getContext("2d");
 
     // read the width and height of the canvas

@@ -30,7 +30,7 @@
     <script src="js/demo.js"></script>
     <script type='text/javascript' src='js/ascii-to-image.js'></script>	
 
-    <script type="text/javascript">SetImage("canvas1"); </script>
+    <script type="text/javascript">SetImage(); </script>
         
    
 
