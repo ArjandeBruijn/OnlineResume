@@ -91,7 +91,9 @@ function LandUse(MapCode, Color, Conversion_rate) {
     this.Conversion_rate = Conversion_rate;
 }
 
-
+function Simulate2(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, ymax_zm, scale) {
+    alert("Simulate2");
+}
 
 function Simulate(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, ymax_zm, scale) {
 
@@ -100,6 +102,7 @@ function Simulate(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
 
     var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
     var data = imageData.data;
+
 
     for (var i = 0; i < data.length; i += 4) {
 
