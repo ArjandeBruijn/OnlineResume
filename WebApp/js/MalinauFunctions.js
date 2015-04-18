@@ -132,6 +132,8 @@ function Simulate(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
 
     var pixelData = element.getContext('2d').getImageData(xmin, ymin, xmax, ymax).data;
 
+    var data = imageData.data;
+
     for (y = ymin; y < ymax; y++) {
         for (x = xmin; x < xmax; x++) {
             if (x < xmax_zm && x > xmin_zm && y < ymax_zm && y > ymin_zm) {
