@@ -90,42 +90,48 @@ function Simulate(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
 
             var value = Math.random();
 
+            cum_conversion_rate = 0;
+
             for (a = 0; a < conversion_rate.length; a++) {
+
+                cum_conversion_rate += conversion_rate[a]
+
+                if (value < conversion_rate[0]) {
+                    // PF to PF
+                    r_new = r_old;
+                    g_new = g_old;
+                    b_new = b_old;
+                }
+                else if (value < conversion_rate[0] + conversion_rate[1]) {
+                    // PF to SF
+                    r_new = LightGreen[0];     // red
+                    g_new = LightGreen[1]; // green
+                    b_new = LightGreen[2]; // blue
+                }
+                else if (value < conversion_rate[0] + conversion_rate[1] + conversion_rate[2]) {
+                    // PF to crop
+                    r_new = Yellow[0];     // red
+                    g_new = Yellow[1]; // green
+                    b_new = Yellow[2]; // blue
+                }
+                else if (value < conversion_rate[0] + conversion_rate[1] + conversion_rate[2] + conversion_rate[3]) {
+                    // PF to settlements
+                    r_new = Red[0];     // red
+                    g_new = Red[1]; // green
+                    b_new = Red[2]; // blue
+                }
+                else if (value < conversion_rate[0] + conversion_rate[1] + conversion_rate[2] + conversion_rate[3] + conversion_rate[4]) {
+                    // PF to OtherLand
+                    // r_new = 255 - r_old;     // red
+                    //g_new = 255 - g_old; // green
+                    //b_new = 255 - b_old; // blue
+
+                }
 
             }
             
 
-            if (value < conversion_rate[0]) {
-                // PF to PF
-                r_new = r_old;
-                g_new = g_old;
-                b_new = b_old;
-            }
-            else if (value < conversion_rate[0] + conversion_rate[1]) {
-                // PF to SF
-                r_new = LightGreen[0];     // red
-                g_new = LightGreen[1]; // green
-                b_new = LightGreen[2]; // blue
-            }
-            else if (value < conversion_rate[0] + conversion_rate[1] + conversion_rate[2]) {
-                // PF to crop
-                r_new = Yellow[0];     // red
-                g_new = Yellow[1]; // green
-                b_new = Yellow[2]; // blue
-            }
-            else if (value < conversion_rate[0] + conversion_rate[1] + conversion_rate[2] + conversion_rate[3]) {
-                // PF to settlements
-                r_new = Red[0];     // red
-                g_new = Red[1]; // green
-                b_new = Red[2]; // blue
-            }
-            else if (value < conversion_rate[0] + conversion_rate[1] + conversion_rate[2] + conversion_rate[3] + conversion_rate[4]) {
-                // PF to OtherLand
-                // r_new = 255 - r_old;     // red
-                //g_new = 255 - g_old; // green
-                //b_new = 255 - b_old; // blue
-
-            }
+            
 
             setPixelByIndex(imageData, i, r_new, g_new, b_new, 255);
         }
