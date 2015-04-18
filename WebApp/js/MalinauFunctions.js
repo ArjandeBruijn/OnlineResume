@@ -1,8 +1,8 @@
 
-var DarkGreen = [0, 100, 0];   // position 0
-var LightGreen = [0, 255, 0]; // position 1
-var Yellow = [255, 255, 0]; // position 2
-var Color1 = [0, 255, 0]; // position 3
+var DarkGreen = [0, 100, 0];   // PF
+var LightGreen = [0, 255, 0]; // SF
+var Yellow = [255, 255, 0];  // position 2
+var Color1 = [0, 255, 0];   // Crop??
 var Red = [255, 0, 0];
 var Cyan = [0, 255, 255];
 
@@ -98,28 +98,28 @@ function Simulate(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
             }
             else if (value < conversion_rate[0] + conversion_rate[1]) {
                 // PF to SF
-                r_new = 255 - r_old;     // red
-                g_new = 255 - g_old; // green
-                b_new = 255 - b_old; // blue
+                r_new = LightGreen[0];     // red
+                g_new = LightGreen[1]; // green
+                b_new = LightGreen[2]; // blue
             }
             else if (value < conversion_rate[0] + conversion_rate[1] + conversion_rate[2]) {
                 // PF to crop
-                r_new = 255 - r_old;     // red
-                g_new = 255 - g_old; // green
-                b_new = 255 - b_old; // blue
+                r_new = Yellow[0];     // red
+                g_new = Yellow[1]; // green
+                b_new = Yellow[2]; // blue
             }
             else if (value < conversion_rate[0] + conversion_rate[1] + conversion_rate[2] + conversion_rate[3]) {
                 // PF to settlements
-                r_new = 255 - r_old;     // red
-                g_new = 255 - g_old; // green
-                b_new = 255 - b_old; // blue
+                r_new = Red[0];     // red
+                g_new = Red[1]; // green
+                b_new = Red[2]; // blue
             }
             else if (value < conversion_rate[0] + conversion_rate[1] + conversion_rate[2] + conversion_rate[3] + conversion_rate[4]) {
                 
                 // PF to OtherLand
-                r_new = 255 - r_old;     // red
-                g_new = 255 - g_old; // green
-                b_new = 255 - b_old; // blue
+                // r_new = 255 - r_old;     // red
+                //g_new = 255 - g_old; // green
+                //b_new = 255 - b_old; // blue
 
             }
 
