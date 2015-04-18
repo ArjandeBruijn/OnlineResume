@@ -1,17 +1,34 @@
-
+var White = [255, 255, 255];
 var DarkGreen = [0, 100, 0];   // PF
 var LightGreen = [0, 255, 0]; // SF
-var Yellow = [255, 255, 0];  // position 2
-var Color1 = [0, 255, 0];   // Crop??
+var Color3 = [0, 255, 0];   // Crop??
 var Red = [255, 0, 0];
+var Yellow = [255, 255, 0];  // position 2
 var Cyan = [0, 255, 255];
+var Color7 = [0, 128, 128];   // Crop??
+var Blue = [0, 0, 128];   //Water Body
+var Color9 = [128, 0, 0];   
+var Color10 = [0, 0, 255];
+var Color11 = [128, 0, 128];
+var Color12 = [128, 128, 0];
+var Color13 = [0, 0, 0]; //black        
 
+var NoData = new LandUse(-9999, White); 
 var PF = new LandUse(1, DarkGreen, [0.998, 0, 0.004, 0, 0]);
 var SF = new LandUse(2, LightGreen, [0, 0.994, 0.006, 0, 0]);
-var OpenLand = new LandUse(6, Yellow, [0.002, 0, 0.993, 0.003, 0]);
+var LandUse3 = new LandUse(3, Color3);
 var Settlement = new LandUse(4, Red, [0, 0, 0.003, 0.997, 0]);
+var LandUse5 = new LandUse(5, Cyan);
+var OpenLand = new LandUse(6, Yellow, [0.002, 0, 0.993, 0.003, 0]);
+var LandUse7 = new LandUse(7, Color7);
+var Water = new LandUse(8, Blue);
+var LandUse9 = new LandUse(9, Color9);
+var LandUse10 = new LandUse(10, Color10);
+var LandUse11 = new LandUse(11, Color11);
+var LandUse12 = new LandUse(12, Color12);
+var LandUse13 = new LandUse(13, Color13);
 
-var LandUseTypes = [PF, SF, OpenLand, Settlement];
+var LandUseTypes = [NoData, PF, SF, LandUse3, Settlement, LandUse5, OpenLand, LandUse7, Water, LandUse9, LandUse10, LandUse11, LandUse12, LandUse13];
 
 
 
@@ -149,11 +166,12 @@ function SetImage(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
     imageData = c.createImageData(nrows, ncols);
 
     // draw random dots
-    var counter = 0;
-
+    var counter = -1;
 
     for (y = ymin; y < ymax; y++) {
         for (x = xmin; x < xmax; x++) {
+
+            counter++;
 
             if (x < xmax_zm && x > xmin_zm && y < ymax_zm && y > ymin_zm)
             {
@@ -174,96 +192,9 @@ function SetImage(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
                 }
 
                 if (r == null) {
-
-                    counter++;
                     continue;
                 }
 
-                /*
-
-                // Swampy Bush
-                //Bushes/Shrubland
-                //Primary Swamp Forest
-                // Swampy Bush
-                if (MapCode == -9999) {
-                    r = g = b = 255; // white
-                }
-                else if (MapCode == 1) {
-                    //r = g = b = 255; // white
-                    r = PF.Color[0];                  //dark green 0, 255, 0
-                    g = PF.Color[1];                //Primary Dry Forest
-                    b = PF.Color[2];
-                }
-                else if (MapCode == 2) {
-                    //r = g = b = 255; // white
-                    r = SF.Color[0];                  //Secondary Dry Forest/Logged Forest
-                    g = SF.Color[1];                // light green
-                    b = SF.Color[2];
-                }
-                else if (MapCode == 3) {
-
-                    r = Color1[0];             
-                    g = Color1[1]; 
-                    b = Color1[2];  
-                }
-                else if (MapCode == 4) {
-
-                    r = Settlement.Color[0]; //  0;// Settlement/Developed Land
-                    g = Settlement.Color[1]; // 255;
-                    b = Settlement.Color[2]; //  255;
-                    //r = g = b = 255; // white
-                }
-                else if (MapCode == 5) {
-                    r = Cyan[0];                
-                    g = Cyan[1];
-                    b = Cyan[2];
-                }
-                else if (MapCode == 6) {
-                    r = OpenLand.Color[0];
-                    g = OpenLand.Color[1];  // Open Land
-                    b = OpenLand.Color[2];
-                    
-                }
-
-                else if (MapCode == 7) {
-                    r = 0;
-                    g = 128; 
-                    b = 128;
-                    //r = g = b = 255; // white
-                    
-                }
-                else if (MapCode == 8) {
-                    r = 0;                  //Water Body
-                    g = 0;
-                    b = 128;
-
-                }
-                else if (MapCode == 9) {
-                    r = 128;                //Secondary Swamp Forest/Logged Area
-                    g = 0;
-                    b = 0;
-                }
-                else if (MapCode == 10) {
-                    r = 0;                  //Secondary Mangrove Forest/ Logged
-                    g = 0; 
-                    b = 255;
-                }
-                else if (MapCode == 11) {
-                    r = 128;            //  Upland Farming Mixed with Bush
-                    g = 0;
-                    b = 128;
-                }
-                else if (MapCode == 12) {
-                    r = 128;
-                    g = 128;            // Airport / Harbor
-                    b = 0;
-                }
-                else {
-                    r = 0;
-                    g = 0;
-                    b = 0; //black
-                }
-                */
                 var i;
                 for (i = 0; i < scale; i++) {
 
@@ -277,7 +208,7 @@ function SetImage(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
                 }
                  
             }
-            counter++;
+            
         }
     }
 
