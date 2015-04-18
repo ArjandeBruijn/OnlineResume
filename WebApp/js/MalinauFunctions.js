@@ -43,7 +43,7 @@ function ConversionRate(MapCodeNew, rate) {
 }
 
 function LandUse(MapCode, Color, Conversion_rate) {
-
+    this.Count = 0;
     this.MapCode = MapCode;
     this.Color = Color;
     this.Conversion_rate = Conversion_rate;
@@ -80,7 +80,14 @@ function get_xy(imageData, index) {
     return [x, y];
 }
 
+function GetLandUseType(MapCode) {
 
+    for (a = 0; a < LandUseTypes.length; a++) {
+        my_landuse = LandUseTypes[a];
+        if (my_landuse.MapCode == MapCode) return my_landuse;
+    }
+    return null;
+}
 
 function Simulate2(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, ymax_zm, scale) {
     
@@ -99,7 +106,11 @@ function Simulate2(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm,
                 MapCodeTo = conversion.MapCodeNew;
                 Rate = conversion.rate;
 
-                alert(MapCodeTo + " " + Rate);
+                landuse_to = GetLandUseType(MapCodeTo);
+
+                NumberOfConversions = Rate * landuse_to.Count;
+
+                alert(landuse.MapCode + " " + MapCodeTo + " " + Rate + " " + NumberOfConversions);
             }
         }
 
