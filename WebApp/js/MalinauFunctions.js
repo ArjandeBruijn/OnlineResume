@@ -1,3 +1,10 @@
+var DarkGreen = [0, 100, 0];
+var LightGreen = [0, 255, 0];
+var Yellow = [255, 255, 0];
+var Color1 = [0, 255, 0];
+var Red = [255, 0, 0];
+var Cyan = [0, 255, 255];
+
 
 function setPixel(imageData, x, y, r, g, b, a) {
     index = (x + y * imageData.width) * 4;
@@ -6,7 +13,10 @@ function setPixel(imageData, x, y, r, g, b, a) {
     imageData.data[index + 2] = b;
     imageData.data[index + 3] = a;
 }
+function Transition(from, to) { 
 
+
+}
 function Simulate() {
 
     element = document.getElementById("canvas1");
@@ -28,7 +38,47 @@ function Simulate() {
 
                 var pixelData = element.getContext('2d').getImageData(col, row, 1, 1).data;
 
-                alert('R: ' + pixelData[0] + '<br>G: ' + pixelData[1] + '<br>B: ' + pixelData[2] + '<br>A: ' + pixelData[3]);
+                //alert('R: ' + pixelData[0] + '<br>G: ' + pixelData[1] + '<br>B: ' + pixelData[2] + '<br>A: ' + pixelData[3]);
+
+                if (pixelData[0] == DarkGreen[0] && pixelData[1] == DarkGreen[1] && pixelData[2] == DarkGreen[2]) {
+                    // Primary forest
+
+                    /* 	Forest	Secondary Forest	Cropland	Settlements	Other land
+                        Forest	0.998 	0	0.004	0	0
+                        Secondary Forest	0	0.994	0.006	0	0
+                        Cropland	0.002	0	0.993	0.003	0
+                        Settlements	0	0	0.003	0.997	0
+                        Other land	0	0	0	0	1 */
+
+                    // Get Conversion rate to various other lucs
+                    var conversion_rate = [0.998, 0, 0.004, 0, 0];
+
+                    
+                    var value = Math.random();
+                    if (value > conversion_rate[0]) {
+                        continue;
+                    }
+                    else {
+                        var value2 = Math.random();
+                        if (value2 > conversion_rate[1]) {
+                            // PF to SF
+                            alert('value: ' + value);
+                            Transition(0,1);
+                        }
+                    }
+
+                }
+                else if (pixelData[0] == LightGreen[0] && pixelData[1] == LightGreen[1] && pixelData[2] == LightGreen[2]) { 
+                    //Secondary forest
+                    var conversion_rate = [0, 0.994, 0.006, 0, 0];
+                    // Get Conversion rate to various other lucs
+
+                }
+                else if (pixelData[0] == Yellow[0] && pixelData[1] == Yellow[1] && pixelData[2] == Yellow[2]) {
+                    //Open Land (crop land)
+                    var conversion_rate = [0.002,	0,	0.993,	0.003,	0];
+                    // Get Conversion rate to various other lucs
+                }
             }
         
         }
@@ -39,12 +89,10 @@ function Simulate() {
         alert(width);
     alert(height);
 }
-var DarkGreen = [0, 100, 0];
-var LightGreen = [0, 255, 0];
-var Yellow = [255, 255, 0];
-var Color1 = [0, 255, 0];
-var Red = [255, 0, 0];
-var Cyan = [0,255,255];
+ 
+
+
+
 
 function SetImage(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, ymax_zm,  scale) 
 {
@@ -174,5 +222,118 @@ function SetImage(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
 
 
 }
+/*
+function ImplementLandUseTransitions() { 
 
- 
+    var LandUseSum = Landscape.LandUseMap.GetFrequency();
+          
+    var TransitionsPerLandUse = GetTransitionsPerLandUse();
+              
+    for (int from = 0; from < Landscape.LandUseNames.Length; from++)
+    {
+          for (int to = 0; to < Landscape.LandUseNames.Length; to++)
+          { 
+               int Transitions = TransitionsPerLandUse[from,to];
+
+              if(Transitions > LandUseSum[from])
+               {
+                   Transitions = LandUseSum[from];
+//                 throw new System.Exception("Cannot convert " + Transitions + " from " + Landscape.LandUseNames[from] + " to " + Landscape.LandUseNames[to]);
+               }
+
+                        int t = 0;
+                        
+                        while (t < Transitions)
+                        {
+                            int r_to = rnd.Next(Landscape.LandUseMap.Nrows);
+                            int c_to = rnd.Next(Landscape.LandUseMap.Ncols);
+
+                            // to: will be connected (settlement), not target ls!!
+                            if (Landscape.LandUseNames[Landscape.LandUseMap[r_to, c_to]].Contains("Settlement"))
+                            {
+                                int r_from;
+                                int c_from;
+                                //Console.WriteLine("Found " + LandUseDefininitions.LandUseTypes[to] + " in [" + r_to + "," + c_to + "]...looking for " + LandUseDefininitions.LandUseTypes[from]);
+                                for (; ; ) 
+                                {
+                                    int d = 1;
+                                    bool FoundTo = false;
+                                    for (;;)
+                                    {
+                                        // Right bottom
+                                        r_from = r_to + d;
+                                        c_from = c_to + d;
+                                        if (IsGoodDonatingSite(r_from,c_from,from))
+                                        {
+                                           FoundTo = true;
+                                           break;
+                                        }
+                                        if (FoundTo == true) break;
+                                        for (int c = 0; c < 2 * d; c++)
+                                        {
+                                            c_from --;
+                                            if (IsGoodDonatingSite(r_from, c_from, from))
+                                            {
+                                                FoundTo = true;
+                                                break;
+                                            }
+                                            if (FoundTo == true) break;
+                                        }
+                                        if (FoundTo == true) break;
+                                        for (int r = 0; r < 2 * d; r++)
+                                        {
+                                            r_from --;
+                                            if (IsGoodDonatingSite(r_from, c_from, from))
+                                            {
+                                                FoundTo = true;
+                                                break;
+                                            }
+                                            if (FoundTo == true) break;
+                                        }
+                                        if (FoundTo == true) break;
+                                        for (int c = 0; c < 2 * d; c++)
+                                        {
+                                            c_from ++;
+                                            if (IsGoodDonatingSite(r_from, c_from, from))
+                                            {
+                                                FoundTo = true;
+                                                break;
+                                            }
+                                            if (FoundTo == true) break;
+                                        }
+                                        if (FoundTo == true) break;
+                                        for (int r = 0; r < 2 * d; r++)
+                                        {
+                                            r_from ++;
+                                            if (IsGoodDonatingSite(r_from, c_from, from))
+                                            {
+                                                FoundTo = true;
+                                                break;
+                                            }
+                                            if (FoundTo == true) break;
+                                        }
+                                        if (FoundTo == true) break;
+                                        else d++;
+                                        
+                                    }
+                                    if (FoundTo)
+                                    {
+                                        //Console.WriteLine("Found donating landuse in [" + r_from + "," + c_from + "]");
+                                        break;
+                                    }
+                                    
+                                }
+                                //Console.WriteLine("Changing   [" + r_from + "," + c_from + "] from " + LandUseDefininitions.LandUseTypes[Landscape.LandUse[r_from, c_from]] + " to " + LandUseDefininitions.LandUseTypes[to]);
+                                Landscape.LandUseMap[r_from, c_from] = to;
+                                CO2FixSimulations.Co2year[r_from, c_from] = 0;
+                                t++;
+                            }
+                            
+                        
+                        }
+                    }
+                }
+
+
+
+}*/
