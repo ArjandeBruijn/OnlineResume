@@ -88,7 +88,7 @@ function Simulate(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
 
         conversion_rate = null;
 
-        if (r_old == DarkGreen[0] && g_old == DarkGreen[1] && b_old == DarkGreen[2])conversion_rate = [0.998, 0, 0.004, 0, 0];
+        if (r_old == PF.Color[0] && g_old == PF.Color[1] && b_old == PF.Color[2]) conversion_rate = PF.Conversion_rate;
         else if (r_old == LightGreen[0] && g_old == LightGreen[1] && b_old == LightGreen[2]) conversion_rate = [0,0.994,0.006,0,0];
         else if (r_old == Yellow[0] && g_old == Yellow[1] && b_old == Yellow[2]) conversion_rate = [0.002,	0,	0.993,	0.003,	0];
         else if (r_old == Red[0] && g_old == Red[1] && b_old == Red[2]) conversion_rate = [0,	0,	0.003,	0.997,	0];
