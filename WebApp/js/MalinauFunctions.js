@@ -108,9 +108,21 @@ function Simulate2(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm,
 
                 landuse_to = GetLandUseType(MapCodeTo);
 
-                NumberOfConversions = Rate * landuse_to.Count;
+                NumberOfConversions = Rate * landuse.Count;
+
+                if (NumberOfConversions > landuse.Count) NumberOfConversions = landuse.Count;
 
                 alert(landuse.MapCode + " " + MapCodeTo + " " + Rate + " " + NumberOfConversions);
+
+                for (c = 0; c < NumberOfConversions; c++) { 
+                
+                    // Find a random settlement pixel
+
+                    alert(landuse.MapCode + " " + MapCodeTo + " " + Rate + " " + NumberOfConversions);
+                
+                }
+
+
             }
         }
 
