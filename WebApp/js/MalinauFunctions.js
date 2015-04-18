@@ -7,9 +7,10 @@ function setPixel(imageData, x, y, r, g, b, a) {
     imageData.data[index + 3] = a;
 }
 
-function Simulation() {
+function Simulate() {
 
-    alert("Hello world");
+   
+    alert("Hello");
 }
 
 function SetImage(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, ymax_zm,  scale) 
@@ -90,9 +91,6 @@ function SetImage(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
                     g = 128;
                     b = 128;
                 }
-
-
-
                 else if (MapCode == 11) {
                     r = 128;
                     g = 0;

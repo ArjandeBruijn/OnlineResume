@@ -11,7 +11,7 @@
 
     <canvas id="canvas2" width= "415", height= "561"> Random Canvas</canvas>
         
-    <button type="button" onclick=Simulation() >Click Me!</button>
+    <button type="button" onclick=Simulate(); >Click Me!</button>
 
    
     <p> These simulations are based on arial photographs taken in 2000 and 2009 of the north-eastern region of borneo, Indonesia. 
