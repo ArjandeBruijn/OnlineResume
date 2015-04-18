@@ -131,11 +131,16 @@ function Simulate(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
     var data = imageData.data;
 
     for (var i = 0; i < data.length; i += 4) {
-        r = 255 - data[i];     // red
-        g = 255 - data[i + 1]; // green
-        b = 255 - data[i + 2]; // blue
 
-        setPixelByIndex(imageData, i, r, g, b, 255);
+        r_old = data[i];
+        g_old = data[i + 1]
+        b_old = data[i + 2];
+
+        r_new = 255 - r_old;     // red
+        g_new = 255 - g_old; // green
+        b_new = 255 - b_old; // blue
+
+        setPixelByIndex(imageData, i, r_new, g_new, b_new, 255);
     }
     ctx.putImageData(imageData, 0, 0);
     
