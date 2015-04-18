@@ -96,31 +96,35 @@ function Simulate(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
 
                 cum_conversion_rate += conversion_rate[a]
 
-                if (value < conversion_rate[0]) {
+                if (a == 0 && value < cum_conversion_rate) {
                     // PF to PF
                     r_new = r_old;
                     g_new = g_old;
                     b_new = b_old;
+                    break;
                 }
-                else if (value < conversion_rate[0] + conversion_rate[1]) {
+                else if (a == 1 && value < cum_conversion_rate) {
                     // PF to SF
                     r_new = LightGreen[0];     // red
                     g_new = LightGreen[1]; // green
                     b_new = LightGreen[2]; // blue
+                    break;
                 }
-                else if (value < conversion_rate[0] + conversion_rate[1] + conversion_rate[2]) {
+                else if (a == 2 && value < cum_conversion_rate) {
                     // PF to crop
                     r_new = Yellow[0];     // red
                     g_new = Yellow[1]; // green
                     b_new = Yellow[2]; // blue
+                    break;
                 }
-                else if (value < conversion_rate[0] + conversion_rate[1] + conversion_rate[2] + conversion_rate[3]) {
+                else if (a == 3 && value < cum_conversion_rate) {
                     // PF to settlements
                     r_new = Red[0];     // red
                     g_new = Red[1]; // green
                     b_new = Red[2]; // blue
+                    break;
                 }
-                else if (value < conversion_rate[0] + conversion_rate[1] + conversion_rate[2] + conversion_rate[3] + conversion_rate[4]) {
+                else if (a == 4 && value < cum_conversion_rate) {
                     // PF to OtherLand
                     // r_new = 255 - r_old;     // red
                     //g_new = 255 - g_old; // green
