@@ -96,6 +96,10 @@ function Simulate2(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm,
 
                 conversion = conversion_rate[a];
 
+                MapCodeTo = conversion.MapCodeNew;
+                Rate = conversion.rate;
+
+                alert(MapCodeTo + " " + Rate);
             }
         }
 
