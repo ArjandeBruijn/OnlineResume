@@ -10,7 +10,13 @@ function setPixel(imageData, x, y, r, g, b, a) {
 function Simulate() {
 
     element = document.getElementById("canvas1");
-    alert("Hello");
+    c = element.getContext("2d");
+
+    var width = c.canvas.width;
+    var height = c.canvas.height;
+
+    alert(width);
+    alert(height);
 }
 
 function SetImage(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, ymax_zm,  scale) 
