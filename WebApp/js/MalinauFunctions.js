@@ -17,13 +17,7 @@ function SetPixelColor(imgData, x, y, color) {
     setPixel(imgData, x, y, r, g, b, 255);
 }
 
-function setPixel(imageData, x, y, r, g, b, a) {
-    index = (x + y * imageData.width) * 4;
-    imageData.data[index + 0] = r;
-    imageData.data[index + 1] = g;
-    imageData.data[index + 2] = b;
-    imageData.data[index + 3] = a;
-}
+
 function Transition(imgData, x, y, from, to) {
    
     // Primary to secondary forest
@@ -111,7 +105,20 @@ function Simulate(container, xmin, xmax) {
     alert(height);
 }
 
-
+function setPixel(imageData, x, y, r, g, b, a) {
+    index = (x + y * imageData.width) * 4;
+    imageData.data[index + 0] = r;
+    imageData.data[index + 1] = g;
+    imageData.data[index + 2] = b;
+    imageData.data[index + 3] = a;
+}
+function setPixelByIndex(imageData, index, r, g, b, a) {
+     
+    imageData.data[index + 0] = r;
+    imageData.data[index + 1] = g;
+    imageData.data[index + 2] = b;
+    imageData.data[index + 3] = a;
+}
 
 function Simulate(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, ymax_zm, scale) {
 
@@ -124,27 +131,18 @@ function Simulate(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
     var data = imageData.data;
 
     for (var i = 0; i < data.length; i += 4) {
-        data[i] = 255 - data[i];     // red
-        data[i + 1] = 255 - data[i + 1]; // green
-        data[i + 2] = 255 - data[i + 2]; // blue
+        r = 255 - data[i];     // red
+        g = 255 - data[i + 1]; // green
+        b = 255 - data[i + 2]; // blue
+
+        setPixelByIndex(imageData, i, r, g, b, 255);
     }
     ctx.putImageData(imageData, 0, 0);
     
     
     alert("Shitface");
 
-    /*
-
-    c.putImageData(pixelData, 0, 0); // at coords 0,0
-
-
-    for (var i = 0; i < data.length; i += 4) {
-    data[i] = 255 - data[i];     // red
-    data[i + 1] = 255 - data[i + 1]; // green
-    data[i + 2] = 255 - data[i + 2]; // blue
-    }
-    */
-
+     
 
     /*
     // read the width and height of the canvas
