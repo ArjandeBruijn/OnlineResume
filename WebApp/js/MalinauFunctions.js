@@ -135,8 +135,6 @@ function Simulate(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
         g_old = data[i + 1]
         b_old = data[i + 2];
 
-        var Colors = [DarkGreen, LightGreen, Yellow, Red, DarkGreen];
-
         conversion_rate = null;
 
         for (l = 0; l < LandUseTypes.length; l++) {
@@ -216,6 +214,7 @@ function SetImage(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
                         _y = scale * (y - ymin_zm) + _i;
 
                         setPixel(imageData, _x, _y, land_use.Color);  // 255 opaque
+                        land_use.Count++;
                     }
                 }
                  
