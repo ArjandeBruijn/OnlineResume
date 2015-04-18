@@ -39,6 +39,12 @@ function Simulate() {
         alert(width);
     alert(height);
 }
+var DarkGreen = [0, 100, 0];
+var LightGreen = [0, 255, 0];
+var Yellow = [255, 255, 0];
+var Color1 = [0, 255, 0];
+var Red = [255, 0, 0];
+var Cyan = [0,255,255];
 
 function SetImage(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, ymax_zm,  scale) 
 {
@@ -64,68 +70,81 @@ function SetImage(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
             {
                 var MapCode = MalinauMap[counter];
 
+                // Swampy Bush
+                //Bushes/Shrubland
+                //Primary Swamp Forest
+                // Swampy Bush
                 if (MapCode == -9999) {
                     r = g = b = 255; // white
                 }
                 else if (MapCode == 1) {
-                    r = 0;
-                    g = 0;
-                    b = 255;
+                    //r = g = b = 255; // white
+                    r = DarkGreen[0];                  //dark green 0, 255, 0
+                    g = DarkGreen[1];                //Primary Dry Forest
+                    b = DarkGreen[2];
                 }
                 else if (MapCode == 2) {
-                    r = 0;
-                    g = 255;
-                    b = 0;
+                    //r = g = b = 255; // white
+                    r = LightGreen[0];                  //Secondary Dry Forest/Logged Forest
+                    g = LightGreen[1];                // light green
+                    b = LightGreen[2];
                 }
                 else if (MapCode == 3) {
-                    r = 255;
-                    g = 0;
-                    b = 0;
+
+                    r = Color1[0];             
+                    g = Color1[1]; 
+                    b = Color1[2];  
                 }
                 else if (MapCode == 4) {
-                    r = 0;
-                    g = 255;
-                    b = 255;
+
+                    r = Red[0]; //  0;// Settlement/Developed Land
+                    g = Red[1];// 255;
+                    b = Red[2];//  255;
+                    //r = g = b = 255; // white
                 }
                 else if (MapCode == 5) {
-                    r = 255;
-                    g = 0;
-                    b = 255;
+                    r = Cyan[0];                
+                    g = Cyan[1];
+                    b = Cyan[2];
                 }
                 else if (MapCode == 6) {
-                    r = 255;
-                    g = 255;
-                    b = 0;
+                    r = Yellow[0];
+                    g = Yellow[1];  // Open Land
+                    b = Yellow[2] ;
+                    
                 }
 
                 else if (MapCode == 7) {
                     r = 0;
-                    g = 0;
+                    g = 128; 
                     b = 128;
+                    //r = g = b = 255; // white
+                    
                 }
                 else if (MapCode == 8) {
-                    r = 0;
-                    g = 128;
-                    b = 0;
+                    r = 0;                  //Water Body
+                    g = 0;
+                    b = 128;
+
                 }
                 else if (MapCode == 9) {
-                    r = 128;
+                    r = 128;                //Secondary Swamp Forest/Logged Area
                     g = 0;
                     b = 0;
                 }
                 else if (MapCode == 10) {
-                    r = 0;
-                    g = 128;
-                    b = 128;
+                    r = 0;                  //Secondary Mangrove Forest/ Logged
+                    g = 0; 
+                    b = 255;
                 }
                 else if (MapCode == 11) {
-                    r = 128;
+                    r = 128;            //  Upland Farming Mixed with Bush
                     g = 0;
                     b = 128;
                 }
                 else if (MapCode == 12) {
                     r = 128;
-                    g = 128;
+                    g = 128;            // Airport / Harbor
                     b = 0;
                 }
                 else {
