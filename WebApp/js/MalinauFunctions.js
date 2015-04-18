@@ -8,8 +8,13 @@ var Color1 = [0, 255, 0]; // position 3
 var Red = [255, 0, 0];
 var Cyan = [0, 255, 255];
 
-function SetPixelColor(x,y,color ) { 
+function SetPixelColor(imgData, x, y, color) {
 
+    
+
+    alert('SetPixelColor x ' + x + ' y ' + y + ' color = ' + color);
+
+    setPixel(imgData, x, y, r, g, b, 255);
 }
 
 function setPixel(imageData, x, y, r, g, b, a) {
@@ -19,15 +24,15 @@ function setPixel(imageData, x, y, r, g, b, a) {
     imageData.data[index + 2] = b;
     imageData.data[index + 3] = a;
 }
-function Transition(x, y, from, to) {
+function Transition(imgData, x, y, from, to) {
    
     // Primary to secondary forest
     if (from == 0 && to == 1) {
         
+        //alert('Transition x ' + x + ' y ' + y + " from : " + from + " to " + to);
+
+        SetPixelColor(imgData, x, y, LightGreen);
         alert('Transition x ' + x + ' y ' + y + " from : " + from + " to " + to);
-        
-        SetPixelColor(x, y, LightGreen);
-    
     }
 
 }
@@ -77,7 +82,7 @@ function Simulate() {
                         if (value2 > conversion_rate[1]) {
                             // PF to SF
                             
-                            Transition(row, col, 0, 1);
+                            Transition(imgData, row, col, 0, 1);
                         }
                     }
 
