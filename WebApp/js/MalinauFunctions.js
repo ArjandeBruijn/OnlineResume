@@ -36,12 +36,14 @@ function Transition(imgData, x, y, from, to) {
     }
 
 }
-function Simulate() {
+function ShowAlert() {
+    alert("alert");
+}
+function Simulate(container, xmin, xmax) {
 
+    alert("Simulate");
     element = document.getElementById("canvas1");
     c = element.getContext("2d");
-
-    
 
     var width = c.canvas.width;
     var height = c.canvas.height;
@@ -108,13 +110,57 @@ function Simulate() {
         alert(width);
     alert(height);
 }
- 
 
 
 
+function SetImage2(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, ymax_zm, scale) {
+
+    alert("scale" + scale);
+
+    element = document.getElementById(container);
+    c = element.getContext("2d");
+
+    // read the width and height of the canvas
+    ncols = scale * (ymax - ymin);
+    nrows = scale * (xmax - xmin);
+
+    // create a new pixel array
+    imageData = c.createImageData(nrows, ncols);
+
+    // draw random dots
+    var counter = 0;
+
+    for (y = ymin; y < ymax; y++) {
+        for (x = xmin; x < xmax; x++) {
+            if (x < xmax_zm && x > xmin_zm && y < ymax_zm && y > ymin_zm) {
+
+                r = Yellow[0];
+                g = Yellow[1];  // Open Land
+                b = Yellow[2];
+
+                var i;
+                for (i = 0; i < scale; i++) {
+
+                    for (_i = 0; _i < scale; _i++) {
+
+                        _x = scale * (x - xmin_zm) + i;
+                        _y = scale * (y - ymin_zm) + _i;
+
+                        setPixel(imageData, _x, _y, r, g, b, 255);  // 255 opaque
+                    }
+                }
+
+            }
+        }
+    }
+    c.putImageData(imageData, 0, 0); // at coords 0,0
+
+    alert("Shitface");
+}
 
 function SetImage(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, ymax_zm,  scale) 
 {
+    alert("SetImage");
 
     element = document.getElementById(container);
     c = element.getContext("2d");

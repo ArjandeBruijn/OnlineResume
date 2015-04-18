@@ -11,9 +11,15 @@
 
     <canvas id="canvas2" width= "415", height= "561"> Random Canvas</canvas>
         
-    <button type="button" onclick=Simulate(); >Click Me!</button>
+    <button type="button" onclick="myFunction()" >Click Me!</button>
 
-   
+    <script>
+        function myFunction() {
+
+            SetImage2("canvas1", 0, 415, 0, 561, 300, 415, 0, 325, 1);
+        }
+    </script>
+
     <p> These simulations are based on arial photographs taken in 2000 and 2009 of the north-eastern region of borneo, Indonesia. 
     
     <p>A land use transition matrix is derived from the areas that were covered by 12 landuse types. The land use transittion 
@@ -91,7 +97,7 @@
      </table>
     
     
-
+    
 	
 	<script src="js/Malinau.js"></script>
     <script type='text/javascript' src='js/MalinauFunctions.js'></script>	
