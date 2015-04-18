@@ -9,7 +9,7 @@ function setPixel(imageData, x, y, r, g, b, a) {
 
 function Simulate() {
 
-   
+    element = document.getElementById("canvas1");
     alert("Hello");
 }
 
