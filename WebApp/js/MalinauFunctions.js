@@ -112,6 +112,14 @@ function setPixel(imageData, x, y, r, g, b, a) {
     imageData.data[index + 2] = b;
     imageData.data[index + 3] = a;
 }
+function get_index(imageData, x, y) {
+
+    return 0;
+}
+function get_xy(index) {
+
+    return [0, 0];
+}
 function setPixelByIndex(imageData, index, r, g, b, a) {
      
     imageData.data[index + 0] = r;
@@ -131,6 +139,10 @@ function Simulate(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
     var data = imageData.data;
 
     for (var i = 0; i < data.length; i += 4) {
+
+        alert(get_xy(i));
+        alert(get_index(imageData, 0,0));
+
 
         r_old = data[i];
         g_old = data[i + 1]
