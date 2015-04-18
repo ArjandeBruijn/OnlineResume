@@ -64,11 +64,13 @@ function LandUse(MapCode, Color, Conversion_rate) {
     this.Color = Color;
     this.Conversion_rate = Conversion_rate;
 }
+var PF = new LandUse(1, DarkGreen, [0.998, 0, 0.004, 0, 0]);
+var SF = new LandUse(2, LightGreen, [0, 0.994, 0.006, 0, 0]);
+var OpenLand = new LandUse(6, Yellow, [0.002, 0, 0.993, 0.003, 0]);
+var Settlement = new LandUse(4, Red, [0, 0, 0.003, 0.997, 0]);
+
 
 function Simulate(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, ymax_zm, scale) {
-
-
-    var PF = new LandUse(i, DarkGreen, [0.998, 0, 0.004, 0, 0]);
 
     var canvas = document.getElementById(container);
     var ctx = canvas.getContext('2d');
@@ -89,20 +91,15 @@ function Simulate(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
         conversion_rate = null;
 
         if (r_old == PF.Color[0] && g_old == PF.Color[1] && b_old == PF.Color[2]) conversion_rate = PF.Conversion_rate;
-        else if (r_old == LightGreen[0] && g_old == LightGreen[1] && b_old == LightGreen[2]) conversion_rate = [0,0.994,0.006,0,0];
-        else if (r_old == Yellow[0] && g_old == Yellow[1] && b_old == Yellow[2]) conversion_rate = [0.002,	0,	0.993,	0.003,	0];
-        else if (r_old == Red[0] && g_old == Red[1] && b_old == Red[2]) conversion_rate = [0,	0,	0.003,	0.997,	0];
-        else if (r_old == DarkGreen[0] && g_old == DarkGreen[1] && b_old == DarkGreen[2]) conversion_rate = [0,	0,	0,	0,	1];
+        else if (r_old == SF.Color[0] && g_old == SF.Color[1] && b_old == SF.Color[2]) conversion_rate = SF.Conversion_rate;
+        else if (r_old == OpenLand.Color[0] && g_old == OpenLand.Color[1] && b_old == OpenLand.Color[2]) conversion_rate = OpenLand.Conversion_rate;
+        else if (r_old == Settlement.Color[0] && g_old == Settlement.Color[1] && b_old == Settlement.Color[2])Settlement.Conversion_rate;
+        
 
         if (conversion_rate == null) continue;
 
         
-        /* 	Forest	Secondary Forest	Cropland	Settlements	Other land
-        Forest	0.998 	0	0.004	0	0
-        Secondary Forest	0	0.994	0.006	0	0
-        Cropland	0.002	0	0.993	0.003	0
-        Settlements	0	0	0.003	0.997	0
-        Other land	0	0	0	0	1 */
+         
 
         var value = Math.random();
 
