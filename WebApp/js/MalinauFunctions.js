@@ -1,10 +1,14 @@
-var DarkGreen = [0, 100, 0];
-var LightGreen = [0, 255, 0];
-var Yellow = [255, 255, 0];
-var Color1 = [0, 255, 0];
+
+
+
+var DarkGreen = [0, 100, 0];   // position 0
+var LightGreen = [0, 255, 0]; // position 1
+var Yellow = [255, 255, 0]; // position 2
+var Color1 = [0, 255, 0]; // position 3
 var Red = [255, 0, 0];
 var Cyan = [0, 255, 255];
 
+ 
 
 function setPixel(imageData, x, y, r, g, b, a) {
     index = (x + y * imageData.width) * 4;
@@ -13,7 +17,8 @@ function setPixel(imageData, x, y, r, g, b, a) {
     imageData.data[index + 2] = b;
     imageData.data[index + 3] = a;
 }
-function Transition(from, to) { 
+function Transition(x, y, from, to) {
+    alert('Transition x '+ x +' y ' + y + " from : " + from + " to " + to);
 
 
 }
@@ -62,8 +67,8 @@ function Simulate() {
                         var value2 = Math.random();
                         if (value2 > conversion_rate[1]) {
                             // PF to SF
-                            alert('value: ' + value);
-                            Transition(0,1);
+                            
+                            Transition(row, col, 0, 1);
                         }
                     }
 
