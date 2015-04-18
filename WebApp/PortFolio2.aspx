@@ -16,7 +16,7 @@
     <script>
         function myFunction() {
 
-            SetImage2("canvas1", 0, 415, 0, 561, 0, 415, 0, 561, 1);
+            Simulate("canvas1", 0, 415, 0, 561, 0, 415, 0, 561, 1);
         }
     </script>
 

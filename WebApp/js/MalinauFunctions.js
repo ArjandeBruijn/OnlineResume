@@ -113,7 +113,7 @@ function Simulate(container, xmin, xmax) {
 
 
 
-function SetImage2(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, ymax_zm, scale) {
+function Simulate(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, ymax_zm, scale) {
 
     alert("scale" + scale);
 
