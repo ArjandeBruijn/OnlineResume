@@ -90,6 +90,11 @@ function Simulate(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
 
             var value = Math.random();
 
+            for (a = 0; a < conversion_rate.length; a++) {
+
+            }
+            
+
             if (value < conversion_rate[0]) {
                 // PF to PF
                 r_new = r_old;
@@ -115,7 +120,6 @@ function Simulate(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
                 b_new = Red[2]; // blue
             }
             else if (value < conversion_rate[0] + conversion_rate[1] + conversion_rate[2] + conversion_rate[3] + conversion_rate[4]) {
-                
                 // PF to OtherLand
                 // r_new = 255 - r_old;     // red
                 //g_new = 255 - g_old; // green
@@ -126,7 +130,7 @@ function Simulate(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
             setPixelByIndex(imageData, i, r_new, g_new, b_new, 255);
         }
 
-
+        
         
     }
     ctx.putImageData(imageData, 0, 0);
