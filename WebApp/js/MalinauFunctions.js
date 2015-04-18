@@ -11,6 +11,8 @@ var SF = new LandUse(2, LightGreen, [0, 0.994, 0.006, 0, 0]);
 var OpenLand = new LandUse(6, Yellow, [0.002, 0, 0.993, 0.003, 0]);
 var Settlement = new LandUse(4, Red, [0, 0, 0.003, 0.997, 0]);
 
+var LandUseTypes = [PF, SF, OpenLand, Settlement];
+
 function SetPixelColor(imgData, x, y, color) {
  
     alert('SetPixelColor x ' + x + ' y ' + y + ' color = ' + color);
@@ -92,10 +94,18 @@ function Simulate(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
 
         conversion_rate = null;
 
-        if (r_old == PF.Color[0] && g_old == PF.Color[1] && b_old == PF.Color[2]) conversion_rate = PF.Conversion_rate;
-        else if (r_old == SF.Color[0] && g_old == SF.Color[1] && b_old == SF.Color[2]) conversion_rate = SF.Conversion_rate;
-        else if (r_old == OpenLand.Color[0] && g_old == OpenLand.Color[1] && b_old == OpenLand.Color[2]) conversion_rate = OpenLand.Conversion_rate;
-        else if (r_old == Settlement.Color[0] && g_old == Settlement.Color[1] && b_old == Settlement.Color[2])Settlement.Conversion_rate;
+        for (l = 0; l < LandUseTypes.length; l++) {
+
+            if (r_old == LandUseTypes[l].Color[0] && g_old == LandUseTypes[l].Color[1] && b_old == LandUseTypes[l].Color[2]) conversion_rate = LandUseTypes[l].Conversion_rate;
+
+            //else if (r_old == SF.Color[0] && g_old == SF.Color[1] && b_old == SF.Color[2]) conversion_rate = SF.Conversion_rate;
+            //else if (r_old == OpenLand.Color[0] && g_old == OpenLand.Color[1] && b_old == OpenLand.Color[2]) conversion_rate = OpenLand.Conversion_rate;
+            //else if (r_old == Settlement.Color[0] && g_old == Settlement.Color[1] && b_old == Settlement.Color[2]) Settlement.Conversion_rate;
+        
+        
+        }
+
+            
         
 
         if (conversion_rate == null) continue;
