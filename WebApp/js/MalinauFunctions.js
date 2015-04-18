@@ -14,12 +14,12 @@ var Color12 = [128, 128, 0];
 var Color13 = [0, 0, 0]; //black        
 
 var NoData = new LandUse(-9999, White,null); 
-var PF = new LandUse(1, DarkGreen, [0.998, 0, 0.004, 0, 0]);
-var SF = new LandUse(2, LightGreen, [0, 0.994, 0.006, 0, 0]);
+var PF = new LandUse(1, DarkGreen, [0.998, 0, 0.004, 0]);
+var SF = new LandUse(2, LightGreen, [0, 0.994, 0.006, 0]);
 var LandUse3 = new LandUse(3, Color3, null);
-var Settlement = new LandUse(4, Red, [0, 0, 0.003, 0.997, 0]);
+var Settlement = new LandUse(4, Red, [0, 0, 0.003, 0.997]);
 var LandUse5 = new LandUse(5, Cyan, null);
-var OpenLand = new LandUse(6, Yellow, [0.002, 0, 0.993, 0.003, 0]);
+var OpenLand = new LandUse(6, Yellow, [0.002, 0, 0.993, 0.003]);
 var LandUse7 = new LandUse(7, Color7, null);
 var Water = new LandUse(8, Blue, null);
 var LandUse9 = new LandUse(9, Color9, null);
@@ -80,7 +80,15 @@ function Simulate2(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm,
 
         if (conversion_rate != null) {
 
+            //From / To	Forest	Secondary Forest	Cropland	Settlements	
+            //Forest	0.998	0	0.004	0	
+            //Secondary Forest	0	0.994	0.006		
+            //Cropland	0.002	0	0.993	0.003	
+            //Settlements	0	0	0.003	0.997	
+            
+
             for (a = 0; a < conversion_rate.length; a++) {
+                
 
             }
         }
