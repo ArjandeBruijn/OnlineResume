@@ -201,21 +201,9 @@ function SetImage(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
             {
                 var MapCode = MalinauMap[counter];
 
-                r = g = b = null;
+                land_use = GetLandUseType(MapCode);
 
-                for (l = 0; l < LandUseTypes.length; l++) {
-
-
-                    if (LandUseTypes[l].MapCode == MapCode) {
-
-                        r = LandUseTypes[l].Color[0];
-                        g = LandUseTypes[l].Color[1];
-                        b = LandUseTypes[l].Color[2];
-                    }
-                
-                }
-
-                if (r == null) {
+                if (land_use == null) {
                     continue;
                 }
 
@@ -227,7 +215,7 @@ function SetImage(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
                         _x = scale * (x - xmin_zm) + i ;
                         _y = scale * (y - ymin_zm) + _i;
 
-                        setPixel(imageData, _x, _y, r, g, b, 255);  // 255 opaque
+                        setPixel(imageData, _x, _y, land_use.Color[0], land_use.Color[1], land_use.Color[2], 255);  // 255 opaque
                     }
                 }
                  
