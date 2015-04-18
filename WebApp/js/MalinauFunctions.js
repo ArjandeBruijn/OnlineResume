@@ -37,6 +37,26 @@ var LandUse13 = new LandUse(13, Color13, null);
 
 var LandUseTypes = [NoData, PF, SF, LandUse3, Settlement, LandUse5, OpenLand, LandUse7, Water, LandUse9, LandUse10, LandUse11, LandUse12, LandUse13];
 
+function declare_pixels(nrows, ncols) {
+    var myArray = [[], []];
+    //  myArray[] = new Array(14);
+
+    var n = 0;
+    var i = 0;
+    var s = 0;
+    for (i = 0; i <  ncols; i++) {
+        if (!myArray[i])
+            myArray[i] = []
+        for (s = 0; s < nrows; s++) {
+            myArray[i][s] = s;
+            n++;
+        }
+        s = 0;
+    }
+    return myArray;
+}
+
+ 
 function ConversionRate(MapCodeNew, rate) {
     this.MapCodeNew = MapCodeNew;
     this.rate = rate;
@@ -48,12 +68,16 @@ function LandUse(MapCode, Color, Conversion_rate) {
     this.Color = Color;
     this.Conversion_rate = Conversion_rate;
 }
-function setPixel(imageData, x, y, Color) {
+function setPixel(x, y, land_use) {
     index = get_index(imageData, x, y);
 
-    imageData.data[index + 0] = Color[0];
-    imageData.data[index + 1] = Color[1];
-    imageData.data[index + 2] = Color[2];
+    var items = [[1, 2], [3, 4], [5, 6]];
+
+    pixels[x][y] = land_use;
+
+    imageData.data[index + 0] = land_use.Color[0];
+    imageData.data[index + 1] = land_use.Color[1];
+    imageData.data[index + 2] = land_use.Color[2];
     imageData.data[index + 3] = 255;
 }
 function setPixelByIndex(imageData, index, r, g, b, a) {
@@ -88,55 +112,76 @@ function GetLandUseType(MapCode) {
     }
     return null;
 }
+function GetPixelsWithLandUse(landuse) {
 
-function Simulate2(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, ymax_zm, scale) {
-    
-    for (l = 0; l < LandUseTypes.length; l++) {
+    my_landuse_array = [];
+    for (r = 0; r < pixels.length; r++) {
 
-        landuse = LandUseTypes[l];
+        for (c = 0; c < pixels[r].length; c++) {
 
-        conversion_rate = landuse.Conversion_rate;
-
-        if (conversion_rate != null) {
-
-            for (a = 0; a < conversion_rate.length; a++) {
-
-                conversion = conversion_rate[a];
-
-                MapCodeTo = conversion.MapCodeNew;
-                Rate = conversion.rate;
-
-                landuse_to = GetLandUseType(MapCodeTo);
-
-                NumberOfConversions = Rate * landuse.Count;
-
-                if (NumberOfConversions > landuse.Count) NumberOfConversions = landuse.Count;
-
-                alert(landuse.MapCode + " " + MapCodeTo + " " + Rate + " " + NumberOfConversions);
-
-                for (c = 0; c < NumberOfConversions; c++) { 
-                
-                    // Find a random settlement pixel
-
-                    alert(landuse.MapCode + " " + MapCodeTo + " " + Rate + " " + NumberOfConversions);
-                
-                }
-
-
-            }
+            if (pixels[r][c] == landuse) my_landuse_array.push([r,c]);
+             
         }
 
     }
+    return my_landuse_array;
+}
+function Simulate2(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, ymax_zm, scale) {
+
+
+        PF_array = GetPixelsWithLandUse(PF);
+        SF_array = GetPixelsWithLandUse(SF);
+        Settlement_array = GetPixelsWithLandUse(Settlement);
+
+        for (l = 0; l < LandUseTypes.length; l++) {
+
+            landuse = LandUseTypes[l];
+
+            conversion_rate = landuse.Conversion_rate;
+
+            if (conversion_rate != null) {
+
+                for (a = 0; a < conversion_rate.length; a++) {
+
+                    conversion = conversion_rate[a];
+
+                    MapCodeTo = conversion.MapCodeNew;
+                    Rate = conversion.rate;
+
+                    landuse_to = GetLandUseType(MapCodeTo);
+
+                    NumberOfConversions = Rate * landuse.Count;
+
+                    if (NumberOfConversions > landuse.Count) NumberOfConversions = landuse.Count;
+
+                    alert(landuse.MapCode + " " + MapCodeTo + " " + Rate + " " + NumberOfConversions);
+
+                    for (c = 0; c < NumberOfConversions; c++) {
+
+                        random = Math.floor(Math.random() * Settlement_array.length);
+
+                        random_settlement_coord = Settlement_array[random];
+
+                        
+
+                    }
+
+
+                }
+            }
+
+        }
     alert("Simulate2");
 }
 
 function Simulate(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, ymax_zm, scale) {
 
+    
     var canvas = document.getElementById(container);
     var ctx = canvas.getContext('2d');
 
-    var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-    var data = imageData.data;
+    imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    data = imageData.data;
 
 
     for (var i = 0; i < data.length; i += 4) {
@@ -187,8 +232,10 @@ function Simulate(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
      
 }
 
-function SetImage(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, ymax_zm,  scale) 
-{
+function SetImage(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, ymax_zm,  scale) {
+
+    pixels = declare_pixels(xmax - xmin, ymax - ymin);
+
     element = document.getElementById(container);
     c = element.getContext("2d");
 
@@ -225,7 +272,7 @@ function SetImage(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
                         _x = scale * (x - xmin_zm) + i ;
                         _y = scale * (y - ymin_zm) + _i;
 
-                        setPixel(imageData, _x, _y, land_use.Color);  // 255 opaque
+                        setPixel(_x, _y, land_use);  // 255 opaque
                         land_use.Count++;
                     }
                 }
