@@ -58,8 +58,17 @@ function setPixelByIndex(imageData, index, r, g, b, a) {
     imageData.data[index + 2] = b;
     imageData.data[index + 3] = a;
 }
+function LandUse(MapCode, Color, Conversion_rate) {
+
+    this.MapCode = MapCode;
+    this.Color = Color;
+    this.Conversion_rate = Conversion_rate;
+}
 
 function Simulate(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, ymax_zm, scale) {
+
+
+    var PF = new LandUse(i, DarkGreen, [0.998, 0, 0.004, 0, 0]);
 
     var canvas = document.getElementById(container);
     var ctx = canvas.getContext('2d');
