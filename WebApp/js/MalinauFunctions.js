@@ -12,21 +12,23 @@ function Simulate() {
     element = document.getElementById("canvas1");
     c = element.getContext("2d");
 
-    var imgData = c.getImageData(10, 10, 50, 50);
+    
 
     var width = c.canvas.width;
     var height = c.canvas.height;
 
+    var imgData = c.getImageData(0, 0, width, height);
      
     for (var time = 0; time < 100; time++) {
+         
 
         for (var col = 0; col < width; col++) {
 
             for (var row = 0; row < height; row++) {
 
-                
-                 
-            
+                var pixelData = element.getContext('2d').getImageData(col, row, 1, 1).data;
+
+                alert('R: ' + pixelData[0] + '<br>G: ' + pixelData[1] + '<br>B: ' + pixelData[2] + '<br>A: ' + pixelData[3]);
             }
         
         }
