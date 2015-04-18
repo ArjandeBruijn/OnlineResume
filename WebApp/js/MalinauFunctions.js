@@ -13,6 +13,8 @@ var Settlement = new LandUse(4, Red, [0, 0, 0.003, 0.997, 0]);
 
 var LandUseTypes = [PF, SF, OpenLand, Settlement];
 
+
+
 function SetPixelColor(imgData, x, y, color) {
  
     alert('SetPixelColor x ' + x + ' y ' + y + ' color = ' + color);
@@ -95,18 +97,8 @@ function Simulate(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
         conversion_rate = null;
 
         for (l = 0; l < LandUseTypes.length; l++) {
-
             if (r_old == LandUseTypes[l].Color[0] && g_old == LandUseTypes[l].Color[1] && b_old == LandUseTypes[l].Color[2]) conversion_rate = LandUseTypes[l].Conversion_rate;
-
-            //else if (r_old == SF.Color[0] && g_old == SF.Color[1] && b_old == SF.Color[2]) conversion_rate = SF.Conversion_rate;
-            //else if (r_old == OpenLand.Color[0] && g_old == OpenLand.Color[1] && b_old == OpenLand.Color[2]) conversion_rate = OpenLand.Conversion_rate;
-            //else if (r_old == Settlement.Color[0] && g_old == Settlement.Color[1] && b_old == Settlement.Color[2]) Settlement.Conversion_rate;
-        
-        
         }
-
-            
-        
 
         if (conversion_rate == null) continue;
 
@@ -166,6 +158,28 @@ function SetImage(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
             if (x < xmax_zm && x > xmin_zm && y < ymax_zm && y > ymin_zm)
             {
                 var MapCode = MalinauMap[counter];
+
+                r = g = b = null;
+
+                for (l = 0; l < LandUseTypes.length; l++) {
+
+
+                    if (LandUseTypes[l].MapCode == MapCode) {
+
+                        r = LandUseTypes[l].Color[0];
+                        g = LandUseTypes[l].Color[1];
+                        b = LandUseTypes[l].Color[2];
+                    }
+                
+                }
+
+                if (r == null) {
+
+                    counter++;
+                    continue;
+                }
+
+                /*
 
                 // Swampy Bush
                 //Bushes/Shrubland
@@ -249,6 +263,7 @@ function SetImage(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
                     g = 0;
                     b = 0; //black
                 }
+                */
                 var i;
                 for (i = 0; i < scale; i++) {
 
