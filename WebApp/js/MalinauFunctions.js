@@ -155,11 +155,28 @@ function Simulate(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
         g_old = data[i + 1]
         b_old = data[i + 2];
 
-        r_new = 255 - r_old;     // red
-        g_new = 255 - g_old; // green
-        b_new = 255 - b_old; // blue
+        if (r_old == DarkGreen[0] && g_old == DarkGreen[1] && b_old == DarkGreen[2]) {
+            // Primary forest
 
-        setPixelByIndex(imageData, i, r_new, g_new, b_new, 255);
+            /* 	Forest	Secondary Forest	Cropland	Settlements	Other land
+            Forest	0.998 	0	0.004	0	0
+            Secondary Forest	0	0.994	0.006	0	0
+            Cropland	0.002	0	0.993	0.003	0
+            Settlements	0	0	0.003	0.997	0
+            Other land	0	0	0	0	1 */
+
+            // Get Conversion rate to various other lucs
+            var conversion_rate = [0.998, 0, 0.004, 0, 0];
+
+            r_new = 255 - r_old;     // red
+            g_new = 255 - g_old; // green
+            b_new = 255 - b_old; // blue
+
+            setPixelByIndex(imageData, i, r_new, g_new, b_new, 255);
+        }
+
+
+        
     }
     ctx.putImageData(imageData, 0, 0);
     
