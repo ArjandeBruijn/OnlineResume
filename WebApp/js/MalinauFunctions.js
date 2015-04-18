@@ -119,9 +119,6 @@ function Simulate(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
 
         if (conversion_rate == null) continue;
 
-        
-         
-
         var value = Math.random();
 
         cum_conversion_rate = 0;
@@ -139,11 +136,12 @@ function Simulate(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
                 b_new = Color[2];
                 break;
             }
-                
+
 
         }
-           
-        setPixelByIndex(imageData, i, r_new, g_new, b_new, 255);
+        if (r_old != r_new || g_old != g_new || b_old != b_new) {
+            setPixelByIndex(imageData, i, r_new, g_new, b_new, 255);
+        }
          
     }
     ctx.putImageData(imageData, 0, 0);
