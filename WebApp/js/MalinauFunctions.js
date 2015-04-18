@@ -88,6 +88,8 @@ function Simulate(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
             // Get Conversion rate to various other lucs
             var conversion_rate = [0.998, 0, 0.004, 0, 0];
 
+            var Colors = [DarkGreen, LightGreen, Yellow, Red, DarkGreen];
+
             var value = Math.random();
 
             cum_conversion_rate = 0;
@@ -98,37 +100,47 @@ function Simulate(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
 
                 if (a == 0 && value < cum_conversion_rate) {
                     // PF to PF
-                    r_new = r_old;
-                    g_new = g_old;
-                    b_new = b_old;
+                    var Color = Colors[a];
+
+                    r_new = Color[0];
+                    g_new = Color[1];
+                    b_new = Color[2];
                     break;
                 }
                 else if (a == 1 && value < cum_conversion_rate) {
                     // PF to SF
-                    r_new = LightGreen[0];     // red
-                    g_new = LightGreen[1]; // green
-                    b_new = LightGreen[2]; // blue
+                    var Color = Colors[a];
+
+                    r_new = Color[0];
+                    g_new = Color[1];
+                    b_new = Color[2];
                     break;
                 }
                 else if (a == 2 && value < cum_conversion_rate) {
                     // PF to crop
-                    r_new = Yellow[0];     // red
-                    g_new = Yellow[1]; // green
-                    b_new = Yellow[2]; // blue
+                    var Color = Colors[a];
+
+                    r_new = Color[0];
+                    g_new = Color[1];
+                    b_new = Color[2];
                     break;
                 }
                 else if (a == 3 && value < cum_conversion_rate) {
                     // PF to settlements
-                    r_new = Red[0];     // red
-                    g_new = Red[1]; // green
-                    b_new = Red[2]; // blue
+                    var Color = Colors[a];
+
+                    r_new = Color[0];
+                    g_new = Color[1];
+                    b_new = Color[2];
                     break;
                 }
                 else if (a == 4 && value < cum_conversion_rate) {
                     // PF to OtherLand
-                    // r_new = 255 - r_old;     // red
-                    //g_new = 255 - g_old; // green
-                    //b_new = 255 - b_old; // blue
+                    var Color = Colors[a];
+
+                    r_new = Color[0];
+                    g_new = Color[1];
+                    b_new = Color[2];
 
                 }
 
