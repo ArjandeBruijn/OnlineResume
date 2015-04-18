@@ -8,7 +8,9 @@ var Color1 = [0, 255, 0]; // position 3
 var Red = [255, 0, 0];
 var Cyan = [0, 255, 255];
 
- 
+function SetPixelColor(x,y,color ) { 
+
+}
 
 function setPixel(imageData, x, y, r, g, b, a) {
     index = (x + y * imageData.width) * 4;
@@ -18,8 +20,15 @@ function setPixel(imageData, x, y, r, g, b, a) {
     imageData.data[index + 3] = a;
 }
 function Transition(x, y, from, to) {
-    alert('Transition x '+ x +' y ' + y + " from : " + from + " to " + to);
-
+   
+    // Primary to secondary forest
+    if (from == 0 && to == 1) {
+        
+        alert('Transition x ' + x + ' y ' + y + " from : " + from + " to " + to);
+        
+        SetPixelColor(x, y, LightGreen);
+    
+    }
 
 }
 function Simulate() {
