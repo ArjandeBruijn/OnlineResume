@@ -12,6 +12,8 @@ function Simulate() {
     element = document.getElementById("canvas1");
     c = element.getContext("2d");
 
+    var imgData = c.getImageData(10, 10, 50, 50);
+
     var width = c.canvas.width;
     var height = c.canvas.height;
 
@@ -20,8 +22,10 @@ function Simulate() {
 
         for (var col = 0; col < width; col++) {
 
-            for (var row = 0; row < height; row++) { 
-            
+            for (var row = 0; row < height; row++) {
+
+                
+                 
             
             }
         
