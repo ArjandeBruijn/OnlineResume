@@ -1,6 +1,4 @@
 
-
-
 var DarkGreen = [0, 100, 0];   // position 0
 var LightGreen = [0, 255, 0]; // position 1
 var Yellow = [255, 255, 0]; // position 2
@@ -9,9 +7,7 @@ var Red = [255, 0, 0];
 var Cyan = [0, 255, 255];
 
 function SetPixelColor(imgData, x, y, color) {
-
-    
-
+ 
     alert('SetPixelColor x ' + x + ' y ' + y + ' color = ' + color);
 
     setPixel(imgData, x, y, r, g, b, 255);
@@ -30,81 +26,7 @@ function Transition(imgData, x, y, from, to) {
     }
 
 }
-function ShowAlert() {
-    alert("alert");
-}
-function Simulate(container, xmin, xmax) {
-
-    alert("Simulate");
-    element = document.getElementById("canvas1");
-    c = element.getContext("2d");
-
-    var width = c.canvas.width;
-    var height = c.canvas.height;
-
-    var imgData = c.getImageData(0, 0, width, height);
-     
-    for (var time = 0; time < 100; time++) {
-         
-
-        for (var col = 0; col < width; col++) {
-
-            for (var row = 0; row < height; row++) {
-
-                var pixelData = element.getContext('2d').getImageData(col, row, 1, 1).data;
-
-                //alert('R: ' + pixelData[0] + '<br>G: ' + pixelData[1] + '<br>B: ' + pixelData[2] + '<br>A: ' + pixelData[3]);
-
-                if (pixelData[0] == DarkGreen[0] && pixelData[1] == DarkGreen[1] && pixelData[2] == DarkGreen[2]) {
-                    // Primary forest
-
-                    /* 	Forest	Secondary Forest	Cropland	Settlements	Other land
-                        Forest	0.998 	0	0.004	0	0
-                        Secondary Forest	0	0.994	0.006	0	0
-                        Cropland	0.002	0	0.993	0.003	0
-                        Settlements	0	0	0.003	0.997	0
-                        Other land	0	0	0	0	1 */
-
-                    // Get Conversion rate to various other lucs
-                    var conversion_rate = [0.998, 0, 0.004, 0, 0];
-
-                    
-                    var value = Math.random();
-                    if (value > conversion_rate[0]) {
-                        continue;
-                    }
-                    else {
-                        var value2 = Math.random();
-                        if (value2 > conversion_rate[1]) {
-                            // PF to SF
-                            
-                            Transition(imgData, row, col, 0, 1);
-                        }
-                    }
-
-                }
-                else if (pixelData[0] == LightGreen[0] && pixelData[1] == LightGreen[1] && pixelData[2] == LightGreen[2]) { 
-                    //Secondary forest
-                    var conversion_rate = [0, 0.994, 0.006, 0, 0];
-                    // Get Conversion rate to various other lucs
-
-                }
-                else if (pixelData[0] == Yellow[0] && pixelData[1] == Yellow[1] && pixelData[2] == Yellow[2]) {
-                    //Open Land (crop land)
-                    var conversion_rate = [0.002,	0,	0.993,	0.003,	0];
-                    // Get Conversion rate to various other lucs
-                }
-            }
-        
-        }
-         
-
-    }
-
-        alert(width);
-    alert(height);
-}
-
+ 
 function setPixel(imageData, x, y, r, g, b, a) {
     index = get_index(imageData, x, y);
 
@@ -138,8 +60,6 @@ function setPixelByIndex(imageData, index, r, g, b, a) {
 }
 
 function Simulate(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, ymax_zm, scale) {
-
-    alert("scale" + scale);
 
     var canvas = document.getElementById(container);
     var ctx = canvas.getContext('2d');
@@ -212,57 +132,12 @@ function Simulate(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
     ctx.putImageData(imageData, 0, 0);
     
     
-    alert("Shitface");
-
+    alert("Through one timestep");
      
-
-    /*
-    // read the width and height of the canvas
-    ncols = scale * (ymax - ymin);
-    nrows = scale * (xmax - xmin);
-
-     
-    // draw random dots
-    var counter = 0;
-
-    var pixelData = element.getContext('2d').getImageData(xmin, ymin, xmax, ymax).data;
-
-    var data = pixelData.data;    
-
-    for (y = ymin; y < ymax; y++) {
-    for (x = xmin; x < xmax; x++) {
-    if (x < xmax_zm && x > xmin_zm && y < ymax_zm && y > ymin_zm) {
-
-                
-                 
-
-    /*
-    r = Yellow[0];
-    g = Yellow[1];  // Open Land
-    b = Yellow[2];
-
-    var i;
-    for (i = 0; i < scale; i++) {
-
-    for (_i = 0; _i < scale; _i++) {
-
-    _x = scale * (x - xmin_zm) + i;
-    _y = scale * (y - ymin_zm) + _i;
-
-    setPixel(imageData, _x, _y, r, g, b, 255);  // 255 opaque
-    }
-    }
-                 
-    }
-    }
-    }
-    */
 }
 
 function SetImage(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, ymax_zm,  scale) 
 {
-    alert("SetImage");
-
     element = document.getElementById(container);
     c = element.getContext("2d");
 
