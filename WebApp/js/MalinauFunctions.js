@@ -115,7 +115,9 @@ function setPixel(imageData, x, y, r, g, b, a) {
 }
 function get_index(imageData, x, y) {
 
-    return index = (x + y * imageData.width) * 4; ;
+    index = (x + y * imageData.width) * 4;
+    alert(index);
+    return index;
 }
 function get_xy(index) {
 
