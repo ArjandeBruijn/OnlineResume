@@ -1,17 +1,17 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="PortFolio2.aspx.cs" Inherits="Resume.PortFolio2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-     
+      
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      
-      
+     
     <canvas id="canvas1" width= "415", height="561">Random Canvas</canvas>
      
 
     <canvas id="canvas2" width= "415", height= "561"> Random Canvas</canvas>
         
-       
+    <button type="button" onclick=Simulation() >Click Me!</button>
 
    
     <p> These simulations are based on arial photographs taken in 2000 and 2009 of the north-eastern region of borneo, Indonesia. 
@@ -22,7 +22,9 @@
     
     
     It predicts urbanisation and forest 
-    degradation based on a few simple rules, namely:  </p>
+    degradation based on a few simple rules, namely:  
+       
+    </p>
 
     <li>People prefer to live adjacent to water</li>
     <li>People prefer to cultivate land close to their homes and close to the water</li>
