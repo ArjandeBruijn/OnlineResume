@@ -168,9 +168,40 @@ function Simulate(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
             // Get Conversion rate to various other lucs
             var conversion_rate = [0.998, 0, 0.004, 0, 0];
 
-            r_new = 255 - r_old;     // red
-            g_new = 255 - g_old; // green
-            b_new = 255 - b_old; // blue
+            var value = Math.random();
+
+            if (value < conversion_rate[0]) {
+                // PF to PF
+                r_new = r_old;
+                g_new = g_old;
+                b_new = b_old;
+            }
+            else if (value < conversion_rate[0] + conversion_rate[1]) {
+                // PF to SF
+                r_new = 255 - r_old;     // red
+                g_new = 255 - g_old; // green
+                b_new = 255 - b_old; // blue
+            }
+            else if (value < conversion_rate[0] + conversion_rate[1] + conversion_rate[2]) {
+                // PF to crop
+                r_new = 255 - r_old;     // red
+                g_new = 255 - g_old; // green
+                b_new = 255 - b_old; // blue
+            }
+            else if (value < conversion_rate[0] + conversion_rate[1] + conversion_rate[2] + conversion_rate[3]) {
+                // PF to settlements
+                r_new = 255 - r_old;     // red
+                g_new = 255 - g_old; // green
+                b_new = 255 - b_old; // blue
+            }
+            else if (value < conversion_rate[0] + conversion_rate[1] + conversion_rate[2] + conversion_rate[3] + conversion_rate[4]) {
+                
+                // PF to OtherLand
+                r_new = 255 - r_old;     // red
+                g_new = 255 - g_old; // green
+                b_new = 255 - b_old; // blue
+
+            }
 
             setPixelByIndex(imageData, i, r_new, g_new, b_new, 255);
         }
