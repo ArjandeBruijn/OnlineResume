@@ -75,50 +75,49 @@ function Simulate(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
         g_old = data[i + 1]
         b_old = data[i + 2];
 
-        if (r_old == DarkGreen[0] && g_old == DarkGreen[1] && b_old == DarkGreen[2]) {
-            // Primary forest
+        var Colors = [DarkGreen, LightGreen, Yellow, Red, DarkGreen];
 
-            /* 	Forest	Secondary Forest	Cropland	Settlements	Other land
-            Forest	0.998 	0	0.004	0	0
-            Secondary Forest	0	0.994	0.006	0	0
-            Cropland	0.002	0	0.993	0.003	0
-            Settlements	0	0	0.003	0.997	0
-            Other land	0	0	0	0	1 */
+        conversion_rate = null;
 
-            // Get Conversion rate to various other lucs
-            var conversion_rate = [0.998, 0, 0.004, 0, 0];
+        if (r_old == DarkGreen[0] && g_old == DarkGreen[1] && b_old == DarkGreen[2])conversion_rate = [0.998, 0, 0.004, 0, 0];
+        else if (r_old == LightGreen[0] && g_old == LightGreen[1] && b_old == LightGreen[2]) conversion_rate = [0,0.994,0.006,0,0];
+        else if (r_old == Yellow[0] && g_old == Yellow[1] && b_old == Yellow[2]) conversion_rate = [0.002,	0,	0.993,	0.003,	0];
+        else if (r_old == Red[0] && g_old == Red[1] && b_old == Red[2]) conversion_rate = [0,	0,	0.003,	0.997,	0];
+        else if (r_old == DarkGreen[0] && g_old == DarkGreen[1] && b_old == DarkGreen[2]) conversion_rate = [0,	0,	0,	0,	1];
 
-            var Colors = [DarkGreen, LightGreen, Yellow, Red, DarkGreen];
+        if (conversion_rate == null) continue;
 
-            var value = Math.random();
+        
+        /* 	Forest	Secondary Forest	Cropland	Settlements	Other land
+        Forest	0.998 	0	0.004	0	0
+        Secondary Forest	0	0.994	0.006	0	0
+        Cropland	0.002	0	0.993	0.003	0
+        Settlements	0	0	0.003	0.997	0
+        Other land	0	0	0	0	1 */
 
-            cum_conversion_rate = 0;
+        var value = Math.random();
 
-            for (a = 0; a < conversion_rate.length; a++) {
+        cum_conversion_rate = 0;
 
-                cum_conversion_rate += conversion_rate[a]
+        for (a = 0; a < conversion_rate.length; a++) {
 
-                if (value < cum_conversion_rate) {
-                    // PF to PF
-                    var Color = Colors[a];
+            cum_conversion_rate += conversion_rate[a]
 
-                    r_new = Color[0];
-                    g_new = Color[1];
-                    b_new = Color[2];
-                    break;
-                }
+            if (value < cum_conversion_rate) {
+                
+                var Color = Colors[a];
+
+                r_new = Color[0];
+                g_new = Color[1];
+                b_new = Color[2];
+                break;
+            }
                 
 
-            }
-            
-
-            
-
-            setPixelByIndex(imageData, i, r_new, g_new, b_new, 255);
         }
-
-        
-        
+           
+        setPixelByIndex(imageData, i, r_new, g_new, b_new, 255);
+         
     }
     ctx.putImageData(imageData, 0, 0);
     
