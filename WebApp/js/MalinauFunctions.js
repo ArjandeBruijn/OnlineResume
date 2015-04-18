@@ -15,7 +15,22 @@ function Simulate() {
     var width = c.canvas.width;
     var height = c.canvas.height;
 
-    alert(width);
+     
+    for (var time = 0; time < 100; time++) {
+
+        for (var col = 0; col < width; col++) {
+
+            for (var row = 0; row < height; row++) { 
+            
+            
+            }
+        
+        }
+         
+
+    }
+
+        alert(width);
     alert(height);
 }
 
