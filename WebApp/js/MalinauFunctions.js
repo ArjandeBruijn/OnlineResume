@@ -48,13 +48,13 @@ function LandUse(MapCode, Color, Conversion_rate) {
     this.Color = Color;
     this.Conversion_rate = Conversion_rate;
 }
-function setPixel(imageData, x, y, r, g, b, a) {
+function setPixel(imageData, x, y, Color) {
     index = get_index(imageData, x, y);
 
-    imageData.data[index + 0] = r;
-    imageData.data[index + 1] = g;
-    imageData.data[index + 2] = b;
-    imageData.data[index + 3] = a;
+    imageData.data[index + 0] = Color[0];
+    imageData.data[index + 1] = Color[1];
+    imageData.data[index + 2] = Color[2];
+    imageData.data[index + 3] = 255;
 }
 function setPixelByIndex(imageData, index, r, g, b, a) {
 
@@ -215,7 +215,7 @@ function SetImage(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
                         _x = scale * (x - xmin_zm) + i ;
                         _y = scale * (y - ymin_zm) + _i;
 
-                        setPixel(imageData, _x, _y, land_use.Color[0], land_use.Color[1], land_use.Color[2], 255);  // 255 opaque
+                        setPixel(imageData, _x, _y, land_use.Color);  // 255 opaque
                     }
                 }
                  
