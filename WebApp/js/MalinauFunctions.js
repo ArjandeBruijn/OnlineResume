@@ -13,48 +13,38 @@ var Color11 = [128, 0, 128];
 var Color12 = [128, 128, 0];
 var Color13 = [0, 0, 0]; //black        
 
-var NoData = new LandUse(-9999, White); 
+var NoData = new LandUse(-9999, White,null); 
 var PF = new LandUse(1, DarkGreen, [0.998, 0, 0.004, 0, 0]);
 var SF = new LandUse(2, LightGreen, [0, 0.994, 0.006, 0, 0]);
-var LandUse3 = new LandUse(3, Color3);
+var LandUse3 = new LandUse(3, Color3, null);
 var Settlement = new LandUse(4, Red, [0, 0, 0.003, 0.997, 0]);
-var LandUse5 = new LandUse(5, Cyan);
+var LandUse5 = new LandUse(5, Cyan, null);
 var OpenLand = new LandUse(6, Yellow, [0.002, 0, 0.993, 0.003, 0]);
-var LandUse7 = new LandUse(7, Color7);
-var Water = new LandUse(8, Blue);
-var LandUse9 = new LandUse(9, Color9);
-var LandUse10 = new LandUse(10, Color10);
-var LandUse11 = new LandUse(11, Color11);
-var LandUse12 = new LandUse(12, Color12);
-var LandUse13 = new LandUse(13, Color13);
+var LandUse7 = new LandUse(7, Color7, null);
+var Water = new LandUse(8, Blue, null);
+var LandUse9 = new LandUse(9, Color9, null);
+var LandUse10 = new LandUse(10, Color10, null);
+var LandUse11 = new LandUse(11, Color11, null);
+var LandUse12 = new LandUse(12, Color12, null);
+var LandUse13 = new LandUse(13, Color13, null);
 
 var LandUseTypes = [NoData, PF, SF, LandUse3, Settlement, LandUse5, OpenLand, LandUse7, Water, LandUse9, LandUse10, LandUse11, LandUse12, LandUse13];
 
+function LandUse(MapCode, Color, Conversion_rate) {
 
-
-function SetPixelColor(imgData, x, y, color) {
- 
-    alert('SetPixelColor x ' + x + ' y ' + y + ' color = ' + color);
-
-    setPixel(imgData, x, y, r, g, b, 255);
+    this.MapCode = MapCode;
+    this.Color = Color;
+    this.Conversion_rate = Conversion_rate;
 }
-
-
-function Transition(imgData, x, y, from, to) {
-   
-    // Primary to secondary forest
-    if (from == 0 && to == 1) {
-        
-        //alert('Transition x ' + x + ' y ' + y + " from : " + from + " to " + to);
-
-        SetPixelColor(imgData, x, y, LightGreen);
-        alert('Transition x ' + x + ' y ' + y + " from : " + from + " to " + to);
-    }
-
-}
- 
 function setPixel(imageData, x, y, r, g, b, a) {
     index = get_index(imageData, x, y);
+
+    imageData.data[index + 0] = r;
+    imageData.data[index + 1] = g;
+    imageData.data[index + 2] = b;
+    imageData.data[index + 3] = a;
+}
+function setPixelByIndex(imageData, index, r, g, b, a) {
 
     imageData.data[index + 0] = r;
     imageData.data[index + 1] = g;
@@ -77,21 +67,25 @@ function get_xy(imageData, index) {
 
     return [x, y];
 }
-function setPixelByIndex(imageData, index, r, g, b, a) {
-     
-    imageData.data[index + 0] = r;
-    imageData.data[index + 1] = g;
-    imageData.data[index + 2] = b;
-    imageData.data[index + 3] = a;
-}
-function LandUse(MapCode, Color, Conversion_rate) {
 
-    this.MapCode = MapCode;
-    this.Color = Color;
-    this.Conversion_rate = Conversion_rate;
-}
+
 
 function Simulate2(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, ymax_zm, scale) {
+    
+    for (l = 0; l < LandUseTypes.length; l++) {
+
+        landuse = LandUseTypes[l];
+
+        conversion_rate = landuse.Conversion_rate;
+
+        if (conversion_rate != null) {
+
+            for (a = 0; a < conversion_rate.length; a++) {
+
+            }
+        }
+
+    }
     alert("Simulate2");
 }
 
