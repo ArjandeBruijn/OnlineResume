@@ -6,6 +6,11 @@ var Color1 = [0, 255, 0];   // Crop??
 var Red = [255, 0, 0];
 var Cyan = [0, 255, 255];
 
+var PF = new LandUse(1, DarkGreen, [0.998, 0, 0.004, 0, 0]);
+var SF = new LandUse(2, LightGreen, [0, 0.994, 0.006, 0, 0]);
+var OpenLand = new LandUse(6, Yellow, [0.002, 0, 0.993, 0.003, 0]);
+var Settlement = new LandUse(4, Red, [0, 0, 0.003, 0.997, 0]);
+
 function SetPixelColor(imgData, x, y, color) {
  
     alert('SetPixelColor x ' + x + ' y ' + y + ' color = ' + color);
@@ -64,10 +69,7 @@ function LandUse(MapCode, Color, Conversion_rate) {
     this.Color = Color;
     this.Conversion_rate = Conversion_rate;
 }
-var PF = new LandUse(1, DarkGreen, [0.998, 0, 0.004, 0, 0]);
-var SF = new LandUse(2, LightGreen, [0, 0.994, 0.006, 0, 0]);
-var OpenLand = new LandUse(6, Yellow, [0.002, 0, 0.993, 0.003, 0]);
-var Settlement = new LandUse(4, Red, [0, 0, 0.003, 0.997, 0]);
+
 
 
 function Simulate(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, ymax_zm, scale) {
@@ -164,15 +166,15 @@ function SetImage(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
                 }
                 else if (MapCode == 1) {
                     //r = g = b = 255; // white
-                    r = DarkGreen[0];                  //dark green 0, 255, 0
-                    g = DarkGreen[1];                //Primary Dry Forest
-                    b = DarkGreen[2];
+                    r = PF.Color[0];                  //dark green 0, 255, 0
+                    g = PF.Color[1];                //Primary Dry Forest
+                    b = PF.Color[2];
                 }
                 else if (MapCode == 2) {
                     //r = g = b = 255; // white
-                    r = LightGreen[0];                  //Secondary Dry Forest/Logged Forest
-                    g = LightGreen[1];                // light green
-                    b = LightGreen[2];
+                    r = SF.Color[0];                  //Secondary Dry Forest/Logged Forest
+                    g = SF.Color[1];                // light green
+                    b = SF.Color[2];
                 }
                 else if (MapCode == 3) {
 
@@ -182,9 +184,9 @@ function SetImage(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
                 }
                 else if (MapCode == 4) {
 
-                    r = Red[0]; //  0;// Settlement/Developed Land
-                    g = Red[1];// 255;
-                    b = Red[2];//  255;
+                    r = Settlement.Color[0]; //  0;// Settlement/Developed Land
+                    g = Settlement.Color[1]; // 255;
+                    b = Settlement.Color[2]; //  255;
                     //r = g = b = 255; // white
                 }
                 else if (MapCode == 5) {
@@ -193,9 +195,9 @@ function SetImage(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
                     b = Cyan[2];
                 }
                 else if (MapCode == 6) {
-                    r = Yellow[0];
-                    g = Yellow[1];  // Open Land
-                    b = Yellow[2] ;
+                    r = OpenLand.Color[0];
+                    g = OpenLand.Color[1];  // Open Land
+                    b = OpenLand.Color[2];
                     
                 }
 
