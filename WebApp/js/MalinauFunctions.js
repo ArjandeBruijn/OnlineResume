@@ -108,11 +108,15 @@ function SetImage(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
                 var i;
                 for (i = 0; i < scale; i++) {
 
-                    _x = x - xmin_zm;
-                    _y = y - ymin_zm;
+                    for (_i = 0; _i < scale; _i++) {
 
-                    setPixel(imageData, _x, _y, r, g, b, 255);  // 255 opaque
+                        _x = scale * (x - xmin_zm) + i ;
+                        _y = scale * (y - ymin_zm) + _i;
+
+                        setPixel(imageData, _x, _y, r, g, b, 255);  // 255 opaque
+                    }
                 }
+                 
             }
             counter++;
         }
