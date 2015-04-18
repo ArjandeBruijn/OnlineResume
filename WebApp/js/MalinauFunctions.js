@@ -98,7 +98,7 @@ function Simulate(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
 
                 cum_conversion_rate += conversion_rate[a]
 
-                if (a == 0 && value < cum_conversion_rate) {
+                if (value < cum_conversion_rate) {
                     // PF to PF
                     var Color = Colors[a];
 
@@ -107,42 +107,7 @@ function Simulate(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
                     b_new = Color[2];
                     break;
                 }
-                else if (a == 1 && value < cum_conversion_rate) {
-                    // PF to SF
-                    var Color = Colors[a];
-
-                    r_new = Color[0];
-                    g_new = Color[1];
-                    b_new = Color[2];
-                    break;
-                }
-                else if (a == 2 && value < cum_conversion_rate) {
-                    // PF to crop
-                    var Color = Colors[a];
-
-                    r_new = Color[0];
-                    g_new = Color[1];
-                    b_new = Color[2];
-                    break;
-                }
-                else if (a == 3 && value < cum_conversion_rate) {
-                    // PF to settlements
-                    var Color = Colors[a];
-
-                    r_new = Color[0];
-                    g_new = Color[1];
-                    b_new = Color[2];
-                    break;
-                }
-                else if (a == 4 && value < cum_conversion_rate) {
-                    // PF to OtherLand
-                    var Color = Colors[a];
-
-                    r_new = Color[0];
-                    g_new = Color[1];
-                    b_new = Color[2];
-
-                }
+                
 
             }
             
