@@ -75,44 +75,37 @@ th {
         </tr>
         <tr>
             <th>Forest</th>
-            <th><div contenteditable "background-color:yellow"> 0.998 </div> </th>
-            <th><div contenteditable> 0 </div> </th>
+            <th id="Forest-Forest"><div> 0.998 </div> </th>
+            <th id="Forest-SecondaryForest"><div contenteditable> 0 </div> </th>
             <th id="Forest-CropLand"><div contenteditable> 0.004</div> </th>
-            <th><div contenteditable> 0 </div> </th>
+            <th =id= "Forest-Settlements"><div contenteditable> 0 </div> </th>
             
         </tr>
         <tr>
             <th>Secondary Forest</th>
-            <th><div contenteditable> 0	 </div> </th>
-            <th id="SF-SF"><div contenteditable> 0.994	 </div> </th>
+            <th id="SecondaryForest-Forest"><div contenteditable> 0	 </div> </th>
+            <th id="SecondaryForest-SecondaryForest"><div> 0.994	 </div> </th>
             <th id = 'SecondaryForest-CropLand'><div contenteditable> 0.006	</div> </th>
-            <th><div contenteditable> 0 </div> </th>
+            <th id = 'SecondaryForest-Settlements'><div contenteditable> 0 </div> </th>
            
         </tr>
          <tr>
             <th>Cropland</th>
-            <th><div contenteditable>0.002 </div></th>
-            <th><div contenteditable>  0	</div></th>
-            <th><div contenteditable> 0.993 </div></th>
-            <th><div contenteditable> 0.003 </div></th>
+            <th id = 'CropLand-Forest'><div contenteditable>0.002 </div></th>
+            <th id = 'CropLand-SecondaryForest'><div contenteditable>  0	</div></th>
+            <th id = 'CropLand-CropLand'><div> 0.993 </div></th>
+            <th id = 'CropLand-Settlements'><div contenteditable> 0.003 </div></th>
             
         </tr>
          <tr>
             <th>Settlements</th>
-            <th><div contenteditable>0</div>	 </th>
-            <th><div contenteditable> 0	</div>	</th>
-            <th><div contenteditable> 0.003</div>	 </th>
-            <th><div contenteditable>0.997</div>	  </th>
+            <th id = 'Settlements-Forest'><div contenteditable>0</div>	 </th>
+            <th id = 'Settlements-SecondaryForest'><div contenteditable> 0	</div>	</th>
+            <th id = 'Settlements-CropLand'><div contenteditable> 0.003</div>	 </th>
+            <th id = 'Settlements-Settlements'><div>0.997</div>	  </th>
             
         </tr>
-         <tr>
-            <th>Other land</th>
-            <th><div contenteditable>0 </div></th>
-            <th><div contenteditable> 0 </div>	</th>
-            <th><div contenteditable> 0 </div></th>
-            <th><div contenteditable> 0 </div></th>
-            
-        </tr>
+          
      </table>
     
     
