@@ -9,9 +9,9 @@
     <canvas id="canvas1" width= "415", height="561">Random Canvas</canvas>
      
 
-    <canvas id="canvas2" width= "415", height= "561"> Random Canvas</canvas>
+    
         
-    <button type="button" onclick="myFunction()" >Click Me!</button>
+    <button type="button" onclick="myFunction()" >Simulate!</button>
 
     <script>
         function myFunction() {
@@ -102,14 +102,6 @@
 	<script src="js/Malinau.js"></script>
     <script type='text/javascript' src='js/MalinauFunctions.js'></script>	
     <script type="text/javascript"> SetImage('canvas1', 0, 415, 0, 561, 0,415,0,561, 1); </script>
-    <script type="text/javascript">
-
-        var scale = 2;
-
-
-        SetImage('canvas2', 0, 415, 0, 561, 300, 415, 0, 325, scale);
-            
-    </script>
     
     <script type="text/javascript">
         
