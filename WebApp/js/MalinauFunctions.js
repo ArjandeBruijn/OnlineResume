@@ -78,16 +78,21 @@ function setPixel(x, y, land_use) {
     imageData.data[index + 2] = land_use.Color[2];
     imageData.data[index + 3] = 255;
 }
-function setPixelByIndex(imageData, index, r, g, b, a) {
+function setPixel2(image, x, y, land_use) {
 
-    imageData.data[index + 0] = r;
-    imageData.data[index + 1] = g;
-    imageData.data[index + 2] = b;
-    imageData.data[index + 3] = a;
+    index = get_index(image, x, y);
+
+    image.pixels[x][y] = land_use;
+
+    image.imageData.data[index + 0] = land_use.Color[0];
+    image.imageData.data[index + 1] = land_use.Color[1];
+    image.imageData.data[index + 2] = land_use.Color[2];
+    image.imageData.data[index + 3] = 255;
+ 
 }
-function get_index(x, y) {
+function get_index(image, x, y) {
 
-    var index = (x + y * imageData.width) * 4;
+    var index = (x + y * image.imageData.width) * 4;
     return index;
 }
 function get_xy( index) {
@@ -124,8 +129,69 @@ function GetPixelsWithLandUse(landuse) {
     }
     return my_landuse_array;
 }
+function Image(container, xmin, xmax, ymin, ymax, scale) {
+
+    this.pixels = declare_pixels(xmax - xmin, ymax - ymin);
+
+    element = document.getElementById(container);
+    this.canvas = element.getContext("2d");
+
+    // read the width and height of the canvas
+    ncols = scale * (ymax - ymin);
+    nrows = scale * (xmax - xmin);
+
+    // create a new pixel array
+    this.imageData = element.getContext("2d").createImageData(nrows, ncols);
+}
+function SetImage(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, ymax_zm, scale) {
+
+    my_image = new Image(container, xmin, xmax, ymin, ymax, scale);
+
+    // draw random dots
+    var counter = -1;
+
+    for (y = ymin; y < ymax; y++) {
+        for (x = xmin; x < xmax; x++) {
+
+            counter++;
+
+            if (x < xmax_zm && x >= xmin_zm && y < ymax_zm && y >= ymin_zm) {
+                var MapCode = MalinauMap[counter];
+
+                land_use = GetLandUseType(MapCode);
+
+                if (land_use == null) {
+                    continue;
+                }
+
+                var i;
+                for (i = 0; i < scale; i++) {
+
+                    for (_i = 0; _i < scale; _i++) {
+
+                        _x = scale * (x - xmin_zm) + i;
+                        _y = scale * (y - ymin_zm) + _i;
+
+                        setPixel2(my_image, _x, _y, land_use);  // 255 opaque
+                        land_use.Count++;
+                    }
+                }
+
+            }
+
+        }
+    }
+
+    // copy the image data back onto the canvas
+    my_image.canvas.putImageData(my_image.imageData, 0, 0); // at coords 0,0
+
+}
+
+
+
 function Simulate2(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, ymax_zm, scale) {
 
+    
     canvas = document.getElementById(container);
     ctx = canvas.getContext('2d');
     imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
@@ -251,61 +317,7 @@ function GetDonatingSite(random_settlement_coord, donating_land_use) {
         d++;
     }
 }
-function SetImage(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, ymax_zm,  scale) {
 
-    pixels = declare_pixels(xmax - xmin, ymax - ymin);
-
-    element = document.getElementById(container);
-    c = element.getContext("2d");
-
-    // read the width and height of the canvas
-    ncols  = scale *( ymax - ymin);
-    nrows = scale *(xmax - xmin);
-
-    // create a new pixel array
-    imageData = c.createImageData(nrows, ncols);
-
-    // draw random dots
-    var counter = -1;
-
-    for (y = ymin; y < ymax; y++) {
-        for (x = xmin; x < xmax; x++) {
-
-            counter++;
-
-            if (x < xmax_zm && x >= xmin_zm && y < ymax_zm && y >= ymin_zm)
-            {
-                var MapCode = MalinauMap[counter];
-
-                land_use = GetLandUseType(MapCode);
-
-                if (land_use == null) {
-                    continue;
-                }
-
-                var i;
-                for (i = 0; i < scale; i++) {
-
-                    for (_i = 0; _i < scale; _i++) {
-
-                        _x = scale * (x - xmin_zm) + i ;
-                        _y = scale * (y - ymin_zm) + _i;
-
-                        setPixel(_x, _y, land_use);  // 255 opaque
-                        land_use.Count++;
-                    }
-                }
-                 
-            }
-            
-        }
-    }
-
-    // copy the image data back onto the canvas
-    c.putImageData(imageData, 0, 0); // at coords 0,0
-
-
-}
 /*
 function ImplementLandUseTransitions() { 
 
