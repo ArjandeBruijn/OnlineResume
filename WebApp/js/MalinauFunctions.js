@@ -13,17 +13,9 @@ var Color11 = [128, 0, 128];
 var Color12 = [128, 128, 0];
 var Color13 = [0, 0, 0]; //black        
 
-
-//From_To	            Forest	SF	    Cropland    Settlements
-//Forest	            0.998	0	    0.004	    0
-//SF	                0	    0.994	0.006	    0
-//Cropland	            0.002	0	    0.993	    0.003
-//Settlements	        0	    0	    0.003	    0.997
-
-
 NoData = new LandUse(-9999, White, null);
 PF = new LandUse(1, DarkGreen, [new ConversionRate(6, GetValueFromTable('Forest-CropLand'))]);
-SF = new LandUse(2, LightGreen, [new ConversionRate(6, 0.006)]);
+SF = new LandUse(2, LightGreen, [new ConversionRate(6, GetValueFromTable('SecondaryForest-CropLand'))]);
 LandUse3 = new LandUse(3, Color3, null);
 Settlement = new LandUse(4, Red, [new ConversionRate(6, 0.003)]);
 LandUse5 = new LandUse(5, Cyan, null);

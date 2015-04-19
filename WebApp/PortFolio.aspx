@@ -85,7 +85,7 @@ th {
             <th>Secondary Forest</th>
             <th><div contenteditable> 0	 </div> </th>
             <th id="SF-SF"><div contenteditable> 0.994	 </div> </th>
-            <th><div contenteditable> 0.006	</div> </th>
+            <th id = 'SecondaryForest-CropLand'><div contenteditable> 0.006	</div> </th>
             <th><div contenteditable> 0 </div> </th>
            
         </tr>
