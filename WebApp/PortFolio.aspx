@@ -30,13 +30,14 @@
 
     <div id="section">
         <h2>Malinau simulations</h2>
-            <p>
-                These simulations are based on arial photographs taken in 2000 and 2009 of the north-eastern region of borneo, Indonesia. 
-                A land use transition matrix is derived from the areas that were covered by 12 landuse types. The land use transittion 
-                rates are assumed to continue in the future. It predicts urbanisation and forest 
-                degradation based on a few simple rules, namely:  
-                <li>People prefer to live adjacent to water</li>
-                <li>People prefer to cultivate land close to their homes and close to the water</li>
+            <p font-size: 14px;>
+                Malinau is a region in the north-east of Borneo, Indonesia where I was stationed for a graduation thesis. 
+                The image is based on an arial photographs taken in 2000. The simulations predict land use transitions from 2000 onwards. 
+                The selection of grid cells that are transferred is based on a simple assumption that all human activity is centered around 
+                developed area. 
+                 
+                 
+                 
             </p>
         <p>
          
@@ -76,14 +77,14 @@ th {
             <th>Forest</th>
             <th><div contenteditable "background-color:yellow"> 0.998 </div> </th>
             <th><div contenteditable> 0 </div> </th>
-            <th><div contenteditable> 0.004</div> </th>
+            <th id="Forest-CropLand"><div contenteditable> 0.004</div> </th>
             <th><div contenteditable> 0 </div> </th>
             
         </tr>
         <tr>
             <th>Secondary Forest</th>
             <th><div contenteditable> 0	 </div> </th>
-            <th><div contenteditable> 0.994	 </div> </th>
+            <th id="SF-SF"><div contenteditable> 0.994	 </div> </th>
             <th><div contenteditable> 0.006	</div> </th>
             <th><div contenteditable> 0 </div> </th>
            

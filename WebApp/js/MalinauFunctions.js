@@ -20,22 +20,29 @@ var Color13 = [0, 0, 0]; //black
 //Cropland	            0.002	0	    0.993	    0.003
 //Settlements	        0	    0	    0.003	    0.997
 
-var NoData = new LandUse(-9999, White,null);
-var PF = new LandUse(1, DarkGreen, [new ConversionRate(6, 0.004)]);
-var SF = new LandUse(2, LightGreen, [new ConversionRate(6, 0.006)]);
-var LandUse3 = new LandUse(3, Color3, null);
-var Settlement = new LandUse(4, Red, [new ConversionRate(6, 0.003)]);
-var LandUse5 = new LandUse(5, Cyan, null);
-var OpenLand = new LandUse(6, Yellow, [new ConversionRate(1, 0.002), new ConversionRate(4, 0.003)]);
-var LandUse7 = new LandUse(7, Color7, null);
-var Water = new LandUse(8, Blue, null);
-var LandUse9 = new LandUse(9, Color9, null);
-var LandUse10 = new LandUse(10, Color10, null);
-var LandUse11 = new LandUse(11, Color11, null);
-var LandUse12 = new LandUse(12, Color12, null);
-var LandUse13 = new LandUse(13, Color13, null);
+
+NoData = new LandUse(-9999, White, null);
+PF = new LandUse(1, DarkGreen, [new ConversionRate(6, GetValueFromTable('Forest-CropLand'))]);
+SF = new LandUse(2, LightGreen, [new ConversionRate(6, 0.006)]);
+LandUse3 = new LandUse(3, Color3, null);
+Settlement = new LandUse(4, Red, [new ConversionRate(6, 0.003)]);
+LandUse5 = new LandUse(5, Cyan, null);
+OpenLand = new LandUse(6, Yellow, [new ConversionRate(1, 0.002), new ConversionRate(4, 0.003)]);
+LandUse7 = new LandUse(7, Color7, null);
+Water = new LandUse(8, Blue, null);
+LandUse9 = new LandUse(9, Color9, null);
+LandUse10 = new LandUse(10, Color10, null);
+LandUse11 = new LandUse(11, Color11, null);
+LandUse12 = new LandUse(12, Color12, null);
+LandUse13 = new LandUse(13, Color13, null);
 
 var LandUseTypes = [NoData, PF, SF, LandUse3, Settlement, LandUse5, OpenLand, LandUse7, Water, LandUse9, LandUse10, LandUse11, LandUse12, LandUse13];
+
+
+function GetValueFromTable(ID) {
+    var value = document.getElementById('Forest-CropLand').innerText;
+    return value;
+}
 
 function declare_pixels(nrows, ncols) {
     var myArray = [[], []];
@@ -189,8 +196,10 @@ function SetImage(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
 
 function Simulate(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, ymax_zm, scale) {
 
+
     var image = images[0];
 
+     
 
     PF_array = GetPixelsWithLandUse(image, PF);
     SF_array = GetPixelsWithLandUse(image, SF);
