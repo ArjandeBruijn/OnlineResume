@@ -259,6 +259,52 @@ function IsGoodDonatingSite(image, r, c, DonatingLandUseType)
     }
     return null;
 }
+function GetDonatingSite2(image, random_settlement_coord, donating_land_use) {
+
+    r_from = random_settlement_coord[0];
+    c_from = random_settlement_coord[1];
+
+
+    d = 1;
+    for (; ; ) {
+        // Right bottom
+        r_from = random_settlement_coord[0] + d;
+        c_from = random_settlement_coord[1] + d;
+
+        donating_site = IsGoodDonatingSite(image, r_from, c_from, donating_land_use);
+
+        if (donating_site != null) return donating_site;
+
+        for (col = 0; col < 2 * d; col++) {
+            c_from--;
+
+            donating_site = IsGoodDonatingSite(image, r_from, c_from, donating_land_use);
+
+            if (donating_site != null) return donating_site;
+        }
+        for (r = 0; r < 2 * d; r++) {
+            r_from--;
+
+            donating_site = IsGoodDonatingSite(image, r_from, c_from, donating_land_use);
+
+            if (donating_site != null) return donating_site;
+        }
+        for (col = 0; col < 2 * d; col++) {
+            c_from++;
+            donating_site = IsGoodDonatingSite(image, r_from, c_from, donating_land_use);
+
+            if (donating_site != null) return donating_site;
+        }
+        for (r = 0; r < 2 * d; r++) {
+            r_from++;
+            donating_site = IsGoodDonatingSite(image, r_from, c_from, donating_land_use);
+
+            if (donating_site != null) return donating_site;
+        }
+
+        d++;
+    }
+}
 function GetDonatingSite(image,random_settlement_coord, donating_land_use) { 
 
     r_from = random_settlement_coord[0];
