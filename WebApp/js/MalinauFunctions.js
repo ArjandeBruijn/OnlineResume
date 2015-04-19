@@ -168,6 +168,8 @@ function SetImage(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
                         _y = scale * (y - ymin_zm) + _i;
 
                         setPixel(my_image, _x, _y, land_use);  // 255 opaque
+
+
                         land_use.Count++;
                     }
                 }
@@ -223,11 +225,21 @@ function Simulate2(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm,
 
                     random_settlement_coord = Settlement_array[random];
 
+                    alert("random" + random + "random_settlement_coord " + random_settlement_coord);
+
                     donating_coord = GetDonatingSite(image, random_settlement_coord, landuse);
 
-                    setPixel(image, donating_coord[0], donating_coord[1], landuse_to);
+                    //setPixel(image, donating_coord[0], donating_coord[1], landuse_to);
 
-                    alert("Landise " + l + "PixelCount " + c);
+                    index = get_index(image, random_settlement_coord[0], random_settlement_coord[1]);
+
+                    image.pixels[x][y] = Settlement;
+
+                    image.imageData.data[index + 0] = 0;
+                    image.imageData.data[index + 1] = 0;
+                    image.imageData.data[index + 2] = 0;
+                    image.imageData.data[index + 3] = 255;
+                   
                 }
 
             }
