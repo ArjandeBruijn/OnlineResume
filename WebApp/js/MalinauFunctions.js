@@ -199,22 +199,22 @@ function Simulate2(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm,
     
     for (l = 0; l < LandUseTypes.length; l++) {
 
-        landuse = LandUseTypes[l];
+        var landuse = LandUseTypes[l];
 
-        conversion_rate = landuse.Conversion_rate;
+        var conversion_rate = landuse.Conversion_rate;
 
         if (conversion_rate != null) {
 
-            for (a = 0; a < conversion_rate.length; a++) {
+            for (var a = 0; a < conversion_rate.length; a++) {
 
-                conversion = conversion_rate[a];
+                var conversion = conversion_rate[a];
 
-                MapCodeTo = conversion.MapCodeNew;
-                Rate = conversion.rate;
+                var MapCodeTo = conversion.MapCodeNew;
+                var Rate = conversion.rate;
 
-                landuse_to = GetLandUseType(MapCodeTo);
+                var landuse_to = GetLandUseType(MapCodeTo);
 
-                NumberOfConversions = Rate * landuse.Count;
+                var NumberOfConversions = Rate * landuse.Count;
 
                 if (NumberOfConversions > landuse.Count) NumberOfConversions = landuse.Count;
 
