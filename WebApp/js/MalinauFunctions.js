@@ -68,17 +68,8 @@ function LandUse(MapCode, Color, Conversion_rate) {
     this.Color = Color;
     this.Conversion_rate = Conversion_rate;
 }
-function setPixel(x, y, land_use) {
-    index = get_index(x, y);
-
-    pixels[x][y] = land_use;
-
-    imageData.data[index + 0] = land_use.Color[0];
-    imageData.data[index + 1] = land_use.Color[1];
-    imageData.data[index + 2] = land_use.Color[2];
-    imageData.data[index + 3] = 255;
-}
-function setPixel2(image, x, y, land_use) {
+ 
+function setPixel(image, x, y, land_use) {
 
     index = get_index(image, x, y);
 
@@ -176,7 +167,7 @@ function SetImage(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
                         _x = scale * (x - xmin_zm) + i;
                         _y = scale * (y - ymin_zm) + _i;
 
-                        setPixel2(my_image, _x, _y, land_use);  // 255 opaque
+                        setPixel(my_image, _x, _y, land_use);  // 255 opaque
                         land_use.Count++;
                     }
                 }
@@ -195,18 +186,14 @@ function SetImage(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
 
 function Simulate2(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, ymax_zm, scale) {
 
-    my_image = images[0];
+    var image = images[0];
+
+
+    PF_array = GetPixelsWithLandUse(image, PF);
+    SF_array = GetPixelsWithLandUse(image, SF);
+    Settlement_array = GetPixelsWithLandUse(image, Settlement);
 
     
-    PF_array = GetPixelsWithLandUse(my_image, PF);
-    SF_array = GetPixelsWithLandUse(my_image, SF);
-    Settlement_array = GetPixelsWithLandUse(my_image, Settlement);
-
-    for (var s = 0; s < PF_array.length; s++) {
-
-        setPixel2(my_image, PF_array[s][0], PF_array[s][1], Settlement);
-    }
-    /*
     for (l = 0; l < LandUseTypes.length; l++) {
 
         landuse = LandUseTypes[l];
@@ -236,9 +223,9 @@ function Simulate2(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm,
 
                     random_settlement_coord = Settlement_array[random];
 
-                    donating_coord = GetDonatingSite(random_settlement_coord, landuse);
+                    donating_coord = GetDonatingSite(image, random_settlement_coord, landuse);
 
-                    setPixel(donating_coord[0], donating_coord[1], landuse_to);
+                    setPixel(image, donating_coord[0], donating_coord[1], landuse_to);
 
                     alert("Landise " + l + "PixelCount " + c);
                 }
@@ -247,26 +234,26 @@ function Simulate2(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm,
         }
 
         }
-        */
-    my_image.canvas.putImageData(my_image.imageData, 0, 0);
+
+    image.canvas.putImageData(image.imageData, 0, 0);
     alert("Simulate2");
 }
-function IsGoodDonatingSite(r, c, DonatingLandUseType)
+function IsGoodDonatingSite(image, r, c, DonatingLandUseType)
 {
-    if (r < 0 || c < 0 || r >= pixels.length || c >= pixels[0].length)
+    if (r < 0 || c < 0 || r >= image.pixels.length || c >= image.pixels[0].length)
     {
         //Console.WriteLine("site [" + r + "," + c + "] is off the map");
         return null;
     }
-    
-    if (pixels[r][c] == DonatingLandUseType)
+
+    if (image.pixels[r][c] == DonatingLandUseType)
     {
         //Console.WriteLine("Found donating site");
         return [r,c];
     }
     return null;
 }
-function GetDonatingSite(random_settlement_coord, donating_land_use) { 
+function GetDonatingSite(image,random_settlement_coord, donating_land_use) { 
 
     r_from = random_settlement_coord[0];
     c_from = random_settlement_coord[1];
@@ -279,7 +266,7 @@ function GetDonatingSite(random_settlement_coord, donating_land_use) {
         r_from = random_settlement_coord[0] + d;
         c_from = random_settlement_coord[0] + d;
 
-        donating_site = IsGoodDonatingSite(r_from, c_from, donating_land_use);
+        donating_site = IsGoodDonatingSite(image, r_from, c_from, donating_land_use);
 
         if(donating_site!=null) return donating_site;
 
@@ -287,7 +274,7 @@ function GetDonatingSite(random_settlement_coord, donating_land_use) {
         {
             c_from --;
 
-            donating_site = IsGoodDonatingSite(r_from, c_from, donating_land_use);
+            donating_site = IsGoodDonatingSite(image, r_from, c_from, donating_land_use);
 
             if(donating_site!=null) return donating_site;
         }
@@ -295,21 +282,21 @@ function GetDonatingSite(random_settlement_coord, donating_land_use) {
         {
             r_from --;
 
-            donating_site = IsGoodDonatingSite(r_from, c_from, donating_land_use);
+            donating_site = IsGoodDonatingSite(image, r_from, c_from, donating_land_use);
 
             if(donating_site!=null) return donating_site;
         }
         for (col = 0; col < 2 * d; col++)
         {
             c_from ++;
-            donating_site = IsGoodDonatingSite(r_from, c_from, donating_land_use);
+            donating_site = IsGoodDonatingSite(image, r_from, c_from, donating_land_use);
 
             if(donating_site!=null) return donating_site;
         }
         for ( r = 0; r < 2 * d; r++)
         {
             r_from ++;
-            donating_site = IsGoodDonatingSite(r_from, c_from, donating_land_use);
+            donating_site = IsGoodDonatingSite(image, r_from, c_from, donating_land_use);
 
             if(donating_site!=null) return donating_site;
         }
