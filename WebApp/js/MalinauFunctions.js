@@ -196,7 +196,7 @@ function SetImage(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
 
 function Simulate(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, ymax_zm, scale) {
 
-
+    PF.Conversion_rate =   [new ConversionRate(6, GetValueFromTable('Forest-CropLand'))];
     var image = images[0];
 
      
