@@ -263,6 +263,68 @@ function IsGoodDonatingSite(image, r, c, DonatingLandUseType)
     }
     return null;
 }
+function GetDonatingSite(image, random_settlement_coord, donating_land_use) {
+
+    r_from = random_settlement_coord[0];
+    c_from = random_settlement_coord[1];
+
+
+    d = 1;
+
+    var CheckedCoordinates = [];
+
+    for (; ; ) {
+        for (var r = r_from - d; r <= r_from + d; r++) {
+
+            for (var c = c_from - d; c <= c_from + d; c++) {
+
+                distance = CalculateDistance(r_from, c_from, r, c);
+
+                if (distance <= d) {
+                    if (CheckedCoordinates.indexOf(Pixel_Coordinates[r][c]) < 0) {
+
+                        
+                        donating_site = IsGoodDonatingSite(image, r, c, donating_land_use);
+
+                        if (donating_site != null) return donating_site;
+
+                        CheckedCoordinates.push(Pixel_Coordinates[r][c]);
+
+
+                    }
+                }
+            }
+        }
+        d++;
+    }
+
+}
+function CalculateDistance(x1, y1, x2, y2) { 
+
+    var dx2 = Math.pow(Math.abs(x2 -x1), 2);
+    var dy2 = Math.pow(Math.abs(y2 - y1), 2);
+    return Math.sqrt(dx2 + dy2);
+
+}
+function Coordinates(x,y)
+{
+    this.x=x;
+    this.y=y;
+}
+function InitializePixelCoordinates(image) 
+{
+    Pixel_Coordinates = [[], []];
+    for (var r = 0; r < image.pixels.length; r++) 
+    {
+        Pixel_Coordinates[r] = [];
+
+        for (var c = 0; c < image.pixels[0].length; c++) 
+        {
+                Pixel_Coordinates[r][c] = new Coordinates(r, c);
+        }
+    }
+}
+
 function GetDonatingSite2(image, random_settlement_coord, donating_land_use) {
 
     r_from = random_settlement_coord[0];
@@ -309,69 +371,5 @@ function GetDonatingSite2(image, random_settlement_coord, donating_land_use) {
         d++;
     }
 }
-function GetDonatingSite(image, random_settlement_coord, donating_land_use) {
-
-    r_from = random_settlement_coord[0];
-    c_from = random_settlement_coord[1];
-
-
-    d = 1;
-
-    var CheckedCoordinates = [];
-
-    for (; ; ) {
-        for (var r = r_from - d; r <= r_from + d; r++) {
-
-            for (var c = c_from - d; c <= c_from + d; c++) {
-
-                distance = CalculateDistance(r_from, c_from, r, c);
-
-                if (distance <= d) {
-                    if (CheckedCoordinates.indexOf(Pixel_Coordinates[r][c]) < 0) {
-
-                        //alert("Checking " + r + " " + c + " distance " + distance);
-
-                        donating_site = IsGoodDonatingSite(image, r, c, donating_land_use);
-
-                        if (donating_site != null) return donating_site;
-
-                        CheckedCoordinates.push(Pixel_Coordinates[r][c]);
-
-
-                    }
-                }
-            }
-        }
-        d++;
-    }
-
-}
-function CalculateDistance(x1, y1, x2, y2) { 
-
-    var dx2 = Math.pow(Math.abs(x2 -x1), 2);
-    var dy2 = Math.pow(Math.abs(y2 - y1), 2);
-    return Math.sqrt(dx2 + dy2);
-
-}
-function Coordinates(x,y)
-{
-    this.x=x;
-    this.y=y;
-}
-function InitializePixelCoordinates(image) 
-{
-    Pixel_Coordinates = [[], []];
-    for (var r = 0; r < image.pixels.length; r++) 
-    {
-        Pixel_Coordinates[r] = [];
-
-        for (var c = 0; c < image.pixels[0].length; c++) 
-        {
-                Pixel_Coordinates[r][c] = new Coordinates(r, c);
-        }
-    }
-}
-
-
 
 
