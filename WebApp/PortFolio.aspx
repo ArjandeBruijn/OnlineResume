@@ -49,11 +49,21 @@
     <button type="button" onclick="myFunction()" >Simulate one year!</button>
 
     
+    <style>
+table, td, th {
+    border: 1px solid black;
+    bgcolor: white;
+}
 
+
+th {
+    text-align: left;
+}
+</style>
      
 
      
-     <table bgcolor = white>
+     <table bgcolor = white border="1">
         <tr>
             <th>From / To </th>
             <th>Forest</th>
