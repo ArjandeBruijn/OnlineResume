@@ -52,55 +52,55 @@
 
      
 
-
-     <table>
+     
+     <table bgcolor = white>
         <tr>
             <th>From / To </th>
             <th>Forest</th>
             <th>Secondary Forest</th>
             <th>Cropland</th>
             <th>Settlements</th>
-            <th>Other land</th>
+            
         </tr>
         <tr>
             <th>Forest</th>
-            <th> 0.998 </th>
-            <th> 0 </th>
-            <th> 0.004 </th>
-            <th> 0 </th>
-            <th> 0 </th>
+            <th><div contenteditable "background-color:yellow"> 0.998 </div> </th>
+            <th><div contenteditable> 0 </div> </th>
+            <th><div contenteditable> 0.004</div> </th>
+            <th><div contenteditable> 0 </div> </th>
+            
         </tr>
         <tr>
             <th>Secondary Forest</th>
-            <th> 0	 </th>
-            <th> 0.994	 </th>
-            <th> 0.006	</th>
-            <th> 0 </th>
-            <th> 0 </th>
+            <th><div contenteditable> 0	 </div> </th>
+            <th><div contenteditable> 0.994	 </div> </th>
+            <th><div contenteditable> 0.006	</div> </th>
+            <th><div contenteditable> 0 </div> </th>
+           
         </tr>
          <tr>
             <th>Cropland</th>
-            <th>0.002</th>
-            <th>  0	</th>
-            <th> 0.993</th>
-            <th> 0.003 </th>
-            <th> 0   </th>
+            <th><div contenteditable>0.002 </div></th>
+            <th><div contenteditable>  0	</div></th>
+            <th><div contenteditable> 0.993 </div></th>
+            <th><div contenteditable> 0.003 </div></th>
+            
         </tr>
          <tr>
             <th>Settlements</th>
-            <th>0	 </th>
-            <th> 0		</th>
-            <th> 0.003	 </th>
-            <th>0.997	  </th>
-            <th>  0  </th>
+            <th><div contenteditable>0</div>	 </th>
+            <th><div contenteditable> 0	</div>	</th>
+            <th><div contenteditable> 0.003</div>	 </th>
+            <th><div contenteditable>0.997</div>	  </th>
+            
         </tr>
          <tr>
             <th>Other land</th>
-            <th>0</th>
-            <th> 0 	</th>
-            <th> 0</th>
-            <th> 0 </th>
-            <th> 1   </th>
+            <th><div contenteditable>0 </div></th>
+            <th><div contenteditable> 0 </div>	</th>
+            <th><div contenteditable> 0 </div></th>
+            <th><div contenteditable> 0 </div></th>
+            
         </tr>
      </table>
     
