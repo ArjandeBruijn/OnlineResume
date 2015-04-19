@@ -1,31 +1,123 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="PortFolio.aspx.cs" Inherits="Resume.PortFolio" %>
-<%@ Register assembly="Syncfusion.EJ.Web, Version=13.1400.0.21, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" namespace="Syncfusion.JavaScript.Web" tagprefix="ej" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="PortFolio.aspx.cs" Inherits="Resume.PortFolio2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+      
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-  
      
-   
-     <h1>Landis user interface. </h1> 
+    
 
-     <p><a href="http://www.landis-ii.org/">Landis-ii</a> is a modular simulation platform that predicts changes in tree species and size composition in the face of growth and desturbances.
-     I developed a module for landis that deals with growth and competition amongst trees that was recently published. 
+    <style>
+        #section {
+            width:350px;
+            float:left;
+            padding:10px;	 	 
+        }
+        #nav {
+            line-height:30px;
+            height:561px;
+            width:415px;
+            float:left;
+            padding:5px;	      
+        }
+    
+    </style>
+
+    <div id="nav">
+        <canvas id="canvas1" width= "415", height="561">Random Canvas</canvas>
+    </div>
+
+
+    <div id="section">
+        <h2>Malinau simulations</h2>
+            <p>
+                These simulations are based on arial photographs taken in 2000 and 2009 of the north-eastern region of borneo, Indonesia. 
+                A land use transition matrix is derived from the areas that were covered by 12 landuse types. The land use transittion 
+                rates are assumed to continue in the future. It predicts urbanisation and forest 
+                degradation based on a few simple rules, namely:  
+                <li>People prefer to live adjacent to water</li>
+                <li>People prefer to cultivate land close to their homes and close to the water</li>
+            </p>
+        <p>
+         
+        </p>
+    </div>
+
+
+
+        
+    <button type="button" onclick="myFunction()" >Simulate one year!</button>
+
+    
+
      
-     
-     More recently, I developed 
-     a more elegant user interface than that was currently available for landis. It combines a file tree (on the left) where you add your scenario file, 
-     with a work-space (on the right) where you can view img/gis in a map view, graphs and data in a spreadsheet or text editor. It animates your maps as 
-     well (i.e. it iterates through layers in a map view and shows each map for a couple of seconds). It regularly scans your scenario file for 
-     associated input/output files and adds these to the tree view. Changes in the text editor are automatically saved to the file and you can fire a 
-     simulation by right-clicking your scenario file.
 
 
-      </p>
+     <table>
+        <tr>
+            <th>From / To </th>
+            <th>Forest</th>
+            <th>Secondary Forest</th>
+            <th>Cropland</th>
+            <th>Settlements</th>
+            <th>Other land</th>
+        </tr>
+        <tr>
+            <th>Forest</th>
+            <th> 0.998 </th>
+            <th> 0 </th>
+            <th> 0.004 </th>
+            <th> 0 </th>
+            <th> 0 </th>
+        </tr>
+        <tr>
+            <th>Secondary Forest</th>
+            <th> 0	 </th>
+            <th> 0.994	 </th>
+            <th> 0.006	</th>
+            <th> 0 </th>
+            <th> 0 </th>
+        </tr>
+         <tr>
+            <th>Cropland</th>
+            <th>0.002</th>
+            <th>  0	</th>
+            <th> 0.993</th>
+            <th> 0.003 </th>
+            <th> 0   </th>
+        </tr>
+         <tr>
+            <th>Settlements</th>
+            <th>0	 </th>
+            <th> 0		</th>
+            <th> 0.003	 </th>
+            <th>0.997	  </th>
+            <th>  0  </th>
+        </tr>
+         <tr>
+            <th>Other land</th>
+            <th>0</th>
+            <th> 0 	</th>
+            <th> 0</th>
+            <th> 0 </th>
+            <th> 1   </th>
+        </tr>
+     </table>
+    
+    
+    
+	<script>
+	    function myFunction() {
 
+	        Simulate("canvas1", 0, 415, 0, 561, 0, 415, 0, 561, 1);
+	    }
+    </script>
+	<script src="js/Malinau.js"></script>
+    <script type='text/javascript' src='js/MalinauFunctions.js'></script>	
+    <script type="text/javascript"> SetImage('canvas1', 0, 415, 0, 561, 0,415,0,561, 1); </script>
+    
+    <script type="text/javascript">
+        
+    </script>
 
-    <div class="margin_bottom_20 h_divider"></div>
-    <div class="margin_bottom_10"></div>
-
-
- 
 </asp:Content>

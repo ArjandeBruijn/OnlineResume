@@ -10,6 +10,6 @@
 namespace Resume {
     
     
-    public partial class PortFolio {
+    public partial class PortFolio2 {
     }
 }
