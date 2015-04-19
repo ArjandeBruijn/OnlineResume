@@ -79,7 +79,17 @@ function setPixel(image, x, y, land_use) {
     image.imageData.data[index + 1] = land_use.Color[1];
     image.imageData.data[index + 2] = land_use.Color[2];
     image.imageData.data[index + 3] = 255;
- 
+
+}
+function SetPixel2(image, x, y, land_use) {
+    index = get_index(image, x, y);
+
+    image.pixels[x][y] = land_use;
+
+    image.imageData.data[index + 0] = 0;
+    image.imageData.data[index + 1] = 0;
+    image.imageData.data[index + 2] = 0;
+    image.imageData.data[index + 3] = 255;
 }
 function get_index(image, x, y) {
 
@@ -223,22 +233,15 @@ function Simulate2(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm,
 
                     random = Math.floor(Math.random() * Settlement_array.length);
 
-                    random_settlement_coord = Settlement_array[random];
+                    var random_settlement_coord = Settlement_array[random];
 
-                    alert("random" + random + "random_settlement_coord " + random_settlement_coord);
+                    //alert("random" + random + "random_settlement_coord " + random_settlement_coord);
 
-                    donating_coord = GetDonatingSite(image, random_settlement_coord, landuse);
+                    //donating_coord = GetDonatingSite(image, random_settlement_coord, landuse);
 
-                    //setPixel(image, donating_coord[0], donating_coord[1], landuse_to);
+                    SetPixel2(image, random_settlement_coord[0], random_settlement_coord[1], SF);
 
-                    index = get_index(image, random_settlement_coord[0], random_settlement_coord[1]);
-
-                    image.pixels[x][y] = Settlement;
-
-                    image.imageData.data[index + 0] = 0;
-                    image.imageData.data[index + 1] = 0;
-                    image.imageData.data[index + 2] = 0;
-                    image.imageData.data[index + 3] = 255;
+                    
                    
                 }
 
@@ -250,6 +253,7 @@ function Simulate2(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm,
     image.canvas.putImageData(image.imageData, 0, 0);
     alert("Simulate2");
 }
+
 function IsGoodDonatingSite(image, r, c, DonatingLandUseType)
 {
     if (r < 0 || c < 0 || r >= image.pixels.length || c >= image.pixels[0].length)
