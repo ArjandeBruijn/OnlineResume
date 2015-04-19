@@ -81,16 +81,7 @@ function setPixel(image, x, y, land_use) {
     image.imageData.data[index + 3] = 255;
 
 }
-function SetPixel2(image, x, y, land_use) {
-    index = get_index(image, x, y);
 
-    image.pixels[x][y] = land_use;
-
-    image.imageData.data[index + 0] = 0;
-    image.imageData.data[index + 1] = 0;
-    image.imageData.data[index + 2] = 0;
-    image.imageData.data[index + 3] = 255;
-}
 function get_index(image, x, y) {
 
     var index = (x + y * image.imageData.width) * 4;
@@ -235,13 +226,11 @@ function Simulate2(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm,
 
                     var random_settlement_coord = Settlement_array[random];
 
-                    //alert("random" + random + "random_settlement_coord " + random_settlement_coord);
+                    donating_coord = GetDonatingSite(image, random_settlement_coord, landuse);
 
-                    //donating_coord = GetDonatingSite(image, random_settlement_coord, landuse);
+                    setPixel(image, donating_coord[0], donating_coord[1], landuse_to);
 
-                    SetPixel2(image, random_settlement_coord[0], random_settlement_coord[1], SF);
-
-                    
+                    alert(donating_coord + " is now " + landuse_to.MapCode);
                    
                 }
 
@@ -280,7 +269,7 @@ function GetDonatingSite(image,random_settlement_coord, donating_land_use) {
     {
         // Right bottom
         r_from = random_settlement_coord[0] + d;
-        c_from = random_settlement_coord[0] + d;
+        c_from = random_settlement_coord[1] + d;
 
         donating_site = IsGoodDonatingSite(image, r_from, c_from, donating_land_use);
 
@@ -321,118 +310,3 @@ function GetDonatingSite(image,random_settlement_coord, donating_land_use) {
     }
 }
 
-/*
-function ImplementLandUseTransitions() { 
-
-    var LandUseSum = Landscape.LandUseMap.GetFrequency();
-          
-    var TransitionsPerLandUse = GetTransitionsPerLandUse();
-              
-    for (int from = 0; from < Landscape.LandUseNames.Length; from++)
-    {
-          for (int to = 0; to < Landscape.LandUseNames.Length; to++)
-          { 
-               int Transitions = TransitionsPerLandUse[from,to];
-
-              if(Transitions > LandUseSum[from])
-               {
-                   Transitions = LandUseSum[from];
-//                 throw new System.Exception("Cannot convert " + Transitions + " from " + Landscape.LandUseNames[from] + " to " + Landscape.LandUseNames[to]);
-               }
-
-                        int t = 0;
-                        
-                        while (t < Transitions)
-                        {
-                            int r_to = rnd.Next(Landscape.LandUseMap.Nrows);
-                            int c_to = rnd.Next(Landscape.LandUseMap.Ncols);
-
-                            // to: will be connected (settlement), not target ls!!
-                            if (Landscape.LandUseNames[Landscape.LandUseMap[r_to, c_to]].Contains("Settlement"))
-                            {
-                                int r_from;
-                                int c_from;
-                                //Console.WriteLine("Found " + LandUseDefininitions.LandUseTypes[to] + " in [" + r_to + "," + c_to + "]...looking for " + LandUseDefininitions.LandUseTypes[from]);
-                                for (; ; ) 
-                                {
-                                    int d = 1;
-                                    bool FoundTo = false;
-                                    for (;;)
-                                    {
-                                        // Right bottom
-                                        r_from = r_to + d;
-                                        c_from = c_to + d;
-                                        if (IsGoodDonatingSite(r_from,c_from,from))
-                                        {
-                                           FoundTo = true;
-                                           break;
-                                        }
-                                        if (FoundTo == true) break;
-                                        for (int c = 0; c < 2 * d; c++)
-                                        {
-                                            c_from --;
-                                            if (IsGoodDonatingSite(r_from, c_from, from))
-                                            {
-                                                FoundTo = true;
-                                                break;
-                                            }
-                                            if (FoundTo == true) break;
-                                        }
-                                        if (FoundTo == true) break;
-                                        for (int r = 0; r < 2 * d; r++)
-                                        {
-                                            r_from --;
-                                            if (IsGoodDonatingSite(r_from, c_from, from))
-                                            {
-                                                FoundTo = true;
-                                                break;
-                                            }
-                                            if (FoundTo == true) break;
-                                        }
-                                        if (FoundTo == true) break;
-                                        for (int c = 0; c < 2 * d; c++)
-                                        {
-                                            c_from ++;
-                                            if (IsGoodDonatingSite(r_from, c_from, from))
-                                            {
-                                                FoundTo = true;
-                                                break;
-                                            }
-                                            if (FoundTo == true) break;
-                                        }
-                                        if (FoundTo == true) break;
-                                        for (int r = 0; r < 2 * d; r++)
-                                        {
-                                            r_from ++;
-                                            if (IsGoodDonatingSite(r_from, c_from, from))
-                                            {
-                                                FoundTo = true;
-                                                break;
-                                            }
-                                            if (FoundTo == true) break;
-                                        }
-                                        if (FoundTo == true) break;
-                                        else d++;
-                                        
-                                    }
-                                    if (FoundTo)
-                                    {
-                                        //Console.WriteLine("Found donating landuse in [" + r_from + "," + c_from + "]");
-                                        break;
-                                    }
-                                    
-                                }
-                                //Console.WriteLine("Changing   [" + r_from + "," + c_from + "] from " + LandUseDefininitions.LandUseTypes[Landscape.LandUse[r_from, c_from]] + " to " + LandUseDefininitions.LandUseTypes[to]);
-                                Landscape.LandUseMap[r_from, c_from] = to;
-                                CO2FixSimulations.Co2year[r_from, c_from] = 0;
-                                t++;
-                            }
-                            
-                        
-                        }
-                    }
-                }
-
-
-
-}*/
