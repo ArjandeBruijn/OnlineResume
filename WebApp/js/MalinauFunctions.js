@@ -115,14 +115,14 @@ function GetLandUseType(MapCode) {
     }
     return null;
 }
-function GetPixelsWithLandUse(landuse) {
+function GetPixelsWithLandUse(image, landuse) {
 
     my_landuse_array = [];
-    for (var r = 0; r < pixels.length; r++) {
+    for (var r = 0; r < image.pixels.length; r++) {
 
-        for (var c = 0; c < pixels[r].length; c++) {
+        for (var c = 0; c < image.pixels[r].length; c++) {
 
-            if (pixels[r][c] == landuse) my_landuse_array.push([r,c]);
+            if (image.pixels[r][c] == landuse) my_landuse_array.push([r, c]);
              
         }
 
@@ -143,9 +143,13 @@ function Image(container, xmin, xmax, ymin, ymax, scale) {
     // create a new pixel array
     this.imageData = element.getContext("2d").createImageData(nrows, ncols);
 }
+
+images = [];
+
 function SetImage(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, ymax_zm, scale) {
 
     my_image = new Image(container, xmin, xmax, ymin, ymax, scale);
+    images.push(my_image);
 
     // draw random dots
     var counter = -1;
@@ -191,20 +195,16 @@ function SetImage(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
 
 function Simulate2(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, ymax_zm, scale) {
 
+    my_image = images[0];
+
     
-    canvas = document.getElementById(container);
-    ctx = canvas.getContext('2d');
-    imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-    data = imageData.data;
-
-    PF_array = GetPixelsWithLandUse(PF);
-    SF_array = GetPixelsWithLandUse(SF);
-    Settlement_array = GetPixelsWithLandUse(Settlement);
-
+    PF_array = GetPixelsWithLandUse(my_image, PF);
+    SF_array = GetPixelsWithLandUse(my_image, SF);
+    Settlement_array = GetPixelsWithLandUse(my_image, Settlement);
 
     for (var s = 0; s < PF_array.length; s++) {
 
-        setPixel(PF_array[s][0], PF_array[s][1], Settlement);
+        setPixel2(my_image, PF_array[s][0], PF_array[s][1], Settlement);
     }
     /*
     for (l = 0; l < LandUseTypes.length; l++) {
@@ -248,7 +248,7 @@ function Simulate2(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm,
 
         }
         */
-    ctx.putImageData(imageData, 0, 0);
+    my_image.canvas.putImageData(my_image.imageData, 0, 0);
     alert("Simulate2");
 }
 function IsGoodDonatingSite(r, c, DonatingLandUseType)
