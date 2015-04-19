@@ -187,7 +187,7 @@ function SetImage(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
 
 
 
-function Simulate2(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, ymax_zm, scale) {
+function Simulate(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, ymax_zm, scale) {
 
     var image = images[0];
 
@@ -230,7 +230,7 @@ function Simulate2(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm,
 
                     setPixel(image, donating_coord[0], donating_coord[1], landuse_to);
 
-                    alert(donating_coord + " is now " + landuse_to.MapCode);
+                    //alert(donating_coord + " is now " + landuse_to.MapCode);
                    
                 }
 
@@ -240,7 +240,7 @@ function Simulate2(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm,
         }
 
     image.canvas.putImageData(image.imageData, 0, 0);
-    alert("Simulate2");
+   
 }
 
 function IsGoodDonatingSite(image, r, c, DonatingLandUseType)
