@@ -5,38 +5,53 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      
-    <canvas id="canvas1" width= "415", height="561">Random Canvas</canvas>
-     
-
-    
-        
-    <button type="button" onclick="myFunction()" >Simulate!</button>
-
     
 
-    <p> These simulations are based on arial photographs taken in 2000 and 2009 of the north-eastern region of borneo, Indonesia. 
+    <style>
+        #section {
+            width:350px;
+            float:left;
+            padding:10px;	 	 
+        }
+        #nav {
+            line-height:30px;
+            background-color:#eeeeee;
+            height:570px;
+            width:420px;
+            float:left;
+            padding:5px;	      
+        }
     
-    <p>A land use transition matrix is derived from the areas that were covered by 12 landuse types. The land use transittion 
-    rates are assumed to continue in the future.
-     
-    
-    
-    It predicts urbanisation and forest 
+    </style>
+
+    <div id="nav">
+        <canvas id="canvas1" width= "415", height="561">Random Canvas</canvas>
+    </div>
+
+
+    <div id="section">
+        <h2>Malinau simulations</h2>
+            <p>
+                These simulations are based on arial photographs taken in 2000 and 2009 of the north-eastern region of borneo, Indonesia. 
+                A land use transition matrix is derived from the areas that were covered by 12 landuse types. The land use transittion 
+    rates are assumed to continue in the future. It predicts urbanisation and forest 
     degradation based on a few simple rules, namely:  
-       
-    </p>
-
     <li>People prefer to live adjacent to water</li>
     <li>People prefer to cultivate land close to their homes and close to the water</li>
+            </p>
+        <p>
+         
+        </p>
+    </div>
 
-	
-    <!-- 	Forest	Secondary Forest	Cropland	Settlements	Other land
-            Forest	0.998 	0	0.004	0	0
-            Secondary Forest	0	0.994	0.006	0	0
-            Cropland	0.002	0	0.993	0.003	0
-            Settlements	0	0	0.003	0.997	0
-            Other land	0	0	0	0	1-->
 
+
+        
+    <button type="button" onclick="myFunction()" >Simulate one year!</button>
+
+    
+
+     
 
 
      <table>
