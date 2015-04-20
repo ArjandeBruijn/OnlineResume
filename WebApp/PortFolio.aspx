@@ -18,22 +18,15 @@
                 The image is based on an arial photographs taken in 2000. The simulations predict land use transitions from 2000 onwards. 
                 The selection of grid cells that are transferred is based on a simple assumption that all human activity is centered around 
                 developed area. 
-                 
-                 
-                 
+                  
             </p>
         <p>
          
         </p>
     </div>
-
-
-
-        
-    <button type="button" onclick="myFunction()" >Simulate one year!</button>
-
     
-   
+    <button type="button" onclick="Simulate()" >Simulate one year!</button>
+
      
      <table id = "LUCtable" bgcolor = white border="1">
         <tr>
@@ -87,8 +80,7 @@
 
     
 	<script>
-	    function myFunction() {
-
+	    function Simulate() {
 	        Simulate("canvas1", 0, 415, 0, 561, 0, 415, 0, 561, 1);
 	    }
     </script>
