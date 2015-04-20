@@ -58,6 +58,7 @@
     <Content Include="js\MalinauFunctions.js" />
     <Content Include="js\infinite-rotator.js" />
     <Content Include="js\Malinau.js" />
+    <Content Include="js\TableEventHandlers.js" />
     <Content Include="PortFolio.aspx" />
     <Content Include="Skills.aspx" />
     <Content Include="StyleSheet.css" />

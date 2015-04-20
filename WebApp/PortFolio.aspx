@@ -30,54 +30,91 @@
      
      <table id = "LUCtable" bgcolor = white border="1">
         <tr>
-            <th>From / To </th>
-            <th>Forest</th>
-            <th>Secondary Forest</th>
-            <th>Cropland</th>
-            <th>Settlements</th>
+            <th bgcolor ="#c0c0c0">From / To </th>
+            <th bgcolor ="#ff9900">Forest</th>
+            <th bgcolor ="#ff9900">Secondary Forest</th>
+            <th bgcolor ="#ff9900">Cropland</th>
+            <th bgcolor ="#ff9900">Settlements</th>
             
         </tr>
         <tr>
-            <th>Forest</th>
-            <th id="Forest-Forest"><div> 0.998 </div> </th>
-            <th id="Forest-SecondaryForest"><div contenteditable> 0 </div> </th>
-            <th id="Forest-CropLand"><div contenteditable> 0.004</div> </th>
-            <th =id= "Forest-Settlements"><div contenteditable> 0 </div> </th>
+            <th bgcolor ="#ccff66" >Forest</th>
+            <th bgcolor ="#c0c0c0" id="Forest-Forest"><div> 0.998 </div> </th>
+            <th  id="Forest-SecondaryForest"><div contenteditable> 0 </div> </th>
+            <th  id="Forest-CropLand"><div contenteditable> 0.004</div> </th>
+            <th  id= "Forest-Settlements"><div contenteditable> 0 </div> </th>
             
         </tr>
         <tr>
-            <th>Secondary Forest</th>
-            <th id="SecondaryForest-Forest"><div contenteditable> 0	 </div> </th>
-            <th id="SecondaryForest-SecondaryForest"><div> 0.996	 </div> </th>
-            <th id = 'SecondaryForest-CropLand'><div contenteditable> 0.006	</div> </th>
-            <th id = 'SecondaryForest-Settlements'><div contenteditable> 0 </div> </th>
+            <th bgcolor ="#ccff66">Secondary Forest</th>
+            <td id="SecondaryForest-Forest"><div contenteditable> 0	 </div> </th>
+            <td bgcolor ="#c0c0c0" id="SecondaryForest-SecondaryForest"><div> 0.996	 </div> </th>
+            <td id = 'SecondaryForest-CropLand'><div contenteditable> 0.006	</div> </th>
+            <td id = 'SecondaryForest-Settlements'><div contenteditable> 0 </div> </th>
            
         </tr>
          <tr>
-            <th>Cropland</th>
-            <th id = 'CropLand-Forest'><div contenteditable>0.002 </div></th>
-            <th id = 'CropLand-SecondaryForest'><div contenteditable>  0	</div></th>
-            <th id = 'CropLand-CropLand'><div> 0.993 </div></th>
-            <th id = 'CropLand-Settlements'><div contenteditable> 0.003 </div></th>
+            <th bgcolor ="#ccff66">Cropland</th>
+            <td id = 'CropLand-Forest'><div contenteditable>0.002 </div></th>
+            <td id = 'CropLand-SecondaryForest'><div contenteditable>  0	</div></th>
+            <td bgcolor ="#c0c0c0" id = 'CropLand-CropLand'><div> 0.993 </div></th>
+            <td id = 'CropLand-Settlements'><div contenteditable> 0.003 </div></th>
             
         </tr>
          <tr>
-            <th>Settlements</th>
-            <th id = 'Settlements-Forest'><div contenteditable>0</div>	 </th>
-            <th id = 'Settlements-SecondaryForest'><div contenteditable> 0	</div>	</th>
-            <th id = 'Settlements-CropLand'><div contenteditable> 0.003</div>	 </th>
-            <th id = 'Settlements-Settlements'><div>0.997</div>	  </th>
+            <th bgcolor ="#ccff66">Settlements</th>
+            <td id = 'Settlements-Forest'><div contenteditable>0</div>	 </th>
+            <td id = 'Settlements-SecondaryForest'><div contenteditable> 0	</div>	</th>
+            <td id = 'Settlements-CropLand'><div contenteditable> 0.003</div>	 </th>
+            <td bgcolor ="#c0c0c0" id = 'Settlements-Settlements'><div>0.997</div>	  </th>
             
         </tr>
           
      </table>
     <script>
-        
+        function watch(targetElement, triggerFunction) {
+            /// store the original html to compare with later
+            var html = targetElement.innerHTML;
+            /// start our constant checking function
+            setInterval(function () {
+                /// compare the previous html with the current
+                if (html != targetElement.innerHTML) {
+                    /// trigger our function when a change occurs
+                    triggerFunction();
+                    /// update html so that this doesn't keep triggering
+                    html = targetElement.innerHTML;
+                }
+            }, 500);
+        }
+
+        function whenChangeHappens() {
+
+            table = document.getElementById("LUCtable");
+            // Set the from-from-props
+
+            for (var i = 1, row; row = table.rows[i]; i++) {
+                //iterate through rows
+                //rows would be accessed using the "row" variable assigned in the for loop
+
+                var sum = 0;
+
+                for (var j = 1, col; col = row.cells[j]; j++) {
+                    //iterate through columns
+                    //columns would be accessed using the "col" variable assigned in the for loop
+                    sum += parseFloat(table.rows[i].cells[j].innerText);
+                }
+                table.rows[i].cells[i].innerText = Math.round((table.rows[i].cells[i].innerText - (sum - 1)) * 100) / 100;
+
+
+            }
+        }
 
         watch(document.getElementById('LUCtable'), whenChangeHappens);
     </script>
 
-
+    <dd>
+        <div class="blue" style="width:35%;"> 
+    </dd>
     
 	<script>
 	    function Simulate() {
@@ -86,7 +123,9 @@
     </script>
 	<script src="js/Malinau.js"></script>
     <script type='text/javascript' src='js/TableEventHandlers.js'></script>	
-    <script type='text/javascript' src='js/MalinauFunctions.js'></script>	
+    <script type='text/javascript' src='js/MalinauFunctions.js'></script>
+    <script type='text/javascript' src='js/TableEventHandlers.js'></script>
+    	
     <script type="text/javascript"> SetImage('canvas1', 0, 415, 0, 561, 0,415,0,561, 1); </script>
     
     <script type="text/javascript">
