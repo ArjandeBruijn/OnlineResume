@@ -188,6 +188,8 @@ function SetImage(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
 
 function Simulate(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, ymax_zm, scale) {
 
+    $("body").css("cursor", "progress");
+
     var image = images[0];
 
     InitializePixelCoordinates(image);
@@ -242,10 +244,10 @@ function Simulate(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
             }
         }
 
-        }
+    }
 
     image.canvas.putImageData(image.imageData, 0, 0);
-   
+    $("body").css("cursor", "default");
 }
 
 function IsGoodDonatingSite(image, r, c, DonatingLandUseType)
