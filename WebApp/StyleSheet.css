@@ -15,14 +15,14 @@ table, td, th {
 td 
 {
     bgcolor: white;
+    text-align: right;
 }
 th 
 {
     bgcolor: yellow;
-}
-th {
     text-align: left;
 }
+ 
 #section {
             width:350px;
             float:left;

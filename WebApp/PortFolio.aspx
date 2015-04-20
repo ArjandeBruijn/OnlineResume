@@ -17,7 +17,7 @@
                 Malinau is a region in the north-east of Borneo, Indonesia where I was stationed for a graduation thesis. 
                 The image is based on an arial photographs taken in 2000. The simulations predict land use transitions from 2000 onwards. 
                 The selection of grid cells that are transferred is based on a simple assumption that all human activity is centered around 
-                developed area. 
+                developed area. You can use the table below to predict land use into the future. 
                   
             </p>
         <p>
@@ -39,10 +39,10 @@
         </tr>
         <tr>
             <th bgcolor ="#ccff66" >Forest</th>
-            <th bgcolor ="#c0c0c0" id="Forest-Forest"><div> 0.998 </div> </th>
-            <th  id="Forest-SecondaryForest"><div contenteditable> 0 </div> </th>
-            <th  id="Forest-CropLand"><div contenteditable> 0.004</div> </th>
-            <th  id= "Forest-Settlements"><div contenteditable> 0 </div> </th>
+            <td bgcolor ="#c0c0c0" id="Forest-Forest"><div> 0.998 </div> </th>
+            <td  id="Forest-SecondaryForest"><div contenteditable> 0 </div> </th>
+            <td  id="Forest-CropLand"><div contenteditable> 0.004</div> </th>
+            <td  id= "Forest-Settlements"><div contenteditable> 0 </div> </th>
             
         </tr>
         <tr>
