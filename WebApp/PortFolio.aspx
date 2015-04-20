@@ -4,24 +4,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-     
-    
-
-    <style>
-        #section {
-            width:350px;
-            float:left;
-            padding:10px;	 	 
-        }
-        #nav {
-            line-height:30px;
-            height:561px;
-            width:415px;
-            float:left;
-            padding:5px;	      
-        }
-    
-    </style>
+      
 
     <div id="nav">
         <canvas id="canvas1" width= "415", height="561">Random Canvas</canvas>
@@ -50,19 +33,7 @@
     <button type="button" onclick="myFunction()" >Simulate one year!</button>
 
     
-    <style>
-table, td, th {
-    border: 1px solid black;
-    bgcolor: white;
-}
-
-
-th {
-    text-align: left;
-}
-</style>
-     
-
+   
      
      <table id = "LUCtable" bgcolor = white border="1">
         <tr>
@@ -107,33 +78,14 @@ th {
         </tr>
           
      </table>
-    
     <script>
+        
 
-        table = document.getElementById("LUCtable");
-            
-        table.addEventListener("click", function () {
-
-            // Set the from-from-props
-
-            for (var i = 1, row; row = table.rows[i]; i++) {
-                //iterate through rows
-                //rows would be accessed using the "row" variable assigned in the for loop
-
-                var sum = 0;
-
-                for (var j = 1, col; col = row.cells[j]; j++) {
-                    //iterate through columns
-                    //columns would be accessed using the "col" variable assigned in the for loop
-                    sum += parseFloat(table.rows[i].cells[j].innerText);
-                }
-                table.rows[i].cells[i].innerText = table.rows[i].cells[i].innerText - (sum - 1);
-
-            }
-
-        });
-
+        watch(document.getElementById('LUCtable'), whenChangeHappens);
     </script>
+
+
+    
 	<script>
 	    function myFunction() {
 
@@ -141,6 +93,7 @@ th {
 	    }
     </script>
 	<script src="js/Malinau.js"></script>
+    <script type='text/javascript' src='js/TableEventHandlers.js'></script>	
     <script type='text/javascript' src='js/MalinauFunctions.js'></script>	
     <script type="text/javascript"> SetImage('canvas1', 0, 415, 0, 561, 0,415,0,561, 1); </script>
     
