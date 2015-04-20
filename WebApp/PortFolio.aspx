@@ -64,7 +64,7 @@ th {
      
 
      
-     <table bgcolor = white border="1">
+     <table id = "LUCtable" bgcolor = white border="1">
         <tr>
             <th>From / To </th>
             <th>Forest</th>
@@ -84,7 +84,7 @@ th {
         <tr>
             <th>Secondary Forest</th>
             <th id="SecondaryForest-Forest"><div contenteditable> 0	 </div> </th>
-            <th id="SecondaryForest-SecondaryForest"><div> 0.994	 </div> </th>
+            <th id="SecondaryForest-SecondaryForest"><div> 0.996	 </div> </th>
             <th id = 'SecondaryForest-CropLand'><div contenteditable> 0.006	</div> </th>
             <th id = 'SecondaryForest-Settlements'><div contenteditable> 0 </div> </th>
            
@@ -108,8 +108,32 @@ th {
           
      </table>
     
-    
-    
+    <script>
+
+        table = document.getElementById("LUCtable");
+            
+        table.addEventListener("click", function () {
+
+            // Set the from-from-props
+
+            for (var i = 1, row; row = table.rows[i]; i++) {
+                //iterate through rows
+                //rows would be accessed using the "row" variable assigned in the for loop
+
+                var sum = 0;
+
+                for (var j = 1, col; col = row.cells[j]; j++) {
+                    //iterate through columns
+                    //columns would be accessed using the "col" variable assigned in the for loop
+                    sum += parseFloat(table.rows[i].cells[j].innerText);
+                }
+                table.rows[i].cells[i].innerText = table.rows[i].cells[i].innerText - (sum - 1);
+
+            }
+
+        });
+
+    </script>
 	<script>
 	    function myFunction() {
 
