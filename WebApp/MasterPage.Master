@@ -30,7 +30,7 @@
 
         function SetActivePage() {
 
-            var url = window.location.href.replace(/^.*[\\\/]/, '');
+            var filename = window.location.href.replace(/^.*[\\\/]/, '');
 
             var menu = document.getElementById("menu");
             var listItems = menu.getElementsByTagName("li");
@@ -43,7 +43,7 @@
 
                 var x = $(my_a).attr("href");
                 alert(x);
-                if (x == "WorkExperience.aspx") {
+                if (x == filename) {
                     $(my_a).addClass("current");
                 }
             }
@@ -59,7 +59,7 @@
      <div id="container">
         <div onclick="SetActivePage()" id ="menu">  <!-- menu -->
             <ul>
-                <li><a href="Default.aspx" class = "current">Home</a></li>
+                <li><a href="Default.aspx">Home</a></li>
                 <li><a href="Skills.aspx" >Skills</a></li>     
                 <li><a href="PortFolio.aspx">Portfolio</a></li>       
                 <li><a href="WorkExperience.aspx">Work Experience</a></li>
@@ -73,6 +73,10 @@
         <div class="margin_bottom_10"></div> 
     </div>
      
+     <script>
+         SetActivePage();
+    </script>
+
     <div class="margin_bottom_10 "></div>
     <div class="margin_bottom_10 "></div>
       <div class="margin_bottom_10 h_divider"></div>
