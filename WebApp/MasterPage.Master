@@ -39,12 +39,16 @@
             for (var i = 0; i < arrayLength; i++) {
 
                 var my_a = listItems[i].getElementsByTagName("a");
-                $(my_a).removeClass("current");
-
                 var x = $(my_a).attr("href");
-                alert(x);
+
+                
                 if (x == filename) {
                     $(my_a).addClass("current");
+                }
+                else $(my_a).removeClass("current");
+
+                if (filename == "") {
+                    $(listItems[0].getElementsByTagName("a")).addClass("current");
                 }
             }
 
@@ -64,7 +68,7 @@
                 <li><a href="PortFolio.aspx">Portfolio</a></li>       
                 <li><a href="WorkExperience.aspx">Work Experience</a></li>
                 <li><a href="Education.aspx">Education</a></li>
-                <li><a href="Education.aspx">Publications</a></li>
+                <li><a href="Publications.aspx">Publications</a></li>
                 <li><a href="Testimonials.aspx">References</a></li>
             </ul>   
 	    </div> <!-- end of menu -->
