@@ -16,12 +16,22 @@
     <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
 </head>
 <body>
-    <p>Arjan de Bruijn</p>
-    <p>Fort Collins, Colorado</p>
-    <p>Resume</p>
+     
+    <div id="nav_banner">
+      <p><img id = "Img1" src="images\pass.jpg"   align="left">  </p>
+    </div>
+    <div id="section_banner">
+        <p>Arjan de Bruijn</p>
+        <p>Fort Collins, Co</p>
+        <p>Resume</p>
+    </div>
+
+    
+
+    
     <!--<p><img id = "border" src="images\pass.jpg"   align="right">  </p>-->
     <div class="margin_bottom_10 h_divider"></div>
-    <div class="margin_bottom_10 h_divider"></div>
+    <div class="margin_bottom_10"></div>
      <div id="container">
         <div id="menu">  <!-- menu -->
             <ul>
@@ -33,12 +43,13 @@
                 <li><a href="Testimonials.aspx">Testimonials</a></li>
             </ul>   
 	    </div> <!-- end of menu -->
-        <div class="margin_bottom_20"></div> 
-        <div class="margin_right_left">
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
-        </div>
-        <div class="margin_bottom_30"></div> 
+        <div class="margin_bottom_10"></div> 
+            <div class="margin_right_left">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+            </div>
+        <div class="margin_bottom_10"></div> 
     </div>
+
     <div id="footer">
         <div class="margin_bottom_20"></div>
         <p><a href="mailto:amgdebruijn@gmail.com">AMGdeBruijn@gmail.com</a> </p>

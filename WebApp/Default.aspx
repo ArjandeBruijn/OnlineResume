@@ -4,34 +4,16 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
-    <h2>RESEARCH SOFTWARE</h2>
+    <h2>Summary Of Qualifications</h2>
        
                 
     <p>  I am creative yet my code is minimalistic. I have considerable experience in disseminating new appraches through 
        presentations, workshops, publications, technical and conceptual documentations. I have considerable  experience with geospatial 
        applications and I would love to work with them more closely than I have untill now. I work hard and I am authorized to work for 
-       any employer in the United States.
+       any employer in the United States.PhD, Msc and M.A. from internationally accredited universities. More than 8 years programming experience.
+       Proven initiative in new approaches.Excellent communication, teamwork and problem solving skills.Proficient in English, German and Dutch
     </p>
-                
-    <div class="margin_bottom_10 h_divider"></div>
-    <div class="margin_bottom_10"></div>
-       
-    <h2>SUMMARY OF QUALIFICATIONS</h2>
-    
-    <ul class="category_list">
-       <li>PhD, Msc and M.A. from internationally accredited universities</li>
-       <div class="margin_bottom_10"></div>
-       <li>More than 8 years programming experience</li>
-       <div class="margin_bottom_10"></div>
-       <li>Experienced communicator through presentations, workshops and technical documentation</li>
-       <div class="margin_bottom_10"></div>
-       <li>Proven initiative in new approaches</li>
-       <div class="margin_bottom_10"></div>
-       <li>Excellent communication, teamwork and problem solving skills</li>
-       <div class="margin_bottom_10"></div>
-       <li>Proficient in English, German and Dutch</li>
-       <div class="margin_bottom_10"></div>
-    </ul>
+     <div class="margin_bottom_10"></div>
     <div class= "column_1_4 fl">
        <center>
            <div id="rotating-item-wrapper"><!-- START: Rotating Images -->
@@ -57,7 +39,7 @@
                <img  src="images/ChestnutSpread/190.png"  class="rotating-item"  />   
                <img  src="images/ChestnutSpread/200.png"  class="rotating-item"  />   
             </div><!-- END: Rotating images images -->
-            Simulated colonisation of a landischape by an introduced tree species. 
+            Simulated colonisation of a landscape by an introduced tree species. 
         </center>
     </div>
     <div class="column_1_4 fl">

@@ -63,6 +63,18 @@ th
     float:left;
     padding:5px;	      
 }
+#section_banner {
+    width:350px;
+    float:left;
+    padding:10px;	 	 
+}
+#nav_banner {
+    line-height:30px;
+    height:100px;
+    width:100px;
+    float:left;
+    padding:5px;	      
+}
 a:link, a:visited  
 {
     color: #fcdd31; 
@@ -140,7 +152,7 @@ h3 {
 }
 p 
 {
-    font-size: 20px;
+    font-size: 12px;
     line-height: 1em;
 	margin: 0px;
 	padding: 0px;
@@ -153,7 +165,6 @@ p
 	clear: both;
     width: 960px;
 	height: 42px;
-	background: url(images/templatemo_menu_bg.jpg) repeat-x;
 }
 
 #menu ul {
@@ -182,27 +193,19 @@ p
 	font-size: 13px;
 	font-weight: bold;
 	text-decoration: none;
-	color: #ffffff;	
+	color: Black;	
+	background-color: Orange;
 	outline: none;
 }
 
 #menu li a:hover, #menu li .current {
 	position: relative;
-	color: #ffffff;
-	background: url('images/templatemo_menu_hover_right.jpg') no-repeat right top;
+	color: Black;	
+	background-color: Yellow;
     top: -1px;
     left: -1px;
 }
 
-#menu li a:hover span, #menu li .current span	{
-	position: absolute;
-	display: inline-block;
-	width: 15px;
-	height: 42px;
-	top: 0;
-	left: 0;
-	background: url(images/templatemo_menu_hover_left.jpg) no-repeat;
-}
 
 #content 
 {
