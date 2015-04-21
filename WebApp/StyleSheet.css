@@ -121,9 +121,16 @@ p
 	width: 960px;
 	margin: 0 auto;
 	padding: 0 10px;
-	background-color: Gray;
+	background-color : Yellow;
 }
-
+#footer {
+	clear: both;
+	width: 960px;
+	padding: 20px 0 20px 0;
+	text-align: center;
+	border-top: 1px solid #8b8a8b;
+	background: #343233 url(images/templatemo_footer.jpg) no-repeat;
+}
 #banner {
 	width: 960px;
 	height: 150px;
