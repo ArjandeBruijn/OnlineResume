@@ -17,7 +17,7 @@
                    <div class="margin_bottom_20 h_divider"></div>
                     <div class="margin_bottom_10"></div>
                      
-                <h1>AGROSCOPE RECKENHOLZ TAENIKON - Zürich, ZH - 2010 to 2011</h1>
+                <h2>AGROSCOPE RECKENHOLZ TAENIKON - Zürich, ZH - 2010 to 2011</h2>
 
                  <p>   
                     Accomplishments
@@ -28,7 +28,7 @@
                     <div class="margin_bottom_20 h_divider"></div>
                     <div class="margin_bottom_10"></div>
                 </p>  
-                    <h1>ALTERRA B.V. - Wageningen - 2009 to 2010</h1>
+                    <h2>ALTERRA B.V. - Wageningen - 2009 to 2010</h2>
                     
 
                 <p> 
@@ -44,7 +44,7 @@
                     <div class="margin_bottom_10"></div>
                  </p> 
 
-                    <h1>IMK-IFU - Garmisch-Partenkirchen - 2006 to 2009</h1>
+                    <h2>IMK-IFU - Garmisch-Partenkirchen - 2006 to 2009</h2>
                     
 
                  <p> 

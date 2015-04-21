@@ -4,8 +4,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
-    <h1>RESEARCH SOFTWARE
-       </h1>
+    <h2>RESEARCH SOFTWARE
+       </h2>
                 
        <p>  I am creative yet my code is minimalistic. I have considerable experience in disseminating new appraches through 
            presentations, workshops, publications, technical and conceptual documentations. I have considerable  experience with geospatial 
@@ -19,8 +19,8 @@
        <div class="margin_bottom_20">
        </div>
        
-       <h1>SUMMARY OF QUALIFICATIONS
-       </h1>
+       <h2>SUMMARY OF QUALIFICATIONS
+       </h2>
            <ul class="category_list">
                <li>PhD, Msc and M.A. from internationally accredited universities</li>
                <div class="margin_bottom_10"></div>
