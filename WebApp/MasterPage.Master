@@ -59,19 +59,20 @@
             <div class="margin_bottom_30">
             </div> 
             
-            <div id="footer">
+            
+              
+        </div>
+        
+
+        <div id="footer">
                 <div class="margin_bottom_20"></div>
                 <p><a href="mailto:amgdebruijn@gmail.com">AMGdeBruijn@gmail.com</a> </p>
                 <p>715-401-0799</p>
                 <div class="margin_bottom_20"></div>
             </div> <!-- End of footer -->     
-              
-        </div>
-        
+
     <form id="form1" runat="server">
-    <div>
-        
-    </div>
+   
     </form>
 </body>
 </html>

@@ -5,9 +5,25 @@ body {
 	line-height: 1.5em;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 12px;
-	background: #250d0b url(images/templatemo_bg.jpg) top repeat-x;
+	 
 	height:100%;
+	/* background-color: Beige; */
 }
+#container {
+	width: 960px;
+	margin: 0 auto;
+	padding: 0 10px;
+	/* background-color : LightGray; */
+}
+#footer {
+	clear: both;
+	width: 100%;
+	padding: 20px 0 20px 0;
+	text-align: center;
+	border-top: 1px solid #8b8a8b;
+	background: #343233 url(images/templatemo_footer.jpg) no-repeat; 
+}
+
 table, td, th {
     border: 1px solid black;
     
@@ -117,20 +133,7 @@ p
 	margin: 0px;
 	padding: 0px;
 }
-#container {
-	width: 960px;
-	margin: 0 auto;
-	padding: 0 10px;
-	background-color : Yellow;
-}
-#footer {
-	clear: both;
-	width: 960px;
-	padding: 20px 0 20px 0;
-	text-align: center;
-	border-top: 1px solid #8b8a8b;
-	background: #343233 url(images/templatemo_footer.jpg) no-repeat;
-}
+
 #banner {
 	width: 960px;
 	height: 150px;
