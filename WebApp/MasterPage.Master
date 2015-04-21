@@ -26,12 +26,18 @@
         <p>Resume</p>
     </div>
 
+    <script>
+
+        function SetActivePage() {
+            alert("Teringlijder");
+        }
+    </script>
 
     <!--<p><img id = "border" src="images\pass.jpg"   align="right">  </p>-->
     <div class="margin_bottom_10 h_divider"></div>
     <div class="margin_bottom_10"></div>
      <div id="container">
-        <div id="menu">  <!-- menu -->
+        <div onclick="SetActivePage()" id="menu">  <!-- menu -->
             <ul>
                 <li><a href="Default.aspx" class="current">Home</a></li>
                 <li><a href="Skills.aspx" >Skills</a></li>     
@@ -46,7 +52,7 @@
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
         <div class="margin_bottom_10"></div> 
     </div>
-
+     
     <div class="margin_bottom_10 "></div>
     <div class="margin_bottom_10 "></div>
       <div class="margin_bottom_10 h_divider"></div>
