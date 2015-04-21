@@ -137,7 +137,7 @@ function Image(container, xmin, xmax, ymin, ymax, scale) {
 
 images = [];
 
-function SetImage(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, ymax_zm, scale) {
+function SetImage(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, ymax_zm, scale, MalinauMap) {
 
     my_image = new Image(container, xmin, xmax, ymin, ymax, scale);
     images.push(my_image);

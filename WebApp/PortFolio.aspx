@@ -12,7 +12,7 @@
 
 
     <div id="section">
-        <h2>Malinau simulations</h2>
+        <h2>Deforestation in Malinau</h2>
             <p font-size: 14px;>
                 Malinau is a region in the north-east of Borneo, Indonesia where I was stationed for a graduation thesis. 
                 The image is based on an arial photographs taken in 2000. The simulations predict land use transitions from 2000 onwards. 
@@ -26,7 +26,7 @@
     </div>
     
     <button type="button" onclick="Simulate()" >Simulate one year!</button>
-
+    <button id="ShowButton" type="button" onclick="ShowMalinauMap()" >Show 2009!</button>
      
      <table id = "LUCtable" bgcolor = white border="1">
         <tr>
@@ -117,16 +117,32 @@
     </dd>
     
 	<script>
+	    
 	    function Simulate() {
 	        Simulate("canvas1", 0, 415, 0, 561, 0, 415, 0, 561, 1);
 	    }
+	    function ShowMalinauMap() {
+	        if (document.getElementById("ShowButton").innerHTML == "Show 2009!") {
+	            document.getElementById("ShowButton").innerHTML = "Show 2000!";
+	            SetImage('canvas1', 0, 415, 0, 561, 0, 415, 0, 561, 1, MalinauMap2009);
+	        }
+	        else {
+	            document.getElementById("ShowButton").innerHTML = "Show 2009!";
+	            SetImage('canvas1', 0, 415, 0, 561, 0, 415, 0, 561, 1, MalinauMap2000);
+	        }
+//	       
+
+	        
+	    }
+	    
     </script>
-	<script src="js/Malinau.js"></script>
+	<script src="js/Malinau2000.js"></script>
+    <script src="js/Malinau2009.js"></script>
     <script type='text/javascript' src='js/TableEventHandlers.js'></script>	
     <script type='text/javascript' src='js/MalinauFunctions.js'></script>
     <script type='text/javascript' src='js/TableEventHandlers.js'></script>
     	
-    <script type="text/javascript"> SetImage('canvas1', 0, 415, 0, 561, 0,415,0,561, 1); </script>
+    <script type="text/javascript"> SetImage('canvas1', 0, 415, 0, 561, 0, 415, 0, 561, 1, MalinauMap2000); </script>
     
     <script type="text/javascript">
         
