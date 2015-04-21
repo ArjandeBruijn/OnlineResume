@@ -98,9 +98,9 @@ img {
 .margin_right_40 { margin-right: 40px; }
 .margin_right_60 { margin-right: 60px; }
 
-.h_divider { background: url(images/templatemo_horizontal_divider.jpg) bottom repeat-x; }
-.vl_divider { background: url(images/templatemo_vertical_divider.jpg) left repeat-y; }
-.vr_divider { background: url(images/templatemo_vertical_divider.jpg) right repeat-y; }
+.h_divider { background: url(images/horizontal_divider.jpg) bottom repeat-x; }
+.vl_divider { background: url(images/vertical_divider.jpg) left repeat-y; }
+.vr_divider { background: url(images/vertical_divider.jpg) right repeat-y; }
 
 .fl { float: left; }
 .fr { float: right }
