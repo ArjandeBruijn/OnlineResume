@@ -26,9 +26,7 @@
         <p>Resume</p>
     </div>
 
-    
 
-    
     <!--<p><img id = "border" src="images\pass.jpg"   align="right">  </p>-->
     <div class="margin_bottom_10 h_divider"></div>
     <div class="margin_bottom_10"></div>
@@ -36,26 +34,29 @@
         <div id="menu">  <!-- menu -->
             <ul>
                 <li><a href="Default.aspx" class="current">Home</a></li>
-                <li><a href="Skills.aspx">Skills</a></li>     
+                <li><a href="Skills.aspx" >Skills</a></li>     
                 <li><a href="PortFolio.aspx">Portfolio</a></li>       
                 <li><a href="WorkExperience.aspx">Work Experience</a></li>
                 <li><a href="Education.aspx">Education</a></li>
-                <li><a href="Testimonials.aspx">Testimonials</a></li>
+                <li><a href="Education.aspx">Publications</a></li>
+                <li><a href="Testimonials.aspx">References</a></li>
             </ul>   
 	    </div> <!-- end of menu -->
         <div class="margin_bottom_10"></div> 
-            <div class="margin_right_left">
-                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
-            </div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
         <div class="margin_bottom_10"></div> 
     </div>
 
-    <div id="footer">
-        <div class="margin_bottom_20"></div>
-        <p><a href="mailto:amgdebruijn@gmail.com">AMGdeBruijn@gmail.com</a> </p>
-        <p>715-401-0799</p>
-        <div class="margin_bottom_20"></div>
-    </div> <!-- End of footer -->     
+    <div class="margin_bottom_10 "></div>
+    <div class="margin_bottom_10 "></div>
+      <div class="margin_bottom_10 h_divider"></div>
+    <center>
+        <div class="margin_bottom_10"></div>
+            <p><a href="mailto:amgdebruijn@gmail.com">AMGdeBruijn@gmail.com</a> </p>
+            <p>715-401-0799</p>
+        <div class="margin_bottom_10"></div>
+    </center>
+     
 
     <form id="form1" runat="server"></form>
     

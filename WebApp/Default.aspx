@@ -3,17 +3,20 @@
     <p></p>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+
+ <h2>Summary Of Qualifications</h2>
+    <div class="column_2_3">
+    I am creative yet my code is minimalistic. I have a considerable publication record, taught at presentations and workshops, 
+    designed and wrote technical and conceptual documentation of biogeochemical and geospatial simulation software for more than eight years.
+    I work hard and I am authorized to work for any employer in the United States. I have a PhD, Msc and M.A. and have been associated with 
+    internationally accredited universities in The Netherlands, Germany and the United states. I am proficient in English, German and Dutch
+     
+</div>
+    <div class="column_1_3"></div>
     
-    <h2>Summary Of Qualifications</h2>
        
-                
-    <p>  I am creative yet my code is minimalistic. I have considerable experience in disseminating new appraches through 
-       presentations, workshops, publications, technical and conceptual documentations. I have considerable  experience with geospatial 
-       applications and I would love to work with them more closely than I have untill now. I work hard and I am authorized to work for 
-       any employer in the United States.PhD, Msc and M.A. from internationally accredited universities. More than 8 years programming experience.
-       Proven initiative in new approaches.Excellent communication, teamwork and problem solving skills.Proficient in English, German and Dutch
-    </p>
-     <div class="margin_bottom_10"></div>
+    <div class="margin_bottom_10"></div>
     <div class= "column_1_4 fl">
        <center>
            <div id="rotating-item-wrapper"><!-- START: Rotating Images -->
@@ -39,7 +42,7 @@
                <img  src="images/ChestnutSpread/190.png"  class="rotating-item"  />   
                <img  src="images/ChestnutSpread/200.png"  class="rotating-item"  />   
             </div><!-- END: Rotating images images -->
-            Simulated colonisation of a landscape by an introduced tree species. 
+            Colonisation of a landscape by an introduced species. 
         </center>
     </div>
     <div class="column_1_4 fl">

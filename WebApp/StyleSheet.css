@@ -9,7 +9,11 @@ body {
 	height:100%;
 	/* background-color: Beige; */
 }
-
+.topmenu ul li.active a, .topmenu ul li a:hover {
+    text-decoration:none;
+    color:#fff;
+    background:url(../images/menu_a.jpg) no-repeat center top;
+}
 #container {
 	width: 960px;
 	margin: 0 auto;
@@ -70,8 +74,8 @@ th
 }
 #nav_banner {
     line-height:30px;
-    height:100px;
-    width:100px;
+    height:76px;
+    width:76px;
     float:left;
     padding:5px;	      
 }
@@ -170,9 +174,9 @@ p
 #menu ul {
 	float: left;
 	margin: 0px;
-	padding: 0 0 0 20px;
+	padding: 0 0 0 0px;
 	list-style: none;
-    width: 941px;
+    width: 960px;
 }
 
 #menu ul li {
@@ -180,13 +184,20 @@ p
 	padding: 0px;
 	display: inline;
 }
+ .newspaper {
+    -webkit-column-count: 3; /* Chrome, Safari, Opera */
+    -moz-column-count: 3; /* Firefox */
+    column-count: 3;
+}
 
+ 
+ 
 #menu ul li a {
 	position: relative;	
 	float: left;
 	display: inline-block;
 	height: 30px;
-	width: 130px;
+	width: 127px;
 	margin-right: 10px;
 	text-align: center;
 	padding: 12px 0 0 0;
@@ -198,14 +209,14 @@ p
 	outline: none;
 }
 
-#menu li a:hover, #menu li .current {
+#menu li a:hover, #menu li a.current {
 	position: relative;
 	color: Black;	
 	background-color: Yellow;
     top: -1px;
     left: -1px;
 }
-
+ 
 
 #content 
 {
