@@ -25,7 +25,15 @@
         </p>
     </div>
     
-    <button type="button" onclick="Simulate()" >Simulate one year!</button>
+    <style>
+        
+        div.right{
+	        display:inline;
+        }
+    </style>
+
+
+    <button type="button" onclick="Simulate()" >Simulate one time unit!</button><div class="right">seof</div>
     <button id="ShowButton" type="button" onclick="ShowMalinauMap()" >Show 2009!</button>
      
      <table id = "LUCtable" bgcolor = white border="1">
