@@ -33,7 +33,7 @@
     </style>
 
 
-    <button type="button" onclick="Simulate()" >Simulate one time unit!</button><div class="right">seof</div>
+    <button type="button" onclick="Simulate()" >Simulate one time unit!</button><div id = "ProgressTag" class="right"></div><br>
     <button id="ShowButton" type="button" onclick="ShowMalinauMap()" >Show 2009!</button>
      
      <table id = "LUCtable" bgcolor = white border="1">

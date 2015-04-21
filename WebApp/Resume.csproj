@@ -55,14 +55,14 @@
   <ItemGroup>
     <Content Include="Default.aspx" />
     <Content Include="Education.aspx" />
+    <Content Include="js\Malinau2000.js" />
+    <Content Include="js\Malinau2009.js" />
     <Content Include="js\MalinauFunctions.js" />
     <Content Include="js\infinite-rotator.js" />
-    <Content Include="js\Malinau.js" />
     <Content Include="js\TableEventHandlers.js" />
     <Content Include="PortFolio.aspx" />
     <Content Include="Skills.aspx" />
     <Content Include="StyleSheet.css" />
-    <Content Include="TableEventHandlers.js" />
     <Content Include="Testimonials.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

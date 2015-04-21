@@ -184,29 +184,63 @@ function SetImage(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
 
 }
 
+function CountCoversions() {
 
+    var SumConversions = 0;
+    for (l = 0; l < LandUseTypes.length; l++) {
 
+        var landuse = LandUseTypes[l];
+
+        var conversion_rate = landuse.Conversion_rate;
+
+        if (conversion_rate != null) {
+
+            for (var a = 0; a < conversion_rate.length; a++) {
+                var conversion = conversion_rate[a];
+
+                var MapCodeTo = conversion.MapCodeNew;
+                var Rate = conversion.rate;
+
+                var landuse_to = GetLandUseType(MapCodeTo);
+
+                SumConversions += Rate * landuse.Count;
+            }
+        }
+    }
+    return SumConversions;
+
+}
 function Simulate(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, ymax_zm, scale) {
 
     $("body").css("cursor", "progress");
 
     var image = images[0];
 
+    document.getElementById("ProgressTag").innerHTML = "InitializePixelCoordinates";
+
     InitializePixelCoordinates(image);
 
+
+
     PF.Conversion_rate =   [new ConversionRate(6, GetValueFromTable('Forest-CropLand'))];
-   
-
-     
-
+    
     PF_array = GetPixelsWithLandUse(image, PF);
     SF_array = GetPixelsWithLandUse(image, SF);
     Settlement_array = GetPixelsWithLandUse(image, Settlement);
 
-    
+    document.getElementById("ProgressTag").innerHTML = "Starting conversions";
+
+
+    var SumConversions = Math.round(CountCoversions());
+
+    document.getElementById("ProgressTag").innerHTML = "SumConversions = " + SumConversions;
+
+    var ConversionsCount = 0;
     for (l = 0; l < LandUseTypes.length; l++) {
 
         var landuse = LandUseTypes[l];
+
+        document.getElementById("ProgressTag").innerHTML = landuse.MapCode;
 
         var conversion_rate = landuse.Conversion_rate;
 
@@ -225,9 +259,11 @@ function Simulate(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
 
                 if (NumberOfConversions > landuse.Count) NumberOfConversions = landuse.Count;
 
-                    //alert(landuse.MapCode + " " + MapCodeTo + " " + Rate + " " + NumberOfConversions);
-
                 for (c = 0; c < NumberOfConversions; c++) {
+
+                    ConversionsCount++;
+
+                    document.getElementById("ProgressTag").innerHTML = "Progress "+ ConversionsCount +"\\" + SumConversions;
 
                     random = Math.floor(Math.random() * Settlement_array.length);
 
@@ -245,7 +281,7 @@ function Simulate(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
         }
 
     }
-
+    document.getElementById("ProgressTag").innerHTML = "";
     image.canvas.putImageData(image.imageData, 0, 0);
     $("body").css("cursor", "default");
 }
