@@ -3,28 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resume", "WebApp\Resume.csproj", "{0615A2C4-3A2D-4ACD-BA59-AA0D3749D7FA}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "demo", "..\client-line-navigator-master\demo\", "{5C117A86-96ED-4AE4-9EC6-EFCADFD62857}"
-	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
-		Debug.AspNetCompiler.VirtualPath = "/demo"
-		Debug.AspNetCompiler.PhysicalPath = "..\client-line-navigator-master\demo\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\demo\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/demo"
-		Release.AspNetCompiler.PhysicalPath = "..\client-line-navigator-master\demo\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\demo\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "49326"
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conversion Script", "..\calibration-malinau\trunk\CO2Fix landscape Conversion Script\Conversion Script\Conversion Script.csproj", "{729DB9F3-864A-497D-81CE-22CADA93990D}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,24 +23,6 @@ Global
 		{0615A2C4-3A2D-4ACD-BA59-AA0D3749D7FA}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{0615A2C4-3A2D-4ACD-BA59-AA0D3749D7FA}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{0615A2C4-3A2D-4ACD-BA59-AA0D3749D7FA}.Release|x86.ActiveCfg = Release|Any CPU
-		{5C117A86-96ED-4AE4-9EC6-EFCADFD62857}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5C117A86-96ED-4AE4-9EC6-EFCADFD62857}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5C117A86-96ED-4AE4-9EC6-EFCADFD62857}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{5C117A86-96ED-4AE4-9EC6-EFCADFD62857}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{5C117A86-96ED-4AE4-9EC6-EFCADFD62857}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{5C117A86-96ED-4AE4-9EC6-EFCADFD62857}.Release|Any CPU.Build.0 = Debug|Any CPU
-		{5C117A86-96ED-4AE4-9EC6-EFCADFD62857}.Release|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{5C117A86-96ED-4AE4-9EC6-EFCADFD62857}.Release|x86.ActiveCfg = Debug|Any CPU
-		{729DB9F3-864A-497D-81CE-22CADA93990D}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{729DB9F3-864A-497D-81CE-22CADA93990D}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{729DB9F3-864A-497D-81CE-22CADA93990D}.Debug|Mixed Platforms.Build.0 = Debug|x86
-		{729DB9F3-864A-497D-81CE-22CADA93990D}.Debug|x86.ActiveCfg = Debug|x86
-		{729DB9F3-864A-497D-81CE-22CADA93990D}.Debug|x86.Build.0 = Debug|x86
-		{729DB9F3-864A-497D-81CE-22CADA93990D}.Release|Any CPU.ActiveCfg = Release|x86
-		{729DB9F3-864A-497D-81CE-22CADA93990D}.Release|Mixed Platforms.ActiveCfg = Release|x86
-		{729DB9F3-864A-497D-81CE-22CADA93990D}.Release|Mixed Platforms.Build.0 = Release|x86
-		{729DB9F3-864A-497D-81CE-22CADA93990D}.Release|x86.ActiveCfg = Release|x86
-		{729DB9F3-864A-497D-81CE-22CADA93990D}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
