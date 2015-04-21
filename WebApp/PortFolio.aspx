@@ -13,7 +13,7 @@
 
     <div id="section">
         <h2>Deforestation in Malinau</h2>
-            <p font-size: 14px;>
+            <p>
                 Malinau is a region in the north-east of Borneo, Indonesia where I was stationed for a graduation thesis. 
                 The image is based on an arial photographs taken in 2000. The simulations predict land use transitions from 2000 onwards. 
                 The selection of grid cells that are transferred is based on a simple assumption that all human activity is centered around 

@@ -274,7 +274,7 @@ function Simulate(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
                     setPixel(image, donating_coord[0], donating_coord[1], landuse_to);
 
                     alert(donating_coord + " is now " + landuse_to.MapCode);
-                   
+                    
                 }
 
             }
