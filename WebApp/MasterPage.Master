@@ -16,17 +16,14 @@
     <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
 </head>
 <body>
-    <div id="container">
-	    <div id="banner">
-            <p><img id = "border" src="images\pass.jpg"   align="right">  </p>
-            <span>
-                <div class="margin_bottom_10"></div>
-                <h1>Arjan de Bruijn</h1>
-                <h1>Fort Collins, Colorado</h1>
-                <h1>Resume</h1>
-            </span>
-        </div> <!-- end of banner -->
-        <div id="templatemo_menu">  <!-- menu -->
+    <p>Arjan de Bruijn</p>
+    <p>Fort Collins, Colorado</p>
+    <p>Resume</p>
+    <!--<p><img id = "border" src="images\pass.jpg"   align="right">  </p>-->
+    <div class="margin_bottom_10 h_divider"></div>
+    <div class="margin_bottom_10 h_divider"></div>
+     <div id="container">
+        <div id="menu">  <!-- menu -->
             <ul>
                 <li><a href="Default.aspx" class="current">Home</a></li>
                 <li><a href="Skills.aspx">Skills</a></li>     
