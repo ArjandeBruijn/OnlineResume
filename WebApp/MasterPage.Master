@@ -26,9 +26,10 @@
                 <p><img id = "border" src="images\pass.jpg"   align="right">  </p>
                 
                 <span>
+                    <div class="margin_bottom_10"></div>
                     <h1>Arjan de Bruijn</h1>
-                    
                     <h1>Fort Collins, Colorado</h1>
+                    <h1>Resume</h1>
                 </span>
                    
                 
