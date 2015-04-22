@@ -178,12 +178,7 @@ p
 	padding: 0px;
 	display: inline;
 }
- .newspaper {
-    -webkit-column-count: 3; /* Chrome, Safari, Opera */
-    -moz-column-count: 3; /* Firefox */
-    column-count: 3;
-}
-
+  
  
  
 #menu ul li a {
@@ -203,15 +198,22 @@ p
 	outline: none;
 }
 
-#menu li a:hover, #menu li a.current {
+ #menu li a.current {
 	position: relative;
 	color: Black;	
 	background-color: Yellow;
     top: -1px;
     left: -1px;
 }
- 
-
+/*
+#menu li a:hover {
+	position: relative;
+	color: White;	
+	background-color: Orange;
+    top: -1px;
+    left: -1px;
+}
+*/
 #content 
 {
     color: White;
