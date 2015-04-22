@@ -9,16 +9,9 @@ body {
 	height:100%;
 	/* background-color: Beige; */
 }
-.topmenu ul li.active a, .topmenu ul li a:hover {
-    text-decoration:none;
-    color:#fff;
-    background:url(../images/menu_a.jpg) no-repeat center top;
-}
-#white_container {
-	width: 960px;
-	margin: 0 auto;
-	padding: 0 10px;
-    background-color: White;
+#pick_with_name
+{
+     background-color: White;
 }
 #container {
 	width: 960px;
@@ -81,7 +74,7 @@ th
 }
 a:link, a:visited  
 {
-    color: #fcdd31; 
+    color: #31b6fc;/*#fcdd31; */
     text-decoration: underline; 
     font-weight: normal; 
 } 
