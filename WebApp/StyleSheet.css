@@ -27,15 +27,6 @@ body {
 	text-align : center;
 }
  
-#footer {
-	clear: both;
-	width: 100%;
-	padding: 20px 0 20px 0;
-	text-align: center;
-	border-top: 1px solid #8b8a8b;
-	background: #343233 url(images/templatemo_footer.jpg) no-repeat; 
-}
-
 table, td, th {
     border: 1px solid black;
     
@@ -261,4 +252,10 @@ button{
     margin: 5px;
 }
  
- 
+footer {
+    display: block;
+    position: absolute;
+    width: 100%;
+    bottom: 30px;
+   background-color: White;
+}
