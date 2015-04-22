@@ -6,13 +6,13 @@
 
 
   
-    <div class="page-wrap">
+    <div class="column_2_3">
+    Publications
+     
+</div>
+    <div class="column_1_3"></div>
     
-        
-    </div>
-
-<footer class="site-footer">
-  I'm the Sticky Footer.
-</footer>
+       
+    <div class="margin_bottom_10"></div>
         
 </asp:Content>

@@ -16,15 +16,7 @@
     <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
 </head>
 <body>
-      <header>
-        <p><img id = "Img2" src="images\pass.jpg"  onclick="SetActivePage()"  align="left">  </p>
-        <p>Arjan de Bruijn</p>
-        <p>Fort Collins, Co</p>
-        <p>Resume</p>
-        <div class="margin_bottom_10 h_divider"></div>
-      </header>
-
-
+     
     <div id="nav_banner">
       <p><img id = "Img1" src="images\pass.jpg"  onclick="SetActivePage()"  align="left">  </p>
     </div>
@@ -34,8 +26,39 @@
         <p>Resume</p>
     </div>
 
+    <script>
+
+        function SetActivePage() {
+
+            var filename = window.location.href.replace(/^.*[\\\/]/, '');
+
+            var menu = document.getElementById("menu");
+            var listItems = menu.getElementsByTagName("li");
+
+            var arrayLength = listItems.length;
+            for (var i = 0; i < arrayLength; i++) {
+
+                var my_a = listItems[i].getElementsByTagName("a");
+                var x = $(my_a).attr("href");
+
+                
+                if (x == filename) {
+                    $(my_a).addClass("current");
+                }
+                else $(my_a).removeClass("current");
+
+                if (filename == "") {
+                    $(listItems[0].getElementsByTagName("a")).addClass("current");
+                }
+            }
+
+           
+
+        }
+    </script>
+
     <!--<p><img id = "border" src="images\pass.jpg"   align="right">  </p>-->
-    
+    <div class="margin_bottom_10 h_divider"></div>
     <div class="margin_bottom_10"></div>
      <div id="container">
         <div onclick="SetActivePage()" id ="menu">  <!-- menu -->
@@ -59,51 +82,19 @@
     </script>
 
     <div class="margin_bottom_10 "></div>
-    
-
-    <form id="form1" runat="server"></form>
-
-      <footer>
-        <center>
-            <div class="margin_bottom_20 h_divider"></div>
-            <div class="margin_bottom_20"></div>
-             <p><a href="mailto:amgdebruijn@gmail.com">AMGdeBruijn@gmail.com</a> </p>
-             <p>715-401-0799</p>
-        </center>
-    </footer>
+    <div class="margin_bottom_10 "></div>
      
-     <script>
-
-         function SetActivePage() {
-
-             var filename = window.location.href.replace(/^.*[\\\/]/, '');
-
-             var menu = document.getElementById("menu");
-             var listItems = menu.getElementsByTagName("li");
-
-             var arrayLength = listItems.length;
-             for (var i = 0; i < arrayLength; i++) {
-
-                 var my_a = listItems[i].getElementsByTagName("a");
-                 var x = $(my_a).attr("href");
-
-
-                 if (x == filename) {
-                     $(my_a).addClass("current");
-                 }
-                 else $(my_a).removeClass("current");
-
-                 if (filename == "") {
-                     $(listItems[0].getElementsByTagName("a")).addClass("current");
-                 }
-             }
-
-
-
-         }
-    </script>
     
+     <div id="footer"> 
+         <div class="margin_bottom_10 h_divider"></div>
+        <center>
+            <div class="margin_bottom_10"></div>
+                <p><a href="mailto:amgdebruijn@gmail.com">AMGdeBruijn@gmail.com</a> </p>
+                <p>715-401-0799</p>
+            <div class="margin_bottom_10"></div>
+        </center>
+   </div>
+    <form id="form1" runat="server"></form>
     
-   
 </body>
 </html>
