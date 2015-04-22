@@ -252,6 +252,15 @@ button{
     margin: 5px;
 }
  
+ 
+ header {
+    display: block;
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    background-color: White;
+}
+ 
 footer {
     display: block;
     position: fixed;

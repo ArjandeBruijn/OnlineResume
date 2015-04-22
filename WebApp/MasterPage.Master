@@ -16,7 +16,15 @@
     <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
 </head>
 <body>
-     
+      <header>
+        <p><img id = "Img2" src="images\pass.jpg"  onclick="SetActivePage()"  align="left">  </p>
+        <p>Arjan de Bruijn</p>
+        <p>Fort Collins, Co</p>
+        <p>Resume</p>
+        <div class="margin_bottom_10 h_divider"></div>
+      </header>
+
+
     <div id="nav_banner">
       <p><img id = "Img1" src="images\pass.jpg"  onclick="SetActivePage()"  align="left">  </p>
     </div>
@@ -26,39 +34,8 @@
         <p>Resume</p>
     </div>
 
-    <script>
-
-        function SetActivePage() {
-
-            var filename = window.location.href.replace(/^.*[\\\/]/, '');
-
-            var menu = document.getElementById("menu");
-            var listItems = menu.getElementsByTagName("li");
-
-            var arrayLength = listItems.length;
-            for (var i = 0; i < arrayLength; i++) {
-
-                var my_a = listItems[i].getElementsByTagName("a");
-                var x = $(my_a).attr("href");
-
-                
-                if (x == filename) {
-                    $(my_a).addClass("current");
-                }
-                else $(my_a).removeClass("current");
-
-                if (filename == "") {
-                    $(listItems[0].getElementsByTagName("a")).addClass("current");
-                }
-            }
-
-           
-
-        }
-    </script>
-
     <!--<p><img id = "border" src="images\pass.jpg"   align="right">  </p>-->
-    <div class="margin_bottom_10 h_divider"></div>
+    
     <div class="margin_bottom_10"></div>
      <div id="container">
         <div onclick="SetActivePage()" id ="menu">  <!-- menu -->
@@ -86,8 +63,7 @@
 
     <form id="form1" runat="server"></form>
 
-      <footer class="site-footer">
-        
+      <footer>
         <center>
             <div class="margin_bottom_20 h_divider"></div>
             <div class="margin_bottom_20"></div>
@@ -96,7 +72,36 @@
         </center>
     </footer>
      
+     <script>
 
+         function SetActivePage() {
+
+             var filename = window.location.href.replace(/^.*[\\\/]/, '');
+
+             var menu = document.getElementById("menu");
+             var listItems = menu.getElementsByTagName("li");
+
+             var arrayLength = listItems.length;
+             for (var i = 0; i < arrayLength; i++) {
+
+                 var my_a = listItems[i].getElementsByTagName("a");
+                 var x = $(my_a).attr("href");
+
+
+                 if (x == filename) {
+                     $(my_a).addClass("current");
+                 }
+                 else $(my_a).removeClass("current");
+
+                 if (filename == "") {
+                     $(listItems[0].getElementsByTagName("a")).addClass("current");
+                 }
+             }
+
+
+
+         }
+    </script>
     
     
    
