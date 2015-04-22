@@ -30,17 +30,10 @@
             <p>Fort Collins, Co</p>
             <p>Resume</p>
         </div>
+        <div class="margin_bottom_10 h_divider"></div>
     </div>
 
-    <script>
-        $('#pick_with_name').stickThis();
-       
-    </script>
-
-    
-
     <!--<p><img id = "border" src="images\pass.jpg"   align="right">  </p>-->
-    <div class="margin_bottom_10 h_divider"></div>
     <div class="margin_bottom_10"></div>
      <div id="container">
         <div onclick="SetActivePage()" id ="menu">  <!-- menu -->
@@ -78,6 +71,10 @@
    </div>
     <form id="form1" runat="server"></form>
     
+    <script>
+        $('#pick_with_name').stickThis();
+       
+    </script>
     <script>
 
         function SetActivePage() {
