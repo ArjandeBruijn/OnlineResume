@@ -11,7 +11,9 @@
     <meta name="description" content="Arjan de Bruijn" />
     <meta charset="utf-8" />
     <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js?ver=3.0.1'></script>    
-	<script type='text/javascript' src='js/infinite-rotator.js'></script>		
+	<script type='text/javascript' src='js/infinite-rotator.js'></script>	
+    <script type='text/javascript' src='js/jq-sticky-anything.min.js'></script>	
+    	
     <link rel="stylesheet" href="css/StyleSheet.css" type="text/css" media="screen" />
     <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
 </head>
@@ -20,11 +22,17 @@
     <div id="nav_banner">
       <p><img id = "Img1" src="images\pass.jpg"  onclick="SetActivePage()"  align="left">  </p>
     </div>
+    <script>
+    </script>
     <div id="section_banner">
         <p>Arjan de Bruijn</p>
         <p>Fort Collins, Co</p>
         <p>Resume</p>
     </div>
+
+    <script>
+        $('#nav_banner').stickThis(); 
+    </script>
 
     <script>
 
