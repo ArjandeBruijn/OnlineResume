@@ -13,15 +13,19 @@
 
 
 
-function my_init(container) 
-{
-    var first_rotating_item = 1; // 0= background
+function my_init(container, FirstIsBackground) {
+
+    var first_rotating_item = 0;
+
+    if (FirstIsBackground) {
+        first_rotating_item = 1;
+    }
 
     //initial fade-in time (in milliseconds)
     var initialFadeIn = 1;
 
     //interval between items (in milliseconds)
-    var itemInterval = 1000;
+    var itemInterval = 2000;
 
     //cross-fade time (in milliseconds)
     var fadeTime = 1;
@@ -30,7 +34,9 @@ function my_init(container)
     var numberOfItems = $(container).length;
 
     //show first item
-    $(container).eq(0).fadeIn(0);
+    if (FirstIsBackground) {
+        $(container).eq(0).fadeIn(0);
+    }
 
     //set current item
     var currentItem = first_rotating_item;
@@ -56,4 +62,4 @@ function my_init(container)
 }
 
  
-$(window).load(function () { my_init('.rotating-item'); my_init('.rotating-item2'); my_init('.rotating-item3'); my_init('.rotating-item4') });
+$(window).load(function () { my_init('.rotating-item', true); my_init('.rotating-item2'); my_init('.rotating-item3'); my_init('.rotating-item4') });
