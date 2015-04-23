@@ -34,9 +34,7 @@
 
                   
             </p>
-        <p>
-         
-        </p>
+         <h3>Left: Maryland simulations</h3>
     </div>
 
 
