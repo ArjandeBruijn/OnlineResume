@@ -57,15 +57,9 @@ function LandUse(MapCode, Color, Conversion_rate) {
  
 function setPixel(image, x, y, land_use) {
 
-    index = get_index(image, x, y);
-
     image.pixels[x][y] = land_use;
 
-    image.imageData.data[index + 0] = land_use.Color[0];
-    image.imageData.data[index + 1] = land_use.Color[1];
-    image.imageData.data[index + 2] = land_use.Color[2];
-    image.imageData.data[index + 3] = 255;
-
+    setPixelColor(image, x, y, land_use.Color);
 }
 
 
@@ -288,11 +282,7 @@ function GetDonatingSite(image, random_settlement_coord, donating_land_use) {
 
 }
 
-function Coordinates(x,y)
-{
-    this.x=x;
-    this.y=y;
-}
+
 function InitializePixelCoordinates(image) 
 {
     Pixel_Coordinates = [[], []];
@@ -302,7 +292,7 @@ function InitializePixelCoordinates(image)
 
         for (var c = 0; c < image.pixels[0].length; c++) 
         {
-                Pixel_Coordinates[r][c] = new Coordinates(r, c);
+                Pixel_Coordinates[r][c] = new Coordinate(r, c);
         }
     }
 }

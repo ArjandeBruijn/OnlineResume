@@ -14,6 +14,10 @@ var Color11 = [128, 0, 128];
 var Color12 = [128, 128, 0];
 var Color13 = [0, 0, 0]; //black    
 
+function Coordinate(x, y) {
+    this.x = x;
+    this.y = y;
+}
 function setPixelColor(image, x, y, Color) {
 
     index = get_index(image, x, y);
@@ -23,11 +27,20 @@ function setPixelColor(image, x, y, Color) {
     image.imageData.data[index + 2] = Color[2];
     image.imageData.data[index + 3] = 255;
 }
+function drawLine(id, from, to) {
 
+    var c = document.getElementById(id);
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.moveTo(from.x, from.y);
+    ctx.lineTo(to.x, to.y);
+    ctx.stroke();
+
+}
 function Image(container, xmin, xmax, ymin, ymax) {
 
-    
 
+    
     element = document.getElementById(container);
     this.canvas = element.getContext("2d");
 

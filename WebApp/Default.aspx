@@ -4,6 +4,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+ 
+
      <div id="nav">
          <div id="rotating-item-wrapper"><!-- START: Rotating Images -->
                <img  src="images/MarylandMaps/BG.jpg" class="rotating-item" />
@@ -33,15 +35,16 @@
          <h3>Left: Maryland simulations</h3>
          <h3>Below: Markov Chain computation of a Spruce budworm outbreak in Minnesota</h3>
 
-         <div id="Div1">
-            <canvas id="canvas2" width= "200", height="200">Random Canvas</canvas>
-        </div>
+         <canvas id="myCanvas" width="400" height="150" style="border:1px solid #d3d3d3;">
+            Your browser does not support the HTML5 canvas tag.</canvas>
+
+         
     </div>
 
     <script src="js/Malinau2000.js"></script>
     <script type='text/javascript' src='js/ImageFunctions.js'></script>
     <script type='text/javascript' src='js/MarkovChainFunctions.js'></script>
-    <script type="text/javascript">  SetImage2('canvas2', 0, 415, 0, 561); </script>
+    <script type="text/javascript">  SetImage2('canvas2', 0, 400, 0, 150); </script>
         
 
      
