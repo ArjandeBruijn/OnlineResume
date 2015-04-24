@@ -44,7 +44,7 @@
     <script src="js/Malinau2000.js"></script>
     <script type='text/javascript' src='js/ImageFunctions.js'></script>
     <script type='text/javascript' src='js/MarkovChainFunctions.js'></script>
-    <script type="text/javascript">  SetImage2('canvas2', 0, 450, 0, 150); </script>
+    <script type="text/javascript">  DrawGraph('canvas2', 0, 450, 0, 150); </script>
         
 
      
