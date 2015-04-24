@@ -246,10 +246,9 @@ p
 
 #rotating-item-wrapper {
 	position: relative;
-	width: 200px;
-	height: 200px;
+	
 }
-.rotating-item, .rotating-item2, .rotating-item3, .rotating-item4
+.rotating-item
 {
 	display: none;
 	position: absolute;

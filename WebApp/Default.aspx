@@ -4,10 +4,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-
- 
-     
-      
      <div id="nav">
          <div id="rotating-item-wrapper"><!-- START: Rotating Images -->
                <img  src="images/MarylandMaps/BG.jpg" class="rotating-item" />

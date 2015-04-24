@@ -62,4 +62,4 @@ function my_init(container, FirstIsBackground) {
 }
 
  
-$(window).load(function () { my_init('.rotating-item', true); my_init('.rotating-item2'); my_init('.rotating-item3'); my_init('.rotating-item4') });
+$(window).load(function () { my_init('.rotating-item', true);  });
