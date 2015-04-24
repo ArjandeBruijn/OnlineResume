@@ -10,24 +10,17 @@ function DrawGraph(container, xmin, xmax, ymin, ymax) {
 
     TitleAreaY = new Rectangle(xmin, ymin, TitleMargin, ymax - TitleMargin);
 
-    ctx.fillStyle = "#FF0000";
-    ctx.fillRect(TitleAreaY.xmin, TitleAreaY.ymin, TitleAreaY.xmax, TitleAreaY.ymax);
+    DrawRectangle(TitleAreaY, ctx, "#FF0000");
 
     TitleAreaX = new Rectangle(TitleMargin, ymax - TitleMargin, xmax, ymax);
-    ctx.fillStyle = "Yellow";
-    ctx.fillRect(TitleAreaX.xmin, TitleAreaX.ymin, TitleAreaX.xmax, TitleAreaX.ymax);
 
-    PanelMargin = 20;
+    DrawRectangle(TitleAreaX, ctx, "Yellow");
 
-    ctx.fillStyle = "Purple";
-
-    PanelArea = new Rectangle(TitleAreaY.B.x + PanelMargin, ymin + PanelMargin, TitleAreaX.B.x - 3 * PanelMargin, TitleAreaX.B.y - 2 * PanelMargin);
-
-    ctx.fillRect(PanelArea.xmin, PanelArea.ymin, PanelArea.xmax, PanelArea.ymax);
+    PanelArea = new Rectangle(TitleMargin, ymin, xmax, ymax - TitleMargin);
+    DrawRectangle(PanelArea, ctx, "Purple");
 
     ctx.fillStyle = "Black";
-    
-
+     
     DrawAxis(margin, xmax, ymax);
     
 }

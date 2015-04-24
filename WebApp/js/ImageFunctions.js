@@ -14,6 +14,12 @@ var Color11 = [128, 0, 128];
 var Color12 = [128, 128, 0];
 var Color13 = [0, 0, 0]; //black
 
+function DrawRectangle(Rectangle, Context, Color) {
+
+    Context.fillStyle = Color;
+    Context.fillRect(Rectangle.xmin, Rectangle.ymin, Rectangle.xmax, Rectangle.ymax);
+}
+
 function Coordinate(x, y) {
     this.x = x;
     this.y = y;
