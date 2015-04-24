@@ -23,6 +23,11 @@ function Rectangle(xmin, ymin, xmax, ymax) {
     this.ymin = ymin;
     this.xmax = xmax;
     this.ymax = ymax;
+
+    this.A = new Coordinate(xmin, ymin);
+    this.B = new Coordinate(xmax, ymin);
+    this.C = new Coordinate(xmax, ymax);
+    this.D = new Coordinate(xmin, ymax);
 }
 function setPixelColor(image, x, y, Color) {
 

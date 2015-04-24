@@ -17,7 +17,16 @@ function DrawGraph(container, xmin, xmax, ymin, ymax) {
     ctx.fillStyle = "Yellow";
     ctx.fillRect(TitleAreaX.xmin, TitleAreaX.ymin, TitleAreaX.xmax, TitleAreaX.ymax);
 
+    PanelMargin = 20;
+
+    ctx.fillStyle = "Purple";
+
+    PanelArea = new Rectangle(TitleAreaY.B.x + PanelMargin, ymin + PanelMargin, TitleAreaX.B.x - 3 * PanelMargin, TitleAreaX.B.y - 2 * PanelMargin);
+
+    ctx.fillRect(PanelArea.xmin, PanelArea.ymin, PanelArea.xmax, PanelArea.ymax);
+
     ctx.fillStyle = "Black";
+    
 
     DrawAxis(margin, xmax, ymax);
     
