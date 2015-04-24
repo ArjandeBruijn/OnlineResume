@@ -33,11 +33,14 @@ function DrawXaxis(margin,pixels_between_markers,tick_length_px,   xmax, ymax) {
     drawLine('myCanvas', new Coordinate(x_min, y), new Coordinate(x_max, y));
 
     
-    var x_cnt = x_min + pixels_between_markers;
-    
+    var x_cnt = x_min;
+
+    var c = 0;
     while (x_cnt < x_max) {
 
         drawLine('myCanvas', new Coordinate(x_cnt, y - tick_length_px), new Coordinate(x_cnt, y + tick_length_px));
+
+        ctx.fillText(c++, x_cnt, y + 3 * tick_length_px);
 
         x_cnt += pixels_between_markers;
 
@@ -61,7 +64,7 @@ function DrawYaxis(margin, pixels_between_markers, tick_length_px, xmax, ymax) {
 
         drawLine('myCanvas', new Coordinate(x - tick_length_px, y_cnt), new Coordinate(x + tick_length_px, y_cnt));
 
-        ctx.fillText(c++, x, y_cnt);
+        ctx.fillText(c++, x - 3 * tick_length_px, y_cnt);
 
         y_cnt -= pixels_between_markers;
 
