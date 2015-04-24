@@ -48,15 +48,15 @@ th
     text-align: left;
 }
  
-#section {
-    width:350px;
+#right_column {
+    width:55%;
     float:left;
     padding:10px;	 	 
 }
-#nav {
+#left_column {
     line-height:30px;
     height:561px;
-    width:415px;
+    width:40%;
     float:left;
     padding:5px;	      
 }
@@ -149,12 +149,16 @@ h3 {
 }
 p 
 {
-    font-size: 12px;
+    font-size: 20px;
     line-height: 1em;
 	margin: 0px;
 	padding: 0px;
+	
 }
-
+p.justify {
+    text-align: justify;
+	text-justify: inter-word;
+}
 
   
 /* menu */
@@ -204,15 +208,7 @@ p
     top: -1px;
     left: -1px;
 }
-/*
-#menu li a:hover {
-	position: relative;
-	color: White;	
-	background-color: Orange;
-    top: -1px;
-    left: -1px;
-}
-*/
+
 #content 
 {
     color: White;
@@ -246,7 +242,7 @@ p
 
 #rotating-item-wrapper {
 	position: relative;
-	
+	height: 500px;
 }
 .rotating-item
 {
