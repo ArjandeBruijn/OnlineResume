@@ -81,22 +81,7 @@ function setPixel(image, x, y, land_use) {
 
 }
 
-function get_index(image, x, y) {
 
-    var index = (x + y * image.imageData.width) * 4;
-    return index;
-}
-function get_xy( index) {
-
-    var x = index / 4;
-    var y = 0;
-    while (x > imageData.width) {
-        x -= imageData.width;
-        y++;
-    }
-
-    return [x, y];
-}
 
 function GetLandUseType(MapCode) {
 
@@ -314,13 +299,7 @@ function GetDonatingSite(image, random_settlement_coord, donating_land_use) {
     }
 
 }
-function CalculateDistance(x1, y1, x2, y2) { 
 
-    var dx2 = Math.pow(Math.abs(x2 -x1), 2);
-    var dy2 = Math.pow(Math.abs(y2 - y1), 2);
-    return Math.sqrt(dx2 + dy2);
-
-}
 function Coordinates(x,y)
 {
     this.x=x;

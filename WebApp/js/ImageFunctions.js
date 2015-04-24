@@ -36,8 +36,3 @@ function CalculateDistance(x1, y1, x2, y2) {
     return Math.sqrt(dx2 + dy2);
 
 }
-function SetImage2(container) {
-
-    my_image = new Image(container, xmin, xmax, ymin, ymax);
-
-}
