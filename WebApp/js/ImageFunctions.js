@@ -30,6 +30,9 @@ function Rectangle(xmin, ymin, xmax, ymax) {
     this.xmax = xmax;
     this.ymax = ymax;
 
+    this.Width = xmax - xmin;
+    this.Height = ymax - ymin;
+
     this.A = new Coordinate(xmin, ymin);
     this.B = new Coordinate(xmax, ymin);
     this.C = new Coordinate(xmax, ymax);

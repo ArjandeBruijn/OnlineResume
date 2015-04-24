@@ -3,6 +3,7 @@
 function DrawGraph(container, xmin, xmax, ymin, ymax) {
 
     var TitleMargin = 30;
+    var PanelMargin = 20;
 
     c = document.getElementById("myCanvas");
     ctx = c.getContext("2d");
@@ -18,6 +19,10 @@ function DrawGraph(container, xmin, xmax, ymin, ymax) {
 
     PanelArea = new Rectangle(TitleMargin, ymin, xmax, ymax - TitleMargin);
     DrawRectangle(PanelArea, ctx, "Purple");
+
+    InnerPanelArea = new Rectangle(PanelArea.xmin + PanelMargin, PanelArea.ymin + PanelMargin, PanelArea.Width - 2 * PanelMargin, PanelArea.Height - 2 * PanelMargin);
+    DrawRectangle(InnerPanelArea, ctx, "Blue");
+
 
     ctx.fillStyle = "Black";
      
