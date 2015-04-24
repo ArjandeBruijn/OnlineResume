@@ -5,6 +5,10 @@ function DrawGraph(container, xmin, xmax, ymin, ymax) {
     //  width="400" height="150"
     var margin = 20;
 
+    c = document.getElementById("myCanvas");
+    ctx = c.getContext("2d");
+    ctx.font = "12px Georgia";
+
     DrawAxis(margin, xmax, ymax);
     
 }
@@ -49,13 +53,17 @@ function DrawYaxis(margin, pixels_between_markers, tick_length_px, xmax, ymax) {
 
     drawLine('myCanvas', new Coordinate(x, ymax - margin), new Coordinate(x, margin));
 
-    var y_cnt = y_min + pixels_between_markers;
-    while (y_cnt < y_max) {
+    var y_cnt = y_max;
+    
+
+    var c = 0;
+    while (y_cnt > y_min) {
 
         drawLine('myCanvas', new Coordinate(x - tick_length_px, y_cnt), new Coordinate(x + tick_length_px, y_cnt));
 
-        y_cnt += pixels_between_markers;
+        ctx.fillText(c++, x, y_cnt);
 
+        y_cnt -= pixels_between_markers;
 
     }
     
