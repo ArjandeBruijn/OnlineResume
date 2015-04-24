@@ -120,7 +120,7 @@ function GetPixelsWithLandUse(image, landuse) {
     }
     return my_landuse_array;
 }
-function Image(container, xmin, xmax, ymin, ymax, scale) {
+function Image(container, xmin, xmax, ymin, ymax) {
 
     this.pixels = declare_pixels(xmax - xmin, ymax - ymin);
 
@@ -128,8 +128,8 @@ function Image(container, xmin, xmax, ymin, ymax, scale) {
     this.canvas = element.getContext("2d");
 
     // read the width and height of the canvas
-    ncols = scale * (ymax - ymin);
-    nrows = scale * (xmax - xmin);
+    ncols = (ymax - ymin);
+    nrows = (xmax - xmin);
 
     // create a new pixel array
     this.imageData = element.getContext("2d").createImageData(nrows, ncols);
@@ -137,9 +137,9 @@ function Image(container, xmin, xmax, ymin, ymax, scale) {
 
 
 
-function SetImage(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, ymax_zm, scale, MalinauMap) {
+function SetImage(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, ymax_zm, MalinauMap) {
 
-    my_image = new Image(container, xmin, xmax, ymin, ymax, scale);
+    my_image = new Image(container, xmin, xmax, ymin, ymax);
    
 
     // draw random dots
@@ -159,20 +159,12 @@ function SetImage(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
                     continue;
                 }
 
-                var i;
-                for (i = 0; i < scale; i++) {
-
-                    for (_i = 0; _i < scale; _i++) {
-
-                        _x = scale * (x - xmin_zm) + i;
-                        _y = scale * (y - ymin_zm) + _i;
-
-                        setPixel(my_image, _x, _y, land_use);  // 255 opaque
+                setPixel(my_image, x, y, land_use);  // 255 opaque
 
 
-                        land_use.Count++;
-                    }
-                }
+                land_use.Count++;
+
+               
 
             }
 

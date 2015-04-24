@@ -40,7 +40,7 @@
 
     <script src="js/Malinau2000.js"></script>
         <script type='text/javascript' src='js/MalinauFunctions.js'></script>
-         <script type="text/javascript">  SetImage('canvas2', 0, 415, 0, 561, 0, 415, 0, 561, 1, MalinauMap2000); </script>
+         <script type="text/javascript">  SetImage('canvas2', 0, 415, 0, 561, 0, 415, 0, 561, MalinauMap2000); </script>
         
 
      
