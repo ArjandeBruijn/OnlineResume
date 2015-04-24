@@ -135,12 +135,12 @@ function Image(container, xmin, xmax, ymin, ymax, scale) {
     this.imageData = element.getContext("2d").createImageData(nrows, ncols);
 }
 
-images = [];
+
 
 function SetImage(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, ymax_zm, scale, MalinauMap) {
 
     my_image = new Image(container, xmin, xmax, ymin, ymax, scale);
-    images.push(my_image);
+   
 
     // draw random dots
     var counter = -1;
@@ -214,13 +214,11 @@ function Simulate(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, 
 
     $("body").css("cursor", "progress");
 
-    var image = images[0];
+    var image = my_image;
 
     document.getElementById("ProgressTag").innerHTML = "InitializePixelCoordinates";
 
     InitializePixelCoordinates(image);
-
-
 
     PF.Conversion_rate =   [new ConversionRate(6, GetValueFromTable('Forest-CropLand'))];
     

@@ -31,9 +31,16 @@
                   
             </p>
          <h3>Left: Maryland simulations</h3>
+         <h3>Below: Markov Chain computation of a Spruce budworm outbreak in Minnesota</h3>
+
+         <div id="Div1">
+            <canvas id="canvas2" width= "200", height="200">Random Canvas</canvas>
+        </div>
     </div>
 
-
+    <script src="js/Malinau2000.js"></script>
+        <script type='text/javascript' src='js/MalinauFunctions.js'></script>
+         <script type="text/javascript">  SetImage('canvas2', 0, 415, 0, 561, 0, 415, 0, 561, 1, MalinauMap2000); </script>
         
 
      
