@@ -146,10 +146,11 @@
     </script>
 	<script src="js/Malinau2000.js"></script>
     <script src="js/Malinau2009.js"></script>
-    <script type='text/javascript' src='js/TableEventHandlers.js'></script>	
+    <script type='text/javascript' src='js/TableEventHandlers.js'></script>
+    <script type='text/javascript' src='js/ImageFunctions.js'></script>
     <script type='text/javascript' src='js/MalinauFunctions.js'></script>
     <script type='text/javascript' src='js/TableEventHandlers.js'></script>
-    <script type='text/javascript' src='js/ImageFunctions.js'></script>	
+    
     <script type="text/javascript"> SetImage('canvas1', 0, 415, 0, 561, 0, 415, 0, 561, MalinauMap2000); </script>
     
     <script type="text/javascript">

@@ -1,17 +1,4 @@
-var White = [255, 255, 255];
-var DarkGreen = [0, 100, 0];   // PF
-var LightGreen = [0, 255, 0]; // SF
-var Color3 = [0, 255, 0];   // Crop??
-var Red = [255, 0, 0];
-var Yellow = [255, 255, 0];  // position 2
-var Cyan = [0, 255, 255];
-var Color7 = [0, 128, 128];   // Crop??
-var Blue = [0, 0, 128];   //Water Body
-var Color9 = [128, 0, 0];   
-var Color10 = [0, 0, 255];
-var Color11 = [128, 0, 128];
-var Color12 = [128, 128, 0];
-var Color13 = [0, 0, 0]; //black        
+    
 
 NoData = new LandUse(-9999, White, null);
 PF = new LandUse(1, DarkGreen, [new ConversionRate(6, GetValueFromTable('Forest-CropLand'))]);
@@ -112,7 +99,8 @@ function GetPixelsWithLandUse(image, landuse) {
 function SetImage(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, ymax_zm, MalinauMap) {
 
     my_image = new Image(container, xmin, xmax, ymin, ymax);
-   
+
+    my_image.pixels = declare_pixels(xmax - xmin, ymax - ymin);
 
     // draw random dots
     var counter = -1;
