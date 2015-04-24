@@ -35,7 +35,7 @@
          <h3>Left: Maryland simulations</h3>
          <h3>Below: Markov Chain computation of a Spruce budworm outbreak in Minnesota</h3>
 
-         <canvas id="myCanvas" width="400" height="150" style="border:1px solid #d3d3d3;">
+         <canvas id="myCanvas" width="450" height="150" style="border:1px solid #d3d3d3;">
             Your browser does not support the HTML5 canvas tag.</canvas>
 
          
@@ -44,7 +44,7 @@
     <script src="js/Malinau2000.js"></script>
     <script type='text/javascript' src='js/ImageFunctions.js'></script>
     <script type='text/javascript' src='js/MarkovChainFunctions.js'></script>
-    <script type="text/javascript">  SetImage2('canvas2', 0, 400, 0, 150); </script>
+    <script type="text/javascript">  SetImage2('canvas2', 0, 450, 0, 150); </script>
         
 
      
