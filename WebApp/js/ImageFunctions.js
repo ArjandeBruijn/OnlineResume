@@ -12,11 +12,17 @@ var Color9 = [128, 0, 0];
 var Color10 = [0, 0, 255];
 var Color11 = [128, 0, 128];
 var Color12 = [128, 128, 0];
-var Color13 = [0, 0, 0]; //black    
+var Color13 = [0, 0, 0]; //black
 
 function Coordinate(x, y) {
     this.x = x;
     this.y = y;
+}
+function Rectangle(xmin, ymin, xmax, ymax) {
+    this.xmin = xmin;
+    this.ymin = ymin;
+    this.xmax = xmax;
+    this.ymax = ymax;
 }
 function setPixelColor(image, x, y, Color) {
 

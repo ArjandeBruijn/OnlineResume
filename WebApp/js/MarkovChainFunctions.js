@@ -2,12 +2,22 @@
 
 function DrawGraph(container, xmin, xmax, ymin, ymax) {
 
-    //  width="400" height="150"
-    var margin = 20;
+    var TitleMargin = 30;
 
     c = document.getElementById("myCanvas");
     ctx = c.getContext("2d");
     ctx.font = "12px Georgia";
+
+    TitleAreaY = new Rectangle(xmin, ymin, TitleMargin, ymax - TitleMargin);
+
+    ctx.fillStyle = "#FF0000";
+    ctx.fillRect(TitleAreaY.xmin, TitleAreaY.ymin, TitleAreaY.xmax, TitleAreaY.ymax);
+
+    TitleAreaX = new Rectangle(TitleMargin, ymax - TitleMargin, xmax, ymax);
+    ctx.fillStyle = "Yellow";
+    ctx.fillRect(TitleAreaX.xmin, TitleAreaX.ymin, TitleAreaX.xmax, TitleAreaX.ymax);
+
+    ctx.fillStyle = "Black";
 
     DrawAxis(margin, xmax, ymax);
     
