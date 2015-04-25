@@ -23,13 +23,13 @@ function AddMeasurements(Context, InnerPanelArea, x_min, x_max, y_min, y_max) {
         var x_value = Measurements[i][0];
         var y_value = Measurements[i][1];
 
-        var coordinate = GetCoordinate(InnerPanelArea, x_value, x_max, x_min, y_value, y_max, y_min);
+        var coordinate = GetCoordinate(InnerPanelArea, x_value, x_min, x_max, y_value, y_min, y_max);
 
         Context.fillText('o', coordinate.x, coordinate.y);
     }
 
 }
-function GetCoordinate(InnerPanelArea, x_value, x_max, x_min, y_value, y_max, y_min) {
+function GetCoordinate(InnerPanelArea, x_value, x_min,x_max, y_value,y_min, y_max) {
 
     // var coordinate = new Coordinate(InnerPanelArea.D.x, InnerPanelArea.C.y - y_value * InnerPanelArea.Height / (y_max - y_min));
     var coordinate = new Coordinate(InnerPanelArea.D.x + ((x_value - x_min) / (x_max - x_min)) * InnerPanelArea.Width, InnerPanelArea.C.y - ((y_value -y_min)/ (y_max -y_min )) * InnerPanelArea.Height);
@@ -45,7 +45,7 @@ function DrawXaxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max) {
         var x_value = x_min + i / 10 * (x_max - x_min);
         var y_value = y_min;
 
-        var coordinate = GetCoordinate(InnerPanelArea, x_value, x_max, x_min, y_value, y_max, y_min);
+        var coordinate = GetCoordinate(InnerPanelArea, x_value, x_min, x_max, y_value, y_min, y_max);
 
         drawLine(Context, new Coordinate(coordinate.x, coordinate.y - 5), new Coordinate(coordinate.x, coordinate.y + 5));
 
@@ -93,7 +93,7 @@ function DrawYaxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max) {
 
         var x_value = x_min;
 
-        var coordinate = GetCoordinate(InnerPanelArea, x_value, x_max, x_min, y_value, y_max, y_min);
+        var coordinate = GetCoordinate(InnerPanelArea, x_value, x_min, x_max, y_value, y_min, y_max);
 
         drawLine(Context, new Coordinate(coordinate.x-5, coordinate.y), new Coordinate(coordinate.x+5, coordinate.y));
 
