@@ -2,71 +2,52 @@
 
 function DrawGraph(container, xmin, xmax, ymin, ymax) {
 
+    c = document.getElementById(container );
+    var Context = c.getContext("2d");
+    Context.font = "12px Georgia";
+
+    GraphArea = new Rectangle(xmin, ymin, xmax - xmin, ymax - ymin);
+
+    DrawRectangle(GraphArea, Context, "#FF0000");
+
+    DivideGraphArea(Context, GraphArea);
+    
+}
+function DivideGraphArea(Context, GraphArea) {
+
     var TitleMargin = 30;
     var PanelMargin = 20;
 
-    c = document.getElementById("myCanvas");
-    ctx = c.getContext("2d");
-    ctx.font = "12px Georgia";
+    TitleAreaY = new Rectangle(GraphArea.A.x, GraphArea.A.y, TitleMargin, GraphArea.Height - TitleMargin);
 
-    TitleAreaY = new Rectangle(xmin, ymin, TitleMargin, ymax - TitleMargin);
+    DrawRectangle(TitleAreaY, Context, "Blue");
 
-    DrawRectangle(TitleAreaY, ctx, "#FF0000");
+    TitleAreaX = new Rectangle(TitleAreaY.C.x, TitleAreaY.C.y, GraphArea.Width - TitleMargin, TitleMargin);
 
-    TitleAreaX = new Rectangle(TitleMargin, ymax - TitleMargin, xmax, ymax);
+    DrawRectangle(TitleAreaX, Context, "Yellow");
 
-    DrawRectangle(TitleAreaX, ctx, "Yellow");
+    PanelArea = new Rectangle(TitleAreaY.B.x, TitleAreaY.B.y, TitleAreaX.Width, TitleAreaY.Height);
+    DrawRectangle(PanelArea, Context, "Purple");
 
-    PanelArea = new Rectangle(TitleMargin, ymin, xmax, ymax - TitleMargin);
-    DrawRectangle(PanelArea, ctx, "Purple");
+    InnerPanelArea = new Rectangle(PanelArea.A.x + PanelMargin, PanelArea.A.y + PanelMargin, PanelArea.Width - 2 * PanelMargin, PanelArea.Height - 2 * PanelMargin);
+    DrawRectangle(InnerPanelArea, Context, "Grey");
 
-    InnerPanelArea = new Rectangle(PanelArea.xmin + PanelMargin, PanelArea.ymin + PanelMargin, PanelArea.Width - 2 * PanelMargin, PanelArea.Height - 2 * PanelMargin);
-    DrawRectangle(InnerPanelArea, ctx, "Blue");
-
-
-    ctx.fillStyle = "Black";
-     
-    DrawAxis(margin, xmax, ymax);
-    
+    DrawAxis(Context, InnerPanelArea);
 }
 
-function DrawAxis(margin, xmax, ymax) {
+function DrawAxis(Context, InnerPanelArea) {
 
+    // x-axis
+    drawLine(Context, new Coordinate(InnerPanelArea.D.x, InnerPanelArea.D.y), new Coordinate(InnerPanelArea.C.x, InnerPanelArea.C.y));
 
-    var pixels_between_markers = 20;
-    var tick_length_px = 5;
-
-    DrawXaxis(margin,pixels_between_markers,tick_length_px,  xmax, ymax);
-
-    DrawYaxis(margin,pixels_between_markers,tick_length_px,  xmax, ymax);
-    
+    drawLine(Context, new Coordinate(InnerPanelArea.A.x, InnerPanelArea.A.y), new Coordinate(InnerPanelArea.D.x, InnerPanelArea.D.y));
 }
 
-function DrawXaxis(margin,pixels_between_markers,tick_length_px,   xmax, ymax) {
+function DrawYaxis(InnerPanelArea) {
 
-    var y = ymax - margin;
-    var x_min = margin;
-    var x_max = xmax - margin;
-    drawLine('myCanvas', new Coordinate(x_min, y), new Coordinate(x_max, y));
+    drawLine('myCanvas', InnerPanelArea.A, InnerPanelArea.D);
 
-    
-    var x_cnt = x_min;
-
-    var c = 0;
-    while (x_cnt < x_max) {
-
-        drawLine('myCanvas', new Coordinate(x_cnt, y - tick_length_px), new Coordinate(x_cnt, y + tick_length_px));
-
-        ctx.fillText(c++, x_cnt, y + 3 * tick_length_px);
-
-        x_cnt += pixels_between_markers;
-
-        
-    }
-}
-
-function DrawYaxis(margin, pixels_between_markers, tick_length_px, xmax, ymax) {
-
+    /*
     var x = margin;
     var y_min = margin;
     var y_max = ymax - margin; 
@@ -86,5 +67,5 @@ function DrawYaxis(margin, pixels_between_markers, tick_length_px, xmax, ymax) {
         y_cnt -= pixels_between_markers;
 
     }
-    
+    */
 }

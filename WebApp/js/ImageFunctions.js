@@ -17,26 +17,24 @@ var Color13 = [0, 0, 0]; //black
 function DrawRectangle(Rectangle, Context, Color) {
 
     Context.fillStyle = Color;
-    Context.fillRect(Rectangle.xmin, Rectangle.ymin, Rectangle.xmax, Rectangle.ymax);
+    Context.fillRect(Rectangle.xmin, Rectangle.ymin, Rectangle.Width, Rectangle.Height);
 }
 
 function Coordinate(x, y) {
     this.x = x;
     this.y = y;
 }
-function Rectangle(xmin, ymin, xmax, ymax) {
+function Rectangle(xmin, ymin, Width, Height) {
     this.xmin = xmin;
     this.ymin = ymin;
-    this.xmax = xmax;
-    this.ymax = ymax;
 
-    this.Width = xmax - xmin;
-    this.Height = ymax - ymin;
+    this.Width = Width;
+    this.Height = Height;
 
     this.A = new Coordinate(xmin, ymin);
-    this.B = new Coordinate(xmax, ymin);
-    this.C = new Coordinate(xmax, ymax);
-    this.D = new Coordinate(xmin, ymax);
+    this.B = new Coordinate(xmin + Width, ymin);
+    this.C = new Coordinate(xmin + Width, ymin + Height);
+    this.D = new Coordinate(xmin, ymin + Height);
 }
 function setPixelColor(image, x, y, Color) {
 
@@ -47,14 +45,12 @@ function setPixelColor(image, x, y, Color) {
     image.imageData.data[index + 2] = Color[2];
     image.imageData.data[index + 3] = 255;
 }
-function drawLine(id, from, to) {
+function drawLine(Context, from, to) {
 
-    var c = document.getElementById(id);
-    var ctx = c.getContext("2d");
-    ctx.beginPath();
-    ctx.moveTo(from.x, from.y);
-    ctx.lineTo(to.x, to.y);
-    ctx.stroke();
+    Context.beginPath();
+    Context.moveTo(from.x, from.y);
+    Context.lineTo(to.x, to.y);
+    Context.stroke();
 
 }
 function Image(container, xmin, xmax, ymin, ymax) {
