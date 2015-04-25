@@ -73,30 +73,3 @@ function DrawYaxis(Context, InnerPanelArea, y_min, y_max) {
     }
 
 }
-/*
-function DrawYaxis(InnerPanelArea) {
-
-    drawLine('myCanvas', InnerPanelArea.A, InnerPanelArea.D);
-
-    /*
-    var x = margin;
-    var y_min = margin;
-    var y_max = ymax - margin; 
-
-    drawLine('myCanvas', new Coordinate(x, ymax - margin), new Coordinate(x, margin));
-
-    var y_cnt = y_max;
-    
-
-    var c = 0;
-    while (y_cnt > y_min) {
-
-        drawLine('myCanvas', new Coordinate(x - tick_length_px, y_cnt), new Coordinate(x + tick_length_px, y_cnt));
-
-        ctx.fillText(c++, x - 3 * tick_length_px, y_cnt);
-
-        y_cnt -= pixels_between_markers;
-
-    }
-    
-}*/
