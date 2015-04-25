@@ -57,9 +57,21 @@ function DrawXaxis(Context, InnerPanelArea, x_min, x_max) {
         Context.fillText(x_value + x_min, coordinate.x, coordinate.y +10);
     }
 }
-function DrawYaxis(Context, InnerPanelArea, y_min, Y_max) {
+function DrawYaxis(Context, InnerPanelArea, y_min, y_max) {
 
     drawLine(Context, new Coordinate(InnerPanelArea.A.x, InnerPanelArea.A.y), new Coordinate(InnerPanelArea.D.x, InnerPanelArea.D.y));
+
+    for (var i = 0; i <= 10; i++) {
+
+        var y_value = i / 10 * (y_max - y_min);
+
+        var coordinate = new Coordinate(InnerPanelArea.D.x, InnerPanelArea.C.y - y_value * InnerPanelArea.Height / (y_max - y_min));
+
+        drawLine(Context, new Coordinate(coordinate.x-5, coordinate.y), new Coordinate(coordinate.x+5, coordinate.y));
+
+        Context.fillText(y_value + y_min, coordinate.x-40, coordinate.y);
+    }
+
 }
 /*
 function DrawYaxis(InnerPanelArea) {
