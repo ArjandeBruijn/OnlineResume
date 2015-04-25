@@ -13,7 +13,12 @@ var Color10 = [0, 0, 255];
 var Color11 = [128, 0, 128];
 var Color12 = [128, 128, 0];
 var Color13 = [0, 0, 0]; //black
+function DrawCircle(Context, x, y) {
+    Context.beginPath();
+    Context.arc(x, y, 2, 0, 2 * Math.PI);
+    Context.stroke();
 
+}
 function DrawRectangle(Rectangle, Context, Color) {
 
     Context.fillStyle = Color;

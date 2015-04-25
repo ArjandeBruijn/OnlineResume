@@ -18,17 +18,26 @@ function DrawGraph(container, xmin, ymin, Width, Height, x_min, x_max, y_min, y_
 }
 function AddMeasurements(Context, InnerPanelArea, x_min, x_max, y_min, y_max) {
 
+    var lastcoordinate = null;
+    var coordinate = null;
     for (var i = 0; i < Measurements.length; i++) {
 
         var x_value = Measurements[i][0];
         var y_value = Measurements[i][1];
 
-        var coordinate = GetCoordinate(InnerPanelArea, x_value, x_min, x_max, y_value, y_min, y_max);
+        coordinate = GetCoordinate(InnerPanelArea, x_value, x_min, x_max, y_value, y_min, y_max);
 
-        Context.fillText('o', coordinate.x, coordinate.y);
+        DrawCircle(Context,coordinate.x, coordinate.y);
+
+        if (lastcoordinate != null) {
+            drawLine(Context, coordinate, lastcoordinate);
+        }
+
+        lastcoordinate = coordinate;
     }
 
 }
+
 function GetCoordinate(InnerPanelArea, x_value, x_min,x_max, y_value,y_min, y_max) {
 
     // var coordinate = new Coordinate(InnerPanelArea.D.x, InnerPanelArea.C.y - y_value * InnerPanelArea.Height / (y_max - y_min));
