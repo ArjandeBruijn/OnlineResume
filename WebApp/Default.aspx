@@ -43,7 +43,7 @@
     <script src="js/Malinau2000.js"></script>
     <script type='text/javascript' src='js/ImageFunctions.js'></script>
     <script type='text/javascript' src='js/MarkovChainFunctions.js'></script>
-    <script type="text/javascript">        DrawGraph("myCanvas", 0, 525, 0, 450); </script>
+    <script type="text/javascript">        DrawGraph("myCanvas", 0, 0, 525, 450, 1930, 2015, 0, 16000); </script>
         
 
      
