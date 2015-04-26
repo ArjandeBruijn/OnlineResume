@@ -111,7 +111,7 @@ function DrawXaxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max) {
 
         drawLine(Context, new Coordinate(coordinate.x, coordinate.y - 5), new Coordinate(coordinate.x, coordinate.y + 5));
 
-        Context.fillText(x_value, coordinate.x, coordinate.y + 10);
+        Context.fillText(x_value, coordinate.x, coordinate.y + 15);
     }
 }
 
