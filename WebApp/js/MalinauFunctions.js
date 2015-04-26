@@ -22,7 +22,23 @@ function GetValueFromTable(ID) {
     var value = document.getElementById('Forest-CropLand').innerText;
     return value;
 }
+function DrawLegend(Image) {
+
+    var Entrees = 6;
+    var HeightPerEntree = 25;
+
+    var rect = new Rectangle(0, 20, 150, HeightPerEntree * Entrees);
+    Image.canvas.rect(rect.A.x, rect.A.y, rect.Width, rect.Height);
+
+    var rect2 = new Rectangle(rect.A.x + 10, rect.A.y + 10, 20, 15);
+    DrawRectangle(rect2, Image.canvas, rgbToHex(DarkGreen[0], DarkGreen[1], DarkGreen[2]));
+
+    Image.canvas.stroke();
+    
+
+}
 function SetImage(container, xmin, xmax, ymin, ymax, MalinauMap) {
+
 
     my_image = new Image(container, xmin, xmax, ymin, ymax);
 
@@ -55,6 +71,7 @@ function SetImage(container, xmin, xmax, ymin, ymax, MalinauMap) {
     // copy the image data back onto the canvas
     my_image.canvas.putImageData(my_image.imageData, 0, 0); // at coords 0,0
 
+    DrawLegend(my_image);
 }
 function declare_pixels(nrows, ncols) {
     var myArray = [[], []];
