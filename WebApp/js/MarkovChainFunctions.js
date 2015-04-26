@@ -93,25 +93,7 @@ function GetCoordinate(InnerPanelArea, x_value, x_min,x_max, y_value,y_min, y_ma
 
     return coordinate;
 }
-function DrawXaxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max) {
 
-    drawLine(Context, new Coordinate(InnerPanelArea.D.x, InnerPanelArea.D.y), new Coordinate(InnerPanelArea.C.x, InnerPanelArea.C.y));
-
-    var x_value = x_min;
-    var y_value = y_min;
-    while (x_value < x_max)
-    {
-        var coordinate = GetCoordinate(InnerPanelArea, x_value, x_min, x_max, y_value, y_min, y_max);
-
-        drawLine(Context, new Coordinate(coordinate.x, coordinate.y - 5), new Coordinate(coordinate.x, coordinate.y + 5));
-
-        Context.fillText(x_value, coordinate.x -15, coordinate.y + 15);
-
-        x_value += 10;
-    }
-
-     
-}
 
 function DivideGraphArea(Context, GraphArea, x_min, x_max, y_min, Y_max) {
 
@@ -143,29 +125,50 @@ function DrawAxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max) {
     // x-axis
     DrawXaxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max);
 
+    DrawYaxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max);
+}
+function DrawXaxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max) {
+
+    drawLine(Context, new Coordinate(InnerPanelArea.D.x, InnerPanelArea.D.y), new Coordinate(InnerPanelArea.C.x, InnerPanelArea.C.y));
+
     Context.fillText("Time", InnerPanelArea.D.x + 0.5 * InnerPanelArea.Width, InnerPanelArea.D.y + 40);
 
-    DrawYaxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max);
+    var x_value = x_min;
+    var y_value = y_min;
+    while (x_value < x_max) {
+        var coordinate = GetCoordinate(InnerPanelArea, x_value, x_min, x_max, y_value, y_min, y_max);
+
+        drawLine(Context, new Coordinate(coordinate.x, coordinate.y - 5), new Coordinate(coordinate.x, coordinate.y + 5));
+
+        Context.fillText(x_value, coordinate.x - 15, coordinate.y + 15);
+
+        x_value += 10;
+    }
+
+
 }
 function DrawYaxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max) {
 
     drawLine(Context, new Coordinate(InnerPanelArea.A.x, InnerPanelArea.A.y), new Coordinate(InnerPanelArea.D.x, InnerPanelArea.D.y));
 
-   
+    Context.fillText("Area defoliated (1000km)", InnerPanelArea.A.x-30, 12);
 
-    for (var i = 0; i <= 10; i++) {
 
-        var y_value = y_min + i / 10 * (y_max - y_min);
+    var y_value = y_min;
 
-        var x_value = x_min;
+    var x_value = x_min;
 
+    while (y_value <= y_max)
+    {
         var coordinate = GetCoordinate(InnerPanelArea, x_value, x_min, x_max, y_value, y_min, y_max);
 
-        drawLine(Context, new Coordinate(coordinate.x-5, coordinate.y), new Coordinate(coordinate.x+5, coordinate.y));
+        drawLine(Context, new Coordinate(coordinate.x - 5, coordinate.y), new Coordinate(coordinate.x + 5, coordinate.y));
 
-        
+        Context.fillText(Math.round(0.001 * y_value, 1), coordinate.x - 20, coordinate.y);
 
-        Context.fillText(y_value, coordinate.x-40, coordinate.y);
+        y_value += 2000;
     }
+
+    
 
 }
