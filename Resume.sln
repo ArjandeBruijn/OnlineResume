@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resume", "WebApp\Resume.csproj", "{0615A2C4-3A2D-4ACD-BA59-AA0D3749D7FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BudwormPopulationDensityModel", "..\BudwormPopulationDensityModel\BudwormPopulationDensityModel\BudwormPopulationDensityModel.csproj", "{5B5520D9-EDDE-4E9B-982A-57F61A544B3C}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,16 +23,6 @@ Global
 		{0615A2C4-3A2D-4ACD-BA59-AA0D3749D7FA}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{0615A2C4-3A2D-4ACD-BA59-AA0D3749D7FA}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{0615A2C4-3A2D-4ACD-BA59-AA0D3749D7FA}.Release|x86.ActiveCfg = Release|Any CPU
-		{5B5520D9-EDDE-4E9B-982A-57F61A544B3C}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{5B5520D9-EDDE-4E9B-982A-57F61A544B3C}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{5B5520D9-EDDE-4E9B-982A-57F61A544B3C}.Debug|Mixed Platforms.Build.0 = Debug|x86
-		{5B5520D9-EDDE-4E9B-982A-57F61A544B3C}.Debug|x86.ActiveCfg = Debug|x86
-		{5B5520D9-EDDE-4E9B-982A-57F61A544B3C}.Debug|x86.Build.0 = Debug|x86
-		{5B5520D9-EDDE-4E9B-982A-57F61A544B3C}.Release|Any CPU.ActiveCfg = Release|x86
-		{5B5520D9-EDDE-4E9B-982A-57F61A544B3C}.Release|Mixed Platforms.ActiveCfg = Release|x86
-		{5B5520D9-EDDE-4E9B-982A-57F61A544B3C}.Release|Mixed Platforms.Build.0 = Release|x86
-		{5B5520D9-EDDE-4E9B-982A-57F61A544B3C}.Release|x86.ActiveCfg = Release|x86
-		{5B5520D9-EDDE-4E9B-982A-57F61A544B3C}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
