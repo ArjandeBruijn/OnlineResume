@@ -8,15 +8,61 @@ function DrawGraph(container, xmin, ymin, Width, Height, x_min, x_max, y_min, y_
 
     GraphArea = new Rectangle(xmin, ymin, Width, Height);
 
-    //DrawRectangle(GraphArea, Context, "#FF0000");
-
     var InnerPanelArea = DivideGraphArea(Context, GraphArea, x_min, x_max, y_min, y_max);
 
     DrawAxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max);
 
     AddMeasurements(Context, InnerPanelArea, x_min, x_max, y_min, y_max);
+
+
+
+    AddModel(Context,InnerPanelArea, x_min, x_max, y_min, y_max);
+
+    
+}
+function AddModel(Context,InnerPanelArea, x_min, x_max, y_min, y_max) {
+
+    
+
+    var AllModelSeries = Model;
+    var n = NrOfMeas;
+   
+
+    var i = 0;
+    var s = 0;
+    var maxLogP = -9999999;
+    while (i < AllModelSeries.length) {
+
+        var logp = LogP[s];
+        if (logp > maxLogP) {
+            Context.strokeStyle = "Red";
+            maxLogP = logp;
+        }
+        else Context.strokeStyle = "Black";
+
+        
+        var coordinate = GetCoordinate(InnerPanelArea, 1950, x_min, x_max, 15000, y_min, y_max);
+        DrawCircle(Context, coordinate.x, coordinate.y);
+
+        s++;
+        for (var n = 0; n < NrOfMeas; n++) {
+            var x = AllModelSeries[i][0];
+            var y = AllModelSeries[i][1];
+
+            var coordinate = GetCoordinate(InnerPanelArea, x, x_min, x_max, y, y_min, y_max);
+            DrawCircle(Context, coordinate.x, coordinate.y);
+
+            
+            i++;
+        }
+       
+    }
+
+
 }
 function AddMeasurements(Context, InnerPanelArea, x_min, x_max, y_min, y_max) {
+
+    
 
     var lastcoordinate = null;
     var coordinate = null;
@@ -25,7 +71,7 @@ function AddMeasurements(Context, InnerPanelArea, x_min, x_max, y_min, y_max) {
         var x_value = Measurements[i][0];
         var y_value = Measurements[i][1];
 
-        coordinate = GetCoordinate(InnerPanelArea, x_value, x_min, x_max, y_value, y_min, y_max);
+        var coordinate = GetCoordinate(InnerPanelArea, x_value, x_min, x_max, y_value, y_min, y_max);
 
         DrawCircle(Context,coordinate.x, coordinate.y);
 
