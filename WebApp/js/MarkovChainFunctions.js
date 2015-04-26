@@ -1,10 +1,6 @@
 ﻿
 
-function DrawGraph(container, xmin, ymin, Width, Height, x_min, x_max, y_min, y_max) {
-
-    c = document.getElementById(container );
-    var Context = c.getContext("2d");
-    Context.font = "12px Georgia";
+function DrawGraph(Context, xmin, ymin, Width, Height, x_min, x_max, y_min, y_max) {
 
     GraphArea = new Rectangle(xmin, ymin, Width, Height);
 
@@ -14,12 +10,19 @@ function DrawGraph(container, xmin, ymin, Width, Height, x_min, x_max, y_min, y_
 
     AddMeasurements(Context, InnerPanelArea, x_min, x_max, y_min, y_max);
 
-
-
-    AddModel(Context,InnerPanelArea, x_min, x_max, y_min, y_max);
-
-    
+    return InnerPanelArea;
 }
+
+$(window).load(function () {
+    c = document.getElementById("myCanvas");
+    var Context = c.getContext("2d");
+    Context.font = "12px Georgia";
+
+    InnerPanelArea = DrawGraph(Context, 0, 0, 525, 450, 1930, 2015, 0, 16000);
+    AddModel(Context, InnerPanelArea, 1930, 2015, 0, 16000);
+
+});
+
 function AddModel(Context,InnerPanelArea, x_min, x_max, y_min, y_max) {
 
     var AllModelSeries = Model;
