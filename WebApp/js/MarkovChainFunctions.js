@@ -28,20 +28,31 @@ function AddModelPoints(Context,InnerPanelArea, x_min, x_max, y_min, y_max) {
     
 
     var AllModelSeries = Model;
-    var n = NrOfMeas;
-
+    var n = 0;// NrOfMeas;
     var i = 0;
     var s = 0;
 
-    
+    var lastcoordinate = null;
     setInterval(function () {
         var x = AllModelSeries[i][0];
         var y = AllModelSeries[i][1];
-        
+
         Context.strokeStyle = "Red";
         var coordinate = GetCoordinate(InnerPanelArea, x, x_min, x_max, y, y_min, y_max);
 
-        DrawCircle(Context, coordinate.x, coordinate.y);
+        //DrawCircle(Context, coordinate.x, coordinate.y);
+
+        if (lastcoordinate != null) {
+            drawLine(Context, coordinate, lastcoordinate);
+        }
+        lastcoordinate = coordinate;
+        n++;
+
+        if (n == NrOfMeas) {
+            lastcoordinate = null;
+            n = 0;
+        }
+
         i++;
         if (i == AllModelSeries.length - 1) i = 0;
     }, 5);
