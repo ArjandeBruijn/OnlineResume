@@ -15,8 +15,8 @@ function DrawGraph(Context, xmin, ymin, Width, Height, x_min, x_max, y_min, y_ma
     var InnerPanelArea = DivideGraphArea(Context, GraphArea, x_min, x_max, y_min, y_max);
 
     DrawAxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max);
-
     AddMeasurements(Context, InnerPanelArea, x_min, x_max, y_min, y_max);
+    AddLegend(Context, InnerPanelArea);
 
     return InnerPanelArea;
 }
@@ -44,14 +44,14 @@ function AddModelPoints(Context,InnerPanelArea, x_min, x_max, y_min, y_max) {
         }
         lastcoordinate = coordinate;
         n++;
-        
+
         if (n == NrOfMeas) {
 
             Context.clearRect(0, 0, GraphArea.Width, GraphArea.Height);
             Context.strokeStyle = "Black";
             DrawAxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max);
             AddMeasurements(Context, InnerPanelArea, x_min, x_max, y_min, y_max);
-
+            AddLegend(Context, InnerPanelArea);
             Context.strokeStyle = "Red";
             n = 0;
         }
@@ -61,6 +61,23 @@ function AddModelPoints(Context,InnerPanelArea, x_min, x_max, y_min, y_max) {
     }, 5);
 
     Context.strokeStyle = "Black";
+}
+function AddLegend(Context, InnerPanelArea) {
+
+    var legendrect = new Rectangle(InnerPanelArea.B.x - 110, InnerPanelArea.B.y + 10, 100, 100);
+    Context.rect(legendrect.A.x, legendrect.A.y, legendrect.Width, legendrect.Height);
+    Context.stroke();
+
+    Context.strokeStyle = "Black";
+    drawLine(Context, new Coordinate(legendrect.A.x +10, legendrect.A.y + 1 / 3 * legendrect.Height), new Coordinate(legendrect.B.x-10, legendrect.A.y + 1 / 3 * legendrect.Height));
+    DrawCircle(Context, legendrect.A.x + 0.5 * legendrect.Width, legendrect.A.y + 1 / 3 * legendrect.Height);
+
+    Context.strokeStyle = "Red";
+    drawLine(Context, new Coordinate(legendrect.A.x + 10, legendrect.A.y + 2 / 3 * legendrect.Height), new Coordinate(legendrect.B.x - 10, legendrect.A.y + 2 / 3 * legendrect.Height));
+    
+
+    Context.strokeStyle = "Black";
+
 }
 function AddMeasurements(Context, InnerPanelArea, x_min, x_max, y_min, y_max) {
 
