@@ -33,16 +33,18 @@ function AddModelPoints(Context,InnerPanelArea, x_min, x_max, y_min, y_max) {
     var i = 0;
     var s = 0;
 
+    
     setInterval(function () {
         var x = AllModelSeries[i][0];
         var y = AllModelSeries[i][1];
-
+        
         Context.strokeStyle = "Red";
         var coordinate = GetCoordinate(InnerPanelArea, x, x_min, x_max, y, y_min, y_max);
+
         DrawCircle(Context, coordinate.x, coordinate.y);
         i++;
         if (i == AllModelSeries.length - 1) i = 0;
-    }, 50);
+    }, 5);
 
     Context.strokeStyle = "Black";
 }
