@@ -22,7 +22,40 @@ function GetValueFromTable(ID) {
     var value = document.getElementById('Forest-CropLand').innerText;
     return value;
 }
+function SetImage(container, xmin, xmax, ymin, ymax, MalinauMap) {
 
+    my_image = new Image(container, xmin, xmax, ymin, ymax);
+
+    my_image.pixels = declare_pixels(xmax - xmin, ymax - ymin);
+
+    // draw random dots
+    var counter = -1;
+
+    for (y = ymin; y < ymax; y++) {
+        for (x = xmin; x < xmax; x++) {
+
+            counter++;
+
+            var MapCode = MalinauMap[counter];
+
+            land_use = GetLandUseType(MapCode);
+
+            if (land_use == null) {
+                continue;
+            }
+
+            setPixel(my_image, x, y, land_use);  // 255 opaque
+
+
+            land_use.Count++;
+
+        }
+    }
+
+    // copy the image data back onto the canvas
+    my_image.canvas.putImageData(my_image.imageData, 0, 0); // at coords 0,0
+
+}
 function declare_pixels(nrows, ncols) {
     var myArray = [[], []];
     //  myArray[] = new Array(14);
@@ -86,49 +119,8 @@ function GetPixelsWithLandUse(image, landuse) {
     }
     return my_landuse_array;
 }
+ 
 
-
-
-
-function SetImage(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, ymax_zm, MalinauMap) {
-
-    my_image = new Image(container, xmin, xmax, ymin, ymax);
-
-    my_image.pixels = declare_pixels(xmax - xmin, ymax - ymin);
-
-    // draw random dots
-    var counter = -1;
-
-    for (y = ymin; y < ymax; y++) {
-        for (x = xmin; x < xmax; x++) {
-
-            counter++;
-
-            if (x < xmax_zm && x >= xmin_zm && y < ymax_zm && y >= ymin_zm) {
-                var MapCode = MalinauMap[counter];
-
-                land_use = GetLandUseType(MapCode);
-
-                if (land_use == null) {
-                    continue;
-                }
-
-                setPixel(my_image, x, y, land_use);  // 255 opaque
-
-
-                land_use.Count++;
-
-               
-
-            }
-
-        }
-    }
-
-    // copy the image data back onto the canvas
-    my_image.canvas.putImageData(my_image.imageData, 0, 0); // at coords 0,0
-
-}
 
 function CountCoversions() {
 

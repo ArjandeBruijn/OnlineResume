@@ -132,11 +132,11 @@
 	    function ShowMalinauMap() {
 	        if (document.getElementById("ShowButton").innerHTML == "Show 2009!") {
 	            document.getElementById("ShowButton").innerHTML = "Show 2000!";
-	            SetImage('canvas1', 0, 415, 0, 561, 0, 415, 0, 561, MalinauMap2009);
+	            SetImage('canvas1', 0, 415, 0, 561,  MalinauMap2009);
 	        }
 	        else {
 	            document.getElementById("ShowButton").innerHTML = "Show 2009!";
-	            SetImage('canvas1', 0, 415, 0, 561, 0, 415, 0, 561, MalinauMap2000);
+	            SetImage('canvas1', 0, 415, 0, 561,  MalinauMap2000);
 	        }
 //	       
 
@@ -151,7 +151,7 @@
     <script type='text/javascript' src='js/MalinauFunctions.js'></script>
     <script type='text/javascript' src='js/TableEventHandlers.js'></script>
     
-    <script type="text/javascript"> SetImage('canvas1', 0, 415, 0, 561, 0, 415, 0, 561, MalinauMap2000); </script>
+    <script type="text/javascript"> SetImage('canvas1', 0, 415, 0, 561, MalinauMap2000); </script>
     
     <script type="text/javascript">
         
