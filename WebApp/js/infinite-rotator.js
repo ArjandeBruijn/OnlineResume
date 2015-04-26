@@ -45,7 +45,7 @@ function my_init(container, FirstIsBackground) {
     $(container).eq(currentItem).fadeIn(initialFadeIn);
 
     //loop through the items		
-    var infiniteLoop = setInterval(function () {
+    setInterval(function () {
         $(container).eq(currentItem).fadeOut(fadeTime);
 
         if (currentItem == numberOfItems - 1) 
