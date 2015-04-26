@@ -22,8 +22,6 @@ function DrawGraph(container, xmin, ymin, Width, Height, x_min, x_max, y_min, y_
 }
 function AddModel(Context,InnerPanelArea, x_min, x_max, y_min, y_max) {
 
-    
-
     var AllModelSeries = Model;
     var n = NrOfMeas;
    
@@ -40,25 +38,17 @@ function AddModel(Context,InnerPanelArea, x_min, x_max, y_min, y_max) {
         }
         else Context.strokeStyle = "Black";
 
-        
-        var coordinate = GetCoordinate(InnerPanelArea, 1950, x_min, x_max, 15000, y_min, y_max);
-        DrawCircle(Context, coordinate.x, coordinate.y);
-
         s++;
         for (var n = 0; n < NrOfMeas; n++) {
+
             var x = AllModelSeries[i][0];
             var y = AllModelSeries[i][1];
 
             var coordinate = GetCoordinate(InnerPanelArea, x, x_min, x_max, y, y_min, y_max);
             DrawCircle(Context, coordinate.x, coordinate.y);
-
-            
             i++;
         }
-       
     }
-
-
 }
 function AddMeasurements(Context, InnerPanelArea, x_min, x_max, y_min, y_max) {
 
