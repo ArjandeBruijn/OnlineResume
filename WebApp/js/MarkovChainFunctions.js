@@ -19,39 +19,32 @@ $(window).load(function () {
     Context.font = "12px Georgia";
 
     InnerPanelArea = DrawGraph(Context, 0, 0, 525, 450, 1930, 2015, 0, 16000);
-    AddModel(Context, InnerPanelArea, 1930, 2015, 0, 16000);
+    AddModelPoints(Context, InnerPanelArea, 1930, 2015, 0, 16000);
 
 });
 
-function AddModel(Context,InnerPanelArea, x_min, x_max, y_min, y_max) {
+function AddModelPoints(Context,InnerPanelArea, x_min, x_max, y_min, y_max) {
+
+    
 
     var AllModelSeries = Model;
     var n = NrOfMeas;
-   
 
     var i = 0;
     var s = 0;
-    var maxLogP = -9999999;
-    while (i < AllModelSeries.length) {
 
-        var logp = LogP[s];
-        if (logp > maxLogP) {
-            Context.strokeStyle = "Red";
-            maxLogP = logp;
-        }
-        else Context.strokeStyle = "Black";
+    setInterval(function () {
+        var x = AllModelSeries[i][0];
+        var y = AllModelSeries[i][1];
 
-        s++;
-        for (var n = 0; n < NrOfMeas; n++) {
+        Context.strokeStyle = "Red";
+        var coordinate = GetCoordinate(InnerPanelArea, x, x_min, x_max, y, y_min, y_max);
+        DrawCircle(Context, coordinate.x, coordinate.y);
+        i++;
+        if (i == AllModelSeries.length - 1) i = 0;
+    }, 50);
 
-            var x = AllModelSeries[i][0];
-            var y = AllModelSeries[i][1];
-
-            var coordinate = GetCoordinate(InnerPanelArea, x, x_min, x_max, y, y_min, y_max);
-            DrawCircle(Context, coordinate.x, coordinate.y);
-            i++;
-        }
-    }
+    Context.strokeStyle = "Black";
 }
 function AddMeasurements(Context, InnerPanelArea, x_min, x_max, y_min, y_max) {
 
