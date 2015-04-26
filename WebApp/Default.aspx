@@ -49,8 +49,7 @@
     
     <script src='js/MarkovChainFunctions.js'></script>
     
-    <script>DrawGraph("myCanvas", 0, 0, 525, 450, 1930, 2015, 0, 16000); </script>
-        
+      
 
      
      

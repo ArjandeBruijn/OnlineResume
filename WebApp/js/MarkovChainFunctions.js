@@ -102,17 +102,20 @@ function DrawXaxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max) {
 
     drawLine(Context, new Coordinate(InnerPanelArea.D.x, InnerPanelArea.D.y), new Coordinate(InnerPanelArea.C.x, InnerPanelArea.C.y));
 
-    for (var i = 0; i <= 10; i++) {
-
-        var x_value = x_min + i / 10 * (x_max - x_min);
-        var y_value = y_min;
-
+    var x_value = x_min;
+    var y_value = y_min;
+    while (x_value < x_max)
+    {
         var coordinate = GetCoordinate(InnerPanelArea, x_value, x_min, x_max, y_value, y_min, y_max);
 
         drawLine(Context, new Coordinate(coordinate.x, coordinate.y - 5), new Coordinate(coordinate.x, coordinate.y + 5));
 
-        Context.fillText(x_value, coordinate.x, coordinate.y + 15);
+        Context.fillText(x_value, coordinate.x -15, coordinate.y + 15);
+
+        x_value += 10;
     }
+
+     
 }
 
 function DivideGraphArea(Context, GraphArea, x_min, x_max, y_min, Y_max) {
