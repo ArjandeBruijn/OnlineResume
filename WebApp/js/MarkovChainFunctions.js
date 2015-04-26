@@ -33,6 +33,7 @@ function AddModelPoints(Context,InnerPanelArea, x_min, x_max, y_min, y_max) {
     var s = 0;
 
     var lastcoordinate = null;
+    var Coordinates = [];
     setInterval(function () {
         var x = AllModelSeries[i][0];
         var y = AllModelSeries[i][1];
@@ -40,6 +41,7 @@ function AddModelPoints(Context,InnerPanelArea, x_min, x_max, y_min, y_max) {
         Context.strokeStyle = "Red";
         var coordinate = GetCoordinate(InnerPanelArea, x, x_min, x_max, y, y_min, y_max);
 
+        Coordinates.push(coordinate);
         //DrawCircle(Context, coordinate.x, coordinate.y);
 
         if (lastcoordinate != null) {
@@ -47,9 +49,15 @@ function AddModelPoints(Context,InnerPanelArea, x_min, x_max, y_min, y_max) {
         }
         lastcoordinate = coordinate;
         n++;
-
+        
         if (n == NrOfMeas) {
-            lastcoordinate = null;
+
+            Context.clearRect(0, 0, GraphArea.Width, GraphArea.Height);
+            Context.strokeStyle = "Black";
+            DrawAxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max);
+            AddMeasurements(Context, InnerPanelArea, x_min, x_max, y_min, y_max);
+
+            Context.strokeStyle = "Red";
             n = 0;
         }
 
