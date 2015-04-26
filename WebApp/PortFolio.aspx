@@ -7,8 +7,8 @@
       
 
     <div id="column_50_left">
-        <canvas id="canvas1" width= "415" height="561" style="border:2px solid #000000;>Random Canvas</canvas>
-       
+        <canvas id="canvas1" width= "412" height="561" style="border:2px solid #000000;>Random Canvas</canvas>
+        <!--style="border:2px solid #000000;-->
     </div>
 
 
