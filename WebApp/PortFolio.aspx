@@ -6,13 +6,13 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
       
 
-    <div id="nav">
+    <div id="column_50_left">
         <canvas id="canvas1" width= "415" height="561" style="border:2px solid #000000;>Random Canvas</canvas>
-       
+        <!--style="border:2px solid #000000;-->
     </div>
 
 
-    <div id="section">
+    <div id="column_50_right">
         <h2>Deforestation in Malinau</h2>
             <p>
                 Malinau is a region in the north-east of Borneo, Indonesia where I was stationed for a graduation thesis. 

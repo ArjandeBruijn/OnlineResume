@@ -60,6 +60,13 @@ th
     float:left;
     padding:5px;	      
 }
+#column_50_left, column_50_right {
+     
+     width:50%;
+     float:left;
+     padding:5px;	      
+}
+
 #section_banner {
     width:350px;
     float:left;
@@ -83,18 +90,7 @@ a:active, a:hover
     color: #fcdd31; 
     text-decoration: none; 
 }
-#section {
-    width:350px;
-    float:left;
-    padding:10px;	 	 
-}
-#nav {
-     line-height:30px;
-     height:561px;
-     width:450px;
-     float:left;
-     padding:5px;	      
-}
+
 
 img {
 	margin: 0 0 15px 0;
