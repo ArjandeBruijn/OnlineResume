@@ -1,4 +1,12 @@
-﻿
+﻿$(window).load(function () {
+    c = document.getElementById("myCanvas");
+    var Context = c.getContext("2d");
+    Context.font = "12px Georgia";
+
+    InnerPanelArea = DrawGraph(Context, 0, 0, 525, 450, 1930, 2015, 0, 16000);
+    AddModelPoints(Context, InnerPanelArea, 1930, 2015, 0, 16000);
+
+});
 
 function DrawGraph(Context, xmin, ymin, Width, Height, x_min, x_max, y_min, y_max) {
 
@@ -12,20 +20,7 @@ function DrawGraph(Context, xmin, ymin, Width, Height, x_min, x_max, y_min, y_ma
 
     return InnerPanelArea;
 }
-
-$(window).load(function () {
-    c = document.getElementById("myCanvas");
-    var Context = c.getContext("2d");
-    Context.font = "12px Georgia";
-
-    InnerPanelArea = DrawGraph(Context, 0, 0, 525, 450, 1930, 2015, 0, 16000);
-    AddModelPoints(Context, InnerPanelArea, 1930, 2015, 0, 16000);
-
-});
-
 function AddModelPoints(Context,InnerPanelArea, x_min, x_max, y_min, y_max) {
-
-    
 
     var AllModelSeries = Model;
     var n = 0;// NrOfMeas;
@@ -129,6 +124,8 @@ function DivideGraphArea(Context, GraphArea, x_min, x_max, y_min, Y_max) {
 
     TitleAreaX = new Rectangle(TitleAreaY.C.x, TitleAreaY.C.y, GraphArea.Width - TitleMargin, TitleMargin);
 
+    
+
     //DrawRectangle(TitleAreaX, Context, "Yellow");
 
     PanelArea = new Rectangle(TitleAreaY.B.x, TitleAreaY.B.y, TitleAreaX.Width, TitleAreaY.Height);
@@ -146,11 +143,15 @@ function DrawAxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max) {
     // x-axis
     DrawXaxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max);
 
+    Context.fillText("Time", InnerPanelArea.D.x + 0.5 * InnerPanelArea.Width, InnerPanelArea.D.y + 40);
+
     DrawYaxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max);
 }
 function DrawYaxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max) {
 
     drawLine(Context, new Coordinate(InnerPanelArea.A.x, InnerPanelArea.A.y), new Coordinate(InnerPanelArea.D.x, InnerPanelArea.D.y));
+
+   
 
     for (var i = 0; i <= 10; i++) {
 
@@ -161,6 +162,8 @@ function DrawYaxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max) {
         var coordinate = GetCoordinate(InnerPanelArea, x_value, x_min, x_max, y_value, y_min, y_max);
 
         drawLine(Context, new Coordinate(coordinate.x-5, coordinate.y), new Coordinate(coordinate.x+5, coordinate.y));
+
+        
 
         Context.fillText(y_value, coordinate.x-40, coordinate.y);
     }
