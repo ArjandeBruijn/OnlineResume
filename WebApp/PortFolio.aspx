@@ -7,7 +7,8 @@
       
 
     <div id="nav">
-        <canvas id="canvas1" width= "415", height="561">Random Canvas</canvas>
+        <canvas id="canvas1" width= "415" height="561" style="border:2px solid #000000;>Random Canvas</canvas>
+       
     </div>
 
 

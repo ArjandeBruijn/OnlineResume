@@ -24,18 +24,28 @@ function GetValueFromTable(ID) {
 }
 function DrawLegend(Image) {
 
-    var Entrees = 6;
-    var HeightPerEntree = 25;
+    var Entrees = 4;
+    var HeightPerEntree = 20;
 
-    var rect = new Rectangle(0, 20, 150, HeightPerEntree * Entrees);
-    Image.canvas.rect(rect.A.x, rect.A.y, rect.Width, rect.Height);
+    var legendrect = new Rectangle(10, 10, 150, HeightPerEntree * Entrees +20);
+    Image.canvas.rect(legendrect.A.x, legendrect.A.y, legendrect.Width, legendrect.Height);
 
-    var rect2 = new Rectangle(rect.A.x + 10, rect.A.y + 10, 20, 15);
-    DrawRectangle(rect2, Image.canvas, rgbToHex(DarkGreen[0], DarkGreen[1], DarkGreen[2]));
+    var coordinate = new Coordinate(legendrect.A.x + 10, legendrect.A.y + 10);
 
+    coordinate = AddLegendEntry(Image, coordinate, "Primary forest", DarkGreen);
+    coordinate = AddLegendEntry(Image, coordinate, "Secondary forest", LightGreen);
+    coordinate = AddLegendEntry(Image, coordinate, "Cropland", Yellow);
+    coordinate = AddLegendEntry(Image, coordinate, "Settlements", Red);
+}
+function AddLegendEntry(Image,coordinate, label, color) {
+
+    var rect2 = new Rectangle(coordinate.x, coordinate.y, 20, 15);
+    DrawRectangle(rect2, Image.canvas, rgbToHex(color[0], color[1], color[2]));
+    Image.canvas.fillStyle = 'black';
+    Image.canvas.rect(rect2.A.x, rect2.A.y, rect2.Width, rect2.Height);
+    Image.canvas.fillText(label, rect2.B.x + 5, rect2.B.y + 12);
     Image.canvas.stroke();
-    
-
+    return new Coordinate(coordinate.x, coordinate.y + 15 + 5);
 }
 function SetImage(container, xmin, xmax, ymin, ymax, MalinauMap) {
 
