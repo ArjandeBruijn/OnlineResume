@@ -17,22 +17,9 @@
     <link rel="stylesheet" href="css/StyleSheet.css" type="text/css" media="screen" />
     <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
 </head>
-<body>
+<body onload = SetActivePage()>
      
-     <script>
-         $(function () {
-             // this will get the full URL at the address bar
-             var url = window.location.href;
-
-             // passes on every "a" tag 
-             $("#sub-header a").each(function () {
-                 // checks if its the same on the address bar
-                 if (url == (this.href)) {
-                     $(this).closest("li").addClass("active");
-                 }
-             });
-         });
-     </script>
+    
 
     <div id = pick_with_name>
         <div id="nav_banner">
@@ -53,9 +40,9 @@
     <!--<p><img id = "border" src="images\pass.jpg"   align="right">  </p>-->
     <div class="margin_bottom_10"></div>
      <div id="container">
-        <div id="sub-header">
+        <div id="menu">
             <ul>
-                <li> <a href="Default.aspx">Home</a> </li>
+                <li id ="default"> <a href="Default.aspx">Home</a> </li>
                 <li> <a href="Skills.aspx">Skills</a> </li>
                 <li> <a href="PortFolio.aspx">PortFolio</a> </li>
                 <li> <a href="WorkExperience.aspx">WorkExperience</a> </li>
@@ -65,18 +52,50 @@
              
             </ul>
         </div>
-         <!--
-        <div onclick="SetActivePage()" id ="menu">   menu 
-            <ul>
-                <li><a href="Default.aspx">Home</a></li>
-                <li><a href="Skills.aspx" >Skills</a></li>     
-                <li><a href="PortFolio.aspx">Portfolio</a></li>       
-                <li><a href="WorkExperience.aspx">Work Experience</a></li>
-                <li><a href="Education.aspx">Education</a></li>
-                <li><a href="Publications.aspx">Publications</a></li>
-                <li><a href="Testimonials.aspx">References</a></li>
-            </ul>   
-	    </div> <!-- end of menu -->
+         <script>
+             SetActivePage = function () {
+                 // this will get the full URL at the address bar
+                 var url = window.location.href;
+
+                 // passes on every "a" tag 
+                 var first_element = null;
+                 var found = false;
+                 $("#menu a").each(function () {
+                     // checks if its the same on the address bar
+                     var element = $(this).closest("li");
+                     element.removeClass("active");
+                     if (first_element == null) first_element = element;
+
+                     if (url == (this.href)) {
+
+                         // checks if its the same on the address bar
+                         element.addClass("active");
+                         found = true;
+                     }
+
+
+                 });
+                 if (found == false) {
+                     first_element.addClass("active");
+                 }
+
+             }
+             SetActivePage();
+             /*
+             $(function () {
+                  // this will get the full URL at the address bar
+                  var url = window.location.href;
+
+                  // passes on every "a" tag 
+                  $("#menu a").each(function () {
+                      // checks if its the same on the address bar
+                      if (url == (this.href)) {
+                          $(this).closest("li").addClass("active");
+                      }
+                  });
+              });*/
+        </script>
+
         <div class="margin_bottom_10"></div> 
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
         <div class="margin_bottom_10"></div> 

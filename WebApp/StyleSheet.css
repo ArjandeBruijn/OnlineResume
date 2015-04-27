@@ -193,24 +193,24 @@ button{
  
 /* #sub-header ul li:hover{ background-color: #000;}*/
 /*#sub-header ul li:hover a{ color: #fff; }*/
-#sub-header {
+#menu {
 	clear: both;
     width: 960px;
 	height: 42px;
 }
-#sub-header ul {
+#menu ul {
 	float: left;
 	margin: 0px;
 	padding: 0 0 0 0px;
 	list-style: none;
     width: 960px;
 }
-#sub-header ul li {
+#menu ul li {
 	margin: 0px;
 	padding: 0px;
 	display: inline;
 }
-#sub-header ul li a {
+#menu ul li a {
 	position: relative;	
 	margin-right: 10px;
 	height: 30px;
@@ -233,7 +233,7 @@ button{
     background-color: Yellow; 
 }
 */
-#sub-header ul li.active a
+#menu ul li.active a
 { 
     background-color: Yellow; 
     /*color: #fff; */
