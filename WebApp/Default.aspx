@@ -8,7 +8,7 @@
 
      <div id="left_column">
          <div id="rotating-item-wrapper"><!-- START: Rotating Images -->
-               <img  src="images/MarylandMaps/BG.jpg" class="rotating-item" />
+               <img  src="images/MarylandMaps/BG.png" class="rotating-item" border="1" />
                <img  src="images/MarylandMaps/10.png"  class="rotating-item"  />
                <img  src="images/MarylandMaps/20.png"  class="rotating-item"  />
                <img  src="images/MarylandMaps/30.png"  class="rotating-item"  />
@@ -34,7 +34,7 @@
             </p>
          
 
-         <canvas id="myCanvas" width="525" height="450" style="border:1px solid #d3d3d3;">
+         <canvas id="myCanvas" width="525" height="450" style="border:2px solid black;">
             Your browser does not support the HTML5 canvas tag.</canvas>
 
          

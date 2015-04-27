@@ -58,7 +58,8 @@ th
     height:561px;
     width:40%;
     float:left;
-    padding:5px;	      
+    padding:5px;
+   	      
 }
 #column_50_left, column_50_right {
      
@@ -177,9 +178,12 @@ p.justify {
 #rotating-item-wrapper {
 	position: relative;
 	height: 500px;
+    
+     
 }
 .rotating-item
 {
+    
 	display: none;
 	position: absolute;
 	top: 0;
