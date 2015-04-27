@@ -55,6 +55,7 @@
   <ItemGroup>
     <Content Include="Default.aspx" />
     <Content Include="Education.aspx" />
+    <Content Include="infinite-rotator.js" />
     <Content Include="js\ImageFunctions.js" />
     <Content Include="js\jq-sticky-anything.min.js" />
     <Content Include="js\LogP.js" />

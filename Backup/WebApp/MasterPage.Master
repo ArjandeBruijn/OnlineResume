@@ -1,0 +1,158 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="Resume.MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Arjan de Bruijn</title>
+    <meta name="keywords" content="Arjan de Bruijn" />
+    <meta name="description" content="Arjan de Bruijn" />
+    <meta charset="utf-8" />
+    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js?ver=3.0.1'></script>    
+	<script type='text/javascript' src='js/infinite-rotator.js'></script>	
+    <script type='text/javascript' src='js/jq-sticky-anything.min.js'></script>	
+    	
+    <link rel="stylesheet" href="css/StyleSheet.css" type="text/css" media="screen" />
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body onload = SetActivePage()>
+     
+    
+
+    <div id = pick_with_name>
+        <div id="nav_banner">
+          <p><img id = "Img1" src="images\pass.jpg"  onclick="SetActivePage()"  align="left">  </p>
+        </div>
+        <script>
+        </script>
+        <div id="section_banner">
+            <p>Arjan de Bruijn</p>
+            <p>Fort Collins, Co</p>
+            <p>Resume</p>
+        </div>
+        <div class="margin_bottom_10 h_divider"></div>
+    </div>
+
+    
+
+    <!--<p><img id = "border" src="images\pass.jpg"   align="right">  </p>-->
+    <div class="margin_bottom_10"></div>
+     <div id="container">
+        <div id="menu">
+            <ul>
+                <li id ="default"> <a href="Default.aspx">Home</a> </li>
+                <li> <a href="Skills.aspx">Skills</a> </li>
+                <li> <a href="PortFolio.aspx">PortFolio</a> </li>
+                <li> <a href="WorkExperience.aspx">WorkExperience</a> </li>
+                <li> <a href="Education.aspx">Education</a> </li>
+                <li> <a href="Publications.aspx">Publications</a> </li>
+                <li> <a href="Testimonials.aspx">References</a> </li>
+             
+            </ul>
+        </div>
+         <script>
+             SetActivePage = function () {
+                 // this will get the full URL at the address bar
+                 var url = window.location.href;
+
+                 // passes on every "a" tag 
+                 var first_element = null;
+                 var found = false;
+                 $("#menu a").each(function () {
+                     // checks if its the same on the address bar
+                     var element = $(this).closest("li");
+                     element.removeClass("active");
+                     if (first_element == null) first_element = element;
+
+                     if (url == (this.href)) {
+
+                         // checks if its the same on the address bar
+                         element.addClass("active");
+                         found = true;
+                     }
+
+
+                 });
+                 if (found == false) {
+                     first_element.addClass("active");
+                 }
+
+             }
+             SetActivePage();
+             /*
+             $(function () {
+                  // this will get the full URL at the address bar
+                  var url = window.location.href;
+
+                  // passes on every "a" tag 
+                  $("#menu a").each(function () {
+                      // checks if its the same on the address bar
+                      if (url == (this.href)) {
+                          $(this).closest("li").addClass("active");
+                      }
+                  });
+              });*/
+        </script>
+
+        <div class="margin_bottom_10"></div> 
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+        <div class="margin_bottom_10"></div> 
+    </div>
+     
+     <script>
+         SetActivePage();
+    </script>
+
+    <div class="margin_bottom_10 "></div>
+    <div class="margin_bottom_10 "></div>
+     
+    
+     <div id="footer"> 
+         <div class="margin_bottom_10 h_divider"></div>
+        <center>
+            <div class="margin_bottom_10"></div>
+                <p><a href="mailto:amgdebruijn@gmail.com">AMGdeBruijn@gmail.com</a> </p>
+                <p>715-401-0799</p>
+            <div class="margin_bottom_10"></div>
+        </center>
+   </div>
+    <form id="form1" runat="server"></form>
+    
+    <script>
+        $('#pick_with_name').stickThis();
+       
+    </script>
+    <script>
+
+        function SetActivePage() {
+
+            var filename = window.location.href.replace(/^.*[\\\/]/, '');
+
+            var menu = document.getElementById("menu");
+            var listItems = menu.getElementsByTagName("li");
+
+            var arrayLength = listItems.length;
+            for (var i = 0; i < arrayLength; i++) {
+
+                var my_a = listItems[i].getElementsByTagName("a");
+                var x = $(my_a).attr("href");
+
+
+                if (x == filename) {
+                    $(my_a).addClass("current");
+                }
+                else $(my_a).removeClass("current");
+
+                if (filename == "") {
+                    $(listItems[0].getElementsByTagName("a")).addClass("current");
+                }
+            }
+
+
+
+        }
+    </script>
+</body>
+</html>

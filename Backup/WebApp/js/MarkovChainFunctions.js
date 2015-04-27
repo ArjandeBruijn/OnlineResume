@@ -64,20 +64,17 @@ function AddModelPoints(Context,InnerPanelArea, x_min, x_max, y_min, y_max) {
 }
 function AddLegend(Context, InnerPanelArea) {
 
-    var legendrect = new Rectangle(InnerPanelArea.B.x - 125, InnerPanelArea.B.y, 125, 60);
+    var legendrect = new Rectangle(InnerPanelArea.B.x - 110, InnerPanelArea.B.y + 10, 100, 100);
     Context.rect(legendrect.A.x, legendrect.A.y, legendrect.Width, legendrect.Height);
     Context.stroke();
 
     Context.strokeStyle = "Black";
-    var y_ms = legendrect.A.y + 1 / 3 * legendrect.Height;
-    drawLine(Context, new Coordinate(legendrect.A.x + 10, y_ms), new Coordinate(legendrect.A.x + 40, y_ms));
-    DrawCircle(Context, legendrect.A.x + 25, legendrect.A.y + 1 / 3 * legendrect.Height);
-    Context.fillText("Measured", legendrect.A.x + 50, y_ms + 5);
+    drawLine(Context, new Coordinate(legendrect.A.x +10, legendrect.A.y + 1 / 3 * legendrect.Height), new Coordinate(legendrect.B.x-10, legendrect.A.y + 1 / 3 * legendrect.Height));
+    DrawCircle(Context, legendrect.A.x + 0.5 * legendrect.Width, legendrect.A.y + 1 / 3 * legendrect.Height);
 
     Context.strokeStyle = "Red";
-    var y_md = legendrect.A.y + 2 / 3 * legendrect.Height;
-    drawLine(Context, new Coordinate(legendrect.A.x + 10, y_md), new Coordinate(legendrect.A.x + 40, y_md));
-    Context.fillText("Modeled", legendrect.A.x + 50, y_md + 5);
+    drawLine(Context, new Coordinate(legendrect.A.x + 10, legendrect.A.y + 2 / 3 * legendrect.Height), new Coordinate(legendrect.B.x - 10, legendrect.A.y + 2 / 3 * legendrect.Height));
+    
 
     Context.strokeStyle = "Black";
 
