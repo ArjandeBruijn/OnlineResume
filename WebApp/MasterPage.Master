@@ -45,10 +45,10 @@
                 <li id ="default"> <a href="Default.aspx">Home</a> </li>
                 <li> <a href="Skills.aspx">Skills</a> </li>
                 <li> <a href="PortFolio.aspx">PortFolio</a> </li>
-                <li> <a href="WorkExperience.aspx">WorkExperience</a> </li>
-                <li> <a href="Education.aspx">Education</a> </li>
+                <li> <a href="WorkAndEdu.aspx">Work & Education</a> </li>
+               <!-- <li> <a href="Education.aspx">Education</a> </li>
                 <li> <a href="Publications.aspx">Publications</a> </li>
-                <li> <a href="Testimonials.aspx">References</a> </li>
+                <li> <a href="Testimonials.aspx">References</a> </li>-->
              
             </ul>
         </div>
@@ -108,7 +108,7 @@
     <div class="margin_bottom_10 "></div>
     <div class="margin_bottom_10 "></div>
      
-    
+      
      <div id="footer"> 
          <div class="margin_bottom_10 h_divider"></div>
         <center>
@@ -118,6 +118,7 @@
             <div class="margin_bottom_10"></div>
         </center>
    </div>
+   
     <form id="form1" runat="server"></form>
     
     <script>

@@ -11,7 +11,7 @@ namespace Resume
 {
 
 
-    public partial class Testimonials
+    public partial class WorkAndEdu
     {
     }
 }

@@ -69,7 +69,6 @@
     <Content Include="Publications.aspx" />
     <Content Include="Skills.aspx" />
     <Content Include="StyleSheet.css" />
-    <Content Include="Testimonials.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -77,6 +76,7 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="WorkAndEdu.aspx" />
     <Content Include="WorkExperience.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -120,12 +120,12 @@
     <Compile Include="Skills.aspx.designer.cs">
       <DependentUpon>Skills.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Testimonials.aspx.cs">
-      <DependentUpon>Testimonials.aspx</DependentUpon>
+    <Compile Include="WorkAndEdu.aspx.cs">
+      <DependentUpon>WorkAndEdu.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Testimonials.aspx.designer.cs">
-      <DependentUpon>Testimonials.aspx</DependentUpon>
+    <Compile Include="WorkAndEdu.aspx.designer.cs">
+      <DependentUpon>WorkAndEdu.aspx</DependentUpon>
     </Compile>
     <Compile Include="WorkExperience.aspx.cs">
       <DependentUpon>WorkExperience.aspx</DependentUpon>
