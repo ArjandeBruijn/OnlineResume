@@ -155,56 +155,7 @@ p.justify {
     text-align: justify;
 	text-justify: inter-word;
 }
-
-  
-/* menu */
-#menu {
-	clear: both;
-    width: 960px;
-	height: 42px;
-}
-
-#menu ul {
-	float: left;
-	margin: 0px;
-	padding: 0 0 0 0px;
-	list-style: none;
-    width: 960px;
-}
-
-#menu ul li {
-	margin: 0px;
-	padding: 0px;
-	display: inline;
-}
-  
  
- 
-#menu ul li a {
-	position: relative;	
-	float: left;
-	display: inline-block;
-	height: 30px;
-	width: 127px;
-	margin-right: 10px;
-	text-align: center;
-	padding: 12px 0 0 0;
-	font-size: 13px;
-	font-weight: bold;
-	text-decoration: none;
-	color: Black;	
-	background-color: Orange;
-	outline: none;
-}
-
- #menu li a.current {
-	position: relative;
-	color: Black;	
-	background-color: Yellow;
-    top: -1px;
-    left: -1px;
-}
-
 #content 
 {
     color: White;
@@ -221,20 +172,7 @@ p.justify {
 .column_2_3 {
 	width: 66.666666666666666667%;
 }
- .category_list {
-	margin: 0px;
-	padding: 0px;
-	list-style: none;
-}
 
-.category_list li { 
-	display: block ;
-	height: 20px;
-	font-size: 20px;
-	padding: 6px 0 0 25px;
-	margin: 0 0 5px 0;
-	background: url(images/RightArrow.png) top left no-repeat;
-}
 
 #rotating-item-wrapper {
 	position: relative;
@@ -251,4 +189,59 @@ button{
     margin: 5px;
 }
  
+
  
+/* #sub-header ul li:hover{ background-color: #000;}*/
+/*#sub-header ul li:hover a{ color: #fff; }*/
+#sub-header {
+	clear: both;
+    width: 960px;
+	height: 42px;
+}
+#sub-header ul {
+	float: left;
+	margin: 0px;
+	padding: 0 0 0 0px;
+	list-style: none;
+    width: 960px;
+}
+#sub-header ul li {
+	margin: 0px;
+	padding: 0px;
+	display: inline;
+}
+#sub-header ul li a {
+	position: relative;	
+	margin-right: 10px;
+	height: 30px;
+	width: 127px;
+	text-align: center;
+	padding: 12px 0 0 0;
+	font-size: 13px;
+	font-weight: bold;
+	text-decoration: none;
+	color: Black;	
+	background-color: Orange;
+	display: inline-block;
+	float: left;
+	outline: none;
+	 
+}
+/*
+#sub-header ul li.active
+{ 
+    background-color: Yellow; 
+}
+*/
+#sub-header ul li.active a
+{ 
+    background-color: Yellow; 
+    /*color: #fff; */
+}
+
+/*.active { background-color: #000; }*/
+/* to override the existing css for "a" tag */
+/*#sub-header .active a
+{ 
+    color: #fff; 
+}*/

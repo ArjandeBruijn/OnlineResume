@@ -19,6 +19,21 @@
 </head>
 <body>
      
+     <script>
+         $(function () {
+             // this will get the full URL at the address bar
+             var url = window.location.href;
+
+             // passes on every "a" tag 
+             $("#sub-header a").each(function () {
+                 // checks if its the same on the address bar
+                 if (url == (this.href)) {
+                     $(this).closest("li").addClass("active");
+                 }
+             });
+         });
+     </script>
+
     <div id = pick_with_name>
         <div id="nav_banner">
           <p><img id = "Img1" src="images\pass.jpg"  onclick="SetActivePage()"  align="left">  </p>
@@ -33,10 +48,25 @@
         <div class="margin_bottom_10 h_divider"></div>
     </div>
 
+    
+
     <!--<p><img id = "border" src="images\pass.jpg"   align="right">  </p>-->
     <div class="margin_bottom_10"></div>
      <div id="container">
-        <div onclick="SetActivePage()" id ="menu">  <!-- menu -->
+        <div id="sub-header">
+            <ul>
+                <li> <a href="Default.aspx">Home</a> </li>
+                <li> <a href="Skills.aspx">Skills</a> </li>
+                <li> <a href="PortFolio.aspx">PortFolio</a> </li>
+                <li> <a href="WorkExperience.aspx">WorkExperience</a> </li>
+                <li> <a href="Education.aspx">Education</a> </li>
+                <li> <a href="Publications.aspx">Publications</a> </li>
+                <li> <a href="Testimonials.aspx">References</a> </li>
+             
+            </ul>
+        </div>
+         <!--
+        <div onclick="SetActivePage()" id ="menu">   menu 
             <ul>
                 <li><a href="Default.aspx">Home</a></li>
                 <li><a href="Skills.aspx" >Skills</a></li>     
