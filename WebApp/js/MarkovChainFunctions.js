@@ -23,7 +23,7 @@ function DrawGraph(Context, xmin, ymin, Width, Height, x_min, x_max, y_min, y_ma
 function AddModelPoints(Context,InnerPanelArea, x_min, x_max, y_min, y_max) {
 
     var AllModelSeries = Model;
-    var n = 0;// NrOfMeas;
+   
     var i = 0;
     var s = 0;
 
@@ -40,21 +40,21 @@ function AddModelPoints(Context,InnerPanelArea, x_min, x_max, y_min, y_max) {
         //DrawCircle(Context, coordinate.x, coordinate.y);
 
         if (lastcoordinate != null) {
-            drawLine(Context, coordinate, lastcoordinate);
+
+            if (coordinate.x < lastcoordinate.x) 
+            {
+
+                Context.clearRect(0, 0, GraphArea.Width, GraphArea.Height);
+                Context.strokeStyle = "Black";
+                DrawAxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max);
+                AddMeasurements(Context, InnerPanelArea, x_min, x_max, y_min, y_max);
+                AddLegend(Context, InnerPanelArea);
+                Context.strokeStyle = "Red";
+            }
+            else drawLine(Context, coordinate, lastcoordinate);
         }
         lastcoordinate = coordinate;
-        n++;
-
-        if (n == NrOfMeas) {
-
-            Context.clearRect(0, 0, GraphArea.Width, GraphArea.Height);
-            Context.strokeStyle = "Black";
-            DrawAxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max);
-            AddMeasurements(Context, InnerPanelArea, x_min, x_max, y_min, y_max);
-            AddLegend(Context, InnerPanelArea);
-            Context.strokeStyle = "Red";
-            n = 0;
-        }
+      
 
         i++;
         if (i == AllModelSeries.length - 1) i = 0;
@@ -96,8 +96,10 @@ function AddMeasurements(Context, InnerPanelArea, x_min, x_max, y_min, y_max) {
         var coordinate = GetCoordinate(InnerPanelArea, x_value, x_min, x_max, y_value, y_min, y_max);
 
         DrawCircle(Context,coordinate.x, coordinate.y);
+        
+        if (lastcoordinate != null && lastcoordinate.x < coordinate.x) {
 
-        if (lastcoordinate != null) {
+            
             drawLine(Context, coordinate, lastcoordinate);
         }
 
