@@ -68,9 +68,10 @@
     <Content Include="js\MalinauFunctions.js" />
     <Content Include="js\infinite-rotator.js" />
     <Content Include="js\MarkovChainFunctions.js" />
+    <Content Include="PortFolio.aspx" />
     <Content Include="js\TableEventHandlers.js" />
     <Content Include="js\MarkovChainModel.js" />
-    <Content Include="PortFolio.aspx" />
+    <Content Include="PortFolio2.aspx" />
     <Content Include="Publications.aspx" />
     <Content Include="Skills.aspx" />
     <Content Include="StyleSheet.css" />
@@ -96,6 +97,13 @@
       <DependentUpon>Education.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="PortFolio.aspx.cs">
+      <DependentUpon>PortFolio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PortFolio.aspx.designer.cs">
+      <DependentUpon>PortFolio.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -103,12 +111,12 @@
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
-    <Compile Include="PortFolio.aspx.cs">
-      <DependentUpon>PortFolio.aspx</DependentUpon>
+    <Compile Include="PortFolio2.aspx.cs">
+      <DependentUpon>PortFolio2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PortFolio.aspx.designer.cs">
-      <DependentUpon>PortFolio.aspx</DependentUpon>
+    <Compile Include="PortFolio2.aspx.designer.cs">
+      <DependentUpon>PortFolio2.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Publications.aspx.cs">

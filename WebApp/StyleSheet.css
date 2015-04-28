@@ -44,24 +44,16 @@ th
 #column_55 {
     width:55%;
     float:left;
-    padding-right : 10px;	 	 
-    padding-left: 0px;
-}
-#column_45 {
-    line-height:30px;
-    
-    width:42%;
-    float:right;
     padding-right : 0px;	 	 
     padding-left: 10px;
+}
+#column_45 {
+    width:42%;
+    float:right;
+    padding-right : 10px;	 	 
+    padding-left: 0px;
    	      
 }
-#column_50_left, column_50_right {
-     width:50%;
-     float:left;
-     padding:5px;	      
-}
-
 #section_banner {
     width:350px;
     float:left;

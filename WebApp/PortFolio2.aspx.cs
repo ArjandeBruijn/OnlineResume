@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Resume.js
+namespace Resume
 {
-    public partial class PortFolio : System.Web.UI.Page
+    public partial class PortFolio2 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

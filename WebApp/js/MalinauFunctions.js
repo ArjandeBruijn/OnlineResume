@@ -1,5 +1,3 @@
-    
-
 NoData = new LandUse(-9999, White, null);
 PF = new LandUse(1, DarkGreen, [new ConversionRate(6, GetValueFromTable('Forest-CropLand'))]);
 SF = new LandUse(2, LightGreen, [new ConversionRate(6, GetValueFromTable('SecondaryForest-CropLand'))]);
@@ -15,7 +13,9 @@ LandUse11 = new LandUse(11, Color11, null);
 LandUse12 = new LandUse(12, Color12, null);
 LandUse13 = new LandUse(13, Color13, null);
 
-var LandUseTypes = [NoData, PF, SF, LandUse3, Settlement, LandUse5, OpenLand, LandUse7, Water, LandUse9, LandUse10, LandUse11, LandUse12, LandUse13];
+LandUseTypes = [NoData, PF, SF, LandUse3, Settlement, LandUse5, OpenLand, LandUse7, Water, LandUse9, LandUse10, LandUse11, LandUse12, LandUse13];
+    
+
 
 function Simulate() {
     Simulate("canvas1", 0, 415, 0, 561, 0, 415, 0, 561, 1);
@@ -64,6 +64,7 @@ function AddLegendEntry(Image,coordinate, label, color) {
 }
 function SetImage(container, xmin, xmax, ymin, ymax, MalinauMap) {
 
+    
 
     my_image = new Image(container, xmin, xmax, ymin, ymax);
 
