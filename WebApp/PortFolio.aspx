@@ -4,9 +4,24 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+    <style>
+        #left_col {
+            width:55%;
+            float:left;
+            padding-right : 0px;	 	 
+            padding-left: 10px;
+        }
+        #right_col {
+            width:42%;
+            float:right;
+            padding-right : 10px;	 	 
+            padding-left: 0px;
+   	        height: 600px;
+        }
+    </style>
      
      <!-- left column-->
-    <div id="column_55">
+    <div id="left_col">
         <h2>Land use changes on Borneo</h2>
         <p>
                 We all heard about alarming rates of deforestation on Borneo, Indonesia. Large schale logging operations sinds the 1960 have degraded much of the 
@@ -103,17 +118,11 @@
         <br></br>
         <br></br>
     </div>
-    <div id="column_45">
+    <div id="right_col">
           
-        <canvas id="canvas1" width="410" height="561" style="border:2px solid black;"></canvas>
+        <canvas id="canvas1" display = "inline" width="410" height="561" style="border:2px solid black;"></canvas>
         <button onclick = "Simulate()" type="button">Simulate 9 years</button>
-         <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
+        
     </div>
     <script src="js/Malinau2009.js"></script>
     <script src="js/Malinau2000.js"></script>
