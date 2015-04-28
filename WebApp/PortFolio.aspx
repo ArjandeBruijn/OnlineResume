@@ -15,15 +15,25 @@
     <div id="column_50_right">
         <h2>Deforestation in Malinau</h2>
             <p>
-                Malinau is a region in the north-east of Borneo, Indonesia where I was stationed for a graduation thesis. 
-                The image is based on an arial photographs taken in 2000. The simulations predict land use transitions from 2000 onwards. 
-                The selection of grid cells that are transferred is based on a simple assumption that all human activity is centered around 
-                developed area. You can use the table below to predict land use into the future. 
+                Land use changes in the tropics are an important issue in the tropics. In particular, many pristine tropical forests have been logged and 
+                converted to olive oil plantations. Added to that is the continued pressure on these forests exerted by both state logging companies and illegal logging. 
+                Finally, population pressure is increasing and habitants need both homes and cropland for subsistence. Land use transitions tend to reinforce themselves. 
+                For example, degraded forest is easier to convert to cropland or housing than pristine, impenetrable forest. In the context of my graduation thesis, 
+                I used land use derived from arial photographs taken in 2000 and 2009 (see 2009) to evaluate hypotheses about the spatial configuration of land use 
+                changes and to predict future land use thereupon. 
+                
+                The hypothesis about land use change are increasingly speculative: 
+            </p>    
+            <ul style="padding-left:80px>
+              <li><p><input type="checkbox" name="vehicle" value="Bike"> There is no spatial correlation between land use transitions.<br></p></li>
+              <li><p><input type="checkbox" name="vehicle" value="Bike"> All human activity is centered around developed area.<br></p></li>
+              <li><p><input type="checkbox" name="vehicle" value="Bike"> All human activity is centered around water and developed area.<br></p></li>
+              <li><p><input type="checkbox" name="vehicle" value="Bike"> American military invasion.<br></p></li>
+            </ul>
+
                   
-            </p>
-        <p>
-         
-        </p>
+            We can combine these assumptions with transition rates between the different land use categories to predict future land use. 
+             
     </div>
     
     <button type="button" onclick="Simulate()" >Simulate one time unit!</button><div id = "ProgressTag" class="right"></div><br>
