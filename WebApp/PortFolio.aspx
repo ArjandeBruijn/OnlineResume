@@ -33,7 +33,12 @@
 
                   
             We can combine these assumptions with transition rates between the different land use categories to predict future land use. 
-             
+
+                  
+            
+        <p>
+         
+        </p>
     </div>
     
     <button type="button" onclick="Simulate()" >Simulate one time unit!</button><div id = "ProgressTag" class="right"></div><br>
