@@ -177,14 +177,12 @@ p.justify {
 
 #rotating-item-wrapper {
 	position: relative;
-	height: 500px;
-    
-     
+    height: 400px;
+	
 }
 .rotating-item
 {
-    
-	display: none;
+    display: none;
 	position: absolute;
 	top: 0;
 	left: 0;
