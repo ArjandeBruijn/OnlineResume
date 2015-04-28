@@ -17,7 +17,22 @@ LandUse13 = new LandUse(13, Color13, null);
 
 var LandUseTypes = [NoData, PF, SF, LandUse3, Settlement, LandUse5, OpenLand, LandUse7, Water, LandUse9, LandUse10, LandUse11, LandUse12, LandUse13];
 
+function Simulate() {
+    Simulate("canvas1", 0, 415, 0, 561, 0, 415, 0, 561, 1);
+}
+function ShowMalinauMap() {
+    if (document.getElementById("ShowButton").innerHTML == "Show 2009!") {
+        document.getElementById("ShowButton").innerHTML = "Show 2000!";
+        SetImage('canvas1', 0, 415, 0, 561, MalinauMap2009);
+    }
+    else {
+        document.getElementById("ShowButton").innerHTML = "Show 2009!";
+        SetImage('canvas1', 0, 415, 0, 561, MalinauMap2000);
+    }
+    //	       
 
+
+}
 function GetValueFromTable(ID) {
     var value = document.getElementById('Forest-CropLand').innerText;
     return value;
