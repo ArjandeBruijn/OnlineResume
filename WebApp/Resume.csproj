@@ -71,7 +71,6 @@
     <Content Include="PortFolio.aspx" />
     <Content Include="js\TableEventHandlers.js" />
     <Content Include="js\MarkovChainModel.js" />
-    <Content Include="PortFolio2.aspx" />
     <Content Include="Publications.aspx" />
     <Content Include="Skills.aspx" />
     <Content Include="StyleSheet.css" />
@@ -110,13 +109,6 @@
     </Compile>
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
-    </Compile>
-    <Compile Include="PortFolio2.aspx.cs">
-      <DependentUpon>PortFolio2.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PortFolio2.aspx.designer.cs">
-      <DependentUpon>PortFolio2.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Publications.aspx.cs">

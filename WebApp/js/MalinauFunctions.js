@@ -20,18 +20,53 @@ LandUseTypes = [NoData, PF, SF, LandUse3, Settlement, LandUse5, OpenLand, LandUs
 function Simulate() {
     Simulate("canvas1", 0, 415, 0, 561, 0, 415, 0, 561, 1);
 }
-function ShowMalinauMap() {
-    if (document.getElementById("ShowButton").innerHTML == "Show 2009!") {
-        document.getElementById("ShowButton").innerHTML = "Show 2000!";
-        SetImage('canvas1', 0, 415, 0, 561, MalinauMap2009);
+function ShowMalinauMap(year) {
+    if (year == 2009) {
+        SetImage('canvas1', 0, 415, 0, 561, MalinauMap2009, 2009);
     }
     else {
-        document.getElementById("ShowButton").innerHTML = "Show 2009!";
-        SetImage('canvas1', 0, 415, 0, 561, MalinauMap2000);
+        SetImage('canvas1', 0, 415, 0, 561, MalinauMap2000, 2000);
+    }      
+}
+function SetImage(container, xmin, xmax, ymin, ymax, MalinauMap, year) {
+
+    my_image = new Image(container, xmin, xmax, ymin, ymax);
+
+    my_image.pixels = declare_pixels(xmax - xmin, ymax - ymin);
+
+    // draw random dots
+    var counter = -1;
+
+    for (y = ymin; y < ymax; y++) {
+        for (x = xmin; x < xmax; x++) {
+
+            counter++;
+
+            var MapCode = MalinauMap[counter];
+
+            land_use = GetLandUseType(MapCode);
+
+            if (land_use == null) {
+                continue;
+            }
+
+            setPixel(my_image, x, y, land_use);  // 255 opaque
+
+
+            land_use.Count++;
+
+        }
     }
-    //	       
+   
+    // copy the image data back onto the canvas
+    my_image.canvas.putImageData(my_image.imageData, 0, 0); // at coords 0,0
 
+    old_font = my_image.canvas.font;
+    my_image.canvas.font = "30px Arial";
+    my_image.canvas.fillText(year, xmax - 80, ymax - 15);
+    my_image.canvas.font = old_font;
 
+    DrawLegend(my_image);
 }
 function GetValueFromTable(ID) {
     var value = document.getElementById('Forest-CropLand').innerText;
@@ -62,43 +97,7 @@ function AddLegendEntry(Image,coordinate, label, color) {
     Image.canvas.stroke();
     return new Coordinate(coordinate.x, coordinate.y + 15 + 5);
 }
-function SetImage(container, xmin, xmax, ymin, ymax, MalinauMap) {
 
-    
-
-    my_image = new Image(container, xmin, xmax, ymin, ymax);
-
-    my_image.pixels = declare_pixels(xmax - xmin, ymax - ymin);
-
-    // draw random dots
-    var counter = -1;
-
-    for (y = ymin; y < ymax; y++) {
-        for (x = xmin; x < xmax; x++) {
-
-            counter++;
-
-            var MapCode = MalinauMap[counter];
-
-            land_use = GetLandUseType(MapCode);
-
-            if (land_use == null) {
-                continue;
-            }
-
-            setPixel(my_image, x, y, land_use);  // 255 opaque
-
-
-            land_use.Count++;
-
-        }
-    }
-
-    // copy the image data back onto the canvas
-    my_image.canvas.putImageData(my_image.imageData, 0, 0); // at coords 0,0
-
-    DrawLegend(my_image);
-}
 function declare_pixels(nrows, ncols) {
     var myArray = [[], []];
     //  myArray[] = new Array(14);

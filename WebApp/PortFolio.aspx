@@ -13,7 +13,8 @@
                 converted to olive oil plantations. Added to that is the continued pressure on these forests exerted by both state logging companies and illegal logging. 
                 Finally, population pressure is increasing and habitants need both homes and cropland for subsistence. Land use transitions tend to reinforce themselves. 
                 For example, degraded forest is easier to convert to cropland or housing than pristine, impenetrable forest. In the context of my graduation thesis, 
-                I used land use derived from arial photographs taken in 2000 and 2009 (see 2009) to evaluate hypotheses about the spatial configuration of land use 
+                I used land use derived from arial photographs taken in (<a onclick="ShowMalinauMap(2000)" href="#"> 2000</a>) and (<a onclick="ShowMalinauMap(2009)" href="#"> 2009</a>) 
+                to evaluate hypotheses about the spatial configuration of land use 
                 changes and to predict future land use thereupon. The hypothesis about land use change are increasingly speculative:  
                 
                 
@@ -96,6 +97,7 @@
     <div id="column_45">
           
         <canvas id="canvas1" width="410" height="561" style="border:2px solid black;"></canvas>
+        
          <br></br>
         <br></br>
         <br></br>
@@ -104,10 +106,11 @@
         <br></br>
         <br></br>
     </div>
+    <script src="js/Malinau2009.js"></script>
     <script src="js/Malinau2000.js"></script>
     <script src='js/ImageFunctions.js'></script>
     <script src='js/MalinauFunctions.js'></script>
-    <script> SetImage('canvas1', 0, 415, 0, 561, MalinauMap2000); </script>
+    <script>        ShowMalinauMap(2000); </script>
     
      
                              
