@@ -9,25 +9,26 @@
     <div id="column_55">
         <h2>Land use changes on Borneo</h2>
         <p>
-                Land use changes in the tropics are an important issue in the tropics. In particular, many pristine tropical forests have been logged and 
-                converted to olive oil plantations. Added to that is the continued pressure on these forests exerted by both state logging companies and illegal logging. 
-                Finally, population pressure is increasing and habitants need both homes and cropland for subsistence. Land use transitions tend to reinforce themselves. 
-                For example, degraded forest is easier to convert to cropland or housing than pristine, impenetrable forest. In the context of my graduation thesis, 
-                I used land use derived from arial photographs taken in (<a onclick="ShowMalinauMap(2000)" href="#"> 2000</a>) and (<a onclick="ShowMalinauMap(2009)" href="#"> 2009</a>) 
-                to evaluate hypotheses about the spatial configuration of land use 
-                changes and to predict future land use thereupon. The hypothesis about land use change are increasingly speculative:  
-                
-                
-
-            </p>    
+                We all heard about alarming rates of deforestation on Borneo, Indonesia. Large schale logging operations sinds the 1960 have degraded much of the 
+                pristine rainforests. More recently, large areas are being converted to olive oil plantations and population pressure is ever-increasing.
+                I used land use derived from arial photographs of the northeastern region of Borneo 
+                taken in (<a onclick="ShowMalinauMap(2000)" href="#"> 2000</a>) and (<a onclick="ShowMalinauMap(2009)" href="#"> 2009</a>) to evaluate hypotheses 
+                about the spatial configuration of land use changes and to predict future land use thereupon. The hypothesis about land use change are increasingly speculative:  
+        </p>    
             <ul style="padding-left:80px>
               <li><p><input type="checkbox"></p></li>
-              <li><p><input type="checkbox" name="vehicle" value="Bike"> There is no spatial correlation between land use transitions.<br></p></li>
-              <li><p><input type="checkbox" name="vehicle" value="Bike"> All human activity is centered around developed area.<br></p></li>
-              <li><p><input type="checkbox" name="vehicle" value="Bike"> All human activity is centered around water and developed area.<br></p></li>
-              <li><p><input type="checkbox" name="vehicle" value="Bike"> American invasion.<br></p></li>
+              <li><p><input type="checkbox" name="vehicle" value="Bike">1. There is no spatial correlation between land use transitions.<br></p></li>
+              <li><p><input type="checkbox" name="vehicle" value="Bike">2. All land use transitions are concentrated around developed area.<br></p></li>
+              <li><p><input type="checkbox" name="vehicle" value="Bike">3. All human activity is centered around water and developed area.<br></p></li>
+              <li><p><input type="checkbox" name="vehicle" value="Bike">4. American invasion.<br></p></li>
             </ul>
         
+            <p>
+
+            Combined with a land use transition table that prescribed surface fractions of land use categories that are converted in the period 2000-2009:
+            <br></br>
+            </p>
+            
             <table id = "LUCtable" bgcolor = white border="1">
         <tr>
             <th bgcolor ="#c0c0c0">From / To </th>
@@ -71,7 +72,15 @@
         </tr>
           
      </table>
-        
+        <p>
+            We can use these hypotheses to predict locations where land use change would take place. 
+            For example: when hypotheses 2 is applied and 1% of Primary Forests degrades between 2000 and 2009, 
+            the model picks a random developed location, searches the nearest primary forest (i.e. dark-green pixel)
+            and converts this to secondary forest (i.e. paints a dark-green pixel light-green).
+             The model will repeat this the target area conversion is reached (i.e. untill 1% of darg-green pixels is light green).
+       </p>
+
+
      <p class = "justify">
            
            <!--
@@ -97,7 +106,7 @@
     <div id="column_45">
           
         <canvas id="canvas1" width="410" height="561" style="border:2px solid black;"></canvas>
-        
+        <button onclick = "Simulate()" type="button">Simulate 9 years</button>
          <br></br>
         <br></br>
         <br></br>
