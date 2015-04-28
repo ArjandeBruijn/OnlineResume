@@ -5,16 +5,16 @@
 
  
     <h2>Software capabilities</h2>
+     
+    <ul>
+      <li><p>25% Made some tweaks, seen the program in action.</p></li>
+      <li><p>50% Added some minor algorithms to existing code or files.</p></li>
+      <li><p>100% Designed applications from scratch)</p></li>
+    </ul>
         
     <p> <img src="images\ProgressBars\ProgressBars.png"   align="middle"></p>
         
          
-        
-   <p>
-    25% Made some tweaks, seen the program in action.<br>
-    50% Added some minor algorithms to existing code or files.<br>
-     100% Designed applications from scratch)
-   </p>
    
 
     

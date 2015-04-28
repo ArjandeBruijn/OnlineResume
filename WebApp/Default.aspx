@@ -4,14 +4,14 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-     <h2>About me</h2>
+     <h1>About me</h1>
      <p class = "justify">
            My career has reached a cross-road. I have enjoyed being employed in academics in three different coutries 
            for more than eight years. I have a considerable publication record, taught at presentations and workshops, I have a PhD, Msc and M.A.
            However, I preferred the more technical elements of my PhD and post-doctoral work (i.e. the programming) over the drier mathematical 
            work and I feel that I am better suited to the pace of the private sector. So I developed this website to demonstrate my skills and 
            some of my work so employers may have a better impression about my capacities and how these match their product. 
-
+           <br></br>
            <!--
            I designed and wrote technical and conceptual documentation for my simulation software, taught at presentations and workshops, I work hard and I am authorized to work 
            for any employer in the United States.    I am proficient in English, German and Dutch-->
@@ -24,7 +24,7 @@
 
     <div id="column_55">
         
-            <h2>Summary of Qualifications</h2>
+            <h1>Summary of Qualifications</h1>
         <ul>
           <li><p>More than 8 years experience in software development.</p></li>
           <li><p>Allowed to work in the USA.</p></li>

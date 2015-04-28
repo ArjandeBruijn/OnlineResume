@@ -18,28 +18,21 @@
     <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
 </head>
 <body onload = SetActivePage()>
-     
-    
-
-    <div id = pick_with_name>
+     <div id="container">
+        <div>
         <div id="nav_banner">
           <p><img id = "Img1" src="images\pass.jpg"  onclick="SetActivePage()"  align="left">  </p>
         </div>
         <script>
         </script>
         <div id="section_banner">
-            <p>Arjan de Bruijn</p>
-            <p>Fort Collins, Co</p>
-            <p>Resume</p>
+            <p class = "large"><b>Arjan de Bruijn</b></p>
+            <p class = "large">Fort Collins, Co</p>
+            <p class = "large">Resume</p>
         </div>
-        <div class="margin_bottom_10 h_divider"></div>
+        
+        <div class="margin_bottom_10"></div>
     </div>
-
-    
-
-    <!--<p><img id = "border" src="images\pass.jpg"   align="right">  </p>-->
-    <div class="margin_bottom_10"></div>
-     <div id="container">
         <div id="menu">
             <ul>
                 <li id ="default"> <a href="Default.aspx">Home</a> </li>
@@ -113,8 +106,8 @@
          <div class="margin_bottom_10 h_divider"></div>
         <center>
             <div class="margin_bottom_10"></div>
-                <p><a href="mailto:amgdebruijn@gmail.com">AMGdeBruijn@gmail.com</a> </p>
-                <p>715-401-0799</p>
+                <p class ="large"><a href="mailto:amgdebruijn@gmail.com">AMGdeBruijn@gmail.com</a> </p>
+                <p class ="large">715-401-0799</p>
             <div class="margin_bottom_10"></div>
         </center>
    </div>
