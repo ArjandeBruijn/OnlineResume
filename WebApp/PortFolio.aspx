@@ -113,9 +113,16 @@
          <!-- <canvas id="canvas1" width= "410" height="561" style="border:2px solid #000000;>Random Canvas</canvas>-->
         <h2>Landis user interface</h2>
          <p>
-            succession (ageing) processes and disturbances such as wind damage, logging, insect pests and browsing by deer or other 
-            wildlife. I have been using the LANDIS model for the last three years and I was missing an interface that would speed 
-            up my analysis. So I ended up developing my own. 
+            Landis is a spatial simulation model that predicts patterns of succession (ageing) processes and disturbances such as wind damage, logging, insect pests and browsing by deer or other 
+            wildlife. I have been using the LANDIS model for the last three years and I was missing an interface to fascilitate my analyses. So I ended up developing my own. It is a windows forms application
+            written in C#  developed in .Net 3.5. The interface consists of a file tree (on the left) where you add a Landis scenario file. A Landis scenario file is a simple ascii in which 
+            other input files and some settings for the model are specified. When you add a scenario, the program will read that file and check for any pathnames in that file (i.e. other input files)  
+            and adds those to the file tree. Additionally, the user can start a simulation and the user interface will periodically check whether there are new output files which it will add to the file tree
+            as well. This way, all the relevant files (input and output) are shown in the file tree. The user can have a closer look at a file by dragging it from the file tree into 
+            the work space (on the right). The work space is simply a surface where you can display one or many dockable screens. Input and output files that are in the tree view can be
+            displayed as maps, graphs, spreadsheets or in a text editor by dragging the file from the filetree and dropping it in the work space. 
+            The landis user interface is currently used for landis instruction workshops by the university of portland as well as ~10 individual landis users.
+
         </p> 
          <br></br>
         <br></br>
