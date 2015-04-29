@@ -14,13 +14,15 @@
             width:45%;
             float:right;
             padding : 10px;	 	 
-           
-   	        
+        }
+        #left_col
+        {
+            width:400;
+            float:left;
+            padding : 10px;	 	
         }
         #left_text {
-            
             padding-right : 10px;	 	 
-             
         }
     </style>
      
@@ -111,7 +113,11 @@
               
          
          <!-- <canvas id="canvas1" width= "410" height="561" style="border:2px solid #000000;>Random Canvas</canvas>-->
-        <h2>Landis user interface</h2>
+         <h2>Landis user interface</h2>
+        <div id =  "left_col">
+            <img  src="images/lui.jpg" border="2" />
+        </div>
+        
          <p>
             Landis is a spatial simulation model that predicts patterns of succession (ageing) processes and disturbances such as wind damage, logging, insect pests and browsing by deer or other 
             wildlife. I have been using the LANDIS model for the last three years and I was missing an interface to fascilitate my analyses. So I ended up developing my own. It is a windows forms application
@@ -125,16 +131,12 @@
 
         </p> 
          <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-     
-          
+        <h2>Landis Simulations</h2>
+        <p>We used landis to predict... SOME MORE SIMULATIONS</p>
         
-        
+        <h2>Bayesian calibration</h2>
+        <p>Decomposition measurements</p>
+<br></br><br></br><br></br><br></br>
      
     <script src="js/Malinau2009.js"></script>
     <script src="js/Malinau2000.js"></script>
