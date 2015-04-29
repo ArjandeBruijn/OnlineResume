@@ -1,42 +1,24 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Resume.Default" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <p></p>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <style>
-        #right_col_ins
-        {
-            padding : 10px;	
-            border: 2px solid black;
-        }
-        #right_col {
-            width:45%;
-            float:right;
-            padding : 10px;	 	 
-        }
-        #left_col
-        {
-            width:400;
-            float:left;
-            padding : 10px;	 	
-        }
-        #left_text {
-            padding-right : 10px;	 	 
-        }
-    </style>
-     
+    
      <div id = "right_col">
         <div id = "right_col_ins">
             <canvas id="canvas1" style="display: inline;" width="410" height="561" style="border:2px solid black;"></canvas>
             <button onclick = "Simulate()" type="button">Simulate 9 years</button>
         </div>
      </div>
- 
-     <div id = "left_text">
-         <h2>Land use changes on Borneo</h2>
-         <p class = "justify">
-             We all heard about alarming rates of deforestation on Borneo, Indonesia. Large schale logging operations have degraded much of the 
+  
+     
+        <p class = "justify">
+             We all heard about alarming rates of deforestation on <a  href="#">Borneo<img src="images\lui.jpg" /></a>, 
+             Indonesia. Large schale logging operations have degraded much of the 
              pristine rainforests sinds the 1960s. More recently, forests are making place for olive oil plantations and population pressure is ever-increasing.
              I used land use derived from arial photographs of the northeastern region of Borneo taken in (<a onclick="ShowMalinauMap(2000)" href="#">2000</a>) 
              and (<a onclick="ShowMalinauMap(2009)" href="#">2009</a>) to evaluate hypotheses 
@@ -114,8 +96,8 @@
          
          <!-- <canvas id="canvas1" width= "410" height="561" style="border:2px solid #000000;>Random Canvas</canvas>-->
          <h2>Landis user interface</h2>
-        <div id =  "left_col">
-            <img  src="images/lui.jpg" border="2" />
+        <div id =  "left_col" id="thumbwrap">
+                <a class="thumb" href="#"><img src="images/lui.jpg" alt=""><span><img src="images/lui_big.jpg" alt=""></span></a>
         </div>
         
          <p>
@@ -136,6 +118,10 @@
         
         <h2>Bayesian calibration</h2>
         <p>Decomposition measurements</p>
+
+        
+        
+
 <br></br><br></br><br></br><br></br>
      
     <script src="js/Malinau2009.js"></script>

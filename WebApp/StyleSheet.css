@@ -9,7 +9,52 @@ body {
   padding : 0 10px;
   background-color    : White;
 }
-
+#right_col_ins{
+    padding : 10px;	
+    border: 2px solid black;
+}
+#right_col {
+    width:45%;
+    float:right;
+    padding : 10px;	 	 
+}
+#left_col{
+    width:400;
+    float:left;
+    padding : 10px;	 	
+}
+#left_text {
+    padding-right : 10px;	 	 
+}
+        
+#thumbwrap2 {
+  position:relative;
+  margin:75px auto;
+  width:50px; height:50px;
+}
+        
+        
+#thumbwrap {
+  position:relative;
+  margin:75px auto;
+  width:252px; height:252px;
+}
+.thumb img { 
+  border:1px solid #000;
+  margin:3px;
+  float:left;
+}
+.thumb span { 
+  position:absolute;
+  visibility:hidden;
+}
+.thumb:hover, .thumb:hover span { 
+  visibility:visible;
+  top:0; left:250px; 
+  z-index:1;
+}
+a img { display:none; }
+a:hover img { display:block; }
  
 
 #banner {
