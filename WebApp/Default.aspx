@@ -56,7 +56,7 @@
     </div>
     <div id="column_45">
           <div id="rotating-item-wrapper">  
-               <img  src="images/MarylandMaps/BG.png" height ="450px" class="rotating-item" border="1" />
+               <img  src="images/MarylandMaps/BG2.png" height ="450px" class="rotating-item" border="1" />
                <img  src="images/MarylandMaps/10.png" height ="450px" class="rotating-item"  />
                <img  src="images/MarylandMaps/20.png" height ="450px" class="rotating-item"  />
                <img  src="images/MarylandMaps/30.png" height ="450px" class="rotating-item"  />
