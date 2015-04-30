@@ -107,17 +107,30 @@
             other input files and some settings for the model are specified. When you add a scenario, the program will read that file and check for any pathnames in that file (i.e. other input files)  
             and adds those to the file tree. Additionally, the user can start a simulation and the user interface will periodically check whether there are new output files which it will add to the file tree
             as well. This way, all the relevant files (input and output) are shown in the file tree. The user can have a closer look at a file by dragging it from the file tree into 
-            the work space (on the right). The work space is simply a surface where you can display one or many dockable screens. Input and output files that are in the tree view can be
-            displayed as maps, graphs, spreadsheets or in a text editor by dragging the file from the filetree and dropping it in the work space. 
+            the work space (on the right). The work space is simply a surface where you can display one or many dockable screens             
+            (using <a href="http://www.codeproject.com/Articles/25976/Visual-Studio-IDE-like-Dock-Container">a Visual Studio IDE like Dock Container</a> ). 
+            Input and output files that are in the tree view can be displayed as maps, based on <a href="http://mapwingis.codeplex.com/">a freeware geographics program</a>, 
+            <a class = "hidden"  href="#">graphs<img src="images\Malinau.png" border="5" ></a> ,
+
+            that use the free software called <a href="http://sourceforge.net/projects/zedgraph/">ZedGraph,</a>  
+
+            or <a class = "hidden"  href="#">spreadsheets<img src="images\Malinau.png" border="5" ></a>, that use  <a href="http://www.codeproject.com/Articles/691749/Free-NET-Spreadsheet-Control">a Free .NET Spreadsheet Control</a>
+           
+            or in a text editor by dragging the file from the filetree and dropping it in the work space. 
             The landis user interface is currently used for landis instruction workshops by the university of portland as well as ~10 individual landis users.
 
         </p> 
          <br></br>
-        <h2>Landis Simulations</h2>
-        <p>We used landis to predict... SOME MORE SIMULATIONS</p>
+        <h2>Landis Simulations</h2> types of model, i.e. PnET and LANDIS succession. PnET is a point-dimensional tree physiology process that predicts
+        growth of a homogeneous tree stand as it depends on light and water. Landis succession is a spatial model that predicts forest developments depending on growth and forest disturbances.
+        LANDIS tradiationally has a very basic growth computation method. In order to better predict growth and competition for light and water, I incorporated the PnET model into the LANDIS model environment.
+        This allows us to simulate light and water availability on a landschape. Looking at the Green Ridge State Forest (see home page), you can see how water and light availability depends on 
+        the interaction between disturbances and growth via canopy thickness. This is because foliage is the driver of both water and light consumption.
+          </p>
         
         <h2>Bayesian calibration</h2>
         <p>Decomposition measurements</p>
+        <p>I developed the LANDIS succession extension "PnET-Succession". PnET Succession combines two
 
         
         
