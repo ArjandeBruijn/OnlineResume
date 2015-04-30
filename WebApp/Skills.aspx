@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
  
-    <h2>Software capabilities</h2>
+    <h2>Software skills</h2>
      
     <ul>
       <li><p>25% Made some tweaks, seen the program in action.</p></li>
