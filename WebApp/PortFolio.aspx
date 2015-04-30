@@ -20,7 +20,7 @@
              We all heard about alarming rates of deforestation on Borneo, 
              Indonesia. Large schale logging operations have degraded much of the 
              pristine rainforests sinds the 1960s. More recently, forests are making place for olive oil plantations and population pressure is ever-increasing.
-             I used land use derived from arial photographs of <a  href="#">a section of East Kalimantan, Borneo<img src="images\Malinau.png" border="5" ></a>  taken in (<a onclick="ShowMalinauMap(2000)" href="#">2000</a>) 
+             I used land use derived from arial photographs of <a class = "hidden"  href="#">a section of East Kalimantan, Borneo<img src="images\Malinau.png" border="5" ></a>  taken in (<a onclick="ShowMalinauMap(2000)" href="#">2000</a>) 
              and (<a onclick="ShowMalinauMap(2009)" href="#">2009</a>) to evaluate hypotheses 
              about the spatial configuration of land use changes and to predict future land use thereupon. The hypothesis about land use change are increasingly speculative:  
          </p>    
@@ -97,7 +97,7 @@
          <!-- <canvas id="canvas1" width= "410" height="561" style="border:2px solid #000000;>Random Canvas</canvas>-->
          <h2>Landis user interface</h2>
         <div id =  "left_col" id="thumbwrap">
-                <a class="thumb" href="#"><img src="images/lui.jpg" alt=""><span><img src="images/lui_big.jpg" alt=""></span></a>
+               <a class="thumb" href="#"> <img src="images/lui.jpg" alt=""><span><img src="images/lui_big.jpg" alt=""></span></a>
         </div>
         
          <p>

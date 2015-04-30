@@ -43,6 +43,7 @@ body {
   border:1px solid #000;
   margin:3px;
   float:left;
+  
 }
 .thumb span { 
   position:absolute;
@@ -53,8 +54,7 @@ body {
   top:0; left:250px; 
   z-index:1;
 }
-a img { display:none; }
-a:hover img { display:block; }
+
  
 
 #banner {
@@ -122,7 +122,8 @@ a:active, a:hover
     color: #fcdd31; 
     text-decoration: none; 
 }
-
+a.hidden img { display:none; }
+a:hover img { display:block; }
 
 img {
 	margin: 0 0 15px 0;
