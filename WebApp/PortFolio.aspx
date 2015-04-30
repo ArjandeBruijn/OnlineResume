@@ -129,9 +129,16 @@
           </p>
         
         <h2>Bayesian calibration</h2>
-        <p>Decomposition measurements</p>
-        <p>I developed the LANDIS succession extension "PnET-Succession". PnET Succession combines two
+        <p>Bayesian statistics is often used in contraction with Markov Chain calibrations (see home page). 
+        The idea behind the Bayesian proposition is that you turn around the driving mechanism and the phenomenon, i.e. where 
+        we typically think it terms of "It is raining, therefore the streets are wet", the Bayesian proposition tries to 
+        derive the rain that fell, based on the wetness of the streets. In terms of simulations, we are analysing how the probability of 
+        the simulation model depends on the spread of the observations.
 
+
+
+        </p>
+        
         
         
 
