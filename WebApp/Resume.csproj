@@ -68,7 +68,7 @@
     <Content Include="js\MalinauFunctions.js" />
     <Content Include="js\infinite-rotator.js" />
     <Content Include="js\MarkovChainFunctions.js" />
-    <Content Include="PortFolio.aspx" />
+    <Content Include="Portfolio.aspx" />
     <Content Include="js\TableEventHandlers.js" />
     <Content Include="js\MarkovChainModel.js" />
     <Content Include="Publications.aspx" />
@@ -96,12 +96,12 @@
       <DependentUpon>Education.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PortFolio.aspx.cs">
-      <DependentUpon>PortFolio.aspx</DependentUpon>
+    <Compile Include="Portfolio.aspx.cs">
+      <DependentUpon>Portfolio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PortFolio.aspx.designer.cs">
-      <DependentUpon>PortFolio.aspx</DependentUpon>
+    <Compile Include="Portfolio.aspx.designer.cs">
+      <DependentUpon>Portfolio.aspx</DependentUpon>
     </Compile>
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>

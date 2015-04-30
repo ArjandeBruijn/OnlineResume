@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Resume.Default" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Portfolio.aspx.cs" Inherits="Resume.Default" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
@@ -15,12 +15,12 @@
         </div>
      </div>
   
-     
+        <h2>Deforestation in Indonesia</h2>
         <p class = "justify">
              We all heard about alarming rates of deforestation on Borneo, 
              Indonesia. Large schale logging operations have degraded much of the 
              pristine rainforests sinds the 1960s. More recently, forests are making place for olive oil plantations and population pressure is ever-increasing.
-             I used land use derived from arial photographs of <a  href="#">a section of East Kalimantan, Borneo<img src="images\Malinau.png" /></a>  taken in (<a onclick="ShowMalinauMap(2000)" href="#">2000</a>) 
+             I used land use derived from arial photographs of <a  href="#">a section of East Kalimantan, Borneo<img src="images\Malinau.png" border="5" ></a>  taken in (<a onclick="ShowMalinauMap(2000)" href="#">2000</a>) 
              and (<a onclick="ShowMalinauMap(2009)" href="#">2009</a>) to evaluate hypotheses 
              about the spatial configuration of land use changes and to predict future land use thereupon. The hypothesis about land use change are increasingly speculative:  
          </p>    
@@ -85,7 +85,7 @@
              The model will repeat this the target area conversion is reached (i.e. untill 1% of darg-green pixels is light green).
              You can try a simulation by editing the values in the land use transition table, checking a hypothesis and clicking the button.
          </p>
-    </div>
+    
        
      <p class = "justify">
            
@@ -123,7 +123,7 @@
         
 
 <br></br><br></br><br></br><br></br>
-     
+     </div>
     <script src="js/Malinau2009.js"></script>
     <script src="js/Malinau2000.js"></script>
     <script src='js/ImageFunctions.js'></script>

@@ -37,7 +37,7 @@
             <ul>
                 <li id ="default"> <a href="Default.aspx">Home</a> </li>
                 <li> <a href="Skills.aspx">Skills</a> </li>
-                <li> <a href="PortFolio.aspx">Portfolio</a> </li>
+                <li> <a href="Portfolio.aspx">Portfolio</a> </li>
                 <li> <a href="WorkAndEdu.aspx">Work & Education</a> </li>
                <!-- <li> <a href="Education.aspx">Education</a> </li>
                 <li> <a href="Publications.aspx">Publications</a> </li>
