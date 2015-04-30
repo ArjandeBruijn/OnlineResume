@@ -133,7 +133,12 @@
         The idea behind the Bayesian proposition is that you turn around the driving mechanism and the phenomenon, i.e. where 
         we typically think it terms of "It is raining, therefore the streets are wet", the Bayesian proposition tries to 
         derive the rain that fell, based on the wetness of the streets. In terms of simulations, we are analysing how the probability of 
-        the simulation model depends on the spread of the observations.
+        the simulation model depends on the spread of the observations. The forest tent caterpillar model on the home page is fairly complex. 
+
+        A simpler model to explain this approach by, is for example the rate of decomposition of dead woody biomass. 
+
+        If we assume a very simple equation where the amount of wood that decomposes per time unit is a constant proportion of the wood that is there 
+        (i.e. dWood/dt = c*Wood), the amount of wood at any time is described as Wood = Initial_wood * exp(-a * time)).
 
 
 
