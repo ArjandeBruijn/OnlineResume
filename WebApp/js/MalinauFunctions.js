@@ -101,20 +101,30 @@ function Simulate1() {
 function SimulateNoSpatialCorrelation() {
 
     alert("SimulateNoSpatialCorrelation");
+    GetLandUseChanges();
 }
 function SimulateAllAroundDevelopedArea() {
 
     alert("SimulateAllAroundDevelopedArea");
+    GetLandUseChanges();
 }
 
 function SimulateAllAroundWaterAndDevelopedArea() {
 
     alert("SimulateAllAroundWaterAndDevelopedArea");
+    GetLandUseChanges();
 }
 function SimulateAmericanInvasion() {
 
     alert("SimulateAmericanInvasion");
+    GetLandUseChanges();
 }
+function GetLandUseChanges() {
+
+    alert("GetLandUseChanges");
+
+}
+
 function Simulate() {
 
     $("body").css("cursor", "progress");
