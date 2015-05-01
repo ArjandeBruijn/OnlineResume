@@ -20,10 +20,10 @@ LandUseTypes = [NoData, PF, SF, LandUse3, Settlement, LandUse5, OpenLand, LandUs
 
 function ShowMalinauMap(year) {
 
-    xmin = 0;
-    xmax = 415;
-    ymin = 0;
-    ymax = 561;
+    //ncols = ymax;
+    //nrows = xmax;
+    nrows = 415;
+    ncols = 561;
     if (year == 2009) {
         SetImage('canvas1', MalinauMap2009, 2009);
     }
@@ -42,11 +42,7 @@ function SetImage(container, MalinauMap, year) {
 
     my_image = new Image(container);
 
-    pixels = declare_pixels(xmax - xmin, ymax - ymin);
-
-    // read the width and height of the canvas
-    ncols = (ymax - ymin);
-    nrows = (xmax - xmin);
+    pixels = declare_pixels(nrows, ncols);
 
     // create a new pixel array
     imageData = my_image.element.getContext("2d").createImageData(nrows, ncols);
@@ -54,8 +50,8 @@ function SetImage(container, MalinauMap, year) {
     // draw random dots
     var counter = -1;
 
-    for (y = ymin; y < ymax; y++) {
-        for (x = xmin; x < xmax; x++) {
+    for (y = 0; y < ncols; y++) {
+        for (x = 0; x < nrows; x++) {
 
             counter++;
 
@@ -345,7 +341,7 @@ function AddLegendEntry(Image,coordinate, label, color) {
     return new Coordinate(coordinate.x, coordinate.y + 15 + 5);
 }
 
-function declare_pixels(nrows, ncols) {
+function declare_pixels() {
     var myArray = [[], []];
     //  myArray[] = new Array(14);
 
