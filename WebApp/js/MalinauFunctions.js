@@ -28,6 +28,12 @@ function ShowMalinauMap(year) {
 }
 function SetImage(container, xmin, xmax, ymin, ymax, MalinauMap, year) {
 
+    Xmin = xmin;
+    Xmax = xmax;
+    Ymin = ymin;
+    Ymax = ymax;
+    Container = container;
+
     my_image = new Image(container, xmin, xmax, ymin, ymax);
 
     my_image.pixels = declare_pixels(xmax - xmin, ymax - ymin);
@@ -73,7 +79,7 @@ function Simulate1() {
 
     if (document.getElementById("NoSpatialCorrelation").checked) {
 
-         
+        SimulateNoSpatialCorrelation();
     }
     else if (document.getElementById("AllAroundDevelopedArea").checked) {
 
@@ -92,7 +98,11 @@ function Simulate1() {
 
     //Simulate("canvas1", 0, 415, 0, 561);
 }
-function Simulate(container, xmin, xmax, ymin, ymax) {
+function SimulateNoSpatialCorrelation() {
+
+    alert("SimulateNoSpatialCorrelation");
+}
+function Simulate() {
 
     $("body").css("cursor", "progress");
 
