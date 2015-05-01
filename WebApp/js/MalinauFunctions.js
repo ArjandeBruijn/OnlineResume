@@ -19,22 +19,37 @@ LandUseTypes = [NoData, PF, SF, LandUse3, Settlement, LandUse5, OpenLand, LandUs
 
 
 function ShowMalinauMap(year) {
+
+    xmin = 0;
+    xmax = 415;
+    ymin = 0;
+    ymax = 561;
     if (year == 2009) {
-        SetImage('canvas1', 0, 415, 0, 561, MalinauMap2009, 2009);
+        SetImage('canvas1', MalinauMap2009, 2009);
     }
     else {
-        SetImage('canvas1', 0, 415, 0, 561, MalinauMap2000, 2000);
-    }      
+        SetImage('canvas1', MalinauMap2000, 2000);
+    }
 }
-function SetImage(container, xmin, xmax, ymin, ymax, MalinauMap, year) {
+function Image(container) {
 
-    Xmin = xmin;
-    Xmax = xmax;
-    Ymin = ymin;
-    Ymax = ymax;
+
+
+    element = document.getElementById(container);
+    this.canvas = element.getContext("2d");
+
+    // read the width and height of the canvas
+    ncols = (ymax - ymin);
+    nrows = (xmax - xmin);
+
+    // create a new pixel array
+    this.imageData = element.getContext("2d").createImageData(nrows, ncols);
+}
+function SetImage(container, MalinauMap, year) {
+
     Container = container;
 
-    my_image = new Image(container, xmin, xmax, ymin, ymax);
+    my_image = new Image(container);
 
     my_image.pixels = declare_pixels(xmax - xmin, ymax - ymin);
 

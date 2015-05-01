@@ -66,20 +66,7 @@ function drawLine(Context, from, to) {
     Context.stroke();
 
 }
-function Image(container, xmin, xmax, ymin, ymax) {
 
-
-    
-    element = document.getElementById(container);
-    this.canvas = element.getContext("2d");
-
-    // read the width and height of the canvas
-    ncols = (ymax - ymin);
-    nrows = (xmax - xmin);
-
-    // create a new pixel array
-    this.imageData = element.getContext("2d").createImageData(nrows, ncols);
-}
 function get_index(image, x, y) {
 
     var index = (x + y * image.imageData.width) * 4;
