@@ -123,6 +123,57 @@ function GetLandUseChanges() {
 
     alert("GetLandUseChanges");
 
+    //-------------------
+    Forest_SecondaryForest = GetValueFromTable('Forest-SecondaryForest');
+    alert("Forest_SecondaryForest " + Forest_SecondaryForest);
+
+    Forest_Cropland = GetValueFromTable('Forest-CropLand');
+    alert("Forest_Cropland " + Forest_Cropland);
+
+    Forest_Settlements = GetValueFromTable('Forest-Settlements');
+    alert("Forest_Settlements " + Forest_Settlements);
+
+    //-------------------
+    SecondaryForest_Forest = GetValueFromTable('SecondaryForest-Forest');
+    alert("SecondaryForest_Forest " + SecondaryForest_Forest);
+
+    SecondaryForest_CropLand = GetValueFromTable('SecondaryForest-CropLand');
+    alert("SecondaryForest_CropLand " + SecondaryForest_CropLand);
+
+    Forest_Settlements = GetValueFromTable('Forest-Settlements');
+    alert("Forest_Settlements " + Forest_Settlements);
+
+    //-------------------
+
+    CropLand_Forest = GetValueFromTable('CropLand-Forest');
+    alert("CropLand_Forest " + CropLand_Forest);
+
+    CropLand_SecondaryForest = GetValueFromTable('CropLand-SecondaryForest');
+    alert("CropLand_SecondaryForest " + CropLand_SecondaryForest);
+
+    CropLand_Settlements = GetValueFromTable('CropLand-Settlements');
+    alert("CropLand_Settlements " + CropLand_Settlements);
+
+    //-------------------
+    Settlements_Forest = GetValueFromTable('Settlements-Forest');
+    alert("Settlements_Forest " + Settlements_Forest);
+
+    Settlements_SecondaryForest = GetValueFromTable('Settlements-SecondaryForest');
+    alert("Settlements_SecondaryForest " + Settlements_SecondaryForest);
+
+    Settlements_CropLand = GetValueFromTable('Settlements-CropLand');
+    alert("Settlements_CropLand " + Settlements_CropLand);
+
+    //-------------------
+
+    
+     
+    
+
+
+    
+ 
+
 }
 
 function Simulate() {
@@ -199,7 +250,7 @@ function Simulate() {
     $("body").css("cursor", "default");
 }
 function GetValueFromTable(ID) {
-    var value = document.getElementById('Forest-CropLand').innerText;
+    var value = document.getElementById(ID).innerText;
     return value;
 }
 function DrawLegend(Image) {
