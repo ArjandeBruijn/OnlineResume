@@ -42,8 +42,6 @@ function SetImage(container, MalinauMap, year) {
 
     my_image = new Image(container);
 
-    pixels = declare_pixels(nrows, ncols);
-
     // create a new pixel array
     imageData = my_image.element.getContext("2d").createImageData(nrows, ncols);
 
@@ -63,8 +61,7 @@ function SetImage(container, MalinauMap, year) {
                 continue;
             }
 
-            setPixel(my_image, x, y, land_use);  // 255 opaque
-
+            setPixelColor(my_image, x, y, land_use.Color);
 
             land_use.Count++;
 
@@ -110,9 +107,15 @@ function Simulate1() {
 function SimulateNoSpatialCorrelation() {
 
     alert("SimulateNoSpatialCorrelation");
-    GetLandUseChangeFractions();
+    
     GetLandUseChangeCount();
 
+    for (var row = 0; row < nrows; row++) {
+        for (var col = 0; col < nrows; col++) {
+
+
+        }
+    }
 
 
 
@@ -228,14 +231,6 @@ function GetLandUseChangeFractions() {
 
     //-------------------
 
-    
-     
-    
-
-
-    
- 
-
 }
 
 function Simulate() {
@@ -341,24 +336,7 @@ function AddLegendEntry(Image,coordinate, label, color) {
     return new Coordinate(coordinate.x, coordinate.y + 15 + 5);
 }
 
-function declare_pixels() {
-    var myArray = [[], []];
-    //  myArray[] = new Array(14);
-
-    var n = 0;
-    var i = 0;
-    var s = 0;
-    for (i = 0; i <  ncols; i++) {
-        if (!myArray[i])
-            myArray[i] = []
-        for (s = 0; s < nrows; s++) {
-            myArray[i][s] = s;
-            n++;
-        }
-        s = 0;
-    }
-    return myArray;
-}
+ 
 
  
 function ConversionRate(MapCodeNew, rate) {
@@ -373,13 +351,7 @@ function LandUse(MapCode, Color, Conversion_rate) {
     this.Conversion_rate = Conversion_rate;
 }
  
-function setPixel(image, x, y, land_use) {
-
-    pixels[x][y] = land_use;
-
-    setPixelColor(image, x, y, land_use.Color);
-}
-
+ 
 
 
 function GetLandUseType(MapCode) {
@@ -393,7 +365,7 @@ function GetLandUseType(MapCode) {
 function GetPixelsWithLandUse(image, landuse) {
 
     my_landuse_array = [];
-    for (var r = 0; r < pixels.length; r++) {
+    for (var r = 0; r <  pixels.length; r++) {
 
         for (var c = 0; c < pixels[r].length; c++) {
 
