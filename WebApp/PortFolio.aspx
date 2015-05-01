@@ -8,6 +8,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     
+    
      <div id = "right_col">
         <div id = "right_col_ins">
             <canvas id="canvas1" style="display: inline;" width="410" height="561" style="border:2px solid black;"></canvas>
@@ -24,13 +25,19 @@
              and (<a onclick="ShowMalinauMap(2009)" href="#">2009</a>) to evaluate hypotheses 
              about the spatial configuration of land use changes and to predict future land use thereupon. The hypothesis about land use change are increasingly speculative:  
          </p>    
-         <ul style="padding-left:80px>
-            <li><p><input type="checkbox"></p></li>
-            <li><p><input type="checkbox" name="vehicle" value="Bike">1. There is no spatial correlation between land use transitions.<br></p></li>
-            <li><p><input type="checkbox" name="vehicle" value="Bike">2. All land use transitions are concentrated around developed area.<br></p></li>
-            <li><p><input type="checkbox" name="vehicle" value="Bike">3. All human activity is centered around water and developed area.<br></p></li>
-            <li><p><input type="checkbox" name="vehicle" value="Bike">4. American invasion.<br></p></li>
-         </ul>
+         <div>
+          <h3>Hypotheses</h3>
+          <label>
+            <input type="checkbox" class="radio" value="1" name="Hypotheses" />1. There is no spatial correlation between land use transitions.</label>
+          <label>
+            <input type="checkbox" class="radio" value="1" name="Hypotheses" />2. All land use transitions are concentrated around developed area.</label>
+          <label>
+            <input type="checkbox" class="radio" value="1" name="Hypotheses" />All human activity is centered around water and developed area.</label>
+          <label>
+            <input type="checkbox" class="radio" value="1" name="Hypotheses" />4. American invasion.</label>
+        </div>
+
+
          Combined with a land use transition table that prescribed surface fractions of land use categories that are converted in the period 2000-2009:
          <br></br>
         
@@ -149,6 +156,8 @@
 
 <br></br><br></br><br></br><br></br>
      </div>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/Checkboxes.js"></script>
     <script src="js/Malinau2009.js"></script>
     <script src="js/Malinau2000.js"></script>
     <script src='js/ImageFunctions.js'></script>

@@ -60,6 +60,7 @@
   <ItemGroup>
     <Content Include="Default.aspx" />
     <Content Include="Education.aspx" />
+    <Content Include="js\Checkboxes.js" />
     <Content Include="js\ImageFunctions.js" />
     <Content Include="js\jq-sticky-anything.min.js" />
     <Content Include="js\LogP.js" />
