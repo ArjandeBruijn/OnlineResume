@@ -43,7 +43,9 @@ function SetImage(container, MalinauMap, year) {
     my_image = new Image(container);
 
     // create a new pixel array
-    imageData = my_image.element.getContext("2d").createImageData(nrows, ncols);
+    element2 = document.getElementById('canvas1');
+    canvas = element2.getContext("2d");
+    imageData = element2.getContext("2d").createImageData(nrows, ncols);
 
     // draw random dots
     var counter = -1;
@@ -69,12 +71,12 @@ function SetImage(container, MalinauMap, year) {
     }
    
     // copy the image data back onto the canvas
-    my_image.canvas.putImageData(imageData, 0, 0); // at coords 0,0
+    canvas.putImageData(imageData, 0, 0); // at coords 0,0
 
     old_font = my_image.canvas.font;
-    my_image.canvas.font = "30px Arial";
-    my_image.canvas.fillText(year, xmax - 80, ymax - 15);
-    my_image.canvas.font = old_font;
+    canvas.font = "30px Arial";
+    canvas.fillText(year, nrows - 80, ncols - 15);
+    canvas.font = old_font;
 
     DrawLegend(my_image);
 }
@@ -310,29 +312,29 @@ function GetValueFromTable(ID) {
     var value = document.getElementById(ID).innerText;
     return value;
 }
-function DrawLegend(Image) {
+function DrawLegend() {
 
     var Entrees = 4;
     var HeightPerEntree = 20;
 
     var legendrect = new Rectangle(10, 10, 150, HeightPerEntree * Entrees +20);
-    Image.canvas.rect(legendrect.A.x, legendrect.A.y, legendrect.Width, legendrect.Height);
+    canvas.rect(legendrect.A.x, legendrect.A.y, legendrect.Width, legendrect.Height);
 
     var coordinate = new Coordinate(legendrect.A.x + 10, legendrect.A.y + 10);
 
-    coordinate = AddLegendEntry(Image, coordinate, "Primary forest", DarkGreen);
-    coordinate = AddLegendEntry(Image, coordinate, "Secondary forest", LightGreen);
-    coordinate = AddLegendEntry(Image, coordinate, "Cropland", Yellow);
-    coordinate = AddLegendEntry(Image, coordinate, "Settlements", Red);
+    coordinate = AddLegendEntry( coordinate, "Primary forest", DarkGreen);
+    coordinate = AddLegendEntry( coordinate, "Secondary forest", LightGreen);
+    coordinate = AddLegendEntry( coordinate, "Cropland", Yellow);
+    coordinate = AddLegendEntry( coordinate, "Settlements", Red);
 }
-function AddLegendEntry(Image,coordinate, label, color) {
+function AddLegendEntry(coordinate, label, color) {
 
     var rect2 = new Rectangle(coordinate.x, coordinate.y, 20, 15);
-    DrawRectangle(rect2, Image.canvas, rgbToHex(color[0], color[1], color[2]));
-    Image.canvas.fillStyle = 'black';
-    Image.canvas.rect(rect2.A.x, rect2.A.y, rect2.Width, rect2.Height);
-    Image.canvas.fillText(label, rect2.B.x + 5, rect2.B.y + 12);
-    Image.canvas.stroke();
+    DrawRectangle(rect2, canvas, rgbToHex(color[0], color[1], color[2]));
+    canvas.fillStyle = 'black';
+    canvas.rect(rect2.A.x, rect2.A.y, rect2.Width, rect2.Height);
+    canvas.fillText(label, rect2.B.x + 5, rect2.B.y + 12);
+    canvas.stroke();
     return new Coordinate(coordinate.x, coordinate.y + 15 + 5);
 }
 
