@@ -61,7 +61,7 @@ function SetImage(container, MalinauMap, year) {
                 continue;
             }
 
-            setPixelColor(my_image, x, y, land_use.Color);
+            setPixelColor(x, y, land_use.Color);
 
             land_use.Count++;
 

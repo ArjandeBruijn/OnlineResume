@@ -49,15 +49,16 @@ function Rectangle(xmin, ymin, Width, Height) {
     this.C = new Coordinate(xmin + Width, ymin + Height);
     this.D = new Coordinate(xmin, ymin + Height);
 }
-function setPixelColor(image, x, y, Color) {
+function setPixelColor(x, y, Color) {
 
-    index = get_index(image, x, y);
+    index = get_index(x, y);
 
     imageData.data[index + 0] = Color[0];
     imageData.data[index + 1] = Color[1];
     imageData.data[index + 2] = Color[2];
     imageData.data[index + 3] = 255;
 }
+
 function drawLine(Context, from, to) {
 
     Context.beginPath();
@@ -67,7 +68,7 @@ function drawLine(Context, from, to) {
 
 }
 
-function get_index(image, x, y) {
+function get_index(x, y) {
 
     var index = (x + y * imageData.width) * 4;
     return index;
