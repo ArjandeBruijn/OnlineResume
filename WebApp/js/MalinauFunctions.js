@@ -42,7 +42,7 @@ function SetImage(container, MalinauMap, year) {
 
     my_image = new Image(container);
 
-    my_image.pixels = declare_pixels(xmax - xmin, ymax - ymin);
+    pixels = declare_pixels(xmax - xmin, ymax - ymin);
 
     // read the width and height of the canvas
     ncols = (ymax - ymin);
@@ -379,7 +379,7 @@ function LandUse(MapCode, Color, Conversion_rate) {
  
 function setPixel(image, x, y, land_use) {
 
-    image.pixels[x][y] = land_use;
+    pixels[x][y] = land_use;
 
     setPixelColor(image, x, y, land_use.Color);
 }
@@ -397,11 +397,11 @@ function GetLandUseType(MapCode) {
 function GetPixelsWithLandUse(image, landuse) {
 
     my_landuse_array = [];
-    for (var r = 0; r < image.pixels.length; r++) {
+    for (var r = 0; r < pixels.length; r++) {
 
-        for (var c = 0; c < image.pixels[r].length; c++) {
+        for (var c = 0; c < pixels[r].length; c++) {
 
-            if (image.pixels[r][c] == landuse) my_landuse_array.push([r, c]);
+            if (pixels[r][c] == landuse) my_landuse_array.push([r, c]);
              
         }
 
@@ -439,13 +439,13 @@ function CountCoversions() {
 }
 function IsGoodDonatingSite(image, r, c, DonatingLandUseType)
 {
-    if (r < 0 || c < 0 || r >= image.pixels.length || c >= image.pixels[0].length)
+    if (r < 0 || c < 0 || r >= pixels.length || c >= pixels[0].length)
     {
         //Console.WriteLine("site [" + r + "," + c + "] is off the map");
         return null;
     }
 
-    if (image.pixels[r][c] == DonatingLandUseType)
+    if (pixels[r][c] == DonatingLandUseType)
     {
         //Console.WriteLine("Found donating site");
         return [r,c];
@@ -493,11 +493,11 @@ function GetDonatingSite(image, random_settlement_coord, donating_land_use) {
 function InitializePixelCoordinates(image) 
 {
     Pixel_Coordinates = [[], []];
-    for (var r = 0; r < image.pixels.length; r++) 
+    for (var r = 0; r < pixels.length; r++) 
     {
         Pixel_Coordinates[r] = [];
 
-        for (var c = 0; c < image.pixels[0].length; c++) 
+        for (var c = 0; c < pixels[0].length; c++) 
         {
                 Pixel_Coordinates[r][c] = new Coordinate(r, c);
         }
