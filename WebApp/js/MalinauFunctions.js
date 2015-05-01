@@ -83,15 +83,15 @@ function Simulate1() {
     }
     else if (document.getElementById("AllAroundDevelopedArea").checked) {
 
-         
+        SimulateAllAroundDevelopedArea();
     }
     else if (document.getElementById("AllAroundWaterAndDevelopedArea").checked) {
 
-         
+        SimulateAllAroundWaterAndDevelopedArea();
     }
     else if (document.getElementById("AmericanInvasion").checked) {
 
-         
+        SimulateAmericanInvasion();
     }
     else alert("No Valid Selection")
 
@@ -101,6 +101,19 @@ function Simulate1() {
 function SimulateNoSpatialCorrelation() {
 
     alert("SimulateNoSpatialCorrelation");
+}
+function SimulateAllAroundDevelopedArea() {
+
+    alert("SimulateAllAroundDevelopedArea");
+}
+
+function SimulateAllAroundWaterAndDevelopedArea() {
+
+    alert("SimulateAllAroundWaterAndDevelopedArea");
+}
+function SimulateAmericanInvasion() {
+
+    alert("SimulateAmericanInvasion");
 }
 function Simulate() {
 
