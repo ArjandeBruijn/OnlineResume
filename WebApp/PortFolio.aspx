@@ -12,7 +12,7 @@
      <div id = "right_col">
         <div id = "right_col_ins">
             <canvas id="canvas1" style="display: inline;" width="410" height="561" style="border:2px solid black;"></canvas>
-            <button onclick = "Simulate()" type="button">Simulate 9 years</button>
+            <button onclick = "Simulate1()" type="button">Simulate 9 years</button>
         </div>
      </div>
   
@@ -28,13 +28,13 @@
          <div>
           <h3>Hypotheses</h3>
           <label>
-            <input type="checkbox" class="radio" value="1" name="Hypotheses" />1. There is no spatial correlation between land use transitions.</label>
+            <input type="checkbox" class="radio" value="1" id="NoSpatialCorrelation"  name="Hypotheses" checked/>1. There is no spatial correlation between land use transitions.</label>
           <label>
-            <input type="checkbox" class="radio" value="1" name="Hypotheses" />2. All land use transitions are concentrated around developed area.</label>
+            <input type="checkbox" class="radio" value="1" id="AllAroundDevelopedArea"  name="Hypotheses"/>2. All land use transitions are concentrated around developed area.</label>
           <label>
-            <input type="checkbox" class="radio" value="1" name="Hypotheses" />All human activity is centered around water and developed area.</label>
+            <input type="checkbox" class="radio" value="1" id="AllAroundWaterAndDevelopedArea"  name="Hypotheses"/>3. All human activity is centered around water and developed area.</label>
           <label>
-            <input type="checkbox" class="radio" value="1" name="Hypotheses" />4. American invasion.</label>
+            <input type="checkbox" class="radio" value="1" id="AmericanInvasion"  name="Hypotheses"/>4. American invasion.</label>
         </div>
 
 

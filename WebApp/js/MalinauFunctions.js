@@ -14,12 +14,10 @@ LandUse12 = new LandUse(12, Color12, null);
 LandUse13 = new LandUse(13, Color13, null);
 
 LandUseTypes = [NoData, PF, SF, LandUse3, Settlement, LandUse5, OpenLand, LandUse7, Water, LandUse9, LandUse10, LandUse11, LandUse12, LandUse13];
-    
 
 
-function Simulate() {
-    Simulate("canvas1", 0, 415, 0, 561, 0, 415, 0, 561, 1);
-}
+
+
 function ShowMalinauMap(year) {
     if (year == 2009) {
         SetImage('canvas1', 0, 415, 0, 561, MalinauMap2009, 2009);
@@ -67,6 +65,105 @@ function SetImage(container, xmin, xmax, ymin, ymax, MalinauMap, year) {
     my_image.canvas.font = old_font;
 
     DrawLegend(my_image);
+}
+function Simulate1() {
+
+
+
+
+    if (document.getElementById("NoSpatialCorrelation").checked) {
+
+         
+    }
+    else if (document.getElementById("AllAroundDevelopedArea").checked) {
+
+         
+    }
+    else if (document.getElementById("AllAroundWaterAndDevelopedArea").checked) {
+
+         
+    }
+    else if (document.getElementById("AmericanInvasion").checked) {
+
+         
+    }
+    else alert("No Valid Selection")
+
+
+    //Simulate("canvas1", 0, 415, 0, 561);
+}
+function Simulate(container, xmin, xmax, ymin, ymax) {
+
+    $("body").css("cursor", "progress");
+
+    var image = my_image;
+
+    document.getElementById("ProgressTag").innerHTML = "InitializePixelCoordinates";
+
+    InitializePixelCoordinates(image);
+
+    PF.Conversion_rate = [new ConversionRate(6, GetValueFromTable('Forest-CropLand'))];
+
+    PF_array = GetPixelsWithLandUse(image, PF);
+    SF_array = GetPixelsWithLandUse(image, SF);
+    Settlement_array = GetPixelsWithLandUse(image, Settlement);
+
+    document.getElementById("ProgressTag").innerHTML = "Starting conversions";
+
+
+    var SumConversions = Math.round(CountCoversions());
+
+    document.getElementById("ProgressTag").innerHTML = "SumConversions = " + SumConversions;
+
+    var ConversionsCount = 0;
+    for (l = 0; l < LandUseTypes.length; l++) {
+
+        var landuse = LandUseTypes[l];
+
+        document.getElementById("ProgressTag").innerHTML = landuse.MapCode;
+
+        var conversion_rate = landuse.Conversion_rate;
+
+        if (conversion_rate != null) {
+
+            for (var a = 0; a < conversion_rate.length; a++) {
+
+                var conversion = conversion_rate[a];
+
+                var MapCodeTo = conversion.MapCodeNew;
+                var Rate = conversion.rate;
+
+                var landuse_to = GetLandUseType(MapCodeTo);
+
+                var NumberOfConversions = Rate * landuse.Count;
+
+                if (NumberOfConversions > landuse.Count) NumberOfConversions = landuse.Count;
+
+                for (c = 0; c < NumberOfConversions; c++) {
+
+                    ConversionsCount++;
+
+                    document.getElementById("ProgressTag").innerHTML = "Progress " + ConversionsCount + "\\" + SumConversions;
+
+                    random = Math.floor(Math.random() * Settlement_array.length);
+
+                    var random_settlement_coord = Settlement_array[random];
+
+                    donating_coord = GetDonatingSite(image, random_settlement_coord, landuse);
+
+                    setPixel(image, donating_coord[0], donating_coord[1], landuse_to);
+
+                    alert(donating_coord + " is now " + landuse_to.MapCode);
+
+                }
+
+            }
+        }
+
+    }
+    document.getElementById("ProgressTag").innerHTML = "";
+    image.canvas.putImageData(image.imageData, 0, 0);
+    $("body").css("cursor", "default");
 }
 function GetValueFromTable(ID) {
     var value = document.getElementById('Forest-CropLand').innerText;
@@ -190,80 +287,6 @@ function CountCoversions() {
     return SumConversions;
 
 }
-function Simulate(container, xmin, xmax, ymin, ymax, xmin_zm, xmax_zm, ymin_zm, ymax_zm, scale) {
-
-    $("body").css("cursor", "progress");
-
-    var image = my_image;
-
-    document.getElementById("ProgressTag").innerHTML = "InitializePixelCoordinates";
-
-    InitializePixelCoordinates(image);
-
-    PF.Conversion_rate =   [new ConversionRate(6, GetValueFromTable('Forest-CropLand'))];
-    
-    PF_array = GetPixelsWithLandUse(image, PF);
-    SF_array = GetPixelsWithLandUse(image, SF);
-    Settlement_array = GetPixelsWithLandUse(image, Settlement);
-
-    document.getElementById("ProgressTag").innerHTML = "Starting conversions";
-
-
-    var SumConversions = Math.round(CountCoversions());
-
-    document.getElementById("ProgressTag").innerHTML = "SumConversions = " + SumConversions;
-
-    var ConversionsCount = 0;
-    for (l = 0; l < LandUseTypes.length; l++) {
-
-        var landuse = LandUseTypes[l];
-
-        document.getElementById("ProgressTag").innerHTML = landuse.MapCode;
-
-        var conversion_rate = landuse.Conversion_rate;
-
-        if (conversion_rate != null) {
-
-            for (var a = 0; a < conversion_rate.length; a++) {
-
-                var conversion = conversion_rate[a];
-
-                var MapCodeTo = conversion.MapCodeNew;
-                var Rate = conversion.rate;
-
-                var landuse_to = GetLandUseType(MapCodeTo);
-
-                var NumberOfConversions = Rate * landuse.Count;
-
-                if (NumberOfConversions > landuse.Count) NumberOfConversions = landuse.Count;
-
-                for (c = 0; c < NumberOfConversions; c++) {
-
-                    ConversionsCount++;
-
-                    document.getElementById("ProgressTag").innerHTML = "Progress "+ ConversionsCount +"\\" + SumConversions;
-
-                    random = Math.floor(Math.random() * Settlement_array.length);
-
-                    var random_settlement_coord = Settlement_array[random];
-
-                    donating_coord = GetDonatingSite(image, random_settlement_coord, landuse);
-
-                    setPixel(image, donating_coord[0], donating_coord[1], landuse_to);
-
-                    alert(donating_coord + " is now " + landuse_to.MapCode);
-                    
-                }
-
-            }
-        }
-
-    }
-    document.getElementById("ProgressTag").innerHTML = "";
-    image.canvas.putImageData(image.imageData, 0, 0);
-    $("body").css("cursor", "default");
-}
-
 function IsGoodDonatingSite(image, r, c, DonatingLandUseType)
 {
     if (r < 0 || c < 0 || r >= image.pixels.length || c >= image.pixels[0].length)
