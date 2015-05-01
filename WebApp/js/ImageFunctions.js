@@ -53,10 +53,10 @@ function setPixelColor(image, x, y, Color) {
 
     index = get_index(image, x, y);
 
-    image.imageData.data[index + 0] = Color[0];
-    image.imageData.data[index + 1] = Color[1];
-    image.imageData.data[index + 2] = Color[2];
-    image.imageData.data[index + 3] = 255;
+    imageData.data[index + 0] = Color[0];
+    imageData.data[index + 1] = Color[1];
+    imageData.data[index + 2] = Color[2];
+    imageData.data[index + 3] = 255;
 }
 function drawLine(Context, from, to) {
 
@@ -69,7 +69,7 @@ function drawLine(Context, from, to) {
 
 function get_index(image, x, y) {
 
-    var index = (x + y * image.imageData.width) * 4;
+    var index = (x + y * imageData.width) * 4;
     return index;
 }
 function get_xy(index) {

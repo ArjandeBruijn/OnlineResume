@@ -49,7 +49,7 @@ function SetImage(container, MalinauMap, year) {
     nrows = (xmax - xmin);
 
     // create a new pixel array
-    my_image.imageData = my_image.element.getContext("2d").createImageData(nrows, ncols);
+    imageData = my_image.element.getContext("2d").createImageData(nrows, ncols);
 
     // draw random dots
     var counter = -1;
@@ -76,7 +76,7 @@ function SetImage(container, MalinauMap, year) {
     }
    
     // copy the image data back onto the canvas
-    my_image.canvas.putImageData(my_image.imageData, 0, 0); // at coords 0,0
+    my_image.canvas.putImageData(imageData, 0, 0); // at coords 0,0
 
     old_font = my_image.canvas.font;
     my_image.canvas.font = "30px Arial";
@@ -312,7 +312,7 @@ function Simulate() {
 
     }
     document.getElementById("ProgressTag").innerHTML = "";
-    image.canvas.putImageData(image.imageData, 0, 0);
+    image.canvas.putImageData(imageData, 0, 0);
     $("body").css("cursor", "default");
 }
 function GetValueFromTable(ID) {
