@@ -38,10 +38,7 @@ function Image(container) {
 }
 function SetImage(container, MalinauMap, year) {
 
-    Container = container;
-
-    my_image = new Image(container);
-
+    
     // create a new pixel array
     element2 = document.getElementById('canvas1');
     canvas = element2.getContext("2d");
@@ -115,7 +112,7 @@ function SimulateNoSpatialCorrelation() {
     for (var row = 0; row < nrows; row++) {
         for (var col = 0; col < nrows; col++) {
 
-
+            alert(getPixelColor(row, col));
         }
     }
 

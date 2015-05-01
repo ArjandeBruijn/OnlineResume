@@ -58,7 +58,19 @@ function setPixelColor(x, y, Color) {
     imageData.data[index + 2] = Color[2];
     imageData.data[index + 3] = 255;
 }
+function getPixelColor(x, y) {
 
+    index = get_index(x, y);
+
+    Color =[];
+
+    Color[0] = imageData.data[index + 0];
+    Color[1] = imageData.data[index + 1];
+    Color[2] = imageData.data[index + 2];
+    Color[3] = 255;
+
+    return Color;
+}
 function drawLine(Context, from, to) {
 
     Context.beginPath();
