@@ -362,49 +362,10 @@ function GetLandUseType(MapCode) {
     }
     return null;
 }
-function GetPixelsWithLandUse(image, landuse) {
-
-    my_landuse_array = [];
-    for (var r = 0; r <  pixels.length; r++) {
-
-        for (var c = 0; c < pixels[r].length; c++) {
-
-            if (pixels[r][c] == landuse) my_landuse_array.push([r, c]);
-             
-        }
-
-    }
-    return my_landuse_array;
-}
- 
 
 
-function CountCoversions() {
 
-    var SumConversions = 0;
-    for (l = 0; l < LandUseTypes.length; l++) {
 
-        var landuse = LandUseTypes[l];
-
-        var conversion_rate = landuse.Conversion_rate;
-
-        if (conversion_rate != null) {
-
-            for (var a = 0; a < conversion_rate.length; a++) {
-                var conversion = conversion_rate[a];
-
-                var MapCodeTo = conversion.MapCodeNew;
-                var Rate = conversion.rate;
-
-                var landuse_to = GetLandUseType(MapCodeTo);
-
-                SumConversions += Rate * landuse.Count;
-            }
-        }
-    }
-    return SumConversions;
-
-}
 function IsGoodDonatingSite(image, r, c, DonatingLandUseType)
 {
     if (r < 0 || c < 0 || r >= pixels.length || c >= pixels[0].length)
