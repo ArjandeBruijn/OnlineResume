@@ -33,17 +33,8 @@ function ShowMalinauMap(year) {
 }
 function Image(container) {
 
-
-
-    element = document.getElementById(container);
-    this.canvas = element.getContext("2d");
-
-    // read the width and height of the canvas
-    ncols = (ymax - ymin);
-    nrows = (xmax - xmin);
-
-    // create a new pixel array
-    this.imageData = element.getContext("2d").createImageData(nrows, ncols);
+    this.element = document.getElementById(container);
+    this.canvas = this.element.getContext("2d");
 }
 function SetImage(container, MalinauMap, year) {
 
@@ -52,6 +43,13 @@ function SetImage(container, MalinauMap, year) {
     my_image = new Image(container);
 
     my_image.pixels = declare_pixels(xmax - xmin, ymax - ymin);
+
+    // read the width and height of the canvas
+    ncols = (ymax - ymin);
+    nrows = (xmax - xmin);
+
+    // create a new pixel array
+    my_image.imageData = my_image.element.getContext("2d").createImageData(nrows, ncols);
 
     // draw random dots
     var counter = -1;
