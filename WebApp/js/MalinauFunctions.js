@@ -70,12 +70,12 @@ function SetImage(container, MalinauMap, year) {
     // copy the image data back onto the canvas
     canvas.putImageData(imageData, 0, 0); // at coords 0,0
 
-    old_font = my_image.canvas.font;
+    old_font = canvas.font;
     canvas.font = "30px Arial";
     canvas.fillText(year, nrows - 80, ncols - 15);
     canvas.font = old_font;
 
-    DrawLegend(my_image);
+    DrawLegend();
 }
 function Simulate1() {
 
