@@ -35,11 +35,7 @@ function ShowMalinauMap(year) {
         SetImage('canvas1', MalinauMap2000, 2000);
     }
 }
-function Image(container) {
 
-    this.element = document.getElementById(container);
-    this.canvas = this.element.getContext("2d");
-}
 function SetImage(container, MalinauMap, year) {
 
     

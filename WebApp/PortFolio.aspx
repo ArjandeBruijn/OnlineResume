@@ -2,8 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
-    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+   
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -28,13 +27,13 @@
          <div>
           <h3>Hypotheses</h3>
           <label>
-            <input type="checkbox" class="radio" value="1" id="NoSpatialCorrelation"  name="Hypotheses" checked/>1. There is no spatial correlation between land use transitions.</label>
+            <input type="checkbox" class="radio" value="1" id="NoSpatialCorrelation"  name="Hypotheses" checked/>1. There is no spatial correlation between land use transitions.<br></label>
           <label>
-            <input type="checkbox" class="radio" value="1" id="AllAroundDevelopedArea"  name="Hypotheses"/>2. All land use transitions are concentrated around developed area.</label>
+            <input type="checkbox" class="radio" value="1" id="AllAroundDevelopedArea"  name="Hypotheses"/>2. All land use transitions are concentrated around developed area.<br></label>
           <label>
-            <input type="checkbox" class="radio" value="1" id="AllAroundWaterAndDevelopedArea"  name="Hypotheses"/>3. All human activity is centered around water and developed area.</label>
+            <input type="checkbox" class="radio" value="1" id="AllAroundWaterAndDevelopedArea"  name="Hypotheses"/>3. All human activity is centered around water and developed area.<br></label>
           <label>
-            <input type="checkbox" class="radio" value="1" id="AmericanInvasion"  name="Hypotheses"/>4. American invasion.</label>
+            <input type="checkbox" class="radio" value="1" id="AmericanInvasion"  name="Hypotheses"/>4. American invasion.<br></label>
         </div>
 
 
