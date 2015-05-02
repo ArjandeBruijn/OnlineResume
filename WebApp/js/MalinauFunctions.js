@@ -15,8 +15,12 @@ LandUse13 = new LandUse(13, Color13, null);
 
 LandUseTypes = [NoData, PF, SF, LandUse3, Settlement, LandUse5, OpenLand, LandUse7, Water, LandUse9, LandUse10, LandUse11, LandUse12, LandUse13];
 
+var LandUseColors = {};
 
-
+LandUseColors[DarkGreen] = PF;
+LandUseColors[LightGreen] = SF;
+LandUseColors[Red] = Settlement;
+LandUseColors[Yellow] = OpenLand;
 
 function ShowMalinauMap(year) {
 
@@ -40,7 +44,7 @@ function SetImage(container, MalinauMap, year) {
 
     
     // create a new pixel array
-    element2 = document.getElementById('canvas1');
+    var element2 = document.getElementById('canvas1');
     canvas = element2.getContext("2d");
     imageData = element2.getContext("2d").createImageData(nrows, ncols);
 
@@ -105,14 +109,30 @@ function Simulate1() {
 }
 function SimulateNoSpatialCorrelation() {
 
-    alert("SimulateNoSpatialCorrelation");
-    
     GetLandUseChangeCount();
 
     for (var row = 0; row < nrows; row++) {
         for (var col = 0; col < nrows; col++) {
 
-            alert(getPixelColor(row, col));
+            var color = getPixelColor(row, col);
+
+            if (color[0] == DarkGreen[0] && color[1] == DarkGreen[1] && color[2] == DarkGreen[2]) {
+
+                 
+            }
+            else if (color[0] == LightGreen[0] && color[1] == LightGreen[1] && color[2] == LightGreen[2]) {
+
+
+            }
+            else if (color[0] == Yellow[0] && color[1] == Yellow[1] && color[2] == Yellow[2]) {
+
+
+            }
+            else if (color[0] == Red[0] && color[1] == Red[1] && color[2] == Red[2]) {
+
+                alert("SETTLEMENT");
+            }
+            
         }
     }
 
@@ -122,50 +142,59 @@ function SimulateNoSpatialCorrelation() {
 function SimulateAllAroundDevelopedArea() {
 
     alert("SimulateAllAroundDevelopedArea");
-    GetLandUseChanges();
+    GetLandUseChangeCount();
 }
 
 function SimulateAllAroundWaterAndDevelopedArea() {
 
     alert("SimulateAllAroundWaterAndDevelopedArea");
-    GetLandUseChanges();
+    GetLandUseChangeCount();
 }
 function SimulateAmericanInvasion() {
 
     alert("SimulateAmericanInvasion");
-    GetLandUseChanges();
+    GetLandUseChangeCount();
 }
 function GetLandUseChangeCount() {
 
     var ForestArea = PF.Count;
+    Forest_SecondaryForest = GetValueFromTable('Forest-SecondaryForest');
     Forest_SecondaryForest_cnt = Forest_SecondaryForest * ForestArea;
     alert("Forest_SecondaryForest_cnt = " + Forest_SecondaryForest_cnt);
 
+    Forest_Cropland = GetValueFromTable('Forest-CropLand');
     Forest_Cropland_cnt = Forest_Cropland * ForestArea;
     alert("Forest_Cropland_cnt = " + Forest_Cropland_cnt);
 
+    Forest_Settlements = GetValueFromTable('Forest-Settlements');
     Forest_Settlements_cnt = Forest_Settlements * ForestArea;
     alert("Forest_Settlements_cnt = " + Forest_Settlements_cnt);
 
     //-------------------
     var SecondaryForestArea = SF.Count;
+    SecondaryForest_Forest = GetValueFromTable('SecondaryForest-Forest');
     SecondaryForest_Forest_cnt = SecondaryForest_Forest * SecondaryForestArea;
     alert("SecondaryForest_Forest_cnt = " + SecondaryForest_Forest_cnt);
 
+    SecondaryForest_CropLand = GetValueFromTable('SecondaryForest-CropLand');
     SecondaryForest_CropLand_cnt = SecondaryForest_CropLand * SecondaryForestArea;
     alert("SecondaryForest_CropLand_cnt = " + SecondaryForest_CropLand_cnt);
 
+    SecondaryForest_Settlements = GetValueFromTable('SecondaryForest-Settlements');
     SecondaryForest_Settlements_cnt = SecondaryForest_Settlements * SecondaryForestArea;
     alert("SecondaryForest_Settlements_cnt = " + SecondaryForest_Settlements_cnt);
 
     //-------------------
     var CropArea = OpenLand.Count;
+    CropLand_Forest = GetValueFromTable('CropLand-Forest');
     CropLand_Forest_cnt = CropLand_Forest * CropArea;
     alert("CropLand_Forest_cnt = " + CropLand_Forest_cnt);
 
+    CropLand_SecondaryForest = GetValueFromTable('CropLand-SecondaryForest');
     CropLand_SecondaryForest_cnt = CropLand_Forest * CropArea;
     alert("CropLand_SecondaryForest_cnt = " + CropLand_SecondaryForest_cnt);
 
+    CropLand_Settlements = GetValueFromTable('CropLand-Settlements');
     CropLand_Settlements_cnt = CropLand_Settlements * CropArea;
     alert("CropLand_Settlements_cnt = " + CropLand_Settlements_cnt);
     
@@ -173,65 +202,20 @@ function GetLandUseChangeCount() {
     //-------------------
     var SettlementArea = Settlement.Count;
 
+    Settlements_Forest = GetValueFromTable('Settlements-Forest');
     Settlements_Forest_cnt = Settlements_Forest * SettlementArea;
     alert("Settlements_Forest_cnt = " + Settlements_Forest_cnt);
 
+    Settlements_SecondaryForest = GetValueFromTable('Settlements-SecondaryForest');
     Settlements_SecondaryForest_cnt = Settlements_SecondaryForest * SettlementArea;
     alert("Settlements_SecondaryForest_cnt = " + Settlements_SecondaryForest_cnt);
-
+    
+    Settlements_CropLand = GetValueFromTable('Settlements-CropLand');
     Settlements_CropLand_cnt = Settlements_CropLand * SettlementArea;
     alert("Settlements_CropLand_cnt = " + Settlements_CropLand_cnt);
 
 }
-function GetLandUseChangeFractions() {
-
-    alert("GetLandUseChanges");
-
-    //-------------------
-    Forest_SecondaryForest = GetValueFromTable('Forest-SecondaryForest');
-    alert("Forest_SecondaryForest " + Forest_SecondaryForest);
-
-    Forest_Cropland = GetValueFromTable('Forest-CropLand');
-    alert("Forest_Cropland " + Forest_Cropland);
-
-    Forest_Settlements = GetValueFromTable('Forest-Settlements');
-    alert("Forest_Settlements " + Forest_Settlements);
-
-    //-------------------
-    SecondaryForest_Forest = GetValueFromTable('SecondaryForest-Forest');
-    alert("SecondaryForest_Forest " + SecondaryForest_Forest);
-
-    SecondaryForest_CropLand = GetValueFromTable('SecondaryForest-CropLand');
-    alert("SecondaryForest_CropLand " + SecondaryForest_CropLand);
-
-    SecondaryForest_Settlements = GetValueFromTable('SecondaryForest-Settlements');
-    alert("SecondaryForest_Settlements " + SecondaryForest_Settlements);
-
-    //-------------------
-
-    CropLand_Forest = GetValueFromTable('CropLand-Forest');
-    alert("CropLand_Forest " + CropLand_Forest);
-
-    CropLand_SecondaryForest = GetValueFromTable('CropLand-SecondaryForest');
-    alert("CropLand_SecondaryForest " + CropLand_SecondaryForest);
-
-    CropLand_Settlements = GetValueFromTable('CropLand-Settlements');
-    alert("CropLand_Settlements " + CropLand_Settlements);
-
-    //-------------------
-    Settlements_Forest = GetValueFromTable('Settlements-Forest');
-    alert("Settlements_Forest " + Settlements_Forest);
-   
-    Settlements_SecondaryForest = GetValueFromTable('Settlements-SecondaryForest');
-    alert("Settlements_SecondaryForest " + Settlements_SecondaryForest);
-
-    Settlements_CropLand = GetValueFromTable('Settlements-CropLand');
-    alert("Settlements_CropLand " + Settlements_CropLand);
-
-    //-------------------
-
-}
-
+ 
 function Simulate() {
 
     $("body").css("cursor", "progress");
