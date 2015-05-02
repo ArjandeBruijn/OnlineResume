@@ -60,7 +60,7 @@ function SetImage(container, MalinauMap, year) {
                 continue;
             }
 
-            setPixelColor(x, y, land_use.Color);
+            setPixelColor(imageData, x, y, land_use.Color);
 
             land_use.Count++;
 
@@ -108,13 +108,15 @@ function SimulateNoSpatialCorrelation() {
     GetLandUseChangeCount();
 
     for (var row = 0; row < nrows; row++) {
-        for (var col = 0; col < nrows; col++) {
+        for (var col = 0; col < ncols; col++) {
 
-            var color = getPixelColor(row, col);
+            
+             
+            var color = getPixelColor(imageData, row, col);
 
             if (color[0] == DarkGreen[0] && color[1] == DarkGreen[1] && color[2] == DarkGreen[2]) {
 
-                 
+                setPixelColor(imageData, row, col, White);
             }
             else if (color[0] == LightGreen[0] && color[1] == LightGreen[1] && color[2] == LightGreen[2]) {
 
@@ -128,10 +130,17 @@ function SimulateNoSpatialCorrelation() {
 
                 alert("SETTLEMENT");
             }
-            
+             
         }
     }
+    canvas.putImageData(imageData, 0, 0); // at coords 0,0
 
+    old_font = canvas.font;
+    canvas.font = "30px Arial";
+    /*canvas.fillText(year, nrows - 80, ncols - 15);*/
+    canvas.font = old_font;
+
+    DrawLegend();
 
 
 }
