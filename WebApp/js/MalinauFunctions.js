@@ -182,7 +182,7 @@ function SimulateAllAroundDevelopedArea() {
          
         i++;
 
-    }, 50);
+    }, 0);
 
     Year += 9;
     DrawImage();
