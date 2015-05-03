@@ -12,6 +12,7 @@
         <div id = "right_col_ins">
             <canvas id="canvas1" style="display: inline;" width="410" height="561" style="border:2px solid black;"></canvas>
             <button onclick = "Simulate1()" type="button">Simulate 9 years</button>
+            <div id = "Progress"></div>
         </div>
      </div>
   
@@ -52,7 +53,7 @@
             <tr>
                 <th bgcolor ="#ccff66" >Forest</th>
                 <td bgcolor ="#c0c0c0" id="Forest-Forest"><div> 0.998 </div> </th>
-                <td  id="Forest-SecondaryForest"><div contenteditable> 0 </div> </th>
+                <td  id="Forest-SecondaryForest"><div contenteditable> 0.01 </div> </th>
                 <td  id="Forest-CropLand"><div contenteditable> 0.004</div> </th>
                 <td  id= "Forest-Settlements"><div contenteditable> 0 </div> </th>
             

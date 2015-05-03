@@ -60,7 +60,7 @@ function AddModelPoints(Context,InnerPanelArea, x_min, x_max, y_min, y_max) {
         if (i == AllModelSeries.length - 1) i = 0;
     }, 5);
 
-    Context.strokeStyle = "Black";
+    
 }
 function AddLegend(Context, InnerPanelArea) {
 
