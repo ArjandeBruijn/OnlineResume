@@ -152,6 +152,15 @@ function DrawImage()
     DrawProgressBox();
     DrawLegend();
 }
+Array.prototype.clean = function (deleteValue) {
+    for (var i = 0; i < this.length; i++) {
+        if (this[i] == deleteValue) {
+            this.splice(i, 1);
+            i--;
+        }
+    }
+    return this;
+};
 
 function SimulateAllAroundDevelopedArea() {
 
@@ -159,33 +168,38 @@ function SimulateAllAroundDevelopedArea() {
 
     Progress = 0;
 
-    
-    var i = 0;
     var OldProgress = Progress = 0;
+    var cnt = 0;
     var id = setInterval(function () {
 
-        Progress = Math.round(100 * (i / SumLandUseChanges));
-        if (Progress >= OldProgress + 10) {
-            DrawImage();
-            OldProgress += 10;
+        var i = Math.floor(Math.random() * luc.length);
+
+        if (luc[i] != null) {
+            Progress = Math.round(100 * (cnt / SumLandUseChanges));
+            cnt++;
+            if (Progress >= OldProgress + 10) {
+                DrawImage();
+                OldProgress += 10;
+                luc.clean(null);
+            }
+            if (Progress >= 100) {
+                clearInterval(id);
+            }
+
+            var rand = Math.floor(Math.random() * Settlements.length);
+
+            var randomsettlementcoordinate = Settlements[rand];
+
+            From = luc[i][0];
+            To = luc[i][1];
+
+            var coordinate = GetDonatingSite(randomsettlementcoordinate, From);
+
+            SetPixel(imageData, coordinate.x, coordinate.y, From, To);
+
+            luc[i] = null;
+
         }
-        if (Progress >= 100) {
-            clearInterval(id);
-        }
-
-        var rand = Math.floor(Math.random() * Settlements.length);
-
-        var randomsettlementcoordinate = Settlements[rand];
-
-        From = luc[i][0];
-        To = luc[i][1]; 
-        
-        var coordinate = GetDonatingSite(randomsettlementcoordinate, From);
-
-        SetPixel(imageData, coordinate.x, coordinate.y, From, To);
-
-        i++;
-
     }, 0);
 
     Year += 9;
