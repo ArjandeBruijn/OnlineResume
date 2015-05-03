@@ -32,9 +32,9 @@
           <label>
             <input type="checkbox" class="radio" value="1" id="AllAroundDevelopedArea"  name="Hypotheses"/>2. All land use transitions are concentrated around developed area.<br></label>
           <label>
-            <input type="checkbox" class="radio" value="1" id="AllAroundWater"  name="Hypotheses"/>3. All human activity is centered around water and developed area.<br></label>
+            <input type="checkbox" class="radio" value="1" id="AllAroundWater"  name="Hypotheses"/>3. All human activity is centered around water.<br></label>
           <label>
-            <input type="checkbox" class="radio" value="1" id="AmericanInvasion"  name="Hypotheses"/>4. American invasion.<br></label>
+            <input type="checkbox" class="radio" value="1" id="AmericanInvasion"  name="Hypotheses"/>4. Tourist invasion.<br></label>
         </div>
 
 

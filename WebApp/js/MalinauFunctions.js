@@ -130,7 +130,7 @@ function Simulate1() {
 
         SimulateAmericanInvasion();
     }
-    else alert("No Valid Selection")
+    
      
 }
 function DrawProgressBox() {
@@ -149,11 +149,12 @@ function DrawProgressBox() {
 
     coordinate = AddLegendEntry(coordinate, "Year:\t" + Year, null);
 }
-function DrawImage()
+function DrawImage(custom_legend)
 {
     canvas.putImageData(imageData, 0, 0); // at coords 0,0
     DrawProgressBox();
-    DrawLegend();
+    if (custom_legend == null) DrawLegend();
+    else custom_legend();
 }
 Array.prototype.clean = function (deleteValue) {
     for (var i = 0; i < this.length; i++) {
@@ -207,6 +208,36 @@ function SimulateAllAroundDevelopedArea() {
 
     Year += 9;
     DrawImage();
+}
+function SimulateAmericanInvasion() {
+
+    for (var row = 0; row < nrows; row++) {
+        for (var col = 0; col < ncols; col++) {
+            var color = getPixelColor(imageData, row, col);
+
+            if (color[0] == White[0] && color[1] == White[1] && color[2] == White[2]) {
+            }
+            else {
+                SetPixel(imageData, row, col, PF, SF);
+            }
+        }
+    }
+    DrawImage(CustomLegend);
+}
+function CustomLegend() {
+
+    var Entrees = 4;
+    var HeightPerEntree = 20;
+
+    var legendrect = new Rectangle(10, 10, 150, HeightPerEntree * Entrees + 20);
+    canvas.rect(legendrect.A.x, legendrect.A.y, legendrect.Width, legendrect.Height);
+
+    var coordinate = new Coordinate(legendrect.A.x + 10, legendrect.A.y + 10);
+
+    coordinate = AddLegendEntry(coordinate, "Golf Course", DarkGreen);
+    coordinate = AddLegendEntry(coordinate, "Secondary forest", LightGreen);
+    coordinate = AddLegendEntry(coordinate, "Cropland", Yellow);
+    coordinate = AddLegendEntry(coordinate, "Settlements", Red);
 }
 function SimulateNoSpatialCorrelation() {
 
@@ -430,11 +461,7 @@ function SimulateAllAroundWater() {
     Year += 9;
     DrawImage();
 }
-function SimulateAmericanInvasion() {
 
-    alert("SimulateAmericanInvasion");
-    GetLandUseChangeCount();
-}
  
 function GetValueFromTable(ID) {
     var value = document.getElementById(ID).innerText;
