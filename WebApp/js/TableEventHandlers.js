@@ -35,3 +35,4 @@ function whenChangeHappens() {
 
     }
 }
+watch(document.getElementById('LUCtable'), whenChangeHappens);
