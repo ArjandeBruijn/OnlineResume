@@ -146,7 +146,12 @@ function DrawProgressBox() {
 
     coordinate = AddLegendEntry(coordinate, "Year:\t" + Year, null);
 }
- 
+function DrawImage()
+{
+    canvas.putImageData(imageData, 0, 0); // at coords 0,0
+    DrawProgressBox();
+    DrawLegend();
+}
 
 function SimulateAllAroundDevelopedArea() {
 
@@ -155,9 +160,14 @@ function SimulateAllAroundDevelopedArea() {
     Progress = 0;
 
     var i = 0;
+    var OldProgress = Progress = 0;
     var id = setInterval(function () {
 
         Progress = Math.round(100 * (i / Forest_SecondaryForest_cnt));
+        if (Progress >= OldProgress + 10) {
+            DrawImage();
+            OldProgress += 10;
+        }
         if (Progress >= 100) {
             clearInterval(id);
         }
@@ -169,110 +179,24 @@ function SimulateAllAroundDevelopedArea() {
 
         SetPixel(imageData, coordinate.x, coordinate.y, PF, SF);
 
-        canvas.putImageData(imageData, 0, 0); // at coords 0,0
-        DrawProgressBox();
-        DrawLegend();
+         
         i++;
 
     }, 50);
-      
-   
-}
-function GetDonatingSite(random_settlement_coord, donating_land_use) {
 
-    var d = 1;
-
-    for (; ; ) {
-        for (var r = random_settlement_coord.x - d; r <= random_settlement_coord.x + d; r++) {
-
-            for (var c = random_settlement_coord.y - d; c <= random_settlement_coord.y + d; c++) {
-
-                var distance = CalculateDistance(random_settlement_coord.x, random_settlement_coord.y, r, c);
-
-                if (distance <= d) {
-
-                    if (r < nrows || c < ncols) {
-                        var color = getPixelColor(imageData, r, c)
-                        if (color[0] == donating_land_use.Color[0] &&color[1] == donating_land_use.Color[1] &&color[2] == donating_land_use.Color[2] ) {
-                            return Coordinates[r][c] ;
-                        }
-                    }
-                     
-                }
-            }
-        }
-        d++;
-    }
-
-}
- 
-function GetLandUseChangeCount() {
-
-    var ForestArea = PF.Count;
-    Forest_SecondaryForest = GetValueFromTable('Forest-SecondaryForest');
-    Forest_SecondaryForest_cnt = Forest_SecondaryForest * ForestArea;
-    //alert("Forest_SecondaryForest_cnt = " + Forest_SecondaryForest_cnt);
-
-    Forest_Cropland = GetValueFromTable('Forest-CropLand');
-    Forest_Cropland_cnt = Forest_Cropland * ForestArea;
-    //alert("Forest_Cropland_cnt = " + Forest_Cropland_cnt);
-
-    Forest_Settlements = GetValueFromTable('Forest-Settlements');
-    Forest_Settlements_cnt = Forest_Settlements * ForestArea;
-    //alert("Forest_Settlements_cnt = " + Forest_Settlements_cnt);
-
-    //-------------------
-    var SecondaryForestArea = SF.Count;
-    SecondaryForest_Forest = GetValueFromTable('SecondaryForest-Forest');
-    SecondaryForest_Forest_cnt = SecondaryForest_Forest * SecondaryForestArea;
-    //alert("SecondaryForest_Forest_cnt = " + SecondaryForest_Forest_cnt);
-
-    SecondaryForest_CropLand = GetValueFromTable('SecondaryForest-CropLand');
-    SecondaryForest_CropLand_cnt = SecondaryForest_CropLand * SecondaryForestArea;
-    //alert("SecondaryForest_CropLand_cnt = " + SecondaryForest_CropLand_cnt);
-
-    SecondaryForest_Settlements = GetValueFromTable('SecondaryForest-Settlements');
-    SecondaryForest_Settlements_cnt = SecondaryForest_Settlements * SecondaryForestArea;
-    //alert("SecondaryForest_Settlements_cnt = " + SecondaryForest_Settlements_cnt);
-
-    //-------------------
-    var CropArea = OpenLand.Count;
-    CropLand_Forest = GetValueFromTable('CropLand-Forest');
-    CropLand_Forest_cnt = CropLand_Forest * CropArea;
-    //alert("CropLand_Forest_cnt = " + CropLand_Forest_cnt);
-
-    CropLand_SecondaryForest = GetValueFromTable('CropLand-SecondaryForest');
-    CropLand_SecondaryForest_cnt = CropLand_Forest * CropArea;
-    //alert("CropLand_SecondaryForest_cnt = " + CropLand_SecondaryForest_cnt);
-
-    CropLand_Settlements = GetValueFromTable('CropLand-Settlements');
-    CropLand_Settlements_cnt = CropLand_Settlements * CropArea;
-    //alert("CropLand_Settlements_cnt = " + CropLand_Settlements_cnt);
-    
-
-    //-------------------
-    var SettlementArea = Settlement.Count;
-
-    Settlements_Forest = GetValueFromTable('Settlements-Forest');
-    Settlements_Forest_cnt = Settlements_Forest * SettlementArea;
-    //alert("Settlements_Forest_cnt = " + Settlements_Forest_cnt);
-
-    Settlements_SecondaryForest = GetValueFromTable('Settlements-SecondaryForest');
-    Settlements_SecondaryForest_cnt = Settlements_SecondaryForest * SettlementArea;
-    //alert("Settlements_SecondaryForest_cnt = " + Settlements_SecondaryForest_cnt);
-    
-    Settlements_CropLand = GetValueFromTable('Settlements-CropLand');
-    Settlements_CropLand_cnt = Settlements_CropLand * SettlementArea;
-    //alert("Settlements_CropLand_cnt = " + Settlements_CropLand_cnt);
-
+    Year += 9;
+    DrawImage();
 }
 function SimulateNoSpatialCorrelation() {
 
     GetLandUseChangeCount();
 
+    var c = 0;
+    var OldProgress = Progress = 0;
     for (var row = 0; row < nrows; row++) {
         for (var col = 0; col < ncols; col++) {
 
+            c++;
             var rand = Math.random();
 
             var color = getPixelColor(imageData, row, col);
@@ -325,19 +249,103 @@ function SimulateNoSpatialCorrelation() {
                 else if (rand < (+Settlements_Forest + +Settlements_SecondaryForest + +Settlements_CropLand)) {
                     SetPixel(imageData, row, col, Settlement, OpenLand);
                 }
-                //alert("SETTLEMENT");
             }
-
+            Progress = Math.round(100 * (c / (nrows * ncols)));
+            if (Progress >= OldProgress + 10) {
+                DrawImage();
+                OldProgress += 10;
+            }
         }
     }
-    canvas.putImageData(imageData, 0, 0); // at coords 0,0
+    DrawImage();
 
-    old_font = canvas.font;
-    canvas.font = "30px Arial";
-    /*canvas.fillText(year, nrows - 80, ncols - 15);*/
-    canvas.font = old_font;
+}
+function GetDonatingSite(random_settlement_coord, donating_land_use) {
 
-    DrawLegend();
+    var d = 1;
+
+    for (; ; ) {
+        for (var r = random_settlement_coord.x - d; r <= random_settlement_coord.x + d; r++) {
+
+            for (var c = random_settlement_coord.y - d; c <= random_settlement_coord.y + d; c++) {
+
+                var distance = CalculateDistance(random_settlement_coord.x, random_settlement_coord.y, r, c);
+
+                if (distance <= d) {
+
+                    if (r < nrows || c < ncols) {
+                        var color = getPixelColor(imageData, r, c)
+                        if (color[0] == donating_land_use.Color[0] && color[1] == donating_land_use.Color[1] && color[2] == donating_land_use.Color[2]) {
+                            return Coordinates[r][c];
+                        }
+                    }
+
+                }
+            }
+        }
+        d++;
+    }
+
+}
+
+function GetLandUseChangeCount() {
+
+    var ForestArea = PF.Count;
+    Forest_SecondaryForest = GetValueFromTable('Forest-SecondaryForest');
+    Forest_SecondaryForest_cnt = Forest_SecondaryForest * ForestArea;
+    //alert("Forest_SecondaryForest_cnt = " + Forest_SecondaryForest_cnt);
+
+    Forest_Cropland = GetValueFromTable('Forest-CropLand');
+    Forest_Cropland_cnt = Forest_Cropland * ForestArea;
+    //alert("Forest_Cropland_cnt = " + Forest_Cropland_cnt);
+
+    Forest_Settlements = GetValueFromTable('Forest-Settlements');
+    Forest_Settlements_cnt = Forest_Settlements * ForestArea;
+    //alert("Forest_Settlements_cnt = " + Forest_Settlements_cnt);
+
+    //-------------------
+    var SecondaryForestArea = SF.Count;
+    SecondaryForest_Forest = GetValueFromTable('SecondaryForest-Forest');
+    SecondaryForest_Forest_cnt = SecondaryForest_Forest * SecondaryForestArea;
+    //alert("SecondaryForest_Forest_cnt = " + SecondaryForest_Forest_cnt);
+
+    SecondaryForest_CropLand = GetValueFromTable('SecondaryForest-CropLand');
+    SecondaryForest_CropLand_cnt = SecondaryForest_CropLand * SecondaryForestArea;
+    //alert("SecondaryForest_CropLand_cnt = " + SecondaryForest_CropLand_cnt);
+
+    SecondaryForest_Settlements = GetValueFromTable('SecondaryForest-Settlements');
+    SecondaryForest_Settlements_cnt = SecondaryForest_Settlements * SecondaryForestArea;
+    //alert("SecondaryForest_Settlements_cnt = " + SecondaryForest_Settlements_cnt);
+
+    //-------------------
+    var CropArea = OpenLand.Count;
+    CropLand_Forest = GetValueFromTable('CropLand-Forest');
+    CropLand_Forest_cnt = CropLand_Forest * CropArea;
+    //alert("CropLand_Forest_cnt = " + CropLand_Forest_cnt);
+
+    CropLand_SecondaryForest = GetValueFromTable('CropLand-SecondaryForest');
+    CropLand_SecondaryForest_cnt = CropLand_Forest * CropArea;
+    //alert("CropLand_SecondaryForest_cnt = " + CropLand_SecondaryForest_cnt);
+
+    CropLand_Settlements = GetValueFromTable('CropLand-Settlements');
+    CropLand_Settlements_cnt = CropLand_Settlements * CropArea;
+    //alert("CropLand_Settlements_cnt = " + CropLand_Settlements_cnt);
+
+
+    //-------------------
+    var SettlementArea = Settlement.Count;
+
+    Settlements_Forest = GetValueFromTable('Settlements-Forest');
+    Settlements_Forest_cnt = Settlements_Forest * SettlementArea;
+    //alert("Settlements_Forest_cnt = " + Settlements_Forest_cnt);
+
+    Settlements_SecondaryForest = GetValueFromTable('Settlements-SecondaryForest');
+    Settlements_SecondaryForest_cnt = Settlements_SecondaryForest * SettlementArea;
+    //alert("Settlements_SecondaryForest_cnt = " + Settlements_SecondaryForest_cnt);
+
+    Settlements_CropLand = GetValueFromTable('Settlements-CropLand');
+    Settlements_CropLand_cnt = Settlements_CropLand * SettlementArea;
+    //alert("Settlements_CropLand_cnt = " + Settlements_CropLand_cnt);
 
 }
 function SimulateAllAroundWaterAndDevelopedArea() {
@@ -350,79 +358,7 @@ function SimulateAmericanInvasion() {
     alert("SimulateAmericanInvasion");
     GetLandUseChangeCount();
 }
-function Simulate() {
-
-    $("body").css("cursor", "progress");
-
-    var image = my_image;
-
-    document.getElementById("ProgressTag").innerHTML = "InitializePixelCoordinates";
-
-    InitializePixelCoordinates(image);
-
-    PF.Conversion_rate = [new ConversionRate(6, GetValueFromTable('Forest-CropLand'))];
-
-    PF_array = GetPixelsWithLandUse(image, PF);
-    SF_array = GetPixelsWithLandUse(image, SF);
-    Settlement_array = GetPixelsWithLandUse(image, Settlement);
-
-    document.getElementById("ProgressTag").innerHTML = "Starting conversions";
-
-
-    var SumConversions = Math.round(CountCoversions());
-
-    document.getElementById("ProgressTag").innerHTML = "SumConversions = " + SumConversions;
-
-    var ConversionsCount = 0;
-    for (l = 0; l < LandUseTypes.length; l++) {
-
-        var landuse = LandUseTypes[l];
-
-        document.getElementById("ProgressTag").innerHTML = landuse.MapCode;
-
-        var conversion_rate = landuse.Conversion_rate;
-
-        if (conversion_rate != null) {
-
-            for (var a = 0; a < conversion_rate.length; a++) {
-
-                var conversion = conversion_rate[a];
-
-                var MapCodeTo = conversion.MapCodeNew;
-                var Rate = conversion.rate;
-
-                var landuse_to = GetLandUseType(MapCodeTo);
-
-                var NumberOfConversions = Rate * landuse.Count;
-
-                if (NumberOfConversions > landuse.Count) NumberOfConversions = landuse.Count;
-
-                for (c = 0; c < NumberOfConversions; c++) {
-
-                    ConversionsCount++;
-
-                    document.getElementById("ProgressTag").innerHTML = "Progress " + ConversionsCount + "\\" + SumConversions;
-
-                    random = Math.floor(Math.random() * Settlement_array.length);
-
-                    var random_settlement_coord = Settlement_array[random];
-
-                    donating_coord = GetDonatingSite(image, random_settlement_coord, landuse);
-
-                    setPixel(image, donating_coord[0], donating_coord[1], landuse_to);
-
-                    alert(donating_coord + " is now " + landuse_to.MapCode);
-
-                }
-
-            }
-        }
-
-    }
-    document.getElementById("ProgressTag").innerHTML = "";
-    image.canvas.putImageData(imageData, 0, 0);
-    $("body").css("cursor", "default");
-}
+ 
 function GetValueFromTable(ID) {
     var value = document.getElementById(ID).innerText;
     return value;
