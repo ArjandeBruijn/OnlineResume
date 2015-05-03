@@ -28,9 +28,12 @@ function whenChangeHappens() {
         for (var j = 1, col; col = row.cells[j]; j++) {
             //iterate through columns
             //columns would be accessed using the "col" variable assigned in the for loop
+            if (i == j) continue;
+
+             
             sum += parseFloat(table.rows[i].cells[j].innerText);
         }
-        table.rows[i].cells[i].innerText = Math.round((table.rows[i].cells[i].innerText - (sum - 1)) * 100) / 100;
+        table.rows[i].cells[i].innerText = Math.round((1-sum) * 100) / 100;
 
 
     }
