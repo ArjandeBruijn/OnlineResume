@@ -68,7 +68,7 @@ function SetImage(container, MalinauMap, year) {
             if (land_use == null) {
                 continue;
             }
-            SetPixel(imageData, row, col, land_use);
+            SetPixel(imageData, row, col, null, land_use);
             
 
             land_use.Count++;
@@ -84,10 +84,18 @@ function SetImage(container, MalinauMap, year) {
     DrawLegend();
 }
 Settlements = [];
-function SetPixel(imageData, row, col, land_use)
+function SetPixel(imageData, row, col, old_land_use, new_land_use)
 {
-    setPixelColor(imageData, row, col, land_use.Color);
-    if (land_use == Settlement) Settlements.push(Coordinates[row][col]);
+    setPixelColor(imageData, row, col, new_land_use.Color);
+    if (new_land_use == Settlement) Settlements.push(Coordinates[row][col]);
+
+    if (old_land_use == Settlement) {
+
+        var index = Settlement.indexOf(Coordinates[row][col]);
+        if (index > -1) Settlement.splice(index, 1);
+            
+         
+    }
 
 }
 function DrawYear(Year) {
@@ -200,49 +208,50 @@ function SimulateNoSpatialCorrelation() {
             if (color[0] == DarkGreen[0] && color[1] == DarkGreen[1] && color[2] == DarkGreen[2]) {
 
                 if (rand < Forest_SecondaryForest) {
-                    setPixelColor(imageData, row, col, LightGreen);
+                    SetPixel(imageData, row, col, PF, SF);
                 }
                 else if (rand < (+Forest_SecondaryForest + +Forest_Cropland)) {
-                    setPixelColor(imageData, row, col, Yellow);
+
+                    SetPixel(imageData, row, col, PF, OpenLand);
                 }
                 else if (rand < (+Forest_SecondaryForest + +Forest_Cropland + +Forest_Settlements)) {
-                    setPixelColor(imageData, row, col, Red);
+                    SetPixel(imageData, row, col, PF, Settlement);
                 }
             }
             else if (color[0] == LightGreen[0] && color[1] == LightGreen[1] && color[2] == LightGreen[2]) {
 
                 if (rand < SecondaryForest_Forest) {
-                    setPixelColor(imageData, row, col, LightGreen);
+                    SetPixel(imageData, row, col, SF, PF);
                 }
                 else if (rand < (+SecondaryForest_Forest + +SecondaryForest_CropLand)) {
-                    setPixelColor(imageData, row, col, Yellow);
+                    SetPixel(imageData, row, col, SF, OpenLand);
                 }
                 else if (rand < (+SecondaryForest_Forest + +SecondaryForest_CropLand + +SecondaryForest_Settlements)) {
-                    setPixelColor(imageData, row, col, Red);
+                    SetPixel(imageData, row, col, SF, Settlement);
                 }
             }
             else if (color[0] == Yellow[0] && color[1] == Yellow[1] && color[2] == Yellow[2]) {
 
                 if (rand < CropLand_Forest) {
-                    setPixelColor(imageData, row, col, DarkGreen);
+                    SetPixel(imageData, row, col, OpenLand, PF);
                 }
                 else if (rand < (+CropLand_Forest + +CropLand_SecondaryForest)) {
-                    setPixelColor(imageData, row, col, LightGreen);
+                    SetPixel(imageData, row, col, OpenLand, SF);
                 }
                 else if (rand < (+CropLand_Forest + +CropLand_SecondaryForest + +CropLand_Settlements)) {
-                    setPixelColor(imageData, row, col, Red);
+                    SetPixel(imageData, row, col, OpenLand, Settlement);
                 }
             }
             else if (color[0] == Red[0] && color[1] == Red[1] && color[2] == Red[2]) {
 
                 if (rand < Settlements_Forest) {
-                    setPixelColor(imageData, row, col, DarkGreen);
+                    SetPixel(imageData, row, col, Settlement, DarkGreen);
                 }
                 else if (rand < (+Settlements_Forest + +Settlements_SecondaryForest)) {
-                    setPixelColor(imageData, row, col, LightGreen);
+                    SetPixel(imageData, row, col, Settlement, SF);
                 }
                 else if (rand < (+Settlements_Forest + +Settlements_SecondaryForest + +Settlements_CropLand)) {
-                    setPixelColor(imageData, row, col, Yellow);
+                    SetPixel(imageData, row, col, Settlement, OpenLand);
                 }
                 //alert("SETTLEMENT");
             }
