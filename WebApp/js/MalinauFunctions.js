@@ -38,7 +38,16 @@ function ShowMalinauMap(year) {
 
 function SetImage(container, MalinauMap, year) {
 
-    
+    Coordinates = [];
+    for (var row = 0; row < nrows; row++) {
+        Coordinates[row] = [];
+        for (var col = 0; col < ncols; col++) {
+            Coordinates[row][col] = new Coordinate(row, col);
+        }
+    }
+
+    Year = year;
+
     // create a new pixel array
     var element2 = document.getElementById('canvas1');
     canvas = element2.getContext("2d");
@@ -47,8 +56,8 @@ function SetImage(container, MalinauMap, year) {
     // draw random dots
     var counter = -1;
 
-    for (y = 0; y < ncols; y++) {
-        for (x = 0; x < nrows; x++) {
+    for (var col = 0; col < ncols; col++) {
+        for (var row = 0; row < nrows; row++) {
 
             counter++;
 
@@ -59,8 +68,8 @@ function SetImage(container, MalinauMap, year) {
             if (land_use == null) {
                 continue;
             }
-
-            setPixelColor(imageData, x, y, land_use.Color);
+            SetPixel(imageData, row, col, land_use);
+            
 
             land_use.Count++;
 
@@ -70,18 +79,26 @@ function SetImage(container, MalinauMap, year) {
     // copy the image data back onto the canvas
     canvas.putImageData(imageData, 0, 0); // at coords 0,0
 
-    old_font = canvas.font;
-    canvas.font = "30px Arial";
-    canvas.fillText(year, nrows - 80, ncols - 15);
-    canvas.font = old_font;
+    DrawYear(Year);
 
     DrawLegend();
 }
+Settlements = [];
+function SetPixel(imageData, row, col, land_use)
+{
+    setPixelColor(imageData, row, col, land_use.Color);
+    if (land_use == Settlement) Settlements.push(Coordinates[row][col]);
+
+}
+function DrawYear(Year) {
+    var old_font = canvas.font;
+    canvas.font = "30px Arial";
+    canvas.fillText(Year, nrows - 80, ncols - 15);
+    canvas.font = old_font;
+}
 function Simulate1() {
 
-
-
-
+ 
     if (document.getElementById("NoSpatialCorrelation").checked) {
 
         SimulateNoSpatialCorrelation();
@@ -100,81 +117,14 @@ function Simulate1() {
     }
     else alert("No Valid Selection")
 
+    Year += 9;
+    DrawYear(Year);
 
-    //Simulate("canvas1", 0, 415, 0, 561);
 }
-function SimulateNoSpatialCorrelation() {
+function SimulateAllAroundDevelopedArea() {
 
+    alert("SimulateAllAroundDevelopedArea");
     GetLandUseChangeCount();
-
-    for (var row = 0; row < nrows; row++) {
-        for (var col = 0; col < ncols; col++) {
-
-            var rand = Math.random();
-             
-            var color = getPixelColor(imageData, row, col);
-
-            if (color[0] == DarkGreen[0] && color[1] == DarkGreen[1] && color[2] == DarkGreen[2]) {
-
-                if (rand < Forest_SecondaryForest) {
-                    setPixelColor(imageData, row, col, LightGreen);
-                }
-                else if (rand < (+Forest_SecondaryForest + +Forest_Cropland)) {
-                    setPixelColor(imageData, row, col, Yellow);
-                }
-                else if (rand < (+Forest_SecondaryForest + +Forest_Cropland + +Forest_Settlements)) {
-                    setPixelColor(imageData, row, col, Red);
-                }
-            }
-            else if (color[0] == LightGreen[0] && color[1] == LightGreen[1] && color[2] == LightGreen[2]) {
-
-                if (rand < SecondaryForest_Forest) {
-                    setPixelColor(imageData, row, col, LightGreen);
-                }
-                else if (rand < (+SecondaryForest_Forest + +SecondaryForest_CropLand)) {
-                    setPixelColor(imageData, row, col, Yellow);
-                }
-                else if (rand < (+SecondaryForest_Forest + +SecondaryForest_CropLand + +SecondaryForest_Settlements)) {
-                    setPixelColor(imageData, row, col, Red);
-                }
-            }
-            else if (color[0] == Yellow[0] && color[1] == Yellow[1] && color[2] == Yellow[2]) {
-
-                if (rand < CropLand_Forest) {
-                    setPixelColor(imageData, row, col, DarkGreen);
-                }
-                else if (rand < (+CropLand_Forest + +CropLand_SecondaryForest)) {
-                    setPixelColor(imageData, row, col, LightGreen);
-                }
-                else if (rand < (+CropLand_Forest + +CropLand_SecondaryForest + +CropLand_Settlements)) {
-                    setPixelColor(imageData, row, col, Red);
-                }
-            }
-            else if (color[0] == Red[0] && color[1] == Red[1] && color[2] == Red[2]) {
-
-                if (rand < Settlements_Forest) {
-                    setPixelColor(imageData, row, col, DarkGreen);
-                }
-                else if (rand < (+Settlements_Forest + +Settlements_SecondaryForest)) {
-                    setPixelColor(imageData, row, col, LightGreen);
-                }
-                else if (rand < (+Settlements_Forest + +Settlements_SecondaryForest + +Settlements_CropLand)) {
-                    setPixelColor(imageData, row, col, Yellow);
-                }
-                //alert("SETTLEMENT");
-            }
-             
-        }
-    }
-    canvas.putImageData(imageData, 0, 0); // at coords 0,0
-
-    old_font = canvas.font;
-    canvas.font = "30px Arial";
-    /*canvas.fillText(year, nrows - 80, ncols - 15);*/
-    canvas.font = old_font;
-
-    DrawLegend();
-     
 }
 function GetLandUseChangeCount() {
 
@@ -236,12 +186,79 @@ function GetLandUseChangeCount() {
     //alert("Settlements_CropLand_cnt = " + Settlements_CropLand_cnt);
 
 }
-function SimulateAllAroundDevelopedArea() {
+function SimulateNoSpatialCorrelation() {
 
-    alert("SimulateAllAroundDevelopedArea");
     GetLandUseChangeCount();
-}
 
+    for (var row = 0; row < nrows; row++) {
+        for (var col = 0; col < ncols; col++) {
+
+            var rand = Math.random();
+
+            var color = getPixelColor(imageData, row, col);
+
+            if (color[0] == DarkGreen[0] && color[1] == DarkGreen[1] && color[2] == DarkGreen[2]) {
+
+                if (rand < Forest_SecondaryForest) {
+                    setPixelColor(imageData, row, col, LightGreen);
+                }
+                else if (rand < (+Forest_SecondaryForest + +Forest_Cropland)) {
+                    setPixelColor(imageData, row, col, Yellow);
+                }
+                else if (rand < (+Forest_SecondaryForest + +Forest_Cropland + +Forest_Settlements)) {
+                    setPixelColor(imageData, row, col, Red);
+                }
+            }
+            else if (color[0] == LightGreen[0] && color[1] == LightGreen[1] && color[2] == LightGreen[2]) {
+
+                if (rand < SecondaryForest_Forest) {
+                    setPixelColor(imageData, row, col, LightGreen);
+                }
+                else if (rand < (+SecondaryForest_Forest + +SecondaryForest_CropLand)) {
+                    setPixelColor(imageData, row, col, Yellow);
+                }
+                else if (rand < (+SecondaryForest_Forest + +SecondaryForest_CropLand + +SecondaryForest_Settlements)) {
+                    setPixelColor(imageData, row, col, Red);
+                }
+            }
+            else if (color[0] == Yellow[0] && color[1] == Yellow[1] && color[2] == Yellow[2]) {
+
+                if (rand < CropLand_Forest) {
+                    setPixelColor(imageData, row, col, DarkGreen);
+                }
+                else if (rand < (+CropLand_Forest + +CropLand_SecondaryForest)) {
+                    setPixelColor(imageData, row, col, LightGreen);
+                }
+                else if (rand < (+CropLand_Forest + +CropLand_SecondaryForest + +CropLand_Settlements)) {
+                    setPixelColor(imageData, row, col, Red);
+                }
+            }
+            else if (color[0] == Red[0] && color[1] == Red[1] && color[2] == Red[2]) {
+
+                if (rand < Settlements_Forest) {
+                    setPixelColor(imageData, row, col, DarkGreen);
+                }
+                else if (rand < (+Settlements_Forest + +Settlements_SecondaryForest)) {
+                    setPixelColor(imageData, row, col, LightGreen);
+                }
+                else if (rand < (+Settlements_Forest + +Settlements_SecondaryForest + +Settlements_CropLand)) {
+                    setPixelColor(imageData, row, col, Yellow);
+                }
+                //alert("SETTLEMENT");
+            }
+
+        }
+    }
+    canvas.putImageData(imageData, 0, 0); // at coords 0,0
+
+    old_font = canvas.font;
+    canvas.font = "30px Arial";
+    /*canvas.fillText(year, nrows - 80, ncols - 15);*/
+    canvas.font = old_font;
+
+    DrawLegend();
+
+}
 function SimulateAllAroundWaterAndDevelopedArea() {
 
     alert("SimulateAllAroundWaterAndDevelopedArea");
