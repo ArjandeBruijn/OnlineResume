@@ -70,7 +70,6 @@ function SetImage(container, MalinauMap, year) {
             }
             SetPixel(imageData, row, col, null, land_use);
             
-
             land_use.Count++;
 
         }
@@ -78,9 +77,7 @@ function SetImage(container, MalinauMap, year) {
    
     // copy the image data back onto the canvas
     canvas.putImageData(imageData, 0, 0); // at coords 0,0
-
-    DrawSimData();
-
+    DrawProgressBox();
     DrawLegend();
 }
 Settlements = [];
@@ -133,8 +130,7 @@ function Simulate1() {
     else alert("No Valid Selection")
      
 }
-
-setInterval(function () {
+function DrawProgressBox() {
     var Entrees = 2;
     var HeightPerEntree = 20;
 
@@ -147,9 +143,10 @@ setInterval(function () {
     var coordinate = new Coordinate(legendrect.A.x + 10, legendrect.A.y + 10);
 
     coordinate = AddLegendEntry(coordinate, "Progress:\t" + Progress + "%", null);
-    
+
     coordinate = AddLegendEntry(coordinate, "Year:\t" + Year, null);
-}, 50);
+}
+ 
 
 function SimulateAllAroundDevelopedArea() {
 
@@ -165,81 +162,20 @@ function SimulateAllAroundDevelopedArea() {
             clearInterval(id);
         }
 
-        var rand =  Math.floor(Math.random() * Settlements.length);
+        var rand = Math.floor(Math.random() * Settlements.length);
         var randomsettlementcoordinate = Settlements[rand];
 
         var coordinate = GetDonatingSite(randomsettlementcoordinate, PF);
 
         SetPixel(imageData, coordinate.x, coordinate.y, PF, SF);
-        
+
         canvas.putImageData(imageData, 0, 0); // at coords 0,0
+        DrawProgressBox();
+        DrawLegend();
         i++;
-        /*
-        while (i < Forest_SecondaryForest_cnt) {
-        var rand = Math.round(Math.random() * Settlements.length);
-        var randomsettlementcoordinate = Settlements[rand];
 
-        //if (randomsettlementcoordinate != null) {
-        // Find closest forest
-        //    var coordinate = GetDonatingSite(randomsettlementcoordinate, PF);
-
-        // Transfer to SF
-        //SetPixel(imageData, coordinate.x, coordinate.y, PF, SF);
-        //}
-
-        Progress++;// = Math.round(100 * (i / Forest_SecondaryForest_cnt));
-        //i++;
-        }
-        */
     }, 50);
-     /*
-    
-    for (var i = 0; i < Forest_SecondaryForest_cnt; i++) {
-
-        // Take random settlement location
-        var rand = Math.round(Math.random() * Settlements.length);
-        var randomsettlementcoordinate = Settlements[rand];
-
-        if (randomsettlementcoordinate != null) {
-            // Find closest forest
-            var coordinate = GetDonatingSite(randomsettlementcoordinate, PF);
-
-            // Transfer to SF
-            SetPixel(imageData, coordinate.x, coordinate.y, PF, SF);
-        }
-        else {
-            var shit = 0;
-        }
-
-        Progress = Math.round(100*(i / Forest_SecondaryForest_cnt));
-         
-    }
-    Year += 9;
-    
-
-    /*
-
-    for (var i = 0; i < Forest_SecondaryForest_cnt; i++) {
-
-        DrawProgress(i);
-
-        // Take random settlement location
-        var rand = Math.round(Math.random() * Settlements.length);
-        var randomsettlementcoordinate = Settlements[rand];
-
-        if (randomsettlementcoordinate != null) {
-            // Find closest forest
-            var coordinate = GetDonatingSite(randomsettlementcoordinate, PF);
-
-            // Transfer to SF
-            SetPixel(imageData, coordinate.x, coordinate.y, PF, SF);
-        }
-        else {
-            var shit = 0;
-        }
-
-    }
-     */
+      
    
 }
 function GetDonatingSite(random_settlement_coord, donating_land_use) {
