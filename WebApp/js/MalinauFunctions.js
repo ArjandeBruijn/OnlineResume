@@ -133,6 +133,20 @@ function SimulateAllAroundDevelopedArea() {
 
     alert("SimulateAllAroundDevelopedArea");
     GetLandUseChangeCount();
+
+
+    for (var i = 0; i < Forest_SecondaryForest_cnt; i++) {
+
+        // Take random settlement location
+
+        // Find closest forest
+
+
+        // Transfer to SF
+    
+    }
+
+
 }
 function GetLandUseChangeCount() {
 
