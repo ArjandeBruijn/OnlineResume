@@ -81,17 +81,20 @@ function SetImage(container, MalinauMap, year) {
     DrawLegend();
 }
 Settlements = [];
+Waters = [];
 function SetPixel(imageData, row, col, old_land_use, new_land_use)
 {
     setPixelColor(imageData, row, col, new_land_use.Color);
     if (new_land_use == Settlement) Settlements.push(Coordinates[row][col]);
+    if (new_land_use == Water) Waters.push(Coordinates[row][col]);
 
     if (old_land_use == Settlement) {
-
-        var index = Settlement.indexOf(Coordinates[row][col]);
+    var index = Settlement.indexOf(Coordinates[row][col]);
         if (index > -1) Settlement.splice(index, 1);
-            
-         
+    }
+    if (old_land_use == Water) {
+        var index = Water.indexOf(Coordinates[row][col]);
+        if (index > -1) Water.splice(index, 1);
     }
 
 }
@@ -119,9 +122,9 @@ function Simulate1() {
 
         SimulateAllAroundDevelopedArea();
     }
-    else if (document.getElementById("AllAroundWaterAndDevelopedArea").checked) {
+    else if (document.getElementById("AllAroundWater").checked) {
 
-        SimulateAllAroundWaterAndDevelopedArea();
+        SimulateAllAroundWater();
     }
     else if (document.getElementById("AmericanInvasion").checked) {
 
@@ -382,10 +385,50 @@ function GetLandUseChangeCount() {
     SumLandUseChanges += Settlements_CropLand_cnt;
      
 }
-function SimulateAllAroundWaterAndDevelopedArea() {
+function SimulateAllAroundWater() {
 
-    alert("SimulateAllAroundWaterAndDevelopedArea");
+
+     
     GetLandUseChangeCount();
+
+    Progress = 0;
+
+    var OldProgress = Progress = 0;
+    var cnt = 0;
+    var id = setInterval(function () {
+
+        var i = Math.floor(Math.random() * luc.length);
+
+        if (luc[i] != null) {
+            Progress = Math.round(100 * (cnt / SumLandUseChanges));
+            cnt++;
+            if (Progress >= OldProgress + 10) {
+                DrawImage();
+                OldProgress += 10;
+                luc.clean(null);
+            }
+            if (Progress >= 100) {
+                clearInterval(id);
+            }
+
+            var rand = Math.floor(Math.random() * Waters.length);
+
+            var randomwatercoordinate = Waters[rand];
+
+            From = luc[i][0];
+            To = luc[i][1];
+
+            var coordinate = GetDonatingSite(randomwatercoordinate, From);
+
+            SetPixel(imageData, coordinate.x, coordinate.y, From, To);
+
+            luc[i] = null;
+
+        }
+    }, 0);
+
+    Year += 9;
+    DrawImage();
 }
 function SimulateAmericanInvasion() {
 
