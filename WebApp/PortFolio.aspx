@@ -27,14 +27,11 @@
          </p>    
          <div>
           <h3>Hypotheses</h3>
-          <label>
-            <input type="checkbox" class="radio" value="1" id="NoSpatialCorrelation"  name="Hypotheses" checked/>1. There is no spatial correlation between land use transitions.<br></label>
-          <label>
-            <input type="checkbox" class="radio" value="1" id="AllAroundDevelopedArea"  name="Hypotheses"/>2. All land use transitions are concentrated around developed area.<br></label>
-          <label>
-            <input type="checkbox" class="radio" value="1" id="AllAroundWater"  name="Hypotheses"/>3. All human activity is centered around water.<br></label>
-          <label>
-            <input type="checkbox" class="radio" value="1" id="AmericanInvasion"  name="Hypotheses"/>4. Tourist invasion.<br></label>
+          <label><input type="checkbox" class="radio" value="1" id="NoSpatialCorrelation"  name="Hypotheses" checked/>1. There is no spatial correlation between land use transitions.<br></label>
+          <label><input type="checkbox" class="radio" value="1" id="AllAroundDevelopedArea"  name="Hypotheses"/>2. Land use transitions occur near settlements.<br></label>
+          <label><input type="checkbox" class="radio" value="1" id="AllAroundWater"  name="Hypotheses"/>3.Land use transitions occur near water.<br></label>
+          
+           <!-- <label> <input type="checkbox" class="radio" value="1" id="AmericanInvasion"  name="Hypotheses"/>4. Tourist invasion.<br></label>-->
         </div>
 
 
@@ -53,33 +50,33 @@
             <tr>
                 <th bgcolor ="#ccff66" >Forest</th>
                 <td bgcolor ="#c0c0c0" id="Forest-Forest"><div> 0.998 </div> </th>
-                <td  id="Forest-SecondaryForest"><div contenteditable> 0.01 </div> </th>
-                <td  id="Forest-CropLand"><div contenteditable> 0.004</div> </th>
-                <td  id= "Forest-Settlements"><div contenteditable> 0 </div> </th>
+                <td  id="Forest-SecondaryForest"><div contenteditable> 0.002 </div> </th>
+                <td  id="Forest-CropLand"><div contenteditable> 0</div> </th>
+                <td  id= "Forest-Settlements"><div contenteditable> 0.0003 </div> </th>
             
             </tr>
             <tr>
                 <th bgcolor ="#ccff66">Secondary Forest</th>
                 <td id="SecondaryForest-Forest"><div contenteditable> 0	 </div> </th>
-                <td bgcolor ="#c0c0c0" id="SecondaryForest-SecondaryForest"><div> 0.996	 </div> </th>
-                <td id = 'SecondaryForest-CropLand'><div contenteditable> 0.006	</div> </th>
+                <td bgcolor ="#c0c0c0" id="SecondaryForest-SecondaryForest"><div> 0.995	 </div> </th>
+                <td id = 'SecondaryForest-CropLand'><div contenteditable> 0.005	</div> </th>
                 <td id = 'SecondaryForest-Settlements'><div contenteditable> 0 </div> </th>
            
             </tr>
             <tr>
                 <th bgcolor ="#ccff66">Cropland</th>
-                <td id = 'CropLand-Forest'><div contenteditable>0.002 </div></th>
+                <td id = 'CropLand-Forest'><div contenteditable>0 </div></th>
                 <td id = 'CropLand-SecondaryForest'><div contenteditable>  0	</div></th>
-                <td bgcolor ="#c0c0c0" id = 'CropLand-CropLand'><div> 0.993 </div></th>
-                <td id = 'CropLand-Settlements'><div contenteditable> 0.003 </div></th>
+                <td bgcolor ="#c0c0c0" id = 'CropLand-CropLand'><div> 0.99 </div></th>
+                <td id = 'CropLand-Settlements'><div contenteditable> 0.01 </div></th>
             
             </tr>
             <tr>
                 <th bgcolor ="#ccff66">Settlements</th>
                 <td id = 'Settlements-Forest'><div contenteditable>0</div>	 </th>
                 <td id = 'Settlements-SecondaryForest'><div contenteditable> 0	</div>	</th>
-                <td id = 'Settlements-CropLand'><div contenteditable> 0.003</div>	 </th>
-                <td bgcolor ="#c0c0c0" id = 'Settlements-Settlements'><div>0.997</div>	  </th>
+                <td id = 'Settlements-CropLand'><div contenteditable> 0</div>	 </th>
+                <td bgcolor ="#c0c0c0" id = 'Settlements-Settlements'><div>1</div>	  </th>
             
             </tr>
          </table>

@@ -81,17 +81,35 @@ function SetImage(container, MalinauMap, year) {
 function SetPixel(imageData, row, col, old_land_use, new_land_use)
 {
     setPixelColor(imageData, row, col, new_land_use.Color);
-    if (new_land_use == Settlement) Settlements.push(Coordinates[row][col]);
-    if (new_land_use == Water) Waters.push(Coordinates[row][col]);
+
+    if (old_land_use != null) {
+        old_land_use.Count--;
+    }
+    if (new_land_use != null) {
+        new_land_use.Count++;
+    }
 
     if (old_land_use == Settlement) {
-    var index = Settlement.indexOf(Coordinates[row][col]);
-        if (index > -1) Settlement.splice(index, 1);
+        var index = Settlements.indexOf(Coordinates[row][col]);
+        if (index > -1) Settlements.splice(index, 1);
+    
     }
-    if (old_land_use == Water) {
-        var index = Water.indexOf(Coordinates[row][col]);
-        if (index > -1) Water.splice(index, 1);
+    if (old_land_use == Waters) {
+        var index = Waters.indexOf(Coordinates[row][col]);
+        if (index > -1) Waters.splice(index, 1);
+     
     }
+
+    if (new_land_use == Settlement) {
+        Settlements.push(Coordinates[row][col]);
+     
+    }
+    if (new_land_use == Water) {
+        Waters.push(Coordinates[row][col]);
+     
+    }
+
+    
 
 }
 
@@ -156,7 +174,7 @@ function SimulateAllAroundDevelopedArea() {
     GetLandUseChangeCount();
 
     Progress = 0;
-
+    var year_start = Year;
     var OldProgress = Progress = 0;
     var cnt = 0;
     var id = setInterval(function () {
@@ -165,6 +183,7 @@ function SimulateAllAroundDevelopedArea() {
 
         if (luc[i] != null) {
             Progress = Math.round(100 * (cnt / SumLandUseChanges));
+            Year = Math.floor(year_start + 9 * (Progress / 100));
             cnt++;
             if (Progress >= OldProgress + 10) {
                 DrawImage();
@@ -191,7 +210,7 @@ function SimulateAllAroundDevelopedArea() {
         }
     }, 0);
 
-    Year += 9;
+    
     DrawImage();
 }
 function SimulateAmericanInvasion() {
@@ -429,7 +448,7 @@ function SimulateAllAroundWater() {
     GetLandUseChangeCount();
 
     Progress = 0;
-
+    var year_start = Year;
     var OldProgress = Progress = 0;
     var cnt = 0;
     var id = setInterval(function () {
@@ -438,6 +457,7 @@ function SimulateAllAroundWater() {
 
         if (luc[i] != null) {
             Progress = Math.round(100 * (cnt / SumLandUseChanges));
+            Year = Math.floor(year_start + 9 * (Progress / 100));
             cnt++;
             if (Progress >= OldProgress + 10) {
                 DrawImage();
@@ -464,7 +484,7 @@ function SimulateAllAroundWater() {
         }
     }, 0);
 
-    Year += 9;
+    
     DrawImage();
 }
 
