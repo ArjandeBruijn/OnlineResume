@@ -1,28 +1,24 @@
-NoData = new LandUse(-9999, White, null);
-PF = new LandUse(1, DarkGreen, [new ConversionRate(6, GetValueFromTable('Forest-CropLand'))]);
-SF = new LandUse(2, LightGreen, [new ConversionRate(6, GetValueFromTable('SecondaryForest-CropLand'))]);
+NoData = new LandUse(-9999, White);
+PF = new LandUse(1, DarkGreen);
+SF = new LandUse(2, LightGreen);
 LandUse3 = new LandUse(3, Color3, null);
-Settlement = new LandUse(4, Red, [new ConversionRate(6, 0.003)]);
-LandUse5 = new LandUse(5, Cyan, null);
-OpenLand = new LandUse(6, Yellow, [new ConversionRate(1, 0.002), new ConversionRate(4, 0.003)]);
-LandUse7 = new LandUse(7, Color7, null);
-Water = new LandUse(8, Blue, null);
-LandUse9 = new LandUse(9, Color9, null);
-LandUse10 = new LandUse(10, Color10, null);
-LandUse11 = new LandUse(11, Color11, null);
-LandUse12 = new LandUse(12, Color12, null);
-LandUse13 = new LandUse(13, Color13, null);
+Settlement = new LandUse(4, Red);
+LandUse5 = new LandUse(5, Cyan);
+OpenLand = new LandUse(6, Yellow);
+LandUse7 = new LandUse(7, Color7);
+Water = new LandUse(8, Blue);
+LandUse9 = new LandUse(9, Color9);
+LandUse10 = new LandUse(10, Color10);
+LandUse11 = new LandUse(11, Color11);
+LandUse12 = new LandUse(12, Color12);
+LandUse13 = new LandUse(13, Color13);
 
-GOLF = new LandUse(13, GolfGreen, null);
+GOLF = new LandUse(13, GolfGreen);
 
 LandUseTypes = [NoData, PF, SF, LandUse3, Settlement, LandUse5, OpenLand, LandUse7, Water, LandUse9, LandUse10, LandUse11, LandUse12, LandUse13];
 
-var LandUseColors = {};
-
-LandUseColors[DarkGreen] = PF;
-LandUseColors[LightGreen] = SF;
-LandUseColors[Red] = Settlement;
-LandUseColors[Yellow] = OpenLand;
+Settlements = [];
+Waters = [];
 
 function ShowMalinauMap(year) {
 
@@ -82,8 +78,6 @@ function SetImage(container, MalinauMap, year) {
     DrawProgressBox();
     DrawLegend();
 }
-Settlements = [];
-Waters = [];
 function SetPixel(imageData, row, col, old_land_use, new_land_use)
 {
     setPixelColor(imageData, row, col, new_land_use.Color);
@@ -499,26 +493,16 @@ function AddLegendEntry(coordinate, label, color) {
 
  
 
- 
-function ConversionRate(MapCodeNew, rate) {
-    this.MapCodeNew = MapCodeNew;
-    this.rate = rate;
-}
 
-function LandUse(MapCode, Color, Conversion_rate) {
+function LandUse(MapCode, Color) {
     this.Count = 0;
     this.MapCode = MapCode;
     this.Color = Color;
-    this.Conversion_rate = Conversion_rate;
 }
- 
- 
-
-
 function GetLandUseType(MapCode) {
 
     for (a = 0; a < LandUseTypes.length; a++) {
-        my_landuse = LandUseTypes[a];
+        var my_landuse = LandUseTypes[a];
         if (my_landuse.MapCode == MapCode) return my_landuse;
     }
     return null;
