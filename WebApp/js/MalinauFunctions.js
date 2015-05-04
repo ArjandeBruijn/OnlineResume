@@ -20,6 +20,21 @@ LandUseTypes = [NoData, PF, SF, LandUse3, Settlement, LandUse5, OpenLand, LandUs
 Settlements = [];
 Waters = [];
 
+BorneoImageIsShown = false;
+function ShowBorneo(file) {
+
+    var image_space = document.getElementById('BorneoMap');
+    if (BorneoImageIsShown == false) {
+        image_space.innerHTML = "<img src='Malinau.png' width='200' height='200'  align= 'left'>"
+        BorneoImageIsShown = true;
+    }
+    else {
+        image_space.innerHTML = "";
+        BorneoImageIsShown = false;
+    }
+    
+}
+
 function ShowMalinauMap(year) {
 
     //ncols = ymax;
