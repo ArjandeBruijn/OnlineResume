@@ -2,6 +2,7 @@
 var White = [255, 255, 255];
 var DarkGreen = [0, 100, 0];   // PF
 var LightGreen = [0, 255, 0]; // SF
+var GolfGreen = [0, 175, 0]; // SF
 var Color3 = [0, 255, 0];   // Crop??
 var Red = [255, 0, 0];
 var Yellow = [255, 255, 0];  // position 2

@@ -13,6 +13,8 @@ LandUse11 = new LandUse(11, Color11, null);
 LandUse12 = new LandUse(12, Color12, null);
 LandUse13 = new LandUse(13, Color13, null);
 
+GOLF = new LandUse(13, GolfGreen, null);
+
 LandUseTypes = [NoData, PF, SF, LandUse3, Settlement, LandUse5, OpenLand, LandUse7, Water, LandUse9, LandUse10, LandUse11, LandUse12, LandUse13];
 
 var LandUseColors = {};
@@ -98,19 +100,7 @@ function SetPixel(imageData, row, col, old_land_use, new_land_use)
     }
 
 }
-function DrawProgress(Progress) {
-    var old_font = canvas.font;
-    canvas.font = "30px Arial";
-    canvas.clearRect(nrows - 80, ncols - 15, 50, 20);
-    canvas.fillText(Progress, nrows - 80, ncols - 15);
-    canvas.font = old_font;
-}
-function DrawYear(Year) {
-    var old_font = canvas.font;
-    canvas.font = "30px Arial";
-    canvas.fillText(Year, nrows - 80, ncols - 15);
-    canvas.font = old_font;
-}
+
 function Simulate1() {
 
  
@@ -141,8 +131,9 @@ function DrawProgressBox() {
     var Width = 125;
     var legendrect = new Rectangle(nrows - Width - 10, ncols - Height - 10, Width, Height);
     canvas.clearRect(legendrect.A.x, legendrect.A.y, legendrect.Width, legendrect.Height);
+    canvas.beginPath();
     canvas.rect(legendrect.A.x, legendrect.A.y, legendrect.Width, legendrect.Height);
-
+    canvas.stroke();
     var coordinate = new Coordinate(legendrect.A.x + 10, legendrect.A.y + 10);
 
     coordinate = AddLegendEntry(coordinate, "Progress:\t" + Progress + "%", null);
@@ -217,8 +208,8 @@ function SimulateAmericanInvasion() {
 
             if (color[0] == White[0] && color[1] == White[1] && color[2] == White[2]) {
             }
-            else {
-                SetPixel(imageData, row, col, PF, SF);
+            else if (color[0] == DarkGreen[0] && color[1] == DarkGreen[1] && color[2] == DarkGreen[2]) {
+                SetPixel(imageData, row, col, PF, GOLF);
             }
         }
     }
@@ -226,15 +217,36 @@ function SimulateAmericanInvasion() {
 }
 function CustomLegend() {
 
+    canvas.clearRect(legendrect.A.x, legendrect.A.y, legendrect.Width, legendrect.Height);
+
+    var Entrees = 3;
+    var HeightPerEntree = 20;
+
+    canvas.beginPath();
+    legendrect = new Rectangle(10, 10, 150, HeightPerEntree * Entrees + 20);
+    canvas.rect(legendrect.A.x, legendrect.A.y, legendrect.Width, legendrect.Height);
+    canvas.stroke();
+
+    var coordinate = new Coordinate(legendrect.A.x + 10, legendrect.A.y + 10);
+    coordinate = AddLegendEntry(coordinate, "Golf course", GolfGreen);
+    coordinate = AddLegendEntry(coordinate, "Airport", Red);
+    coordinate = AddLegendEntry(coordinate, "Parking lot", Yellow);
+    
+}
+function DrawLegend() {
+
     var Entrees = 4;
     var HeightPerEntree = 20;
 
-    var legendrect = new Rectangle(10, 10, 150, HeightPerEntree * Entrees + 20);
+    legendrect = new Rectangle(10, 10, 150, HeightPerEntree * Entrees + 20);
+
+    canvas.beginPath();
     canvas.rect(legendrect.A.x, legendrect.A.y, legendrect.Width, legendrect.Height);
+    canvas.stroke();
 
     var coordinate = new Coordinate(legendrect.A.x + 10, legendrect.A.y + 10);
 
-    coordinate = AddLegendEntry(coordinate, "Golf Course", DarkGreen);
+    coordinate = AddLegendEntry(coordinate, "Primary forest", DarkGreen);
     coordinate = AddLegendEntry(coordinate, "Secondary forest", LightGreen);
     coordinate = AddLegendEntry(coordinate, "Cropland", Yellow);
     coordinate = AddLegendEntry(coordinate, "Settlements", Red);
@@ -467,23 +479,10 @@ function GetValueFromTable(ID) {
     var value = document.getElementById(ID).innerText;
     return value;
 }
-function DrawLegend() {
 
-    var Entrees = 4;
-    var HeightPerEntree = 20;
-
-    var legendrect = new Rectangle(10, 10, 150, HeightPerEntree * Entrees +20);
-    canvas.rect(legendrect.A.x, legendrect.A.y, legendrect.Width, legendrect.Height);
-
-    var coordinate = new Coordinate(legendrect.A.x + 10, legendrect.A.y + 10);
-
-    coordinate = AddLegendEntry( coordinate, "Primary forest", DarkGreen);
-    coordinate = AddLegendEntry( coordinate, "Secondary forest", LightGreen);
-    coordinate = AddLegendEntry( coordinate, "Cropland", Yellow);
-    coordinate = AddLegendEntry( coordinate, "Settlements", Red);
-}
 function AddLegendEntry(coordinate, label, color) {
 
+    canvas.beginPath();
     if (color != null) {
         var rect2 = new Rectangle(coordinate.x, coordinate.y, 20, 15);
         DrawRectangle(rect2, canvas, rgbToHex(color[0], color[1], color[2]));
