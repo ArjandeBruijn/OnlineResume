@@ -3,10 +3,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     
+    
+    
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    
+     
     
      <div id = "right_col">
         <div id = "right_col_ins">
@@ -17,22 +22,44 @@
      </div>
   
         <h2>Deforestation in Indonesia</h2>
+        
+        <style>
+            .inline 
+            {
+               display:inline;
+            }
+        </style>
+
         <p class = "justify">
            
 
              We all heard about alarming rates of deforestation on Borneo, 
              Indonesia. Large schale logging operations have degraded much of the 
              pristine rainforests sinds the 1960s. More recently, forests are making place for olive oil plantations and population pressure is ever-increasing.
-             I used land use derived from arial photographs of <a onclick="ShowBorneo()" href="#">eastern Borneo</a><span id = "BorneoMap"></span> taken in (<a onclick="ShowMalinauMap(2000)" href="#">2000</a>) 
+             I used land use derived from arial photographs of 
+             
+             
+             taken in (<a onclick="ShowMalinauMap(2000)" href="#">2000</a>) 
              and (<a onclick="ShowMalinauMap(2009)" href="#">2009</a>) to evaluate hypotheses 
              about the spatial configuration of land use changes and to predict future land use thereupon. The hypothesis about land use change are increasingly speculative:  
 
               <!--<a class = "hidden"  href="#">a section of East Kalimantan, Borneo<img src="images\Malinau.png" border="5" ></a> -->
-             
+             <div id="pageone" data-role="main" class="ui-content"> 
+                <a href="#myPopup" data-rel="popup" data-position-to="window">eastern Borneo</a>
+                <div class = "inline" data-role="popup" id="myPopup">
+                   <p>Malinau Research Forest on Borneo, Indonesia</p> 
+                   <a href="#pageone" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="images\Malinau.png" style="width:800px;height:400px;" alt="Skaret View">
+                </div>
+            </div> 
               
-         </p>    
+              
+         </p>   
+         
+        
+          
          <div>
           <h3>Hypotheses</h3>
+        
           <label><input type="checkbox" class="radio" value="1" id="NoSpatialCorrelation"  name="Hypotheses" checked/>1. There is no spatial correlation between land use transitions.<br></label>
           <label><input type="checkbox" class="radio" value="1" id="AllAroundDevelopedArea"  name="Hypotheses"/>2. Land use transitions occur near settlements.<br></label>
           <label><input type="checkbox" class="radio" value="1" id="AllAroundWater"  name="Hypotheses"/>3.Land use transitions occur near water.<br></label>
@@ -167,6 +194,6 @@
     <script src='js/MalinauFunctions.js'></script>
     <script>        ShowMalinauMap(2000); </script>
     <script src="js/TableEventHandlers.js"></script>
-     
+    <script src="js/jquery.mobile.custom.min.js"></script>
                              
 </asp:Content>
