@@ -23,15 +23,7 @@
   
         <h2>Deforestation in Indonesia</h2>
         
-        <style>
-            .inline 
-            {
-               display:inline;
-            }
-        </style>
-
-
-        <div id="pageone" data-role="main" class="ui-content"> 
+       <div id="pageone" data-role="main" class="justify"> 
         We all heard about alarming rates of deforestation on Borneo, 
              Indonesia. Large schale logging operations have degraded much of the 
              pristine rainforests sinds the 1960s. More recently, forests are making place for olive oil plantations and population pressure is ever-increasing.
@@ -49,19 +41,7 @@
             
         </div> 
 
-        <p class = "justify">
-           
-
-             
-             
-             
-              
-              
-              
-         </p>   
-         
-        
-          
+       
          <div>
           <h3>Hypotheses</h3>
         

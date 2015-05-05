@@ -156,8 +156,14 @@ img {
 .fr { float: right }
 
 
-
-p 
+.myP 
+{
+    font-size: 15px;
+    line-height: 1.5em;
+	margin: 0px;
+	padding: 0px;
+}
+p  
 {
     font-size: 15px;
     line-height: 1.5em;
