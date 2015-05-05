@@ -31,7 +31,7 @@
             <a href="#myPopup" data-rel="popup" data-position-to="window">eastern Borneo</a>
             <div class = "inline" data-role="popup" id="myPopup">
                <p>Malinau Research Forest on Borneo, Indonesia</p> 
-               <a href="#pageone" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="images\Malinau.png" style="width:800px;height:400px;" alt="Skaret View">
+               <a href="#pageone" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="images\Malinau.png" style="width:446px;height:563px;" alt="Malinau Research Forest">
             </div>
             taken in (<a onclick="ShowMalinauMap(2000)" href="#">2000</a>) 
              and (<a onclick="ShowMalinauMap(2009)" href="#">2009</a>) to evaluate hypotheses 
