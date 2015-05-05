@@ -30,27 +30,32 @@
             }
         </style>
 
-        <p class = "justify">
-           
 
-             We all heard about alarming rates of deforestation on Borneo, 
+        <div id="pageone" data-role="main" class="ui-content"> 
+        We all heard about alarming rates of deforestation on Borneo, 
              Indonesia. Large schale logging operations have degraded much of the 
              pristine rainforests sinds the 1960s. More recently, forests are making place for olive oil plantations and population pressure is ever-increasing.
              I used land use derived from arial photographs of 
-             
-             
-             taken in (<a onclick="ShowMalinauMap(2000)" href="#">2000</a>) 
+            <a href="#myPopup" data-rel="popup" data-position-to="window">eastern Borneo</a>
+            <div class = "inline" data-role="popup" id="myPopup">
+               <p>Malinau Research Forest on Borneo, Indonesia</p> 
+               <a href="#pageone" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="images\Malinau.png" style="width:800px;height:400px;" alt="Skaret View">
+            </div>
+            taken in (<a onclick="ShowMalinauMap(2000)" href="#">2000</a>) 
              and (<a onclick="ShowMalinauMap(2009)" href="#">2009</a>) to evaluate hypotheses 
              about the spatial configuration of land use changes and to predict future land use thereupon. The hypothesis about land use change are increasingly speculative:  
 
               <!--<a class = "hidden"  href="#">a section of East Kalimantan, Borneo<img src="images\Malinau.png" border="5" ></a> -->
-             <div id="pageone" data-role="main" class="ui-content"> 
-                <a href="#myPopup" data-rel="popup" data-position-to="window">eastern Borneo</a>
-                <div class = "inline" data-role="popup" id="myPopup">
-                   <p>Malinau Research Forest on Borneo, Indonesia</p> 
-                   <a href="#pageone" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="images\Malinau.png" style="width:800px;height:400px;" alt="Skaret View">
-                </div>
-            </div> 
+            
+        </div> 
+
+        <p class = "justify">
+           
+
+             
+             
+             
+              
               
               
          </p>   
