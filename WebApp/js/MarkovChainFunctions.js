@@ -42,7 +42,11 @@ function AddModelPoints(Context,InnerPanelArea, x_min, x_max, y_min, y_max) {
 
                 Context.clearRect(0, 0, GraphArea.Width, GraphArea.Height);
                 Context.strokeStyle = "Black";
-                DrawAxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max, 0.001,2000, "Area defoliated (1000km)");
+              
+                DrawXaxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max);
+
+                DrawYaxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max, 0.001, 2000, "Area defoliated (1000km)");
+
                 AddMeasurements(Measurements, Context, InnerPanelArea, x_min, x_max, y_min, y_max);
                 AddLegend(Context, InnerPanelArea);
                 Context.strokeStyle = "Red";
