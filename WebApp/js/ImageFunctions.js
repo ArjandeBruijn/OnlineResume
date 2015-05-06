@@ -47,7 +47,6 @@ function AddMeasurements(TimeSeries, Context, InnerPanelArea, x_min, x_max, y_mi
             var from = GetCoordinate(InnerPanelArea, x_value, x_min, x_max, y_value + sd, y_min, y_max);
             var to = GetCoordinate(InnerPanelArea, x_value, x_min, x_max, y_value - sd, y_min, y_max);
             drawLine(Context, from, to);
-
             drawLine(Context, new Coordinate(from.x - 3, from.y), new Coordinate(from.x + 3, from.y));
             drawLine(Context, new Coordinate(to.x - 3, to.y), new Coordinate(to.x + 3, to.y));
 
