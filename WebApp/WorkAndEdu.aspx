@@ -9,38 +9,48 @@
 
                 <h3>Responsibilities</h3>
                 <p>
-                    I developed simulations to predict the fate of reintroduced American Chestnut ion the Appalachians. By the mid 1900s, American chestnut 
+                    I developed simulations to predict the fate of reintroduced American Chestnut in the Appalachians. By the mid 1900s, American chestnut 
                     was extirpated by a blight that was imported from Japan in the early 1900s. 
-                    Asian chestnuts (that evolved with the blight) are largely resistant, and recent cross breads that look the same as American chestnut,
-                    maintained that resistance, which enables reintroduction of American chesnut. 
-                    However, because almost a century has passed, we don't know much about the ecology of chesnut. Moreover, the appalachians are changing fast due to other insects, changes in management 
-                    over the last 100 years and climate change. So I am doing simulations that predict their survival (or demise) in the current state of the Appalachians. 
+
+                    Asian chestnuts are largely resistant, and recent cross breads (genetically 94% American and 6% Asian) share blight resistance,
+                    therefore are candidates for reintroduction. 
+                    However, the Appalachians have changed over the last 100 years due to insect plagues, changes in management and climate. 
+                    I am combining information from lab and field trials, with landschape information to predict how the blight-resistant breed would 
+                    fare upon its reintroduction in the Appalachions.
+                    
+                    
                 </p>
 
 
                 <h3>Accomplishments</h3>
                     <ul>
-                        <li>Developed an extension to the spatial forest dynamics model 'Landis' that better incorporates current and ongoing changes such as climate change and 
-                        competition for light and water between the trees. The PnET-Succession extension, like the rest of the LANDIS model, is programmed in C#. It took a lot of mathematics, statistics 
-                        and foremost a lot of code debugging to get that extension going and we frequently use other tools to test parts of the code so I am very experienced in C#, Visual Studio 2010, 2013, 
-                        R and some python. PnET-Succession is currently used in ~5 universities and the food and agricultural organisation (FAO) of the United Nations. </li>
-                        <li>It comes with a setup procedure developed in INNO, so I am experienced in the issues that come with transplanting software to other computers. </li>
-                        <li>It also comes with comprehensive technical documentation that I have kept up to date during the development process.</li>
-                        <li> Additionally I developed a user interface (see Portfolio), originally for convenience but it is now used by ~10 users in 3 or 4 universities so I am experienced in developing windows forms 
-                              applications. The user interface uses threading and backgroundworkers to load maps and data.</li>
+                        <li>Developed a module for the <a href="http://www.landis-ii.org/">LANDIS</a>   simulation platform  that better incorporates interactions between climate change and 
+                        competition for light and water between trees. LANDIS is windows software developed in C#. It took a lot of mathematics, statistics 
+                        and foremost a lot of debugging to get PnET-Succession going and we frequently use other tools to test parts of the code. 
+                        I learned a lot of C#, Visual Studio 2010, 2013, R and some python. PnET-Succession is currently used in ~5 universities and the food and agricultural organisation (FAO) of the United Nations. </li>
+                        <li>PnET-Succession comes with an installation file I developed in <a href="http://www.jrsoftware.org/isinfo.php">INNO</a>, so I am experienced in the issues that come with transplanting software to other computers. </li>
+                        <li>PnET-Succession comes with comprehensive technical documentation that I have kept up to date during the development process.</li>
+                        <li>Additionally I developed a user interface (see <a href="Portfolio.aspx">Portfolio</a>), originally for my own convenience
+                        but it is now used by ~10 users in 3 or 4 universities so I am experienced in developing windows forms applications. The user interface uses threading and backgroundworkers to load maps and data.</li>
+
                   </ul>
 
 
                   
                   <h3>Publications</h3>
                 <ul>
-                        <li>Arjan de Bruijn,ab Eric J. Gustafson,b Daniel M. Kashian,c Harmony J. Dalgleish,ad Brian R. Sturtevant,b Douglass F. Jacobsa
-                        Decomposition rates of American chestnut (Castanea dentata) wood and implications for coarse woody debris pools, 
-                        Canadian Journal of Forest Research  Volume 44, Number 12, December 2014 </li>
-                        <li>Integrating ecophysiology and forest landscape models to improve projections of drought effects under climate change
-                            Eric J. Gustafson, Arjan M.G. De Bruijn, Robert E. Pangle, Jean‐Marc Limousin, Nate G. McDowell, William T. Pockman, Brian R. Sturtevant, Jordan D. Muss, Mark E. Kubiske</li>
-                        <li>Toward more robust projections of forest landscape dynamics under novel environmental conditions: Embedding PnET within LANDIS-II
-                        Arjan de Bruijn, Eric J. Gustafson, Brian R. Sturtevant, Jane R. Foster, Brian R. Miranda, Nathanael I. Lichti, Douglass F. Jacobs</li>
+                        <li>
+                            <a href="http://www.nrcresearchpress.com/doi/abs/10.1139/cjfr-2014-0270#.VUlrpvlVhBc">Decomposition rates of American chestnut (Castanea dentata) wood and implications for coarse woody debris pools</a>
+                        </li>
+                        <li>
+                            <a href="http://onlinelibrary.wiley.com/doi/10.1111/gcb.12713/abstract">Integrating ecophysiology and forest landscape models to improve projections of drought effects under climate change</a>
+                        </li>
+                        <li>
+                            <a href="http://www.sciencedirect.com/science/article/pii/S0304380014002415">Toward more robust projections of forest landscape dynamics under novel environmental conditions: Embedding PnET within LANDIS-II</a>
+                        </li>
+
+                         
+                        
                   </ul>
 
                    <div class="margin_bottom_20 h_divider"></div>
