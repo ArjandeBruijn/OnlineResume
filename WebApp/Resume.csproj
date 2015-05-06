@@ -83,7 +83,6 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="WorkAndEdu.aspx" />
-    <Content Include="WorkExperience.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Default.aspx.cs">
@@ -132,13 +131,6 @@
     </Compile>
     <Compile Include="WorkAndEdu.aspx.designer.cs">
       <DependentUpon>WorkAndEdu.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WorkExperience.aspx.cs">
-      <DependentUpon>WorkExperience.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WorkExperience.aspx.designer.cs">
-      <DependentUpon>WorkExperience.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
