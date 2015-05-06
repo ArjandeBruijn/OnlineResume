@@ -150,6 +150,9 @@
           </p>
         
         <h2>Bayesian calibration</h2>
+        <canvas id="DecompCanvas" width="525" height="450" style="border:2px solid black;">
+            Your browser does not support the HTML5 canvas tag.</canvas>
+
         <p>Bayesian statistics is often used in contraction with Markov Chain calibrations (see home page). 
         The idea behind the Bayesian proposition is that you turn around the driving mechanism and the phenomenon, i.e. where 
         we typically think it terms of "It is raining, therefore the streets are wet", the Bayesian proposition tries to 
@@ -179,5 +182,8 @@
     <script>        ShowMalinauMap(2000); </script>
     <script src="js/TableEventHandlers.js"></script>
     <script src="js/jquery.mobile.custom.min.js"></script>
+
+     <script src="js/DecompositionMeasurements"></script>
+     <script src="js/DecompositionFunctions"></script>
                              
 </asp:Content>
