@@ -10,7 +10,7 @@
 
     InnerPanelArea = DrawGraph(Context);
 
-    AddMeasurements(DecompositionMeasurements, Context, InnerPanelArea, x_min, x_max, y_min, y_max);
+    AddMeasurements(DecompositionMeasurements, Context, InnerPanelArea, x_min, x_max, y_min, y_max, false);
 });
  
 

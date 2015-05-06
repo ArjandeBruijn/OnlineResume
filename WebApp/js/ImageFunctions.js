@@ -20,7 +20,7 @@ function DrawCircle(Context, x, y) {
     Context.stroke();
 
 }
-function AddMeasurements(TimeSeries, Context, InnerPanelArea, x_min, x_max, y_min, y_max) {
+function AddMeasurements(TimeSeries, Context, InnerPanelArea, x_min, x_max, y_min, y_max, HasLine) {
     
     var lastcoordinate = null;
     var coordinate = null;
@@ -33,10 +33,11 @@ function AddMeasurements(TimeSeries, Context, InnerPanelArea, x_min, x_max, y_mi
 
         DrawCircle(Context, coordinate.x, coordinate.y);
 
-        if (lastcoordinate != null && lastcoordinate.x < coordinate.x) {
-
-
-            drawLine(Context, coordinate, lastcoordinate);
+        if (HasLine)
+        {
+            if (lastcoordinate != null && lastcoordinate.x < coordinate.x) {
+                drawLine(Context, coordinate, lastcoordinate);
+            }
         }
 
         lastcoordinate = coordinate;
