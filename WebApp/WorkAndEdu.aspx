@@ -59,18 +59,15 @@
                 <h2>Agroscope Reckenholz Taenikon - Zürich, CH - 2010 to 2011</h2>
                 <h3>Responsibilities</h3>
                 <p>
-                    I developed simulations to evaluate how differences in soil carbon in grasslands comes about.
+                    I developed simulations to evaluate how differences in soil carbon in grasslands relates to management intensity.
                     Carbon is the main consituent of dead organic materials, for example plants or harvest residues.
-                    Historically, it has been important to keep the concentration of organic materials in soils high to maintain 
-                    fertility, though the invention of chemical fertilizers made this less urgent. Even though this has pushed many
-                    farming systems away from carbon optimization methods, there are additional reasons 
-
-                    
+                    High carbon concentrations in arable lands are good for soil fertility, water retention and mitigation of climate change.
+                    Here I evaluated how soil Carbon concentrations depend on management activity and intensity. 
                 </p>
                 <h3>Accomplishments</h3>
                 <p>   
-                    Developed a 1D simulation model to simulate biomass and carbon dynamics in lowland grasslands in
-                    Switzerland.
+                    Developed a 1D simulation model to simulate biomass and carbon dynamics in lowland grasslands in Switzerland. The simulation model was developed in C++ and 
+                    came with a simple windows forms based UI.
                 </p>  
                 <h3>Publications</h3>
                 <ul>
@@ -90,22 +87,29 @@
                     
                 <h3>Responsibilities</h3>
                 <p> 
-                    Supporting the development of ecological simulation software
+                    I debugging and improving various simulation programs. I mostly worked on the Landscape ecological Analysis and Rules for the Configuration of Habitat (LARCH) model.
+                    LARCH analyse population viability given fragmented habitat. It was used for all kinds of species, plants and animals.
                  </p> 
                 <h3>Accomplishments</h3>   
                 <ul>
-                    <li>Improved the Landscape ecological Analysis and Rules for the Configuration of Habitat (LARCH) model user
-                    interface which is a plug-in for ArcMap to analyse population viability given fragmented habitat.</li>
+                    <li>Improved the LARCH model user interface which is a plug-in for ArcMap to analyse population viability given fragmented habitat.</li>
                     <li>Expanded functionality of the metapopulation simulation model (METAPHOR) interface which operates as a
                     standalone Windows program that uses GIS freeware to embed GIS capabilities into the program interface.</li>
                 </ul>
-                 
+                 <h3>Note</h3>
+                 <p>
+                     I resigned this job primarily because of 'Wanderlust'. 
+                 </p>
+
+
                  <div class="margin_bottom_10 h_divider"></div>
 
                  <h2>IMK-IFU - Garmisch-Partenkirchen - 2006 to 2009</h2>
                  <h3>Responsibilities</h3>
                  <p> 
-                    Supporting the development of ecological simulation software
+                    I supported the development of a beogeochemical simulation platform "MoBiLE". MoBiLE is a modular plpatform for biogeochemical 
+                    simulations where the modules are responsible for particular soil biogeochemical unities, like soil water, soil temperature, plant growth, microbial 
+                    biomass, biochemistry and chemistry. I developed a module that deals with the microbial biomass part of the platform.
                 </p>
                 <h3>Accomplishments</h3>
                 <p>PhD in Forest and Environmental Sciences, magna cum laude. ALBERT LUDWIGS UNIVERSITY – Freiburg, Germany 2006-2009  
@@ -127,7 +131,18 @@
 
                 </ul> 
                 <div class="margin_bottom_10 h_divider"></div>
-                <h2>WAGENINGEN UNIVERSITY – Wageningen, Netherlands					1998-2005</h2>
+                <h2>WAGENINGEN UNIVERSITY – Wageningen, Netherlands	1998-2005</h2>
+                <h3>Study themes</h3>    
+                <p>
+                    At Wageningen University, it was pretty common to design an individual program for graduation. There were strickt demands for an individual study plan 
+                    based on coherence of the subjects that you follow and the intellectual level of the plan as a whole. 
+                    
+                    I usually refer to my program at Wageningen University as "Mathematical Ecology", meaning that I had a large amound of mathematics, statistics and quantitative
+                    ecology in my program. I combined my study at Wageningen University with a study of Philosophy of Science at Amsterdam University. 
+                    My study program at Wageningen University consisted of 5 year * 42 credits per year. And Amersterdam University of 4 years * 42 credits per year. 
+                    However, many credits are waived due to the double master. My combined study program therefore was only 6 * 42 credits. 
+                </p>
+
                 <h3>Accomplishments</h3>
                 <ul>
                     <li>M.S. in Forestry and Environmental Sciences. </li>
@@ -136,21 +151,22 @@
                   
                 <h3>Publications</h3>    
                 <ul>
-                 <li>
-                           <p>Modelling decomposition of standard plant material along an altitudinal gradient: A re-analysis of data of Coûteaux et al. (2002)</p> <a href=" http://www.sciencedirect.com/science/article/pii/S0038071706003099">(Soil Biology and Biochemistry)</a>
+                    <li>
+                        <p>Modelling decomposition of standard plant material along an altitudinal gradient: A re-analysis of data of Coûteaux et al. (2002)</p> <a href=" http://www.sciencedirect.com/science/article/pii/S0038071706003099">(Soil Biology and Biochemistry)</a>
                     </li>
-
-     
-                   
                 </ul>
                  
                 <div class="margin_bottom_10 h_divider"></div>
-    
 
-                <h2>AMSTERDAM UNIVERSITY– Amsterdam, Netherlands					2001-2005</h2>
+                <h2>AMSTERDAM UNIVERSITY– Amsterdam, Netherlands 2001-2005</h2>
+                 <h3>Study themes</h3>    
+                 <p>
+                    This was my second study on Philosophy of Science. The study contains a generic year with general topics such as the history of philosophy, logic, knowledge theory.
+                    The specialisation year contains a master thesis and some specialization subjects.
+                 </p>
                  <h3>Accomplishments</h3>
                  <ul>
-                    <li>M.A. in Philosophy of Environmental Science. </li>
+                    <li>M.A. in Philosophy of Science. </li>
                 </ul>
                
       
