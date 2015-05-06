@@ -40,14 +40,17 @@
                   <h3>Publications</h3>
                 <ul>
                         <li>
-                            <a href="http://www.nrcresearchpress.com/doi/abs/10.1139/cjfr-2014-0270#.VUlrpvlVhBc">Decomposition rates of American chestnut (Castanea dentata) wood and implications for coarse woody debris pools</a>
+                            <p>Decomposition rates of American chestnut (Castanea dentata) wood and implications for coarse woody debris pools</p><a href="http://www.nrcresearchpress.com/doi/abs/10.1139/cjfr-2014-0270#.VUlrpvlVhBc">(Canadian Journal of Forest Research)</a>
                         </li>
                         <li>
-                            <a href="http://onlinelibrary.wiley.com/doi/10.1111/gcb.12713/abstract">Integrating ecophysiology and forest landscape models to improve projections of drought effects under climate change</a>
+                            <p>Integrating ecophysiology and forest landscape models to improve projections of drought effects under climate change</p><a href="http://onlinelibrary.wiley.com/doi/10.1111/gcb.12713/abstract">(Global Change Biology)</a>
                         </li>
                         <li>
-                            <a href="http://www.sciencedirect.com/science/article/pii/S0304380014002415">Toward more robust projections of forest landscape dynamics under novel environmental conditions: Embedding PnET within LANDIS-II</a>
+                            <p>Toward more robust projections of forest landscape dynamics under novel environmental conditions: Embedding PnET within LANDIS-II</p><a href="http://www.sciencedirect.com/science/article/pii/S0304380014002415">(Ecological Modeling)</a>
+
                         </li>
+
+                        
                   </ul>
 
                    <div class="margin_bottom_20 h_divider"></div>
@@ -65,9 +68,11 @@
                 </p>  
                 <h3>Publications</h3>
                 <ul>
-                    <li>Differential long-term effects of climate change and management on stocks and distribution of soil organic carbon in productive grasslands
-                        A. M. G. De Bruijn, P. Calanca, C. Ammann, J. Fuhrer
-                        Biogeosciences 06/2012; 9(6):1997-2012. DOI:10.5194/bg-9-1997-2012 · 3.75 Impact Factor</li>
+                    <li>
+                           <p>Differential long-term effects of climate change and management on stocks and distribution of soil organic carbon in productive grasslands</p> <a href="http://www.biogeosciences.net/9/1997/2012/bg-9-1997-2012.html">(Biogeosciences)</a>
+                    </li>
+                
+                    
                 </ul>
                 <h3>Note</h3>
                 <p>
@@ -91,7 +96,7 @@
                  
                  <div class="margin_bottom_10 h_divider"></div>
 
-                 <h2>IMK-IFU - Garmisch-Partenkirchen - 2006 to 2009 /ALBERT LUDWIGS UNIVERSITY – Freiburg, Germany 			2006-2009</h2>
+                 <h2>IMK-IFU - Garmisch-Partenkirchen - 2006 to 2009 /ALBERT LUDWIGS UNIVERSITY – Freiburg, Germany 2006-2009</h2>
                  <h3>Responsibilities</h3>
                  <p> 
                     Supporting the development of ecological simulation software
@@ -103,15 +108,16 @@
                 <p>     
                 <h3>Publications</h3>   
                 <ul>
-                    <li> An alternative modelling approach to predict emissions of N2O and NO from forest soils
-                        Arjan M. G. de Bruijn, Rüdiger Grote, Klaus Butterbach-Bahl European Journal of Forest Research 09/2011; 130(5-5). 
-                        DOI:10.1007/s10342-010-0468-y · 1.68 Impact Factor </li>
-                    <li>Linking carbon and nitrogen mineralization with microbial responses to substrate availability — the DECONIT model
-                        Arjan M. G. de Bruijn, Klaus Butterbach-Bahl Plant and Soil 01/2010; 328(1):271-290. DOI:10.1007/s11104-009-0108-9 · 
-                        3.24 Impact Factor </li>
-                    <li>    Model evaluation of different mechanisms driving freeze-thaw N2O emissions
-                        A.M.G. De Bruijn, K. Butterbach-Bahl, S. Blagodatsky, R. Grote Agriculture Ecosystems & Environment 10/2009; 133(3-4). 
-                        DOI:10.1016/j.agee.2009.04.023 · 3.20 Impact Factor</li>
+                    <li>
+                           <p>An alternative modelling approach to predict emissions of N2O and NO from forest soils</p> <a href="http://link.springer.com/article/10.1007%2Fs10342-010-0468-y#page-1">( European Journal of Forest Research)</a>
+                    </li>
+                   <li>
+                           <p>Linking carbon and nitrogen mineralization with microbial responses to substrate availability — the DECONIT model</p> <a href="http://link.springer.com/article/10.1007%2Fs11104-009-0108-9">(Plant and Soil)</a>
+                    </li>
+                     <li>
+                           <p>Model evaluation of different mechanisms driving freeze-thaw N2O emissions</p> <a href="http://www.sciencedirect.com/science/article/pii/S0167880909001340">(Agriculture Ecosystems & Environment)</a>
+                    </li>
+                    
 
                 </ul> 
                 <div class="margin_bottom_10 h_divider"></div>
@@ -124,9 +130,12 @@
                   
                 <h3>Publications</h3>    
                 <ul>
-                    <li>Modelling decomposition of standard plant material along an altitudinal gradient: A re-analysis of data of Coûteaux et al. (2002)
-                    W. G. Braakhekke, Arjan M. G. de Bruijn Soil Biology and Biochemistry 01/2007; 39(1). DOI:10.1016/j.soilbio.2006.06.018 · 4.41 Impact Factor </li>
-                    <li>Master’s thesis on modelling decomposition kinetics published in Soil Biology and Biochemistry.</li>
+                 <li>
+                           <p>Modelling decomposition of standard plant material along an altitudinal gradient: A re-analysis of data of Coûteaux et al. (2002)</p> <a href=" http://www.sciencedirect.com/science/article/pii/S0038071706003099">(Soil Biology and Biochemistry)</a>
+                    </li>
+
+     
+                   
                 </ul>
                  
                 <div class="margin_bottom_10 h_divider"></div>
