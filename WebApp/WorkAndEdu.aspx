@@ -48,9 +48,6 @@
                         <li>
                             <a href="http://www.sciencedirect.com/science/article/pii/S0304380014002415">Toward more robust projections of forest landscape dynamics under novel environmental conditions: Embedding PnET within LANDIS-II</a>
                         </li>
-
-                         
-                        
                   </ul>
 
                    <div class="margin_bottom_20 h_divider"></div>
@@ -72,6 +69,10 @@
                         A. M. G. De Bruijn, P. Calanca, C. Ammann, J. Fuhrer
                         Biogeosciences 06/2012; 9(6):1997-2012. DOI:10.5194/bg-9-1997-2012 · 3.75 Impact Factor</li>
                 </ul>
+                <h3>Note</h3>
+                <p>
+                    This post-doc was predetermined for one year (I was not layed of or fired)
+                </p>
                 <div class="margin_bottom_10 h_divider"></div>
 
                 <h2>ALTERRA B.V. - Wageningen - 2009 to 2010</h2>
