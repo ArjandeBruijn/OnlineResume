@@ -20,12 +20,12 @@ function DrawCircle(Context, x, y) {
     Context.stroke();
 
 }
-function DrawAxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max) {
+function DrawAxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max, Y_label) {
 
     // x-axis
     DrawXaxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max);
 
-    DrawYaxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max);
+    DrawYaxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max, Y_label);
 }
 function DrawXaxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max) {
 
@@ -47,11 +47,11 @@ function DrawXaxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max) {
 
 
 }
-function DrawYaxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max) {
+function DrawYaxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max, label) {
 
     drawLine(Context, new Coordinate(InnerPanelArea.A.x, InnerPanelArea.A.y), new Coordinate(InnerPanelArea.D.x, InnerPanelArea.D.y));
 
-    Context.fillText("Area defoliated (1000km)", InnerPanelArea.A.x - 30, 12);
+    Context.fillText(label, InnerPanelArea.A.x - 30, 12);
 
 
     var y_value = y_min;

@@ -15,7 +15,7 @@ function DrawGraph(Context, Width, Height, x_min, x_max, y_min, y_max) {
 
     var InnerPanelArea = DivideGraphArea(Context, GraphArea, x_min, x_max, y_min, y_max);
 
-    DrawAxis(Context, InnerPanelArea, 0, x_max, 0, y_max);
+    DrawAxis(Context, InnerPanelArea, 0, x_max, 0, y_max, "Remaining Biomass");
     
 
     return InnerPanelArea;
