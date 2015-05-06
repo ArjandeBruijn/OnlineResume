@@ -1,21 +1,21 @@
 ﻿$(window).load(function () {
-    c = document.getElementById("DecompCanvas");
-    var Context = c.getContext("2d");
+    canvas = document.getElementById("DecompCanvas");
+    var Context = canvas.getContext("2d");
     Context.font = "12px Georgia";
 
-    InnerPanelArea = DrawGraph(Context, 525, 450, 1930, 2015, 0, 16000);
+    InnerPanelArea = DrawGraph(Context, 1930, 2015, 0, 16000);
 
 
 });
 
 
-function DrawGraph(Context, Width, Height, x_min, x_max, y_min, y_max) {
+function DrawGraph(Context, x_min, x_max, y_min, y_max) {
 
-    GraphArea = new Rectangle(0, 0, Width, Height);
+    GraphArea = new Rectangle(0, 0, canvas.width,canvas.height);
 
     var InnerPanelArea = DivideGraphArea(Context, GraphArea, x_min, x_max, y_min, y_max);
 
-    DrawAxis(Context, InnerPanelArea, 0, x_max, 0, y_max, "Remaining Biomass");
+    DrawAxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max, "Remaining Biomass");
     
 
     return InnerPanelArea;
