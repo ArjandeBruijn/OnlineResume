@@ -24,8 +24,7 @@
         <h2>Deforestation in Indonesia</h2>
         
        <div id="pageone" data-role="main" class="justify"> 
-        We all heard about alarming rates of deforestation on Borneo, 
-             Indonesia. Large schale logging operations have degraded much of the 
+            The island of Borneo, Indonesia, is rapidly changing. Large schale logging operations have degraded much of the 
              pristine rainforests sinds the 1960s. More recently, forests are making place for olive oil plantations and population pressure is ever-increasing.
              I used land use derived from arial photographs of 
             <a href="#myPopup" data-rel="popup" data-position-to="window">eastern Borneo</a>

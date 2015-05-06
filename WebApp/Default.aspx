@@ -10,7 +10,7 @@
            for more than eight years. I have a considerable publication record, taught at presentations and workshops, I have a PhD, Msc and M.A.
            However, I prefer the more technical elements of my PhD and post-doctoral work (i.e. the programming) over the drier mathematical 
            work and I feel that I am better suited to the pace of the private sector. So I developed this website to demonstrate my skills and 
-           work so employers may have a better impression about my capacities and how these could benefit their product. 
+           work so employers may have a better impression about my capacities and how these could benefit their product. I have references available on request.
            <br></br>
            <!--
            I designed and wrote technical and conceptual documentation for my simulation software, taught at presentations and workshops, I work hard and I am authorized to work 

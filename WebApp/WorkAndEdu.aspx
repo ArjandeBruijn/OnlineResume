@@ -59,7 +59,13 @@
                 <h2>Agroscope Reckenholz Taenikon - Zürich, CH - 2010 to 2011</h2>
                 <h3>Responsibilities</h3>
                 <p>
-                    Soil carbon simulations of Swiss subalpine grasslands under different management regimes.
+                    I developed simulations to evaluate how differences in soil carbon in grasslands comes about.
+                    Carbon is the main consituent of dead organic materials, for example plants or harvest residues.
+                    Historically, it has been important to keep the concentration of organic materials in soils high to maintain 
+                    fertility, though the invention of chemical fertilizers made this less urgent. Even though this has pushed many
+                    farming systems away from carbon optimization methods, there are additional reasons 
+
+                    
                 </p>
                 <h3>Accomplishments</h3>
                 <p>   
@@ -96,20 +102,20 @@
                  
                  <div class="margin_bottom_10 h_divider"></div>
 
-                 <h2>IMK-IFU - Garmisch-Partenkirchen - 2006 to 2009 /ALBERT LUDWIGS UNIVERSITY – Freiburg, Germany 2006-2009</h2>
+                 <h2>IMK-IFU - Garmisch-Partenkirchen - 2006 to 2009</h2>
                  <h3>Responsibilities</h3>
                  <p> 
                     Supporting the development of ecological simulation software
                 </p>
                 <h3>Accomplishments</h3>
-                <p>PhD in Forest and Environmental Sciences, magna cum laude.  
+                <p>PhD in Forest and Environmental Sciences, magna cum laude. ALBERT LUDWIGS UNIVERSITY – Freiburg, Germany 2006-2009  
                     Developed a 1D model subroutine DECONIT that was published as an isolated program and later embedded
                     in a larger modelling platform MoBiLE.
                 <p>     
                 <h3>Publications</h3>   
                 <ul>
                     <li>
-                           <p>An alternative modelling approach to predict emissions of N2O and NO from forest soils</p> <a href="http://link.springer.com/article/10.1007%2Fs10342-010-0468-y#page-1">( European Journal of Forest Research)</a>
+                           <p>An alternative modelling approach to predict emissions of N2O and NO from forest soils</p> <a href="http://link.springer.com/article/10.1007%2Fs10342-010-0468-y#page-1">(European Journal of Forest Research)</a>
                     </li>
                    <li>
                            <p>Linking carbon and nitrogen mineralization with microbial responses to substrate availability — the DECONIT model</p> <a href="http://link.springer.com/article/10.1007%2Fs11104-009-0108-9">(Plant and Soil)</a>
