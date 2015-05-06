@@ -15,7 +15,7 @@ function DrawGraph(Context,  x_min, x_max, y_min, y_max) {
     var InnerPanelArea = DivideGraphArea(Context, GraphArea, x_min, x_max, y_min, y_max);
 
     DrawAxis(Context, InnerPanelArea, 0, x_max, 0, y_max, "Area defoliated (1000km)");
-    AddMeasurements(Context, InnerPanelArea, 0, x_max, 0, y_max);
+    AddMeasurements(Measurements, Context, InnerPanelArea, 0, x_max, 0, y_max);
     AddLegend(Context, InnerPanelArea);
 
     return InnerPanelArea;
@@ -47,7 +47,7 @@ function AddModelPoints(Context,InnerPanelArea, x_min, x_max, y_min, y_max) {
                 Context.clearRect(0, 0, GraphArea.Width, GraphArea.Height);
                 Context.strokeStyle = "Black";
                 DrawAxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max, "Area defoliated (1000km)");
-                AddMeasurements(Context, InnerPanelArea, x_min, x_max, y_min, y_max);
+                AddMeasurements(Measurements, Context, InnerPanelArea, x_min, x_max, y_min, y_max);
                 AddLegend(Context, InnerPanelArea);
                 Context.strokeStyle = "Red";
             }
@@ -82,31 +82,7 @@ function AddLegend(Context, InnerPanelArea) {
     Context.strokeStyle = "Black";
 
 }
-function AddMeasurements(Context, InnerPanelArea, x_min, x_max, y_min, y_max) {
 
-    
-
-    var lastcoordinate = null;
-    var coordinate = null;
-    for (var i = 0; i < Measurements.length; i++) {
-
-        var x_value = Measurements[i][0];
-        var y_value = Measurements[i][1];
-
-        var coordinate = GetCoordinate(InnerPanelArea, x_value, x_min, x_max, y_value, y_min, y_max);
-
-        DrawCircle(Context,coordinate.x, coordinate.y);
-        
-        if (lastcoordinate != null && lastcoordinate.x < coordinate.x) {
-
-            
-            drawLine(Context, coordinate, lastcoordinate);
-        }
-
-        lastcoordinate = coordinate;
-    }
-
-}
 
 
 

@@ -3,13 +3,18 @@
     var Context = canvas.getContext("2d");
     Context.font = "12px Georgia";
 
-    InnerPanelArea = DrawGraph(Context, 1930, 2015, 0, 16000);
+    x_min = 0;
+    x_max = 100;
+    y_min = 0;
+    y_max = 1.2;
 
+    InnerPanelArea = DrawGraph(Context, 0, 16000);
 
+    AddMeasurements(DecompositionMeasurements, Context, InnerPanelArea, x_min, x_max, y_min, y_max);
 });
+ 
 
-
-function DrawGraph(Context, x_min, x_max, y_min, y_max) {
+function DrawGraph(Context, y_min, y_max) {
 
     GraphArea = new Rectangle(0, 0, canvas.width,canvas.height);
 

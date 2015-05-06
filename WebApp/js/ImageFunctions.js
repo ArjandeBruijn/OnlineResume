@@ -20,6 +20,29 @@ function DrawCircle(Context, x, y) {
     Context.stroke();
 
 }
+function AddMeasurements(TimeSeries, Context, InnerPanelArea, x_min, x_max, y_min, y_max) {
+    
+    var lastcoordinate = null;
+    var coordinate = null;
+    for (var i = 0; i < TimeSeries.length; i++) {
+
+        var x_value = TimeSeries[i][0];
+        var y_value = TimeSeries[i][1];
+
+        var coordinate = GetCoordinate(InnerPanelArea, x_value, x_min, x_max, y_value, y_min, y_max);
+
+        DrawCircle(Context, coordinate.x, coordinate.y);
+
+        if (lastcoordinate != null && lastcoordinate.x < coordinate.x) {
+
+
+            drawLine(Context, coordinate, lastcoordinate);
+        }
+
+        lastcoordinate = coordinate;
+    }
+
+}
 function DrawAxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max, Y_label) {
 
     // x-axis
