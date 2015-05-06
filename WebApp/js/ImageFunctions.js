@@ -43,12 +43,12 @@ function AddMeasurements(TimeSeries, Context, InnerPanelArea, x_min, x_max, y_mi
     }
 
 }
-function DrawAxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max, Y_label) {
+function DrawAxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max,y_factor,y_diff, Y_label) {
 
     // x-axis
     DrawXaxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max);
 
-    DrawYaxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max, Y_label);
+    DrawYaxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max,y_factor, y_diff, Y_label);
 }
 function DrawXaxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max) {
 
@@ -70,7 +70,7 @@ function DrawXaxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max) {
 
 
 }
-function DrawYaxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max, label) {
+function DrawYaxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max, y_factor, y_diff, label) {
 
     drawLine(Context, new Coordinate(InnerPanelArea.A.x, InnerPanelArea.A.y), new Coordinate(InnerPanelArea.D.x, InnerPanelArea.D.y));
 
@@ -86,9 +86,9 @@ function DrawYaxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max, label) {
 
         drawLine(Context, new Coordinate(coordinate.x - 5, coordinate.y), new Coordinate(coordinate.x + 5, coordinate.y));
 
-        Context.fillText(Math.round(0.001 * y_value, 1), coordinate.x - 20, coordinate.y);
+        Context.fillText(0.001 * Math.round(1000*y_factor * y_value), coordinate.x - 20, coordinate.y);
 
-        y_value += 2000;
+        y_value += y_diff ;
     }
 
 

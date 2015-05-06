@@ -8,19 +8,19 @@
     y_min = 0;
     y_max = 1.2;
 
-    InnerPanelArea = DrawGraph(Context, 0, 16000);
+    InnerPanelArea = DrawGraph(Context);
 
     AddMeasurements(DecompositionMeasurements, Context, InnerPanelArea, x_min, x_max, y_min, y_max);
 });
  
 
-function DrawGraph(Context, y_min, y_max) {
+function DrawGraph(Context) {
 
     GraphArea = new Rectangle(0, 0, canvas.width,canvas.height);
 
     var InnerPanelArea = DivideGraphArea(Context, GraphArea, x_min, x_max, y_min, y_max);
 
-    DrawAxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max, "Remaining Biomass");
+    DrawAxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max,1,0.2, "Remaining Biomass");
     
 
     return InnerPanelArea;

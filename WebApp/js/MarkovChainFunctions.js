@@ -14,10 +14,6 @@ function DrawGraph(Context,  x_min, x_max, y_min, y_max) {
 
     var InnerPanelArea = DivideGraphArea(Context, GraphArea, x_min, x_max, y_min, y_max);
 
-    DrawAxis(Context, InnerPanelArea, 0, x_max, 0, y_max, "Area defoliated (1000km)");
-    AddMeasurements(Measurements, Context, InnerPanelArea, 0, x_max, 0, y_max);
-    AddLegend(Context, InnerPanelArea);
-
     return InnerPanelArea;
 }
 function AddModelPoints(Context,InnerPanelArea, x_min, x_max, y_min, y_max) {
@@ -46,7 +42,7 @@ function AddModelPoints(Context,InnerPanelArea, x_min, x_max, y_min, y_max) {
 
                 Context.clearRect(0, 0, GraphArea.Width, GraphArea.Height);
                 Context.strokeStyle = "Black";
-                DrawAxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max, "Area defoliated (1000km)");
+                DrawAxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max, 0.001,2000, "Area defoliated (1000km)");
                 AddMeasurements(Measurements, Context, InnerPanelArea, x_min, x_max, y_min, y_max);
                 AddLegend(Context, InnerPanelArea);
                 Context.strokeStyle = "Red";
