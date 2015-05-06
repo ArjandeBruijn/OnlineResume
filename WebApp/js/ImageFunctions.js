@@ -20,6 +20,13 @@ function DrawCircle(Context, x, y) {
     Context.stroke();
 
 }
+function GetCoordinate(InnerPanelArea, x_value, x_min, x_max, y_value, y_min, y_max) {
+
+    // var coordinate = new Coordinate(InnerPanelArea.D.x, InnerPanelArea.C.y - y_value * InnerPanelArea.Height / (y_max - y_min));
+    var coordinate = new Coordinate(InnerPanelArea.D.x + ((x_value - x_min) / (x_max - x_min)) * InnerPanelArea.Width, InnerPanelArea.C.y - ((y_value - y_min) / (y_max - y_min)) * InnerPanelArea.Height);
+
+    return coordinate;
+}
 function componentToHex(c) {
     var hex = c.toString(16);
     return hex.length == 1 ? "0" + hex : hex;

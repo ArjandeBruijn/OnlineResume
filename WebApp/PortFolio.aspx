@@ -183,7 +183,7 @@
     <script src="js/TableEventHandlers.js"></script>
     <script src="js/jquery.mobile.custom.min.js"></script>
 
-     <script src="js/DecompositionMeasurements"></script>
-     <script src="js/DecompositionFunctions"></script>
+     <script src="js/DecompositionMeasurements.js"></script>
+     <script src="js/DecompositionFunctions.js"></script>
                              
 </asp:Content>

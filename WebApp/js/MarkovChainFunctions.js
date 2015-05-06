@@ -108,13 +108,7 @@ function AddMeasurements(Context, InnerPanelArea, x_min, x_max, y_min, y_max) {
 
 }
 
-function GetCoordinate(InnerPanelArea, x_value, x_min,x_max, y_value,y_min, y_max) {
 
-    // var coordinate = new Coordinate(InnerPanelArea.D.x, InnerPanelArea.C.y - y_value * InnerPanelArea.Height / (y_max - y_min));
-    var coordinate = new Coordinate(InnerPanelArea.D.x + ((x_value - x_min) / (x_max - x_min)) * InnerPanelArea.Width, InnerPanelArea.C.y - ((y_value -y_min)/ (y_max -y_min )) * InnerPanelArea.Height);
-
-    return coordinate;
-}
 
 
 function DivideGraphArea(Context, GraphArea, x_min, x_max, y_min, Y_max) {
