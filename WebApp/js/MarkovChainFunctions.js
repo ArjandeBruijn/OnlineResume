@@ -3,19 +3,19 @@
     var Context = c.getContext("2d");
     Context.font = "12px Georgia";
 
-    InnerPanelArea = DrawGraph(Context, 0, 0, 525, 450, 1930, 2015, 0, 16000);
+    InnerPanelArea = DrawGraph(Context, 525, 450, 1930, 2015, 0, 16000);
     AddModelPoints(Context, InnerPanelArea, 1930, 2015, 0, 16000);
 
 });
 
-function DrawGraph(Context, xmin, ymin, Width, Height, x_min, x_max, y_min, y_max) {
+function DrawGraph(Context, Width, Height, x_min, x_max, y_min, y_max) {
 
-    GraphArea = new Rectangle(xmin, ymin, Width, Height);
+    GraphArea = new Rectangle(0, 0, Width, Height);
 
     var InnerPanelArea = DivideGraphArea(Context, GraphArea, x_min, x_max, y_min, y_max);
 
-    DrawAxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max);
-    AddMeasurements(Context, InnerPanelArea, x_min, x_max, y_min, y_max);
+    DrawAxis(Context, InnerPanelArea, 0, x_max, 0, y_max);
+    AddMeasurements(Context, InnerPanelArea, 0, x_max, 0, y_max);
     AddLegend(Context, InnerPanelArea);
 
     return InnerPanelArea;
