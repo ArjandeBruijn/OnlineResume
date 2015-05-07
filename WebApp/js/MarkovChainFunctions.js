@@ -4,7 +4,7 @@
     Context.font = "12px Georgia";
 
     InnerPanelArea = DrawGraph(Context, 1930, 2015, 0, 16000);
-    AddModelPoints(Context, InnerPanelArea, 1930, 2015, 0, 16000);
+    AddModelPoints(Model, Context, InnerPanelArea, 1930, 2015, 0, 16000);
 
 });
 
@@ -16,52 +16,7 @@ function DrawGraph(Context,  x_min, x_max, y_min, y_max) {
 
     return InnerPanelArea;
 }
-function AddModelPoints(Context,InnerPanelArea, x_min, x_max, y_min, y_max) {
 
-    var AllModelSeries = Model;
-   
-    var i = 0;
-    var s = 0;
-
-    var lastcoordinate = null;
-    var Coordinates = [];
-    setInterval(function () {
-        var x = AllModelSeries[i][0];
-        var y = AllModelSeries[i][1];
-
-        Context.strokeStyle = "Red";
-        var coordinate = GetCoordinate(InnerPanelArea, x, x_min, x_max, y, y_min, y_max);
-
-        Coordinates.push(coordinate);
-        //DrawCircle(Context, coordinate.x, coordinate.y);
-
-        if (lastcoordinate != null) {
-
-            if (coordinate.x < lastcoordinate.x) 
-            {
-
-                Context.clearRect(0, 0, GraphArea.Width, GraphArea.Height);
-                Context.strokeStyle = "Black";
-              
-                DrawXaxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max);
-
-                DrawYaxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max, 0.001, 2000, "Area defoliated (1000km)");
-
-                AddMeasurements(Measurements, Context, InnerPanelArea, x_min, x_max, y_min, y_max, true);
-                AddLegend(Context, InnerPanelArea);
-                Context.strokeStyle = "Red";
-            }
-            else drawLine(Context, coordinate, lastcoordinate);
-        }
-        lastcoordinate = coordinate;
-      
-
-        i++;
-        if (i == AllModelSeries.length - 1) i = 0;
-    }, 5);
-
-    
-}
 function AddLegend(Context, InnerPanelArea) {
 
     var legendrect = new Rectangle(InnerPanelArea.B.x - 125, InnerPanelArea.B.y, 125, 60);

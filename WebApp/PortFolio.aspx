@@ -167,7 +167,7 @@
 
 
         </p>
-        
+        <button onclick = "GoBayes()" type="button">Start Markov Chain</button>
         
         
 

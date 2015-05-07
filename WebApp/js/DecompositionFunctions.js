@@ -12,7 +12,13 @@
 
     AddMeasurements(DecompositionMeasurements, Context, InnerPanelArea, x_min, x_max, y_min, y_max, false);
 });
- 
+function GoBayes() {
+    for (var i = 0; i < 100000; i++) {
+
+        var Model = [1, 0.9, 0.89];
+
+    }
+}
 
 function DrawGraph(Context) {
 
