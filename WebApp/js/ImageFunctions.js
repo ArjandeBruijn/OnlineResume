@@ -20,7 +20,7 @@ function DrawCircle(Context, x, y) {
     Context.stroke();
 
 }
-function AddModelPoints(Model, Context, InnerPanelArea, x_min, x_max, y_min, y_max) {
+function AddModelPoints(Model, Context, InnerPanelArea, x_min, x_max, y_min, y_max, y_frac, y_diff, y_label) {
 
     
     var i = 0;
@@ -47,7 +47,7 @@ function AddModelPoints(Model, Context, InnerPanelArea, x_min, x_max, y_min, y_m
 
                 DrawXaxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max);
 
-                DrawYaxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max, 0.001, 2000, "Area defoliated (1000km)");
+                DrawYaxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max, y_frac, y_diff, y_label);
 
                 AddMeasurements(Measurements, Context, InnerPanelArea, x_min, x_max, y_min, y_max, true);
                 AddLegend(Context, InnerPanelArea);

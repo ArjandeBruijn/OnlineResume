@@ -13,11 +13,24 @@
     AddMeasurements(DecompositionMeasurements, Context, InnerPanelArea, x_min, x_max, y_min, y_max, false);
 });
 function GoBayes() {
-    for (var i = 0; i < 100000; i++) {
+   
+        canvas = document.getElementById("DecompCanvas");
+        var Context = canvas.getContext("2d");
+        Context.font = "12px Georgia";
 
-        var Model = [1, 0.9, 0.89];
+        x_min = 0;
+        x_max = 100;
+        y_min = 0;
+        y_max = 1.2;
 
-    }
+        InnerPanelArea = DrawGraph(Context);
+
+        
+        var Model = [[0, 1], [20, 0.9], [50, 0.89]];
+        AddModelPoints(Model, Context, InnerPanelArea, x_min, x_max, y_min, y_max, 1, 0.2, "Remaining Biomass");
+         
+
+        AddMeasurements(DecompositionMeasurements, Context, InnerPanelArea, x_min, x_max, y_min, y_max, false);
 }
 
 function DrawGraph(Context) {
@@ -25,8 +38,6 @@ function DrawGraph(Context) {
     GraphArea = new Rectangle(0, 0, canvas.width,canvas.height);
 
     var InnerPanelArea = DivideGraphArea(Context, GraphArea, x_min, x_max, y_min, y_max);
-
-     
 
     DrawXaxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max);
 

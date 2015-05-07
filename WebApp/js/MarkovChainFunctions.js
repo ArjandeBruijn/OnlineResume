@@ -4,7 +4,7 @@
     Context.font = "12px Georgia";
 
     InnerPanelArea = DrawGraph(Context, 1930, 2015, 0, 16000);
-    AddModelPoints(Model, Context, InnerPanelArea, 1930, 2015, 0, 16000);
+    AddModelPoints(Model, Context, InnerPanelArea, 1930, 2015, 0, 16000, 0.001, 2000, "Area defoliated (1000km)");
 
 });
 
