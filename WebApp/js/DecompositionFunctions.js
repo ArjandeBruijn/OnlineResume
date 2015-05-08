@@ -7,8 +7,32 @@ function Graph(mycanvas, X_min, X_max, Y_min, Y_max) {
     this.MyCanvas = mycanvas;
     this.MyContext = mycanvas.getContext("2d");
     this.MyContext.font = "12px Georgia";
-}
 
+    GraphArea = new Rectangle(0, 0, this.MyCanvas.width, this.MyCanvas.height);
+
+    this.MyContext.clearRect(0, 0, GraphArea.Width, GraphArea.Height);
+
+    this.InnerPanelArea = DivideGraphArea(this.MyContext, GraphArea, this.x_min, this.x_max, this.y_min, this.y_max);
+
+    DrawXaxis(this.MyContext, this.InnerPanelArea, this.x_min, this.x_max, this.y_min, this.y_max);
+
+    DrawYaxis(this.MyContext, this.InnerPanelArea, this.x_min, this.x_max, this.y_min, this.y_max, 1, 0.2, "Remaining Biomass");
+
+}
+function DrawGraph(Graph) {
+
+    GraphArea = new Rectangle(0, 0, Graph.MyCanvas.width, Graph.MyCanvas.height);
+
+    Graph.MyContext.clearRect(0, 0, GraphArea.Width, GraphArea.Height);
+
+    var InnerPanelArea = DivideGraphArea(Graph.MyContext, GraphArea, Graph.x_min, Graph.x_max, Graph.y_min, Graph.y_max);
+
+    DrawXaxis(Graph.MyContext, InnerPanelArea, Graph.x_min, Graph.x_max, Graph.y_min, RemainingBiomassGraph.y_max);
+
+    DrawYaxis(Graph.MyContext, InnerPanelArea, Graph.x_min, Graph.x_max, Graph.y_min, Graph.y_max, 1, 0.2, "Remaining Biomass");
+
+    return InnerPanelArea;
+}
 
 
 $(window).load(function () {
@@ -85,20 +109,7 @@ function AddModelPoints(RemainingBiomassGraph) {
 
 
 
-function DrawGraph(Graph) {
 
-    GraphArea = new Rectangle(0, 0, Graph.MyCanvas.width,Graph.MyCanvas.height);
-
-    Graph.MyContext.clearRect(0, 0, GraphArea.Width, GraphArea.Height);
-
-    var InnerPanelArea = DivideGraphArea(Graph.MyContext, GraphArea, Graph.x_min, Graph.x_max, Graph.y_min, Graph.y_max);
-
-    DrawXaxis(Graph.MyContext, InnerPanelArea, Graph.x_min, Graph.x_max, Graph.y_min, RemainingBiomassGraph.y_max);
-
-    DrawYaxis(Graph.MyContext, InnerPanelArea, Graph.x_min, Graph.x_max, Graph.y_min, Graph.y_max, 1, 0.2, "Remaining Biomass");
-
-    return InnerPanelArea;
-}
 
 function DivideGraphArea(Context, GraphArea, x_min, x_max, y_min, Y_max) {
 
