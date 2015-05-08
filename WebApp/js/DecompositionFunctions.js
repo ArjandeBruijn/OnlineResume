@@ -19,7 +19,7 @@ $(window).load(function () {
     B_route_graph = new Graph(document.getElementById("B_ROUTE_canvas"), 0, 100, 0, 1.2);
 
  
-    DrawGraph(B_route_graph.MyContext, B_route_graph);
+    DrawGraph(B_route_graph);
 
     AddModelPoints(RemainingBiomassGraph.MyContext, RemainingBiomassGraph);
 });
@@ -55,7 +55,7 @@ function AddModelPoints(Context, RemainingBiomassGraph) {
         if (model == null || c == model.length - 1) {
             last_coordinate = null;
             Context.strokeStyle = "Black";
-            InnerPanelArea = DrawGraph(Context, RemainingBiomassGraph);
+            InnerPanelArea = DrawGraph(RemainingBiomassGraph);
             AddMeasurements(DecompositionMeasurements, Context, InnerPanelArea, RemainingBiomassGraph.x_min, RemainingBiomassGraph.x_max, RemainingBiomassGraph.y_min, RemainingBiomassGraph.y_max, false);
             model = GetModelCalculations(RemainingBiomassGraph.x_min, RemainingBiomassGraph.x_max);
             c = 0;
@@ -79,17 +79,17 @@ function AddModelPoints(Context, RemainingBiomassGraph) {
 
 
 
-function DrawGraph(MyContext, Graph) {
+function DrawGraph(Graph) {
 
     GraphArea = new Rectangle(0, 0, Graph.MyCanvas.width,Graph.MyCanvas.height);
 
-    MyContext.clearRect(0, 0, GraphArea.Width, GraphArea.Height);
+    Graph.MyContext.clearRect(0, 0, GraphArea.Width, GraphArea.Height);
 
-    var InnerPanelArea = DivideGraphArea(MyContext, GraphArea, Graph.x_min, Graph.x_max, Graph.y_min, Graph.y_max);
+    var InnerPanelArea = DivideGraphArea(Graph.MyContext, GraphArea, Graph.x_min, Graph.x_max, Graph.y_min, Graph.y_max);
 
-    DrawXaxis(MyContext, InnerPanelArea, Graph.x_min, Graph.x_max, Graph.y_min, RemainingBiomassGraph.y_max);
+    DrawXaxis(Graph.MyContext, InnerPanelArea, Graph.x_min, Graph.x_max, Graph.y_min, RemainingBiomassGraph.y_max);
 
-    DrawYaxis(MyContext, InnerPanelArea, Graph.x_min, Graph.x_max, Graph.y_min, Graph.y_max, 1, 0.2, "Remaining Biomass");
+    DrawYaxis(Graph.MyContext, InnerPanelArea, Graph.x_min, Graph.x_max, Graph.y_min, Graph.y_max, 1, 0.2, "Remaining Biomass");
 
     return InnerPanelArea;
 }
