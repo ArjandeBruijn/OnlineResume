@@ -17,13 +17,14 @@ $(window).load(function () {
     var Context = canvas.getContext("2d");
     Context.font = "12px Georgia";
 
-    
-
     canvas_B_route = document.getElementById("B_ROUTE_canvas");
     var Context_B_route = canvas_B_route.getContext("2d");
     Context_B_route.font = "12px Georgia";
 
-    DrawGraph(Context_B_route, RemainingBiomassGraph);
+    B_route_graph = new Graph(0, 100, 0, 1.2);
+
+
+    DrawGraph(Context_B_route, B_route_graph);
 
     AddModelPoints(Context, RemainingBiomassGraph);
 });
