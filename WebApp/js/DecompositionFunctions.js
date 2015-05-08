@@ -42,9 +42,6 @@ $(window).load(function () {
 
     B_route_graph = new Graph(document.getElementById("B_ROUTE_canvas"), 0, 100, 0, 1.2);
 
- 
-    DrawGraph(B_route_graph);
-
     AddModelPoints(RemainingBiomassGraph);
 });
 function GetModelCalculations(x_min, x_max) {
