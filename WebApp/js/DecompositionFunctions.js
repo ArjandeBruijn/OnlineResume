@@ -147,7 +147,7 @@ function GetModelCalculations(x_min, x_max) {
 
     var B = Math.random();
 
-    if (this.iter > B_route_graph.x_max - 10) {
+    if (this.iter >= B_route_graph.x_max) {
         B_route_graph.Reschale(0,  B_route_graph.x_max + 10 ,0, B_route_graph.y_max);
     }
 
