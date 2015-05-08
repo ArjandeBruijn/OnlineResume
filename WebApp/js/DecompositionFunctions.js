@@ -29,7 +29,7 @@ $(window).load(function () {
 
     DrawGraph(Context_B_route);
 
-    AddModelPoints(Context, RemainingBiomassGraph.x_min, RemainingBiomassGraph.x_max, RemainingBiomassGraph.y_min, RemainingBiomassGraph.y_max);
+    AddModelPoints(Context, RemainingBiomassGraph);
 });
 function GetModelCalculations(x_min, x_max) {
 
@@ -45,7 +45,7 @@ function GetModelCalculations(x_min, x_max) {
     }
     return model;
 }
-function AddModelPoints(Context, x_min, x_max, y_min, y_max) {
+function AddModelPoints(Context, RemainingBiomassGraph) {
 
 
     var i = 0;
@@ -64,8 +64,8 @@ function AddModelPoints(Context, x_min, x_max, y_min, y_max) {
             last_coordinate = null;
             Context.strokeStyle = "Black";
             InnerPanelArea = DrawGraph(Context);
-            AddMeasurements(DecompositionMeasurements, Context, InnerPanelArea, x_min, x_max, y_min, y_max, false);
-            model = GetModelCalculations(x_min, x_max);
+            AddMeasurements(DecompositionMeasurements, Context, InnerPanelArea, RemainingBiomassGraph.x_min, RemainingBiomassGraph.x_max, RemainingBiomassGraph.y_min, RemainingBiomassGraph.y_max, false);
+            model = GetModelCalculations(RemainingBiomassGraph.x_min, RemainingBiomassGraph.x_max);
             c = 0;
         }
         else c++;
@@ -74,7 +74,7 @@ function AddModelPoints(Context, x_min, x_max, y_min, y_max) {
         var y = model[c][1];
 
         Context.strokeStyle = "Red";
-        var coordinate = GetCoordinate(InnerPanelArea, x, x_min, x_max, y, y_min, y_max);
+        var coordinate = GetCoordinate(InnerPanelArea, x, RemainingBiomassGraph.x_min, RemainingBiomassGraph.x_max, y, RemainingBiomassGraph.y_min, RemainingBiomassGraph.y_max);
 
         if (last_coordinate != null) {
             drawLine(Context, coordinate, last_coordinate);
