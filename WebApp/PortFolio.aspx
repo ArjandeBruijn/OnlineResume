@@ -155,19 +155,13 @@
 
         <div id = "left_col">
             <div id = "right_col_ins">
-                 <canvas id="DecompCanvas" width="525" height="450" style="border:2px solid black;">
+                 <canvas id="DecompCanvas" width="525" height="450">
                      Your browser does not support the HTML5 canvas tag.</canvas>
                 <button type="button">Restart</button>
                 <div id = "Div3"></div>
             </div>
+            <br></br><br></br><br></br><br></br>
         </div>
-
-
-
-       
-         
-
-
 
         <p>Bayesian statistics is often used in contraction with Markov Chain calibrations (see home page). 
         The idea behind the Bayesian proposition is that you turn around the driving mechanism and the phenomenon, i.e. where 
@@ -180,14 +174,14 @@
         If we assume a very simple equation where the amount of wood that decomposes per time unit is a constant proportion of the wood that is there 
         (i.e. dWood/dt = c*Wood), the amount of wood at any time is described as Wood = Initial_wood * exp(-a * time)).
 
-
+        
 
         </p>
         
         
         
 
-<br></br><br></br><br></br><br></br>
+        
      </div>
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="js/Checkboxes.js"></script>
