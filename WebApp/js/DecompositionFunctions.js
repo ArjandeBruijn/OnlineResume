@@ -1,12 +1,12 @@
 ﻿
-function CurveList(line_color, marker_color) {
+function CurveList(line_color, marker) {
 
     // points[0] = x-value
     // points[1] = y-value;
     this.Points = [];
 
     this.LineColor = line_color;
-    this.MarkerColor = marker_color;
+    this.Marker = marker;
 
     this.Length = function () {
         return this.Points.length;
@@ -86,7 +86,10 @@ function Graph(mycanvas, X_min, X_max, Y_min, Y_max, Y_Label) {
             var coordinate_to = GetPoint(this.InnerPanelArea, to[0], this.x_min, this.x_max, to[1], this.y_min, this.y_max);
 
             drawLine(this.MyContext, coordinate_from, coordinate_to);
-            DrawCircle(this.MyContext, coordinate_from.x, coordinate_from.y);
+
+            if (curve.Marker == "C" || curve.Marker == "Circle") {
+                DrawCircle(this.MyContext, coordinate_from.x, coordinate_from.y);
+            }
         }
     }
 
@@ -143,7 +146,7 @@ $(window).load(function () {
     RemainingBiomassGraph = new Graph(document.getElementById("DecompCanvas"), 0, 100, 0, 1.2, "Remaining Biomass");
 
     B_route_graph = new Graph(document.getElementById("B_ROUTE_canvas"), 0, 20, 0, 1.2, "B");
-    B_route_graph.AddCurveList("Red");
+    B_route_graph.AddCurveList("Red", null);
 
     AddModelPoints(RemainingBiomassGraph);
 });
@@ -193,7 +196,7 @@ function AddModelPoints(RemainingBiomassGraph) {
             RemainingBiomassGraph = new Graph(document.getElementById("DecompCanvas"), 0, 100, 0, 1.2, "Remaining Biomass");
             RemainingBiomassGraph.AddCurveList("Red", null);
 
-            RemainingBiomassGraph.AddCurveList("Black", "Black");
+            RemainingBiomassGraph.AddCurveList("Black", "C");
 
 
             for (var p = 0; p < DecompositionMeasurements.length; p++) {
