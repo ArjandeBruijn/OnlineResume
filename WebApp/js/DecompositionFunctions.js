@@ -1,11 +1,12 @@
 ﻿
-function CurveList(color) {
+function CurveList(line_color, marker_color) {
 
     // points[0] = x-value
     // points[1] = y-value;
     this.Points = [];
 
-    this.Color = color;
+    this.LineColor = line_color;
+    this.MarkerColor = marker_color;
 
     this.Length = function () {
         return this.Points.length;
@@ -41,9 +42,9 @@ function Graph(mycanvas, X_min, X_max, Y_min, Y_max, Y_Label) {
 
     DrawYaxis(this.MyContext, this.InnerPanelArea, this.x_min, this.x_max, this.y_min, this.y_max, 1, 0.2, this.y_label  );
 
-    this.AddCurveList = function (color) {
+    this.AddCurveList = function (line_color, marker_color) {
         if (this.Curves == null) this.Curves = [];
-        this.Curves.push(new CurveList(color));
+        this.Curves.push(new CurveList(line_color, marker_color));
     }
     this.drawLine = function (Context, from, to) {
         
@@ -64,12 +65,18 @@ function Graph(mycanvas, X_min, X_max, Y_min, Y_max, Y_Label) {
 
         this.DrawCurve(curve_number);
 
-         
+
+    }
+    function DrawCircle(Context, x, y) {
+        Context.beginPath();
+        Context.arc(x, y, 2, 0, 2 * Math.PI);
+        Context.stroke();
+
     }
     this.DrawCurve = function (curve_nr) {
 
         var curve = this.Curves[curve_nr];
-        this.MyContext.strokeStyle = curve.Color;
+        this.MyContext.strokeStyle = curve.LineColor;
 
         for (var p = 1; p < curve.Length(); p++) {
             var from = curve.GetPoint(p - 1);
@@ -79,6 +86,7 @@ function Graph(mycanvas, X_min, X_max, Y_min, Y_max, Y_Label) {
             var coordinate_to = GetPoint(this.InnerPanelArea, to[0], this.x_min, this.x_max, to[1], this.y_min, this.y_max);
 
             drawLine(this.MyContext, coordinate_from, coordinate_to);
+            DrawCircle(this.MyContext, coordinate_from.x, coordinate_from.y);
         }
     }
 
@@ -183,9 +191,9 @@ function AddModelPoints(RemainingBiomassGraph) {
             last_coordinate = null;
 
             RemainingBiomassGraph = new Graph(document.getElementById("DecompCanvas"), 0, 100, 0, 1.2, "Remaining Biomass");
-            RemainingBiomassGraph.AddCurveList("Red");
+            RemainingBiomassGraph.AddCurveList("Red", null);
 
-            RemainingBiomassGraph.AddCurveList("Black");
+            RemainingBiomassGraph.AddCurveList("Black", "Black");
 
 
             for (var p = 0; p < DecompositionMeasurements.length; p++) {
