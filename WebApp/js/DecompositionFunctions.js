@@ -185,7 +185,7 @@ function AddModelPoints(RemainingBiomassGraph) {
             RemainingBiomassGraph = new Graph(document.getElementById("DecompCanvas"), 0, 100, 0, 1.2, "Remaining Biomass");
             RemainingBiomassGraph.AddCurveList("Red");
 
-            AddMeasurements(DecompositionMeasurements, RemainingBiomassGraph.MyContext, RemainingBiomassGraph.InnerPanelArea, RemainingBiomassGraph.x_min, RemainingBiomassGraph.x_max, RemainingBiomassGraph.y_min, RemainingBiomassGraph.y_max, false);
+            AddMeasurements2(DecompositionMeasurements, RemainingBiomassGraph.MyContext, RemainingBiomassGraph.InnerPanelArea, RemainingBiomassGraph.x_min, RemainingBiomassGraph.x_max, RemainingBiomassGraph.y_min, RemainingBiomassGraph.y_max, false);
             model = GetModelCalculations(RemainingBiomassGraph.x_min, RemainingBiomassGraph.x_max);
             c = 0;
         }
@@ -204,7 +204,42 @@ function AddModelPoints(RemainingBiomassGraph) {
     }, 5);
 }
 
+function AddMeasurements2(TimeSeries, Context, InnerPanelArea, x_min, x_max, y_min, y_max, HasLine) {
 
+    var lastcoordinate = null;
+    var coordinate = null;
+    for (var i = 0; i < TimeSeries.length; i++) {
+
+        var x_value = TimeSeries[i][0];
+        var y_value = TimeSeries[i][1];
+
+        var coordinate = GetPoint(InnerPanelArea, x_value, x_min, x_max, y_value, y_min, y_max);
+
+        DrawCircle(Context, coordinate.x, coordinate.y);
+
+        if (HasLine) {
+            if (lastcoordinate != null && lastcoordinate.x < coordinate.x) {
+                drawLine(Context, coordinate, lastcoordinate);
+            }
+        }
+
+
+        if (TimeSeries[i][2] != null) {
+            var sd = TimeSeries[i][2];
+
+            var from = GetPoint(InnerPanelArea, x_value, x_min, x_max, y_value + sd, y_min, y_max);
+            var to = GetPoint(InnerPanelArea, x_value, x_min, x_max, y_value - sd, y_min, y_max);
+            drawLine(Context, from, to);
+            drawLine(Context, new Coordinate(from.x - 3, from.y), new Coordinate(from.x + 3, from.y));
+            drawLine(Context, new Coordinate(to.x - 3, to.y), new Coordinate(to.x + 3, to.y));
+
+            var from2 = GetPoint(InnerPanelArea, x_value, x_min, x_max, y_value + sd, y_min, y_max);
+        }
+
+        lastcoordinate = coordinate;
+    }
+
+}
 
 
 
