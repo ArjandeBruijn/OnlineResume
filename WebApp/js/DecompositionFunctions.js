@@ -8,6 +8,8 @@ function Graph(mycanvas, X_min, X_max, Y_min, Y_max) {
     this.MyContext = mycanvas.getContext("2d");
     this.MyContext.font = "12px Georgia";
 
+    this.MyContext.strokeStyle = "Black";
+
     GraphArea = new Rectangle(0, 0, this.MyCanvas.width, this.MyCanvas.height);
 
     this.MyContext.clearRect(0, 0, GraphArea.Width, GraphArea.Height);
@@ -38,7 +40,6 @@ function DrawGraph(Graph) {
 $(window).load(function () {
 
     RemainingBiomassGraph = new Graph(document.getElementById("DecompCanvas"), 0, 100, 0, 1.2);
-
 
     B_route_graph = new Graph(document.getElementById("B_ROUTE_canvas"), 0, 100, 0, 1.2);
 
@@ -81,9 +82,11 @@ function AddModelPoints(RemainingBiomassGraph) {
 
         if (model == null || c == model.length - 1) {
             last_coordinate = null;
-            RemainingBiomassGraph.MyContext.strokeStyle = "Black";
-            InnerPanelArea = DrawGraph(RemainingBiomassGraph);
-            AddMeasurements(DecompositionMeasurements, RemainingBiomassGraph.MyContext, InnerPanelArea, RemainingBiomassGraph.x_min, RemainingBiomassGraph.x_max, RemainingBiomassGraph.y_min, RemainingBiomassGraph.y_max, false);
+
+            RemainingBiomassGraph = new Graph(document.getElementById("DecompCanvas"), 0, 100, 0, 1.2);
+
+            
+            AddMeasurements(DecompositionMeasurements, RemainingBiomassGraph.MyContext, RemainingBiomassGraph.InnerPanelArea, RemainingBiomassGraph.x_min, RemainingBiomassGraph.x_max, RemainingBiomassGraph.y_min, RemainingBiomassGraph.y_max, false);
             model = GetModelCalculations(RemainingBiomassGraph.x_min, RemainingBiomassGraph.x_max);
             c = 0;
         }
@@ -93,7 +96,7 @@ function AddModelPoints(RemainingBiomassGraph) {
         var y = model[c][1];
 
         RemainingBiomassGraph.MyContext.strokeStyle = "Red";
-        var coordinate = GetCoordinate(InnerPanelArea, x, RemainingBiomassGraph.x_min, RemainingBiomassGraph.x_max, y, RemainingBiomassGraph.y_min, RemainingBiomassGraph.y_max);
+        var coordinate = GetCoordinate(RemainingBiomassGraph.InnerPanelArea, x, RemainingBiomassGraph.x_min, RemainingBiomassGraph.x_max, y, RemainingBiomassGraph.y_min, RemainingBiomassGraph.y_max);
 
         if (last_coordinate != null) {
             drawLine(RemainingBiomassGraph.MyContext, coordinate, last_coordinate);
