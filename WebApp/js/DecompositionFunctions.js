@@ -43,7 +43,19 @@ function Graph(mycanvas, X_min, X_max, Y_min, Y_max, Y_Label) {
         if (this.Curves == null) this.Curves = [];
         this.Curves.push(new CurveList());
     }
+    this.drawLine = function (Context, from, to) {
+        
+        //from, to in row/column coordinates
+        Context.beginPath();
+        Context.moveTo(from[0], from[1]);
+        Context.lineTo(to[0], to[1]);
+        Context.stroke();
 
+    }
+    function GetRowColumn(InnerPanelArea, x_value, x_min, x_max, y_value, y_min, y_max) {
+
+        return [InnerPanelArea.D.x + ((x_value - x_min) / (x_max - x_min)) * InnerPanelArea.Width, InnerPanelArea.C.y - ((y_value - y_min) / (y_max - y_min)) * InnerPanelArea.Height];
+    }
     this.AddPoint = function (curve_number, point) {
         var curve = this.Curves[curve_number];
         curve.AddPoint(point);
@@ -51,12 +63,12 @@ function Graph(mycanvas, X_min, X_max, Y_min, Y_max, Y_Label) {
         if (curve.Length() > 1) {
 
             var from= curve.GetPoint(curve.Length() - 2);
-            var coordinate_from = GetPoint(this.InnerPanelArea, from[0], this.x_min, this.x_max, from[1], this.y_min, this.y_max);
+            var coordinate_from = GetRowColumn(this.InnerPanelArea, from[0], this.x_min, this.x_max, from[1], this.y_min, this.y_max);
 
             var to= curve.GetPoint(curve.Length() - 1);
-            var coordinate_to = GetPoint(this.InnerPanelArea, to[0], this.x_min, this.x_max, to[1], this.y_min, this.y_max);
+            var coordinate_to = GetRowColumn(this.InnerPanelArea, to[0], this.x_min, this.x_max, to[1], this.y_min, this.y_max);
 
-            drawLine(this.MyContext, coordinate_from, coordinate_to);
+            this.drawLine(this.MyContext, coordinate_from, coordinate_to);
         }
     }
 
