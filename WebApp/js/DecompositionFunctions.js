@@ -10,8 +10,56 @@
 
     InnerPanelArea = DrawGraph(Context);
 
-    AddMeasurements(DecompositionMeasurements, Context, InnerPanelArea, x_min, x_max, y_min, y_max, false);
+    AddModelPoints(Context, InnerPanelArea, x_min, x_max, y_min, y_max);
 });
+
+function AddModelPoints(Context, InnerPanelArea, x_min, x_max, y_min, y_max) {
+
+
+    var i = 0;
+    var s = 0;
+
+    var lastcoordinate = null;
+    var Coordinates = [];
+    setInterval(function () {
+
+        AddMeasurements(DecompositionMeasurements, Context, InnerPanelArea, x_min, x_max, y_min, y_max, false);
+        /*
+        var x = Model[i][0];
+        var y = Model[i][1];
+
+        Context.strokeStyle = "Red";
+        var coordinate = GetCoordinate(InnerPanelArea, x, x_min, x_max, y, y_min, y_max);
+
+        Coordinates.push(coordinate);
+        //DrawCircle(Context, coordinate.x, coordinate.y);
+
+        if (lastcoordinate != null) {
+
+            if (coordinate.x < lastcoordinate.x) {
+
+                Context.clearRect(0, 0, GraphArea.Width, GraphArea.Height);
+                Context.strokeStyle = "Black";
+
+                DrawXaxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max);
+
+                DrawYaxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max, y_frac, y_diff, y_label);
+
+                AddMeasurements(Measurements, Context, InnerPanelArea, x_min, x_max, y_min, y_max, true);
+                AddLegend(Context, InnerPanelArea);
+                Context.strokeStyle = "Red";
+            }
+            else drawLine(Context, coordinate, lastcoordinate);
+        }
+        lastcoordinate = coordinate;
+
+
+        i++;
+        if (i == Model.length - 1) i = 0;
+        */
+    }, 5);
+}
+
 function GoBayes() {
    
         canvas = document.getElementById("DecompCanvas");
