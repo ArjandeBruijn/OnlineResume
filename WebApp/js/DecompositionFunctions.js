@@ -38,6 +38,11 @@ function GetModelCalculations(x_min, x_max) {
 
     var B = Math.random();
 
+    if (this.iter > B_route_graph.x_max - 10) {
+        B_route_graph.x_max += 10;
+        B_route_graph = new Graph(document.getElementById("B_ROUTE_canvas"), 0, B_route_graph.x_max, 0, 1.2, "B");
+    }
+
     var coordinate = GetCoordinate(B_route_graph.InnerPanelArea, this.iter++, B_route_graph.x_min, B_route_graph.x_max, B, B_route_graph.y_min, B_route_graph.y_max);
 
     if (this.LastB_coordinate != null) {
