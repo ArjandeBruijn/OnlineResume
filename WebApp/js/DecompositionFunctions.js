@@ -14,15 +14,12 @@ function Graph(mycanvas, X_min, X_max, Y_min, Y_max) {
 $(window).load(function () {
 
     RemainingBiomassGraph = new Graph(document.getElementById("DecompCanvas"), 0, 100, 0, 1.2);
-     
-    canvas_B_route = document.getElementById("B_ROUTE_canvas");
-    var Context_B_route = canvas_B_route.getContext("2d");
-     
+
 
     B_route_graph = new Graph(document.getElementById("B_ROUTE_canvas"), 0, 100, 0, 1.2);
 
-
-    DrawGraph(Context_B_route, B_route_graph);
+ 
+    DrawGraph(B_route_graph.MyContext, B_route_graph);
 
     AddModelPoints(RemainingBiomassGraph.MyContext, RemainingBiomassGraph);
 });
