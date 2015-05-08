@@ -20,79 +20,7 @@ function DrawCircle(Context, x, y) {
     Context.stroke();
 
 }
-function GetTimeSeries(Model) {
-    var AllSeries = [];
-    var series = [];
-    var LastX = null;
 
-    for (var c = 0; c < Model.length; c++) {
-
-        var x = Model[c][0];
-        var y = Model[c][1];
-
-        if (LastX == null) { series.push(Model[c]); LastX = x; }
-        else if (x > LastX) series.push(Model[c]);
-        else {
-            AllSeries.push(series);
-            series = [];
-        }
-        
-    }
-    return AllSeries;
-}
-function AddModelTimeSeries(Model, Context, InnerPanelArea, x_min, x_max, y_min, y_max, y_frac, y_diff, y_label) {
-
-    var i = 0;
-    var s = 0;
-
-    var lastcoordinate = null;
-    var Coordinates = [];
-    setInterval(function () {
-
-
-
-        var x = Model[i][0];
-        var y = Model[i][1];
-
-        Context.strokeStyle = "Red";
-        var coordinate = GetCoordinate(InnerPanelArea, x, x_min, x_max, y, y_min, y_max);
-
-        Coordinates.push(coordinate);
-
-
-        if (lastcoordinate != null) {
-
-            if (coordinate.x < lastcoordinate.x) {
-
-                Context.clearRect(0, 0, GraphArea.Width, GraphArea.Height);
-                Context.strokeStyle = "Black";
-
-                DrawXaxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max);
-
-                DrawYaxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max, y_frac, y_diff, y_label);
-
-                AddMeasurements(Measurements, Context, InnerPanelArea, x_min, x_max, y_min, y_max, true);
-                AddLegend(Context, InnerPanelArea);
-                Context.strokeStyle = "Red";
-            }
-            else drawLine(Context, coordinate, lastcoordinate);
-        }
-        lastcoordinate = coordinate;
-
-
-        i++;
-        if (i == Model.length - 1) i = 0;
-    }, 5);
-
-}
-function AddModelPoints(Model, Context, InnerPanelArea, x_min, x_max, y_min, y_max, y_frac, y_diff, y_label) {
-
-    var series =  GetTimeSeries(Model);
-
-    AddModelTimeSeries(Model, Context, InnerPanelArea, x_min, x_max, y_min, y_max, y_frac, y_diff, y_label);
-
-    
-}
 function AddMeasurements(TimeSeries, Context, InnerPanelArea, x_min, x_max, y_min, y_max, HasLine) {
     
     var lastcoordinate = null;
