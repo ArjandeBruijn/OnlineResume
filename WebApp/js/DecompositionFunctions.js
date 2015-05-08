@@ -21,22 +21,7 @@ function Graph(mycanvas, X_min, X_max, Y_min, Y_max) {
     DrawYaxis(this.MyContext, this.InnerPanelArea, this.x_min, this.x_max, this.y_min, this.y_max, 1, 0.2, "Remaining Biomass");
 
 }
-function DrawGraph(Graph) {
-
-    GraphArea = new Rectangle(0, 0, Graph.MyCanvas.width, Graph.MyCanvas.height);
-
-    Graph.MyContext.clearRect(0, 0, GraphArea.Width, GraphArea.Height);
-
-    var InnerPanelArea = DivideGraphArea(Graph.MyContext, GraphArea, Graph.x_min, Graph.x_max, Graph.y_min, Graph.y_max);
-
-    DrawXaxis(Graph.MyContext, InnerPanelArea, Graph.x_min, Graph.x_max, Graph.y_min, RemainingBiomassGraph.y_max);
-
-    DrawYaxis(Graph.MyContext, InnerPanelArea, Graph.x_min, Graph.x_max, Graph.y_min, Graph.y_max, 1, 0.2, "Remaining Biomass");
-
-    return InnerPanelArea;
-}
-
-
+ 
 $(window).load(function () {
 
     RemainingBiomassGraph = new Graph(document.getElementById("DecompCanvas"), 0, 100, 0, 1.2);
