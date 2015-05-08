@@ -16,9 +16,13 @@ function GetModelCalculations(x_min, x_max) {
 
     var model = [];
 
+    var B = Math.random();
+
+    var y = 1;
     for (var x = 0; x < x_max; x++) {
 
-        model.push([x, 1 - 0.01 * x]);
+        model.push([x, y]);
+        y *= B;
     }
     return model;
 }
