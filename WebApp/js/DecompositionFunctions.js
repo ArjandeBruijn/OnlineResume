@@ -1,17 +1,19 @@
 ﻿
 function CurveList() {
 
-    this.Coordinates = [];
+    // points[0] = x-value
+    // points[1] = y-value;
+    this.Points = [];
 
     this.Length = function () {
-        return this.Coordinates.length;
+        return this.Points.length;
     }
 
     this.GetCoordinate = function (i) {
-        return this.Coordinates[i];
+        return this.Points[i];
     };
     this.AddPoint = function (coordinate) {
-        this.Coordinates.push(coordinate);
+        this.Points.push(coordinate);
     };
 }
 
