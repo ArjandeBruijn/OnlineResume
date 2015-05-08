@@ -14,7 +14,7 @@ $(window).load(function () {
 
     RemainingBiomassGraph = new Graph(document.getElementById("DecompCanvas"), 0, 100, 0, 1.2);
 
-    canvas = RemainingBiomassGraph.MyCanvas;
+  
     var Context =  RemainingBiomassGraph.MyCanvas.getContext("2d");
     Context.font = "12px Georgia";
 
@@ -87,7 +87,7 @@ function AddModelPoints(Context, RemainingBiomassGraph) {
 
 function DrawGraph(MyContext, Graph) {
 
-    GraphArea = new Rectangle(0, 0, canvas.width,canvas.height);
+    GraphArea = new Rectangle(0, 0, Graph.MyCanvas.width,Graph.MyCanvas.height);
 
     MyContext.clearRect(0, 0, GraphArea.Width, GraphArea.Height);
 
