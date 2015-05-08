@@ -85,7 +85,9 @@ function Graph(mycanvas, X_min, X_max, Y_min, Y_max, Y_Label) {
             var to = curve.GetPoint(p);
             var coordinate_to = GetPoint(this.InnerPanelArea, to[0], this.x_min, this.x_max, to[1], this.y_min, this.y_max);
 
-            drawLine(this.MyContext, coordinate_from, coordinate_to);
+            if (curve.LineColor != null) {
+                drawLine(this.MyContext, coordinate_from, coordinate_to);
+            }
 
             if (curve.Marker == "C" || curve.Marker == "Circle") {
                 DrawCircle(this.MyContext, coordinate_from.x, coordinate_from.y);
@@ -196,7 +198,7 @@ function AddModelPoints(RemainingBiomassGraph) {
             RemainingBiomassGraph = new Graph(document.getElementById("DecompCanvas"), 0, 100, 0, 1.2, "Remaining Biomass");
             RemainingBiomassGraph.AddCurveList("Red", null);
 
-            RemainingBiomassGraph.AddCurveList("Black", "C");
+            RemainingBiomassGraph.AddCurveList(null, "C");
 
 
             for (var p = 0; p < DecompositionMeasurements.length; p++) {
