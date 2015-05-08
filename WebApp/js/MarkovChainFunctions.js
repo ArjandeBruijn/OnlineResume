@@ -29,7 +29,7 @@ function AddModelPoints(Model, Context, InnerPanelArea, x_min, x_max, y_min, y_m
         var y = Model[i][1];
 
         Context.strokeStyle = "Red";
-        var coordinate = GetCoordinate(InnerPanelArea, x, x_min, x_max, y, y_min, y_max);
+        var coordinate = GetPoint(InnerPanelArea, x, x_min, x_max, y, y_min, y_max);
 
         Coordinates.push(coordinate);
         //DrawCircle(Context, coordinate.x, coordinate.y);

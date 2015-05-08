@@ -9,7 +9,7 @@ function CurveList() {
         return this.Points.length;
     }
 
-    this.GetCoordinate = function (i) {
+    this.GetPoint = function (i) {
         return this.Points[i];
     };
     this.AddPoint = function (coordinate) {
@@ -50,11 +50,11 @@ function Graph(mycanvas, X_min, X_max, Y_min, Y_max, Y_Label) {
 
         if (curve.Length() > 1) {
 
-            var from= curve.GetCoordinate(curve.Length() - 2);
-            var coordinate_from = GetCoordinate(this.InnerPanelArea, from[0], this.x_min, this.x_max, from[1], this.y_min, this.y_max);
+            var from= curve.GetPoint(curve.Length() - 2);
+            var coordinate_from = GetPoint(this.InnerPanelArea, from[0], this.x_min, this.x_max, from[1], this.y_min, this.y_max);
 
-            var to= curve.GetCoordinate(curve.Length() - 1);
-            var coordinate_to = GetCoordinate(this.InnerPanelArea, to[0], this.x_min, this.x_max, to[1], this.y_min, this.y_max);
+            var to= curve.GetPoint(curve.Length() - 1);
+            var coordinate_to = GetPoint(this.InnerPanelArea, to[0], this.x_min, this.x_max, to[1], this.y_min, this.y_max);
 
             drawLine(this.MyContext, coordinate_from, coordinate_to);
         }
@@ -78,11 +78,11 @@ function Graph(mycanvas, X_min, X_max, Y_min, Y_max, Y_Label) {
         for (var c = 0; c < this.Curves.length; c++) {
             var curve = this.Curves[c];
             for (var p = 1; p < this.Curves[c].Length(); p++) {
-                var from = curve.GetCoordinate(p-1);
-                var coordinate_from = GetCoordinate(this.InnerPanelArea, from[0], this.x_min, this.x_max, from[1], this.y_min, this.y_max);
+                var from = curve.GetPoint(p-1);
+                var coordinate_from = GetPoint(this.InnerPanelArea, from[0], this.x_min, this.x_max, from[1], this.y_min, this.y_max);
 
-                var to = curve.GetCoordinate(p);
-                var coordinate_to = GetCoordinate(this.InnerPanelArea, to[0], this.x_min, this.x_max, to[1], this.y_min, this.y_max);
+                var to = curve.GetPoint(p);
+                var coordinate_to = GetPoint(this.InnerPanelArea, to[0], this.x_min, this.x_max, to[1], this.y_min, this.y_max);
 
                 drawLine(this.MyContext, coordinate_from, coordinate_to);
             }
