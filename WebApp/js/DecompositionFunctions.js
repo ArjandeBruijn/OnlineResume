@@ -27,7 +27,13 @@ function GetModelCalculations(x_min, x_max) {
 
     var model = [];
 
+    this.LastB = null;
+
     var B = Math.random();
+
+    LastB = B;
+
+
 
     var y = 1;
     for (var x = 0; x < x_max; x++) {
