@@ -1,5 +1,5 @@
 ﻿
-function Graph(mycanvas, X_min, X_max, Y_min, Y_max) {
+function Graph(mycanvas, X_min, X_max, Y_min, Y_max, Y_Label) {
     this.x_min = X_min;
     this.x_max = X_max;
     this.y_min = Y_min;
@@ -18,15 +18,15 @@ function Graph(mycanvas, X_min, X_max, Y_min, Y_max) {
 
     DrawXaxis(this.MyContext, this.InnerPanelArea, this.x_min, this.x_max, this.y_min, this.y_max);
 
-    DrawYaxis(this.MyContext, this.InnerPanelArea, this.x_min, this.x_max, this.y_min, this.y_max, 1, 0.2, "Remaining Biomass");
+    DrawYaxis(this.MyContext, this.InnerPanelArea, this.x_min, this.x_max, this.y_min, this.y_max, 1, 0.2, Y_Label  );
 
 }
  
 $(window).load(function () {
 
-    RemainingBiomassGraph = new Graph(document.getElementById("DecompCanvas"), 0, 100, 0, 1.2);
+    RemainingBiomassGraph = new Graph(document.getElementById("DecompCanvas"), 0, 100, 0, 1.2, "Remaining Biomass");
 
-    B_route_graph = new Graph(document.getElementById("B_ROUTE_canvas"), 0, 100, 0, 1.2);
+    B_route_graph = new Graph(document.getElementById("B_ROUTE_canvas"), 0, 100, 0, 1.2, "B");
 
     AddModelPoints(RemainingBiomassGraph);
 });
@@ -68,9 +68,8 @@ function AddModelPoints(RemainingBiomassGraph) {
         if (model == null || c == model.length - 1) {
             last_coordinate = null;
 
-            RemainingBiomassGraph = new Graph(document.getElementById("DecompCanvas"), 0, 100, 0, 1.2);
+            RemainingBiomassGraph = new Graph(document.getElementById("DecompCanvas"), 0, 100, 0, 1.2, "Remaining Biomass");
 
-            
             AddMeasurements(DecompositionMeasurements, RemainingBiomassGraph.MyContext, RemainingBiomassGraph.InnerPanelArea, RemainingBiomassGraph.x_min, RemainingBiomassGraph.x_max, RemainingBiomassGraph.y_min, RemainingBiomassGraph.y_max, false);
             model = GetModelCalculations(RemainingBiomassGraph.x_min, RemainingBiomassGraph.x_max);
             c = 0;
