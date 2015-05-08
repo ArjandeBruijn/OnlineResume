@@ -1,4 +1,13 @@
 ﻿
+function CurveList() {
+
+    this.Coordinates = [];
+
+    this.AddPoint = function (coordinate) {
+        Coordinates.push(coordinate);
+    };
+}
+
 function Graph(mycanvas, X_min, X_max, Y_min, Y_max, Y_Label) {
     this.x_min = X_min;
     this.x_max = X_max;
@@ -7,26 +16,48 @@ function Graph(mycanvas, X_min, X_max, Y_min, Y_max, Y_Label) {
     this.MyCanvas = mycanvas;
     this.MyContext = mycanvas.getContext("2d");
     this.MyContext.font = "12px Georgia";
+    this.y_label = Y_Label;
 
     this.MyContext.strokeStyle = "Black";
 
-    GraphArea = new Rectangle(0, 0, this.MyCanvas.width, this.MyCanvas.height);
+    this.GraphArea = new Rectangle(0, 0, this.MyCanvas.width, this.MyCanvas.height);
 
-    this.MyContext.clearRect(0, 0, GraphArea.Width, GraphArea.Height);
+    this.MyContext.clearRect(0, 0, this.GraphArea.Width, this.GraphArea.Height);
 
-    this.InnerPanelArea = DivideGraphArea(this.MyContext, GraphArea, this.x_min, this.x_max, this.y_min, this.y_max);
+    this.InnerPanelArea = DivideGraphArea(this.MyContext, this.GraphArea);
 
     DrawXaxis(this.MyContext, this.InnerPanelArea, this.x_min, this.x_max, this.y_min, this.y_max);
 
-    DrawYaxis(this.MyContext, this.InnerPanelArea, this.x_min, this.x_max, this.y_min, this.y_max, 1, 0.2, Y_Label  );
+    DrawYaxis(this.MyContext, this.InnerPanelArea, this.x_min, this.x_max, this.y_min, this.y_max, 1, 0.2, this.y_label  );
 
+    this.Curves = [];
+
+    this.Reschale = function (X_min, X_max, Y_min, Y_max) {
+
+        this.MyContext.clearRect(0, 0, this.GraphArea.Width, this.GraphArea.Height);
+
+        this.x_min = X_min;
+        this.x_max = X_max;
+        this.y_min = Y_min;
+        this.y_max = Y_max;
+
+        this.MyContext.strokeStyle = "Black";
+
+        DrawXaxis(this.MyContext, this.InnerPanelArea, this.x_min, this.x_max, this.y_min, this.y_max);
+
+        DrawYaxis(this.MyContext, this.InnerPanelArea, this.x_min, this.x_max, this.y_min, this.y_max, 1, 0.2, this.y_label);
+
+
+
+    };
 }
- 
+
 $(window).load(function () {
 
     RemainingBiomassGraph = new Graph(document.getElementById("DecompCanvas"), 0, 100, 0, 1.2, "Remaining Biomass");
 
-    B_route_graph = new Graph(document.getElementById("B_ROUTE_canvas"), 0, 100, 0, 1.2, "B");
+    B_route_graph = new Graph(document.getElementById("B_ROUTE_canvas"), 0, 20, 0, 1.2, "B");
+    B_route_graph.Curves.push(new CurveList());
 
     AddModelPoints(RemainingBiomassGraph);
 });
@@ -39,14 +70,14 @@ function GetModelCalculations(x_min, x_max) {
     var B = Math.random();
 
     if (this.iter > B_route_graph.x_max - 10) {
-        B_route_graph.x_max += 10;
-        B_route_graph = new Graph(document.getElementById("B_ROUTE_canvas"), 0, B_route_graph.x_max, 0, 1.2, "B");
+        B_route_graph.Reschale(0,  B_route_graph.x_max + 10 ,0, B_route_graph.y_max);
     }
 
     var coordinate = GetCoordinate(B_route_graph.InnerPanelArea, this.iter++, B_route_graph.x_min, B_route_graph.x_max, B, B_route_graph.y_min, B_route_graph.y_max);
 
     if (this.LastB_coordinate != null) {
         B_route_graph.MyContext.strokeStyle = "Red";
+        B_route_graph.Curves[0].AddPoint(coordinate);
         drawLine(B_route_graph.MyContext, coordinate, this.LastB_coordinate);
     }
 
@@ -108,7 +139,7 @@ function AddModelPoints(RemainingBiomassGraph) {
 
 
 
-function DivideGraphArea(Context, GraphArea, x_min, x_max, y_min, Y_max) {
+function DivideGraphArea(Context, GraphArea) {
 
     var TitleMargin = 30;
     var PanelMargin = 25;
