@@ -34,12 +34,18 @@ function GetModelCalculations(x_min, x_max) {
 
     var model = [];
 
-    this.LastB = null;
+    if (this.iter == null) this.iter = 0;
 
     var B = Math.random();
 
-    LastB = B;
+    var coordinate = GetCoordinate(B_route_graph.InnerPanelArea, this.iter++, B_route_graph.x_min, B_route_graph.x_max, B, B_route_graph.y_min, B_route_graph.y_max);
 
+    if (this.LastB_coordinate != null) {
+        B_route_graph.MyContext.strokeStyle = "Red";
+        drawLine(B_route_graph.MyContext, coordinate, this.LastB_coordinate);
+    }
+
+    this.LastB_coordinate = coordinate;
 
 
     var y = 1;
@@ -48,6 +54,8 @@ function GetModelCalculations(x_min, x_max) {
         model.push([x, y]);
         y *= B;
     }
+
+    
     return model;
 }
 function AddModelPoints(RemainingBiomassGraph) {
