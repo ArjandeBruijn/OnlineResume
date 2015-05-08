@@ -20,15 +20,37 @@ function DrawCircle(Context, x, y) {
     Context.stroke();
 
 }
-function AddModelPoints(Model, Context, InnerPanelArea, x_min, x_max, y_min, y_max, y_frac, y_diff, y_label) {
+function GetTimeSeries(Model) {
+    var AllSeries = [];
+    var series = [];
+    var LastX = null;
 
-    
+    for (var c = 0; c < Model.length; c++) {
+
+        var x = Model[c][0];
+        var y = Model[c][1];
+
+        if (LastX == null) { series.push(Model[c]); LastX = x; }
+        else if (x > LastX) series.push(Model[c]);
+        else {
+            AllSeries.push(series);
+            series = [];
+        }
+        
+    }
+    return AllSeries;
+}
+function AddModelTimeSeries(Model, Context, InnerPanelArea, x_min, x_max, y_min, y_max, y_frac, y_diff, y_label) {
+
     var i = 0;
     var s = 0;
 
     var lastcoordinate = null;
     var Coordinates = [];
     setInterval(function () {
+
+
+
         var x = Model[i][0];
         var y = Model[i][1];
 
@@ -36,7 +58,7 @@ function AddModelPoints(Model, Context, InnerPanelArea, x_min, x_max, y_min, y_m
         var coordinate = GetCoordinate(InnerPanelArea, x, x_min, x_max, y, y_min, y_max);
 
         Coordinates.push(coordinate);
-        //DrawCircle(Context, coordinate.x, coordinate.y);
+
 
         if (lastcoordinate != null) {
 
@@ -61,6 +83,15 @@ function AddModelPoints(Model, Context, InnerPanelArea, x_min, x_max, y_min, y_m
         i++;
         if (i == Model.length - 1) i = 0;
     }, 5);
+
+}
+function AddModelPoints(Model, Context, InnerPanelArea, x_min, x_max, y_min, y_max, y_frac, y_diff, y_label) {
+
+    var series =  GetTimeSeries(Model);
+
+    AddModelTimeSeries(Model, Context, InnerPanelArea, x_min, x_max, y_min, y_max, y_frac, y_diff, y_label);
+
+    
 }
 function AddMeasurements(TimeSeries, Context, InnerPanelArea, x_min, x_max, y_min, y_max, HasLine) {
     
