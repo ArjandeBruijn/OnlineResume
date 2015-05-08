@@ -3,8 +3,15 @@ function CurveList() {
 
     this.Coordinates = [];
 
+    this.Length = function () {
+        return this.Coordinates.length;
+    }
+
+    this.GetCoordinate = function (i) {
+        return this.Coordinates[i];
+    };
     this.AddPoint = function (coordinate) {
-        Coordinates.push(coordinate);
+        this.Coordinates.push(coordinate);
     };
 }
 
@@ -30,7 +37,18 @@ function Graph(mycanvas, X_min, X_max, Y_min, Y_max, Y_Label) {
 
     DrawYaxis(this.MyContext, this.InnerPanelArea, this.x_min, this.x_max, this.y_min, this.y_max, 1, 0.2, this.y_label  );
 
-    this.Curves = [];
+    this.AddCurveList = function () {
+        if (this.Curves == null) this.Curves = [];
+        this.Curves.push(new CurveList());
+    }
+
+    this.AddPoint = function (curve_number, coordinate) {
+        var curve = this.Curves[curve_number];
+        curve.AddPoint(coordinate);
+        if (curve.Length() > 1) {
+            drawLine(this.MyContext, curve.GetCoordinate(curve.Length() - 2), curve.GetCoordinate(curve.Length() - 1));
+        }
+    }
 
     this.Reschale = function (X_min, X_max, Y_min, Y_max) {
 
@@ -47,7 +65,7 @@ function Graph(mycanvas, X_min, X_max, Y_min, Y_max, Y_Label) {
 
         DrawYaxis(this.MyContext, this.InnerPanelArea, this.x_min, this.x_max, this.y_min, this.y_max, 1, 0.2, this.y_label);
 
-
+         
 
     };
 }
@@ -57,7 +75,7 @@ $(window).load(function () {
     RemainingBiomassGraph = new Graph(document.getElementById("DecompCanvas"), 0, 100, 0, 1.2, "Remaining Biomass");
 
     B_route_graph = new Graph(document.getElementById("B_ROUTE_canvas"), 0, 20, 0, 1.2, "B");
-    B_route_graph.Curves.push(new CurveList());
+    B_route_graph.AddCurveList();
 
     AddModelPoints(RemainingBiomassGraph);
 });
@@ -76,9 +94,8 @@ function GetModelCalculations(x_min, x_max) {
     var coordinate = GetCoordinate(B_route_graph.InnerPanelArea, this.iter++, B_route_graph.x_min, B_route_graph.x_max, B, B_route_graph.y_min, B_route_graph.y_max);
 
     if (this.LastB_coordinate != null) {
-        B_route_graph.MyContext.strokeStyle = "Red";
-        B_route_graph.Curves[0].AddPoint(coordinate);
-        drawLine(B_route_graph.MyContext, coordinate, this.LastB_coordinate);
+        //B_route_graph.MyContext.strokeStyle = "Red";
+        //B_route_graph.AddPoint(0, coordinate);
     }
 
     this.LastB_coordinate = coordinate;
@@ -113,6 +130,7 @@ function AddModelPoints(RemainingBiomassGraph) {
             last_coordinate = null;
 
             RemainingBiomassGraph = new Graph(document.getElementById("DecompCanvas"), 0, 100, 0, 1.2, "Remaining Biomass");
+            RemainingBiomassGraph.AddCurveList();
 
             AddMeasurements(DecompositionMeasurements, RemainingBiomassGraph.MyContext, RemainingBiomassGraph.InnerPanelArea, RemainingBiomassGraph.x_min, RemainingBiomassGraph.x_max, RemainingBiomassGraph.y_min, RemainingBiomassGraph.y_max, false);
             model = GetModelCalculations(RemainingBiomassGraph.x_min, RemainingBiomassGraph.x_max);
@@ -126,10 +144,9 @@ function AddModelPoints(RemainingBiomassGraph) {
         RemainingBiomassGraph.MyContext.strokeStyle = "Red";
         var coordinate = GetCoordinate(RemainingBiomassGraph.InnerPanelArea, x, RemainingBiomassGraph.x_min, RemainingBiomassGraph.x_max, y, RemainingBiomassGraph.y_min, RemainingBiomassGraph.y_max);
 
-        if (last_coordinate != null) {
-            drawLine(RemainingBiomassGraph.MyContext, coordinate, last_coordinate);
-        }
-        last_coordinate = coordinate;
+        RemainingBiomassGraph.AddPoint(0, coordinate);
+
+         
 
          
     }, 5);
