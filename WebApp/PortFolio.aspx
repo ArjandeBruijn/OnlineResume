@@ -155,13 +155,21 @@
 
         <div id = "left_col">
             <div id = "right_col_ins">
-                 <canvas id="DecompCanvas" width="525" height="450">
-                     Your browser does not support the HTML5 canvas tag.</canvas>
-                <button type="button">Restart</button>
+                 <canvas id="DecompCanvas" width="525" height="450">Your browser does not support the HTML5 canvas tag.</canvas>
+                
+                 
+               
                 <div id = "Div3"></div>
+                 <canvas id="DecompCanvas" width="525" height="450">Your browser does not support the HTML5 canvas tag.</canvas>
+                  <button type="button">Restart</button>
             </div>
+             
+            
+           
             <br></br><br></br><br></br><br></br>
         </div>
+
+        
 
         <p>Bayesian statistics is often used in contraction with Markov Chain calibrations (see home page). 
         The idea behind the Bayesian proposition is that you turn around the driving mechanism and the phenomenon, i.e. where 
