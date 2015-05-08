@@ -13,7 +13,7 @@ $(window).load(function () {
 
     RemainingBiomassGraph = new Graph(document.getElementById("DecompCanvas"), 0, 100, 0, 1.2);
 
-    canvas = document.getElementById("DecompCanvas");
+    canvas = RemainingBiomassGraph.MyCanvas;
     var Context = canvas.getContext("2d");
     Context.font = "12px Georgia";
 
@@ -21,7 +21,7 @@ $(window).load(function () {
     var Context_B_route = canvas_B_route.getContext("2d");
     Context_B_route.font = "12px Georgia";
 
-    B_route_graph = new Graph(document.getElementById("B_ROUTE_canvas"),0, 100, 0, 1.2);
+    B_route_graph = new Graph(document.getElementById("B_ROUTE_canvas"), 0, 100, 0, 1.2);
 
 
     DrawGraph(Context_B_route, B_route_graph);
