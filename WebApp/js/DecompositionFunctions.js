@@ -99,6 +99,30 @@ function Graph(mycanvas, X_min, X_max, Y_min, Y_max, Y_Label) {
         }
 
     };
+    function DivideGraphArea(Context, GraphArea) {
+
+        var TitleMargin = 30;
+        var PanelMargin = 25;
+
+        TitleAreaY = new Rectangle(GraphArea.A.x, GraphArea.A.y, TitleMargin, GraphArea.Height - TitleMargin);
+
+        //DrawRectangle(TitleAreaY, Context, "Blue");
+
+        TitleAreaX = new Rectangle(TitleAreaY.C.x, TitleAreaY.C.y, GraphArea.Width - TitleMargin, TitleMargin);
+
+
+
+        //DrawRectangle(TitleAreaX, Context, "Yellow");
+
+        PanelArea = new Rectangle(TitleAreaY.B.x, TitleAreaY.B.y, TitleAreaX.Width, TitleAreaY.Height);
+        //DrawRectangle(PanelArea, Context, "Purple");
+
+        var InnerPanelArea = new Rectangle(PanelArea.A.x + PanelMargin, PanelArea.A.y + PanelMargin, PanelArea.Width - 2 * PanelMargin, PanelArea.Height - 2 * PanelMargin);
+        //DrawRectangle(InnerPanelArea, Context, "Grey");
+
+        return InnerPanelArea;
+
+    }
 }
 
 $(window).load(function () {
@@ -179,28 +203,5 @@ function AddModelPoints(RemainingBiomassGraph) {
 
 
 
-function DivideGraphArea(Context, GraphArea) {
 
-    var TitleMargin = 30;
-    var PanelMargin = 25;
-
-    TitleAreaY = new Rectangle(GraphArea.A.x, GraphArea.A.y, TitleMargin, GraphArea.Height - TitleMargin);
-
-    //DrawRectangle(TitleAreaY, Context, "Blue");
-
-    TitleAreaX = new Rectangle(TitleAreaY.C.x, TitleAreaY.C.y, GraphArea.Width - TitleMargin, TitleMargin);
-
-
-
-    //DrawRectangle(TitleAreaX, Context, "Yellow");
-
-    PanelArea = new Rectangle(TitleAreaY.B.x, TitleAreaY.B.y, TitleAreaX.Width, TitleAreaY.Height);
-    //DrawRectangle(PanelArea, Context, "Purple");
-
-    var InnerPanelArea = new Rectangle(PanelArea.A.x + PanelMargin, PanelArea.A.y + PanelMargin, PanelArea.Width - 2 * PanelMargin, PanelArea.Height - 2 * PanelMargin);
-    //DrawRectangle(InnerPanelArea, Context, "Grey");
-
-    return InnerPanelArea;
-
-}
 
