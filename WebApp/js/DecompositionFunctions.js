@@ -1,28 +1,27 @@
 ﻿
-function Graph(Canvas, X_min, X_max, Y_min, Y_max) {
+function Graph(X_min, X_max, Y_min, Y_max) {
     this.x_min = X_min;
     this.x_max = X_max;
     this.y_min = Y_min;
     this.y_max = Y_max;
-    this.canvas = Canvas;
+
 }
 
 
 
 $(window).load(function () {
 
-    RemainingBiomassGraph = new Graph(document.getElementById("DecompCanvas"), 0, 100, 0, 1.2);
+    RemainingBiomassGraph = new Graph(0, 100, 0, 1.2);
 
     canvas = document.getElementById("DecompCanvas");
     var Context = canvas.getContext("2d");
     Context.font = "12px Georgia";
 
-    B_route_graph = new Graph(document.getElementById("B_ROUTE_canvas"), 0, 100, 0, 1.2);
     canvas_B_route = document.getElementById("B_ROUTE_canvas");
     var Context_B_route = canvas_B_route.getContext("2d");
     Context_B_route.font = "12px Georgia";
 
-    
+    B_route_graph = new Graph(0, 100, 0, 1.2);
 
 
     DrawGraph(Context_B_route, B_route_graph);
