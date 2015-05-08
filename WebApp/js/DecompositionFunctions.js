@@ -71,6 +71,20 @@ function Graph(mycanvas, X_min, X_max, Y_min, Y_max, Y_Label) {
             this.drawLine(this.MyContext, coordinate_from, coordinate_to);
         }
     }
+    this.DrawCurve = function(curve_nr) {
+
+        var curve = this.Curves[curve_nr];
+
+        for (var p = 1; p < curve.Length(); p++) {
+            var from = curve.GetPoint(p - 1);
+            var coordinate_from = GetPoint(this.InnerPanelArea, from[0], this.x_min, this.x_max, from[1], this.y_min, this.y_max);
+
+            var to = curve.GetPoint(p);
+            var coordinate_to = GetPoint(this.InnerPanelArea, to[0], this.x_min, this.x_max, to[1], this.y_min, this.y_max);
+
+            drawLine(this.MyContext, coordinate_from, coordinate_to);
+        }
+    }
 
     this.Reschale = function (X_min, X_max, Y_min, Y_max) {
 
@@ -88,16 +102,7 @@ function Graph(mycanvas, X_min, X_max, Y_min, Y_max, Y_Label) {
         DrawYaxis(this.MyContext, this.InnerPanelArea, this.x_min, this.x_max, this.y_min, this.y_max, 1, 0.2, this.y_label);
 
         for (var c = 0; c < this.Curves.length; c++) {
-            var curve = this.Curves[c];
-            for (var p = 1; p < this.Curves[c].Length(); p++) {
-                var from = curve.GetPoint(p-1);
-                var coordinate_from = GetPoint(this.InnerPanelArea, from[0], this.x_min, this.x_max, from[1], this.y_min, this.y_max);
-
-                var to = curve.GetPoint(p);
-                var coordinate_to = GetPoint(this.InnerPanelArea, to[0], this.x_min, this.x_max, to[1], this.y_min, this.y_max);
-
-                drawLine(this.MyContext, coordinate_from, coordinate_to);
-            }
+            this.DrawCurve(c);
         }
 
     };
