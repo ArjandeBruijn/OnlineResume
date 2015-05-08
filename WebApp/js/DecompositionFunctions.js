@@ -60,16 +60,9 @@ function Graph(mycanvas, X_min, X_max, Y_min, Y_max, Y_Label) {
         var curve = this.Curves[curve_number];
         curve.AddPoint(point);
 
-        if (curve.Length() > 1) {
+        this.DrawCurve(curve_number);
 
-            var from= curve.GetPoint(curve.Length() - 2);
-            var coordinate_from = GetRowColumn(this.InnerPanelArea, from[0], this.x_min, this.x_max, from[1], this.y_min, this.y_max);
-
-            var to= curve.GetPoint(curve.Length() - 1);
-            var coordinate_to = GetRowColumn(this.InnerPanelArea, to[0], this.x_min, this.x_max, to[1], this.y_min, this.y_max);
-
-            this.drawLine(this.MyContext, coordinate_from, coordinate_to);
-        }
+         
     }
     this.DrawCurve = function(curve_nr) {
 
