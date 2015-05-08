@@ -21,7 +21,7 @@ $(window).load(function () {
  
     DrawGraph(B_route_graph);
 
-    AddModelPoints(RemainingBiomassGraph.MyContext, RemainingBiomassGraph);
+    AddModelPoints(RemainingBiomassGraph);
 });
 function GetModelCalculations(x_min, x_max) {
 
@@ -37,7 +37,7 @@ function GetModelCalculations(x_min, x_max) {
     }
     return model;
 }
-function AddModelPoints(Context, RemainingBiomassGraph) {
+function AddModelPoints(RemainingBiomassGraph) {
 
 
     var i = 0;
@@ -54,9 +54,9 @@ function AddModelPoints(Context, RemainingBiomassGraph) {
 
         if (model == null || c == model.length - 1) {
             last_coordinate = null;
-            Context.strokeStyle = "Black";
+            RemainingBiomassGraph.MyContext.strokeStyle = "Black";
             InnerPanelArea = DrawGraph(RemainingBiomassGraph);
-            AddMeasurements(DecompositionMeasurements, Context, InnerPanelArea, RemainingBiomassGraph.x_min, RemainingBiomassGraph.x_max, RemainingBiomassGraph.y_min, RemainingBiomassGraph.y_max, false);
+            AddMeasurements(DecompositionMeasurements, RemainingBiomassGraph.MyContext, InnerPanelArea, RemainingBiomassGraph.x_min, RemainingBiomassGraph.x_max, RemainingBiomassGraph.y_min, RemainingBiomassGraph.y_max, false);
             model = GetModelCalculations(RemainingBiomassGraph.x_min, RemainingBiomassGraph.x_max);
             c = 0;
         }
@@ -65,11 +65,11 @@ function AddModelPoints(Context, RemainingBiomassGraph) {
         var x = model[c][0];
         var y = model[c][1];
 
-        Context.strokeStyle = "Red";
+        RemainingBiomassGraph.MyContext.strokeStyle = "Red";
         var coordinate = GetCoordinate(InnerPanelArea, x, RemainingBiomassGraph.x_min, RemainingBiomassGraph.x_max, y, RemainingBiomassGraph.y_min, RemainingBiomassGraph.y_max);
 
         if (last_coordinate != null) {
-            drawLine(Context, coordinate, last_coordinate);
+            drawLine(RemainingBiomassGraph.MyContext, coordinate, last_coordinate);
         }
         last_coordinate = coordinate;
 
