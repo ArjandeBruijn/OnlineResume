@@ -185,7 +185,14 @@ function AddModelPoints(RemainingBiomassGraph) {
             RemainingBiomassGraph = new Graph(document.getElementById("DecompCanvas"), 0, 100, 0, 1.2, "Remaining Biomass");
             RemainingBiomassGraph.AddCurveList("Red");
 
-            AddMeasurements2(DecompositionMeasurements, RemainingBiomassGraph.MyContext, RemainingBiomassGraph.InnerPanelArea, RemainingBiomassGraph.x_min, RemainingBiomassGraph.x_max, RemainingBiomassGraph.y_min, RemainingBiomassGraph.y_max, false);
+            RemainingBiomassGraph.AddCurveList("Black");
+
+
+            for (var p = 0; p < DecompositionMeasurements.length; p++) {
+                RemainingBiomassGraph.AddPoint(1,DecompositionMeasurements[p]);
+            }
+
+            //AddMeasurements2(DecompositionMeasurements, RemainingBiomassGraph.MyContext, RemainingBiomassGraph.InnerPanelArea, RemainingBiomassGraph.x_min, RemainingBiomassGraph.x_max, RemainingBiomassGraph.y_min, RemainingBiomassGraph.y_max, false);
             model = GetModelCalculations(RemainingBiomassGraph.x_min, RemainingBiomassGraph.x_max);
             c = 0;
         }
@@ -194,13 +201,13 @@ function AddModelPoints(RemainingBiomassGraph) {
         var x = model[c][0];
         var y = model[c][1];
 
-        
-         
+
+
         RemainingBiomassGraph.AddPoint(0, [x, y]);
 
-         
 
-         
+
+
     }, 5);
 }
 
