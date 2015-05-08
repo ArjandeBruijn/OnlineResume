@@ -42,11 +42,19 @@ function Graph(mycanvas, X_min, X_max, Y_min, Y_max, Y_Label) {
         this.Curves.push(new CurveList());
     }
 
-    this.AddPoint = function (curve_number, coordinate) {
+    this.AddPoint = function (curve_number, point) {
         var curve = this.Curves[curve_number];
-        curve.AddPoint(coordinate);
+        curve.AddPoint(point);
+
         if (curve.Length() > 1) {
-            drawLine(this.MyContext, curve.GetCoordinate(curve.Length() - 2), curve.GetCoordinate(curve.Length() - 1));
+
+            var from= curve.GetCoordinate(curve.Length() - 2);
+            var coordinate_from = GetCoordinate(this.InnerPanelArea, from[0], this.x_min, this.x_max, from[1], this.y_min, this.y_max);
+
+            var to= curve.GetCoordinate(curve.Length() - 1);
+            var coordinate_to = GetCoordinate(this.InnerPanelArea, to[0], this.x_min, this.x_max, to[1], this.y_min, this.y_max);
+
+            drawLine(this.MyContext, coordinate_from, coordinate_to);
         }
     }
 
@@ -65,7 +73,18 @@ function Graph(mycanvas, X_min, X_max, Y_min, Y_max, Y_Label) {
 
         DrawYaxis(this.MyContext, this.InnerPanelArea, this.x_min, this.x_max, this.y_min, this.y_max, 1, 0.2, this.y_label);
 
-         
+        for (var c = 0; c < this.Curves.length; c++) {
+            var curve = this.Curves[c];
+            for (var p = 1; p < this.Curves[c].Length(); p++) {
+                var from = curve.GetCoordinate(p-1);
+                var coordinate_from = GetCoordinate(this.InnerPanelArea, from[0], this.x_min, this.x_max, from[1], this.y_min, this.y_max);
+
+                var to = curve.GetCoordinate(p);
+                var coordinate_to = GetCoordinate(this.InnerPanelArea, to[0], this.x_min, this.x_max, to[1], this.y_min, this.y_max);
+
+                drawLine(this.MyContext, coordinate_from, coordinate_to);
+            }
+        }
 
     };
 }
@@ -91,15 +110,8 @@ function GetModelCalculations(x_min, x_max) {
         B_route_graph.Reschale(0,  B_route_graph.x_max + 10 ,0, B_route_graph.y_max);
     }
 
-    var coordinate = GetCoordinate(B_route_graph.InnerPanelArea, this.iter++, B_route_graph.x_min, B_route_graph.x_max, B, B_route_graph.y_min, B_route_graph.y_max);
-
-    if (this.LastB_coordinate != null) {
-        //B_route_graph.MyContext.strokeStyle = "Red";
-        //B_route_graph.AddPoint(0, coordinate);
-    }
-
-    this.LastB_coordinate = coordinate;
-
+     
+    B_route_graph.AddPoint(0, [this.iter++, B]);
 
     var y = 1;
     for (var x = 0; x < x_max; x++) {
@@ -142,9 +154,8 @@ function AddModelPoints(RemainingBiomassGraph) {
         var y = model[c][1];
 
         RemainingBiomassGraph.MyContext.strokeStyle = "Red";
-        var coordinate = GetCoordinate(RemainingBiomassGraph.InnerPanelArea, x, RemainingBiomassGraph.x_min, RemainingBiomassGraph.x_max, y, RemainingBiomassGraph.y_min, RemainingBiomassGraph.y_max);
-
-        RemainingBiomassGraph.AddPoint(0, coordinate);
+         
+        RemainingBiomassGraph.AddPoint(0, [x, y]);
 
          
 
