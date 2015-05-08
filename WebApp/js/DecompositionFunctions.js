@@ -8,12 +8,21 @@
     y_min = 0;
     y_max = 1.2;
 
-    InnerPanelArea = DrawGraph(Context);
+   
 
-    AddModelPoints(Context, InnerPanelArea, x_min, x_max, y_min, y_max);
+    AddModelPoints(Context, x_min, x_max, y_min, y_max);
 });
+function GetModelCalculations(x_min, x_max) {
 
-function AddModelPoints(Context, InnerPanelArea, x_min, x_max, y_min, y_max) {
+    var model = [];
+
+    for (var x = 0; x < x_max; x++) {
+
+        model.push([x, 1 - 0.01 * x]);
+    }
+    return model;
+}
+function AddModelPoints(Context, x_min, x_max, y_min, y_max) {
 
 
     var i = 0;
@@ -21,35 +30,58 @@ function AddModelPoints(Context, InnerPanelArea, x_min, x_max, y_min, y_max) {
 
     var lastcoordinate = null;
     var Coordinates = [];
+    var model = null;
+    var last_coordinate =null;
+
+    var c = 0;
+
     setInterval(function () {
 
+        Context.strokeStyle = "Black";
+        InnerPanelArea = DrawGraph(Context);
         AddMeasurements(DecompositionMeasurements, Context, InnerPanelArea, x_min, x_max, y_min, y_max, false);
-        /*
-        var x = Model[i][0];
-        var y = Model[i][1];
+
+
+
+        if (model == null || c == model.length - 1) {
+            model = GetModelCalculations(x_min, x_max);
+            c = 0;
+        }
+        else c++;
+
+        var x = model[c][0];
+        var y = model[c][1];
 
         Context.strokeStyle = "Red";
         var coordinate = GetCoordinate(InnerPanelArea, x, x_min, x_max, y, y_min, y_max);
 
-        Coordinates.push(coordinate);
-        //DrawCircle(Context, coordinate.x, coordinate.y);
+        if (last_coordinate != null) {
+            drawLine(Context, coordinate, last_coordinate);
+        }
+        last_coordinate = coordinate;
 
+
+
+
+        /*
+        
+       
         if (lastcoordinate != null) {
 
-            if (coordinate.x < lastcoordinate.x) {
+        if (coordinate.x < lastcoordinate.x) {
 
-                Context.clearRect(0, 0, GraphArea.Width, GraphArea.Height);
-                Context.strokeStyle = "Black";
+        
+        Context.strokeStyle = "Black";
 
-                DrawXaxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max);
+        DrawXaxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max);
 
-                DrawYaxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max, y_frac, y_diff, y_label);
+        DrawYaxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max, y_frac, y_diff, y_label);
 
-                AddMeasurements(Measurements, Context, InnerPanelArea, x_min, x_max, y_min, y_max, true);
-                AddLegend(Context, InnerPanelArea);
-                Context.strokeStyle = "Red";
-            }
-            else drawLine(Context, coordinate, lastcoordinate);
+        AddMeasurements(Measurements, Context, InnerPanelArea, x_min, x_max, y_min, y_max, true);
+        AddLegend(Context, InnerPanelArea);
+        Context.strokeStyle = "Red";
+        }
+        else drawLine(Context, coordinate, lastcoordinate);
         }
         lastcoordinate = coordinate;
 
@@ -60,30 +92,13 @@ function AddModelPoints(Context, InnerPanelArea, x_min, x_max, y_min, y_max) {
     }, 5);
 }
 
-function GoBayes() {
-   
-        canvas = document.getElementById("DecompCanvas");
-        var Context = canvas.getContext("2d");
-        Context.font = "12px Georgia";
 
-        x_min = 0;
-        x_max = 100;
-        y_min = 0;
-        y_max = 1.2;
-
-        InnerPanelArea = DrawGraph(Context);
-
-        
-        var Model = [[0, 1], [20, 0.9], [50, 0.89]];
-        AddModelPoints(Model, Context, InnerPanelArea, x_min, x_max, y_min, y_max, 1, 0.2, "Remaining Biomass");
-         
-
-        AddMeasurements(DecompositionMeasurements, Context, InnerPanelArea, x_min, x_max, y_min, y_max, false);
-}
 
 function DrawGraph(Context) {
 
     GraphArea = new Rectangle(0, 0, canvas.width,canvas.height);
+
+    Context.clearRect(0, 0, GraphArea.Width, GraphArea.Height);
 
     var InnerPanelArea = DivideGraphArea(Context, GraphArea, x_min, x_max, y_min, y_max);
 
