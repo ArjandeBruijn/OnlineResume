@@ -62,35 +62,7 @@ function AddModelPoints(Context, x_min, x_max, y_min, y_max) {
         }
         last_coordinate = coordinate;
 
-
-
-
-        /*
-        
-       
-        if (lastcoordinate != null) {
-
-        if (coordinate.x < lastcoordinate.x) {
-
-        
-        Context.strokeStyle = "Black";
-
-        DrawXaxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max);
-
-        DrawYaxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max, y_frac, y_diff, y_label);
-
-        AddMeasurements(Measurements, Context, InnerPanelArea, x_min, x_max, y_min, y_max, true);
-        AddLegend(Context, InnerPanelArea);
-        Context.strokeStyle = "Red";
-        }
-        else drawLine(Context, coordinate, lastcoordinate);
-        }
-        lastcoordinate = coordinate;
-
-
-        i++;
-        if (i == Model.length - 1) i = 0;
-        */
+         
     }, 5);
 }
 
