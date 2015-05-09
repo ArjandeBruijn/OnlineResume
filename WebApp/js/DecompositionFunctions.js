@@ -251,6 +251,8 @@ function AddModelPoints() {
     var c = 0;
 
     var P_old = null;
+    var P = 1;
+    var logalpha = 1;
 
     setInterval(function () {
 
@@ -258,6 +260,9 @@ function AddModelPoints() {
             last_coordinate = null;
 
             RemainingBiomassGraph = new Graph(document.getElementById("DecompCanvas"), 0, 100, 0, 1.2, "Remaining Biomass");
+            RemainingBiomassGraph.WriteText("P = exp(" + P.toFixed(0) + ")", 100, 30);
+            RemainingBiomassGraph.WriteText("logalpha = " + logalpha, 100, 50);
+
             RemainingBiomassGraph.AddCurveList("Red", null);
 
             RemainingBiomassGraph.AddCurveList(null, "Black");
@@ -274,14 +279,11 @@ function AddModelPoints() {
 
         RemainingBiomassGraph.AddPoint(0, model[c][0], model[c][1], null);
 
-
-
         P = GetProbability(model);
-
-        RemainingBiomassGraph.WriteText("P = exp(" + P.toFixed(0) + ")", 100, 30);
 
         if (P_old != null) {
             logalpha = P - P_old;
+            RemainingBiomassGraph.WriteText("P = exp(" + P.toFixed(0) + ")", 100, 30);
             RemainingBiomassGraph.WriteText("logalpha = " + logalpha, 100, 50);
         }
 
