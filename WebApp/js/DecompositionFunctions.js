@@ -274,6 +274,12 @@ function AddModelPoints() {
 
             P = GetProbability(model);
 
+            if (P_old != null) {
+                logalpha = P - P_old;
+            }
+
+            P_old = P;
+
             RemainingBiomassGraph.LegendText = ["P = exp(" + P.toFixed(0) + ")", "logalpha = " + logalpha];
 
             RemainingBiomassGraph.AddCurveList("Red", null);
@@ -293,13 +299,7 @@ function AddModelPoints() {
 
 
 
-        if (P_old != null) {
-            logalpha = P - P_old;
-            RemainingBiomassGraph.WriteText("P = exp(" + P.toFixed(0) + ")", 100, 30);
-            RemainingBiomassGraph.WriteText("logalpha = " + logalpha, 100, 50);
-        }
-
-        P_old = P;
+        
 
     }, 5);
 }
