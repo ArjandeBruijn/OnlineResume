@@ -160,8 +160,8 @@
                  
                
                 <div id = "Div3"></div>
-                 <canvas id="B_ROUTE_canvas" width="525" height="250">Your browser does not support the HTML5 canvas tag.</canvas>
-                  <button type="button">Restart</button>
+                 <canvas  id="B_ROUTE_canvas" width="525" height="250">Your browser does not support the HTML5 canvas tag.</canvas>
+                  <button onclick="ResetDecompositionFunctions()" type="button">Restart</button>
             </div>
              
             

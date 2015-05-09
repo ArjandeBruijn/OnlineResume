@@ -200,6 +200,19 @@ $(window).load(function () {
 
     AddModelPoints();
 });
+
+function ResetDecompositionFunctions() {
+
+    if (interval_id != null) {
+        clearInterval(interval_id);
+    }
+
+    B_route_graph = new Graph(document.getElementById("B_ROUTE_canvas"), 0, 20, 0, 1.2, "B");
+    B_route_graph.AddCurveList("Red", null);
+
+    AddModelPoints();
+}
+
 function GetModelCalculations(i, B, x_min, x_max) {
 
     var model = [];
@@ -250,7 +263,7 @@ function GetProbability(model) {
     return P;
 }
 function AddModelPoints() {
-
+   
 
     var i = 0;
     var s = 0;
@@ -268,7 +281,7 @@ function AddModelPoints() {
     var B = 0.05;// Math.random();
     var B_sum =0;
 
-    setInterval(function () {
+    interval_id = setInterval(function () {
 
         if (model == null || c == model.length - 1) {
 
@@ -279,6 +292,8 @@ function AddModelPoints() {
             var B_old = B;
 
             B += 0.2 * (Math.random() - 0.5);
+
+            if (B < 0) B *= -1;
 
             model = GetModelCalculations(i++, B, RemainingBiomassGraph.x_min, RemainingBiomassGraph.x_max);
 
