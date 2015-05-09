@@ -176,12 +176,10 @@ function Graph(mycanvas, X_min, X_max, Y_min, Y_max, Y_Label) {
 //----------------------------------------------------------------------------------------------------------------------
 $(window).load(function () {
 
-    RemainingBiomassGraph = new Graph(document.getElementById("DecompCanvas"), 0, 100, 0, 1.2, "Remaining Biomass");
-
     B_route_graph = new Graph(document.getElementById("B_ROUTE_canvas"), 0, 20, 0, 1.2, "B");
     B_route_graph.AddCurveList("Red", null);
 
-    AddModelPoints(RemainingBiomassGraph);
+    AddModelPoints();
 });
 function GetModelCalculations(x_min, x_max) {
 
@@ -208,7 +206,7 @@ function GetModelCalculations(x_min, x_max) {
     
     return model;
 }
-function AddModelPoints(RemainingBiomassGraph) {
+function AddModelPoints() {
 
 
     var i = 0;
