@@ -50,6 +50,50 @@ function Graph(mycanvas, X_axis, Y_axis) {
         }
 
     }
+    this.DrawYaxis = function (Context, InnerPanelArea, x_min, x_max, y_min, y_max, y_factor, y_diff, label) {
+
+        drawLine(Context, new Coordinate(InnerPanelArea.A.x, InnerPanelArea.A.y), new Coordinate(InnerPanelArea.D.x, InnerPanelArea.D.y));
+
+        Context.fillText(label, InnerPanelArea.A.x - 30, 12);
+
+
+        var y_value = y_min;
+
+        var x_value = x_min;
+
+        while (y_value <= y_max) {
+            var coordinate = GetPoint(InnerPanelArea, x_value, x_min, x_max, y_value, y_min, y_max);
+
+            drawLine(Context, new Coordinate(coordinate.x - 5, coordinate.y), new Coordinate(coordinate.x + 5, coordinate.y));
+
+            Context.fillText(0.001 * Math.round(1000 * y_factor * y_value), coordinate.x - 20, coordinate.y);
+
+            y_value += y_diff;
+        }
+
+
+
+    }
+    this.DrawXaxis = function (Context, InnerPanelArea, x_min, x_max, y_min, y_max) {
+
+        drawLine(Context, new Coordinate(InnerPanelArea.D.x, InnerPanelArea.D.y), new Coordinate(InnerPanelArea.C.x, InnerPanelArea.C.y));
+
+        Context.fillText("Time", InnerPanelArea.D.x + 0.5 * InnerPanelArea.Width, InnerPanelArea.D.y + 40);
+
+        var x_value = x_min;
+        var y_value = y_min;
+        while (x_value < x_max) {
+            var coordinate = GetPoint(InnerPanelArea, x_value, x_min, x_max, y_value, y_min, y_max);
+
+            drawLine(Context, new Coordinate(coordinate.x, coordinate.y - 5), new Coordinate(coordinate.x, coordinate.y + 5));
+
+            Context.fillText(x_value, coordinate.x - 15, coordinate.y + 15);
+
+            x_value += 10;
+        }
+
+
+    }
     this.Refresh = function () {
         this.GraphArea = new Rectangle(0, 0, this.MyCanvas.width, this.MyCanvas.height);
 
@@ -59,9 +103,9 @@ function Graph(mycanvas, X_axis, Y_axis) {
 
         this.MyContext.strokeStyle = "Black";
 
-        DrawXaxis(this.MyContext, this.InnerPanelArea, this.x_min, this.x_max, this.y_min, this.y_max);
+        this.DrawXaxis(this.MyContext, this.InnerPanelArea, this.x_min, this.x_max, this.y_min, this.y_max);
 
-        DrawYaxis(this.MyContext, this.InnerPanelArea, this.x_min, this.x_max, this.y_min, this.y_max, 1, 0.2, this.y_label);
+        this.DrawYaxis(this.MyContext, this.InnerPanelArea, this.x_min, this.x_max, this.y_min, this.y_max, 1, 0.2, this.y_label);
 
         if (this.Curves != null) {
             for (var c = 0; c < this.Curves.length; c++) {
@@ -162,7 +206,8 @@ function Graph(mycanvas, X_axis, Y_axis) {
             }
         }
     }
-
+    
+    
     this.Reschale = function (X_min, X_max, Y_min, Y_max) {
 
         this.MyContext.clearRect(0, 0, this.GraphArea.Width, this.GraphArea.Height);
@@ -174,9 +219,9 @@ function Graph(mycanvas, X_axis, Y_axis) {
 
 
         this.MyContext.strokeStyle = "Black";
-        DrawXaxis(this.MyContext, this.InnerPanelArea, this.x_min, this.x_max, this.y_min, this.y_max);
+        this.DrawXaxis(this.MyContext, this.InnerPanelArea, this.x_min, this.x_max, this.y_min, this.y_max);
 
-        DrawYaxis(this.MyContext, this.InnerPanelArea, this.x_min, this.x_max, this.y_min, this.y_max, 1, 0.2, this.y_label);
+        this.DrawYaxis(this.MyContext, this.InnerPanelArea, this.x_min, this.x_max, this.y_min, this.y_max, 1, 0.2, this.y_label);
 
         this.Refresh();
 
