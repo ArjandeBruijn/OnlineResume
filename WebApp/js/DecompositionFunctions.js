@@ -1,12 +1,12 @@
-﻿
-function CurveList(line_color, marker) {
+﻿ 
+function CurveList(line_color, marker_color) {
 
     // points[0] = x-value
     // points[1] = y-value;
     this.Points = [];
 
     this.LineColor = line_color;
-    this.Marker = marker;
+    this.MarkerColor = marker_color;
 
     this.Length = function () {
         return this.Points.length;
@@ -30,17 +30,28 @@ function Graph(mycanvas, X_min, X_max, Y_min, Y_max, Y_Label) {
     this.MyContext.font = "12px Georgia";
     this.y_label = Y_Label;
 
-    this.MyContext.strokeStyle = "Black";
+    this.Refresh = function () {
+        this.GraphArea = new Rectangle(0, 0, this.MyCanvas.width, this.MyCanvas.height);
 
-    this.GraphArea = new Rectangle(0, 0, this.MyCanvas.width, this.MyCanvas.height);
+        this.MyContext.clearRect(0, 0, this.GraphArea.Width, this.GraphArea.Height);
 
-    this.MyContext.clearRect(0, 0, this.GraphArea.Width, this.GraphArea.Height);
+        this.InnerPanelArea = DivideGraphArea(this.MyContext, this.GraphArea);
 
-    this.InnerPanelArea = DivideGraphArea(this.MyContext, this.GraphArea);
+        this.MyContext.strokeStyle = "Black";
 
-    DrawXaxis(this.MyContext, this.InnerPanelArea, this.x_min, this.x_max, this.y_min, this.y_max);
+        DrawXaxis(this.MyContext, this.InnerPanelArea, this.x_min, this.x_max, this.y_min, this.y_max);
 
-    DrawYaxis(this.MyContext, this.InnerPanelArea, this.x_min, this.x_max, this.y_min, this.y_max, 1, 0.2, this.y_label  );
+        DrawYaxis(this.MyContext, this.InnerPanelArea, this.x_min, this.x_max, this.y_min, this.y_max, 1, 0.2, this.y_label);
+
+        if (this.Curves != null) {
+            for (var c = 0; c < this.Curves.length; c++) {
+                this.DrawCurve(c);
+            }
+        }
+
+    }
+
+    this.Refresh();
 
     this.AddCurveList = function (line_color, marker_color) {
         if (this.Curves == null) this.Curves = [];
@@ -65,31 +76,31 @@ function Graph(mycanvas, X_min, X_max, Y_min, Y_max, Y_Label) {
 
         return [InnerPanelArea.D.x + ((x_value - x_min) / (x_max - x_min)) * InnerPanelArea.Width, InnerPanelArea.C.y - ((y_value - y_min) / (y_max - y_min)) * InnerPanelArea.Height];
     }
-    this.AddPoint = function (curve_number, x, y, sd) {
-        var curve = this.Curves[curve_number];
-        curve.AddPoint(x, y, sd);
-
-        this.DrawCurve(curve_number);
-
-
-    }
-    
     this.GetCoordinate = function (x_value, y_value) {
 
         var coordinate = new Coordinate(this.InnerPanelArea.D.x + ((x_value - this.x_min) / (this.x_max - this.x_min)) * this.InnerPanelArea.Width, this.InnerPanelArea.C.y - ((y_value - this.y_min) / (this.y_max - this.y_min)) * this.InnerPanelArea.Height);
 
         return coordinate;
     }
+    this.AddPoint = function (curve_number, x, y, sd) {
+        var curve = this.Curves[curve_number];
+        curve.AddPoint(x, y, sd);
+
+        this.Refresh();
+    }
+
+
     this.DrawCurve = function (curve_nr) {
 
         var curve = this.Curves[curve_nr];
-        this.MyContext.strokeStyle = curve.LineColor;
+       
+        if (curve.MarkerColor != null) {
 
-        for (var p = 0; p < curve.Length(); p++) {
-            var point = curve.GetPoint(p);
-            var coordinate = this.GetCoordinate( point[0], point[1]);
-            if (curve.Marker == "C" || curve.Marker == "Circle") {
-                this.DrawCircle(this.MyContext, coordinate.x, coordinate.y);
+            for (var p = 0; p < curve.Length(); p++) {
+                var point = curve.GetPoint(p);
+                var coordinate = this.GetCoordinate(point[0], point[1]);
+
+                this.MyContext.strokeStyle = curve.MarkerColor;
 
                 if (point[2] != null) {
                     var sd = point[2];
@@ -100,24 +111,29 @@ function Graph(mycanvas, X_min, X_max, Y_min, Y_max, Y_Label) {
                     this.drawLine(new Coordinate(from.x - 3, from.y), new Coordinate(from.x + 3, from.y));
                     this.drawLine(new Coordinate(to.x - 3, to.y), new Coordinate(to.x + 3, to.y));
 
-                    
-                }
 
+                }
+                this.DrawCircle(this.MyContext, coordinate.x, coordinate.y);
             }
         }
 
-        for (var p = 1; p < curve.Length(); p++) {
-            var from = curve.GetPoint(p - 1);
-            var coordinate_from = this.GetCoordinate(from[0], from[1]);
-            
-            var to = curve.GetPoint(p);
-            var coordinate_to = this.GetCoordinate(to[0], to[1]);
+        if (curve.LineColor != null) {
 
-            if (curve.LineColor != null) {
-                this.drawLine(coordinate_from, coordinate_to);
+            this.MyContext.strokeStyle = curve.LineColor;
+
+            for (var p = 1; p < curve.Length(); p++) {
+                var from = curve.GetPoint(p - 1);
+                var coordinate_from = this.GetCoordinate(from[0], from[1]);
+
+                var to = curve.GetPoint(p);
+                var coordinate_to = this.GetCoordinate(to[0], to[1]);
+
+                if (curve.LineColor != null) {
+                    this.drawLine(coordinate_from, coordinate_to);
+                }
+
+
             }
-
-            
         }
     }
 
@@ -136,9 +152,7 @@ function Graph(mycanvas, X_min, X_max, Y_min, Y_max, Y_Label) {
 
         DrawYaxis(this.MyContext, this.InnerPanelArea, this.x_min, this.x_max, this.y_min, this.y_max, 1, 0.2, this.y_label);
 
-        for (var c = 0; c < this.Curves.length; c++) {
-            this.DrawCurve(c);
-        }
+        this.Refresh();
 
     };
     function DivideGraphArea(Context, GraphArea) {
@@ -148,20 +162,11 @@ function Graph(mycanvas, X_min, X_max, Y_min, Y_max, Y_Label) {
 
         TitleAreaY = new Rectangle(GraphArea.A.x, GraphArea.A.y, TitleMargin, GraphArea.Height - TitleMargin);
 
-        //DrawRectangle(TitleAreaY, Context, "Blue");
-
         TitleAreaX = new Rectangle(TitleAreaY.C.x, TitleAreaY.C.y, GraphArea.Width - TitleMargin, TitleMargin);
 
-
-
-        //DrawRectangle(TitleAreaX, Context, "Yellow");
-
         PanelArea = new Rectangle(TitleAreaY.B.x, TitleAreaY.B.y, TitleAreaX.Width, TitleAreaY.Height);
-        //DrawRectangle(PanelArea, Context, "Purple");
-
         var InnerPanelArea = new Rectangle(PanelArea.A.x + PanelMargin, PanelArea.A.y + PanelMargin, PanelArea.Width - 2 * PanelMargin, PanelArea.Height - 2 * PanelMargin);
-        //DrawRectangle(InnerPanelArea, Context, "Grey");
-
+        
         return InnerPanelArea;
 
     }
@@ -224,7 +229,7 @@ function AddModelPoints(RemainingBiomassGraph) {
             RemainingBiomassGraph = new Graph(document.getElementById("DecompCanvas"), 0, 100, 0, 1.2, "Remaining Biomass");
             RemainingBiomassGraph.AddCurveList("Red", null);
 
-            RemainingBiomassGraph.AddCurveList(null, "C");
+            RemainingBiomassGraph.AddCurveList(null, "Black");
 
 
             for (var p = 0; p < DecompositionMeasurements.length; p++) {
