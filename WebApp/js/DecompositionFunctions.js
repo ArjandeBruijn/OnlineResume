@@ -19,16 +19,23 @@ function CurveList(line_color, marker_color) {
         this.Points.push([x,y,sd]);
     };
 }
+function Axis(Min, Max, Label) {
+    this.min = Min;
+    this.max = Max;
+    this.label = Label;
+}
+function Graph(mycanvas, X_axis, Y_axis) {
+    this.x_min = X_axis.min;
+    this.x_max = X_axis.max;
+    this.x_label = X_axis.label;;
+    this.y_min = Y_axis.min;
+    this.y_max = Y_axis.max;
+    this.y_label = Y_axis.label;;
 
-function Graph(mycanvas, X_min, X_max, Y_min, Y_max, Y_Label) {
-    this.x_min = X_min;
-    this.x_max = X_max;
-    this.y_min = Y_min;
-    this.y_max = Y_max;
     this.MyCanvas = mycanvas;
     this.MyContext = mycanvas.getContext("2d");
     this.MyContext.font = "12px Georgia";
-    this.y_label = Y_Label;
+    
     this.LegendText = null;
 
     this.WriteLegend = function () {
@@ -195,7 +202,9 @@ function Graph(mycanvas, X_min, X_max, Y_min, Y_max, Y_Label) {
 //----------------------------------------------------------------------------------------------------------------------
 $(window).load(function () {
 
-    B_route_graph = new Graph(document.getElementById("B_ROUTE_canvas"), 0, 20, 0, 0.1, "B");
+    var x_axis = new Axis(0, 20, "Iterations");
+    var y_axis = new Axis(0, 0.1, "Remaining Biomass");
+    B_route_graph = new Graph(document.getElementById("B_ROUTE_canvas"), x_axis, y_axis);
     B_route_graph.AddCurveList("Red", null);
 
     AddModelPoints();
@@ -207,7 +216,9 @@ function ResetDecompositionFunctions() {
         clearInterval(interval_id);
     }
 
-    B_route_graph = new Graph(document.getElementById("B_ROUTE_canvas"), 0, 20, 0, 0.1, "B");
+    var x_axis = new Axis(0, 20, "Iterations");
+    var y_axis = new Axis(0, 0.1, "Remaining Biomass");
+    B_route_graph = new Graph(document.getElementById("B_ROUTE_canvas"), x_axis, y_axis);
     B_route_graph.AddCurveList("Red", null);
 
     AddModelPoints();
@@ -288,7 +299,10 @@ function AddModelPoints() {
 
             last_coordinate = null;
 
-            RemainingBiomassGraph = new Graph(document.getElementById("DecompCanvas"), 0, 100, 0, 1.2, "Remaining Biomass");
+            var x_axis = new Axis(0, 100, "Time");
+            var y_axis = new Axis(0, 1.2, "Remaining Biomass");
+
+            RemainingBiomassGraph = new Graph(document.getElementById("DecompCanvas"), x_axis, y_axis);
 
             var B_old = B;
 
