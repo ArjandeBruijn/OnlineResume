@@ -73,20 +73,20 @@ function Graph(mycanvas, X_axis, Y_axis) {
 
 
     }
-    this.DrawXaxis = function (Context, InnerPanelArea, x_min, x_max, y_min, y_max) {
+    this.DrawXaxis = function () {
 
-        drawLine(Context, new Coordinate(InnerPanelArea.D.x, InnerPanelArea.D.y), new Coordinate(InnerPanelArea.C.x, InnerPanelArea.C.y));
+        drawLine(this.MyContext, new Coordinate(this.InnerPanelArea.D.x, this.InnerPanelArea.D.y), new Coordinate(this.InnerPanelArea.C.x, this.InnerPanelArea.C.y));
 
-        Context.fillText("Time", InnerPanelArea.D.x + 0.5 * InnerPanelArea.Width, InnerPanelArea.D.y + 40);
+        this.MyContext.fillText("Time", this.InnerPanelArea.D.x + 0.5 * this.InnerPanelArea.Width, this.InnerPanelArea.D.y + 40);
 
-        var x_value = x_min;
-        var y_value = y_min;
-        while (x_value < x_max) {
-            var coordinate = GetPoint(InnerPanelArea, x_value, x_min, x_max, y_value, y_min, y_max);
+        var x_value = this.x_min;
+        var y_value = this.y_min;
+        while (x_value < this.x_max) {
+            var coordinate = GetPoint(this.InnerPanelArea, x_value, this.x_min, this.x_max, y_value, this.y_min, this.y_max);
 
-            drawLine(Context, new Coordinate(coordinate.x, coordinate.y - 5), new Coordinate(coordinate.x, coordinate.y + 5));
+            drawLine(this.MyContext, new Coordinate(coordinate.x, coordinate.y - 5), new Coordinate(coordinate.x, coordinate.y + 5));
 
-            Context.fillText(x_value, coordinate.x - 15, coordinate.y + 15);
+            this.MyContext.fillText(x_value, coordinate.x - 15, coordinate.y + 15);
 
             x_value += 10;
         }
@@ -102,7 +102,7 @@ function Graph(mycanvas, X_axis, Y_axis) {
 
         this.MyContext.strokeStyle = "Black";
 
-        this.DrawXaxis(this.MyContext, this.InnerPanelArea, this.x_min, this.x_max, this.y_min, this.y_max);
+        this.DrawXaxis();
 
         this.DrawYaxis( 1, 0.2);
 
@@ -218,7 +218,7 @@ function Graph(mycanvas, X_axis, Y_axis) {
 
 
         this.MyContext.strokeStyle = "Black";
-        this.DrawXaxis(this.MyContext, this.InnerPanelArea, this.x_min, this.x_max, this.y_min, this.y_max);
+        this.DrawXaxis();
 
         this.DrawYaxis(1, 0.2);
 
