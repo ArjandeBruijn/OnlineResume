@@ -34,8 +34,12 @@ function Graph(mycanvas, X_min, X_max, Y_min, Y_max, Y_Label) {
     this.WriteLegend = function () {
 
         if (this.LegendText != null) {
-            RemainingBiomassGraph.WriteText(this.LegendText[0], 100, 30);
-            RemainingBiomassGraph.WriteText(this.LegendText[1], 100, 50);
+
+            var y = 30;
+            for (var l = 0; l < this.LegendText.length; l++) {
+                RemainingBiomassGraph.WriteText(this.LegendText[l], 100, y);
+                y += 20;
+            }
         }
 
     }
@@ -196,26 +200,24 @@ $(window).load(function () {
 
     AddModelPoints();
 });
-function GetModelCalculations(B, x_min, x_max) {
+function GetModelCalculations(i, B, x_min, x_max) {
 
     var model = [];
 
-    if (this.iter == null) this.iter = 0;
 
-    B += (0.2 * Math.random())-0.1 * B;
 
-    if (this.iter >= B_route_graph.x_max) {
+    if (i >= B_route_graph.x_max) {
         B_route_graph.Reschale(0,  B_route_graph.x_max + 10 ,0, B_route_graph.y_max);
     }
 
-     
-    B_route_graph.AddPoint(0, this.iter++, B, null);
+
+    B_route_graph.AddPoint(0, i, B, null);
 
     var y = 1;
     for (var x = 0; x < x_max; x++) {
 
         model.push([x, y]);
-        y *= B;
+        y *= (1-B);
     }
 
     
@@ -233,13 +235,14 @@ function GetProbability(model) {
 
                 RSS += Math.pow(DecompositionMeasurements[ms][1], model[md][1]);
 
-                var rss = Math.pow(DecompositionMeasurements[ms][1], model[md][1]);
+                var rss = Math.pow(DecompositionMeasurements[ms][1] -model[md][1], 2);
 
                 var two_sigma_square = 2 * Math.pow(DecompositionMeasurements[ms][2], 2);
 
 //                P *= (DecompositionMeasurements[ms][2] * 2.5059928) * Math.exp(-1 * (rss / two_sigma_square));
 
-                P -=   (rss / two_sigma_square);
+               // P -= (rss / two_sigma_square);
+                P -= (rss / two_sigma_square);
             }
         }
     }
@@ -262,7 +265,8 @@ function AddModelPoints() {
     var P_old = null;
     var P = 1;
     var logalpha = 1;
-    var B = Math.random();
+    var B = 0.05;// Math.random();
+    var B_sum =0;
 
     setInterval(function () {
 
@@ -271,17 +275,32 @@ function AddModelPoints() {
             last_coordinate = null;
 
             RemainingBiomassGraph = new Graph(document.getElementById("DecompCanvas"), 0, 100, 0, 1.2, "Remaining Biomass");
-            model = GetModelCalculations(B, RemainingBiomassGraph.x_min, RemainingBiomassGraph.x_max);
+
+            var B_old = B;
+
+            B += 0.2 * (Math.random() - 0.5);
+
+            model = GetModelCalculations(i++, B, RemainingBiomassGraph.x_min, RemainingBiomassGraph.x_max);
 
             P = GetProbability(model);
 
+
+            B_sum += B;
+            var b_av = B_sum / i;
+            RemainingBiomassGraph.LegendText = ["B = " + B, "P = exp(" + P.toFixed(0) + ")", "logalpha = " + logalpha, "b_av = " + b_av];
+
             if (P_old != null) {
                 logalpha = P - P_old;
+                if (logalpha < 0) {
+                    B = B_old;
+                }
             }
 
             P_old = P;
 
-            RemainingBiomassGraph.LegendText = ["P = exp(" + P.toFixed(0) + ")", "logalpha = " + logalpha];
+
+
+
 
             RemainingBiomassGraph.AddCurveList("Red", null);
 
@@ -300,7 +319,7 @@ function AddModelPoints() {
 
 
 
-        
+
 
     }, 5);
 }
