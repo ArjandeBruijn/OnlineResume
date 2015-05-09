@@ -15,8 +15,8 @@ function CurveList(line_color, marker) {
     this.GetPoint = function (i) {
         return this.Points[i];
     };
-    this.AddPoint = function (coordinate) {
-        this.Points.push(coordinate);
+    this.AddPoint = function (x, y, sd) {
+        this.Points.push([x,y,sd]);
     };
 }
 
@@ -46,12 +46,18 @@ function Graph(mycanvas, X_min, X_max, Y_min, Y_max, Y_Label) {
         if (this.Curves == null) this.Curves = [];
         this.Curves.push(new CurveList(line_color, marker_color));
     }
-    this.drawLine = function (Context, from, to) {
+    this.drawLine = function (from, to) {
         
         //from, to in row/column coordinates
+        this.MyContext.beginPath();
+        this.MyContext.moveTo(from.x, from.y);
+        this.MyContext.lineTo(to.x, to.y);
+        this.MyContext.stroke();
+
+    }
+    this.DrawCircle = function (Context, x, y) {
         Context.beginPath();
-        Context.moveTo(from[0], from[1]);
-        Context.lineTo(to[0], to[1]);
+        Context.arc(x, y, 2, 0, 2 * Math.PI);
         Context.stroke();
 
     }
@@ -59,39 +65,59 @@ function Graph(mycanvas, X_min, X_max, Y_min, Y_max, Y_Label) {
 
         return [InnerPanelArea.D.x + ((x_value - x_min) / (x_max - x_min)) * InnerPanelArea.Width, InnerPanelArea.C.y - ((y_value - y_min) / (y_max - y_min)) * InnerPanelArea.Height];
     }
-    this.AddPoint = function (curve_number, point) {
+    this.AddPoint = function (curve_number, x, y, sd) {
         var curve = this.Curves[curve_number];
-        curve.AddPoint(point);
+        curve.AddPoint(x, y, sd);
 
         this.DrawCurve(curve_number);
 
 
     }
-    function DrawCircle(Context, x, y) {
-        Context.beginPath();
-        Context.arc(x, y, 2, 0, 2 * Math.PI);
-        Context.stroke();
+    
+    this.GetCoordinate = function (x_value, y_value) {
 
+        var coordinate = new Coordinate(this.InnerPanelArea.D.x + ((x_value - this.x_min) / (this.x_max - this.x_min)) * this.InnerPanelArea.Width, this.InnerPanelArea.C.y - ((y_value - this.y_min) / (this.y_max - this.y_min)) * this.InnerPanelArea.Height);
+
+        return coordinate;
     }
     this.DrawCurve = function (curve_nr) {
 
         var curve = this.Curves[curve_nr];
         this.MyContext.strokeStyle = curve.LineColor;
 
+        for (var p = 0; p < curve.Length(); p++) {
+            var point = curve.GetPoint(p);
+            var coordinate = this.GetCoordinate( point[0], point[1]);
+            if (curve.Marker == "C" || curve.Marker == "Circle") {
+                this.DrawCircle(this.MyContext, coordinate.x, coordinate.y);
+
+                if (point[2] != null) {
+                    var sd = point[2];
+
+                    var from = this.GetCoordinate(point[0], point[1] + sd);
+                    var to = this.GetCoordinate(point[0], point[1] - sd);
+                    this.drawLine(from, to);
+                    this.drawLine(new Coordinate(from.x - 3, from.y), new Coordinate(from.x + 3, from.y));
+                    this.drawLine(new Coordinate(to.x - 3, to.y), new Coordinate(to.x + 3, to.y));
+
+                    
+                }
+
+            }
+        }
+
         for (var p = 1; p < curve.Length(); p++) {
             var from = curve.GetPoint(p - 1);
-            var coordinate_from = GetPoint(this.InnerPanelArea, from[0], this.x_min, this.x_max, from[1], this.y_min, this.y_max);
-
+            var coordinate_from = this.GetCoordinate(from[0], from[1]);
+            
             var to = curve.GetPoint(p);
-            var coordinate_to = GetPoint(this.InnerPanelArea, to[0], this.x_min, this.x_max, to[1], this.y_min, this.y_max);
+            var coordinate_to = this.GetCoordinate(to[0], to[1]);
 
             if (curve.LineColor != null) {
-                drawLine(this.MyContext, coordinate_from, coordinate_to);
+                this.drawLine(coordinate_from, coordinate_to);
             }
 
-            if (curve.Marker == "C" || curve.Marker == "Circle") {
-                DrawCircle(this.MyContext, coordinate_from.x, coordinate_from.y);
-            }
+            
         }
     }
 
@@ -165,7 +191,7 @@ function GetModelCalculations(x_min, x_max) {
     }
 
      
-    B_route_graph.AddPoint(0, [this.iter++, B]);
+    B_route_graph.AddPoint(0, this.iter++, B, null);
 
     var y = 1;
     for (var x = 0; x < x_max; x++) {
@@ -202,7 +228,7 @@ function AddModelPoints(RemainingBiomassGraph) {
 
 
             for (var p = 0; p < DecompositionMeasurements.length; p++) {
-                RemainingBiomassGraph.AddPoint(1,DecompositionMeasurements[p]);
+                RemainingBiomassGraph.AddPoint(1, DecompositionMeasurements[p][0], DecompositionMeasurements[p][1], DecompositionMeasurements[p][2]);
             }
 
             //AddMeasurements2(DecompositionMeasurements, RemainingBiomassGraph.MyContext, RemainingBiomassGraph.InnerPanelArea, RemainingBiomassGraph.x_min, RemainingBiomassGraph.x_max, RemainingBiomassGraph.y_min, RemainingBiomassGraph.y_max, false);
@@ -213,10 +239,8 @@ function AddModelPoints(RemainingBiomassGraph) {
 
         var x = model[c][0];
         var y = model[c][1];
-
-
-
-        RemainingBiomassGraph.AddPoint(0, [x, y]);
+         
+        RemainingBiomassGraph.AddPoint(0,x , y, null);
 
 
 
