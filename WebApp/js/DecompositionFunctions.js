@@ -359,7 +359,7 @@ function AddModelPoints() {
             last_coordinate = null;
 
             var x_axis = new Axis(0, 100, "Time", 1, 10);
-            var y_axis = new Axis(0, 1.2, "Remaining Biomass (%)", 100, 10);
+            var y_axis = new Axis(0, 1.2, "Remaining Biomass (%)", 100, 12);
 
             RemainingBiomassGraph = new Graph(document.getElementById("DecompCanvas"), x_axis, y_axis);
 
