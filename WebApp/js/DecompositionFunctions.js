@@ -195,7 +195,7 @@ function Graph(mycanvas, X_min, X_max, Y_min, Y_max, Y_Label) {
 //----------------------------------------------------------------------------------------------------------------------
 $(window).load(function () {
 
-    B_route_graph = new Graph(document.getElementById("B_ROUTE_canvas"), 0, 20, 0, 1.2, "B");
+    B_route_graph = new Graph(document.getElementById("B_ROUTE_canvas"), 0, 20, 0, 0.1, "B");
     B_route_graph.AddCurveList("Red", null);
 
     AddModelPoints();
@@ -207,7 +207,7 @@ function ResetDecompositionFunctions() {
         clearInterval(interval_id);
     }
 
-    B_route_graph = new Graph(document.getElementById("B_ROUTE_canvas"), 0, 20, 0, 1.2, "B");
+    B_route_graph = new Graph(document.getElementById("B_ROUTE_canvas"), 0, 20, 0, 0.1, "B");
     B_route_graph.AddCurveList("Red", null);
 
     AddModelPoints();
@@ -216,13 +216,14 @@ function ResetDecompositionFunctions() {
 function GetModelCalculations(i, B, x_min, x_max) {
 
     var model = [];
-
-
-
+     
     if (i >= B_route_graph.x_max) {
         B_route_graph.Reschale(0,  B_route_graph.x_max + 10 ,0, B_route_graph.y_max);
     }
 
+    if (B >= B_route_graph.y_max) {
+        B_route_graph.Reschale(0, B_route_graph.x_max, 0, B +0.1);
+    }
 
     B_route_graph.AddPoint(0, i, B, null);
 
