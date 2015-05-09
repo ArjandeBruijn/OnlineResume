@@ -19,18 +19,23 @@ function CurveList(line_color, marker_color) {
         this.Points.push([x,y,sd]);
     };
 }
-function Axis(Min, Max, Label) {
+function Axis(Min, Max, Label, MultiplyWith) {
     this.min = Min;
     this.max = Max;
     this.label = Label;
+    this.multiplywith = MultiplyWith;
 }
 function Graph(mycanvas, X_axis, Y_axis) {
     this.x_min = X_axis.min;
     this.x_max = X_axis.max;
-    this.x_label = X_axis.label;;
+    this.x_label = X_axis.label;
+
+
+    this.y_axis = Y_axis;
+
     this.y_min = Y_axis.min;
     this.y_max = Y_axis.max;
-    this.y_label = Y_axis.label;;
+    this.y_label = Y_axis.label;
 
     this.MyCanvas = mycanvas;
     this.MyContext = mycanvas.getContext("2d");
@@ -50,7 +55,7 @@ function Graph(mycanvas, X_axis, Y_axis) {
         }
 
     }
-    this.DrawYaxis = function (y_factor, y_diff) {
+    this.DrawYaxis = function (y_diff) {
 
         drawLine(this.MyContext, new Coordinate(this.InnerPanelArea.A.x, this.InnerPanelArea.A.y), new Coordinate(this.InnerPanelArea.D.x, this.InnerPanelArea.D.y));
 
@@ -65,7 +70,7 @@ function Graph(mycanvas, X_axis, Y_axis) {
 
             drawLine(this.MyContext, new Coordinate(coordinate.x - 5, coordinate.y), new Coordinate(coordinate.x + 5, coordinate.y));
 
-            this.MyContext.fillText(0.001 * Math.round(1000 * y_factor * y_value), coordinate.x - 20, coordinate.y);
+            this.MyContext.fillText(0.001 * Math.round(1000 * this.y_axis.multiplywith * y_value), coordinate.x - 20, coordinate.y);
 
             y_value += y_diff;
         }
@@ -246,8 +251,8 @@ function Graph(mycanvas, X_axis, Y_axis) {
 //----------------------------------------------------------------------------------------------------------------------
 $(window).load(function () {
 
-    var x_axis = new Axis(0, 20, "Iterations");
-    var y_axis = new Axis(0, 0.1, "Decomposition rate");
+    var x_axis = new Axis(0, 20, "Iterations", 1);
+    var y_axis = new Axis(0, 0.1, "Decomposition rate", 100);
     B_route_graph = new Graph(document.getElementById("B_ROUTE_canvas"), x_axis, y_axis);
     B_route_graph.AddCurveList("Red", null);
 
@@ -260,8 +265,8 @@ function ResetDecompositionFunctions() {
         clearInterval(interval_id);
     }
 
-    var x_axis = new Axis(0, 20, "Iterations");
-    var y_axis = new Axis(0, 0.1, "Remaining Biomass");
+    var x_axis = new Axis(0, 20, "Iterations", 1);
+    var y_axis = new Axis(0, 0.1, "Remaining Biomass", 100);
     B_route_graph = new Graph(document.getElementById("B_ROUTE_canvas"), x_axis, y_axis);
     B_route_graph.AddCurveList("Red", null);
 
@@ -343,8 +348,8 @@ function AddModelPoints() {
 
             last_coordinate = null;
 
-            var x_axis = new Axis(0, 100, "Time");
-            var y_axis = new Axis(0, 1.2, "Remaining Biomass");
+            var x_axis = new Axis(0, 100, "Time", 1);
+            var y_axis = new Axis(0, 1.2, "Remaining Biomass", 100);
 
             RemainingBiomassGraph = new Graph(document.getElementById("DecompCanvas"), x_axis, y_axis);
 
