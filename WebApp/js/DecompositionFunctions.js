@@ -239,11 +239,8 @@ function AddModelPoints() {
             c = 0;
         }
         else c++;
-
-        var x = model[c][0];
-        var y = model[c][1];
-         
-        RemainingBiomassGraph.AddPoint(0,x , y, null);
+ 
+        RemainingBiomassGraph.AddPoint(0,model[c][0] ,  model[c][1], null);
 
 
 
