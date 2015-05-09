@@ -77,7 +77,7 @@ function Graph(mycanvas, X_axis, Y_axis) {
 
         drawLine(this.MyContext, new Coordinate(this.InnerPanelArea.D.x, this.InnerPanelArea.D.y), new Coordinate(this.InnerPanelArea.C.x, this.InnerPanelArea.C.y));
 
-        this.MyContext.fillText("Time", this.InnerPanelArea.D.x + 0.5 * this.InnerPanelArea.Width, this.InnerPanelArea.D.y + 40);
+        this.MyContext.fillText(this.x_label, this.InnerPanelArea.D.x + 0.5 * this.InnerPanelArea.Width, this.InnerPanelArea.D.y + 40);
 
         var x_value = this.x_min;
         var y_value = this.y_min;
@@ -247,7 +247,7 @@ function Graph(mycanvas, X_axis, Y_axis) {
 $(window).load(function () {
 
     var x_axis = new Axis(0, 20, "Iterations");
-    var y_axis = new Axis(0, 0.1, "Remaining Biomass");
+    var y_axis = new Axis(0, 0.1, "Decomposition rate");
     B_route_graph = new Graph(document.getElementById("B_ROUTE_canvas"), x_axis, y_axis);
     B_route_graph.AddCurveList("Red", null);
 
