@@ -53,6 +53,12 @@ function Graph(mycanvas, X_min, X_max, Y_min, Y_max, Y_Label) {
 
     this.Refresh();
 
+    this.WriteText = function (text, x, y) {
+
+        this.MyContext.fillText(text, x, y);
+
+    }
+
     this.AddCurveList = function (line_color, marker_color) {
         if (this.Curves == null) this.Curves = [];
         this.Curves.push(new CurveList(line_color, marker_color));
@@ -206,6 +212,31 @@ function GetModelCalculations(x_min, x_max) {
     
     return model;
 }
+function GetProbability(model) {
+
+    var RSS = 0;
+    var P = 1;
+    for (var ms = 0; ms < DecompositionMeasurements.length; ms++) {
+
+        for (var md = 0; md < model.length; md++) {
+
+            if (DecompositionMeasurements[ms][0] == model[md][0]) {
+
+                RSS += Math.pow(DecompositionMeasurements[ms][1], model[md][1]);
+
+                var rss = Math.pow(DecompositionMeasurements[ms][1], model[md][1]);
+
+                var two_sigma_square = 2 * Math.pow(DecompositionMeasurements[ms][2], 2);
+
+//                P *= (DecompositionMeasurements[ms][2] * 2.5059928) * Math.exp(-1 * (rss / two_sigma_square));
+
+                P -=   (rss / two_sigma_square);
+            }
+        }
+    }
+
+    return P;
+}
 function AddModelPoints() {
 
 
@@ -229,7 +260,6 @@ function AddModelPoints() {
 
             RemainingBiomassGraph.AddCurveList(null, "Black");
 
-
             for (var p = 0; p < DecompositionMeasurements.length; p++) {
                 RemainingBiomassGraph.AddPoint(1, DecompositionMeasurements[p][0], DecompositionMeasurements[p][1], DecompositionMeasurements[p][2]);
             }
@@ -239,10 +269,12 @@ function AddModelPoints() {
             c = 0;
         }
         else c++;
- 
-        RemainingBiomassGraph.AddPoint(0,model[c][0] ,  model[c][1], null);
 
+        RemainingBiomassGraph.AddPoint(0, model[c][0], model[c][1], null);
 
+        P = GetProbability(model);
+
+        RemainingBiomassGraph.WriteText("P = exp(" + P.toFixed(0) +")", 100, 30);
 
 
     }, 5);
