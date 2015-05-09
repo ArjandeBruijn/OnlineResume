@@ -250,6 +250,8 @@ function AddModelPoints() {
 
     var c = 0;
 
+    var P_old = null;
+
     setInterval(function () {
 
         if (model == null || c == model.length - 1) {
@@ -272,10 +274,18 @@ function AddModelPoints() {
 
         RemainingBiomassGraph.AddPoint(0, model[c][0], model[c][1], null);
 
+
+
         P = GetProbability(model);
 
-        RemainingBiomassGraph.WriteText("P = exp(" + P.toFixed(0) +")", 100, 30);
+        RemainingBiomassGraph.WriteText("P = exp(" + P.toFixed(0) + ")", 100, 30);
 
+        if (P_old != null) {
+            logalpha = P - P_old;
+            RemainingBiomassGraph.WriteText("logalpha = " + logalpha, 100, 50);
+        }
+
+        P_old = P;
 
     }, 5);
 }
