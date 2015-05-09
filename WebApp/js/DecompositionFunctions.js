@@ -50,23 +50,22 @@ function Graph(mycanvas, X_axis, Y_axis) {
         }
 
     }
-    this.DrawYaxis = function (Context, InnerPanelArea, x_min, x_max, y_min, y_max, y_factor, y_diff, label) {
+    this.DrawYaxis = function (y_factor, y_diff) {
 
-        drawLine(Context, new Coordinate(InnerPanelArea.A.x, InnerPanelArea.A.y), new Coordinate(InnerPanelArea.D.x, InnerPanelArea.D.y));
+        drawLine(this.MyContext, new Coordinate(this.InnerPanelArea.A.x, this.InnerPanelArea.A.y), new Coordinate(this.InnerPanelArea.D.x, this.InnerPanelArea.D.y));
 
-        Context.fillText(label, InnerPanelArea.A.x - 30, 12);
+        this.MyContext.fillText(this.y_label, this.InnerPanelArea.A.x - 30, 12);
 
+        var y_value = this.y_min;
 
-        var y_value = y_min;
+        var x_value = this.x_min;
 
-        var x_value = x_min;
+        while (y_value <= this.y_max) {
+            var coordinate = GetPoint(this.InnerPanelArea, x_value, this.x_min, this.x_max, y_value, this.y_min, this.y_max);
 
-        while (y_value <= y_max) {
-            var coordinate = GetPoint(InnerPanelArea, x_value, x_min, x_max, y_value, y_min, y_max);
+            drawLine(this.MyContext, new Coordinate(coordinate.x - 5, coordinate.y), new Coordinate(coordinate.x + 5, coordinate.y));
 
-            drawLine(Context, new Coordinate(coordinate.x - 5, coordinate.y), new Coordinate(coordinate.x + 5, coordinate.y));
-
-            Context.fillText(0.001 * Math.round(1000 * y_factor * y_value), coordinate.x - 20, coordinate.y);
+            this.MyContext.fillText(0.001 * Math.round(1000 * y_factor * y_value), coordinate.x - 20, coordinate.y);
 
             y_value += y_diff;
         }
@@ -105,7 +104,7 @@ function Graph(mycanvas, X_axis, Y_axis) {
 
         this.DrawXaxis(this.MyContext, this.InnerPanelArea, this.x_min, this.x_max, this.y_min, this.y_max);
 
-        this.DrawYaxis(this.MyContext, this.InnerPanelArea, this.x_min, this.x_max, this.y_min, this.y_max, 1, 0.2, this.y_label);
+        this.DrawYaxis( 1, 0.2);
 
         if (this.Curves != null) {
             for (var c = 0; c < this.Curves.length; c++) {
@@ -221,7 +220,7 @@ function Graph(mycanvas, X_axis, Y_axis) {
         this.MyContext.strokeStyle = "Black";
         this.DrawXaxis(this.MyContext, this.InnerPanelArea, this.x_min, this.x_max, this.y_min, this.y_max);
 
-        this.DrawYaxis(this.MyContext, this.InnerPanelArea, this.x_min, this.x_max, this.y_min, this.y_max, 1, 0.2, this.y_label);
+        this.DrawYaxis(1, 0.2);
 
         this.Refresh();
 
