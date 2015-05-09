@@ -29,7 +29,16 @@ function Graph(mycanvas, X_min, X_max, Y_min, Y_max, Y_Label) {
     this.MyContext = mycanvas.getContext("2d");
     this.MyContext.font = "12px Georgia";
     this.y_label = Y_Label;
+    this.LegendText = null;
 
+    this.WriteLegend = function () {
+
+        if (this.LegendText != null) {
+            RemainingBiomassGraph.WriteText(this.LegendText[0], 100, 30);
+            RemainingBiomassGraph.WriteText(this.LegendText[1], 100, 50);
+        }
+
+    }
     this.Refresh = function () {
         this.GraphArea = new Rectangle(0, 0, this.MyCanvas.width, this.MyCanvas.height);
 
@@ -48,7 +57,7 @@ function Graph(mycanvas, X_min, X_max, Y_min, Y_max, Y_Label) {
                 this.DrawCurve(c);
             }
         }
-
+        this.WriteLegend();
     }
 
     this.Refresh();
@@ -257,11 +266,15 @@ function AddModelPoints() {
     setInterval(function () {
 
         if (model == null || c == model.length - 1) {
+
             last_coordinate = null;
 
             RemainingBiomassGraph = new Graph(document.getElementById("DecompCanvas"), 0, 100, 0, 1.2, "Remaining Biomass");
-            RemainingBiomassGraph.WriteText("P = exp(" + P.toFixed(0) + ")", 100, 30);
-            RemainingBiomassGraph.WriteText("logalpha = " + logalpha, 100, 50);
+            model = GetModelCalculations(RemainingBiomassGraph.x_min, RemainingBiomassGraph.x_max);
+
+            P = GetProbability(model);
+
+            RemainingBiomassGraph.LegendText = ["P = exp(" + P.toFixed(0) + ")", "logalpha = " + logalpha];
 
             RemainingBiomassGraph.AddCurveList("Red", null);
 
@@ -271,15 +284,14 @@ function AddModelPoints() {
                 RemainingBiomassGraph.AddPoint(1, DecompositionMeasurements[p][0], DecompositionMeasurements[p][1], DecompositionMeasurements[p][2]);
             }
 
-            //AddMeasurements2(DecompositionMeasurements, RemainingBiomassGraph.MyContext, RemainingBiomassGraph.InnerPanelArea, RemainingBiomassGraph.x_min, RemainingBiomassGraph.x_max, RemainingBiomassGraph.y_min, RemainingBiomassGraph.y_max, false);
-            model = GetModelCalculations(RemainingBiomassGraph.x_min, RemainingBiomassGraph.x_max);
+
             c = 0;
         }
         else c++;
 
         RemainingBiomassGraph.AddPoint(0, model[c][0], model[c][1], null);
 
-        P = GetProbability(model);
+
 
         if (P_old != null) {
             logalpha = P - P_old;
