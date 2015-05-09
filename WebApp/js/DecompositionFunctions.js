@@ -196,13 +196,13 @@ $(window).load(function () {
 
     AddModelPoints();
 });
-function GetModelCalculations(x_min, x_max) {
+function GetModelCalculations(B, x_min, x_max) {
 
     var model = [];
 
     if (this.iter == null) this.iter = 0;
 
-    var B = Math.random();
+    B += (0.2 * Math.random())-0.1 * B;
 
     if (this.iter >= B_route_graph.x_max) {
         B_route_graph.Reschale(0,  B_route_graph.x_max + 10 ,0, B_route_graph.y_max);
@@ -262,6 +262,7 @@ function AddModelPoints() {
     var P_old = null;
     var P = 1;
     var logalpha = 1;
+    var B = Math.random();
 
     setInterval(function () {
 
@@ -270,7 +271,7 @@ function AddModelPoints() {
             last_coordinate = null;
 
             RemainingBiomassGraph = new Graph(document.getElementById("DecompCanvas"), 0, 100, 0, 1.2, "Remaining Biomass");
-            model = GetModelCalculations(RemainingBiomassGraph.x_min, RemainingBiomassGraph.x_max);
+            model = GetModelCalculations(B, RemainingBiomassGraph.x_min, RemainingBiomassGraph.x_max);
 
             P = GetProbability(model);
 
