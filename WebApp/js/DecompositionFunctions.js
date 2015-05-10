@@ -49,14 +49,29 @@ function Graph(mycanvas, X_axis, Y_axis) {
     this.WriteLegend = function () {
 
         var y = this.InnerPanelArea.B.y;
-        var x = this.InnerPanelArea.B.x - 100;
+        var x_min = this.InnerPanelArea.B.x - 100;
 
         for (var c = 0; c < this.Curves.length; c++) {
 
+            var x = x_min;
+
             if (this.Curves[c].MarkerColor != null) {
-                this.DrawCircle(this.MyContext, x, y);
-                x += 10;
+                this.MyContext.strokeStyle = this.Curves[c].MarkerColor;
+                this.DrawCircle(this.MyContext, x + 10, y - 5);
+                x += 25;
             }
+
+            if (this.Curves[c].LineColor != null) {
+
+                this.MyContext.strokeStyle = this.Curves[c].LineColor;
+
+                var from = new Coordinate(x, y - 5);
+                var to = new Coordinate(x + 20, y - 5);
+                this.drawLine(from, to);
+
+                x += 25;
+            }
+
 
             this.MyContext.fillText(this.Curves[c].label, x, y);
             y += 20;
