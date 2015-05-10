@@ -48,9 +48,10 @@ function Graph(mycanvas, X_axis, Y_axis) {
 
     this.WriteLegend = function () {
 
-        var y = this.InnerPanelArea.B.y;
+        var y_min = this.InnerPanelArea.B.y;
         var x_min = this.InnerPanelArea.B.x - 100;
 
+        var y = y_min;
         for (var c = 0; c < this.Curves.length; c++) {
 
             var x = x_min;
@@ -76,7 +77,9 @@ function Graph(mycanvas, X_axis, Y_axis) {
             this.MyContext.fillText(this.Curves[c].label, x, y);
             y += 20;
         }
-
+        this.MyContext.strokeStyle = "black";
+        this.MyContext.rect(x_min-5, y_min - 12, 100 +10, y - y_min);
+        this.MyContext.stroke();
 
     }
     this.DrawYaxis = function () {
