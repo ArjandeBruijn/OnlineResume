@@ -90,7 +90,7 @@
     <script src='js/MarkovChainModel.js'></script>
     <script src='js/MarkovChainMeasurements.js'></script>
    
-    <script src='js/MarkovChainFunctions.js'></script>
+    <script src='js/DefoliationFunctions.js'></script>
     
       
 
