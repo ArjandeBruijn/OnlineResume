@@ -63,20 +63,20 @@ function Graph(mycanvas, X_axis, Y_axis) {
 
         this.MyContext.fillText(this.y_label, this.InnerPanelArea.A.x - 30, 12);
 
-        var y_value = this.y_min;
+        var y_value = this.y_axis.multiplywith * this.y_min;
 
         var x_value = this.x_min;
 
         var largeticks = this.y_axis.largeticks;
 
-        var between_ticks = (this.y_max - this.y_min) / largeticks;
+        var between_ticks = Math.floor(this.y_axis.multiplywith * ((this.y_max - this.y_min) / largeticks));
 
-        while (y_value <= this.y_max) {
-            var coordinate = GetPoint(this.InnerPanelArea, x_value, this.x_min, this.x_max, y_value, this.y_min, this.y_max);
+        while (y_value <= this.y_axis.multiplywith * this.y_max) {
+            var coordinate = GetPoint(this.InnerPanelArea, x_value, this.x_min, this.x_max, y_value, this.y_min * this.y_axis.multiplywith, this.y_max * this.y_axis.multiplywith);
 
             drawLine(this.MyContext, new Coordinate(coordinate.x - 5, coordinate.y), new Coordinate(coordinate.x + 5, coordinate.y));
 
-            this.MyContext.fillText(0.001 * Math.round(1000 * this.y_axis.multiplywith * y_value), coordinate.x - 20, coordinate.y);
+            this.MyContext.fillText(0.001 * Math.round(1000 *  y_value), coordinate.x - 20, coordinate.y);
 
             y_value += between_ticks;
         }
@@ -94,9 +94,9 @@ function Graph(mycanvas, X_axis, Y_axis) {
         var y_value = this.y_min;
 
          
-        var between_ticks = (this.x_max - this.x_min) / this.x_axis.largeticks;
+        var between_ticks = Math.floor((this.x_max - this.x_min) / this.x_axis.largeticks);
 
-        while (x_value < this.x_max) {
+        while (x_value <= this.x_max) {
             var coordinate = GetPoint(this.InnerPanelArea, x_value, this.x_min, this.x_max, y_value, this.y_min, this.y_max);
 
             drawLine(this.MyContext, new Coordinate(coordinate.x, coordinate.y - 5), new Coordinate(coordinate.x, coordinate.y + 5));
@@ -359,7 +359,7 @@ function AddModelPoints() {
             last_coordinate = null;
 
             var x_axis = new Axis(0, 100, "Time", 1, 10);
-            var y_axis = new Axis(0, 1.2, "Remaining Biomass (%)", 100, 12);
+            var y_axis = new Axis(0, 1.2, "Remaining Biomass (%)", 100, 6);
 
             RemainingBiomassGraph = new Graph(document.getElementById("DecompCanvas"), x_axis, y_axis);
 
