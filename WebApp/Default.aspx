@@ -85,11 +85,11 @@
         <br></br>
     </div>
     
-    
-    
+     <script src='js/ImageFunctions.js'></script>
+    <script src='js/GraphFunctions.js'></script>
     <script src='js/MarkovChainModel.js'></script>
     <script src='js/MarkovChainMeasurements.js'></script>
-    <script src='js/ImageFunctions.js'></script>
+   
     <script src='js/MarkovChainFunctions.js'></script>
     
       
