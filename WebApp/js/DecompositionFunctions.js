@@ -1,8 +1,9 @@
 ﻿ 
-function CurveList(line_color, marker_color) {
+function CurveList(line_color, marker_color, Label) {
 
     // points[0] = x-value
     // points[1] = y-value;
+    this.label = Label;
     this.Points = [];
 
     this.LineColor = line_color;
@@ -42,19 +43,20 @@ function Graph(mycanvas, X_axis, Y_axis) {
     this.MyCanvas = mycanvas;
     this.MyContext = mycanvas.getContext("2d");
     this.MyContext.font = "12px Georgia";
-    
+    this.Curves = [];
     this.LegendText = null;
 
     this.WriteLegend = function () {
 
-        if (this.LegendText != null) {
+        var y = this.InnerPanelArea.B.y;
+        var x = this.InnerPanelArea.B.x - 100;
 
-            var y = 30;
-            for (var l = 0; l < this.LegendText.length; l++) {
-                RemainingBiomassGraph.WriteText(this.LegendText[l], 100, y);
-                y += 20;
-            }
+        for (var c = 0; c < this.Curves.length; c++) {
+
+            this.MyContext.fillText(this.Curves[c].label, x, y);
+            y += 20;
         }
+         
 
     }
     this.DrawYaxis = function () {
@@ -137,9 +139,10 @@ function Graph(mycanvas, X_axis, Y_axis) {
 
     }
 
-    this.AddCurveList = function (line_color, marker_color) {
-        if (this.Curves == null) this.Curves = [];
-        this.Curves.push(new CurveList(line_color, marker_color));
+    this.AddCurveList = function (line_color, marker_color, Label) {
+
+        this.Curves.push(new CurveList(line_color, marker_color, Label));
+        this.Refresh();
     }
     this.drawLine = function (from, to) {
         
@@ -264,8 +267,8 @@ $(window).load(function () {
     var x_axis = new Axis(0, 20, "Iterations", 1, 10);
     var y_axis = new Axis(0, 0.1, "Decomposition rate (% per year)", 100, 10);
     B_route_graph = new Graph(document.getElementById("B_ROUTE_canvas"), x_axis, y_axis);
-    B_route_graph.AddCurveList("Red", null);
-
+    B_route_graph.AddCurveList("Red", null, "Random draw");
+   
     AddModelPoints();
 });
 
@@ -278,8 +281,8 @@ function ResetDecompositionFunctions() {
     var x_axis = new Axis(0, 20, "Iterations", 1, 10);
     var y_axis = new Axis(0, 0.1, "Decomposition rate (% per year)", 100, 10);
     B_route_graph = new Graph(document.getElementById("B_ROUTE_canvas"), x_axis, y_axis);
-    B_route_graph.AddCurveList("Red", null);
-
+    B_route_graph.AddCurveList("Red", null, "Random draw");
+    
     AddModelPoints();
 }
 
@@ -391,9 +394,9 @@ function AddModelPoints() {
 
 
 
-            RemainingBiomassGraph.AddCurveList("Red", null);
+            RemainingBiomassGraph.AddCurveList("Red", null, "Modeled");
 
-            RemainingBiomassGraph.AddCurveList(null, "Black");
+            RemainingBiomassGraph.AddCurveList(null, "Black", "Measured");
 
             for (var p = 0; p < DecompositionMeasurements.length; p++) {
                 RemainingBiomassGraph.AddPoint(1, DecompositionMeasurements[p][0], DecompositionMeasurements[p][1], DecompositionMeasurements[p][2]);
