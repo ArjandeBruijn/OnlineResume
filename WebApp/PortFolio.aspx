@@ -196,6 +196,9 @@
     <script src="js/Malinau2009.js"></script>
     <script src="js/Malinau2000.js"></script>
     <script src='js/ImageFunctions.js'></script>
+
+    <script src='js/GraphFunctions.js'></script>
+
     <script src='js/MalinauFunctions.js'></script>
     <script>        ShowMalinauMap(2000); </script>
     <script src="js/TableEventHandlers.js"></script>
