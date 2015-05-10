@@ -53,10 +53,15 @@ function Graph(mycanvas, X_axis, Y_axis) {
 
         for (var c = 0; c < this.Curves.length; c++) {
 
+            if (this.Curves[c].MarkerColor != null) {
+                this.DrawCircle(this.MyContext, x, y);
+                x += 10;
+            }
+
             this.MyContext.fillText(this.Curves[c].label, x, y);
             y += 20;
         }
-         
+
 
     }
     this.DrawYaxis = function () {
