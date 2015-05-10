@@ -291,7 +291,9 @@ $(window).load(function () {
     var y_axis = new Axis(0, 0.1, "Decomposition rate (% per year)", 100, 10);
     B_route_graph = new Graph(document.getElementById("B_ROUTE_canvas"), x_axis, y_axis);
     B_route_graph.AddCurveList("Red", null, "Random draw");
-   
+    B_route_graph.AddCurveList("Blue", null, "Center estimate");
+    B_route_graph.AddCurveList("Green", null, "High estimate");
+    B_route_graph.AddCurveList("Green", null, "Low estimate");
     AddModelPoints();
 });
 
@@ -305,7 +307,9 @@ function ResetDecompositionFunctions() {
     var y_axis = new Axis(0, 0.1, "Decomposition rate (% per year)", 100, 10);
     B_route_graph = new Graph(document.getElementById("B_ROUTE_canvas"), x_axis, y_axis);
     B_route_graph.AddCurveList("Red", null, "Random draw");
-    
+    B_route_graph.AddCurveList("Blue", null, "Average");
+    B_route_graph.AddCurveList("Green", null, "High estimate");
+    B_route_graph.AddCurveList("Green", null, "Low estimate");
     AddModelPoints();
 }
 
