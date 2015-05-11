@@ -25,7 +25,7 @@
         <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
     </head>
 
-    <body onload = SetActivePage()>
+    <body >
         <div id="container">
             <div>
             <div id="nav_banner">
@@ -50,7 +50,6 @@
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
             <div class="margin_bottom_10"></div> 
         </div>
-            <script>SetActivePage();</script>
             <div class="margin_bottom_10 "></div>
             <div class="margin_bottom_10 "></div>
             <div id="footer"> 
