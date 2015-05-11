@@ -132,7 +132,7 @@
     
     <script src="js/Checkboxes.js"></script>
     
-    <script src='js/MalinauFunctions.js'></script>
+    
     <script>ShowMalinauMap(2000); </script>
     <script src="js/TableEventHandlers.js"></script>
     <script src="js/jquery.mobile.custom.min.js"></script>
