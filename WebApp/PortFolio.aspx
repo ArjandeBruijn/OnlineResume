@@ -130,7 +130,7 @@
         </p>
     </div>
     
-    <script src="js/Graph.js"></script>
+    
     <script src="js/Checkboxes.js"></script>
     <script>ShowMalinauMap(2000); </script>
     <script src="js/TableEventHandlers.js"></script>
