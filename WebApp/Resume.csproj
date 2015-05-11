@@ -66,6 +66,7 @@
     <Content Include="js\Graph.js" />
     <Content Include="js\ImageFunctions.js" />
     <Content Include="js\jq-sticky-anything.min.js" />
+    <Content Include="js\jquery.mobile.custom.min.js" />
     <Content Include="js\Malinau2000.js" />
     <Content Include="js\Malinau2009.js" />
     <Content Include="js\MalinauFunctions.js" />
@@ -155,7 +156,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>61059</DevelopmentServerPort>
+          <DevelopmentServerPort>53249</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

@@ -2,7 +2,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -129,8 +128,6 @@
             (i.e. dWood/dt = c*Wood), the amount of wood at any time is described as Wood = Initial_wood * exp(-a * time)).
         </p>
     </div>
-    
-    
     <script src="js/Checkboxes.js"></script>
     <script>ShowMalinauMap(2000); </script>
     <script src="js/TableEventHandlers.js"></script>

@@ -12,6 +12,6 @@ $("input:checkbox").on('click', function () {
         $(group).prop("checked", false);
         $box.prop("checked", true);
     } else {
-        $box.prop("checked", false);
+        $box.prop("checked", true);
     }
 });
