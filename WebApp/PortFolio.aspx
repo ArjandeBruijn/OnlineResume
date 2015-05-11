@@ -129,7 +129,7 @@
             (i.e. dWood/dt = c*Wood), the amount of wood at any time is described as Wood = Initial_wood * exp(-a * time)).
         </p>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    
     <script src="js/Checkboxes.js"></script>
     <script src='js/ImageFunctions.js'></script>
     <script src='js/MalinauFunctions.js'></script>
