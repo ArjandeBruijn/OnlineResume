@@ -69,10 +69,7 @@
         <br></br>
     </div>
 
-    <script>
-        $(window).load(function () { InitializeRotatingItems('.rotating-item', true); });
-    </script>
-
+    <script> InitializeRotatingItems('.rotating-item', true);</script>
     <script src='js/MarkovChainModel.js'></script>
     <script src='js/ImageFunctions.js'></script>
     <script src='js/MarkovChainMeasurements.js'></script>
