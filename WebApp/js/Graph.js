@@ -88,6 +88,12 @@ function Graph(mycanvas, X_axis, Y_axis) {
         this.MyContext.stroke();
 
     }
+    this.GetCoordinate = function (x_value, y_value) {
+
+        var coordinate = new Coordinate(this.InnerPanelArea.D.x + ((x_value - this.x_min) / (this.x_max - this.x_min)) * this.InnerPanelArea.Width, this.InnerPanelArea.C.y - ((y_value - this.y_min) / (this.y_max - this.y_min)) * this.InnerPanelArea.Height);
+
+        return coordinate;
+    }
     this.DrawYaxis = function () {
 
         drawLine(this.MyContext, new Coordinate(this.InnerPanelArea.A.x, this.InnerPanelArea.A.y), new Coordinate(this.InnerPanelArea.D.x, this.InnerPanelArea.D.y));
@@ -103,7 +109,8 @@ function Graph(mycanvas, X_axis, Y_axis) {
         var between_ticks = Math.floor(this.y_axis.multiplywith * ((this.y_max - this.y_min) / largeticks));
 
         while (y_value <= this.y_axis.multiplywith * this.y_max) {
-            var coordinate = GetPoint(this.InnerPanelArea, x_value, this.x_min, this.x_max, y_value, this.y_min * this.y_axis.multiplywith, this.y_max * this.y_axis.multiplywith);
+
+            var coordinate = this.GetCoordinate(x_value, y_value / this.y_axis.multiplywith);
 
             drawLine(this.MyContext, new Coordinate(coordinate.x - 5, coordinate.y), new Coordinate(coordinate.x + 5, coordinate.y));
 
@@ -128,7 +135,7 @@ function Graph(mycanvas, X_axis, Y_axis) {
         var between_ticks = Math.floor((this.x_max - this.x_min) / this.x_axis.largeticks);
 
         while (x_value <= this.x_max) {
-            var coordinate = GetPoint(this.InnerPanelArea, x_value, this.x_min, this.x_max, y_value, this.y_min, this.y_max);
+            var coordinate = this.GetCoordinate(x_value, y_value);
 
             drawLine(this.MyContext, new Coordinate(coordinate.x, coordinate.y - 5), new Coordinate(coordinate.x, coordinate.y + 5));
 
@@ -192,12 +199,7 @@ function Graph(mycanvas, X_axis, Y_axis) {
 
         return [InnerPanelArea.D.x + ((x_value - x_min) / (x_max - x_min)) * InnerPanelArea.Width, InnerPanelArea.C.y - ((y_value - y_min) / (y_max - y_min)) * InnerPanelArea.Height];
     }
-    this.GetCoordinate = function (x_value, y_value) {
-
-        var coordinate = new Coordinate(this.InnerPanelArea.D.x + ((x_value - this.x_min) / (this.x_max - this.x_min)) * this.InnerPanelArea.Width, this.InnerPanelArea.C.y - ((y_value - this.y_min) / (this.y_max - this.y_min)) * this.InnerPanelArea.Height);
-
-        return coordinate;
-    }
+    
     this.AddPoint = function (curve_number, x, y, sd) {
         var curve = this.Curves[curve_number];
         curve.AddPoint(x, y, sd);
