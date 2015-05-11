@@ -132,6 +132,12 @@
     <script>ShowMalinauMap(2000); </script>
     <script src="js/TableEventHandlers.js"></script>
     <script src="js/jquery.mobile.custom.min.js"></script>
-    <script src="js/DecompositionFunctions.js"></script>
+    
+
+    <script>
+        window.onload = function () {
+            StartDecompositionFunctions();
+        };
+    </script>
                              
 </asp:Content>
