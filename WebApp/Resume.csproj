@@ -58,6 +58,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="jquery.mobile.custom.structure.css" />
+    <Content Include="jquery.mobile.custom.theme.css" />
     <Content Include="js\DecompositionFunctions.js" />
     <Content Include="Default.aspx" />
     <Content Include="Education.aspx" />
