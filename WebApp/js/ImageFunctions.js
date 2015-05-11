@@ -76,14 +76,7 @@ function getPixelColor(imageData, x, y) {
 
     return Color;
 }
-function drawLine(Context, from, to) {
 
-    Context.beginPath();
-    Context.moveTo(from.x, from.y);
-    Context.lineTo(to.x, to.y);
-    Context.stroke();
-
-}
 
 function get_index(imageData, x, y) {
 

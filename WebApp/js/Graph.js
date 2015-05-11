@@ -94,9 +94,17 @@ function Graph(mycanvas, X_axis, Y_axis) {
 
         return coordinate;
     }
+    this.drawLine = function (from, to) {
+
+        //from, to in row/column coordinates
+        this.MyContext.beginPath();
+        this.MyContext.moveTo(from.x, from.y);
+        this.MyContext.lineTo(to.x, to.y);
+        this.MyContext.stroke();
+    }
     this.DrawYaxis = function () {
 
-        drawLine(this.MyContext, new Coordinate(this.InnerPanelArea.A.x, this.InnerPanelArea.A.y), new Coordinate(this.InnerPanelArea.D.x, this.InnerPanelArea.D.y));
+        this.drawLine(new Coordinate(this.InnerPanelArea.A.x, this.InnerPanelArea.A.y), new Coordinate(this.InnerPanelArea.D.x, this.InnerPanelArea.D.y));
 
         this.MyContext.fillText(this.y_label, this.InnerPanelArea.A.x - 30, 12);
 
@@ -112,7 +120,7 @@ function Graph(mycanvas, X_axis, Y_axis) {
 
             var coordinate = this.GetCoordinate(x_value, y_value / this.y_axis.multiplywith);
 
-            drawLine(this.MyContext, new Coordinate(coordinate.x - 5, coordinate.y), new Coordinate(coordinate.x + 5, coordinate.y));
+            this.drawLine(new Coordinate(coordinate.x - 5, coordinate.y), new Coordinate(coordinate.x + 5, coordinate.y));
 
             this.MyContext.fillText(0.001 * Math.round(1000 * y_value), coordinate.x - 20, coordinate.y);
 
@@ -124,7 +132,7 @@ function Graph(mycanvas, X_axis, Y_axis) {
     }
     this.DrawXaxis = function () {
 
-        drawLine(this.MyContext, new Coordinate(this.InnerPanelArea.D.x, this.InnerPanelArea.D.y), new Coordinate(this.InnerPanelArea.C.x, this.InnerPanelArea.C.y));
+        this.drawLine(new Coordinate(this.InnerPanelArea.D.x, this.InnerPanelArea.D.y), new Coordinate(this.InnerPanelArea.C.x, this.InnerPanelArea.C.y));
 
         this.MyContext.fillText(this.x_label, this.InnerPanelArea.D.x + 0.5 * this.InnerPanelArea.Width, this.InnerPanelArea.D.y + 40);
 
@@ -137,7 +145,7 @@ function Graph(mycanvas, X_axis, Y_axis) {
         while (x_value <= this.x_max) {
             var coordinate = this.GetCoordinate(x_value, y_value);
 
-            drawLine(this.MyContext, new Coordinate(coordinate.x, coordinate.y - 5), new Coordinate(coordinate.x, coordinate.y + 5));
+            this.drawLine(new Coordinate(coordinate.x, coordinate.y - 5), new Coordinate(coordinate.x, coordinate.y + 5));
 
             this.MyContext.fillText(x_value, coordinate.x - 15, coordinate.y + 15);
 
@@ -180,15 +188,7 @@ function Graph(mycanvas, X_axis, Y_axis) {
         this.Curves.push(new CurveList(line_color, marker_color, Label));
         this.Refresh();
     }
-    this.drawLine = function (from, to) {
-
-        //from, to in row/column coordinates
-        this.MyContext.beginPath();
-        this.MyContext.moveTo(from.x, from.y);
-        this.MyContext.lineTo(to.x, to.y);
-        this.MyContext.stroke();
-
-    }
+    
     this.DrawCircle = function (Context, x, y) {
         Context.beginPath();
         Context.arc(x, y, 2, 0, 2 * Math.PI);
