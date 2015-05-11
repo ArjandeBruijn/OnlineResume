@@ -68,7 +68,7 @@
         <br></br>
         <br></br>
     </div>
-    <script src="js/Malinau2000.js"></script>
+    
     <script src='js/MarkovChainModel.js'></script>
     <script src='js/ImageFunctions.js'></script>
     <script src='js/MarkovChainMeasurements.js'></script>

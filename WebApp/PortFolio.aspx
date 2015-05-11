@@ -131,13 +131,11 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="js/Checkboxes.js"></script>
-    
     <script src='js/ImageFunctions.js'></script>
     <script src='js/MalinauFunctions.js'></script>
     <script>ShowMalinauMap(2000); </script>
     <script src="js/TableEventHandlers.js"></script>
     <script src="js/jquery.mobile.custom.min.js"></script>
-    <script src="js/DecompositionMeasurements.js"></script>
     <script src="js/DecompositionFunctions.js"></script>
                              
 </asp:Content>
