@@ -12,7 +12,9 @@ function CurveList(line_color, marker_color, Label) {
     this.Length = function () {
         return this.Points.length;
     }
-
+    this.ClearCurve = function(){
+          this.Points = [];
+    }
     this.GetPoint = function (i) {
         return this.Points[i];
     };
@@ -46,6 +48,10 @@ function Graph(mycanvas, X_axis, Y_axis) {
     this.Curves = [];
     this.LegendText = null;
 
+    this.ClearCurve=function(i){
+         this.Curves[i].ClearCurve();
+    }
+
     this.WriteLegend = function () {
 
         var y_min = this.InnerPanelArea.B.y;
@@ -59,7 +65,7 @@ function Graph(mycanvas, X_axis, Y_axis) {
             if (this.Curves[c].MarkerColor != null) {
                 this.MyContext.strokeStyle = this.Curves[c].MarkerColor;
                 this.DrawCircle(this.MyContext, x + 10, y - 5);
-                x += 25;
+                if (this.Curves[c].LineColor == null) x += 25;
             }
 
             if (this.Curves[c].LineColor != null) {
