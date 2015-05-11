@@ -10,10 +10,10 @@
     <meta name="keywords" content="Arjan de Bruijn" />
     <meta name="description" content="Arjan de Bruijn" />
     <meta charset="utf-8" />
-    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js?ver=3.0.1'></script>    
-	<script type='text/javascript' src='js/infinite-rotator.js'></script>	
-    <script type='text/javascript' src='js/jq-sticky-anything.min.js'></script>	
-    	
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js?ver=3.0.1'></script>    
+	<script src='js/infinite-rotator.js'></script>	
+    <script src='js/jq-sticky-anything.min.js'></script>	
+     
     <link rel="stylesheet" href="css/StyleSheet.css" type="text/css" media="screen" />
     <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
 </head>
