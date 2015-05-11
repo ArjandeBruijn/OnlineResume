@@ -26,11 +26,11 @@
         and (<a onclick="ShowMalinauMap(2009)" href="#">2009</a>) to evaluate hypotheses 
         about the spatial configuration of land use changes and to predict future land use thereupon. The hypothesis about land use change are increasingly speculative:  
     </div> 
-    <div>
-        <h3>Hypotheses</h3>
-        <label><input type="checkbox" class="radio" value="1" id="NoSpatialCorrelation"  name="Hypotheses" checked/>1. There is no spatial correlation between land use transitions.<br></label>
-        <label><input type="checkbox" class="radio" value="1" id="AllAroundDevelopedArea"  name="Hypotheses"/>2. Land use transitions occur near settlements.<br></label>
-        <label><input type="checkbox" class="radio" value="1" id="AllAroundWater"  name="Hypotheses"/>3.Land use transitions occur near water.<br></label>
+    <h3>Hypotheses</h3>
+    <div >
+        <label><input type="checkbox" onclick = "CheckBoxIsNoSpatialCorrelation()" class="radio" value="1" id="NoSpatialCorrelation"  name="Hypotheses" checked/>1. There is no spatial correlation between land use transitions.<br></label>
+        <label><input type="checkbox" onclick = "CheckBoxIsAllAroundDevelopedArea()" class="radio" value="1" id="AllAroundDevelopedArea"  name="Hypotheses"/>2. Land use transitions occur near settlements.<br></label>
+        <label><input type="checkbox" onclick = "CheckBoxIsAllAroundWater()" class="radio" value="1" id="AllAroundWater"  name="Hypotheses"/>3.Land use transitions occur near water.<br></label>
     </div>
     Combined with a land use transition table that prescribed surface fractions of land use categories that are converted in the period 2000-2009:
     <br></br>
@@ -128,7 +128,7 @@
             (i.e. dWood/dt = c*Wood), the amount of wood at any time is described as Wood = Initial_wood * exp(-a * time)).
         </p>
     </div>
-    <script src="js/Checkboxes.js"></script>
+    
     <script>ShowMalinauMap(2000); </script>
     <script>watch(document.getElementById('LUCtable'), whenChangeHappens);</script>
     <script src="js/jquery.mobile.custom.min.js"></script>
