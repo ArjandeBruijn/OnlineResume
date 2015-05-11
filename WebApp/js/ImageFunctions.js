@@ -21,95 +21,8 @@ function DrawCircle(Context, x, y) {
 
 }
 
-function AddMeasurements(TimeSeries, Context, InnerPanelArea, x_min, x_max, y_min, y_max, HasLine) {
-    
-    var lastcoordinate = null;
-    var coordinate = null;
-    for (var i = 0; i < TimeSeries.length; i++) {
-
-        var x_value = TimeSeries[i][0];
-        var y_value = TimeSeries[i][1];
-
-        var coordinate = GetPoint(InnerPanelArea, x_value, x_min, x_max, y_value, y_min, y_max);
-
-        DrawCircle(Context, coordinate.x, coordinate.y);
-
-        if (HasLine)
-        {
-            if (lastcoordinate != null && lastcoordinate.x < coordinate.x) {
-                drawLine(Context, coordinate, lastcoordinate);
-            }
-        }
-
-        
-        if (TimeSeries[i][2] != null) {
-            var sd = TimeSeries[i][2];
-
-            var from = GetPoint(InnerPanelArea, x_value, x_min, x_max, y_value + sd, y_min, y_max);
-            var to = GetPoint(InnerPanelArea, x_value, x_min, x_max, y_value - sd, y_min, y_max);
-            drawLine(Context, from, to);
-            drawLine(Context, new Coordinate(from.x - 3, from.y), new Coordinate(from.x + 3, from.y));
-            drawLine(Context, new Coordinate(to.x - 3, to.y), new Coordinate(to.x + 3, to.y));
-
-            var from2 = GetPoint(InnerPanelArea, x_value, x_min, x_max, y_value + sd, y_min, y_max);
-        }
-
-        lastcoordinate = coordinate;
-    }
-
-}
-function DrawAxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max,y_factor,y_diff, Y_label) {
-
-    // x-axis
-    DrawXaxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max);
-
-    DrawYaxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max,y_factor, y_diff, Y_label);
-}
-function DrawXaxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max) {
-
-    drawLine(Context, new Coordinate(InnerPanelArea.D.x, InnerPanelArea.D.y), new Coordinate(InnerPanelArea.C.x, InnerPanelArea.C.y));
-
-    Context.fillText("Time", InnerPanelArea.D.x + 0.5 * InnerPanelArea.Width, InnerPanelArea.D.y + 40);
-
-    var x_value = x_min;
-    var y_value = y_min;
-    while (x_value < x_max) {
-        var coordinate = GetPoint(InnerPanelArea, x_value, x_min, x_max, y_value, y_min, y_max);
-
-        drawLine(Context, new Coordinate(coordinate.x, coordinate.y - 5), new Coordinate(coordinate.x, coordinate.y + 5));
-
-        Context.fillText(x_value, coordinate.x - 15, coordinate.y + 15);
-
-        x_value += 10;
-    }
-
-
-}
-function DrawYaxis(Context, InnerPanelArea, x_min, x_max, y_min, y_max, y_factor, y_diff, label) {
-
-    drawLine(Context, new Coordinate(InnerPanelArea.A.x, InnerPanelArea.A.y), new Coordinate(InnerPanelArea.D.x, InnerPanelArea.D.y));
-
-    Context.fillText(label, InnerPanelArea.A.x - 30, 12);
-
-
-    var y_value = y_min;
-
-    var x_value = x_min;
-
-    while (y_value <= y_max) {
-        var coordinate = GetPoint(InnerPanelArea, x_value, x_min, x_max, y_value, y_min, y_max);
-
-        drawLine(Context, new Coordinate(coordinate.x - 5, coordinate.y), new Coordinate(coordinate.x + 5, coordinate.y));
-
-        Context.fillText(0.001 * Math.round(1000*y_factor * y_value), coordinate.x - 20, coordinate.y);
-
-        y_value += y_diff ;
-    }
-
-
-
-}
-
+ 
+  
 function GetPoint(InnerPanelArea, x_value, x_min, x_max, y_value, y_min, y_max) {
 
     // var coordinate = new Coordinate(InnerPanelArea.D.x, InnerPanelArea.C.y - y_value * InnerPanelArea.Height / (y_max - y_min));
@@ -194,10 +107,4 @@ function get_xy(index) {
 
     return [x, y];
 }
-function CalculateDistance(x1, y1, x2, y2) {
 
-    var dx2 = Math.pow(Math.abs(x2 - x1), 2);
-    var dy2 = Math.pow(Math.abs(y2 - y1), 2);
-    return Math.sqrt(dx2 + dy2);
-
-}

@@ -34,7 +34,13 @@ function ShowBorneo(file) {
     }
     
 }
+function CalculateDistance(x1, y1, x2, y2) {
 
+    var dx2 = Math.pow(Math.abs(x2 - x1), 2);
+    var dy2 = Math.pow(Math.abs(y2 - y1), 2);
+    return Math.sqrt(dx2 + dy2);
+
+}
 function ShowMalinauMap(year) {
 
     //ncols = ymax;
