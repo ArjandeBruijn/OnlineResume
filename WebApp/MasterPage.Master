@@ -16,6 +16,7 @@
         <script src='js/SetActivePage.js'></script>	
         <script src="js/Malinau2009.js"></script>
         <script src="js/Malinau2000.js"></script>
+        <script src='js/ImageFunctions.js'></script>
         <script src="js/DecompositionMeasurements.js"></script>
         <link rel="stylesheet" href="css/StyleSheet.css" type="text/css" media="screen" />
         <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
