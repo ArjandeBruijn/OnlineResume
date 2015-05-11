@@ -63,6 +63,7 @@
     <Content Include="Education.aspx" />
     <Content Include="js\Checkboxes.js" />
     <Content Include="js\DecompositionMeasurements.js" />
+    <Content Include="js\Graph.js" />
     <Content Include="js\ImageFunctions.js" />
     <Content Include="js\jq-sticky-anything.min.js" />
     <Content Include="js\Malinau2000.js" />
