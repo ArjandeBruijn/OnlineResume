@@ -87,9 +87,19 @@
      </p>
      <p class = "justify">
         <h2>Landis user interface</h2>
-        <div id =  "left_col" id="thumbwrap">
-               <a class="thumb" href="#"> <img src="images/lui.jpg" alt=""><span><img src="images/lui_big.jpg" alt=""></span></a>
+
+        <div id = "left_col">
+            <a href="#myPopup2" data-rel="popup" data-position-to="window">
+            <img src="images\lui.jpg" alt="Skaret View" style="width:200px;"></a>
+
+            <div data-role="popup" id="myPopup2">
+              <p>Landis User Interface</p> 
+              <a href="#pageone" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a><img src="images\lui_big.jpg" alt="">
+            </div>
+            <p>Click to enlarge</p>
         </div>
+ 
+  
         <p>
             Landis is a spatial simulation model that predicts patterns of succession (ageing) processes and disturbances such as wind damage, logging, insect pests and browsing by deer or other 
             wildlife. I have been using the LANDIS model for the last three years and I was missing an interface to fascilitate my analyses. So I ended up developing my own. It is a windows forms application
@@ -100,9 +110,8 @@
             the work space (on the right). The work space is simply a surface where you can display one or many dockable screens             
             (using <a href="http://www.codeproject.com/Articles/25976/Visual-Studio-IDE-like-Dock-Container">a Visual Studio IDE like Dock Container</a> ). 
             Input and output files that are in the tree view can be displayed as maps, based on <a href="http://mapwingis.codeplex.com/">a freeware geographics program</a>, 
-            <a class = "hidden"  href="#">graphs<img src="images\Malinau.png" border="5" ></a> ,
-            that use the free software called <a href="http://sourceforge.net/projects/zedgraph/">ZedGraph,</a>  
-            or <a class = "hidden"  href="#">spreadsheets<img src="images\Malinau.png" border="5" ></a>, that use  <a href="http://www.codeproject.com/Articles/691749/Free-NET-Spreadsheet-Control">a Free .NET Spreadsheet Control</a>
+            graphs that use the free software called <a href="http://sourceforge.net/projects/zedgraph/">ZedGraph,</a>  
+            or spreadsheets that use  <a href="http://www.codeproject.com/Articles/691749/Free-NET-Spreadsheet-Control">a Free .NET Spreadsheet Control</a>
             or in a text editor by dragging the file from the filetree and dropping it in the work space. 
             The landis user interface is currently used for landis instruction workshops by the university of portland as well as ~10 individual landis users.
         </p> 
