@@ -11,7 +11,7 @@
 // **********************************************************************
 
 
-function my_init(container, FirstIsBackground) {
+function InitializeRotatingItems(container, FirstIsBackground) {
 
     var first_rotating_item = 0;
 

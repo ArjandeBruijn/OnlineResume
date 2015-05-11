@@ -70,7 +70,7 @@
     </div>
 
     <script>
-        $(window).load(function () { my_init('.rotating-item', true); });
+        $(window).load(function () { InitializeRotatingItems('.rotating-item', true); });
     </script>
 
     <script src='js/MarkovChainModel.js'></script>
