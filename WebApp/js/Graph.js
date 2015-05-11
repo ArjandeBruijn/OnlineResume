@@ -1,4 +1,9 @@
-﻿
+﻿function DrawCircle(Context, x, y) {
+    Context.beginPath();
+    Context.arc(x, y, 2, 0, 2 * Math.PI);
+    Context.stroke();
+
+}
 function CurveList(line_color, marker_color, Label) {
 
     // points[0] = x-value
