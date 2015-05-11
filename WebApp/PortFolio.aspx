@@ -130,10 +130,9 @@
     </div>
     <script src="js/Checkboxes.js"></script>
     <script>ShowMalinauMap(2000); </script>
-    <script src="js/TableEventHandlers.js"></script>
+    <script>watch(document.getElementById('LUCtable'), whenChangeHappens);</script>
     <script src="js/jquery.mobile.custom.min.js"></script>
     
-
     <script>
         window.onload = function () {
             StartDecompositionFunctions();
