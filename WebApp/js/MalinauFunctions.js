@@ -32,8 +32,47 @@ function ShowBorneo(file) {
         image_space.innerHTML = "";
         BorneoImageIsShown = false;
     }
-    
+
 }
+function setPixelColor(imageData, x, y, Color) {
+
+    index = get_index(imageData, x, y);
+
+    imageData.data[index + 0] = Color[0];
+    imageData.data[index + 1] = Color[1];
+    imageData.data[index + 2] = Color[2];
+    imageData.data[index + 3] = 255;
+}
+function getPixelColor(imageData, x, y) {
+
+    index = get_index(imageData, x, y);
+
+    Color = [];
+
+    Color[0] = imageData.data[index + 0];
+    Color[1] = imageData.data[index + 1];
+    Color[2] = imageData.data[index + 2];
+    Color[3] = 255;
+
+    return Color;
+}
+function get_index(imageData, x, y) {
+
+    var index = (x + y * imageData.width) * 4;
+    return index;
+}
+function get_xy(index) {
+
+    var x = index / 4;
+    var y = 0;
+    while (x > imageData.width) {
+        x -= imageData.width;
+        y++;
+    }
+
+    return [x, y];
+}
+
 function CalculateDistance(x1, y1, x2, y2) {
 
     var dx2 = Math.pow(Math.abs(x2 - x1), 2);
