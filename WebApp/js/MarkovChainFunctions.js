@@ -1,5 +1,6 @@
 ﻿
-window.onload = function () {
+ 
+function StartMarkovChainFunctions() {
     canvas = document.getElementById("myCanvas");
     var Context = canvas.getContext("2d");
     Context.font = "12px Georgia";
@@ -7,8 +8,8 @@ window.onload = function () {
     InnerPanelArea = DrawGraph(Context, 1930, 2015, 0, 16000);
     AddModelPoints(Model, Context, InnerPanelArea, 1930, 2015, 0, 16000, 0.001, 2000, "Area defoliated (1000km)");
 
+
 }
- 
 
 function DrawGraph(Context,  x_min, x_max, y_min, y_max) {
 

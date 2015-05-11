@@ -74,5 +74,6 @@
     <script src='js/ImageFunctions.js'></script>
     <script src='js/MarkovChainMeasurements.js'></script>
     <script src='js/MarkovChainFunctions.js'></script>
+    <script>StartMarkovChainFunctions()</script>
                              
 </asp:Content>
