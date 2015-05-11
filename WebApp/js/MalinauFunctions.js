@@ -134,7 +134,7 @@ function SetImage(container, MalinauMap, year) {
     for (var row = 0; row < nrows; row++) {
         Coordinates[row] = [];
         for (var col = 0; col < ncols; col++) {
-            Coordinates[row][col] = new Coordinate(row, col);
+            Coordinates[row][col] = [row, col];
         }
     }
 
@@ -236,11 +236,11 @@ function DrawProgressBox() {
     var Height = HeightPerEntree * Entrees + 20;
     var Width = 125;
     var legendrect = new Rectangle(nrows - Width - 10, ncols - Height - 10, Width, Height);
-    canvas.clearRect(legendrect.A.x, legendrect.A.y, legendrect.Width, legendrect.Height);
+    canvas.clearRect(legendrect.A[0], legendrect.A[1], legendrect.Width, legendrect.Height);
     canvas.beginPath();
-    canvas.rect(legendrect.A.x, legendrect.A.y, legendrect.Width, legendrect.Height);
+    canvas.rect(legendrect.A[0], legendrect.A[1], legendrect.Width, legendrect.Height);
     canvas.stroke();
-    var coordinate = new Coordinate(legendrect.A.x + 10, legendrect.A.y + 10);
+    var coordinate = [legendrect.A[0] + 10, legendrect.A[1] + 10];
 
     coordinate = AddLegendEntry(coordinate, "Progress:\t" + Progress + "%", null);
 
@@ -297,7 +297,7 @@ function SimulateAllAroundDevelopedArea() {
 
             var coordinate = GetDonatingSite(randomsettlementcoordinate, From);
 
-            SetPixel(imageData, coordinate.x, coordinate.y, From, To);
+            SetPixel(imageData, coordinate[0], coordinate[1], From, To);
 
             luc[i] = null;
 
@@ -307,39 +307,6 @@ function SimulateAllAroundDevelopedArea() {
     
     DrawImage();
 }
-function SimulateAmericanInvasion() {
-
-    for (var row = 0; row < nrows; row++) {
-        for (var col = 0; col < ncols; col++) {
-            var color = getPixelColor(imageData, row, col);
-
-            if (color[0] == White[0] && color[1] == White[1] && color[2] == White[2]) {
-            }
-            else if (color[0] == DarkGreen[0] && color[1] == DarkGreen[1] && color[2] == DarkGreen[2]) {
-                SetPixel(imageData, row, col, PF, GOLF);
-            }
-        }
-    }
-    DrawImage(CustomLegend);
-}
-function CustomLegend() {
-
-    canvas.clearRect(legendrect.A.x, legendrect.A.y, legendrect.Width, legendrect.Height);
-
-    var Entrees = 3;
-    var HeightPerEntree = 20;
-
-    canvas.beginPath();
-    legendrect = new Rectangle(10, 10, 150, HeightPerEntree * Entrees + 20);
-    canvas.rect(legendrect.A.x, legendrect.A.y, legendrect.Width, legendrect.Height);
-    canvas.stroke();
-
-    var coordinate = new Coordinate(legendrect.A.x + 10, legendrect.A.y + 10);
-    coordinate = AddLegendEntry(coordinate, "Golf course", GolfGreen);
-    coordinate = AddLegendEntry(coordinate, "Airport", Red);
-    coordinate = AddLegendEntry(coordinate, "Parking lot", Yellow);
-    
-}
 function DrawLegend() {
 
     var Entrees = 4;
@@ -348,10 +315,10 @@ function DrawLegend() {
     legendrect = new Rectangle(10, 10, 150, HeightPerEntree * Entrees + 20);
 
     canvas.beginPath();
-    canvas.rect(legendrect.A.x, legendrect.A.y, legendrect.Width, legendrect.Height);
+    canvas.rect(legendrect.A[0], legendrect.A[1], legendrect.Width, legendrect.Height);
     canvas.stroke();
 
-    var coordinate = new Coordinate(legendrect.A.x + 10, legendrect.A.y + 10);
+    var coordinate = [legendrect.A[0] + 10, legendrect.A[1] + 10];
 
     coordinate = AddLegendEntry(coordinate, "Primary forest", DarkGreen);
     coordinate = AddLegendEntry(coordinate, "Secondary forest", LightGreen);
@@ -436,11 +403,11 @@ function GetDonatingSite(random_settlement_coord, donating_land_use) {
     var d = 1;
 
     for (; ; ) {
-        for (var r = random_settlement_coord.x - d; r <= random_settlement_coord.x + d; r++) {
+        for (var r = random_settlement_coord[0] - d; r <= random_settlement_coord[0] + d; r++) {
 
-            for (var c = random_settlement_coord.y - d; c <= random_settlement_coord.y + d; c++) {
+            for (var c = random_settlement_coord[1] - d; c <= random_settlement_coord[1] + d; c++) {
 
-                var distance = CalculateDistance(random_settlement_coord.x, random_settlement_coord.y, r, c);
+                var distance = CalculateDistance(random_settlement_coord[0], random_settlement_coord[1], r, c);
 
                 if (distance <= d) {
 
@@ -571,7 +538,7 @@ function SimulateAllAroundWater() {
 
             var coordinate = GetDonatingSite(randomwatercoordinate, From);
 
-            SetPixel(imageData, coordinate.x, coordinate.y, From, To);
+            SetPixel(imageData, coordinate[0], coordinate[1], From, To);
 
             luc[i] = null;
 
@@ -592,17 +559,17 @@ function AddLegendEntry(coordinate, label, color) {
 
     canvas.beginPath();
     if (color != null) {
-        var rect2 = new Rectangle(coordinate.x, coordinate.y, 20, 15);
+        var rect2 = new Rectangle(coordinate[0], coordinate[1], 20, 15);
         DrawRectangle(rect2, canvas, rgbToHex(color[0], color[1], color[2]));
         canvas.fillStyle = 'black';
-        canvas.rect(rect2.A.x, rect2.A.y, rect2.Width, rect2.Height);
-        canvas.fillText(label, rect2.B.x + 5, rect2.B.y + 12);
+        canvas.rect(rect2.A[0], rect2.A[1], rect2.Width, rect2.Height);
+        canvas.fillText(label, rect2.B[0] + 5, rect2.B[1] + 12);
     }
     else {
-        canvas.fillText(label, coordinate.x + 5, coordinate.y + 12);
+        canvas.fillText(label, coordinate[0] + 5, coordinate[1] + 12);
     }
     canvas.stroke();
-    return new Coordinate(coordinate.x, coordinate.y + 15 + 5);
+    return [coordinate[0], coordinate[1] + 15 + 5];
 }
 
  

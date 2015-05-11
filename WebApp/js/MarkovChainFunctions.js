@@ -28,9 +28,9 @@ function AddModelPoints(MarkovChainGraph) {
         var y = Model[i][1];
 
         var coordinate = MarkovChainGraph.GetCoordinate(x, y);
-        
 
-        if (lastcoordinate != null && coordinate.x < lastcoordinate.x) {
+
+        if (lastcoordinate != null && coordinate[0] < lastcoordinate[0]) {
             MarkovChainGraph.ClearCurve(1)
         }
         

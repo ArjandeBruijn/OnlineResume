@@ -59,8 +59,8 @@ function Graph(mycanvas, X_axis, Y_axis) {
 
     this.WriteLegend = function () {
 
-        var y_min = this.InnerPanelArea.B.y;
-        var x_min = this.InnerPanelArea.B.x - 100;
+        var y_min = this.InnerPanelArea.B[1];
+        var x_min = this.InnerPanelArea.B[0] - 100;
 
         var y = y_min;
         for (var c = 0; c < this.Curves.length; c++) {
@@ -77,9 +77,7 @@ function Graph(mycanvas, X_axis, Y_axis) {
 
                 this.MyContext.strokeStyle = this.Curves[c].LineColor;
 
-                var from = new Coordinate(x, y - 5);
-                var to = new Coordinate(x + 20, y - 5);
-                this.drawLine(from, to);
+                this.drawLine([x, y - 5], [x + 20, y - 5]);
 
                 x += 25;
             }
@@ -95,7 +93,7 @@ function Graph(mycanvas, X_axis, Y_axis) {
     }
     this.GetCoordinate = function (x_value, y_value) {
 
-        var coordinate = new Coordinate(this.InnerPanelArea.D.x + ((x_value - this.x_min) / (this.x_max - this.x_min)) * this.InnerPanelArea.Width, this.InnerPanelArea.C.y - ((y_value - this.y_min) / (this.y_max - this.y_min)) * this.InnerPanelArea.Height);
+        var coordinate = [this.InnerPanelArea.D[0] + ((x_value - this.x_min) / (this.x_max - this.x_min)) * this.InnerPanelArea.Width, this.InnerPanelArea.C[1] - ((y_value - this.y_min) / (this.y_max - this.y_min)) * this.InnerPanelArea.Height];
 
         return coordinate;
     }
@@ -103,15 +101,15 @@ function Graph(mycanvas, X_axis, Y_axis) {
 
         //from, to in row/column coordinates
         this.MyContext.beginPath();
-        this.MyContext.moveTo(from.x, from.y);
-        this.MyContext.lineTo(to.x, to.y);
+        this.MyContext.moveTo(from[0], from[1]);
+        this.MyContext.lineTo(to[0], to[1]);
         this.MyContext.stroke();
     }
     this.DrawYaxis = function () {
 
-        this.drawLine(new Coordinate(this.InnerPanelArea.A.x, this.InnerPanelArea.A.y), new Coordinate(this.InnerPanelArea.D.x, this.InnerPanelArea.D.y));
+        this.drawLine([this.InnerPanelArea.A[0], this.InnerPanelArea.A[1]], [this.InnerPanelArea.D[0], this.InnerPanelArea.D[1]]);
 
-        this.MyContext.fillText(this.y_label, this.InnerPanelArea.A.x - 30, 12);
+        this.MyContext.fillText(this.y_label, this.InnerPanelArea.A[0] - 30, 12);
 
         var y_value = this.y_axis.multiplywith * this.y_min;
 
@@ -125,9 +123,9 @@ function Graph(mycanvas, X_axis, Y_axis) {
 
             var coordinate = this.GetCoordinate(x_value, y_value / this.y_axis.multiplywith);
 
-            this.drawLine(new Coordinate(coordinate.x - 5, coordinate.y), new Coordinate(coordinate.x + 5, coordinate.y));
+            this.drawLine([coordinate[0] - 5, coordinate[1]], [coordinate[0] + 5, coordinate[1]]);
 
-            this.MyContext.fillText(0.001 * Math.round(1000 * y_value), coordinate.x - 20, coordinate.y);
+            this.MyContext.fillText(0.001 * Math.round(1000 * y_value), coordinate[0] - 20, coordinate[1]);
 
             y_value += between_ticks;
         }
@@ -137,9 +135,9 @@ function Graph(mycanvas, X_axis, Y_axis) {
     }
     this.DrawXaxis = function () {
 
-        this.drawLine(new Coordinate(this.InnerPanelArea.D.x, this.InnerPanelArea.D.y), new Coordinate(this.InnerPanelArea.C.x, this.InnerPanelArea.C.y));
+        this.drawLine([this.InnerPanelArea.D[0], this.InnerPanelArea.D[1]], [this.InnerPanelArea.C[0], this.InnerPanelArea.C[1]]);
 
-        this.MyContext.fillText(this.x_label, this.InnerPanelArea.D.x + 0.5 * this.InnerPanelArea.Width, this.InnerPanelArea.D.y + 40);
+        this.MyContext.fillText(this.x_label, this.InnerPanelArea.D[0] + 0.5 * this.InnerPanelArea.Width, this.InnerPanelArea.D[1] + 40);
 
         var x_value = this.x_min;
         var y_value = this.y_min;
@@ -150,13 +148,28 @@ function Graph(mycanvas, X_axis, Y_axis) {
         while (x_value <= this.x_max) {
             var coordinate = this.GetCoordinate(x_value, y_value);
 
-            this.drawLine(new Coordinate(coordinate.x, coordinate.y - 5), new Coordinate(coordinate.x, coordinate.y + 5));
+            this.drawLine([coordinate[0], coordinate[1] - 5], [coordinate[0], coordinate[1] + 5]);
 
-            this.MyContext.fillText(x_value, coordinate.x - 15, coordinate.y + 15);
+            this.MyContext.fillText(x_value, coordinate[0] - 15, coordinate[1] + 15);
 
             x_value += between_ticks;
         }
 
+
+    }
+    this.DivideGraphArea = function (Context, GraphArea) {
+
+        var TitleMargin = 30;
+        var PanelMargin = 25;
+
+        TitleAreaY = new Rectangle(GraphArea.A[0], GraphArea.A[1], TitleMargin, GraphArea.Height - TitleMargin);
+
+        TitleAreaX = new Rectangle(TitleAreaY.C[0], TitleAreaY.C[1], GraphArea.Width - TitleMargin, TitleMargin);
+
+        PanelArea = new Rectangle(TitleAreaY.B[0], TitleAreaY.B[1], TitleAreaX.Width, TitleAreaY.Height);
+        var InnerPanelArea = new Rectangle(PanelArea.A[0] + PanelMargin, PanelArea.A[1] + PanelMargin, PanelArea.Width - 2 * PanelMargin, PanelArea.Height - 2 * PanelMargin);
+
+        return InnerPanelArea;
 
     }
     this.Refresh = function () {
@@ -164,7 +177,7 @@ function Graph(mycanvas, X_axis, Y_axis) {
 
         this.MyContext.clearRect(0, 0, this.GraphArea.Width, this.GraphArea.Height);
 
-        this.InnerPanelArea = DivideGraphArea(this.MyContext, this.GraphArea);
+        this.InnerPanelArea = this.DivideGraphArea(this.MyContext, this.GraphArea);
 
         this.MyContext.strokeStyle = "Black";
 
@@ -200,11 +213,7 @@ function Graph(mycanvas, X_axis, Y_axis) {
         Context.stroke();
 
     }
-    function GetRowColumn(InnerPanelArea, x_value, x_min, x_max, y_value, y_min, y_max) {
-
-        return [InnerPanelArea.D.x + ((x_value - x_min) / (x_max - x_min)) * InnerPanelArea.Width, InnerPanelArea.C.y - ((y_value - y_min) / (y_max - y_min)) * InnerPanelArea.Height];
-    }
-    
+     
     this.AddPoint = function (curve_number, x, y, sd) {
         var curve = this.Curves[curve_number];
         curve.AddPoint(x, y, sd);
@@ -231,12 +240,12 @@ function Graph(mycanvas, X_axis, Y_axis) {
                     var from = this.GetCoordinate(point[0], point[1] + sd);
                     var to = this.GetCoordinate(point[0], point[1] - sd);
                     this.drawLine(from, to);
-                    this.drawLine(new Coordinate(from.x - 3, from.y), new Coordinate(from.x + 3, from.y));
-                    this.drawLine(new Coordinate(to.x - 3, to.y), new Coordinate(to.x + 3, to.y));
+                    this.drawLine([from[0] - 3, from[1]], [from[0] + 3, from[1]]);
+                    this.drawLine([to[0] - 3, to[1]], [to[0] + 3, to[1]]);
 
 
                 }
-                this.DrawCircle(this.MyContext, coordinate.x, coordinate.y);
+                this.DrawCircle(this.MyContext, coordinate[0], coordinate[1]);
             }
         }
 
@@ -279,20 +288,6 @@ function Graph(mycanvas, X_axis, Y_axis) {
         this.Refresh();
 
     };
-    function DivideGraphArea(Context, GraphArea) {
-
-        var TitleMargin = 30;
-        var PanelMargin = 25;
-
-        TitleAreaY = new Rectangle(GraphArea.A.x, GraphArea.A.y, TitleMargin, GraphArea.Height - TitleMargin);
-
-        TitleAreaX = new Rectangle(TitleAreaY.C.x, TitleAreaY.C.y, GraphArea.Width - TitleMargin, TitleMargin);
-
-        PanelArea = new Rectangle(TitleAreaY.B.x, TitleAreaY.B.y, TitleAreaX.Width, TitleAreaY.Height);
-        var InnerPanelArea = new Rectangle(PanelArea.A.x + PanelMargin, PanelArea.A.y + PanelMargin, PanelArea.Width - 2 * PanelMargin, PanelArea.Height - 2 * PanelMargin);
-
-        return InnerPanelArea;
-
-    }
+    
 }
 
