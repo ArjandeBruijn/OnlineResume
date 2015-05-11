@@ -9,6 +9,7 @@
 // WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
 // **********************************************************************
+$(window).load(function () { my_init('.rotating-item', true); });
 
 function my_init(container, FirstIsBackground) {
 
@@ -59,4 +60,3 @@ function my_init(container, FirstIsBackground) {
 }
 
  
-$(window).load(function () { my_init('.rotating-item', true);  });
