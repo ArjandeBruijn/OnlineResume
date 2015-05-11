@@ -131,8 +131,7 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="js/Checkboxes.js"></script>
-    <script src="js/Malinau2009.js"></script>
-    <script src="js/Malinau2000.js"></script>
+    
     <script src='js/ImageFunctions.js'></script>
     <script src='js/MalinauFunctions.js'></script>
     <script>ShowMalinauMap(2000); </script>
