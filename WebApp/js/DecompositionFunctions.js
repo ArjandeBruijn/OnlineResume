@@ -1,6 +1,6 @@
 ﻿
 //----------------------------------------------------------------------------------------------------------------------
-$(window).load(function () {
+window.onload = function() {
 
     var x_axis = new Axis(0, 20, "Iterations", 1, 10);
     var y_axis = new Axis(0, 0.1, "Decomposition rate (% per year)", 100, 10);
@@ -10,7 +10,7 @@ $(window).load(function () {
     B_route_graph.AddCurveList("Green", null, "High estimate");
     B_route_graph.AddCurveList("Green", null, "Low estimate");
     AddModelPoints();
-});
+};
 
 function ResetDecompositionFunctions() {
 
