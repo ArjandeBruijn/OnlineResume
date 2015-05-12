@@ -18,9 +18,9 @@
         </div>
     </div>
     <h2>Deforestation in Indonesia</h2>
-    <div id="pageone" data-role="main" class="justify"> 
-        The island of Borneo, Indonesia, is rapidly changing. Large schale logging operations have degraded much of the 
-        pristine rainforests sinds the 1960s. More recently, forests are making place for olive oil plantations and population pressure is ever-increasing.
+    <div data-role="main" class="justify"> 
+        The island of Borneo, Indonesia is rapidly changing. Much of the pristine rainforests have degraded due to large schale logging operations
+        sinds the 1960s. More recently, forests are making place for olive oil plantations and population pressure is ever-increasing.
         I used land use derived from arial photographs of 
         <a href="#myPopup" data-rel="popup" data-position-to="window">eastern Borneo</a>
         <div class = "inline" data-role="popup" id="myPopup">
@@ -31,58 +31,56 @@
         and (<a onclick="ShowMalinauMap(2009)" href="#">2009</a>) to evaluate hypotheses 
         about the spatial configuration of land use changes and to predict future land use thereupon. The hypothesis about land use change are increasingly speculative:  
     </div> 
-    <h3>Hypotheses</h3>
+       
     <div >
-        <label><input type="checkbox" onclick = "CheckBoxIsNoSpatialCorrelation()" class="radio" value="1" id="NoSpatialCorrelation"  name="Hypotheses" checked/>1. There is no spatial correlation between land use transitions.<br></label>
-        <label><input type="checkbox" onclick = "CheckBoxIsAllAroundDevelopedArea()" class="radio" value="1" id="AllAroundDevelopedArea"  name="Hypotheses"/>2. Land use transitions occur near settlements.<br></label>
-        <label><input type="checkbox" onclick = "CheckBoxIsAllAroundWater()" class="radio" value="1" id="AllAroundWater"  name="Hypotheses"/>3.Land use transitions occur near water.<br></label>
+        <label id = "sized_label"><input type="checkbox" onclick = "CheckBoxIsNoSpatialCorrelation()" class="radio" value="1" id="NoSpatialCorrelation"  name="Hypotheses" checked/>1. There is no spatial correlation between land use transitions.<br></label>
+        <label id = "sized_label"><input type="checkbox" onclick = "CheckBoxIsAllAroundDevelopedArea()" class="radio" value="1" id="AllAroundDevelopedArea"  name="Hypotheses"/>2. Land use transitions occur near settlements.<br></label>
+        <label id = "sized_label"><input type="checkbox" onclick = "CheckBoxIsAllAroundWater()" class="radio" value="1" id="AllAroundWater"  name="Hypotheses"/>3.Land use transitions occur near water.<br></label>
     </div>
-    Combined with a land use transition table that prescribed surface fractions of land use categories that are converted in the period 2000-2009:
+      
+    <p>When we have a land use transition table that prescribed surface fractions of land use categories that are converted in the period 2000-2009:
     <br></br>
     <table id = "LUCtable" bgcolor = white border="1">
         <tr>
             <th bgcolor ="#c0c0c0">From / To </th>
-            <th bgcolor ="#ff9900">Forest</th>
-            <th bgcolor ="#ff9900">Secondary Forest</th>
-            <th bgcolor ="#ff9900">Cropland</th>
-            <th bgcolor ="#ff9900">Settlements</th>
+            <th bgcolor ="#c0c0c0">Forest</th>
+            <th bgcolor ="#c0c0c0">Secondary Forest</th>
+            <th bgcolor ="#c0c0c0">Cropland</th>
+            <th bgcolor ="#c0c0c0">Settlements</th>
         </tr>
         <tr>
-            <th bgcolor ="#ccff66" >Forest</th>
+            <th bgcolor ="#c0c0c0" >Forest</th>
             <td bgcolor ="#c0c0c0" id="Forest-Forest"><div> 0.998 </div> </th>
             <td  id="Forest-SecondaryForest"><div contenteditable> 0.002 </div> </th>
             <td  id="Forest-CropLand"><div contenteditable> 0</div> </th>
             <td  id= "Forest-Settlements"><div contenteditable> 0.0003 </div> </th>
         </tr>
         <tr>
-            <th bgcolor ="#ccff66">Secondary Forest</th>
+            <th bgcolor ="#c0c0c0">Secondary Forest</th>
             <td id="SecondaryForest-Forest"><div contenteditable> 0	 </div> </th>
             <td bgcolor ="#c0c0c0" id="SecondaryForest-SecondaryForest"><div> 0.995	 </div> </th>
             <td id = 'SecondaryForest-CropLand'><div contenteditable> 0.005	</div> </th>
             <td id = 'SecondaryForest-Settlements'><div contenteditable> 0 </div> </th>
         </tr>
         <tr>
-            <th bgcolor ="#ccff66">Cropland</th>
+            <th bgcolor ="#c0c0c0">Cropland</th>
             <td id = 'CropLand-Forest'><div contenteditable>0 </div></th>
             <td id = 'CropLand-SecondaryForest'><div contenteditable>  0	</div></th>
             <td bgcolor ="#c0c0c0" id = 'CropLand-CropLand'><div> 0.99 </div></th>
             <td id = 'CropLand-Settlements'><div contenteditable> 0.01 </div></th>
         </tr>
         <tr>
-            <th bgcolor ="#ccff66">Settlements</th>
+            <th bgcolor ="#c0c0c0">Settlements</th>
             <td id = 'Settlements-Forest'><div contenteditable>0</div>	 </th>
             <td id = 'Settlements-SecondaryForest'><div contenteditable> 0	</div>	</th>
             <td id = 'Settlements-CropLand'><div contenteditable> 0</div>	 </th>
             <td bgcolor ="#c0c0c0" id = 'Settlements-Settlements'><div>1</div>	  </th>
          </tr>
      </table>
-     <br></br>
+    
      <p class = "justify">
-         We can use these hypotheses to predict locations where land use change would take place. 
-         For example: when hypotheses 2 is applied and 1% of Primary Forests degrades between 2000 and 2009, 
-         the model picks a random developed location, searches the nearest primary forest (i.e. dark-green pixel)
-         and converts this to secondary forest (i.e. paints a dark-green pixel light-green).
-         The model will repeat this the target area conversion is reached (i.e. untill 1% of darg-green pixels is light green).
+         we can use these hypotheses to predict locations where land use change would take place. 
+         
          You can try a simulation by editing the values in the land use transition table, checking a hypothesis and clicking the button.
      </p>
      <p class = "justify">

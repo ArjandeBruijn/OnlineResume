@@ -32,7 +32,9 @@ body {
   margin:75px auto;
   width:50px; height:50px;
 }
-        
+table {
+    border-collapse: collapse;
+}        
         
 #thumbwrap {
   position:relative;
@@ -163,7 +165,15 @@ img {
 	margin: 0px;
 	padding: 0px;
 }
-p  
+#sized_label 
+{
+    font-size: 15px;
+    line-height: 1.5em;
+	margin: 0px;
+	padding: 0px;
+	
+}
+p, div   
 {
     font-size: 15px;
     line-height: 1.5em;
