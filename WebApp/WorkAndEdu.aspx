@@ -5,7 +5,7 @@
  
               
 
-                <h2>PURDUE UNIVERSITY  - West-Lafayett, IN - 2011 to 2014</h2>
+                <h2>Purdue University - West-Lafayett, IN - 2011 to 2014</h2>
 
                 <h3>Responsibilities</h3>
                 <p>
@@ -83,7 +83,7 @@
                 </p>
                 <div class="margin_bottom_10 h_divider"></div>
 
-                <h2>ALTERRA B.V. - Wageningen - 2009 to 2010</h2>
+                <h2>Alterra B.V. - Wageningen - 2009 to 2010</h2>
                     
                 <h3>Responsibilities</h3>
                 <p> 
@@ -131,7 +131,7 @@
 
                 </ul> 
                 <div class="margin_bottom_10 h_divider"></div>
-                <h2>WAGENINGEN UNIVERSITY – Wageningen, Netherlands	1998-2005</h2>
+                <h2>Wageningen University – Wageningen, Netherlands	1998-2005</h2>
                 <h3>Study themes</h3>    
                 <p>
                     At Wageningen University, it was pretty common to design an individual program for graduation. There were strickt demands for an individual study plan 
@@ -158,7 +158,7 @@
                  
                 <div class="margin_bottom_10 h_divider"></div>
 
-                <h2>AMSTERDAM UNIVERSITY– Amsterdam, Netherlands 2001-2005</h2>
+                <h2>Amsterdam University – Amsterdam, Netherlands 2001-2005</h2>
                  <h3>Study themes</h3>    
                  <p>
                     This was my second study on Philosophy of Science. The study contains a generic year with general topics such as the history of philosophy, logic, knowledge theory.
