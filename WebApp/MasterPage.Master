@@ -23,7 +23,7 @@
         <script src="js/DecompositionFunctions.js"></script>
         <script src="js/TableEventHandlers.js"></script>
         <script src="js/Checkboxes.js"></script>
-        <link rel="stylesheet" href="css/StyleSheet.css" type="text/css" media="screen" />
+        
         <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
     </head>
 
