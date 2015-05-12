@@ -1,4 +1,16 @@
-﻿SetActivePage = function () {
+﻿
+
+function UpdateMenuSelection() {
+
+    setInterval(function () {
+
+        SetActivePage();
+
+    }, 500);
+}
+
+
+SetActivePage = function () {
     // this will get the full URL at the address bar
     var url = window.location.href;
 

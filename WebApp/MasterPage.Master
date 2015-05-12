@@ -47,7 +47,7 @@
                     <li> <a href="WorkAndEdu.aspx">Work & Education</a> </li>
                 </ul>
             </div>
-            <script>SetActivePage();</script>
+            <script> UpdateMenuSelection();</script>
             <div class="margin_bottom_10"></div> 
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
             <div class="margin_bottom_10"></div> 
@@ -63,5 +63,6 @@
                     <div class="margin_bottom_10"></div>
                 </center>
            </div>
+            
     </body>
 </html>
