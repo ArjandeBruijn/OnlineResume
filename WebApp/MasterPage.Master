@@ -31,7 +31,7 @@
         <div id="container">
             <div>
             <div id="nav_banner">
-               <p><img id = "Img1" src="images\pass.jpg"  onclick="SetActivePage()"  align="left">  </p>
+               <p><img id = "Img1" src="images\pass.jpg"  align="left">  </p>
             </div>
             <div id="section_banner">
                 <p class = "large"><b>Arjan de Bruijn</b></p>
