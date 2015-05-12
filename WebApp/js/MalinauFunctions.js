@@ -121,10 +121,10 @@ function ShowMalinauMap(year) {
     nrows = 415;
     ncols = 561;
     if (year == 2009) {
-        SetImage('canvas1', MalinauMap2009, 2009);
+        SetImage('MalinauCanvas', MalinauMap2009, 2009);
     }
     else {
-        SetImage('canvas1', MalinauMap2000, 2000);
+        SetImage('MalinauCanvas', MalinauMap2000, 2000);
     }
 }
 
@@ -141,7 +141,7 @@ function SetImage(container, MalinauMap, year) {
     Year = year;
     Progress = 100;
     // create a new pixel array
-    var element2 = document.getElementById('canvas1');
+    var element2 = document.getElementById(container);
     canvas = element2.getContext("2d");
     imageData = element2.getContext("2d").createImageData(nrows, ncols);
 
