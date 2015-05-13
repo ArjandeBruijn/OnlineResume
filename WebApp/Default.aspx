@@ -9,7 +9,8 @@
         for more than eight years. I have a considerable publication record, taught at presentations and workshops, I have a PhD, Msc and M.A.
         However, I prefer the more technical elements of my PhD and post-doctoral work (i.e. the programming) over the drier mathematical 
         work and I feel that I am better suited to the pace of the private sector. So I developed this website to demonstrate my skills and 
-        work so employers may have a better impression about my capacities and how these could benefit their product. I have references available on request.
+        work so employers may have a better impression about my capacities and how these could benefit their product. In particular, it serves to demonstrate that 
+        I am able to work with HTML5, CSS, JavaScript and JQuery. I have references available on request.
         <br></br>
      </p>
      <div id="column_55">
@@ -54,7 +55,7 @@
         </div><!-- END: Rotating images images -->
         <h2>Maryland simulations</h2>
         <p>
-            The Green Ridge State Forest (GRSF) is located just west of the narrowest part of Maryland, covering Maryland, Pennsylvania and West Virginia, with the meandering Pontomac \
+            The Green Ridge State Forest (GRSF) is located just west of the narrowest part of Maryland, covering Maryland, Pennsylvania and West Virginia, with the meandering Pontomac
             river on the east side of the map above. GRSF is interesting because it is is a very dynamic area, it has suffered considerable damage from invasive insect species such as the Gypsy Moth,
             and it is on the frontier of the Emerald Ash Borer, Asian Longhorned Beetle and Sudden Oak Death. We used it as a test case site to study the potential fate of reintroduced blight-resistant 
             American Chestnut, a tree species that was extirpated in the early 1900s by the Asian-born chestnut blight. My contribution constisted of developing model simulations of growth and spread of the

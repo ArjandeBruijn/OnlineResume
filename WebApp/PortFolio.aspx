@@ -130,14 +130,16 @@
             <br></br><br></br><br></br><br></br>
         </div>
 
-        <p>Bayesian statistics is often used in contraction with Markov Chain calibrations (see home page). 
-            The idea behind the Bayesian proposition is that you turn around the driving mechanism and the phenomenon, i.e. where 
-            we typically think it terms of "It is raining, therefore the streets are wet", the Bayesian proposition tries to 
-            derive the rain that fell, based on the wetness of the streets. In terms of simulations, we are analysing how the probability of 
-            the simulation model depends on the spread of the observations. The forest tent caterpillar model on the home page is fairly complex. 
-            A simpler model to explain this approach by, is for example the rate of decomposition of dead woody biomass. 
-            If we assume a very simple equation where the amount of wood that decomposes per time unit is a constant proportion of the wood that is there 
-            (i.e. dWood/dt = c*Wood), the amount of wood at any time is described as Wood = Initial_wood * exp(-a * time)).
+        <p>Bayesian statistics is based on probability computation of a theory, given some set of evidence. It is used in medicine, law or suggestions by google search machines. 
+         In the scope of quantitative simulations it is to derive the probability of a set of models given some set of observations (measurements). I used it for example to estimate the 
+         rate of which a dead log loses biomass. If we assume that the reduction of mass is a constant fraction per year, the model translates to 
+         dM/dt = b*M or also M = 100 * exp(-b*time) where b is the decomposition rate in percent per year. The remaining mass at any time can be calculated for a given decomposition rate b. 
+         So one way to see how the likelihood of the model depends on the value of b is to try a lot of values for b, calculate the remaining mass each year, and compare predictions of 
+         remaining mass with measurements. This approach is known as a Markov Chain Monte Carlo algorithm. It is what I'm doing in the upper graph. There is a tweak in Markov Chain algorithms that assures that decomposition rates that are 
+         associated with a high likelihood, or where the model is close to the measurements, are selected more often than those that are not. Therefore, after a lot of draws the best estimate of b becomes
+          the value of b that is most often applied. This is what you see in the bottom graph where I show the value of b that was most often used to predict the decomposition rate. You can see that initially 
+          it fluctuates a lot, but after ~100 iterations, it becomes pretty stable at around 7%. So my best estimate of the decomposition rate of the tree logs is 7% per year.
+             
         </p>
     </div>
     
