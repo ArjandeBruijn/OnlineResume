@@ -49,25 +49,20 @@
             </div>
             <script> UpdateMenuSelection();</script>
             <div class="margin_bottom_10"></div> 
-            <div class="margin_bottom_10"></div> 
-            <div class="margin_bottom_10 "></div>
-            <div class="margin_bottom_10 "></div>
-            
-
-
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+            <div class="margin_bottom_10"></div> 
+        </div>
+            <div class="margin_bottom_10 "></div>
+            <div class="margin_bottom_10 "></div>
             <div id="footer"> 
                 <div class="margin_bottom_10 h_divider"></div>
                 <center>
                    <div class="margin_bottom_10"></div>
-                   <p class ="large"><a href="mailto:amgdebruijn@gmail.com">AMGdeBruijn@gmail.com</a> </p>
-                   <p class ="large">715-401-0799</p>
-                   <div class="margin_bottom_10"></div>
+                        <p class ="large"><a href="mailto:amgdebruijn@gmail.com">AMGdeBruijn@gmail.com</a> </p>
+                        <p class ="large">715-401-0799</p>
+                    <div class="margin_bottom_10"></div>
                 </center>
-            </div>
-            
-        </div>
-            
+           </div>
             
     </body>
 </html>

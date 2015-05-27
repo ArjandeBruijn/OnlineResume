@@ -9,13 +9,6 @@ body {
   padding : 0 10px;
   background-color    : White;
 }
-#footer {
-    position: fixed;
-    bottom: 0;
-    width : 960px;
-    background-color: White;
-}
-
 #right_col_ins{
     padding : 10px;	
     border: 2px solid black;
@@ -73,7 +66,12 @@ table {
 	text-align : center;
 }
  
-
+#footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+     background-color: White;
+}
 
 table, td, th {
     border: 1px solid black;
@@ -93,12 +91,12 @@ th
 #column_55 {
     width:55%;
     float:left;
-     padding-right : 0px;	 	 
+    padding-right : 0px;	 	 
     padding-left: 10px;
 }
 #column_45 {
     width:42%;
-     float:right;
+    float:right;
     padding-right : 10px;	 	 
     padding-left: 0px;
    	      
