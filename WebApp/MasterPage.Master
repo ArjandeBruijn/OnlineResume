@@ -29,40 +29,50 @@
 
     <body >
         <div id="container">
-            <div>
-            <div id="nav_banner">
-               <p><img id = "Img1" src="images\pass.jpg"  align="left">  </p>
-            </div>
-            <div id="section_banner">
-                <p class = "large"><b>Arjan de Bruijn</b></p>
-                <p class = "large">Fort Collins, Co</p>
-                <p class = "large">Resume</p>
-            </div>
-            <div class="margin_bottom_10"></div>
-            <div id="menu">
-                <ul>
-                    <li id ="default"> <a href="Default.aspx">Home</a> </li>
-                    <li> <a href="Skills.aspx">Skills</a> </li>
-                    <li> <a href="Portfolio.aspx">Portfolio</a> </li>
-                    <li> <a href="WorkAndEdu.aspx">Work & Education</a> </li>
-                </ul>
-            </div>
-            <script> UpdateMenuSelection();</script>
-            <div class="margin_bottom_10"></div> 
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
-            <div class="margin_bottom_10"></div> 
+                
+                <div id="nav_banner">
+                   <img id = "Img1" src="images\pass.jpg"  align="left">
+                </div>
+                <div id="section_banner">
+                    <p class = "large"><b>Arjan de Bruijn</b></p>
+                    <p class = "large">Fort Collins, Co</p>
+                    <p class = "large">Resume</p>
+                </div>
+                
+
+                <div class="margin_bottom_10"></div>
+                <div id="menu">
+                    <ul>
+                        <li id ="default"> <a href="Default.aspx">Home</a> </li>
+                        <li> <a href="Skills.aspx">Skills</a> </li>
+                        <li> <a href="Portfolio.aspx">Portfolio</a> </li>
+                        <li> <a href="WorkAndEdu.aspx">Work & Education</a> </li>
+                    </ul>
+                </div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+               
+                <script> UpdateMenuSelection();</script>
+                <div class="margin_bottom_10"></div> 
+                <div class="margin_bottom_10"></div> 
+                <div class="margin_bottom_10 "></div>
+                <div class="margin_bottom_10 "></div>
+
+                
+                <div id="footer"> 
+                    <div class="margin_bottom_10 h_divider"></div>
+                    <center>
+                       <div class="margin_bottom_10"></div>
+                            <p class ="large"><a href="mailto:amgdebruijn@gmail.com">AMGdeBruijn@gmail.com</a> </p>
+                            <p class ="large">715-401-0799</p>
+                        <div class="margin_bottom_10"></div>
+                    </center>
+               </div>
+
+                
+            
+            
         </div>
-            <div class="margin_bottom_10 "></div>
-            <div class="margin_bottom_10 "></div>
-            <div id="footer"> 
-                <div class="margin_bottom_10 h_divider"></div>
-                <center>
-                   <div class="margin_bottom_10"></div>
-                        <p class ="large"><a href="mailto:amgdebruijn@gmail.com">AMGdeBruijn@gmail.com</a> </p>
-                        <p class ="large">715-401-0799</p>
-                    <div class="margin_bottom_10"></div>
-                </center>
-           </div>
+            
             
     </body>
 </html>

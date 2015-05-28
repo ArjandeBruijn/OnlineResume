@@ -122,11 +122,11 @@
         <br></br>
     </div>
 
-    <script> InitializeRotatingItems('.rotating-item', true);</script>
+    <script>        InitializeRotatingItems('.rotating-item', true);</script>
     <script src='js/MarkovChainModel.js'></script>
     <script src='js/ImageFunctions.js'></script>
     <script src='js/MarkovChainMeasurements.js'></script>
     <script src='js/MarkovChainFunctions.js'></script>
-    <script>StartMarkovChainFunctions()</script>
+    <script>        StartMarkovChainFunctions()</script>
                              
 </asp:Content>
