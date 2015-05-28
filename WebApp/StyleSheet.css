@@ -3,6 +3,9 @@ body {
 	margin:0;
    background-color: Beige;
 }
+#header{
+   background-color: White; 
+}
 #container {
   width : 960px;
   margin : 0 auto;

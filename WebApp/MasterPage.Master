@@ -30,15 +30,19 @@
     <body >
         <div id="container">
                 
-                <div id="nav_banner">
-                   <img id = "Img1" src="images\pass.jpg"  align="left">
+                <div id = "header">
+                    <div id="nav_banner">
+                       <img id = "Img1" src="images\pass.jpg"  align="left">
+                    </div>
+                    <div id="section_banner">
+                        <p class = "large"><b>Arjan de Bruijn</b></p>
+                        <p class = "large">Fort Collins, Co</p>
+                        <p class = "large">Resume</p>
+                    </div>
+                    <div class="margin_bottom_10 h_divider"></div>
+                    <div class="margin_bottom_10"></div> 
                 </div>
-                <div id="section_banner">
-                    <p class = "large"><b>Arjan de Bruijn</b></p>
-                    <p class = "large">Fort Collins, Co</p>
-                    <p class = "large">Resume</p>
-                </div>
-                
+                <script>$('#header').stickThis();</script>
 
                 <div class="margin_bottom_10"></div>
                 <div id="menu">
