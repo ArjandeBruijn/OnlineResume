@@ -23,7 +23,7 @@
           <li><p>I write very efficient code.</p></li>
           <li><p>Hard worker.</p></li>
         </ul>
-        <canvas id="myCanvas" width="525" height="450" style="border:2px solid black;"> Your browser does not support the HTML5 canvas tag.</canvas>
+        <canvas id="myCanvas" width="525" height="450" style="border:1px solid black;"> Your browser does not support the HTML5 canvas tag.</canvas>
         <h2>Markov Chain algorithm</h2>
         <p>
             Ideally, we would know all factors involved in a simulation model with great accuracy. However, most simulation tools used to predict biological and biochemical 
