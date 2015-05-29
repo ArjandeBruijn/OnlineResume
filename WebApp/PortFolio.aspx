@@ -18,7 +18,7 @@
         </div>
     </div>
     <h2>Deforestation in Indonesia</h2>
-    <div data-role="main" class="justify"> 
+    <div data-role="main" style="justify"> 
         The island of Borneo, Indonesia is rapidly changing. Much of the pristine rainforests have degraded due to large schale logging operations
         sinds the 1960s. More recently, forests are making place for olive oil plantations and population pressure is ever-increasing.
         I used land use derived from arial photographs of 

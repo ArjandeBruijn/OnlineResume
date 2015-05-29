@@ -1,4 +1,8 @@
 ﻿/* background */
+h2{
+    text-align: center
+    
+}
 body {
 	margin:0;
    background-color: Beige;
@@ -179,6 +183,7 @@ img {
 }
 p, div   
 {
+    text-align: justify;
     font-size: 15px;
     line-height: 1.5em;
 	margin: 0px;
