@@ -12,7 +12,7 @@
       <li><p>100% Designed applications from scratch)</p></li>
     </ul>
         
-    <p> <img src="images\ProgressBars\ProgressBars.png"   align="middle"></p>
+    <p> <img src="images\ProgressBars\ProgressBars2.png"   align="middle"></p>
         
          
    <br></br>

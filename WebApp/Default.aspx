@@ -43,6 +43,7 @@
         <br></br>
     </div>
     <div id="column_45">
+
         <div id="rotating-item-wrapper">  
             <img  src="images/Maryland/NewMaryland_background.jpg" height ="450px" class="rotating-item" border="1" />
             <img  src="images/Maryland/GypsyMoth14.png" height ="450px" class="rotating-item"  />
