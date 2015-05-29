@@ -4,18 +4,19 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
  
-    <h2>Software skills</h2>
-     
+    <h2><center>Software skills</center></h2>
+    
     <ul>
       <li><p>25% Made some tweaks, seen the program in action.</p></li>
       <li><p>50% Added some minor algorithms to existing code or files.</p></li>
       <li><p>100% Designed applications from scratch)</p></li>
     </ul>
-        
+       
+     <br></br>
     <p> <img src="images\ProgressBars\ProgressBars2.png"   align="middle"></p>
         
          
-   <br></br>
+    
    <br></br>
     <br></br>
     <br></br>
