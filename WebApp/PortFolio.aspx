@@ -19,9 +19,7 @@
     </div>
     <h2>Deforestation in Indonesia</h2>
     <div data-role="main" style="justify"> 
-        The island of Borneo, Indonesia is rapidly changing. Much of the pristine rainforests have degraded due to large schale logging operations
-        sinds the 1960s. More recently, forests are making place for olive oil plantations and population pressure is ever-increasing.
-        I used land use derived from arial photographs of 
+        For my master's project at Wageningen University, I used land use derived from arial photographs of 
         <a href="#myPopup" data-rel="popup" data-position-to="window">eastern Borneo</a>
         <div class = "inline" data-role="popup" id="myPopup">
            <p>Malinau Research Forest on Borneo, Indonesia</p> 
@@ -81,7 +79,8 @@
      <p class = "justify">
          we can use these hypotheses to predict locations where land use change would take place. 
          
-         You can try a simulation by editing the values in the land use transition table, checking a hypothesis and clicking the button.
+         I programmed a simple simulation algorithm that predicts future land use based on the selected hypothesis and land use change table above. 
+         You can try it by editing the values in the land use transition table, checking a hypothesis and clicking the button.
      </p>
      <p class = "justify">
         <h2>Landis user interface</h2>
@@ -99,8 +98,7 @@
  
   
         <p>
-            Landis is a spatial simulation model that predicts patterns of succession (ageing) processes and disturbances such as wind damage, logging, insect pests and browsing by deer or other 
-            wildlife. I have been using the LANDIS model for the last three years and I was missing an interface to fascilitate my analyses. So I ended up developing my own. It is a windows forms application
+            I have been using the <a href="http://www.landis-ii.org/">LANDIS</a> model for more than three years but I was missing an interface to fascilitate my analyses. So I ended up developing my own. It is a windows forms application
             written in C#  developed in .Net 3.5. The interface consists of a file tree (on the left) where you add a Landis scenario file. A Landis scenario file is a simple ascii in which 
             other input files and some settings for the model are specified. When you add a scenario, the program will read that file and check for any pathnames in that file (i.e. other input files)  
             and adds those to the file tree. Additionally, the user can start a simulation and the user interface will periodically check whether there are new output files which it will add to the file tree
@@ -114,11 +112,13 @@
             The landis user interface is currently used for landis instruction workshops by the university of portland as well as ~10 individual landis users.
         </p> 
         <br></br>
+        <!--
         <h2>Landis Simulations</h2> types of model, i.e. PnET and LANDIS succession. PnET is a point-dimensional tree physiology process that predicts
         growth of a homogeneous tree stand as it depends on light and water. Landis succession is a spatial model that predicts forest developments depending on growth and forest disturbances.
         LANDIS tradiationally has a very basic growth computation method. In order to better predict growth and competition for light and water, I incorporated the PnET model into the LANDIS model environment.
         This allows us to simulate light and water availability on a landschape. Looking at the Green Ridge State Forest (see home page), you can see how water and light availability depends on 
         the interaction between disturbances and growth via canopy thickness. This is because foliage is the driver of both water and light consumption.
+        -->
         <h2>Bayesian calibration</h2>
         <div id = "left_col">
             <div id = "right_col_ins">
