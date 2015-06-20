@@ -12,8 +12,8 @@
         I worked a lot with geographical applications, for example on a simulation model that functions as an ArcGIS plugin, and I developed a couple of windows applications that
         used embedded mapping functionality from geographic freeware (see portfolio). Ideally I would like to find a position where I can make use of this.  
 
-        I developed this website to demonstrate my skills and work so employers may have a better impression about my capacities and how these could benefit their product. 
-        In particular, it serves to demonstrate that (though not proficient) I am self-taught on internet technologies. I have references available on request.
+        I developed this website to demonstrate my skills and work. 
+       
         <br></br>
      </p>
      <div id="column_55">
