@@ -15,12 +15,21 @@ body {
   margin : 0 auto;
   padding : 0 10px;
   background-color    : White;
+   
 }
-#footer {
-    position: fixed;
-    bottom: 0;
-    width: 960px;
-     background-color: White;
+ #container2 {
+  width : 960px;
+  margin : 0 auto;
+  padding : 0 0px;
+  position:fixed;
+  top: 90%;
+  left  : 50%;
+   
+  margin-left : -480px;
+  position:fixed; 
+  background-color: White;
+  height:100px;  
+  bottom: 0
 }
 #right_col_ins{
     padding : 10px;	
@@ -283,10 +292,3 @@ button{
     background-color: Yellow; 
     /*color: #fff; */
 }
-
-/*.active { background-color: #000; }*/
-/* to override the existing css for "a" tag */
-/*#sub-header .active a
-{ 
-    color: #fff; 
-}*/

@@ -27,7 +27,7 @@
         </div>
         taken in (<a onclick="ShowMalinauMap(2000)" href="#">2000</a>) 
         and (<a onclick="ShowMalinauMap(2009)" href="#">2009</a>) to evaluate hypotheses 
-        about the spatial configuration of land use changes and to predict future land use thereupon. The hypothesis about land use change are increasingly speculative:  
+        about the spatial configuration of land use changes and to predict future land use thereupon, for example:  
     </div> 
        
     <div >
@@ -36,7 +36,7 @@
         <label id = "sized_label"><input type="checkbox" onclick = "CheckBoxIsAllAroundWater()" class="radio" value="1" id="AllAroundWater"  name="Hypotheses"/>3.Land use transitions occur near water.<br></label>
     </div>
       
-    <p>When we have a land use transition table that prescribed surface fractions of land use categories that are converted in the period 2000-2009:
+    <p>When you further assume some ratios of land use transitions, per the table below for the period of 2000-2009:
     <br></br>
     <table id = "LUCtable" bgcolor = white border="1">
         <tr>
@@ -77,10 +77,9 @@
      </table>
     
      <p class = "justify">
-         we can use these hypotheses to predict locations where land use change would take place. 
-         
-         I programmed a simple simulation algorithm that predicts future land use based on the selected hypothesis and land use change table above. 
-         You can try it by editing the values in the land use transition table, checking a hypothesis and clicking the button.
+         you can predict what the future landscape will look like.
+         I programmed a simple simulation algorithm that predicts future land use in the code of this website. 
+         You can try it if you editing inputs (table or hypothesis), and click the button.
      </p>
      <p class = "justify">
         <h2>Landis user interface</h2>
