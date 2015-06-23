@@ -16,8 +16,9 @@
      <div style="width:40%;float:left; padding : 10px; background-color: White;">
         <h1>Summary of Qualifications</h1>
         <ul>
-          <li> Over 8 years experience in software development.</li>
-          <li> Allowed to work in the USA.</li>
+          <li ><font size="5" color="red" face="Lucida Sans">Over 8 years experience in software development.</font>  </li>
+          <li ><font size="5" color="red" >Over 8 years experience in software development.</font>  </li>
+          <li> Permitted to work in the USA.</li>
           <li> Fluent in most coding languages.</li>
           <li> Fluent in three human languages.</li>
           <li> I write very efficient code.</li>
