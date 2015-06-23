@@ -239,6 +239,10 @@ button{
     width: 960px;
 	height: 42px;
 }
+ul {
+    
+    padding-left:10px;
+}​
 #menu ul {
 	float: left;
 	margin: 0px;
