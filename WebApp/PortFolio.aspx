@@ -118,6 +118,19 @@
         This allows us to simulate light and water availability on a landschape. Looking at the Green Ridge State Forest (see home page), you can see how water and light availability depends on 
         the interaction between disturbances and growth via canopy thickness. This is because foliage is the driver of both water and light consumption.
         -->
+        <h2>Maryland simulations</h2>
+        <p>
+            I developed a simulation model that predicts growth and spread of different tree species and how they interact with disturbances such as mentioned pests, harvests and controlled burning. 
+            Above is a simulated spatial configuration of Gypsy Moth damage in the Green Ridge State Forest that covers parts of Maryland, Pennsylvania and West Virginia.
+
+        <!--
+            The Green Ridge State Forest (GRSF) is located just west of the narrowest part of Maryland, covering Maryland, Pennsylvania and West Virginia, with the meandering Pontomac
+            river on the east side of the map above. GRSF is interesting because it is is a very dynamic area, it has suffered considerable damage from invasive insect species such as the Gypsy Moth,
+            and it is on the frontier of the Emerald Ash Borer, Asian Longhorned Beetle and Sudden Oak Death. We used it as a test case site to study the potential fate of reintroduced blight-resistant 
+            American Chestnut, a tree species that was extirpated in the early 1900s by the Asian-born chestnut blight. My contribution constisted of developing model simulations of growth and spread of the
+            different tree species and how they interact with disturbances such as mentioned pests, harvests and controlled burning. Above is a simulated spatial configuration of Gypsy Moth damage.
+            -->
+        </p>
         <h2>Bayesian calibration</h2>
         <div id = "left_col">
             <div id = "right_col_ins">
@@ -139,6 +152,20 @@
           the value of b that is most often applied. This is what you see in the bottom graph where I show the value of b that was most often used to predict the decomposition rate. You can see that initially 
           it fluctuates a lot, but after ~100 iterations, it becomes pretty stable at around 7%. So my best estimate of the decomposition rate of the tree logs is 7% per year.
              
+              
+            I have worked a lot with parameter estimation methods, this is an algorithm that is used predict biological parameters involved in a population growth model
+            for destructive insects applied to insect-born defoliation areas measured in Northern Minnesota. A Markov Chain starts iteratively applies random parameter values 
+            to a mathematical model and compares each time series of predictions with a set of meaurements. The Markov Chain searches for optimal parameter values by "learning" from previous 
+            success or failure.
+        <!--
+            Ideally, we would know all factors involved in a simulation model with great accuracy. However, most simulation tools used to predict biological and biochemical 
+            processes involve large uncertainties, when simulating defoliation by an insect pest -here the Forest Tent Caterpillar- for example, we typically don't know
+            how to rank the attractiveness of host species, the potential growth rate of the caterpillar or that of their predators with great accuracy. Markov Chain calibrations
+            are a good way to estimate these. We start with arbitrary values of all unknown parameters and tweak them randomly in between large numbers of 
+            iterative model applications. After each iteration, we compare modeled and measured values and allow the goodness-of-fit to determine wheter the last iteration brought the model
+            any closer to the measurements. We let this determing how we tweak the model parameters for the next iteration (model learning).
+            This way the model will eventually find the parameter settiings that best describe the measurements. Similar approaches are used to optimize google searches or typing suggestions on mobile phones.
+            -->
         </p>
     </div>
     

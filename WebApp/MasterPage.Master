@@ -32,7 +32,7 @@
                 
                 <div id = "header">
                     <div id="nav_banner">
-                       <img id = "Img1" src="images\pass.jpg"  align="left">
+                       <img   src="images\pass.jpg"  align="left">
                     </div>
                     <div id="section_banner">
                         <p class = "large"><b>Arjan de Bruijn</b></p>
