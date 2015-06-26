@@ -8,7 +8,10 @@
  <div  style="width:940px;   float:left; padding:10px; background-color : White">
         
         <h1 align="center">Professional background</h1>
-        <p>My career started with researching the more technical parts of forest ecology, like biogeochemistry, mathematics and simulation software. I have now been in academics for almost a decade and I am thinking of moving to the private sector. My most merchantable skills are all in the area of software development, I have worked with various coding languages and techniques.  I'm particular interested in geospatial applications but open for any ideas. Soft skills include experiences in presentations at international conferences and workshops, fluent in three languages, cooperating in tightly nit development teams, I'm easy to talk to and get along with.
+        <p>My career started with researching the more technical parts of forest ecology, like biogeochemistry, mathematics and simulation software. 
+        I have now been in academics for almost a decade and I am thinking of moving to the private sector. 
+        My most merchantable skills are all in the area of software development, I have worked with various coding languages and techniques.  
+        I am particular interested in geospatial applications but open for any ideas. Soft skills include experiences in presentations at international conferences and workshops, fluent in three languages, cooperating in tightly nit development teams, I'm easy to talk to and get along with.
         </p>
         <br> 
            <h1>Summary of Qualifications</h1>
@@ -30,6 +33,7 @@
                   <div class="margin_bottom_5"></div>
               </h3> 
             </ul>
+             <p>Simulated insect outbreaks (above: Maryland, below: Northern Minnesota)</p>
           </div>
 
 
@@ -53,7 +57,7 @@
 	            }
 	            #rotating-item-wrapper {
 	            position: relative;
-                height: 300px;
+                height: 270px;
 	
             }
             .rotating-item
@@ -66,8 +70,9 @@
 	
           </style>
 
-
+          
          <div class="m" id="rotating-item-wrapper" background-color : Yellow">  
+        
                     <img  src="images/Maryland/NewMaryland_background.jpg" height ="250px" class="rotating-item" border="1" />
                     <img  src="images/Maryland/GypsyMoth14.png" height ="250px" class="rotating-item"  />
                     <img  src="images/Maryland/GypsyMoth15.png" height ="250px" class="rotating-item"  />
@@ -130,10 +135,9 @@
            
         </div><!-- END: Rotating images images -->
          
-         
 
         
-           <canvas id="MarkovChainDefaultPage" width= 900 height="200" style="background-color:black; ">Your browser does not support the HTML5 canvas tag.
+           <canvas id="MarkovChainDefaultPage" width= 900 height="175" style="background-color:black; ">Your browser does not support the HTML5 canvas tag.
 </canvas>
     
 </div>

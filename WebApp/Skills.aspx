@@ -116,14 +116,14 @@
          has been an important element of all my work. Typically the simulationmodels I used are two dimensional (i.e. they read and 
          write maps). Calculating simulation outputs for each of the pixels, often implementing multiple processes per pixel, easily
          becomes a very time consuming operation. I worked and developed a number of techniques to optimize my code.
-         
+ <br>  <br>  <br>  <br 
          </p>   
     </div>
     
 
     
-     
-   <br></br>
-    <br></br>
-    <br></br>
+    
+   <br> 
+    <br> 
+    <br> 
 </asp:Content>
