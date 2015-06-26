@@ -39,7 +39,7 @@
                         <p class = "large">Fort Collins, Co</p>
                         <p class = "large">Resume</p>
                     </div>
-                    <div class="margin_bottom_5 h_divider"></div>
+                   
                     
                 </div>
                 <script>$('#header').stickThis();</script>

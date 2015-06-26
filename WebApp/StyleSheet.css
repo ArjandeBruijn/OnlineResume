@@ -239,6 +239,7 @@ button{
 	clear: both;
     width: 960px;
 	height: 42px;
+	border: 1px solid black;
 }
 ul {
     
