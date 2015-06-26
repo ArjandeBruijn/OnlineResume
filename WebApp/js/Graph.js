@@ -173,7 +173,7 @@ function Graph(mycanvas, X_axis, Y_axis) {
 
     }
     this.Draw = function () {
-        this.GraphArea = new Rectangle(0, 0, this.MyCanvas.width, this.MyCanvas.height);
+        this.GraphArea = new Rectangle(0, 0, this.MyCanvas.width , this.MyCanvas.height);
 
         this.MyContext.clearRect(0, 0, this.GraphArea.Width, this.GraphArea.Height);
 

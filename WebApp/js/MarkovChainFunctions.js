@@ -4,7 +4,7 @@ function StartMarkovChainFunctions() {
 
     var x_axis = new Axis(1930, 2015, "Time (y)", 1, 10);
     var y_axis = new Axis(0, 16000, "Area defoliated (1000km)", 0.001, 10);
-    MarkovChainGraph = new Graph(document.getElementById("myCanvas"), x_axis, y_axis);
+    MarkovChainGraph = new Graph(document.getElementById("MarkovChainDefaultPage"), x_axis, y_axis);
     MarkovChainGraph.legendcolor = "red";
 
     MarkovChainGraph.AddCurveList("Black", "Black", "Measured");
