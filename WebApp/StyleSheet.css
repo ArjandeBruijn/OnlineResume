@@ -236,41 +236,32 @@ button{
 /* #sub-header ul li:hover{ background-color: #000;}*/
 /*#sub-header ul li:hover a{ color: #fff; }*/
 #menu {
-	clear: both;
-    width: 960px;
-	height: 42px;
-	border: 1px solid black;
+	clear: both; 
+	padding-left:0px;
 }
-ul {
-    
-    padding-left:10px;
-}​
+ 
 #menu ul {
 	float: left;
 	margin: 0px;
 	padding: 0 0 0 0px;
-	list-style: none;
-    width: 960px;
+	width: 960px;
 }
 #menu ul li {
 	margin: 0px;
 	padding: 0px;
 	display: inline;
-	border: : 1px solid black;
+	
 }
 #menu ul li a {
 	position: relative;	
-	margin-right: 20px;
 	height: 30px;
-	width: 216px;
+	width: 240px;
 	text-align: center;
 	padding: 12px 0 0 0;
 	font-size: 13px;
-	
 	text-decoration: none;
 	color: Black;	
 	background-color: #FFE4CA;
-	
 	display: inline-block;
 	float: left;
 	outline: none;
@@ -280,6 +271,6 @@ ul {
 #menu ul li.active a
 { 
     font-weight: bold;
-    background-color: #FFE4CA; /* #FF9224; */
+    background-color: #FF9224;
     /*color: #fff; */
 }
