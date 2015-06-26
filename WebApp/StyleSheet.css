@@ -193,18 +193,7 @@ p.justify {
 }
 
 
-#rotating-item-wrapper {
-	position: relative;
-    height: 450px;
-	
-}
-.rotating-item
-{
-    display: none;
-	position: absolute;
-	top: 0;
-	left: 0;
-}
+
 button{
     margin: 5px;
 }
