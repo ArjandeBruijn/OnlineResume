@@ -3,38 +3,70 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-     <h1><center>About me</center></h1>
-     <p class = "justify">
-        I have been employed in academics in three different coutries for more than eight years. 
-        I have a considerable publication record, taught at presentations and workshops, I have a PhD, Msc and M.A.
-        Although I thoroughly enjoy academics, I am now leaning towards searching for employment in the private or non-profit sector. 
-        I worked a lot with geographical applications, for example on a simulation model that functions as an ArcGIS plugin, and I developed a couple of windows applications that
-        used embedded mapping functionality from geographic freeware (see portfolio). Ideally I would like to find a position where I can make use of this.  
-        I developed this website to demonstrate my skills and work. 
-     </p>  
-    
-     <div style="width:40%;float:left; padding : 10px; background-color: White;">
-        <h1>Summary of Qualifications</h1>
+
+    <style>
+#header {
+    background-color:black;
+    color:white;
+    text-align:center;
+    padding:5px;
+}
+#nav {
+    line-height:30px;
+    background-color:#eeeeee;
+    height:300px;
+    width:55%;
+    float:left;
+    padding:5px; 
+}
+#section {
+    width:350px;
+    float:left;
+    padding:10px; 
+}
+#footer {
+    background-color:black;
+    color:white;
+    clear:both;
+    text-align:center;
+    padding:5px; 
+}
+</style>
+
+<div class="margin_bottom_10"></div>
+<div id="header">
+<h1>Professional background</h1>
+My career started with researching the more technical parts of forest ecology, like biogeochemistry, mathematics and simulation software. I have now been in academics for almost a decade and I am thinking of moving to the private sector. My most merchantable skills are all in the area of software development, I have worked with various coding languages and techniques.  I'm particular interested in geospatial applications but open for any ideas. Soft skills include experiences in presentations at international conferences and workshops, fluent in three languages, cooperating in tightly nit development teams, I'm easy to talk to and get along with.
+</div>
+
+<div id="nav">
+    <h1>Summary of Qualifications</h1>
         <ul>
-          <li ><font size="5" color="red" face="Lucida Sans">Over 8 years experience in software development.</font>  </li>
-          <li ><font size="5" color="red" >Over 8 years experience in software development.</font>  </li>
-          <li> Permitted to work in the USA.</li>
-          <li> Fluent in most coding languages.</li>
-          <li> Fluent in three human languages.</li>
-          <li> I write very efficient code.</li>
-          <li> Hard worker.</p></li>
+          <h3 >
+              <li >More than 8 years experience in software development. </li>
+              <div class="margin_bottom_5"></div>
+              <li> Permitted to work in the USA.</li>
+              <div class="margin_bottom_5"></div>
+              <li> Fluent in most coding languages.</li>
+              <div class="margin_bottom_5"></div>
+              <li> Fluent in three human languages.</li>
+              <div class="margin_bottom_5"></div>
+              <li> I write very efficient code.</li>
+              <div class="margin_bottom_5"></div>
+              <li> Hard worker.</p></li>
+              <div class="margin_bottom_5"></div>
+          </h3> 
         </ul>
-        
-       
-        <br></br>
-        <br></br>
-    </div>
+</div>
+
+<div id="section">
+    <img src="images/Maryland/NewMaryland_background.jpg" style = "width: 250px; align: right;  border:1px solid black;"> 
+</div>
+
+<div id="footer">
+    <canvas id="myCanvas" style =   width:233; height:550; align: right;   border:1px solid black;"> Your browser does not support the HTML5 canvas tag.</canvas>
+</div>
     
-    <div style=" width:55%; height: 500px; float:left; padding : 10px;">
-        <img src="images/Maryland/NewMaryland_background.jpg" style = "width: 250px; align: left; position: absolute; border:1px solid black;"> 
-        <p style = "transform: translate(230px,0px); width: 250px; align: left; position: absolute; border:1px solid black;">Green Ridge State Forest</p>
-        <canvas id="myCanvas" style = "transform: translate(230px,180px);  width:233; height:550; align: right; position: absolute; border:1px solid black;"> Your browser does not support the HTML5 canvas tag.</canvas>
-    </div>
 
     <script>        InitializeRotatingItems('.rotating-item', true);</script>
     <script src='js/MarkovChainModel.js'></script>

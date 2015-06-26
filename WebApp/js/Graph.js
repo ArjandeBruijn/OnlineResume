@@ -38,7 +38,7 @@ function Graph(mycanvas, X_axis, Y_axis) {
     this.x_min = X_axis.min;
     this.x_max = X_axis.max;
     this.x_label = X_axis.label;
-
+    this.legendcolor = "black";
 
     this.y_axis = Y_axis;
     this.x_axis = X_axis;
@@ -86,7 +86,7 @@ function Graph(mycanvas, X_axis, Y_axis) {
             this.MyContext.fillText(this.Curves[c].label, x, y);
             y += 20;
         }
-        this.MyContext.strokeStyle = "black";
+        this.MyContext.strokeStyle = this.legendcolor;
         this.MyContext.rect(x_min - 5, y_min - 12, 100 + 10, y - y_min);
         this.MyContext.stroke();
 
