@@ -52,7 +52,6 @@
                         <li> <a href="Portfolio.aspx">Portfolio</a> </li>
                         <li> <a href="WorkAndEdu.aspx">Work & Education</a> </li>
                     </ul>
-                    
                 </div>
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
                
@@ -69,11 +68,22 @@
         </div>
             <div id = "container2" " >
                   
-                
-                   <div class="margin_bottom_10 h_divider"></div>
-                   <div class="margin_bottom_10"></div> 
-                   <p class = "large"> <center><b><a href="mailto:amgdebruijn@gmail.com">AMGdeBruijn@gmail.com</a> </b></center></p>
-                   <p class = "large"> <center><b>715-401-0799   </b></center></p>
+                <canvas id="BottomDivider" width="960" height="5" ;"></canvas>
+                 
+                <script>
+                    canvas = document.getElementById("BottomDivider");
+                    context = canvas.getContext("2d");
+                    context.lineWidth = 3;
+                    context.strokeStyle = '#FF9224';
+                    context.beginPath();
+                    context.moveTo(1, 0);
+                    context.lineTo(960, 1);
+                    context.stroke();
+                    
+                </script>
+
+                <p class = "large"> <center><b><a href="mailto:amgdebruijn@gmail.com">AMGdeBruijn@gmail.com</a> </b></center></p>
+                <p class = "large"> <center><b>715-401-0799   </b></center></p>
                   
                     
                
