@@ -4,42 +4,20 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <style>
-#div_about_me {
-    background-color:black;
-    color:white;
-    text-align:center;
-    padding:5px;
-}
-#nav {
-    line-height:30px;
-    background-color:#eeeeee;
-    height:300px;
-    width:55%;
-    float:left;
-    padding:5px; 
-}
-#section {
-    width:350px;
-    float:left;
-    padding:10px; 
-}
-#footer {
-    
-    color:white;
-    clear:both;
-     
-    padding:5px; 
-}
-</style>
+ 
 
 <div class="margin_bottom_10"></div>
-<div id="div_about_me">
+
+ 
+
+<div style=" background-color:black; color:white; text-align:center; padding:5px;">
 <h1>Professional background</h1>
 My career started with researching the more technical parts of forest ecology, like biogeochemistry, mathematics and simulation software. I have now been in academics for almost a decade and I am thinking of moving to the private sector. My most merchantable skills are all in the area of software development, I have worked with various coding languages and techniques.  I'm particular interested in geospatial applications but open for any ideas. Soft skills include experiences in presentations at international conferences and workshops, fluent in three languages, cooperating in tightly nit development teams, I'm easy to talk to and get along with.
 </div>
 
-<div id="nav">
+
+  
+<div style="line-height:30px; background-color:#eeeeee; height:300px; width:55%; float:left; padding:5px;">
     <h1>Summary of Qualifications</h1>
         <ul>
           <h3 >
@@ -59,11 +37,14 @@ My career started with researching the more technical parts of forest ecology, l
         </ul>
 </div>
 
-<div id="section">
+
+ 
+
+<div style="width:350px;float:left; padding:10px;">
     <img src="images/Maryland/NewMaryland_background.jpg" style = "width: 250px; align: right;  border:1px solid black;"> 
 </div>
-
-<div id="footer">
+ 
+<div style=" color:white;clear:both;padding:5px;">
     <!--<canvas id="MarkovChainDefaultPage"> Your browser does not support the HTML5 canvas tag.</canvas>-->
    <canvas id="MarkovChainDefaultPage" width= 940 height="200" style="border:1px solid #000000;">
 Your browser does not support the HTML5 canvas tag.
