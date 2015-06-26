@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <style>
-#header {
+#div_about_me {
     background-color:black;
     color:white;
     text-align:center;
@@ -34,7 +34,7 @@
 </style>
 
 <div class="margin_bottom_10"></div>
-<div id="header">
+<div id="div_about_me">
 <h1>Professional background</h1>
 My career started with researching the more technical parts of forest ecology, like biogeochemistry, mathematics and simulation software. I have now been in academics for almost a decade and I am thinking of moving to the private sector. My most merchantable skills are all in the area of software development, I have worked with various coding languages and techniques.  I'm particular interested in geospatial applications but open for any ideas. Soft skills include experiences in presentations at international conferences and workshops, fluent in three languages, cooperating in tightly nit development teams, I'm easy to talk to and get along with.
 </div>

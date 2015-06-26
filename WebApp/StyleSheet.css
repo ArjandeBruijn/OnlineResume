@@ -255,6 +255,7 @@ ul {
 	margin: 0px;
 	padding: 0px;
 	display: inline;
+	border: : 1px solid black;
 }
 #menu ul li a {
 	position: relative;	
@@ -264,23 +265,20 @@ ul {
 	text-align: center;
 	padding: 12px 0 0 0;
 	font-size: 13px;
-	font-weight: bold;
+	
 	text-decoration: none;
 	color: Black;	
-	background-color: Orange;
+	background-color: #FFE4CA;
+	
 	display: inline-block;
 	float: left;
 	outline: none;
 	 
 }
-/*
-#sub-header ul li.active
-{ 
-    background-color: Yellow; 
-}
-*/
+
 #menu ul li.active a
 { 
-    background-color: Yellow; 
+    font-weight: bold;
+    background-color: #FFE4CA; /* #FF9224; */
     /*color: #fff; */
 }

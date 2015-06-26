@@ -39,12 +39,12 @@
                         <p class = "large">Fort Collins, Co</p>
                         <p class = "large">Resume</p>
                     </div>
-                    <div class="margin_bottom_10 h_divider"></div>
-                    <div class="margin_bottom_10"></div> 
+                    <div class="margin_bottom_5 h_divider"></div>
+                    
                 </div>
                 <script>$('#header').stickThis();</script>
 
-                <div class="margin_bottom_10"></div>
+                 
                 <div id="menu">
                     <ul>
                         <li id ="default"> <a href="Default.aspx">Home</a> </li>
