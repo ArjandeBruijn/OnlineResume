@@ -10,6 +10,7 @@ function StartDecompositionFunctions() {
     B_route_graph.AddCurveList("Blue", null, "Center estimate");
     B_route_graph.AddCurveList("Green", null, "High estimate");
     B_route_graph.AddCurveList("Green", null, "Low estimate");
+    B_route_graph.Draw();
     AddModelPoints();
 }
 function ResetDecompositionFunctions() {

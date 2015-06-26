@@ -172,7 +172,7 @@ function Graph(mycanvas, X_axis, Y_axis) {
         return InnerPanelArea;
 
     }
-    this.Refresh = function () {
+    this.Draw = function () {
         this.GraphArea = new Rectangle(0, 0, this.MyCanvas.width, this.MyCanvas.height);
 
         this.MyContext.clearRect(0, 0, this.GraphArea.Width, this.GraphArea.Height);
@@ -193,7 +193,7 @@ function Graph(mycanvas, X_axis, Y_axis) {
         this.WriteLegend();
     }
 
-    this.Refresh();
+    
 
     this.WriteText = function (text, x, y) {
 
@@ -204,7 +204,7 @@ function Graph(mycanvas, X_axis, Y_axis) {
     this.AddCurveList = function (line_color, marker_color, Label) {
 
         this.Curves.push(new CurveList(line_color, marker_color, Label));
-        this.Refresh();
+        this.Draw();
     }
     
     this.DrawCircle = function (Context, x, y) {
@@ -218,7 +218,7 @@ function Graph(mycanvas, X_axis, Y_axis) {
         var curve = this.Curves[curve_number];
         curve.AddPoint(x, y, sd);
 
-        this.Refresh();
+        this.Draw();
     }
 
 
@@ -285,7 +285,7 @@ function Graph(mycanvas, X_axis, Y_axis) {
 
         this.DrawYaxis();
 
-        this.Refresh();
+        this.Draw();
 
     };
     

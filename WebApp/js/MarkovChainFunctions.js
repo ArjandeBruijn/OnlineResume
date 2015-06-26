@@ -12,8 +12,10 @@ function StartMarkovChainFunctions() {
         MarkovChainGraph.AddPoint(0, Measurements[m][0], Measurements[m][1], -1);
     }
      
-    MarkovChainGraph.AddCurveList("Red", null, "Modeled");  
+    MarkovChainGraph.AddCurveList("Red", null, "Modeled");
     AddModelPoints(MarkovChainGraph);
+
+    MarkovChainGraph.Draw();
 }
 function AddModelPoints(MarkovChainGraph) {
 
