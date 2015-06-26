@@ -64,7 +64,7 @@ My career started with researching the more technical parts of forest ecology, l
 </div>
 
 <div id="footer">
-    <canvas id="MarkovChainDefaultPage" style =   width:333; height:550;   border:1px solid red;"> Your browser does not support the HTML5 canvas tag.</canvas>
+    <canvas id="MarkovChainDefaultPage"> Your browser does not support the HTML5 canvas tag.</canvas>
 </div>
     
 
