@@ -3,13 +3,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-
-
-    
-
+     
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="margin_bottom_10"></div>
     <div id = "right_col">
         <div id = "right_col_ins">
             <canvas id="canvas1" style="display: inline;" width="410" height="561" style="border:2px solid black;"></canvas>
@@ -17,6 +15,7 @@
             <div id = "Progress"></div>
         </div>
     </div>
+    
     <h2>Deforestation in Indonesia</h2>
     <div data-role="main" style="justify"> 
         For my master's project at Wageningen University, I used land use derived from arial photographs of 

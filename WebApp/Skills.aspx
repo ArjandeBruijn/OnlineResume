@@ -3,19 +3,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
- 
+    <div class="margin_bottom_10"></div>
     <h2><center>Software skills</center></h2>
-    <!-- 
-    <ul>
-      <li><p>25% Made some tweaks, seen the program in action.</p></li>
-      <li><p>50% Added some minor algorithms to existing code or files.</p></li>
-      <li><p>100% Designed applications from scratch)</p></li>
-    </ul>
-       
-     <br></br>
-   <p> <img src="images\ProgressBars\ProgressBars2.png"   align="middle"></p>-->
-        
-
+    
     <div style="width:45%;float:left; padding : 10px">
          <p> <img src="images\ProgramIcons\VisualStudioLogo.jpg"   align="left">
          More than 8 years of experience. I am currently still using VS2010 because of budgetary reasons, but I did try the express versions of 

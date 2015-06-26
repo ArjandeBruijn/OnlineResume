@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
  
-              
+               <div class="margin_bottom_10"></div>
 
                 <h2>Purdue University - West-Lafayett, IN - 2011 to 2014</h2>
 
