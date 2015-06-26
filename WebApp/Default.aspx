@@ -5,13 +5,13 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
  
- <div  style="width:940px; height:500px ; float:left; padding:10px; background-color : Green">
+ <div  style="width:940px;   float:left; padding:10px; background-color : White">
         
         <h1 align="center">Professional background</h1>
         <p>My career started with researching the more technical parts of forest ecology, like biogeochemistry, mathematics and simulation software. I have now been in academics for almost a decade and I am thinking of moving to the private sector. My most merchantable skills are all in the area of software development, I have worked with various coding languages and techniques.  I'm particular interested in geospatial applications but open for any ideas. Soft skills include experiences in presentations at international conferences and workshops, fluent in three languages, cooperating in tightly nit development teams, I'm easy to talk to and get along with.
         </p>
         <br> 
-          <div style="line-height:30px; background-color:#eeeeee; height:300px; width:55%; float:left; padding:0px; background-color :Yellow;">
+          <div style="line-height:30px; background-color:#eeeeee; height:300px; width:528px; float:left; padding-left:10px; background-color :White;">
             <h1>Summary of Qualifications</h1>
             <ul>
               <h3 >
@@ -30,14 +30,34 @@
               </h3> 
             </ul>
           </div>
-          <div style="width:350px;float:left; padding:10px;">
-            <img src="images/Maryland/NewMaryland_background.jpg" style = "width: 250px; align: right;  border:1px solid black;"> 
+
+
+          <style>
+              IMG.displayed {
+                display: block;
+                margin-left: auto;
+                margin-right: auto 
+               
+                }
+                
+                #MarkovChainDefaultPage
+                {
+                    display: block;
+                    margin: 0 auto;
+                }
+          </style>
+
+
+           <IMG width= 270;  class="displayed" src="images/Maryland/NewMaryland_background.jpg" alt="..." border="1">
+
+           <canvas id="MarkovChainDefaultPage" width= 900 height="200" style="background-color:black; ">Your browser does not support the HTML5 canvas tag.
+</canvas>
+    
 </div>
    
-</div>
-     <canvas id="MarkovChainDefaultPage" width= 960 height="200" style="background-color:black;">
-Your browser does not support the HTML5 canvas tag.
-</canvas>
+     
+    
+
 
     <script>        InitializeRotatingItems('.rotating-item', true);</script>
     <script src='js/MarkovChainModel.js'></script>
