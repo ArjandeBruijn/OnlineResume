@@ -3,34 +3,12 @@ h2{
     text-align: center
     
 }
-body {
-	margin:0;
-   background-color: Beige;
-}
+
 #header{
    background-color: White; 
 }
-#container {
-  width : 960px;
-  margin : 0 auto;
-  padding : 0 10px;
-  background-color    : White;
-   
-}
- #container2 {
-  width : 960px;
-  margin : 0 auto;
-  padding : 0 0px;
-  position:fixed;
-  top: 90%;
-  left  : 50%;
-   
-  margin-left : -480px;
-  position:fixed; 
-  background-color: White;
-  height:100px;  
-  bottom: 0
-}
+
+  
 #right_col_ins{
     padding : 10px;	
     border: 2px solid black;

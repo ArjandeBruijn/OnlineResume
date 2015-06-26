@@ -27,6 +27,21 @@
         <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
     </head>
 
+    <style>
+        
+     
+    body {
+	    margin:0;
+       background-color: Beige;
+    }
+    #container {
+      width : 960px;
+      margin : 0 auto;
+      padding : 0 0px;
+      background-color    : White;
+    }
+    </style>
+
     <body >
         <div id="container">
                 
@@ -66,29 +81,28 @@
                 
                  
         </div>
-            <div id = "container2" " >
-                  
-                <canvas id="BottomDivider" width="960" height="5" ;"></canvas>
-                 
-                <script>
-                    canvas = document.getElementById("BottomDivider");
-                    context = canvas.getContext("2d");
-                    context.lineWidth = 3;
-                    context.strokeStyle = '#FF9224';
-                    context.beginPath();
-                    context.moveTo(1, 0);
-                    context.lineTo(960, 1);
-                    context.stroke();
-                    
-                </script>
 
-                <p class = "large"> <center><b><a href="mailto:amgdebruijn@gmail.com">AMGdeBruijn@gmail.com</a> </b></center></p>
-                <p class = "large"> <center><b>715-401-0799   </b></center></p>
+          
+        <div style="margin : 0 auto; padding : 0 0px; position:fixed; top: 90%; left  : 50%; margin-left : -480px; position:fixed; background-color: White; height:100px;  bottom: 0;" >
                   
-                    
-               
-               </div>
+            <canvas id="BottomDivider" width="960" height="5" ;"></canvas>
                  
+            <script>
+                canvas = document.getElementById("BottomDivider");
+                context = canvas.getContext("2d");
+                context.lineWidth = 3;
+                context.strokeStyle = '#FF9224';
+                context.beginPath();
+                context.moveTo(1, 0);
+                context.lineTo(960, 1);
+                context.stroke();
+                    
+            </script>
+
+            <p class = "large"> <center><b><a href="mailto:amgdebruijn@gmail.com">AMGdeBruijn@gmail.com</a> </b></center></p>
+            <p class = "large"> <center><b>715-401-0799   </b></center></p>
+               
+          </div>
             
     </body>
 </html>
