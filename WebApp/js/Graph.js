@@ -27,7 +27,8 @@ function CurveList(line_color, marker_color, Label) {
         this.Points.push([x, y, sd]);
     };
 }
-function Axis(Min, Max, Label, MultiplyWith, LargeTicks) {
+function Axis(Min, Max, Label, MultiplyWith, LargeTicks, color) {
+    this.color = color;
     this.min = Min;
     this.max = Max;
     this.label = Label;
@@ -107,7 +108,12 @@ function Graph(mycanvas, X_axis, Y_axis) {
     }
     this.DrawYaxis = function () {
 
+        var color = this.MyContext.strokeStyle;
+
+        this.MyContext.strokeStyle = this.MyContext.fillStyle = this.y_axis.color;
+
         this.drawLine([this.InnerPanelArea.A[0], this.InnerPanelArea.A[1]], [this.InnerPanelArea.D[0], this.InnerPanelArea.D[1]]);
+
 
         this.MyContext.fillText(this.y_label, this.InnerPanelArea.A[0] - 30, 12);
 
@@ -130,10 +136,14 @@ function Graph(mycanvas, X_axis, Y_axis) {
             y_value += between_ticks;
         }
 
-
+        this.MyContext.strokeStyle = this.MyContext.fillStyle = color;
 
     }
     this.DrawXaxis = function () {
+
+        var color = this.MyContext.strokeStyle;
+
+        this.MyContext.strokeStyle = this.MyContext.fillStyle = this.y_axis.color;
 
         this.drawLine([this.InnerPanelArea.D[0], this.InnerPanelArea.D[1]], [this.InnerPanelArea.C[0], this.InnerPanelArea.C[1]]);
 
@@ -155,7 +165,7 @@ function Graph(mycanvas, X_axis, Y_axis) {
             x_value += between_ticks;
         }
 
-
+        this.MyContext.strokeStyle = this.MyContext.fillStyle = color;
     }
     this.DivideGraphArea = function (Context, GraphArea) {
 

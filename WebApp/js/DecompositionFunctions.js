@@ -3,8 +3,8 @@
 
 function StartDecompositionFunctions() {
 
-    var x_axis = new Axis(0, 20, "Iterations", 1, 10);
-    var y_axis = new Axis(0, 0.1, "Decomposition rate (% per year)", 100, 10);
+    var x_axis = new Axis(0, 20, "Iterations", 1, 10, "black");
+    var y_axis = new Axis(0, 0.1, "Decomposition rate (% per year)", 100, 10, "black");
     B_route_graph = new Graph(document.getElementById("B_ROUTE_canvas"), x_axis, y_axis);
     B_route_graph.AddCurveList("Red", null, "Random draw");
     B_route_graph.AddCurveList("Blue", null, "Center estimate");
@@ -19,8 +19,8 @@ function ResetDecompositionFunctions() {
         clearInterval(interval_id);
     }
 
-    var x_axis = new Axis(0, 20, "Iterations", 1, 10);
-    var y_axis = new Axis(0, 0.1, "Decomposition rate (% per year)", 100, 10);
+    var x_axis = new Axis(0, 20, "Iterations", 1, 10, "black");
+    var y_axis = new Axis(0, 0.1, "Decomposition rate (% per year)", 100, 10, "black");
     B_route_graph = new Graph(document.getElementById("B_ROUTE_canvas"), x_axis, y_axis);
     B_route_graph.AddCurveList("Red", null, "Random draw");
     B_route_graph.AddCurveList("Blue", null, "Average");
@@ -104,8 +104,8 @@ function AddModelPoints() {
 
             last_coordinate = null;
 
-            var x_axis = new Axis(0, 100, "Time", 1, 10);
-            var y_axis = new Axis(0, 1.2, "Remaining Biomass (%)", 100, 6);
+            var x_axis = new Axis(0, 100, "Time", 1, 10, "black");
+            var y_axis = new Axis(0, 1.2, "Remaining Biomass (%)", 100, 6, "black");
 
             RemainingBiomassGraph = new Graph(document.getElementById("DecompCanvas"), x_axis, y_axis);
 

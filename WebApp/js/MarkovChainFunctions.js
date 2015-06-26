@@ -2,12 +2,12 @@
 
 function StartMarkovChainFunctions() {
 
-    var x_axis = new Axis(1930, 2015, "Time (y)", 1, 10);
-    var y_axis = new Axis(0, 16000, "Area defoliated (1000km)", 0.001, 10);
+    var x_axis = new Axis(1930, 2015, "Time (y)", 1, 10, "red");
+    var y_axis = new Axis(0, 16000, "Area defoliated (1000km)", 0.001, 10, "red");
     MarkovChainGraph = new Graph(document.getElementById("MarkovChainDefaultPage"), x_axis, y_axis);
     MarkovChainGraph.legendcolor = "red";
 
-    MarkovChainGraph.AddCurveList("Black", "Black", "Measured");
+    MarkovChainGraph.AddCurveList("Green", "Green", "Measured");
 
     for (var m = 0; m < Measurements.length; m++) {
         MarkovChainGraph.AddPoint(0, Measurements[m][0], Measurements[m][1], -1);
