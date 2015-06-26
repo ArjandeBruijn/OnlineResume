@@ -28,7 +28,7 @@
     
     color:white;
     clear:both;
-    text-align:center;
+     
     padding:5px; 
 }
 </style>
