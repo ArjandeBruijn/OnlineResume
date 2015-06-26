@@ -25,7 +25,7 @@
     padding:10px; 
 }
 #footer {
-    background-color:black;
+    
     color:white;
     clear:both;
     text-align:center;
@@ -64,7 +64,7 @@ My career started with researching the more technical parts of forest ecology, l
 </div>
 
 <div id="footer">
-    <canvas id="myCanvas" style =   width:233; height:550; align: right;   border:1px solid black;"> Your browser does not support the HTML5 canvas tag.</canvas>
+    <canvas id="myCanvas" style =   width:233; height:550; align: right;   border:1px solid red;"> Your browser does not support the HTML5 canvas tag.</canvas>
 </div>
     
 
