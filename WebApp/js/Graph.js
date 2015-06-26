@@ -76,18 +76,19 @@ function Graph(mycanvas, X_axis, Y_axis) {
 
             if (this.Curves[c].LineColor != null) {
 
-                this.MyContext.strokeStyle = this.Curves[c].LineColor;
+                this.MyContext.strokeStyle = this.MyContext.fillStyle = this.Curves[c].LineColor;
 
                 this.drawLine([x, y - 5], [x + 20, y - 5]);
 
                 x += 25;
             }
 
-
+            this.MyContext.fillStyle = this.Curves[c].MarkerColor;
             this.MyContext.fillText(this.Curves[c].label, x, y);
             y += 20;
         }
         this.MyContext.strokeStyle = this.legendcolor;
+        this.MyContext.fillStyle = this.legendcolor;
         this.MyContext.rect(x_min - 5, y_min - 12, 100 + 10, y - y_min);
         this.MyContext.stroke();
 
@@ -114,8 +115,7 @@ function Graph(mycanvas, X_axis, Y_axis) {
 
         this.drawLine([this.InnerPanelArea.A[0], this.InnerPanelArea.A[1]], [this.InnerPanelArea.D[0], this.InnerPanelArea.D[1]]);
 
-
-        this.MyContext.fillText(this.y_label, this.InnerPanelArea.A[0] - 30, 12);
+        this.MyContext.fillText(this.y_label, this.InnerPanelArea.A[0] - 30, 20);
 
         var y_value = this.y_axis.multiplywith * this.y_min;
 
@@ -147,7 +147,7 @@ function Graph(mycanvas, X_axis, Y_axis) {
 
         this.drawLine([this.InnerPanelArea.D[0], this.InnerPanelArea.D[1]], [this.InnerPanelArea.C[0], this.InnerPanelArea.C[1]]);
 
-        this.MyContext.fillText(this.x_label, this.InnerPanelArea.D[0] + 0.5 * this.InnerPanelArea.Width, this.InnerPanelArea.D[1] + 40);
+        this.MyContext.fillText(this.x_label, this.InnerPanelArea.D[0] + 0.5 * this.InnerPanelArea.Width, this.InnerPanelArea.D[1] + 30);
 
         var x_value = this.x_min;
         var y_value = this.y_min;
@@ -169,7 +169,7 @@ function Graph(mycanvas, X_axis, Y_axis) {
     }
     this.DivideGraphArea = function (Context, GraphArea) {
 
-        var TitleMargin = 30;
+        var TitleMargin = 10;
         var PanelMargin = 25;
 
         TitleAreaY = new Rectangle(GraphArea.A[0], GraphArea.A[1], TitleMargin, GraphArea.Height - TitleMargin);
@@ -203,14 +203,6 @@ function Graph(mycanvas, X_axis, Y_axis) {
         this.WriteLegend();
     }
 
-    
-
-    this.WriteText = function (text, x, y) {
-
-        this.MyContext.fillText(text, x, y);
-
-    }
-
     this.AddCurveList = function (line_color, marker_color, Label) {
 
         this.Curves.push(new CurveList(line_color, marker_color, Label));
@@ -221,7 +213,6 @@ function Graph(mycanvas, X_axis, Y_axis) {
         Context.beginPath();
         Context.arc(x, y, 2, 0, 2 * Math.PI);
         Context.stroke();
-
     }
      
     this.AddPoint = function (curve_number, x, y, sd) {
