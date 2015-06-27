@@ -9,7 +9,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="margin_bottom_10"></div>
      
-    <div  style="width:940px; height: 500px;   float:left; padding:10px; background-color : Green">
+    <div  style="width:940px; height: 500px;   float:left; padding:10px; background-color : White">
         <h2>Deforestation in Indonesia</h2>
         <div  style="width:600px; height: 400px;   float:left; padding:10px; background-color : Yellow">
             For my master's project at Wageningen University, I used land use derived from arial photographs of eastern Borneo taken in (<a onclick="ShowMalinauMap(2000)" href="#">2000</a>) 
@@ -94,7 +94,7 @@
    </div>
     <div class="margin_bottom_20 h_divider"></div>
                     <div class="margin_bottom_10"></div>
-    <div  style="width:940px; height: 600px;   float:left; padding:10px; background-color : Brown">
+    <div  style="width:940px; height: 600px;   float:left; padding:10px; background-color : White">
         <h2>Bayesian calibration</h2>
          <div  style="width:200px; height: 400px;   float:left; padding:10px; background-color : Yellow"></div>
           <p>Bayesian statistics is based on probability computation of a theory, given some set of evidence. It is used in medicine, law or suggestions by google search machines. 
