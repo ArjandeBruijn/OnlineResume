@@ -5,12 +5,7 @@ function StartDecompositionFunctions() {
 
     var x_axis = new Axis(0, 20, "Iterations", 1, 10, "black");
     var y_axis = new Axis(0, 0.1, "Decomposition rate (% per year)", 100, 10, "black");
-    B_route_graph = new Graph(document.getElementById("B_ROUTE_canvas"), x_axis, y_axis);
-    B_route_graph.AddCurveList("Red", null, "Random draw");
-    B_route_graph.AddCurveList("Blue", null, "Center estimate");
-    B_route_graph.AddCurveList("Green", null, "High estimate");
-    B_route_graph.AddCurveList("Green", null, "Low estimate");
-    B_route_graph.Draw();
+    
     AddModelPoints();
 }
 function ResetDecompositionFunctions() {
@@ -21,11 +16,7 @@ function ResetDecompositionFunctions() {
 
     var x_axis = new Axis(0, 20, "Iterations", 1, 10, "black");
     var y_axis = new Axis(0, 0.1, "Decomposition rate (% per year)", 100, 10, "black");
-    B_route_graph = new Graph(document.getElementById("B_ROUTE_canvas"), x_axis, y_axis);
-    B_route_graph.AddCurveList("Red", null, "Random draw");
-    B_route_graph.AddCurveList("Blue", null, "Average");
-    B_route_graph.AddCurveList("Green", null, "High estimate");
-    B_route_graph.AddCurveList("Green", null, "Low estimate");
+  
     AddModelPoints();
 }
 
@@ -33,16 +24,7 @@ function GetModelCalculations(i, B, x_min, x_max) {
 
     var model = [];
      
-    if (i >= B_route_graph.x_max) {
-        B_route_graph.Reschale(0,  B_route_graph.x_max + 10 ,0, B_route_graph.y_max);
-    }
-
-    if (B >= B_route_graph.y_max) {
-        B_route_graph.Reschale(0, B_route_graph.x_max, 0, B +0.1);
-    }
-
-    B_route_graph.AddPoint(0, i, B, null);
-
+    
     var y = 1;
     for (var x = 0; x < x_max; x++) {
 
@@ -100,6 +82,7 @@ function AddModelPoints() {
 
     interval_id = setInterval(function () {
 
+        
         if (model == null || c == model.length - 1) {
 
             last_coordinate = null;
@@ -108,6 +91,7 @@ function AddModelPoints() {
             var y_axis = new Axis(0, 1.2, "Remaining Biomass (%)", 100, 6, "black");
 
             RemainingBiomassGraph = new Graph(document.getElementById("DecompCanvas"), x_axis, y_axis);
+             
 
             var B_old = B;
 
@@ -132,11 +116,7 @@ function AddModelPoints() {
             }
 
             P_old = P;
-
-
-
-
-
+             
             RemainingBiomassGraph.AddCurveList("Red", null, "Modeled");
 
             RemainingBiomassGraph.AddCurveList(null, "Black", "Measured");

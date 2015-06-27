@@ -15,7 +15,7 @@
          <div  style="width:420px; height: 570;   float:right; padding:20px; background-color : White">
             <canvas id="canvas_Malinau"   width="400px" height="550px" style="border:1px solid black;"></canvas>
             <button  onclick = "Simulate1()" style="width: 400px; height: 40px; background-color: DarkGray" type="button">Simulate 9 years</button>
-           
+            <div id = "Progress"></div>
          </div>
          <p>   For my master's project at Wageningen University, I used land use derived from arial photographs of eastern Borneo taken in (<a onclick="ShowMalinauMap(2000)" href="#">2000</a>) 
             and (<a onclick="ShowMalinauMap(2009)" href="#">2009</a>) to evaluate hypotheses 
@@ -80,8 +80,8 @@
         <h2>Landis user interface</h2>
            
          <div  style="width:460px; height: 290px;   float:left; padding:10px; background-color : White">
-             <img  src="images/lui.jpg" height ="250px"/>
-             <p>Click to enlarge</p>
+             <img  height="290" width="460"  src="images/lui_big.jpg" height ="250px"/>
+             <!--<p>Click to enlarge</p>-->
          </div>
          <p>     I have been using the <a href="http://www.landis-ii.org/">LANDIS</a> model for more than three years but I was missing an interface to fascilitate my analyses. So I ended up developing my own. It is a windows forms application
             written in C#  developed in .Net 3.5. The interface consists of a file tree (on the left) where you add a Landis scenario file. A Landis scenario file is a simple ascii in which 
@@ -104,7 +104,13 @@
                     <div class="margin_bottom_10"></div>
     <div  style="width:940px; height: 600px;   float:left; padding:10px; background-color : White">
         <h2>Bayesian calibration</h2>
-         <div  style="width:200px; height: 400px;   float:left; padding:10px; background-color : Yellow"></div>
+         <div  style="width:525px; height: 250px;   float:left; padding:10px; background-color : White">
+           
+             <canvas id="DecompCanvas" width="525" height="250" style="border:1px solid">
+              
+<!--            <canvas style= "border:1px solid black">Your browser does not support the HTML5 canvas tag.</canvas>-->
+              
+         </div>
           <p>Bayesian statistics is based on probability computation of a theory, given some set of evidence. It is used in medicine, law or suggestions by google search machines. 
          In the scope of quantitative simulations it is to derive the probability of a set of models given some set of observations (measurements). I used it for example to estimate the 
          rate of which a dead log loses biomass. If we assume that the reduction of mass is a constant fraction per year, the model translates to 
@@ -116,16 +122,16 @@
           it fluctuates a lot, but after ~100 iterations, it becomes pretty stable at around 7%. So my best estimate of the decomposition rate of the tree logs is 7% per year.
              
         </p>
-
+         
       
      
 
       
    </div>
-    
+    <script>        StartDecompositionFunctions(); </script>
    <script>       ShowMalinauMap(2000); </script>
     <script>        watch(document.getElementById('LUCtable'), whenChangeHappens);</script>
-    <script src="js/jquery.mobile.custom.min.js"></script>
+     
     
                              
 </asp:Content>
