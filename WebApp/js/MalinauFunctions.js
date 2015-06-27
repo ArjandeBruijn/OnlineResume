@@ -141,11 +141,9 @@ function SetImage(container, MalinauMap, year) {
     Year = year;
     Progress = 100;
     // create a new pixel array
-    var element2 = document.getElementById('canvas_Malinau');
-    canvas = element2.getContext("2d");
-    
-
-    imageData = element2.getContext("2d").createImageData(nrows, ncols);
+    canvas = document.getElementById(container);
+    Context = canvas.getContext("2d");
+    imageData = Context.createImageData(nrows, ncols);
 
     // draw random dots
     var counter = -1;
@@ -168,9 +166,9 @@ function SetImage(container, MalinauMap, year) {
 
         }
     }
-   
+
     // copy the image data back onto the canvas
-    canvas.putImageData(imageData, 0, 0); // at coords 0,0
+    Context.putImageData(imageData, 0, 0); // at coords 0,0
      
     DrawProgressBox();
     DrawLegend();

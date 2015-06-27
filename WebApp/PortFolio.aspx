@@ -21,49 +21,49 @@
             and (<a onclick="ShowMalinauMap(2009)" href="#">2009</a>) to evaluate hypotheses 
             about the spatial configuration of land use changes and to predict future land use thereupon, for example:  
             <br> <br>  
-            <label id = "sized_label"><input type="checkbox" onclick = "CheckBoxIsNoSpatialCorrelation()" class="radio" value="1" id="Checkbox1"  name="Hypotheses" checked/>1. There is no spatial correlation between land use transitions.<br></label>
-            <label id = "sized_label"><input type="checkbox" onclick = "CheckBoxIsAllAroundDevelopedArea()" class="radio" value="1" id="Checkbox2"  name="Hypotheses"/>2. Land use transitions occur near settlements.<br></label>
-            <label id = "sized_label"><input type="checkbox" onclick = "CheckBoxIsAllAroundWater()" class="radio" value="1" id="Checkbox3"  name="Hypotheses"/>3.Land use transitions occur near water.<br></label>
+            <label id = "sized_label"><input type="checkbox" onclick = "CheckBoxIsNoSpatialCorrelation()" class="radio" value="1" id="NoSpatialCorrelation"  name="Hypotheses" checked/>1. There is no spatial correlation between land use transitions.<br></label>
+            <label id = "sized_label"><input type="checkbox" onclick = "CheckBoxIsAllAroundDevelopedArea()" class="radio" value="1" id="AllAroundDevelopedArea"  name="Hypotheses"/>2. Land use transitions occur near settlements.<br></label>
+            <label id = "sized_label"><input type="checkbox" onclick = "CheckBoxIsAllAroundWater()" class="radio" value="1" id="AllAroundWater"  name="Hypotheses"/>3.Land use transitions occur near water.<br></label>
              <br>  
             <p>When you further assume some ratios of land use transitions, per the table below for the period of 2000-2009:
             <br></br>
-            <table id = "LUCtable" bgcolor = white border="1">
-                <tr>
-                    <th bgcolor ="#c0c0c0">From / To </th>
-                    <th bgcolor ="#c0c0c0">Forest</th>
-                    <th bgcolor ="#c0c0c0">Secondary Forest</th>
-                    <th bgcolor ="#c0c0c0">Cropland</th>
-                    <th bgcolor ="#c0c0c0">Settlements</th>
-                </tr>
-                <tr>
-                    <th bgcolor ="#c0c0c0" >Forest</th>
-                    <td bgcolor ="#c0c0c0" id="Td1"><div> 0.998 </div> </th>
-                    <td  id="Td2"><div contenteditable> 0.002 </div> </th>
-                    <td  id="Td3"><div contenteditable> 0</div> </th>
-                    <td  id= "Td4"><div contenteditable> 0.0003 </div> </th>
-                </tr>
-                <tr>
-                    <th bgcolor ="#c0c0c0">Secondary Forest</th>
-                    <td id="Td5"><div contenteditable> 0	 </div> </th>
-                    <td bgcolor ="#c0c0c0" id="Td6"><div> 0.995	 </div> </th>
-                    <td id = 'Td7'><div contenteditable> 0.005	</div> </th>
-                    <td id = 'Td8'><div contenteditable> 0 </div> </th>
-                </tr>
-                <tr>
-                    <th bgcolor ="#c0c0c0">Cropland</th>
-                    <td id = 'Td9'><div contenteditable>0 </div></th>
-                    <td id = 'Td10'><div contenteditable>  0	</div></th>
-                    <td bgcolor ="#c0c0c0" id = 'Td11'><div> 0.99 </div></th>
-                    <td id = 'Td12'><div contenteditable> 0.01 </div></th>
-                </tr>
-                <tr>
-                    <th bgcolor ="#c0c0c0">Settlements</th>
-                    <td id = 'Td13'><div contenteditable>0</div>	 </th>
-                    <td id = 'Td14'><div contenteditable> 0	</div>	</th>
-                    <td id = 'Td15'><div contenteditable> 0</div>	 </th>
-                    <td bgcolor ="#c0c0c0" id = 'Td16'><div>1</div>	  </th>
-                 </tr>
-             </table>
+             <table id = "LUCtable" bgcolor = white border="1">
+        <tr>
+            <th bgcolor ="#c0c0c0">From / To </th>
+            <th bgcolor ="#c0c0c0">Forest</th>
+            <th bgcolor ="#c0c0c0">Secondary Forest</th>
+            <th bgcolor ="#c0c0c0">Cropland</th>
+            <th bgcolor ="#c0c0c0">Settlements</th>
+        </tr>
+        <tr>
+            <th bgcolor ="#c0c0c0" >Forest</th>
+            <td bgcolor ="#c0c0c0" id="Forest-Forest"><div> 0.998 </div> </th>
+            <td  id="Forest-SecondaryForest"><div contenteditable> 0.002 </div> </th>
+            <td  id="Forest-CropLand"><div contenteditable> 0</div> </th>
+            <td  id= "Forest-Settlements"><div contenteditable> 0.0003 </div> </th>
+        </tr>
+        <tr>
+            <th bgcolor ="#c0c0c0">Secondary Forest</th>
+            <td id="SecondaryForest-Forest"><div contenteditable> 0	 </div> </th>
+            <td bgcolor ="#c0c0c0" id="SecondaryForest-SecondaryForest"><div> 0.995	 </div> </th>
+            <td id = 'SecondaryForest-CropLand'><div contenteditable> 0.005	</div> </th>
+            <td id = 'SecondaryForest-Settlements'><div contenteditable> 0 </div> </th>
+        </tr>
+        <tr>
+            <th bgcolor ="#c0c0c0">Cropland</th>
+            <td id = 'CropLand-Forest'><div contenteditable>0 </div></th>
+            <td id = 'CropLand-SecondaryForest'><div contenteditable>  0	</div></th>
+            <td bgcolor ="#c0c0c0" id = 'CropLand-CropLand'><div> 0.99 </div></th>
+            <td id = 'CropLand-Settlements'><div contenteditable> 0.01 </div></th>
+        </tr>
+        <tr>
+            <th bgcolor ="#c0c0c0">Settlements</th>
+            <td id = 'Settlements-Forest'><div contenteditable>0</div>	 </th>
+            <td id = 'Settlements-SecondaryForest'><div contenteditable> 0	</div>	</th>
+            <td id = 'Settlements-CropLand'><div contenteditable> 0</div>	 </th>
+            <td bgcolor ="#c0c0c0" id = 'Settlements-Settlements'><div>1</div>	  </th>
+         </tr>
+     </table>
              <br>  
              you can predict what the future landscape will look like.  I programmed a simple simulation algorithm that predicts future land use in the code of this website. 
          You can try it if you editing inputs (table or hypothesis), and click the button.
