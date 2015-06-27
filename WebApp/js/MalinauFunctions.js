@@ -238,9 +238,9 @@ function DrawProgressBox() {
     var Width = 125;
     var legendrect = new Rectangle(nrows - Width - 10, ncols - Height - 10, Width, Height);
     Context.clearRect(legendrect.A[0], legendrect.A[1], legendrect.Width, legendrect.Height);
-    Context.beginPath();
-    Context.rect(legendrect.A[0], legendrect.A[1], legendrect.Width, legendrect.Height);
-    Context.stroke();
+    //Context.beginPath();
+    //Context.rect(legendrect.A[0], legendrect.A[1], legendrect.Width, legendrect.Height);
+    //Context.stroke();
     var coordinate = [legendrect.A[0] + 10, legendrect.A[1] + 10];
 
     coordinate = AddLegendEntry(coordinate, "Progress:\t" + Progress + "%", null);
@@ -315,9 +315,9 @@ function DrawLegend() {
 
     legendrect = new Rectangle(10, 10, 150, HeightPerEntree * Entrees + 20);
 
-    Context.beginPath();
-    Context.rect(legendrect.A[0], legendrect.A[1], legendrect.Width, legendrect.Height);
-    Context.stroke();
+    //Context.beginPath();
+    //Context.rect(legendrect.A[0], legendrect.A[1], legendrect.Width, legendrect.Height);
+    //Context.stroke();
 
     var coordinate = [legendrect.A[0] + 10, legendrect.A[1] + 10];
 
