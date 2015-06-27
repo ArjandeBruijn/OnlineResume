@@ -63,7 +63,7 @@ function rgbToHex(r, g, b) {
 }
 
 
-function DrawRectangle(Rectangle, Context, Color) {
+function DrawRectangle(Rectangle, Color) {
 
     Context.fillStyle = Color;
     Context.fillRect(Rectangle.xmin, Rectangle.ymin, Rectangle.Width, Rectangle.Height);
@@ -237,10 +237,10 @@ function DrawProgressBox() {
     var Height = HeightPerEntree * Entrees + 20;
     var Width = 125;
     var legendrect = new Rectangle(nrows - Width - 10, ncols - Height - 10, Width, Height);
-    canvas.clearRect(legendrect.A[0], legendrect.A[1], legendrect.Width, legendrect.Height);
-    canvas.beginPath();
-    canvas.rect(legendrect.A[0], legendrect.A[1], legendrect.Width, legendrect.Height);
-    canvas.stroke();
+    Context.clearRect(legendrect.A[0], legendrect.A[1], legendrect.Width, legendrect.Height);
+    Context.beginPath();
+    Context.rect(legendrect.A[0], legendrect.A[1], legendrect.Width, legendrect.Height);
+    Context.stroke();
     var coordinate = [legendrect.A[0] + 10, legendrect.A[1] + 10];
 
     coordinate = AddLegendEntry(coordinate, "Progress:\t" + Progress + "%", null);
@@ -249,7 +249,7 @@ function DrawProgressBox() {
 }
 function DrawImage(custom_legend)
 {
-    canvas.putImageData(imageData, 0, 0); // at coords 0,0
+    Context.putImageData(imageData, 0, 0); // at coords 0,0
     DrawProgressBox();
     if (custom_legend == null) DrawLegend();
     else custom_legend();
@@ -315,9 +315,9 @@ function DrawLegend() {
 
     legendrect = new Rectangle(10, 10, 150, HeightPerEntree * Entrees + 20);
 
-    canvas.beginPath();
-    canvas.rect(legendrect.A[0], legendrect.A[1], legendrect.Width, legendrect.Height);
-    canvas.stroke();
+    Context.beginPath();
+    Context.rect(legendrect.A[0], legendrect.A[1], legendrect.Width, legendrect.Height);
+    Context.stroke();
 
     var coordinate = [legendrect.A[0] + 10, legendrect.A[1] + 10];
 
@@ -558,18 +558,18 @@ function GetValueFromTable(ID) {
 
 function AddLegendEntry(coordinate, label, color) {
 
-    canvas.beginPath();
+    Context.beginPath();
     if (color != null) {
         var rect2 = new Rectangle(coordinate[0], coordinate[1], 20, 15);
-        DrawRectangle(rect2, canvas, rgbToHex(color[0], color[1], color[2]));
-        canvas.fillStyle = 'black';
-        canvas.rect(rect2.A[0], rect2.A[1], rect2.Width, rect2.Height);
-        canvas.fillText(label, rect2.B[0] + 5, rect2.B[1] + 12);
+        DrawRectangle(rect2, rgbToHex(color[0], color[1], color[2]));
+        Context.fillStyle = 'black';
+        Context.rect(rect2.A[0], rect2.A[1], rect2.Width, rect2.Height);
+        Context.fillText(label, rect2.B[0] + 5, rect2.B[1] + 12);
     }
     else {
-        canvas.fillText(label, coordinate[0] + 5, coordinate[1] + 12);
+        Context.fillText(label, coordinate[0] + 5, coordinate[1] + 12);
     }
-    canvas.stroke();
+    Context.stroke();
     return [coordinate[0], coordinate[1] + 15 + 5];
 }
 
