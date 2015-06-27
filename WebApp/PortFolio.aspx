@@ -68,10 +68,12 @@
          
         </div>
     </div>
-    <div  style="width:940px; height: 500px;   float:left; padding:10px; background-color : Gray">
-            <h2>Landis user interface</h2>
-
-             I have been using the <a href="http://www.landis-ii.org/">LANDIS</a> model for more than three years but I was missing an interface to fascilitate my analyses. So I ended up developing my own. It is a windows forms application
+      <div class="margin_bottom_20 h_divider"></div>
+                    <div class="margin_bottom_10"></div>
+    <div  style="width:940px; height: 400px;   float:left; padding:10px; background-color : White">
+        <h2>Landis user interface</h2>
+         <div  style="width:100px; height: 100px;   float:left; padding:10px; background-color : Yellow"></div>
+         <p>     I have been using the <a href="http://www.landis-ii.org/">LANDIS</a> model for more than three years but I was missing an interface to fascilitate my analyses. So I ended up developing my own. It is a windows forms application
             written in C#  developed in .Net 3.5. The interface consists of a file tree (on the left) where you add a Landis scenario file. A Landis scenario file is a simple ascii in which 
             other input files and some settings for the model are specified. When you add a scenario, the program will read that file and check for any pathnames in that file (i.e. other input files)  
             and adds those to the file tree. Additionally, the user can start a simulation and the user interface will periodically check whether there are new output files which it will add to the file tree
@@ -83,10 +85,19 @@
             or spreadsheets that use  <a href="http://www.codeproject.com/Articles/691749/Free-NET-Spreadsheet-Control">a Free .NET Spreadsheet Control</a>
             or in a text editor by dragging the file from the filetree and dropping it in the work space. 
             The landis user interface is currently used for landis instruction workshops by the university of portland as well as ~10 individual landis users.
-    </div>
-    <div  style="width:940px; height: 500px;   float:left; padding:10px; background-color : Cyan">
-          
-        Bayesian statistics is based on probability computation of a theory, given some set of evidence. It is used in medicine, law or suggestions by google search machines. 
+        </p>
+
+      
+     <!-- <canvas id="canvas1"   width="200"; height="200"; style="border:2px solid black;background-color : Cyan"></canvas>-->
+
+      
+   </div>
+    <div class="margin_bottom_20 h_divider"></div>
+                    <div class="margin_bottom_10"></div>
+    <div  style="width:940px; height: 600px;   float:left; padding:10px; background-color : Brown">
+        <h2>Bayesian calibration</h2>
+         <div  style="width:200px; height: 400px;   float:left; padding:10px; background-color : Yellow"></div>
+          <p>Bayesian statistics is based on probability computation of a theory, given some set of evidence. It is used in medicine, law or suggestions by google search machines. 
          In the scope of quantitative simulations it is to derive the probability of a set of models given some set of observations (measurements). I used it for example to estimate the 
          rate of which a dead log loses biomass. If we assume that the reduction of mass is a constant fraction per year, the model translates to 
          dM/dt = b*M or also M = 100 * exp(-b*time) where b is the decomposition rate in percent per year. The remaining mass at any time can be calculated for a given decomposition rate b. 
@@ -96,13 +107,17 @@
           the value of b that is most often applied. This is what you see in the bottom graph where I show the value of b that was most often used to predict the decomposition rate. You can see that initially 
           it fluctuates a lot, but after ~100 iterations, it becomes pretty stable at around 7%. So my best estimate of the decomposition rate of the tree logs is 7% per year.
              
-       
-    </div>
+        </p>
 
+      
+     <!-- <canvas id="canvas1"   width="200"; height="200"; style="border:2px solid black;background-color : Cyan"></canvas>-->
 
+      
+   </div>
+    
    <script>       ShowMalinauMap(2000); </script>
     <script>        watch(document.getElementById('LUCtable'), whenChangeHappens);</script>
-    
+    <script src="js/jquery.mobile.custom.min.js"></script>
     
                              
 </asp:Content>
