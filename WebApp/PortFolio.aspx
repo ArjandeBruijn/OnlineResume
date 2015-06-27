@@ -76,9 +76,13 @@
    </div>
       <div class="margin_bottom_20 h_divider"></div>
                     <div class="margin_bottom_10"></div>
-    <div  style="width:940px; height: 400px;   float:left; padding:10px; background-color : White">
+    <div  style="width:940px; height: 500px;   float:left; padding:10px; background-color : White">
         <h2>Landis user interface</h2>
-         <div  style="width:100px; height: 100px;   float:left; padding:10px; background-color : Yellow"></div>
+           
+         <div  style="width:460px; height: 290px;   float:left; padding:10px; background-color : White">
+             <img  src="images/lui.jpg" height ="250px"/>
+             <p>Click to enlarge</p>
+         </div>
          <p>     I have been using the <a href="http://www.landis-ii.org/">LANDIS</a> model for more than three years but I was missing an interface to fascilitate my analyses. So I ended up developing my own. It is a windows forms application
             written in C#  developed in .Net 3.5. The interface consists of a file tree (on the left) where you add a Landis scenario file. A Landis scenario file is a simple ascii in which 
             other input files and some settings for the model are specified. When you add a scenario, the program will read that file and check for any pathnames in that file (i.e. other input files)  
@@ -93,7 +97,7 @@
             The landis user interface is currently used for landis instruction workshops by the university of portland as well as ~10 individual landis users.
         </p>
 
-     <!-- <canvas id="canvas1"   width="200"; height="200"; style="border:2px solid black;background-color : Cyan"></canvas>-->
+    
  
    </div>
     <div class="margin_bottom_20 h_divider"></div>
