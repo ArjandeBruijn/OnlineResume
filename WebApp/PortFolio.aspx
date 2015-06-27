@@ -111,17 +111,13 @@
 <!--            <canvas style= "border:1px solid black">Your browser does not support the HTML5 canvas tag.</canvas>-->
               
          </div>
-          <p>Bayesian statistics is based on probability computation of a theory, given some set of evidence. It is used in medicine, law or suggestions by google search machines. 
-         In the scope of quantitative simulations it is to derive the probability of a set of models given some set of observations (measurements). I used it for example to estimate the 
-         rate of which a dead log loses biomass. If we assume that the reduction of mass is a constant fraction per year, the model translates to 
-         dM/dt = b*M or also M = 100 * exp(-b*time) where b is the decomposition rate in percent per year. The remaining mass at any time can be calculated for a given decomposition rate b. 
-         So one way to see how the likelihood of the model depends on the value of b is to try a lot of values for b, calculate the remaining mass each year, and compare predictions of 
-         remaining mass with measurements. This approach is known as a Markov Chain Monte Carlo algorithm. It is what I'm doing in the upper graph. There is a tweak in Markov Chain algorithms that assures that decomposition rates that are 
-         associated with a high likelihood, or where the model is close to the measurements, are selected more often than those that are not. Therefore, after a lot of draws the best estimate of b becomes
-          the value of b that is most often applied. This is what you see in the bottom graph where I show the value of b that was most often used to predict the decomposition rate. You can see that initially 
-          it fluctuates a lot, but after ~100 iterations, it becomes pretty stable at around 7%. So my best estimate of the decomposition rate of the tree logs is 7% per year.
-             
-        </p>
+         <p> Bayesian calibration is a method to map model probability, given a set of observations. It is used in disciplines as unrelated as medicine, law or internet search engines. 
+               I used it for example to estimate the rate of decomposition of dead wood. If you call the decomposition rate 'b' in percent per year, you can use an algorithm (called a Markov Chain) to reiteratively draw semi-random values for 'b', calculate remaining biomass for 
+               a stretch of time and calculate a score that represents how likely the decomposition rate 'b' is, given the set of measurements. This is what you see at work in the graph left: each red line is a decomposition trajectory for a single 'b'.   
+               There is a tweak in a Markov Chain that assures that decomposition rates that score well (i.e. model compares well with measurements) are selected more frequently.
+               It takes a while for the Markov Chain to find this 'hotspot' of high model scores, but after ~100 iterations, the average 'b' of the iterations in the graphs becomes pretty stable at around 7%.So my best estimate of the decomposition rate of the tree logs is 7% per year.
+               The black graph on my home page demonstrates a similar algorithm applied to measured areas of defoliation in Northern Minnesota, compare to a model complicated simulation model.
+         </p>
          
       
      
