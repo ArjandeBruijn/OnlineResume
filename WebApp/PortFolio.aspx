@@ -9,17 +9,22 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="margin_bottom_10"></div>
      
-    <div  style="width:940px; height: 500px;   float:left; padding:10px; background-color : White">
+     
+    <div  style="width:940px; height: 800px;   float:left; padding:10px; background-color : White">
         <h2>Deforestation in Indonesia</h2>
-        <div  style="width:600px; height: 400px;   float:left; padding:10px; background-color : Yellow">
-            For my master's project at Wageningen University, I used land use derived from arial photographs of eastern Borneo taken in (<a onclick="ShowMalinauMap(2000)" href="#">2000</a>) 
+         <div  style="width:420px; height: 570;   float:right; padding:20px; background-color : White">
+            <canvas id="canvas_Malinau"   width="400px" height="550px" style="border:1px solid black;"></canvas>
+            <button  onclick = "Simulate1()" style="width: 400px; height: 40px; background-color: DarkGray" type="button">Simulate 9 years</button>
+           
+         </div>
+         <p>   For my master's project at Wageningen University, I used land use derived from arial photographs of eastern Borneo taken in (<a onclick="ShowMalinauMap(2000)" href="#">2000</a>) 
             and (<a onclick="ShowMalinauMap(2009)" href="#">2009</a>) to evaluate hypotheses 
             about the spatial configuration of land use changes and to predict future land use thereupon, for example:  
-            <br>
-            <label id = "sized_label"><input type="checkbox" onclick = "CheckBoxIsNoSpatialCorrelation()" class="radio" value="1" id="NoSpatialCorrelation"  name="Hypotheses" checked/>1. There is no spatial correlation between land use transitions.<br></label>
-            <label id = "sized_label"><input type="checkbox" onclick = "CheckBoxIsAllAroundDevelopedArea()" class="radio" value="1" id="AllAroundDevelopedArea"  name="Hypotheses"/>2. Land use transitions occur near settlements.<br></label>
-            <label id = "sized_label"><input type="checkbox" onclick = "CheckBoxIsAllAroundWater()" class="radio" value="1" id="AllAroundWater"  name="Hypotheses"/>3.Land use transitions occur near water.<br></label>
-    
+            <br> <br>  
+            <label id = "sized_label"><input type="checkbox" onclick = "CheckBoxIsNoSpatialCorrelation()" class="radio" value="1" id="Checkbox1"  name="Hypotheses" checked/>1. There is no spatial correlation between land use transitions.<br></label>
+            <label id = "sized_label"><input type="checkbox" onclick = "CheckBoxIsAllAroundDevelopedArea()" class="radio" value="1" id="Checkbox2"  name="Hypotheses"/>2. Land use transitions occur near settlements.<br></label>
+            <label id = "sized_label"><input type="checkbox" onclick = "CheckBoxIsAllAroundWater()" class="radio" value="1" id="Checkbox3"  name="Hypotheses"/>3.Land use transitions occur near water.<br></label>
+             <br>  
             <p>When you further assume some ratios of land use transitions, per the table below for the period of 2000-2009:
             <br></br>
             <table id = "LUCtable" bgcolor = white border="1">
@@ -32,42 +37,43 @@
                 </tr>
                 <tr>
                     <th bgcolor ="#c0c0c0" >Forest</th>
-                    <td bgcolor ="#c0c0c0" id="Forest-Forest"><div> 0.998 </div> </th>
-                    <td  id="Forest-SecondaryForest"><div contenteditable> 0.002 </div> </th>
-                    <td  id="Forest-CropLand"><div contenteditable> 0</div> </th>
-                    <td  id= "Forest-Settlements"><div contenteditable> 0.0003 </div> </th>
+                    <td bgcolor ="#c0c0c0" id="Td1"><div> 0.998 </div> </th>
+                    <td  id="Td2"><div contenteditable> 0.002 </div> </th>
+                    <td  id="Td3"><div contenteditable> 0</div> </th>
+                    <td  id= "Td4"><div contenteditable> 0.0003 </div> </th>
                 </tr>
                 <tr>
                     <th bgcolor ="#c0c0c0">Secondary Forest</th>
-                    <td id="SecondaryForest-Forest"><div contenteditable> 0	 </div> </th>
-                    <td bgcolor ="#c0c0c0" id="SecondaryForest-SecondaryForest"><div> 0.995	 </div> </th>
-                    <td id = 'SecondaryForest-CropLand'><div contenteditable> 0.005	</div> </th>
-                    <td id = 'SecondaryForest-Settlements'><div contenteditable> 0 </div> </th>
+                    <td id="Td5"><div contenteditable> 0	 </div> </th>
+                    <td bgcolor ="#c0c0c0" id="Td6"><div> 0.995	 </div> </th>
+                    <td id = 'Td7'><div contenteditable> 0.005	</div> </th>
+                    <td id = 'Td8'><div contenteditable> 0 </div> </th>
                 </tr>
                 <tr>
                     <th bgcolor ="#c0c0c0">Cropland</th>
-                    <td id = 'CropLand-Forest'><div contenteditable>0 </div></th>
-                    <td id = 'CropLand-SecondaryForest'><div contenteditable>  0	</div></th>
-                    <td bgcolor ="#c0c0c0" id = 'CropLand-CropLand'><div> 0.99 </div></th>
-                    <td id = 'CropLand-Settlements'><div contenteditable> 0.01 </div></th>
+                    <td id = 'Td9'><div contenteditable>0 </div></th>
+                    <td id = 'Td10'><div contenteditable>  0	</div></th>
+                    <td bgcolor ="#c0c0c0" id = 'Td11'><div> 0.99 </div></th>
+                    <td id = 'Td12'><div contenteditable> 0.01 </div></th>
                 </tr>
                 <tr>
                     <th bgcolor ="#c0c0c0">Settlements</th>
-                    <td id = 'Settlements-Forest'><div contenteditable>0</div>	 </th>
-                    <td id = 'Settlements-SecondaryForest'><div contenteditable> 0	</div>	</th>
-                    <td id = 'Settlements-CropLand'><div contenteditable> 0</div>	 </th>
-                    <td bgcolor ="#c0c0c0" id = 'Settlements-Settlements'><div>1</div>	  </th>
+                    <td id = 'Td13'><div contenteditable>0</div>	 </th>
+                    <td id = 'Td14'><div contenteditable> 0	</div>	</th>
+                    <td id = 'Td15'><div contenteditable> 0</div>	 </th>
+                    <td bgcolor ="#c0c0c0" id = 'Td16'><div>1</div>	  </th>
                  </tr>
              </table>
+             <br>  
              you can predict what the future landscape will look like.  I programmed a simple simulation algorithm that predicts future land use in the code of this website. 
          You can try it if you editing inputs (table or hypothesis), and click the button.
-            </div>
-            
-         <div  style="width:300px; height: 400px;   float:left; padding:10px; background-color : Blue">
-            <canvas id="canvas1"   width="200"; height="300"; style="border:2px solid black;"></canvas>
-         
-        </div>
-    </div>
+        </p>
+
+      
+     <!-- <canvas id="canvas1"   width="200"; height="200"; style="border:2px solid black;background-color : Cyan"></canvas>-->
+
+      
+   </div>
       <div class="margin_bottom_20 h_divider"></div>
                     <div class="margin_bottom_10"></div>
     <div  style="width:940px; height: 400px;   float:left; padding:10px; background-color : White">
@@ -87,10 +93,8 @@
             The landis user interface is currently used for landis instruction workshops by the university of portland as well as ~10 individual landis users.
         </p>
 
-      
      <!-- <canvas id="canvas1"   width="200"; height="200"; style="border:2px solid black;background-color : Cyan"></canvas>-->
-
-      
+ 
    </div>
     <div class="margin_bottom_20 h_divider"></div>
                     <div class="margin_bottom_10"></div>
@@ -110,7 +114,7 @@
         </p>
 
       
-     <!-- <canvas id="canvas1"   width="200"; height="200"; style="border:2px solid black;background-color : Cyan"></canvas>-->
+     
 
       
    </div>
