@@ -50,8 +50,9 @@
                        <img   src="images\pass.jpg"  align="left">
                     </div>
                     <div id="section_banner">
-                        <font size="5"><br><b>Arjan de Bruijn</b></font>
-                        <font size="5"><br>Fort Collins, Colorado</font>
+                        <br>
+                        <font face="Century Gothic" size="5"><b>Arjan de Bruijn</b></font>
+                        <font face="Century Gothic" size="4.5"><br>Fort Collins, Colorado</font>
                      
                     </div>
                    
