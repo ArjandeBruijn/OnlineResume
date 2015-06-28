@@ -8,32 +8,31 @@
  <div  style="width:940px;   float:left; padding:10px; background-color : White">
         
         <h1 align="center">Professional background</h1>
-        <p>My career started with researching the more technical parts of forest ecology, like biogeochemistry, mathematics and simulation software. 
-        I have now been in academics for almost a decade and I am thinking of moving to the private sector. 
-        My most merchantable skills are all in the area of software development, I have worked with various coding languages and techniques.  
-        I am particular interested in geospatial applications but open for any ideas. Soft skills include experiences in presentations at international conferences and workshops, fluent in three languages, cooperating in tightly nit development teams, I'm easy to talk to and get along with.
-        </p>
+        My career path has centered on forestry and land use modeling, incorporating biogeochemistry, statistics, and development of simulation software. I have been working in academia for almost a decade and would like to move to the private sector. I specialize in developing geospatial software applications. Non-technical skills include giving presentations, fluency in English, German, and Dutch, and working within large, widely dispersed development teams.
         <br> 
            <h1>Summary of Qualifications</h1>
           <div style="line-height:30px; background-color:#eeeeee; height:300px; width:628px; float:left; padding-left:10px; background-color :White;">
             
             <ul>
               <h3 >
-                  <li >More than 8 years experience in software development and GIS. </li>
+                  <li >More than 8 years of experience in software development and GIS </li>
                   <div class="margin_bottom_5"></div>
-                  <li> Permitted to work in the USA.</li>
+                  <li> Fluent in most coding languages (see skills page for details)</li>
                   <div class="margin_bottom_5"></div>
-                  <li> Fluent in most coding languages.</li>
+                  <li> Developer of efficient code</li>
                   <div class="margin_bottom_5"></div>
-                  <li> Fluent in three human languages.</li>
+                  <li> Hard-working</li>
                   <div class="margin_bottom_5"></div>
-                  <li> I write very efficient code.</li>
+                  <li> Authorized to work in the USA</li>
                   <div class="margin_bottom_5"></div>
-                  <li> Hard worker.</p></li>
-                  <div class="margin_bottom_5"></div>
+                  
               </h3> 
             </ul>
-             <p>Simulated insect outbreaks (above: Maryland, below: Northern Minnesota)</p>
+            <i>Graphics: geospatial model of gypsy moth outbreak in Maryland (above); 
+               simulation of forest tent caterpillar population dynamics in northern Minnesota (below)
+            </i>
+
+
           </div>
 
 
