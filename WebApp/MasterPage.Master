@@ -50,9 +50,9 @@
                        <img   src="images\pass.jpg"  align="left">
                     </div>
                     <div id="section_banner">
-                        <p class = "large"><b>Arjan de Bruijn</b></p>
-                        <p class = "large">Fort Collins, Colorado</p>
-                        <p class = "large">Resume</p>
+                        <font size="5"><br><b>Arjan de Bruijn</b></font>
+                        <font size="5"><br>Fort Collins, Colorado</font>
+                     
                     </div>
                    
                     
