@@ -116,7 +116,7 @@
                a stretch of time and calculate a score that represents how likely the decomposition rate 'b' is, given the set of measurements. This is what you see at work in the graph left: each red line is a decomposition trajectory for a single 'b'.   
                There is a tweak in a Markov Chain that assures that decomposition rates that score well (i.e. model compares well with measurements) are selected more frequently.
                It takes a while for the Markov Chain to find this 'hotspot' of high model scores, but after ~100 iterations, the average 'b' of the iterations in the graphs becomes pretty stable at around 7%.So my best estimate of the decomposition rate of the tree logs is 7% per year.
-               The black graph on my home page demonstrates a similar algorithm applied to measured areas of defoliation in Northern Minnesota, compare to a model complicated simulation model.
+               The black graph on my home page demonstrates a similar algorithm applied to measured areas of defoliation in Northern Minnesota, compare to a more complicated simulation model.
          </p>
          
       

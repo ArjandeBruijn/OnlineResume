@@ -6,24 +6,19 @@
     <div  style="width:940px;    float:left; padding:10px; background-color : White">
         <h2>Purdue University - West-Lafayett, IN - 2011 to 2014</h2>
         <h3>Responsibilities</h3>
-            <p>
-                I developed simulations to predict the fate of reintroduced American Chestnut in the Appalachians. By the mid 1900s, American chestnut 
-                was extirpated by a blight that was imported from Japan in the early 1900s. 
-                Asian chestnuts are largely resistant, and recent cross breads (genetically 94% American and 6% Asian) share blight resistance,
-                therefore are candidates for reintroduction. 
-                However, the Appalachians have changed over the last 100 years due to insect plagues, changes in management and climate. 
-                I am combining information from lab and field trials, with landschape information to predict how the blight-resistant breed would 
-                fare upon its reintroduction in the Appalachions.
-            </p>
+            
+            I developed simulations to predict the fate of reintroduced American chestnut trees in the Appalachians. By the mid-1900s, American chestnut was wiped out by a blight that was imported from Japan in the early 1900s. 
+            Asian chestnuts are largely resistant, and recent cross breeds (genetically 94% American and 6% Asian) share blight resistance, therefore are candidates for reintroduction. 
+            However, the Appalachians have changed over the last 100 years due to insect plagues and changes in land management and climate. 
+            I am combining information from lab and field trials with databases such as USGS geo data portal to predict how the new blight-resistant breed would fare upon its reintroduction in the Appalachians.
+
+            
         <h3>Accomplishments</h3>
         <ul>
-           <li>Developed a module for the <a href="http://www.landis-ii.org/">LANDIS</a>   simulation platform  that better incorporates interactions between climate change and 
-               competition for light and water between trees. LANDIS is windows software developed in C#. It took a lot of mathematics, statistics 
-               and foremost a lot of debugging to get PnET-Succession going and we frequently use other tools to test parts of the code. 
-               I learned a lot of C#, Visual Studio 2010, 2013, R and some python. PnET-Succession is currently used in ~5 universities and the food and agricultural organisation (FAO) of the United Nations. </li>
+           <li>Developed a module, PnET-Succession, for the LANDIS-II Forest Landscape Simulation Model simulation platform that better incorporates interactions between climate change and competition for light and water between trees. LANDIS is Windows software developed in C#. This required extensive use of C#, Visual Studio 2010, 2013, R and some Python. PnET-Succession is currently used in several universities and the Food and Agricultural Organisation (FAO) of the United Nations. </li>
            <li>PnET-Succession comes with an installation file I developed in <a href="http://www.jrsoftware.org/isinfo.php">INNO</a>, so I am experienced in the issues that come with transplanting software to other computers. </li>
-           <li>PnET-Succession comes with comprehensive technical documentation that I have kept up to date during the development process.</li>
-           <li>Additionally I developed a user interface (see <a href="Portfolio.aspx">Portfolio</a>), originally for my own convenience but it is now used by ~10 users in 3 or 4 universities so I am experienced in developing windows forms applications. The user interface uses threading and backgroundworkers to load maps and data.</li>
+           <li>Wrote comprehensive technical documentation that I have kept up to date during the development process.</li>
+           <li>Additionally I developed a user interface (see <a href="Portfolio.aspx">Portfolio</a>) as a Windows Forms application. The user interface uses techniques like multithreading and BackgroundWorkers to load maps and data. </li>
         </ul>
         <h3>Publications</h3>
         <ul>
@@ -39,12 +34,12 @@
   <div  style="width:940px;    float:left; padding:10px; background-color : White">
      <h2>Agroscope Reckenholz Taenikon - Zürich, CH - 2010 to 2011</h2>
      <h3>Responsibilities</h3>
-     <p>
+      
         I developed simulations to evaluate how differences in soil carbon in grasslands relates to management intensity.
-        Carbon is the main consituent of dead organic materials, for example plants or harvest residues.
+        <!--Carbon is the main consituent of dead organic materials, for example plants or harvest residues.
         High carbon concentrations in arable lands are good for soil fertility, water retention and mitigation of climate change.
-        Here I evaluated how soil Carbon concentrations depend on management activity and intensity. 
-     </p>
+        Here I evaluated how soil Carbon concentrations depend on management activity and intensity. -->
+     
      <h3>Accomplishments</h3>
      <p>   
         Developed a 1D simulation model to simulate biomass and carbon dynamics in lowland grasslands in Switzerland. The simulation model was developed in C++ and 
