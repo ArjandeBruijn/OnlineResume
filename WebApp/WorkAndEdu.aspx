@@ -98,11 +98,8 @@
      <p>
         At Wageningen University, it was pretty common to design an individual program for graduation. There were strickt demands for an individual study plan 
         based on coherence of the subjects that you follow and the intellectual level of the plan as a whole. 
-                    
         I usually refer to my program at Wageningen University as "Mathematical Ecology", meaning that I had a large amound of mathematics, statistics and quantitative
         ecology in my program. I combined my study at Wageningen University with a study of Philosophy of Science at Amsterdam University. 
-        My study program at Wageningen University consisted of 5 year * 42 credits per year. And Amersterdam University of 4 years * 42 credits per year. 
-        However, many credits are waived due to the double master. My combined study program therefore was only 6 * 42 credits. 
      </p> 
      <h3>Accomplishments</h3>
      <ul> <li>M.S. in Forestry and Environmental Sciences. </li></ul>

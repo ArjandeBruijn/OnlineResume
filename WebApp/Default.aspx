@@ -11,7 +11,7 @@
         My career path has centered on forestry and land use modeling, incorporating biogeochemistry, statistics, and development of simulation software. I have been working in academia for almost a decade and would like to move to the private sector. I specialize in developing geospatial software applications. Non-technical skills include giving presentations, fluency in English, German, and Dutch, and working within large, widely dispersed development teams.
         <br> 
            <h1>Summary of Qualifications</h1>
-          <div style="line-height:30px; background-color:#eeeeee; height:300px; width:628px; float:left; padding-left:10px; background-color :White;">
+          <div style="line-height:30px; background-color:#eeeeee; height:300px; width:628px; float:left; padding-left:10px; padding-right: 20px; background-color :White;">
             
             <ul>
               <h3 >
@@ -28,9 +28,9 @@
                   
               </h3> 
             </ul>
-            <i>Graphics: geospatial model of gypsy moth outbreak in Maryland (above); 
+             <i>Graphics: geospatial model of gypsy moth outbreak in Maryland (above); 
                simulation of forest tent caterpillar population dynamics in northern Minnesota (below)
-            </i>
+             </i>
 
 
           </div>
