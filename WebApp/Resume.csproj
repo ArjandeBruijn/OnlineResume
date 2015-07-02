@@ -78,6 +78,7 @@
     <Content Include="js\infinite-rotator.js" />
     <Content Include="js\MarkovChainFunctions.js" />
     <Content Include="js\SetActivePage.js" />
+    <Content Include="js\MarkovChainMeasurements.js" />
     <Content Include="Portfolio.aspx" />
     <Content Include="js\TableEventHandlers.js" />
     <Content Include="js\MarkovChainModel.js" />
