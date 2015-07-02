@@ -20,7 +20,7 @@
                  
     </div>
      <div style="width:45%;float:left; padding : 10px">
-         <img src="images\ProgramIcons\c++.png"   align="left">
+         <img src="images\ProgramIcons\cpp.png"   align="left">
         More than 3 years of experience developing code for my PhD.     
     </div>
     <div style="width:45%;float:left; padding : 10px">
