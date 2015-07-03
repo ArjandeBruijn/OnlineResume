@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
  
     <div  style="width:940px;    float:left; padding:10px; background-color : White">
-        <h2>Purdue University - West-Lafayett, IN - 2011 to 2015</h2>
+        <h2><a href="https://ag.purdue.edu/fnr/Pages/default.aspx">Purdue University</a>  - West Lafayette, IN - 2011 to 2015</h2>
         <h3>Responsibilities</h3>
             
             I developed simulations to predict the fate of reintroduced American chestnut trees in the Appalachians. By the mid-1900s, American chestnut was wiped out by a blight that was imported from Japan in the early 1900s. 
@@ -31,7 +31,7 @@
      <div class="margin_bottom_20 h_divider"></div>
      <div class="margin_bottom_10"></div>
   <div  style="width:940px;    float:left; padding:10px; background-color : White">
-     <h2>Agroscope Reckenholz Taenikon - Zürich, CH - 2010 to 2011</h2>
+     <h2><a href="http://www.agroscope.admin.ch/org/00265/07176/index.html?lang=en">Agroscope Reckenholz Taenikon</a> - Zürich, CH - 2010 to 2011</h2> 
      <h3>Responsibilities</h3>
       
         I developed simulations to evaluate how differences in soil carbon in grasslands relates to management intensity.
@@ -54,7 +54,7 @@
     <div class="margin_bottom_10 h_divider"></div>
 
   <div  style="width:940px;   float:left; padding:10px; background-color : White">
-         <h2>Alterra B.V. - Wageningen - 2009 to 2010</h2>
+         <h2><a href="https://www.wageningenur.nl/en/Expertise-Services/Research-Institutes/alterra.htm">Alterra B.V. </a> - Wageningen - 2009 to 2010</h2> 
          <h3>Responsibilities</h3>
          <p> 
             I debugging and improving various simulation programs. I mostly worked on the Landscape ecological Analysis and Rules for the Configuration of Habitat (LARCH) model.
@@ -69,7 +69,7 @@
     </div>
     <div class="margin_bottom_10 h_divider"></div>           
     <div  style="width:940px;     float:left; padding:10px; background-color : White">
-        <h2>IMK-IFU - Garmisch-Partenkirchen - 2006 to 2009</h2>
+        <h2><a href="http://imk-ifu.fzk.de/">IMK-IFU </a>  - Garmisch-Partenkirchen - 2006 to 2009</h2> 
         <h3>Responsibilities</h3>
         <p> 
             I supported the development of a biogeochemical simulation platform "MoBiLE". MoBiLE is a modular plpatform for biogeochemical 
@@ -91,7 +91,7 @@
   </div>                
   <div class="margin_bottom_10 h_divider"></div>     
   <div  style="width:940px;    float:left; padding:10px; background-color : White">
-     <h2>Wageningen University – Wageningen, Netherlands	1998-2005</h2> 
+     <h2><a href="http://www.wageningenur.nl/en/Expertise-Services/Chair-groups/Environmental-Sciences/Forest-and-Nature-Conservation-Policy-Group.htm" > Wageningen University </a>  – Wageningen, Netherlands	1998-2005</h2> 
      <h3>Study themes</h3>   
      <p>
         At Wageningen University, it was pretty common to design an individual program for graduation. There were strickt demands for an individual study plan 
@@ -109,7 +109,7 @@
   <div class="margin_bottom_10 h_divider"></div>
           
   <div  style="width:940px;    float:left; padding:10px; background-color : White">
-     <h2>Amsterdam University – Amsterdam, Netherlands 2001-2005</h2>
+     <h2><a href=" https://www.uva.nl/en/disciplines/philosophy" > Amsterdam University </a>   – Amsterdam, Netherlands 2001-2005</h2> 
      <h3>Study themes</h3>   
      <p>
          This was my second study on Philosophy of Science. The study contains a generic year with general topics such as the history of philosophy, logic, knowledge theory.

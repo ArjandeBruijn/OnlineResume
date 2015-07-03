@@ -17,8 +17,12 @@
             <button  onclick = "Simulate1()" style="width: 400px; height: 40px; background-color: DarkGray" type="button">Simulate 9 years</button>
             <div id = "Progress"></div>
          </div>
-         <p>   For my master's project at Wageningen University, I used land use derived from arial photographs of eastern Borneo taken in (<a onclick="ShowMalinauMap(2000)" href="#">2000</a>) 
+
+         
+
+             For my master's project at Wageningen University, I used land use derived from arial photographs of eastern Borneo taken in (<a onclick="ShowMalinauMap(2000)" href="#">2000</a>) 
             and (<a onclick="ShowMalinauMap(2009)" href="#">2009</a>) to evaluate hypotheses 
+            
             about the spatial configuration of land use changes and to predict future land use thereupon, for example:  
             <br> <br>  
             <label id = "sized_label"><input type="checkbox" onclick = "CheckBoxIsNoSpatialCorrelation()" class="radio" value="1" id="NoSpatialCorrelation"  name="Hypotheses" checked/>1. There is no spatial correlation between land use transitions.<br></label>
@@ -65,13 +69,24 @@
          </tr>
      </table>
              <br>  
-             You can predict what the future landscape will look like.  I programmed a simple simulation algorithm that predicts future land use in the code of this website. 
-         You can try it if you editing inputs (table or hypothesis), and click the button.
-        
 
+             <div style="width:250; padding-right:20px; float:left;background-color: White; ">
+                <img  src="images/Malinau.png" height ="250px"  border="1" align = "left" />
+            </div>
+
+        <div style="width:450px; padding:20px;   background-color: White; ">
+            You can predict what the future landscape will look like.  I programmed a simple simulation algorithm that predicts future land use in the code of this website. 
+         You can try it if you editing inputs (table or hypothesis), and click the button. 
+
+         <br><br>
+          <i>Graphics: location of Malinau Research Forest on Borneo, Indonesia (left)
+               Simulation of land use change in Malinau (right)
+             </i>
+
+        </div>
+        
       
      <!-- <canvas id="canvas1"   width="200"; height="200"; style="border:2px solid black;background-color : Cyan"></canvas>-->
-
       
    </div>
       <div class="margin_bottom_20 h_divider"></div>
