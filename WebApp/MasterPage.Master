@@ -83,9 +83,9 @@
                 context.stroke();
                     
             </script>
-        
-            <p style = "line-height: 1.2em; font-size: 18px"> <center><b><a href="mailto:amgdebruijn@gmail.com">AMGdeBruijn@gmail.com</a> </b></center></p>
-            <p style = "line-height: 1.2em; font-size: 18px"> <center><b>715-401-0799   </b></center></p>
+
+            <p class = "large"> <center><b><a href="mailto:amgdebruijn@gmail.com">AMGdeBruijn@gmail.com</a> </b></center></p>
+            <p class = "large"> <center><b>715-401-0799   </b></center></p>
                
           </div>
             

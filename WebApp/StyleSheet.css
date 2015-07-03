@@ -7,30 +7,7 @@ h2{
 #header{
    background-color: White; 
 }
-#MarkovChainDefaultPage{
-  display  : block;
-  margin: 0 auto;
-}
-               
-.m {
-   overflow: auto;
-}
-.m::before {
-   content:'';
-   display   : inline-block;
-   vertical-align: middle;
-}
-#rotating-item-wrapper {
-   position: relative;
-   height: 270px;
-}
-.rotating-item
-{
-   display: none;
-   position: absolute;
-   top: 0px;
-   right: 0px;
-}
+
   
 #right_col_ins{
     padding : 10px;	
@@ -188,7 +165,11 @@ p, div
 	padding: 0px;
 	
 }
- 
+p.large
+{
+    line-height: 1.2em;
+    font-size:18px;    
+}
 p.justify {
     text-align: justify;
 	text-justify: inter-word;

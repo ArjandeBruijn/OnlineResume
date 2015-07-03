@@ -20,16 +20,16 @@
 
          
 
-             For my master's project at Wageningen University, I used land use derived from arial photographs of eastern Borneo taken in (<a onclick="ShowMalinauMap(2000)" href="#">2000</a>) 
+             For my master's project at Wageningen University, I used land use derived from aerial photographs of eastern Borneo taken in (<a onclick="ShowMalinauMap(2000)" href="#">2000</a>) 
             and (<a onclick="ShowMalinauMap(2009)" href="#">2009</a>) to evaluate hypotheses 
             
-            about the spatial configuration of land use changes and to predict future land use thereupon, for example:  
+            about patterns of land use changes and to predict future land use, for example:  
             <br> <br>  
             <label id = "sized_label"><input type="checkbox" onclick = "CheckBoxIsNoSpatialCorrelation()" class="radio" value="1" id="NoSpatialCorrelation"  name="Hypotheses" checked/>1. There is no spatial correlation between land use transitions.<br></label>
             <label id = "sized_label"><input type="checkbox" onclick = "CheckBoxIsAllAroundDevelopedArea()" class="radio" value="1" id="AllAroundDevelopedArea"  name="Hypotheses"/>2. Land use transitions occur near settlements.<br></label>
             <label id = "sized_label"><input type="checkbox" onclick = "CheckBoxIsAllAroundWater()" class="radio" value="1" id="AllAroundWater"  name="Hypotheses"/>3.Land use transitions occur near water.<br></label>
              <br>  
-            <p>When you further assume some ratios of land use transitions, per the table below for the period of 2000-2009:
+            <p>Given the following land use transition rates for the period of 2000-2009:
             <br></br>
              <table id = "LUCtable" bgcolor = white border="1">
         <tr>
@@ -76,8 +76,9 @@
 
         <div style="width:450px; padding:20px;   background-color: White; ">
             You can predict what the future landscape will look like.  I programmed a simple simulation algorithm that predicts future land use in the code of this website. 
-         You can try it if you editing inputs (table or hypothesis), and click the button. 
-
+         You can try it by selecting one of the three hypotheses and/or changing the transition rates in the table and clicking the "Simulate 9 years" button. 
+         Note that the simulation be slow when you combine large transition values with the second or third hypothesis. 
+          
          <br><br>
           <i>Graphics: location of Malinau Research Forest on Borneo, Indonesia (left)
                Simulation of land use change in Malinau (right)
@@ -97,23 +98,36 @@
          <div  style="width:460px; height: 290px;   float:left; padding:10px; background-color : White">
              <img  height="290" width="460"  src="images/lui_big.jpg" height ="250px"/>
              <!--<p>Click to enlarge</p>-->
+             
+            
          </div>
-         <p>     I have been using the <a href="http://www.landis-ii.org/">LANDIS</a> model for more than three years but I was missing an interface to fascilitate my analyses. So I ended up developing my own. It is a windows forms application
-            written in C#  developed in .Net 3.5. The interface consists of a file tree (on the left) where you add a Landis scenario file. A Landis scenario file is a simple ascii in which 
-            other input files and some settings for the model are specified. When you add a scenario, the program will read that file and check for any pathnames in that file (i.e. other input files)  
+          <p>
+          The <a href="http://www.landis-ii.org/">LANDIS-II</a> Forest Landscape Simulation Model lacked a user interface to facilitate analyses. I developed one. 
+         
+            It is a Windows Forms application written in C#  developed in .Net 3.5. 
+            
+            The interface consists of a file tree (on the left) where you add a LANDIS scenario file, a simple ascii in which other input files and some settings for the model are specified. 
+            
+            When you add a scenario, the program will read that file and check for any pathnames in that file (i.e. other input files)  
             and adds those to the file tree. Additionally, the user can start a simulation and the user interface will periodically check whether there are new output files which it will add to the file tree
-            as well. This way, all the relevant files (input and output) are shown in the file tree. The user can have a closer look at a file by dragging it from the file tree into 
-            the work space (on the right). The work space is simply a surface where you can display one or many dockable screens             
+            as well. The work space is simply a surface where you can display one or many dockable screens             
             (using <a href="http://www.codeproject.com/Articles/25976/Visual-Studio-IDE-like-Dock-Container">a Visual Studio IDE like Dock Container</a> ). 
-            Input and output files that are in the tree view can be displayed as maps, based on <a href="http://mapwingis.codeplex.com/">a freeware geographics program</a>, 
-            graphs that use the free software called <a href="http://sourceforge.net/projects/zedgraph/">ZedGraph,</a>  
-            or spreadsheets that use  <a href="http://www.codeproject.com/Articles/691749/Free-NET-Spreadsheet-Control">a Free .NET Spreadsheet Control</a>
-            or in a text editor by dragging the file from the filetree and dropping it in the work space. 
-            The landis user interface is currently used for landis instruction workshops by the university of portland as well as ~10 individual landis users.
-        </p>
-
-    
- 
+            
+            
+            
+            The user views files in one of these window types by dragging the file name from the file view and dropping it in the work space.
+             
+            The new LANDIS user interface is currently used in LANDIS instruction workshops by the university of portland and by as some individual users as well.
+        
+        Input and output files in the file view can be displayed in the following formats:
+    <ul>
+                  <li >Maps, based on <a href="http://mapwingis.codeplex.com/">a freeware geographics program</a> </li>
+                  <li> Graphs using the free software called <a href="http://sourceforge.net/projects/zedgraph/">ZedGraph</a></li>
+                  <li> Spreadsheets that use  <a href="http://www.codeproject.com/Articles/691749/Free-NET-Spreadsheet-Control">a Free .NET Spreadsheet Control</a></li>
+                  <li> A text editor  </li>
+                 
+            </ul>
+ </p>
    </div>
     <div class="margin_bottom_20 h_divider"></div>
                     <div class="margin_bottom_10"></div>
