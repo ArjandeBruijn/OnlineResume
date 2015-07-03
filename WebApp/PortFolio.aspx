@@ -80,12 +80,12 @@
          Note that the simulation be slow when you combine large transition values with the second or third hypothesis. 
           
          <br><br>
-          <i>Graphics: location of Malinau Research Forest on Borneo, Indonesia (left)
-               Simulation of land use change in Malinau (right)
-             </i>
+         
 
         </div>
-        
+         <i>Graphics: location of Malinau Research Forest on Borneo, Indonesia (left)
+               Simulation of land use change in Malinau (right)
+             </i>
       
      <!-- <canvas id="canvas1"   width="200"; height="200"; style="border:2px solid black;background-color : Cyan"></canvas>-->
       
@@ -95,12 +95,15 @@
     <div  style="width:940px; height: 500px;   float:left; padding:10px; background-color : White">
         <h2>Landis user interface</h2>
            
-         <div  style="width:460px; height: 290px;   float:left; padding:10px; background-color : White">
-             <img  height="290" width="460"  src="images/lui_big.jpg" height ="250px"/>
+         <div  style="float:left; padding:10px; background-color : White">
+             
+             <img   src="images/lui.png" border="1" />
              <!--<p>Click to enlarge</p>-->
              
-            
+             
+              
          </div>
+        
           <p>
           The <a href="http://www.landis-ii.org/">LANDIS-II</a> Forest Landscape Simulation Model lacked a user interface to facilitate analyses. I developed one. 
          
@@ -128,29 +131,35 @@
                  
             </ul>
  </p>
+     <i>Graphics: Landis User Interface, left file view, right workspace. </i>
    </div>
     <div class="margin_bottom_20 h_divider"></div>
                     <div class="margin_bottom_10"></div>
     <div  style="width:940px; height: 600px;   float:left; padding:10px; background-color : White">
-        <h2>Bayesian calibration</h2>
+        <h2>Bayesian Calibration</h2>
          <div  style="width:525px; height: 250px;   float:left; padding:10px; background-color : White">
            
              <canvas id="DecompCanvas" width="525" height="250" style="border:1px solid">
               
 <!--            <canvas style= "border:1px solid black">Your browser does not support the HTML5 canvas tag.</canvas>-->
-              
+             
          </div>
-         <p> Bayesian calibration is a method to map model probability, given a set of observations. It is used in disciplines as unrelated as medicine, law or internet search engines. 
-               I used it for example to estimate the rate of decomposition of dead wood. If you call the decomposition rate 'b' in percent per year, you can use an algorithm (called a Markov Chain) to reiteratively draw semi-random values for 'b', calculate remaining biomass for 
-               a stretch of time and calculate a score that represents how likely the decomposition rate 'b' is, given the set of measurements. This is what you see at work in the graph left: each red line is a decomposition trajectory for a single 'b'.   
-               There is a tweak in a Markov Chain that assures that decomposition rates that score well (i.e. model compares well with measurements) are selected more frequently.
+         <p> Bayesian calibration is a method to map model probability, given a set of observations. It has been used in disciplines as diverse as medicine, law and internet search engines. 
+               I used it to estimate the rate of wood decomposition. If you call the decomposition rate 'b' in percent per year, you can use an algorithm called a Markov Chain to reiteratively select semi-random values for 'b', calculate remaining biomass for 
+               a stretch of time and calculate a score that represents how likely the decomposition rate 'b' is, given the set of measurements. 
+               
+               <br>
+               
+               This is what you see at work in this graph: each red line is a decomposition trajectory for a single value of 'b'.   
+               There is a tweak in a Markov Chain that assures that decomposition rates that score well (i.e. the model compares well with actual measurements) are selected more frequently.
                It takes a while for the Markov Chain to find this 'hotspot' of high model scores, but after ~100 iterations, the average 'b' of the iterations in the graphs becomes pretty stable at around 7%.So my best estimate of the decomposition rate of the tree logs is 7% per year.
-               The black graph on my home page demonstrates a similar algorithm applied to measured areas of defoliation in Northern Minnesota, compare to a more complicated simulation model.
+               The black graph on my home page demonstrates a similar algorithm applied to measured areas of forest defoliation in Northern Minnesota.
          </p>
          
       
-     
-
+      <br>
+      <i>Graphics: Bayesian Calibration  </i>
+      
       
    </div>
     <script>        StartDecompositionFunctions(); </script>

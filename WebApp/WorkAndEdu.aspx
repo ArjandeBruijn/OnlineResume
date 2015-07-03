@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
  
     <div  style="width:940px;    float:left; padding:10px; background-color : White">
-        <h2><a href="https://ag.purdue.edu/fnr/Pages/default.aspx">Purdue University</a>  - West Lafayette, IN - 2011 to 2015</h2>
+        <h2><a href="https://ag.purdue.edu/fnr/Pages/default.aspx">Purdue University</a>  - West Lafayette, IN - 2011 to present</h2>
         <h3>Responsibilities</h3>
             
             I developed simulations to predict the fate of reintroduced American chestnut trees in the Appalachians. By the mid-1900s, American chestnut was wiped out by a blight that was imported from Japan in the early 1900s. 
