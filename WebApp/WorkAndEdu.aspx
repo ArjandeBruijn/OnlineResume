@@ -15,8 +15,7 @@
             
         <h3>Accomplishments</h3>
         <ul>
-           <li>Developed a module, PnET-Succession, for the LANDIS-II Forest Landscape Simulation Model simulation platform that better incorporates interactions between climate change and competition for light and water between trees. LANDIS is Windows software developed in C#. This required extensive use of C#, Visual Studio 2010, 2013, R and some Python. PnET-Succession is currently used in several universities and the Food and Agricultural Organisation (FAO) of the United Nations. </li>
-           <li>PnET-Succession comes with an installation file I developed in <a href="http://www.jrsoftware.org/isinfo.php">INNO</a>, so I am experienced in the issues that come with transplanting software to other computers. </li>
+           <li>Developed a module, PnET-Succession, for the LANDIS-II Forest Landscape Simulation Model simulation platform that better incorporates interactions between climate change and competition for light and water between trees. LANDIS is Windows software developed in C# using Visual Studio. PnET-Succession is currently used in several universities and the Food and Agricultural Organisation (FAO) of the United Nations. </li>
            <li>Wrote comprehensive technical documentation that I have kept up to date during the development process.</li>
            <li>Additionally I developed a user interface (see <a href="Portfolio.aspx">Portfolio</a>) as a Windows Forms application. The user interface uses techniques like multithreading and BackgroundWorkers to load maps and data. </li>
         </ul>
@@ -49,8 +48,8 @@
      <ul>
         <li><p>Differential long-term effects of climate change and management on stocks and distribution of soil organic carbon in productive grasslands</p> <a href="http://www.biogeosciences.net/9/1997/2012/bg-9-1997-2012.html">(Biogeosciences)</a></li>
      </ul>
-     <h3>Note</h3>
-     <p>This post-doc was predetermined for one year (I was not layed of or fired)</p>
+     
+     
   </div>
     <div class="margin_bottom_10 h_divider"></div>
 
@@ -66,15 +65,14 @@
             <li>Improved the LARCH model user interface which is a plug-in for ArcMap to analyse population viability given fragmented habitat.</li>
             <li>Expanded functionality of the metapopulation simulation model (METAPHOR) interface which operates as a standalone Windows program that uses GIS freeware to embed GIS capabilities into the program interface.</li>
          </ul>
-         <h3>Note</h3>
-         <p>I decided not to extent the one-year contract. </p>
+         
     </div>
     <div class="margin_bottom_10 h_divider"></div>           
     <div  style="width:940px;     float:left; padding:10px; background-color : White">
         <h2>IMK-IFU - Garmisch-Partenkirchen - 2006 to 2009</h2>
         <h3>Responsibilities</h3>
         <p> 
-            I supported the development of a beogeochemical simulation platform "MoBiLE". MoBiLE is a modular plpatform for biogeochemical 
+            I supported the development of a biogeochemical simulation platform "MoBiLE". MoBiLE is a modular plpatform for biogeochemical 
             simulations where the modules are responsible for particular soil biogeochemical unities, like soil water, soil temperature, plant growth, microbial 
             biomass, biochemistry and chemistry. I developed a module that deals with the microbial biomass part of the platform.
         </p>

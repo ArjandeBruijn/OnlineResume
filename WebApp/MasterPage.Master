@@ -26,25 +26,9 @@
         
         <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
     </head>
-
-    <style>
-        
-     
-    body {
-	    margin:0;
-       background-color: Beige;
-    }
-    #container {
-      width : 960px;
-      margin : 0 auto;
-      padding : 0 0px;
-      background-color    : White;
-    }
-    </style>
-
-    <body >
-        <div id="container">
-                
+ 
+    <body style=" margin:0;background-color: Beige">
+        <div style=" width : 960px; margin : 0 auto;padding : 0 0px; background-color    : White;">                
                 <div id = "header">
                     <div id="nav_banner">
                        <img   src="images\pass.jpg"  align="left">

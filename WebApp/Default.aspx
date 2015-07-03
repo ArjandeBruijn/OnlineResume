@@ -29,7 +29,7 @@
               </h3> 
             </ul>
              <i>Graphics: geospatial model of gypsy moth outbreak in Maryland (above); 
-               simulation of forest tent caterpillar population dynamics in northern Minnesota (below)
+               simulation of damage by forest tent caterpillars in northern Minnesota (below)
              </i>
 
 

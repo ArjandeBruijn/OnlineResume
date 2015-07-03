@@ -65,9 +65,9 @@
          </tr>
      </table>
              <br>  
-             you can predict what the future landscape will look like.  I programmed a simple simulation algorithm that predicts future land use in the code of this website. 
+             You can predict what the future landscape will look like.  I programmed a simple simulation algorithm that predicts future land use in the code of this website. 
          You can try it if you editing inputs (table or hypothesis), and click the button.
-        </p>
+        
 
       
      <!-- <canvas id="canvas1"   width="200"; height="200"; style="border:2px solid black;background-color : Cyan"></canvas>-->
