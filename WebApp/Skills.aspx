@@ -21,7 +21,7 @@
     </div>
      <div style="width:45%;float:left; padding : 10px">
          <img src="images\ProgramIcons\cpp.png"   align="left">
-        More than 3 years of experience developing code while I was working for IMK-IFU in Germany (see <a href="WorkAndEdu.aspx">Work & Education</a>).   
+        More than 3 years of experience developing code for my PhD.     
     </div>
     <div style="width:45%;float:left; padding : 10px">
          <img src="images\ProgramIcons\VisualBasic.png"   align="left">
@@ -29,17 +29,17 @@
     </div>
     <div style="width:45%;float:left; padding : 10px">
            <img src="images\ProgramIcons\HTML5.png"   align="left">
-         I used HTML5 for this website. 
+         I developed this website using HTML5. 
            
     </div>
     <div style="width:45%;float:left; padding : 10px">
           <img src="images\ProgramIcons\CSS.png"   align="left">
-          I used CSS for this website. 
+          I used CSS for the styling of this website. 
            
     </div>
     <div style="width:45%;float:left; padding : 10px">
           <img src="images\ProgramIcons\javascript.png"   align="left">
-         I used JavaScript for this website. 
+         I used JavaScript for interactive elements in this website.      
     </div>
 
 
@@ -51,7 +51,7 @@
     </div>
     <div style="width:45%;float:left; padding : 10px">
           <img src="images\ProgramIcons\python.jpg"   align="left">
-         I have used Python to reorganize data in large ASCII files with numeric data.
+         I have used Python to reorganize data in large .txt files, e.g. modifying data processing scripts from colleagues.
          
     </div>
     <div style="width:45%;float:left; padding : 10px">
@@ -60,23 +60,22 @@
     </div>
     <div style="width:45%;float:left; padding : 10px">
           <img src="images\ProgramIcons\Matlab.png"   align="left">
-         Approximately 8 years of occasional use for statistical analysis. Ran simulation models that colleagues developed in MatLab to see how they worked. Made small adjustments to scripts in MatLab.
+         Approximately 8 years of occasional use for statistical analysis. Ran simulation models that colleagues developed in MatLab to see how they worked. Made small changes to models.
     </div>
     <div style="width:45%;float:left; padding : 10px">
           <img src="images\ProgramIcons\tortoisesvn.png"   align="left">
-         More than 8 years of experience with software versioning through TortoiseSVN. I use SVN to access my projects on <a href="https://github.com/ArjandeBruijn/">github</a>. 
+         More than 8 years of experience with software versioning through TortoiseSVN. Some of my projects (including this web page) are on  on <a href="https://github.com/ArjandeBruijn/">github</a>. 
          
     </div>
     <div style="width:45%;float:left; padding : 10px">
-         <img src="images\ProgramIcons\SPSS.png"   align="left">
+         <p> <img src="images\ProgramIcons\SPSS.png"   align="left">
          Used SPSS for statistics. Approximately 8 years experience but it never was a very dominant part of my time.
-          
+         </p>   
     </div>
     
     <div style="width:45%;float:left; padding : 10px">
          <img src="images\ProgramIcons\INNO.png"   align="left">
-         Approximately 4 years of experience writing and modifying <a href="http://www.jrsoftware.org/isinfo.php">INNO</a> Setup file protocols. 
-
+         Approximately 4 years of experience writing and modifying Inno Setup file protocols. 
     </div>
     <div style="width:45%;float:left; padding : 10px">
          <img src="images\ProgramIcons\arcgis.png"   align="left">
@@ -84,7 +83,9 @@
     </div>
     <div style="width:45%;float:left; padding : 10px">
            <img src="images\ProgramIcons\GIMP.png"   align="left">
-         I use GIMP a lot for all kinds of graphical operations.
+         I used GIMP a lot for all kinds of simple graphical operations. For example the logos on this page and some simple adjustments to 
+         the maps that I show in portfolio and the main page.
+          
     </div>
     <div style="width:45%;float:left; padding : 10px">
           <img src="images\ProgramIcons\firebird.png"   align="left">
@@ -94,7 +95,7 @@
      <div style="width:45%;float:left; padding : 10px">
            <img src="images\ProgramIcons\SQL.png"   align="left">
               
-          I used SQL statements to store data in the ArcGIS plugin I worked on at ALTERRA in the Netherlands.
+          I used SQL statements to store data in the ArcGIS plugin I worked on for 1 year.
            
     </div>
   

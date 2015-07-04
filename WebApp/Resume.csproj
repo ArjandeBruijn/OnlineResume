@@ -65,7 +65,6 @@
     <Content Include="jquery.mobile.custom.theme.css" />
     <Content Include="js\DecompositionFunctions.js" />
     <Content Include="Default.aspx" />
-    <Content Include="Education.aspx" />
     <Content Include="js\Checkboxes.js" />
     <Content Include="js\DecompositionMeasurements.js" />
     <Content Include="js\Graph.js" />
@@ -100,10 +99,6 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Education.aspx.cs">
-      <DependentUpon>Education.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Portfolio.aspx.cs">
       <DependentUpon>Portfolio.aspx</DependentUpon>

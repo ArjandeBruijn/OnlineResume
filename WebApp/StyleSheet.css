@@ -7,36 +7,13 @@ h2{
 #header{
    background-color: White; 
 }
-
-      #MarkovChainDefaultPage
+#MarkovChainDefaultPage
                 {
                     display: block;
                     margin: 0 auto;
                 }
                
-           
-	            .m 
-	            {
-	                overflow: auto;
-	            }
-	            .m::before {
-	                content:'';
-	                display: inline-block;
-	                vertical-align: middle;
-	            }
-	            #rotating-item-wrapper {
-	            position: relative;
-                height: 270px;
-	
-            }
-            .rotating-item
-            {
-                display: none;
-	            position: absolute;
-	            top: 0;
-	            left: 0;
-            }
-	
+   
 #right_col_ins{
     padding : 10px;	
     border: 2px solid black;

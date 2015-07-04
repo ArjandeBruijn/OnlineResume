@@ -8,18 +8,16 @@
  <div  style="width:940px;   float:left; padding:10px; background-color : White">
         
         <h1 align="center">Professional background</h1>
-        <div  style=" padding-left:50px; padding-right:90px; ">
         My career path has centered on forestry and land use modeling, incorporating biogeochemistry, statistics, and development of simulation software. I have been working in academia for almost a decade and would like to move to the private sector. I specialize in developing geospatial software applications. Non-technical skills include giving presentations, fluency in English, German, and Dutch, and working within large, widely dispersed development teams.
-        </div>
         <br> 
            <h1>Summary of Qualifications</h1>
-          <div style="line-height:30px; width:628px; float:left; padding-left:10px; padding-right: 20px; background-color :White;">
+          <div style="line-height:30px; background-color:#eeeeee; height:300px; width:628px; float:left; padding-left:10px; padding-right: 20px; background-color :White;">
             
             <ul>
               <h3 >
                   <li >More than 8 years of experience in software development and GIS </li>
                   <div class="margin_bottom_5"></div>
-                  <li> Fluent in most coding languages (see <a href="Skills.aspx">skills</a> for details)</li>
+                  <li> Fluent in most coding languages (see <a href="Skills.aspx">skills</a>  page for details)</li>
                   <div class="margin_bottom_5"></div>
                   <li> Developer of efficient code</li>
                   <div class="margin_bottom_5"></div>
@@ -38,7 +36,31 @@
           </div>
 
 
-      
+          <style>
+                .m 
+	            {
+	                overflow: auto;
+	            }
+	            .m::before {
+	                content:'';
+	                display: inline-block;
+	                vertical-align: middle;
+	            }
+	            #rotating-item-wrapper {
+	            position: relative;
+                height: 270px;
+	
+            }
+            .rotating-item
+            {
+                display: none;
+	            position: absolute;
+	            top: 0;
+	            left: 0;
+            }
+	
+          </style>
+
           
          <div class="m" id="rotating-item-wrapper" background-color : Yellow">  
         
