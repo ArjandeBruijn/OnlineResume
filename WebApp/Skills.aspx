@@ -16,12 +16,12 @@
     </div>-->
     <div style="width:45%;float:left; padding : 10px">
           <img src="images\ProgramIcons\csharp.png"   align="left">
-         More than 3 years of experience. The LANDIS user interface I describe on my Portfolio page was developed in C#.
+         More than 3 years of extensive experience. The LANDIS user interface I describe on my Portfolio page was developed in C#.
                  
     </div>
      <div style="width:45%;float:left; padding : 10px">
          <img src="images\ProgramIcons\cpp.png"   align="left">
-        More than 3 years of experience developing code for my PhD.     
+        More than 3 years of extensive experience.   
     </div>
     <div style="width:45%;float:left; padding : 10px">
          <img src="images\ProgramIcons\VisualBasic.png"   align="left">
@@ -29,17 +29,16 @@
     </div>
     <div style="width:45%;float:left; padding : 10px">
            <img src="images\ProgramIcons\HTML5.png"   align="left">
-         I developed this website using HTML5. 
-           
+         This website uses HTML5. 
     </div>
     <div style="width:45%;float:left; padding : 10px">
           <img src="images\ProgramIcons\CSS.png"   align="left">
-          I used CSS for the styling of this website. 
+          This website uses CSS.  
            
     </div>
     <div style="width:45%;float:left; padding : 10px">
           <img src="images\ProgramIcons\javascript.png"   align="left">
-         I used JavaScript for interactive elements in this website.      
+         This website uses JavaScript.  
     </div>
 
 
@@ -47,7 +46,7 @@
 
     <div style="width:45%;float:left; padding : 10px">
           <img src="images\ProgramIcons\VisualStudioLogo.jpg"   align="left">
-           More than 8 years of experience. I am still primarily using Visual Studio 2010 because of budgetary constraints, but I have also tried more recent versions of Visual Studio Express.
+           More than 8 years of extensive experience. I am still primarily using Visual Studio 2010 because of budgetary constraints, but I have also tried more recent versions of Visual Studio Express.
     </div>
     <div style="width:45%;float:left; padding : 10px">
           <img src="images\ProgramIcons\python.jpg"   align="left">
@@ -79,7 +78,8 @@
     </div>
     <div style="width:45%;float:left; padding : 10px">
          <img src="images\ProgramIcons\arcgis.png"   align="left">
-         I worked for 1 year on a simulation model that was designed as a plugin for ArcGIS. For the past 3 years at Purdue University, I have used ArcGIS to modify input and output for <a href="http://www.landis-ii.org/">LANDIS</a>.
+         Approximately 6 years of extensive experience. I worked for 1 year on a simulation model that was designed as a plugin for ArcGIS. 
+         I have used ArcGIS to modify input and output for <a href="http://www.landis-ii.org/">LANDIS</a>.
     </div>
     <div style="width:45%;float:left; padding : 10px">
            <img src="images\ProgramIcons\GIMP.png"   align="left">

@@ -14,22 +14,19 @@
         <h2>Deforestation in Indonesia</h2>
          <div  style="width:420px; height: 570;   float:right; padding:20px; background-color : White">
             <canvas id="canvas_Malinau"   width="400px" height="550px" style="border:1px solid black;"></canvas>
-            <button  onclick = "Simulate1()" style="width: 400px; height: 40px; background-color: DarkGray" type="button">Simulate 9 years</button>
+            <button  onclick = "Simulate1()" style="width: 185px; float:left; height: 30px; background-color: DarkGray" type="button">Simulate 10 years</button>
+            <button  onclick = "ShowMalinauMap(2000)" style="width: 185px;  float:left; height: 30px; background-color: DarkGray" type="button">Reset</button>
             <div id = "Progress"></div>
          </div>
-
-         
-
-             For my master's project at Wageningen University, I used land use derived from aerial photographs of eastern Borneo taken in (<a onclick="ShowMalinauMap(2000)" href="#">2000</a>) 
-            and (<a onclick="ShowMalinauMap(2009)" href="#">2009</a>) to evaluate hypotheses 
+             For my master's project at Wageningen University, I used land use derived from aerial photographs of eastern Borneo 
+             to evaluate hypotheses about patterns of land use changes and to predict future land use, for example:    
             
-            about patterns of land use changes and to predict future land use, for example:  
             <br> <br>  
             <label id = "sized_label"><input type="checkbox" onclick = "CheckBoxIsNoSpatialCorrelation()" class="radio" value="1" id="NoSpatialCorrelation"  name="Hypotheses" checked/>1. There is no spatial correlation between land use transitions.<br></label>
             <label id = "sized_label"><input type="checkbox" onclick = "CheckBoxIsAllAroundDevelopedArea()" class="radio" value="1" id="AllAroundDevelopedArea"  name="Hypotheses"/>2. Land use transitions occur near settlements.<br></label>
             <label id = "sized_label"><input type="checkbox" onclick = "CheckBoxIsAllAroundWater()" class="radio" value="1" id="AllAroundWater"  name="Hypotheses"/>3.Land use transitions occur near water.<br></label>
              <br>  
-            <p>Given the following land use transition rates for the period of 2000-2009:
+            <p>Given the following land use transition rates for the period of 2000-2010:
             <br></br>
              <table id = "LUCtable" bgcolor = white border="1">
         <tr>
@@ -75,8 +72,8 @@
             </div>
 
         <div style="width:450px; padding:20px;   background-color: White; ">
-            You can predict what the future landscape will look like.  I programmed a simple simulation algorithm that predicts future land use in the code of this website. 
-         You can try it by selecting one of the three hypotheses and/or changing the transition rates in the table and clicking the "Simulate 9 years" button. 
+            I programmed a simple algorithm that predicts future land use in the code of this website. 
+         You can predict what the future landscape will look like by selecting one of the three hypotheses and/or changing the transition rates in the table and clicking the "Simulate 10 years" button. 
          Note that the simulation be slow when you combine large transition values with the second or third hypothesis. 
           
          <br><br>
@@ -132,6 +129,7 @@
             </ul>
  </p>
      <i>Graphics: Landis User Interface, left file view, right workspace. </i>
+     <br><br>
    </div>
     <div class="margin_bottom_20 h_divider"></div>
                     <div class="margin_bottom_10"></div>

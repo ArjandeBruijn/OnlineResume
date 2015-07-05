@@ -278,7 +278,7 @@ function SimulateAllAroundDevelopedArea() {
 
         if (luc[i] != null) {
             Progress = Math.round(100 * (cnt / SumLandUseChanges));
-            Year = Math.floor(year_start + 9 * (Progress / 100));
+            Year = Math.floor(year_start + 10 * (Progress / 100));
             cnt++;
             if (Progress >= OldProgress + 10) {
                 DrawImage();
