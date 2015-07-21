@@ -31,13 +31,13 @@
         <div style=" width : 960px; margin : 0 auto;padding : 0 0px; background-color    : White;">                
                 <div id = "header">
                     <div id="nav_banner">
-                       <img   src="images\pass.jpg"  align="left">
+                       <img   src="resources\pass.jpg"  align="left">
                     </div>
-                    <div id="section_banner">
-                        <br>
+                    <div style=" width:350px; float:left;padding:10px;">
                         <font face="Century Gothic" size="5"><b>Arjan de Bruijn</b></font>
                         <font face="Century Gothic" size="4.5"><br>Fort Collins, Colorado</font>
-                     
+                        <p></p>
+                        <font face="Century Gothic" size="3"><a href="mailto:amgdebruijn@gmail.com">AMGdeBruijn@gmail.com</a></font>
                     </div>
                    
                     
@@ -67,7 +67,7 @@
                  
         </div>
 
-          
+          <!--
         <div style="margin : 0 auto; padding : 0 0px; position:fixed; top: 90%; left  : 50%; margin-left : -480px; position:fixed; background-color: White; height:100px;  bottom: 0;" >
                   
             <canvas id="BottomDivider" width="960" height="5" ;"></canvas>
@@ -84,10 +84,8 @@
                     
             </script>
 
-            <p class = "large"> <center><b><a href="mailto:amgdebruijn@gmail.com">AMGdeBruijn@gmail.com</a> </b></center></p>
-            <p class = "large"> <center><b>715-401-0799   </b></center></p>
-               
-          </div>
+                 
+          </div> -->
             
     </body>
 </html>
