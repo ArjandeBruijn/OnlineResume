@@ -49,7 +49,7 @@
              
            <canvas id="MarkovChainDefaultPage" width= 900 height="175" style="background-color:black; ">Your browser does not support the HTML5 canvas tag.
            </canvas>
-           <br><br>
+           <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
      
     <script src='js/MarkovChainModel.js'></script>
