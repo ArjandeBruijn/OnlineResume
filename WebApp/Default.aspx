@@ -25,6 +25,8 @@
                   <div class="margin_bottom_5"></div>
                   <li> Hard-working</li>
                   <div class="margin_bottom_5"></div>
+                  <li> Willing able and accustomed to travel up to 25%</li>
+                  <div class="margin_bottom_5"></div>
                   <li> Authorized to work in the USA</li>
                   <div class="margin_bottom_5"></div>
                   
@@ -45,10 +47,10 @@
 
 
            
-            
-
+            <div class="margin_bottom_20"></div>
+     <br>
              <i>Graphics: Simulation of damage by forest tent caterpillars in northern Minnesota </i>
-             
+             <br>
            <canvas id="MarkovChainDefaultPage" width= 900 height="175" style="background-color:black; ">Your browser does not support the HTML5 canvas tag.
            </canvas>
            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>

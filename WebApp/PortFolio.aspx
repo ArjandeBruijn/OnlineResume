@@ -8,9 +8,9 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="margin_bottom_10"></div>
-     <!--
-     <div  style="width:940px; height: 800px;   float:left; padding:10px; background-color : Red">
-            <h2>Forest dynamics simulation</h2>
+     
+     <div  style="width:940px;    float:left; background-color : White">
+            <h2>Defoliation in Green Ridge State Forest</h2>
             <style>
                 .m 
 	            {
@@ -23,7 +23,7 @@
 	            }
 	            #rotating-item-wrapper {
 	            position: relative;
-                height: 270px;
+                height: 420px;
 	
             }
             .rotating-item
@@ -35,76 +35,89 @@
             }
 	
           </style>
-
-           <div class="m" id="rotating-item-wrapper" background-color : Yellow">  
+           <div  style="width:420px; height: 430px;   float:left; padding:20px; background-color : White">
+               <div class="m" id="rotating-item-wrapper" background-color : Yellow">  
         
-                    <img  src="resources/Maryland/NewMaryland_background.jpg" height ="250px" class="rotating-item" border="1" />
-                    <img  src="resources/Maryland/GypsyMoth14.png" height ="250px" class="rotating-item"  />
-                    <img  src="resources/Maryland/GypsyMoth15.png" height ="250px" class="rotating-item"  />
-                    <img  src="resources/Maryland/GypsyMoth21.png" height ="250px" class="rotating-item"  />
-                    <img  src="resources/Maryland/GypsyMoth22.png" height ="250px" class="rotating-item"  />
-                    <img  src="resources/Maryland/GypsyMoth29.png" height ="250px" class="rotating-item"  />
-                    <img  src="resources/Maryland/GypsyMoth35.png" height ="250px" class="rotating-item"  />   
-                    <img  src="resources/Maryland/GypsyMoth36.png" height ="250px" class="rotating-item"  />  
-                    <img  src="resources/Maryland/GypsyMoth42.png" height ="250px" class="rotating-item"  />  
-                    <img  src="resources/Maryland/GypsyMoth43.png" height ="250px" class="rotating-item"  />  
-                    <img  src="resources/Maryland/GypsyMoth44.png" height ="250px" class="rotating-item"  />  
-                    <img  src="resources/Maryland/GypsyMoth51.png" height ="250px" class="rotating-item"  />  
-                    <img  src="resources/Maryland/GypsyMoth52.png" height ="250px" class="rotating-item"  />  
-                    <img  src="resources/Maryland/GypsyMoth53.png" height ="250px" class="rotating-item"  />  
-                    <img  src="resources/Maryland/GypsyMoth54.png" height ="250px" class="rotating-item"  />  
-                    <img  src="resources/Maryland/GypsyMoth61.png" height ="250px" class="rotating-item"  />  
-                    <img  src="resources/Maryland/GypsyMoth62.png" height ="250px" class="rotating-item"  />  
-                    <img  src="resources/Maryland/GypsyMoth63.png" height ="250px" class="rotating-item"  />  
-                    <img  src="resources/Maryland/GypsyMoth69.png" height ="250px" class="rotating-item"  /> 
-                    <img  src="resources/Maryland/GypsyMoth77.png" height ="250px" class="rotating-item"  /> 
-                    <img  src="resources/Maryland/GypsyMoth78.png" height ="250px" class="rotating-item"  /> 
-                    <img  src="resources/Maryland/GypsyMoth84.png" height ="250px" class="rotating-item"  /> 
-                    <img  src="resources/Maryland/GypsyMoth85.png" height ="250px" class="rotating-item"  /> 
-                    <img  src="resources/Maryland/GypsyMoth86.png" height ="250px" class="rotating-item"  /> 
-                    <img  src="resources/Maryland/GypsyMoth92.png" height ="250px" class="rotating-item"  /> 
-                    <img  src="resources/Maryland/GypsyMoth93.png" height ="250px" class="rotating-item"  /> 
-                    <img  src="resources/Maryland/GypsyMoth99.png" height ="250px" class="rotating-item"  /> 
-                    <img  src="resources/Maryland/GypsyMoth100.png" height ="250px" class="rotating-item"  /> 
-                    <img  src="resources/Maryland/GypsyMoth107.png" height ="250px" class="rotating-item"  /> 
-                    <img  src="resources/Maryland/GypsyMoth108.png" height ="250px" class="rotating-item"  /> 
-                    <img  src="resources/Maryland/GypsyMoth115.png" height ="250px" class="rotating-item"  /> 
-                    <img  src="resources/Maryland/GypsyMoth122.png" height ="250px" class="rotating-item"  /> 
-                    <img  src="resources/Maryland/GypsyMoth123.png" height ="250px" class="rotating-item"  /> 
-                    <img  src="resources/Maryland/GypsyMoth124.png" height ="250px" class="rotating-item"  /> 
-                    <img  src="resources/Maryland/GypsyMoth125.png" height ="250px" class="rotating-item"  /> 
-                    <img  src="resources/Maryland/GypsyMoth126.png" height ="250px" class="rotating-item"  /> 
-                    <img  src="resources/Maryland/GypsyMoth127.png" height ="250px" class="rotating-item"  /> 
-                    <img  src="resources/Maryland/GypsyMoth134.png" height ="250px" class="rotating-item"  /> 
-                    <img  src="resources/Maryland/GypsyMoth135.png" height ="250px" class="rotating-item"  /> 
-                    <img  src="resources/Maryland/GypsyMoth136.png" height ="250px" class="rotating-item"  /> 
-                    <img  src="resources/Maryland/GypsyMoth142.png" height ="250px" class="rotating-item"  /> 
-                    <img  src="resources/Maryland/GypsyMoth143.png" height ="250px" class="rotating-item"  /> 
-                    <img  src="resources/Maryland/GypsyMoth144.png" height ="250px" class="rotating-item"  /> 
-                    <img  src="resources/Maryland/GypsyMoth150.png" height ="250px" class="rotating-item"  /> 
-                    <img  src="resources/Maryland/GypsyMoth151.png" height ="250px" class="rotating-item"  /> 
-                    <img  src="resources/Maryland/GypsyMoth152.png" height ="250px" class="rotating-item"  /> 
-                    <img  src="resources/Maryland/GypsyMoth160.png" height ="250px" class="rotating-item"  /> 
-                    <img  src="resources/Maryland/GypsyMoth160.png" height ="250px" class="rotating-item"  /> 
-                    <img  src="resources/Maryland/GypsyMoth161.png" height ="250px" class="rotating-item"  /> 
-                    <img  src="resources/Maryland/GypsyMoth162.png" height ="250px" class="rotating-item"  /> 
-                    <img  src="resources/Maryland/GypsyMoth169.png" height ="250px" class="rotating-item"  /> 
-                    <img  src="resources/Maryland/GypsyMoth170.png" height ="250px" class="rotating-item"  /> 
-                    <img  src="resources/Maryland/GypsyMoth176.png" height ="250px" class="rotating-item"  /> 
-                    <img  src="resources/Maryland/GypsyMoth177.png" height ="250px" class="rotating-item"  /> 
-                    <img  src="resources/Maryland/GypsyMoth186.png" height ="250px" class="rotating-item"  /> 
-                    <img  src="resources/Maryland/GypsyMoth187.png" height ="250px" class="rotating-item"  /> 
-                    <img  src="resources/Maryland/GypsyMoth188.png" height ="250px" class="rotating-item"  /> 
-                    <img  src="resources/Maryland/GypsyMoth189.png" height ="250px" class="rotating-item"  /> 
-                    <img  src="resources/Maryland/GypsyMoth196.png" height ="250px" class="rotating-item"  /> 
+                    <img  src="resources/Maryland/NewMaryland_background.jpg" height ="400px" class="rotating-item" border="1" />
+                    <img  src="resources/Maryland/GypsyMoth14.png" height ="400px" class="rotating-item"  />
+                    <img  src="resources/Maryland/GypsyMoth15.png" height ="400px" class="rotating-item"  />
+                    <img  src="resources/Maryland/GypsyMoth21.png" height ="400px" class="rotating-item"  />
+                    <img  src="resources/Maryland/GypsyMoth22.png" height ="400px" class="rotating-item"  />
+                    <img  src="resources/Maryland/GypsyMoth29.png" height ="400px" class="rotating-item"  />
+                    <img  src="resources/Maryland/GypsyMoth35.png" height ="400px" class="rotating-item"  />   
+                    <img  src="resources/Maryland/GypsyMoth36.png" height ="400px" class="rotating-item"  />  
+                    <img  src="resources/Maryland/GypsyMoth42.png" height ="400px" class="rotating-item"  />  
+                    <img  src="resources/Maryland/GypsyMoth43.png" height ="400px" class="rotating-item"  />  
+                    <img  src="resources/Maryland/GypsyMoth44.png" height ="400px" class="rotating-item"  />  
+                    <img  src="resources/Maryland/GypsyMoth51.png" height ="400px" class="rotating-item"  />  
+                    <img  src="resources/Maryland/GypsyMoth52.png" height ="400px" class="rotating-item"  />  
+                    <img  src="resources/Maryland/GypsyMoth53.png" height ="400px" class="rotating-item"  />  
+                    <img  src="resources/Maryland/GypsyMoth54.png" height ="400px" class="rotating-item"  />  
+                    <img  src="resources/Maryland/GypsyMoth61.png" height ="400px" class="rotating-item"  />  
+                    <img  src="resources/Maryland/GypsyMoth62.png" height ="400px" class="rotating-item"  />  
+                    <img  src="resources/Maryland/GypsyMoth63.png" height ="400px" class="rotating-item"  />  
+                    <img  src="resources/Maryland/GypsyMoth69.png" height ="400px" class="rotating-item"  /> 
+                    <img  src="resources/Maryland/GypsyMoth77.png" height ="400px" class="rotating-item"  /> 
+                    <img  src="resources/Maryland/GypsyMoth78.png" height ="400px" class="rotating-item"  /> 
+                    <img  src="resources/Maryland/GypsyMoth84.png" height ="400px" class="rotating-item"  /> 
+                    <img  src="resources/Maryland/GypsyMoth85.png" height ="400px" class="rotating-item"  /> 
+                    <img  src="resources/Maryland/GypsyMoth86.png" height ="400px" class="rotating-item"  /> 
+                    <img  src="resources/Maryland/GypsyMoth92.png" height ="400px" class="rotating-item"  /> 
+                    <img  src="resources/Maryland/GypsyMoth93.png" height ="400px" class="rotating-item"  /> 
+                    <img  src="resources/Maryland/GypsyMoth99.png" height ="400px" class="rotating-item"  /> 
+                    <img  src="resources/Maryland/GypsyMoth100.png" height ="400px" class="rotating-item"  /> 
+                    <img  src="resources/Maryland/GypsyMoth107.png" height ="400px" class="rotating-item"  /> 
+                    <img  src="resources/Maryland/GypsyMoth108.png" height ="400px" class="rotating-item"  /> 
+                    <img  src="resources/Maryland/GypsyMoth115.png" height ="400px" class="rotating-item"  /> 
+                    <img  src="resources/Maryland/GypsyMoth122.png" height ="400px" class="rotating-item"  /> 
+                    <img  src="resources/Maryland/GypsyMoth123.png" height ="400px" class="rotating-item"  /> 
+                    <img  src="resources/Maryland/GypsyMoth124.png" height ="400px" class="rotating-item"  /> 
+                    <img  src="resources/Maryland/GypsyMoth125.png" height ="400px" class="rotating-item"  /> 
+                    <img  src="resources/Maryland/GypsyMoth126.png" height ="400px" class="rotating-item"  /> 
+                    <img  src="resources/Maryland/GypsyMoth127.png" height ="400px" class="rotating-item"  /> 
+                    <img  src="resources/Maryland/GypsyMoth134.png" height ="400px" class="rotating-item"  /> 
+                    <img  src="resources/Maryland/GypsyMoth135.png" height ="400px" class="rotating-item"  /> 
+                    <img  src="resources/Maryland/GypsyMoth136.png" height ="400px" class="rotating-item"  /> 
+                    <img  src="resources/Maryland/GypsyMoth142.png" height ="400px" class="rotating-item"  /> 
+                    <img  src="resources/Maryland/GypsyMoth143.png" height ="400px" class="rotating-item"  /> 
+                    <img  src="resources/Maryland/GypsyMoth144.png" height ="400px" class="rotating-item"  /> 
+                    <img  src="resources/Maryland/GypsyMoth150.png" height ="400px" class="rotating-item"  /> 
+                    <img  src="resources/Maryland/GypsyMoth151.png" height ="400px" class="rotating-item"  /> 
+                    <img  src="resources/Maryland/GypsyMoth152.png" height ="400px" class="rotating-item"  /> 
+                    <img  src="resources/Maryland/GypsyMoth160.png" height ="400px" class="rotating-item"  /> 
+                    <img  src="resources/Maryland/GypsyMoth160.png" height ="400px" class="rotating-item"  /> 
+                    <img  src="resources/Maryland/GypsyMoth161.png" height ="400px" class="rotating-item"  /> 
+                    <img  src="resources/Maryland/GypsyMoth162.png" height ="400px" class="rotating-item"  /> 
+                    <img  src="resources/Maryland/GypsyMoth169.png" height ="400px" class="rotating-item"  /> 
+                    <img  src="resources/Maryland/GypsyMoth170.png" height ="400px" class="rotating-item"  /> 
+                    <img  src="resources/Maryland/GypsyMoth176.png" height ="400px" class="rotating-item"  /> 
+                    <img  src="resources/Maryland/GypsyMoth177.png" height ="400px" class="rotating-item"  /> 
+                    <img  src="resources/Maryland/GypsyMoth186.png" height ="400px" class="rotating-item"  /> 
+                    <img  src="resources/Maryland/GypsyMoth187.png" height ="400px" class="rotating-item"  /> 
+                    <img  src="resources/Maryland/GypsyMoth188.png" height ="400px" class="rotating-item"  /> 
+                    <img  src="resources/Maryland/GypsyMoth189.png" height ="400px" class="rotating-item"  /> 
+                    <img  src="resources/Maryland/GypsyMoth196.png" height ="400px" class="rotating-item"  /> 
            
         </div> 
+
+           </div>
+           
          <script>             InitializeRotatingItems('.rotating-item', true);</script>
          
-
+         The Green Ridge State Forest is a natural area in the Appalachians that covers parts of Pennsylvania, Maryland and West Virginia. I am using data from Green Ridge to 
+         simulate future scenarios of the the area under various scenarios.  Here you see random configurations of insect outbreaks in Green Ridge.
+         We are interested in insect outbreaks because the sensitivity of tree species to particular insect species tends to be an important driving factor of future species configuration.-
+         Our model (Landis-ii) uses a sensitivity grade that defines how sensitive each tree species is for 
+         attacks by each insect species. Using the density of various tree species on each pixel, the model calculates an outbreak sensitivity. The actual occurance of 
+         simulated outbreaks is random, and increases with outbreak sensitivity.
+         
+         <br><br><br><br><br><br><br><br><br><br><br>
+           <i>Graphics: Simulated defoliation during outbreaks of Gypsy moth in Green Ridge (deep red = high defoliation) </i>
 
      </div>
-     -->
+     <div class="margin_bottom_20 h_divider"></div>
+     <div class="margin_bottom_10"></div>
+
     <div  style="width:940px; height: 800px;   float:left; padding:10px; background-color : White">
         <h2>Deforestation in Indonesia</h2>
          <div  style="width:420px; height: 570;   float:right; padding:20px; background-color : White">
@@ -173,11 +186,11 @@
           
          <br><br>
          
-
         </div>
          <i>Graphics: location of Malinau Research Forest on Borneo, Indonesia (left)
                Simulation of land use change in Malinau (right)
              </i>
+
       
      <!-- <canvas id="canvas1"   width="200"; height="200"; style="border:2px solid black;background-color : Cyan"></canvas>-->
       
@@ -238,14 +251,15 @@
              
          </div>
          <p> Bayesian calibration is a method to map model probability, given a set of observations. It has been used in disciplines as diverse as medicine, law and internet search engines. 
-               I used it to estimate the rate of wood decomposition. If you call the decomposition rate 'b' in percent per year, you can use an algorithm called a Markov Chain to reiteratively select semi-random values for 'b', calculate remaining biomass for 
-               a stretch of time and calculate a score that represents how likely the decomposition rate 'b' is, given the set of measurements. 
+               I used it to estimate the rate of wood decomposition. You can use an algorithm called a Markov Chain to reiteratively generate semi-random decomposition rates, calculate remaining biomass for 
+               a stretch of time and calculate a score that represents how likely the random decomposition rate is. 
                
                <br>
                
-               This is what you see at work in this graph: each red line is a decomposition trajectory for a single value of 'b'.   
-               There is a tweak in a Markov Chain that assures that decomposition rates that score well (i.e. the model compares well with actual measurements) are selected more frequently.
-               It takes a while for the Markov Chain to find this 'hotspot' of high model scores, but after ~100 iterations, the average 'b' of the iterations in the graphs becomes pretty stable at around 7%.So my best estimate of the decomposition rate of the tree logs is 7% per year.
+               This is what you see at work in this graph: each red line is a decomposition trajectory for some rate of decomposition.-   
+               There is a tweak in a Markov Chain that assures that decomposition rates that score well (i.e. the model compares well with measurements) are selected more frequently.
+               It takes a while for the Markov Chain to find this 'hotspot' of high model scores, but after ~100 iterations, the average decomposition rate of the iterations in the graphs becomes pretty stable at around 7%.
+               So the best estimate of the decomposition rate of the wood measured here is 7% per year.
                The black graph on my home page demonstrates a similar algorithm applied to measured areas of forest defoliation in Northern Minnesota.
          </p>
          
