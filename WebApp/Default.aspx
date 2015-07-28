@@ -8,8 +8,13 @@
  <div  style="width:940px;   float:left; padding:10px; background-color : White">
         
         <h1 align="center">Professional background</h1>
-        My career path has centered on forestry and land use modeling, incorporating biogeochemistry, statistics, and development of simulation software. I have been working in academia for almost a decade and would like to move to the private sector. I specialize in developing geospatial software applications. Non-technical skills include giving presentations, fluency in English, German, and Dutch, and working within large, widely dispersed development teams.
-        This website serves to give employers a wider perspective of my experience in software development, computation and cartography, it serves as an addition to my resume that is downloadable below.
+        My career path has centered on land use modeling and vegetation dynamics, incorporating biogeochemistry, statistics, 
+     and development of simulation software. I have been working in academia for almost a decade now and I would like to move 
+     into the private sector or work for an NGO. I specialize in developing geospatial software applications and data management. Non-technical skills 
+     include giving presentations, fluency in English, German, and Dutch, and working within large, widely dispersed development teams. 
+
+        This website serves to give employers a wider perspective of my professional experience, additional to my resume that is 
+     downloadable below.
 
         <br> 
            
