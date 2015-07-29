@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div  style="width:940px; height: 900px;   float:left; background-color : Red">
+    <div  style="width:960px; height: 900px;   float:left; background-color : Red">
 
         <h2>Projects</h2>
 
