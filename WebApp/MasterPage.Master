@@ -71,6 +71,7 @@
                         <li> <a href="Skills.aspx">Skills</a> </li>
                         <li> <a href="Portfolio.aspx">Portfolio</a> </li>
                         <li> <a href="WorkAndEdu.aspx">Work & Education</a> </li>
+                         <li> <a href="miscellaneous.aspx">Miscellaneous</a> </li>
                     </ul>
                 </div>
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>

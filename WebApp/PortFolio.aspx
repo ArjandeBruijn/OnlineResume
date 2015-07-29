@@ -16,7 +16,13 @@
 	                position: relative;
                     height: 420px;
                 }
-           
+                .rotating-item
+                {
+                    display: none;
+	                position: absolute;
+	                top: 0;
+	                left: 0;
+                }
 	
           </style>
            <div  style="width:420px; height: 430px;   float:left; padding:20px; background-color : White">

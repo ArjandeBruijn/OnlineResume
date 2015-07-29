@@ -61,6 +61,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Miscellaneous.aspx" />
     <Content Include="jquery.mobile.custom.structure.css" />
     <Content Include="jquery.mobile.custom.theme.css" />
     <Content Include="js\DecompositionFunctions.js" />
@@ -99,6 +100,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Miscellaneous.aspx.cs">
+      <DependentUpon>Miscellaneous.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Miscellaneous.aspx.designer.cs">
+      <DependentUpon>Miscellaneous.aspx</DependentUpon>
     </Compile>
     <Compile Include="Portfolio.aspx.cs">
       <DependentUpon>Portfolio.aspx</DependentUpon>

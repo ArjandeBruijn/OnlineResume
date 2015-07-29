@@ -222,7 +222,7 @@ button{
 #menu ul li a {
 	position: relative;	
 	height: 30px;
-	width: 239px;
+	width: 150px;
 	text-align: center;
 	padding: 12px 0 0 0;
 	font-size: 13px;
@@ -238,7 +238,7 @@ button{
 
 #menu ul li.active a
 { 
-    width: 241px;
+     
     font-weight: bold;
     border-bottom:none;
     border-left: 1px solid black;
