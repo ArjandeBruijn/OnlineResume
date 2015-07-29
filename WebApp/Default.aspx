@@ -13,8 +13,7 @@
      into the private sector or work for an NGO. I specialize in developing geospatial software applications and data management. Non-technical skills 
      include giving presentations, fluency in English, German, and Dutch, and working within large, widely dispersed development teams. 
 
-        This website serves to give employers a wider perspective of my professional experience, additional to my resume that is 
-     downloadable below.
+        I developed this website to give employers additional information beyond the standard resume that is downloadable as a PDF below.
 
         <br> 
            

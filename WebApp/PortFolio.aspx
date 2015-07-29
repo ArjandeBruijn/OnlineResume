@@ -12,27 +12,11 @@
      <div  style="width:940px;    float:left; background-color : White">
             <h2>Defoliation in Green Ridge State Forest</h2>
             <style>
-                .m 
-	            {
-	                overflow: auto;
-	            }
-	            .m::before {
-	                content:'';
-	                display: inline-block;
-	                vertical-align: middle;
-	            }
-	            #rotating-item-wrapper {
-	            position: relative;
-                height: 420px;
-	
-            }
-            .rotating-item
-            {
-                display: none;
-	            position: absolute;
-	            top: 0;
-	            left: 0;
-            }
+                #rotating-item-wrapper {
+	                position: relative;
+                    height: 420px;
+                }
+           
 	
           </style>
            <div  style="width:420px; height: 430px;   float:left; padding:20px; background-color : White">
@@ -101,7 +85,9 @@
         </div> 
 
            </div>
-           
+          
+         
+          
          <script>             InitializeRotatingItems('.rotating-item', true);</script>
          
          The Green Ridge State Forest is a natural area in the Appalachians that covers parts of Pennsylvania, Maryland and West Virginia. I am using data from Green Ridge to 
@@ -111,10 +97,17 @@
          attacks by each insect species. Using the density of various tree species on each pixel, the model calculates an outbreak sensitivity. The actual occurance of 
          simulated outbreaks is random, and increases with outbreak sensitivity.
          
+         <div style="  height: 200px; padding:0px; float:right;background-color: White; ">
+               <img  src="resources/GRSF_background.png" height ="190px"  border="1" align = "left" />
+            </div>
          <br><br><br><br><br><br><br><br><br><br><br>
+         
            <i>Graphics: Simulated defoliation during outbreaks of Gypsy moth in Green Ridge (deep red = high defoliation) </i>
 
      </div>
+
+     
+
      <div class="margin_bottom_20 h_divider"></div>
      <div class="margin_bottom_10"></div>
 
