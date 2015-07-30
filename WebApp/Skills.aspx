@@ -5,7 +5,38 @@
 
     <div class="margin_bottom_10"></div>
 
-    <h2><center>Software skills</center></h2>
+    <h2>Technical</h2>
+
+    <div style="width:940px;   float:left; padding : 10px; background-color: white">
+        <b>Data Manipulation and performance bottlenecks</b><br>
+
+        2D simulation models like <a href="http://www.landis-ii.org/">LANDIS-II</a> are time consuming, 
+         
+        I figured out lots of adjustments that reduce computation time for my PnET-Succession extension, examples are re-using class instances rather than deleting and declaring, using LINQ dictionaries to prevent looping 
+        over large arrays, parallel computation methods, moving calculations to strategic positions in the code to reduce repetitions. <br><br>
+
+        <b>Multi-Threaded Applications and backgroundworkers</b> <br>
+        I have some experience using backgroundworkers in Visual Studio 2010 / C#. For example, I used them in the user interface I developed for my LANDIS applications (see <a href="Portfolio.aspx">Portfolio</a>)
+        Similarly, in some cases I worked with multithreading to reduce performance time. <br><br>
+
+        <b>Polymorphism</b> <br>
+        The simulation model I have been using for the last four years (<a href="http://www.landis-ii.org/">LANDIS-II</a>) uses polymorphism, for example in implementing different versions of a modular 
+        extension that are intended to calculate the same thing. Typically, it does so by implementing an interface in C# and multiple classes that can support that interface.<br><br>
+        
+        <b>Calling webservices</b> <br>
+        For two previous applications for software companies, I was asked to demonstrate my software skills with some small programm. 
+        Both companies asked me to demonstrate that I can call a webservice. It took some research but I successfully worked with JSON and XML data-interchange.<br><br>
+
+        <b>Statistics</b><br>
+        Over time I have been using R, SPSS and in a few cases SAS to do statistical tests. 
+        In many cases I find it worth while to code statistical tests from scratch in whatever program and code I was working in.
+        Doing so allows you to have standard performance indicators, programming statistics from scratch is also required when you apply some kind 
+        of optimization algorithm (i.e. see Bayesian calibration in <a href="Portfolio.aspx">Portfolio</a>).<br>
+
+    </div>
+     <div class="margin_bottom_10 h_divider"></div>
+
+    <h2>Software</h2>
       
       <!--
       <div style="width:90%;float:left; padding : 10px">
