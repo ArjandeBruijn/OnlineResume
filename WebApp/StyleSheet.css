@@ -88,13 +88,7 @@ th
     text-align: left;
 }
  
-#nav_banner {
-    line-height:30px;
-    height:76px;
-    width:76px;
-    float:left;
-    padding:5px;	      
-}
+ 
 a:link, a:visited  
 {
     color: #31b6fc;/*#fcdd31; */
@@ -222,7 +216,7 @@ button{
 #menu ul li a {
 	position: relative;	
 	height: 30px;
-	width: 191px;
+	width: 239px;
 	text-align: center;
 	padding: 12px 0 0 0;
 	font-size: 13px;
@@ -238,7 +232,6 @@ button{
 
 #menu ul li.active a
 { 
-     width: 192px;
     font-weight: bold;
     border-bottom:none;
     border-left: 1px solid black;
