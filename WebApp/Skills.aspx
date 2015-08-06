@@ -8,15 +8,19 @@
     <h2>Technical</h2>
 
     <div style="width:940px;   float:left; padding : 10px; background-color: white">
-        <b>Data Manipulation and performance bottlenecks</b><br>
+        <b>Data manipulation and performance bottlenecks</b><br>
 
         2D simulation models like <a href="http://www.landis-ii.org/">LANDIS-II</a> are time consuming, 
          
-        I figured out lots of adjustments that reduce computation time for my PnET-Succession extension, examples are re-using class instances rather than deleting and declaring, using LINQ dictionaries to prevent looping 
-        over large arrays, parallel computation methods, moving calculations to strategic positions in the code to reduce repetitions. <br><br>
+        I figured out lots of adjustments that reduce computation time for my PnET-Succession extension, examples are 
+        re-using class instances rather than deleting and declaring, using dictionaries to prevent looping 
+        over large arrays, parallel computation methods, moving calculations to strategic positions in the code 
+        to reduce repetitions. <br><br>
 
         <b>Multi-Threaded Applications and backgroundworkers</b> <br>
-        I have some experience using backgroundworkers in Visual Studio 2010 / C#. For example, I used them in the user interface I developed for my LANDIS applications (see <a href="Portfolio.aspx">Portfolio</a>)
+        I have some experience using backgroundworkers in Visual Studio 2010 / C#. For example, I used them in the 
+        user interface I developed for my LANDIS applications (see <a href="Portfolio.aspx">Portfolio</a>)
+
         Similarly, in some cases I worked with multithreading to reduce performance time. <br><br>
 
         <b>Polymorphism</b> <br>
