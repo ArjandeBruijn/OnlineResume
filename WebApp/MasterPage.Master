@@ -62,7 +62,7 @@
  
     <body style=" margin:0;background-color: Beige">
         <div style=" width : 960px; margin : 0 auto;padding : 0 0px; background-color    : White;">                
-                <div id = "header">
+                <div >
                     <div style ="padding: 10px;background-color: White;  float: left"	>
                        <img   src="resources\passphoto.JPG"   >
                     </div>
