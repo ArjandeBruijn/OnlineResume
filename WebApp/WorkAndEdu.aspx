@@ -92,10 +92,11 @@
             biomass, biochemistry and chemistry. I developed a module that deals with the microbial biomass part of the platform.
         </p>
         <h3>Accomplishments</h3>
-        <p>PhD in Forest and Environmental Sciences, magna cum laude. ALBERT LUDWIGS UNIVERSITY – Freiburg, Germany 2006-2009  
-                    Developed a 1D model subroutine DECONIT that was published as an isolated program and later embedded
-                    in a larger modelling platform MoBiLE.
-        <p>    
+        <ul>
+            <li><p>PhD in Forest and Environmental Sciences, magna cum laude. ALBERT LUDWIGS UNIVERSITY – Freiburg, Germany 2006-2009 </p></li>
+            <li><p> Developed a 1D model subroutine DECONIT that was published as an isolated program and later embedded in a larger modelling platform MoBiLE.</p></li>
+        </ul>   
+
         <h3>Publications</h3>   
         <ul>
             <li><p>An alternative modelling approach to predict emissions of N2O and NO from forest soils</p> <a href="http://link.springer.com/article/10.1007%2Fs10342-010-0468-y#page-1">(European Journal of Forest Research)</a></li>
