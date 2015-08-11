@@ -9,7 +9,88 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="margin_bottom_10"></div>
      
-     <div  style="width:940px;    float:left; background-color : White">
+    <div  style="width:940px; height: 800px;   float:left; padding:10px; background-color : White">
+        <h2>Deforestation in Indonesia</h2>
+         <div  style="width:420px; height: 570;   float:right; padding:20px; background-color : White">
+            <canvas id="canvas_Malinau"   width="400px" height="550px" style="border:1px solid black;"></canvas>
+            <button  onclick = "Simulate1()" style="width: 185px; float:left; height: 30px; background-color: DarkGray" type="button">Simulate 10 years</button>
+            <button  onclick = "ShowMalinauMap(2000)" style="width: 185px;  float:left; height: 30px; background-color: DarkGray" type="button">Reset</button>
+            <div id = "Progress"></div>
+         </div>
+             For my master's project at Wageningen University, I used land use derived from aerial photographs of eastern Borneo 
+             to evaluate hypotheses about patterns of land use changes and to predict future land use, for example:    
+            
+            <br> <br>  
+            <label id = "sized_label"><input type="checkbox" onclick = "CheckBoxIsNoSpatialCorrelation()" class="radio" value="1" id="NoSpatialCorrelation"  name="Hypotheses" checked/>1. There is no spatial correlation between land use transitions.<br></label>
+            <label id = "sized_label"><input type="checkbox" onclick = "CheckBoxIsAllAroundDevelopedArea()" class="radio" value="1" id="AllAroundDevelopedArea"  name="Hypotheses"/>2. Land use transitions occur near settlements.<br></label>
+            <label id = "sized_label"><input type="checkbox" onclick = "CheckBoxIsAllAroundWater()" class="radio" value="1" id="AllAroundWater"  name="Hypotheses"/>3.Land use transitions occur near water.<br></label>
+             <br>  
+            <p>Given the following land use transition rates for the period of 2000-2010:
+            <br></br>
+             <table id = "LUCtable" bgcolor = white border="1">
+        <tr>
+            <th bgcolor ="#c0c0c0">From / To </th>
+            <th bgcolor ="#c0c0c0">Forest</th>
+            <th bgcolor ="#c0c0c0">Secondary Forest</th>
+            <th bgcolor ="#c0c0c0">Cropland</th>
+            <th bgcolor ="#c0c0c0">Settlements</th>
+        </tr>
+        <tr>
+            <th bgcolor ="#c0c0c0" >Forest</th>
+            <td bgcolor ="#c0c0c0" id="Forest-Forest"><div> 0.998 </div> </th>
+            <td  id="Forest-SecondaryForest"><div contenteditable> 0.002 </div> </th>
+            <td  id="Forest-CropLand"><div contenteditable> 0</div> </th>
+            <td  id= "Forest-Settlements"><div contenteditable> 0.0003 </div> </th>
+        </tr>
+        <tr>
+            <th bgcolor ="#c0c0c0">Secondary Forest</th>
+            <td id="SecondaryForest-Forest"><div contenteditable> 0	 </div> </th>
+            <td bgcolor ="#c0c0c0" id="SecondaryForest-SecondaryForest"><div> 0.995	 </div> </th>
+            <td id = 'SecondaryForest-CropLand'><div contenteditable> 0.005	</div> </th>
+            <td id = 'SecondaryForest-Settlements'><div contenteditable> 0 </div> </th>
+        </tr>
+        <tr>
+            <th bgcolor ="#c0c0c0">Cropland</th>
+            <td id = 'CropLand-Forest'><div contenteditable>0 </div></th>
+            <td id = 'CropLand-SecondaryForest'><div contenteditable>  0	</div></th>
+            <td bgcolor ="#c0c0c0" id = 'CropLand-CropLand'><div> 0.99 </div></th>
+            <td id = 'CropLand-Settlements'><div contenteditable> 0.01 </div></th>
+        </tr>
+        <tr>
+            <th bgcolor ="#c0c0c0">Settlements</th>
+            <td id = 'Settlements-Forest'><div contenteditable>0</div>	 </th>
+            <td id = 'Settlements-SecondaryForest'><div contenteditable> 0	</div>	</th>
+            <td id = 'Settlements-CropLand'><div contenteditable> 0</div>	 </th>
+            <td bgcolor ="#c0c0c0" id = 'Settlements-Settlements'><div>1</div>	  </th>
+         </tr>
+     </table>
+             <br>  
+
+             <div style="width:250; padding-right:20px; float:left;background-color: White; ">
+                <img  src="resources/Malinau.png" height ="250px"  border="1" align = "left" />
+            </div>
+
+        <div style="width:450px; padding:20px;   background-color: White; ">
+            I programmed a simple algorithm that predicts future land use in the code of this website. 
+         You can predict what the future landscape will look like by selecting one of the three hypotheses and/or changing the transition rates in the table and clicking the "Simulate 10 years" button. 
+         Note that the simulation be slow when you combine large transition values with the second or third hypothesis. 
+          
+         <br><br>
+         
+        </div>
+         <i>Graphics: location of Malinau Research Forest on Borneo, Indonesia (left)
+               Simulation of land use change in Malinau (right)
+             </i>
+
+      
+     <!-- <canvas id="canvas1"   width="200"; height="200"; style="border:2px solid black;background-color : Cyan"></canvas>-->
+      
+   </div>
+    <div class="margin_bottom_20 h_divider"></div>
+     <div class="margin_bottom_10"></div>
+
+
+    <div  style="width:940px;    float:left; background-color : White">
             <h2>Defoliation in Green Ridge State Forest</h2>
             <style>
                 #rotating-item-wrapper {
@@ -111,91 +192,41 @@
            <i>Graphics: Simulated defoliation during outbreaks of Gypsy moth in Green Ridge (deep red = high defoliation) </i>
 
      </div>
-
      
-
      <div class="margin_bottom_20 h_divider"></div>
-     <div class="margin_bottom_10"></div>
-
-    <div  style="width:940px; height: 800px;   float:left; padding:10px; background-color : White">
-        <h2>Deforestation in Indonesia</h2>
-         <div  style="width:420px; height: 570;   float:right; padding:20px; background-color : White">
-            <canvas id="canvas_Malinau"   width="400px" height="550px" style="border:1px solid black;"></canvas>
-            <button  onclick = "Simulate1()" style="width: 185px; float:left; height: 30px; background-color: DarkGray" type="button">Simulate 10 years</button>
-            <button  onclick = "ShowMalinauMap(2000)" style="width: 185px;  float:left; height: 30px; background-color: DarkGray" type="button">Reset</button>
-            <div id = "Progress"></div>
+                    <div class="margin_bottom_10"></div>
+    <div  style="width:940px; height: 600px;   float:left; padding:10px; background-color : White">
+        <h2>Decomposition in Wisconsin and North-Carolina: Bayesian Calibration</h2>
+         <div  style="width:525px; height: 250px;   float:left; padding:10px; background-color : White">
+           
+             <canvas id="DecompCanvas" width="525" height="250" style="border:1px solid">
+              
+<!--            <canvas style= "border:1px solid black">Your browser does not support the HTML5 canvas tag.</canvas>-->
+             
          </div>
-             For my master's project at Wageningen University, I used land use derived from aerial photographs of eastern Borneo 
-             to evaluate hypotheses about patterns of land use changes and to predict future land use, for example:    
-            
-            <br> <br>  
-            <label id = "sized_label"><input type="checkbox" onclick = "CheckBoxIsNoSpatialCorrelation()" class="radio" value="1" id="NoSpatialCorrelation"  name="Hypotheses" checked/>1. There is no spatial correlation between land use transitions.<br></label>
-            <label id = "sized_label"><input type="checkbox" onclick = "CheckBoxIsAllAroundDevelopedArea()" class="radio" value="1" id="AllAroundDevelopedArea"  name="Hypotheses"/>2. Land use transitions occur near settlements.<br></label>
-            <label id = "sized_label"><input type="checkbox" onclick = "CheckBoxIsAllAroundWater()" class="radio" value="1" id="AllAroundWater"  name="Hypotheses"/>3.Land use transitions occur near water.<br></label>
-             <br>  
-            <p>Given the following land use transition rates for the period of 2000-2010:
-            <br></br>
-             <table id = "LUCtable" bgcolor = white border="1">
-        <tr>
-            <th bgcolor ="#c0c0c0">From / To </th>
-            <th bgcolor ="#c0c0c0">Forest</th>
-            <th bgcolor ="#c0c0c0">Secondary Forest</th>
-            <th bgcolor ="#c0c0c0">Cropland</th>
-            <th bgcolor ="#c0c0c0">Settlements</th>
-        </tr>
-        <tr>
-            <th bgcolor ="#c0c0c0" >Forest</th>
-            <td bgcolor ="#c0c0c0" id="Forest-Forest"><div> 0.998 </div> </th>
-            <td  id="Forest-SecondaryForest"><div contenteditable> 0.002 </div> </th>
-            <td  id="Forest-CropLand"><div contenteditable> 0</div> </th>
-            <td  id= "Forest-Settlements"><div contenteditable> 0.0003 </div> </th>
-        </tr>
-        <tr>
-            <th bgcolor ="#c0c0c0">Secondary Forest</th>
-            <td id="SecondaryForest-Forest"><div contenteditable> 0	 </div> </th>
-            <td bgcolor ="#c0c0c0" id="SecondaryForest-SecondaryForest"><div> 0.995	 </div> </th>
-            <td id = 'SecondaryForest-CropLand'><div contenteditable> 0.005	</div> </th>
-            <td id = 'SecondaryForest-Settlements'><div contenteditable> 0 </div> </th>
-        </tr>
-        <tr>
-            <th bgcolor ="#c0c0c0">Cropland</th>
-            <td id = 'CropLand-Forest'><div contenteditable>0 </div></th>
-            <td id = 'CropLand-SecondaryForest'><div contenteditable>  0	</div></th>
-            <td bgcolor ="#c0c0c0" id = 'CropLand-CropLand'><div> 0.99 </div></th>
-            <td id = 'CropLand-Settlements'><div contenteditable> 0.01 </div></th>
-        </tr>
-        <tr>
-            <th bgcolor ="#c0c0c0">Settlements</th>
-            <td id = 'Settlements-Forest'><div contenteditable>0</div>	 </th>
-            <td id = 'Settlements-SecondaryForest'><div contenteditable> 0	</div>	</th>
-            <td id = 'Settlements-CropLand'><div contenteditable> 0</div>	 </th>
-            <td bgcolor ="#c0c0c0" id = 'Settlements-Settlements'><div>1</div>	  </th>
-         </tr>
-     </table>
-             <br>  
-
-             <div style="width:250; padding-right:20px; float:left;background-color: White; ">
-                <img  src="resources/Malinau.png" height ="250px"  border="1" align = "left" />
-            </div>
-
-        <div style="width:450px; padding:20px;   background-color: White; ">
-            I programmed a simple algorithm that predicts future land use in the code of this website. 
-         You can predict what the future landscape will look like by selecting one of the three hypotheses and/or changing the transition rates in the table and clicking the "Simulate 10 years" button. 
-         Note that the simulation be slow when you combine large transition values with the second or third hypothesis. 
-          
-         <br><br>
+         <p> Bayesian calibration is a method to map model probability, given a set of observations. It has been used in disciplines as diverse as medicine, law and internet search engines. 
+               I used it to estimate the rate of wood decomposition. You can use an algorithm called a Markov Chain to reiteratively generate semi-random decomposition rates, calculate remaining biomass for 
+               a stretch of time and calculate a score that represents how likely the random decomposition rate is. 
+               
+               <br>
+               
+               This is what you see at work in this graph: each red line is a decomposition trajectory for some rate of decomposition.-   
+               There is a tweak in a Markov Chain that assures that decomposition rates that score well (i.e. the model compares well with measurements) are selected more frequently.
+               It takes a while for the Markov Chain to find this 'hotspot' of high model scores, but after ~100 iterations, the average decomposition rate of the iterations in the graphs becomes pretty stable at around 7%.
+               So the best estimate of the decomposition rate of the wood measured here is 7% per year.
+               The black graph on my home page demonstrates a similar algorithm applied to measured areas of forest defoliation in Northern Minnesota.
+         </p>
          
-        </div>
-         <i>Graphics: location of Malinau Research Forest on Borneo, Indonesia (left)
-               Simulation of land use change in Malinau (right)
-             </i>
-
       
-     <!-- <canvas id="canvas1"   width="200"; height="200"; style="border:2px solid black;background-color : Cyan"></canvas>-->
+      <br>
+      <i>Graphics: Bayesian Calibration  </i>
+      
       
    </div>
-      <div class="margin_bottom_20 h_divider"></div>
+
+    <div class="margin_bottom_20 h_divider"></div>
                     <div class="margin_bottom_10"></div>
+
     <div  style="width:940px; height: 500px;   float:left; padding:10px; background-color : White">
         <h2>Landis user interface</h2>
            
@@ -238,36 +269,7 @@
      <i>Graphics: Landis User Interface, left file view, right workspace. </i>
      <br><br>
    </div>
-    <div class="margin_bottom_20 h_divider"></div>
-                    <div class="margin_bottom_10"></div>
-    <div  style="width:940px; height: 600px;   float:left; padding:10px; background-color : White">
-        <h2>Bayesian Calibration</h2>
-         <div  style="width:525px; height: 250px;   float:left; padding:10px; background-color : White">
-           
-             <canvas id="DecompCanvas" width="525" height="250" style="border:1px solid">
-              
-<!--            <canvas style= "border:1px solid black">Your browser does not support the HTML5 canvas tag.</canvas>-->
-             
-         </div>
-         <p> Bayesian calibration is a method to map model probability, given a set of observations. It has been used in disciplines as diverse as medicine, law and internet search engines. 
-               I used it to estimate the rate of wood decomposition. You can use an algorithm called a Markov Chain to reiteratively generate semi-random decomposition rates, calculate remaining biomass for 
-               a stretch of time and calculate a score that represents how likely the random decomposition rate is. 
-               
-               <br>
-               
-               This is what you see at work in this graph: each red line is a decomposition trajectory for some rate of decomposition.-   
-               There is a tweak in a Markov Chain that assures that decomposition rates that score well (i.e. the model compares well with measurements) are selected more frequently.
-               It takes a while for the Markov Chain to find this 'hotspot' of high model scores, but after ~100 iterations, the average decomposition rate of the iterations in the graphs becomes pretty stable at around 7%.
-               So the best estimate of the decomposition rate of the wood measured here is 7% per year.
-               The black graph on my home page demonstrates a similar algorithm applied to measured areas of forest defoliation in Northern Minnesota.
-         </p>
-         
-      
-      <br>
-      <i>Graphics: Bayesian Calibration  </i>
-      
-      
-   </div>
+   
     <script>        StartDecompositionFunctions(); </script>
    <script>       ShowMalinauMap(2000); </script>
     <script>        watch(document.getElementById('LUCtable'), whenChangeHappens);</script>
