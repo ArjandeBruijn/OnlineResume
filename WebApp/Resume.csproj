@@ -61,6 +61,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="js\GoogleAnalytics.js" />
+    <Content Include="js\StatCounter.js" />
     <Content Include="Miscellaneous.aspx" />
     <Content Include="jquery.mobile.custom.structure.css" />
     <Content Include="jquery.mobile.custom.theme.css" />
