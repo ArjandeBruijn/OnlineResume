@@ -57,9 +57,7 @@
         <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
     </head>
  
-    <body style=" margin:0;background-color: Beige">
-
-         
+    <body style=" margin:0;background-color: Beige"> 
         <div style=" width : 960px; margin : 0 auto;padding : 0 0px; background-color    : White;">                
                 <div id = "header">
                     <div style = "width:100%; background-color: red;">
@@ -73,18 +71,13 @@
                             <font face="Century Gothic" size="3"><a href="mailto:amgdebruijn@gmail.com">AMGdeBruijn@gmail.com</a></font>
                         </div>
 
-                  <div style = "float:right; background-color: white; padding: 10px;">
-                    <a href="https://www.linkedin.com/pub/arjan-de-bruijn/b7/2a7/5b7">
-                      <img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_liprofile_blue_80x15.png" width="80" height="15" border="0" alt="View Arjan de Bruijn's profile on LinkedIn">
-                    </a>
-                 </div>
-                   
+                        <div style = "float:right; background-color: white; padding: 10px;">
+                           <a href="https://www.linkedin.com/pub/arjan-de-bruijn/b7/2a7/5b7">
+                              <img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_liprofile_blue_80x15.png" width="80" height="15" border="0" alt="View Arjan de Bruijn's profile on LinkedIn">
+                           </a>
+                        </div>
+                     </div>
                 </div>
-       
-                </div>
-                <script>$('#header').stickThis();</script>
-
-                 
                 <div id="menu">
                      <ul>
                         <li id ="default"> <a href="Default.aspx">Home</a> </li>
@@ -96,13 +89,8 @@
                 </div>
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
                
+                <script>$('#header').stickThis();</script>
                 <script> UpdateMenuSelection();</script>
-             
-                
-             
         </div>
-
-       
-      
     </body>
 </html>
