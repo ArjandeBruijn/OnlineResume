@@ -21,7 +21,7 @@
             <h1>Summary of Qualifications</h1>
             <ul>
               <h3 >
-                  <li >More than 8 years of experience in software development and GIS </li>
+                  <li >More than 8 years of experience in computer simulations, software and GIS </li>
                   <div class="margin_bottom_5"></div>
                   <li> Fluent in most coding languages (see <a href="Skills.aspx">skills</a>  page for details)</li>
                   <div class="margin_bottom_5"></div>

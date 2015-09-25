@@ -8,6 +8,14 @@
     <h2>Technical</h2>
 
     <div style="width:940px;   float:left; padding : 10px; background-color: white">
+
+        <b>Spatiotemporal modeling and computer simulations</b><br>
+
+        I have developed numerous computer algorithms and associated software to simulate biological and biogeochemical computer simulations.
+        The complexity of these different applications varies widely, some are 1D, others 2D, some of the applications I developed or worked with consisted of 
+        <200 lines of computer code, others > 10000. <br><br>
+
+
         <b>Data manipulation and performance bottlenecks</b><br>
 
         2D simulation models like <a href="http://www.landis-ii.org/">LANDIS-II</a> are time consuming, 
