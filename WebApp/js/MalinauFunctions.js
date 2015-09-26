@@ -387,7 +387,7 @@ function DrawProgressBox() {
     var HeightPerEntree = 20;
 
     var Height = HeightPerEntree * Entrees + 20;
-    var Width = 125;
+    var Width = 80;
     var legendrect = new Rectangle(nrows - Width - 10, ncols - Height - 10, Width, Height);
     Context.clearRect(legendrect.A[0], legendrect.A[1], legendrect.Width, legendrect.Height);
     

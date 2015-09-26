@@ -9,12 +9,12 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="margin_bottom_10"></div>
      
-    <div  style="width:940px; height: 800px;   float:left; padding:10px; background-color : White">
+    <div  style="width:940px; float:left; padding:10px; background-color : White">
         <h2>Deforestation in Indonesia</h2>
-         <div  style="width:420px; height: 570;   float:right; padding:20px; background-color : White">
-            <canvas id="canvas_Malinau"   width="410px" height="550px" style="border:1px solid black;"></canvas>
+         <div  style="width:445px;  float:right; padding:20px; background-color : White">
+            <canvas id="canvas_Malinau" style="float:right; border:1px solid black; background-color: White"   width="415px" height="561px" ></canvas>
             <button  onclick = "ShowMalinauMap(2000)" style="  float:right; height: 30px; background-color: DarkGray" type="button">Reset</button>
-            
+        
             <!--<button  onclick = "SimulateSelectedHypothesis()" style="width: 185px; float:left; height: 30px; background-color: DarkGray" type="button">Simulate 10 years</button>-->
             <div id = "Progress"></div>
          </div>
@@ -26,64 +26,58 @@
             <label id = "sized_label"><input type="checkbox" onclick = "CheckBoxIsAllAroundDevelopedArea()" class="radio" value="1" id="AllAroundDevelopedArea"  name="Hypotheses"/>2. Land use transitions occur near settlements.<br></label>
             <label id = "sized_label"><input type="checkbox" onclick = "CheckBoxIsAllAroundWater()" class="radio" value="1" id="AllAroundWater"  name="Hypotheses"/>3.Land use transitions occur near water.<br></label>
              <br>  
-            <p>Given the following land use transition rates for the period of 2000-2010:
-            <br></br>
-             <table id = "LUCtable" bgcolor = white border="1">
-        <tr>
-            <th bgcolor ="#c0c0c0">From / To </th>
-            <th bgcolor ="#c0c0c0">Forest</th>
-            <th bgcolor ="#c0c0c0">Secondary Forest</th>
-            <th bgcolor ="#c0c0c0">Cropland</th>
-            <th bgcolor ="#c0c0c0">Settlements</th>
-        </tr>
-        <tr>
-            <th bgcolor ="#c0c0c0" >Forest</th>
-            <td bgcolor ="#c0c0c0" id="Forest-Forest"><div> 0.998 </div> </th>
-            <td  id="Forest-SecondaryForest"><div contenteditable> 0.002 </div> </th>
-            <td  id="Forest-CropLand"><div contenteditable> 0</div> </th>
-            <td  id= "Forest-Settlements"><div contenteditable> 0.0003 </div> </th>
-        </tr>
-        <tr>
-            <th bgcolor ="#c0c0c0">Secondary Forest</th>
-            <td id="SecondaryForest-Forest"><div contenteditable> 0	 </div> </th>
-            <td bgcolor ="#c0c0c0" id="SecondaryForest-SecondaryForest"><div> 0.995	 </div> </th>
-            <td id = 'SecondaryForest-CropLand'><div contenteditable> 0.005	</div> </th>
-            <td id = 'SecondaryForest-Settlements'><div contenteditable> 0 </div> </th>
-        </tr>
-        <tr>
-            <th bgcolor ="#c0c0c0">Cropland</th>
-            <td id = 'CropLand-Forest'><div contenteditable>0 </div></th>
-            <td id = 'CropLand-SecondaryForest'><div contenteditable>  0	</div></th>
-            <td bgcolor ="#c0c0c0" id = 'CropLand-CropLand'><div> 0.99 </div></th>
-            <td id = 'CropLand-Settlements'><div contenteditable> 0.01 </div></th>
-        </tr>
-        <tr>
-            <th bgcolor ="#c0c0c0">Settlements</th>
-            <td id = 'Settlements-Forest'><div contenteditable>0</div>	 </th>
-            <td id = 'Settlements-SecondaryForest'><div contenteditable> 0	</div>	</th>
-            <td id = 'Settlements-CropLand'><div contenteditable> 0</div>	 </th>
-            <td bgcolor ="#c0c0c0" id = 'Settlements-Settlements'><div>1</div>	  </th>
-         </tr>
-     </table>
-             <br>  
+        <!--<p>Given the following land use transition rates for the period of 2000-2010:-->
+        <br></br>
 
-             <div style="width:250; padding-right:20px; float:left;background-color: White; ">
-                <img  src="resources/Malinau.png" height ="250px"  border="1" align = "left" />
-            </div>
-
-        <div style="width:450px; padding:20px;   background-color: White; ">
-            I programmed a simple algorithm that predicts future land use in the code of this website. 
-         You can predict what the future landscape will look like by selecting one of the three hypotheses and/or changing the transition rates in the table and clicking the "Simulate 10 years" button. 
-         Note that the simulation be slow when you combine large transition values with the second or third hypothesis. 
-          
-         <br><br>
+        <table id = "LUCtable" bgcolor = white border="1" style = "display:none">
+            <tr>
+                <th bgcolor ="#c0c0c0">From / To </th>
+                <th bgcolor ="#c0c0c0">Forest</th>
+                <th bgcolor ="#c0c0c0">Secondary Forest</th>
+                <th bgcolor ="#c0c0c0">Cropland</th>
+                <th bgcolor ="#c0c0c0">Settlements</th>
+            </tr>
+            <tr>
+                <th bgcolor ="#c0c0c0" >Forest</th>
+                <td bgcolor ="#c0c0c0" id="Forest-Forest"><div> 0.998 </div> </th>
+                <td  id="Forest-SecondaryForest"><div contenteditable> 0.002 </div> </th>
+                <td  id="Forest-CropLand"><div contenteditable> 0</div> </th>
+                <td  id= "Forest-Settlements"><div contenteditable> 0.0003 </div> </th>
+            </tr>
+            <tr>
+                <th bgcolor ="#c0c0c0">Secondary Forest</th>
+                <td id="SecondaryForest-Forest"><div contenteditable> 0	 </div> </th>
+                <td bgcolor ="#c0c0c0" id="SecondaryForest-SecondaryForest"><div> 0.995	 </div> </th>
+                <td id = 'SecondaryForest-CropLand'><div contenteditable> 0.005	</div> </th>
+                <td id = 'SecondaryForest-Settlements'><div contenteditable> 0 </div> </th>
+            </tr>
+            <tr>
+                <th bgcolor ="#c0c0c0">Cropland</th>
+                <td id = 'CropLand-Forest'><div contenteditable>0 </div></th>
+                <td id = 'CropLand-SecondaryForest'><div contenteditable>  0	</div></th>
+                <td bgcolor ="#c0c0c0" id = 'CropLand-CropLand'><div> 0.99 </div></th>
+                <td id = 'CropLand-Settlements'><div contenteditable> 0.01 </div></th>
+            </tr>
+            <tr>
+                <th bgcolor ="#c0c0c0">Settlements</th>
+                <td id = 'Settlements-Forest'><div contenteditable>0</div>	 </th>
+                <td id = 'Settlements-SecondaryForest'><div contenteditable> 0	</div>	</th>
+                <td id = 'Settlements-CropLand'><div contenteditable> 0</div>	 </th>
+                <td bgcolor ="#c0c0c0" id = 'Settlements-Settlements'><div>1</div>	  </th>
+             </tr>
+         </table>
          
-        </div>
-         <i>Graphics: location of Malinau Research Forest on Borneo, Indonesia (left)  Simulation of land use change in Malinau (right)</i>
-        
-     <!-- <canvas id="canvas1"   width="200"; height="200"; style="border:2px solid black;background-color : Cyan"></canvas>-->
-      
-   </div>
+         <br>  
+
+         <div style="padding-right:20px; float:left;background-color: White; ">
+            <img  src="resources/Malinau.png" height ="250px"  border="1" align = "left" />
+         </div>
+ 
+    </div>
+    <div style="width:940px;  padding-right:20px; float:left;background-color: White; ">
+            <i>Graphics: location of Malinau Research Forest on Borneo, Indonesia (left)  Simulation of land use change in Malinau (right)</i>
+    </div>
+
     <div class="margin_bottom_20 h_divider"></div>
      <div class="margin_bottom_10"></div>
 
@@ -193,7 +187,7 @@
      
      <div class="margin_bottom_20 h_divider"></div>
                     <div class="margin_bottom_10"></div>
-    <div  style="width:940px; height: 600px;   float:left; padding:10px; background-color : White">
+    <div  style="width:940px;   float:left; padding:10px; background-color : White">
         <h2>Decomposition in Wisconsin and North-Carolina: Bayesian Calibration</h2>
          <div  style="width:525px; height: 250px;   float:left; padding:10px; background-color : White">
            
