@@ -12,9 +12,10 @@
     <div  style="width:940px; height: 800px;   float:left; padding:10px; background-color : White">
         <h2>Deforestation in Indonesia</h2>
          <div  style="width:420px; height: 570;   float:right; padding:20px; background-color : White">
-            <canvas id="canvas_Malinau"   width="400px" height="550px" style="border:1px solid black;"></canvas>
-            <button  onclick = "Simulate1()" style="width: 185px; float:left; height: 30px; background-color: DarkGray" type="button">Simulate 10 years</button>
-            <button  onclick = "ShowMalinauMap(2000)" style="width: 185px;  float:left; height: 30px; background-color: DarkGray" type="button">Reset</button>
+            <canvas id="canvas_Malinau"   width="410px" height="550px" style="border:1px solid black;"></canvas>
+            <button  onclick = "ShowMalinauMap(2000)" style="  float:right; height: 30px; background-color: DarkGray" type="button">Reset</button>
+            
+            <!--<button  onclick = "SimulateSelectedHypothesis()" style="width: 185px; float:left; height: 30px; background-color: DarkGray" type="button">Simulate 10 years</button>-->
             <div id = "Progress"></div>
          </div>
              For my master's project at Wageningen University, I used land use derived from aerial photographs of eastern Borneo 
@@ -78,11 +79,8 @@
          <br><br>
          
         </div>
-         <i>Graphics: location of Malinau Research Forest on Borneo, Indonesia (left)
-               Simulation of land use change in Malinau (right)
-             </i>
-
-      
+         <i>Graphics: location of Malinau Research Forest on Borneo, Indonesia (left)  Simulation of land use change in Malinau (right)</i>
+        
      <!-- <canvas id="canvas1"   width="200"; height="200"; style="border:2px solid black;background-color : Cyan"></canvas>-->
       
    </div>
@@ -271,7 +269,7 @@
    </div>
    
     <script>        StartDecompositionFunctions(); </script>
-   <script>       ShowMalinauMap(2000); </script>
+    <script>        StartMalinauSimulations();</script>
     <script>        watch(document.getElementById('LUCtable'), whenChangeHappens);</script>
      
     

@@ -1,7 +1,6 @@
 var White = [255, 255, 255];
 var DarkGreen = [0, 100, 0];   // PF
 var LightGreen = [0, 255, 0]; // SF
-var GolfGreen = [0, 175, 0]; // SF
 var Color3 = [0, 255, 0];   // Crop??
 var Red = [255, 0, 0];
 var Yellow = [255, 255, 0];  // position 2
@@ -13,8 +12,6 @@ var Color10 = [0, 0, 255];
 var Color11 = [128, 0, 128];
 var Color12 = [128, 128, 0];
 var Color13 = [0, 0, 0]; //black
-
-
 
 NoData = new LandUse(-9999, White);
 PF = new LandUse(1, DarkGreen);
@@ -31,89 +28,21 @@ LandUse11 = new LandUse(11, Color11);
 LandUse12 = new LandUse(12, Color12);
 LandUse13 = new LandUse(13, Color13);
 
-GOLF = new LandUse(13, GolfGreen);
-
 LandUseTypes = [NoData, PF, SF, LandUse3, Settlement, LandUse5, OpenLand, LandUse7, Water, LandUse9, LandUse10, LandUse11, LandUse12, LandUse13];
-
 Settlements = [];
 Waters = [];
 
-BorneoImageIsShown = false;
-function ShowBorneo(file) {
+function StartMalinauSimulations() {
 
-    var image_space = document.getElementById('BorneoMap');
-    if (BorneoImageIsShown == false) {
-        image_space.innerHTML = "<img src='Malinau.png' width='200' height='200'  align= 'left'>"
-        BorneoImageIsShown = true;
-    }
-    else {
-        image_space.innerHTML = "";
-        BorneoImageIsShown = false;
-    }
+    ShowMalinauMap(2000);
 
+    window.setInterval(function () {
+        SimulateSelectedHypothesis();
+    }, 3000); // repeat forever, polling every 3 seconds
+   
+    
 }
 
-function componentToHex(c) {
-    var hex = c.toString(16);
-    return hex.length == 1 ? "0" + hex : hex;
-}
-
-function rgbToHex(r, g, b) {
-    return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
-}
-
-
-function DrawRectangle(Rectangle, Color) {
-
-    Context.fillStyle = Color;
-    Context.fillRect(Rectangle.xmin, Rectangle.ymin, Rectangle.Width, Rectangle.Height);
-}
-function setPixelColor(imageData, x, y, Color) {
-
-    index = get_index(imageData, x, y);
-
-    imageData.data[index + 0] = Color[0];
-    imageData.data[index + 1] = Color[1];
-    imageData.data[index + 2] = Color[2];
-    imageData.data[index + 3] = 255;
-}
-function getPixelColor(imageData, x, y) {
-
-    index = get_index(imageData, x, y);
-
-    Color = [];
-
-    Color[0] = imageData.data[index + 0];
-    Color[1] = imageData.data[index + 1];
-    Color[2] = imageData.data[index + 2];
-    Color[3] = 255;
-
-    return Color;
-}
-function get_index(imageData, x, y) {
-
-    var index = (x + y * imageData.width) * 4;
-    return index;
-}
-function get_xy(index) {
-
-    var x = index / 4;
-    var y = 0;
-    while (x > imageData.width) {
-        x -= imageData.width;
-        y++;
-    }
-
-    return [x, y];
-}
-
-function CalculateDistance(x1, y1, x2, y2) {
-
-    var dx2 = Math.pow(Math.abs(x2 - x1), 2);
-    var dy2 = Math.pow(Math.abs(y2 - y1), 2);
-    return Math.sqrt(dx2 + dy2);
-
-}
 function ShowMalinauMap(year) {
 
     //ncols = ymax;
@@ -161,7 +90,7 @@ function SetImage(container, MalinauMap, year) {
                 continue;
             }
             SetPixel(imageData, row, col, null, land_use);
-            
+
             land_use.Count++;
 
         }
@@ -169,169 +98,27 @@ function SetImage(container, MalinauMap, year) {
 
     // copy the image data back onto the canvas
     Context.putImageData(imageData, 0, 0); // at coords 0,0
-     
+
     DrawProgressBox();
     DrawLegend();
 }
-function SetPixel(imageData, row, col, old_land_use, new_land_use)
-{
-    setPixelColor(imageData, row, col, new_land_use.Color);
 
-    if (old_land_use != null) {
-        old_land_use.Count--;
-    }
-    if (new_land_use != null) {
-        new_land_use.Count++;
-    }
+function SimulateSelectedHypothesis() {
 
-    if (old_land_use == Settlement) {
-        var index = Settlements.indexOf(Coordinates[row][col]);
-        if (index > -1) Settlements.splice(index, 1);
-    
-    }
-    if (old_land_use == Waters) {
-        var index = Waters.indexOf(Coordinates[row][col]);
-        if (index > -1) Waters.splice(index, 1);
-     
-    }
-
-    if (new_land_use == Settlement) {
-        Settlements.push(Coordinates[row][col]);
-     
-    }
-    if (new_land_use == Water) {
-        Waters.push(Coordinates[row][col]);
-     
-    }
-
-    
+    if (document.getElementById("NoSpatialCorrelation").checked) SimulateNoSpatialCorrelation();
+    if (document.getElementById("AllAroundDevelopedArea").checked) SimulateAllAroundDevelopedArea();
+    if (document.getElementById("AllAroundWater").checked) SimulateAllAroundWater();
 
 }
 
-function Simulate1() {
-
- 
-    if (document.getElementById("NoSpatialCorrelation").checked) {
-
-        SimulateNoSpatialCorrelation();
-    }
-    else if (document.getElementById("AllAroundDevelopedArea").checked) {
-
-        SimulateAllAroundDevelopedArea();
-    }
-    else if (document.getElementById("AllAroundWater").checked) {
-
-        SimulateAllAroundWater();
-    }
-    else if (document.getElementById("AmericanInvasion").checked) {
-
-        SimulateAmericanInvasion();
-    }
-    
-     
-}
-function DrawProgressBox() {
-    var Entrees = 2;
-    var HeightPerEntree = 20;
-
-    var Height = HeightPerEntree * Entrees + 20;
-    var Width = 125;
-    var legendrect = new Rectangle(nrows - Width - 10, ncols - Height - 10, Width, Height);
-    Context.clearRect(legendrect.A[0], legendrect.A[1], legendrect.Width, legendrect.Height);
-    //Context.beginPath();
-    //Context.rect(legendrect.A[0], legendrect.A[1], legendrect.Width, legendrect.Height);
-    //Context.stroke();
-    var coordinate = [legendrect.A[0] + 10, legendrect.A[1] + 10];
-
-    coordinate = AddLegendEntry(coordinate, "Progress:\t" + Progress + "%", null);
-
-    coordinate = AddLegendEntry(coordinate, "Year:\t" + Year, null);
-}
-function DrawImage(custom_legend)
-{
-    Context.putImageData(imageData, 0, 0); // at coords 0,0
-    DrawProgressBox();
-    if (custom_legend == null) DrawLegend();
-    else custom_legend();
-}
-Array.prototype.clean = function (deleteValue) {
-    for (var i = 0; i < this.length; i++) {
-        if (this[i] == deleteValue) {
-            this.splice(i, 1);
-            i--;
-        }
-    }
-    return this;
-};
-
-function SimulateAllAroundDevelopedArea() {
-
-    GetLandUseChangeCount();
-
-    Progress = 0;
-    var year_start = Year;
-    var OldProgress = Progress = 0;
-    var cnt = 0;
-    var id = setInterval(function () {
-
-        var i = Math.floor(Math.random() * luc.length);
-
-        if (luc[i] != null) {
-            Progress = Math.round(100 * (cnt / SumLandUseChanges));
-            Year = Math.floor(year_start + 10 * (Progress / 100));
-            cnt++;
-            if (Progress >= OldProgress + 10) {
-                DrawImage();
-                OldProgress += 10;
-                luc.clean(null);
-            }
-            if (Progress >= 100) {
-                clearInterval(id);
-            }
-
-            var rand = Math.floor(Math.random() * Settlements.length);
-
-            var randomsettlementcoordinate = Settlements[rand];
-
-            From = luc[i][0];
-            To = luc[i][1];
-
-            var coordinate = GetDonatingSite(randomsettlementcoordinate, From);
-
-            SetPixel(imageData, coordinate[0], coordinate[1], From, To);
-
-            luc[i] = null;
-
-        }
-    }, 0);
-
-    
-    DrawImage();
-}
-function DrawLegend() {
-
-    var Entrees = 4;
-    var HeightPerEntree = 20;
-
-    legendrect = new Rectangle(10, 10, 150, HeightPerEntree * Entrees + 20);
-
-    //Context.beginPath();
-    //Context.rect(legendrect.A[0], legendrect.A[1], legendrect.Width, legendrect.Height);
-    //Context.stroke();
-
-    var coordinate = [legendrect.A[0] + 10, legendrect.A[1] + 10];
-
-    coordinate = AddLegendEntry(coordinate, "Primary forest", DarkGreen);
-    coordinate = AddLegendEntry(coordinate, "Secondary forest", LightGreen);
-    coordinate = AddLegendEntry(coordinate, "Cropland", Yellow);
-    coordinate = AddLegendEntry(coordinate, "Settlements", Red);
-}
 function SimulateNoSpatialCorrelation() {
 
     GetLandUseChangeCount();
 
     var c = 0;
     var OldProgress = Progress = 0;
+    var year_start = Year;
+
     for (var row = 0; row < nrows; row++) {
         for (var col = 0; col < ncols; col++) {
 
@@ -390,6 +177,7 @@ function SimulateNoSpatialCorrelation() {
                 }
             }
             Progress = Math.round(100 * (c / (nrows * ncols)));
+            Year = Math.floor(year_start + 10 * (Progress / 100));
             if (Progress >= OldProgress + 10) {
                 DrawImage();
                 OldProgress += 10;
@@ -399,6 +187,250 @@ function SimulateNoSpatialCorrelation() {
     DrawImage();
 
 }
+
+function SimulateAllAroundDevelopedArea() {
+
+    if (Progress < 100) return;
+
+    GetLandUseChangeCount();
+
+    Progress = 0;
+    var year_start = Year;
+    var OldProgress = Progress = 0;
+    var cnt = 0;
+    var id = setInterval(function () {
+
+        var i = Math.floor(Math.random() * luc.length);
+
+        if (luc[i] != null) {
+            Progress = Math.round(100 * (cnt / SumLandUseChanges));
+            Year = Math.floor(year_start + 10 * (Progress / 100));
+            cnt++;
+            if (Progress >= OldProgress + 10) {
+                DrawImage();
+                OldProgress += 10;
+                luc.clean(null);
+            }
+            if (Progress >= 100) {
+                clearInterval(id);
+            }
+
+            var rand = Math.floor(Math.random() * Settlements.length);
+
+            var randomsettlementcoordinate = Settlements[rand];
+
+            From = luc[i][0];
+            To = luc[i][1];
+
+            var coordinate = GetDonatingSite(randomsettlementcoordinate, From);
+
+            SetPixel(imageData, coordinate[0], coordinate[1], From, To);
+
+            luc[i] = null;
+
+        }
+    }, 0);
+
+
+    DrawImage();
+}
+
+function SimulateAllAroundWater() {
+
+    if (Progress < 100) return;
+
+    GetLandUseChangeCount();
+
+    Progress = 0;
+    var year_start = Year;
+    var OldProgress = Progress = 0;
+    var cnt = 0;
+    var id = setInterval(function () {
+
+        var i = Math.floor(Math.random() * luc.length);
+
+        if (luc[i] != null) {
+            Progress = Math.round(100 * (cnt / SumLandUseChanges));
+            Year = Math.floor(year_start + 9 * (Progress / 100));
+            cnt++;
+            if (Progress >= OldProgress + 10) {
+                DrawImage();
+                OldProgress += 10;
+                luc.clean(null);
+            }
+            if (Progress >= 100) {
+                clearInterval(id);
+            }
+
+            var rand = Math.floor(Math.random() * Waters.length);
+
+            var randomwatercoordinate = Waters[rand];
+
+            From = luc[i][0];
+            To = luc[i][1];
+
+            var coordinate = GetDonatingSite(randomwatercoordinate, From);
+
+            SetPixel(imageData, coordinate[0], coordinate[1], From, To);
+
+            luc[i] = null;
+
+        }
+    }, 0);
+
+
+    DrawImage();
+}
+
+function componentToHex(c) {
+    var hex = c.toString(16);
+    return hex.length == 1 ? "0" + hex : hex;
+}
+
+function rgbToHex(r, g, b) {
+    return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+}
+
+function DrawRectangle(Rectangle, Color) {
+
+    Context.fillStyle = Color;
+    Context.fillRect(Rectangle.xmin, Rectangle.ymin, Rectangle.Width, Rectangle.Height);
+}
+
+function setPixelColor(imageData, x, y, Color) {
+
+    index = get_index(imageData, x, y);
+
+    imageData.data[index + 0] = Color[0];
+    imageData.data[index + 1] = Color[1];
+    imageData.data[index + 2] = Color[2];
+    imageData.data[index + 3] = 255;
+}
+
+function getPixelColor(imageData, x, y) {
+
+    index = get_index(imageData, x, y);
+
+    Color = [];
+
+    Color[0] = imageData.data[index + 0];
+    Color[1] = imageData.data[index + 1];
+    Color[2] = imageData.data[index + 2];
+    Color[3] = 255;
+
+    return Color;
+}
+
+function get_index(imageData, x, y) {
+
+    var index = (x + y * imageData.width) * 4;
+    return index;
+}
+
+function get_xy(index) {
+
+    var x = index / 4;
+    var y = 0;
+    while (x > imageData.width) {
+        x -= imageData.width;
+        y++;
+    }
+
+    return [x, y];
+}
+
+function CalculateDistance(x1, y1, x2, y2) {
+
+    var dx2 = Math.pow(Math.abs(x2 - x1), 2);
+    var dy2 = Math.pow(Math.abs(y2 - y1), 2);
+    return Math.sqrt(dx2 + dy2);
+
+}
+
+function SetPixel(imageData, row, col, old_land_use, new_land_use)
+{
+    setPixelColor(imageData, row, col, new_land_use.Color);
+
+    if (old_land_use != null) {
+        old_land_use.Count--;
+    }
+    if (new_land_use != null) {
+        new_land_use.Count++;
+    }
+
+    if (old_land_use == Settlement) {
+        var index = Settlements.indexOf(Coordinates[row][col]);
+        if (index > -1) Settlements.splice(index, 1);
+    
+    }
+    if (old_land_use == Waters) {
+        var index = Waters.indexOf(Coordinates[row][col]);
+        if (index > -1) Waters.splice(index, 1);
+     
+    }
+
+    if (new_land_use == Settlement) {
+        Settlements.push(Coordinates[row][col]);
+     
+    }
+    if (new_land_use == Water) {
+        Waters.push(Coordinates[row][col]);
+     
+    }
+
+    
+
+}
+
+function DrawProgressBox() {
+    var Entrees = 1;
+    var HeightPerEntree = 20;
+
+    var Height = HeightPerEntree * Entrees + 20;
+    var Width = 125;
+    var legendrect = new Rectangle(nrows - Width - 10, ncols - Height - 10, Width, Height);
+    Context.clearRect(legendrect.A[0], legendrect.A[1], legendrect.Width, legendrect.Height);
+    
+    var coordinate = [legendrect.A[0] + 10, legendrect.A[1] + 10];
+
+    /*coordinate = AddLegendEntry(coordinate, "Progress:\t" + Progress + "%", null);*/
+
+    coordinate = AddLegendEntry(coordinate, "Year:\t" + Year, null);
+}
+
+function DrawImage(custom_legend)
+{
+    Context.putImageData(imageData, 0, 0); // at coords 0,0
+    DrawProgressBox();
+    if (custom_legend == null) DrawLegend();
+    else custom_legend();
+}
+
+Array.prototype.clean = function (deleteValue) {
+    for (var i = 0; i < this.length; i++) {
+        if (this[i] == deleteValue) {
+            this.splice(i, 1);
+            i--;
+        }
+    }
+    return this;
+};
+
+function DrawLegend() {
+
+    var Entrees = 4;
+    var HeightPerEntree = 20;
+
+    legendrect = new Rectangle(10, 10, 150, HeightPerEntree * Entrees + 20);
+
+    var coordinate = [legendrect.A[0] + 10, legendrect.A[1] + 10];
+
+    coordinate = AddLegendEntry(coordinate, "Primary forest", DarkGreen);
+    coordinate = AddLegendEntry(coordinate, "Secondary forest", LightGreen);
+    coordinate = AddLegendEntry(coordinate, "Cropland", Yellow);
+    coordinate = AddLegendEntry(coordinate, "Settlements", Red);
+}
+
 function GetDonatingSite(random_settlement_coord, donating_land_use) {
 
     var d = 1;
@@ -503,54 +535,7 @@ function GetLandUseChangeCount() {
     SumLandUseChanges += Settlements_CropLand_cnt;
      
 }
-function SimulateAllAroundWater() {
 
-
-     
-    GetLandUseChangeCount();
-
-    Progress = 0;
-    var year_start = Year;
-    var OldProgress = Progress = 0;
-    var cnt = 0;
-    var id = setInterval(function () {
-
-        var i = Math.floor(Math.random() * luc.length);
-
-        if (luc[i] != null) {
-            Progress = Math.round(100 * (cnt / SumLandUseChanges));
-            Year = Math.floor(year_start + 9 * (Progress / 100));
-            cnt++;
-            if (Progress >= OldProgress + 10) {
-                DrawImage();
-                OldProgress += 10;
-                luc.clean(null);
-            }
-            if (Progress >= 100) {
-                clearInterval(id);
-            }
-
-            var rand = Math.floor(Math.random() * Waters.length);
-
-            var randomwatercoordinate = Waters[rand];
-
-            From = luc[i][0];
-            To = luc[i][1];
-
-            var coordinate = GetDonatingSite(randomwatercoordinate, From);
-
-            SetPixel(imageData, coordinate[0], coordinate[1], From, To);
-
-            luc[i] = null;
-
-        }
-    }, 0);
-
-    
-    DrawImage();
-}
-
- 
 function GetValueFromTable(ID) {
     var value = document.getElementById(ID).innerText;
     return value;
@@ -573,14 +558,12 @@ function AddLegendEntry(coordinate, label, color) {
     return [coordinate[0], coordinate[1] + 15 + 5];
 }
 
- 
-
-
 function LandUse(MapCode, Color) {
     this.Count = 0;
     this.MapCode = MapCode;
     this.Color = Color;
 }
+
 function GetLandUseType(MapCode) {
 
     for (a = 0; a < LandUseTypes.length; a++) {
@@ -601,53 +584,6 @@ function InitializePixelCoordinates(image)
         {
                 Pixel_Coordinates[r][c] = new Coordinate(r, c);
         }
-    }
-}
-
-function GetDonatingSite2(image, random_settlement_coord, donating_land_use) {
-
-    r_from = random_settlement_coord[0];
-    c_from = random_settlement_coord[1];
-
-
-    d = 1;
-    for (; ; ) {
-        // Right bottom
-        r_from = random_settlement_coord[0] + d;
-        c_from = random_settlement_coord[1] + d;
-
-        donating_site = IsGoodDonatingSite(image, r_from, c_from, donating_land_use);
-
-        if (donating_site != null) return donating_site;
-
-        for (col = 0; col < 2 * d; col++) {
-            c_from--;
-
-            donating_site = IsGoodDonatingSite(image, r_from, c_from, donating_land_use);
-
-            if (donating_site != null) return donating_site;
-        }
-        for (r = 0; r < 2 * d; r++) {
-            r_from--;
-
-            donating_site = IsGoodDonatingSite(image, r_from, c_from, donating_land_use);
-
-            if (donating_site != null) return donating_site;
-        }
-        for (col = 0; col < 2 * d; col++) {
-            c_from++;
-            donating_site = IsGoodDonatingSite(image, r_from, c_from, donating_land_use);
-
-            if (donating_site != null) return donating_site;
-        }
-        for (r = 0; r < 2 * d; r++) {
-            r_from++;
-            donating_site = IsGoodDonatingSite(image, r_from, c_from, donating_land_use);
-
-            if (donating_site != null) return donating_site;
-        }
-
-        d++;
     }
 }
 
