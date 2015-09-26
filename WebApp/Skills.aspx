@@ -12,8 +12,7 @@
         <b>Spatiotemporal modeling and computer simulations</b><br>
 
         I have developed numerous computer algorithms and associated software to simulate biological and biogeochemical computer simulations.
-        The complexity of these different applications varies widely, some are 1D, others 2D, some of the applications I developed or worked with consisted of 
-        <200 lines of computer code, others > 10000. <br><br>
+        The complexity of these different scripts and programs varies: some are 1D, others 2D, with the number of lines of code ranging from less than 200 to thousands. <br><br>
 
 
         <b>Data manipulation and performance bottlenecks</b><br>

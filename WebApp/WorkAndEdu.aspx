@@ -4,12 +4,25 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
  
     <div  style="width:940px;    float:left; padding:10px; background-color : white">
+        <h2>Self employed <a href="http://harvardforest.fas.harvard.edu/">(Harvard Forest)</a>  - September 2015 - present </h2>
+        <h3>Responsibilities</h3>
+
+         I have been working with Harvard Forest since 2013 (i.e. during my Post-Doctoral assignment 
+        at Purdue University). I received funding from Harvard to finish up on some of my work after my contract at Purdue ended in September 2015. 
+         This contract will be executed concurrently with my work for the United States Forest Service (i.e. see next entry).
+    </div>
+
+    <div class="margin_bottom_10"></div>
+    <div class="margin_bottom_20 h_divider"></div>
+    <div class="margin_bottom_10"></div>
+
+    <div  style="width:940px;    float:left; padding:10px; background-color : white">
         <h2>Self employed <a href="http://www.nrs.fs.fed.us/units/iaes/">(USFS Northern Research Station)</a> - September 2015 - present </h2> 
         <h3>Responsibilities</h3>
          
         I have been working with the United States Forest Service since 2011 (i.e. during my Post-Doctoral assignment 
         at Purdue University). I received funding from USFS to finish up on some of my work after my contract at Purdue ended in September 2015. 
-         This contract will be executed concurrently with my work for the United States Forest Service (i.e. see next entry).
+         This contract will be executed concurrently with my work for the Harvard Forest (i.e. see previous entry).
 
     </div>
   
@@ -17,17 +30,7 @@
      <div class="margin_bottom_20 h_divider"></div>
      <div class="margin_bottom_10"></div>
 
-     <div  style="width:940px;    float:left; padding:10px; background-color : white">
-        <h2>Self employed <a href="http://harvardforest.fas.harvard.edu/">(Harvard Forest)</a>  - September 2015 - present </h2>
-        <h3>Responsibilities</h3>
-
-         I have been working with Harvard Forest since 2013 (i.e. during my Post-Doctoral assignment 
-        at Purdue University). I received funding from Harvard to finish up on some of my work after my contract at Purdue ended in September 2015. 
-         This contract will be executed concurrently with my work for the United States Forest Service (i.e. see previous entry).
-    </div>
-         <div class="margin_bottom_10"></div>
-     <div class="margin_bottom_20 h_divider"></div>
-     <div class="margin_bottom_10"></div>
+     
   
 
     <div  style="width:940px;    float:left; padding:10px; background-color : White">
