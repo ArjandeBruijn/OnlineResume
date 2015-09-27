@@ -61,15 +61,15 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="js\DecompositionFunctions.js" />
     <Content Include="js\GoogleAnalytics.js" />
+    <Content Include="js\IsScrolledIntoView.js" />
     <Content Include="js\StatCounter.js" />
     <Content Include="Miscellaneous.aspx" />
     <Content Include="jquery.mobile.custom.structure.css" />
     <Content Include="jquery.mobile.custom.theme.css" />
-    <Content Include="js\DecompositionFunctions.js" />
     <Content Include="Default.aspx" />
     <Content Include="js\Checkboxes.js" />
-    <Content Include="js\DecompositionMeasurements.js" />
     <Content Include="js\Graph.js" />
     <Content Include="js\ImageFunctions.js" />
     <Content Include="js\jq-sticky-anything.min.js" />

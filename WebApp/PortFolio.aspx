@@ -29,19 +29,19 @@
              
              This is of interest because of climate change: carbon that is lost from the soil and trees mostly enters the atmosphere as CO<sub>2</sub>  gas. 
              I estimated carbon storage by predicting carbon dynamics in different categories of land use such as Primary Forest (lightly disturbed rain forest), Secondary Forest (rain forests that 
-             are recouperating from disturbances), cropland and settlements. These were combined with predictions of different land use areas based on areal photography, extrapolations 
+             are recuperating from disturbances), cropland and settlements. These were combined with predictions of different land use areas based on aerial photography, extrapolations 
              from historical land use changes and various assumptions of how land use change is spatially correlated, i.e. 
               
               <br> <br> 
             <label id = "sized_label"><input type="checkbox" onclick = "CheckBoxIsNoSpatialCorrelation()" class="radio" value="1" id="NoSpatialCorrelation"  name="Hypotheses" checked/>1. There is no spatial correlation between land use transitions.<br></label>
             <label id = "sized_label"><input type="checkbox" onclick = "CheckBoxIsAllAroundDevelopedArea()" class="radio" value="1" id="AllAroundDevelopedArea"  name="Hypotheses"/>2. Land use transitions occur near settlements.<br></label>
-            <label id = "sized_label"><input type="checkbox" onclick = "CheckBoxIsAllAroundWater()" class="radio" value="1" id="AllAroundWater"  name="Hypotheses"/>3.Land use transitions occur near water.<br></label>
+            <label id = "sized_label"><input type="checkbox" onclick = "CheckBoxIsAllAroundWater()" class="radio" value="1" id="AllAroundWater"  name="Hypotheses"/>3. Land use transitions occur near water.<br></label>
              <br>  
               
-            The image predict future land use under given assumptions. 
+            The image predicts future land use under selected assumption. 
     </div>
     <div style="width:940px;  padding-right:20px; float:left;background-color: White; ">
-            <i>Graphics: location of Malinau Research Forest on Borneo, Indonesia (left)  Simulation of land use change in Malinau (right)</i>
+            <i>Graphics: location of Malinau Research Forest on Borneo, Indonesia (left)  Malinau region (right)</i>
     </div>
 
     <div class="margin_bottom_20 h_divider"></div>
@@ -138,19 +138,21 @@
          The Green Ridge State Forest is a natural area in the Appalachians that covers parts of Pennsylvania, Maryland and West Virginia. I am using data from Green Ridge to 
          simulate future scenarios of the the area under various scenarios.  Here you see random configurations of insect outbreaks in Green Ridge.
          We are interested in insect outbreaks because the sensitivity of tree species to particular insect species tends to be an important driving factor of future species configuration.-
+         
+         <div style="padding:10px; float:right;background-color: White; ">
+               <img  src="resources/GRSF_background.png" height ="190px"  border="1" align = "left" />
+            </div>
+        
          Our model (Landis-ii) uses a sensitivity grade that defines how sensitive each tree species is for 
          attacks by each insect species. Using the density of various tree species on each pixel, the model calculates an outbreak sensitivity. The actual occurance of 
          simulated outbreaks is random, and increases with outbreak sensitivity.
-         
-         <div style="  height: 200px; padding:0px; float:right;background-color: White; ">
-               <img  src="resources/GRSF_background.png" height ="190px"  border="1" align = "left" />
-            </div>
-         <br><br><br><br><br><br><br><br><br><br><br>
-         
-           <i>Graphics: Simulated defoliation during outbreaks of Gypsy moth in Green Ridge (deep red = high defoliation) </i>
-
+          
      </div>
-     
+    
+    <div style="width:940px;  padding-right:20px; float:left;background-color: White; ">
+            <i>Graphics: Simulated defoliation during outbreaks of Gypsy moth in Green Ridge (deep red = high defoliation) (left) Location of Green Ridge State Forest (right)</i>
+    </div> 
+
      <div class="margin_bottom_20 h_divider"></div>
                     <div class="margin_bottom_10"></div>
     <div  style="width:940px;   float:left; padding:10px; background-color : White">
@@ -228,9 +230,9 @@
      <br><br>
    </div>
    
-    <script>        StartDecompositionFunctions(); </script>
-    <script>        StartMalinauSimulations();</script>
-    <script>        watch(document.getElementById('LUCtable'), whenChangeHappens);</script>
+    <script>        StartDecompositionFunctions(document.getElementById("DecompCanvas")); </script>
+    <script>        StartMalinauSimulations(document.getElementById('canvas_Malinau'));</script>
+   
      
 
      <table id = "LUCtable" bgcolor = white border="1" style = "display:none">
@@ -270,7 +272,7 @@
                 <td bgcolor ="#c0c0c0" id = 'Settlements-Settlements'><div>1</div>	  </th>
              </tr>
          </table>
-    
+     <script>         watch(document.getElementById('LUCtable'), whenChangeHappens);</script>
                              
 </asp:Content>
 

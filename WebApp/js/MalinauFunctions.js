@@ -32,15 +32,20 @@ LandUseTypes = [NoData, PF, SF, LandUse3, Settlement, LandUse5, OpenLand, LandUs
 Settlements = [];
 Waters = [];
 
-function StartMalinauSimulations() {
+
+
+function StartMalinauSimulations(elem) {
 
     ShowMalinauMap(2000);
 
     window.setInterval(function () {
-        SimulateSelectedHypothesis();
-    }, 3000); // repeat forever, polling every 3 seconds
-   
-    
+
+        if (isScrolledIntoView(elem) == true) {
+            SimulateSelectedHypothesis();
+        }
+    }, 3000);
+
+
 }
 
 function ShowMalinauMap(year) {
@@ -347,8 +352,7 @@ function CalculateDistance(x1, y1, x2, y2) {
 
 }
 
-function SetPixel(imageData, row, col, old_land_use, new_land_use)
-{
+function SetPixel(imageData, row, col, old_land_use, new_land_use) {
     setPixelColor(imageData, row, col, new_land_use.Color);
 
     if (old_land_use != null) {
@@ -361,24 +365,24 @@ function SetPixel(imageData, row, col, old_land_use, new_land_use)
     if (old_land_use == Settlement) {
         var index = Settlements.indexOf(Coordinates[row][col]);
         if (index > -1) Settlements.splice(index, 1);
-    
+
     }
     if (old_land_use == Waters) {
         var index = Waters.indexOf(Coordinates[row][col]);
         if (index > -1) Waters.splice(index, 1);
-     
+
     }
 
     if (new_land_use == Settlement) {
         Settlements.push(Coordinates[row][col]);
-     
+
     }
     if (new_land_use == Water) {
         Waters.push(Coordinates[row][col]);
-     
+
     }
 
-    
+
 
 }
 
@@ -390,7 +394,7 @@ function DrawProgressBox() {
     var Width = 80;
     var legendrect = new Rectangle(nrows - Width - 10, ncols - Height - 10, Width, Height);
     Context.clearRect(legendrect.A[0], legendrect.A[1], legendrect.Width, legendrect.Height);
-    
+
     var coordinate = [legendrect.A[0] + 10, legendrect.A[1] + 10];
 
     /*coordinate = AddLegendEntry(coordinate, "Progress:\t" + Progress + "%", null);*/
@@ -398,8 +402,7 @@ function DrawProgressBox() {
     coordinate = AddLegendEntry(coordinate, "Year:\t" + Year, null);
 }
 
-function DrawImage(custom_legend)
-{
+function DrawImage(custom_legend) {
     Context.putImageData(imageData, 0, 0); // at coords 0,0
     DrawProgressBox();
     if (custom_legend == null) DrawLegend();
@@ -463,18 +466,18 @@ function GetLandUseChangeCount() {
 
     SumLandUseChanges = 0;
     luc = [];
-     
+
     var ForestArea = PF.Count;
     Forest_SecondaryForest = GetValueFromTable('Forest-SecondaryForest');
     Forest_SecondaryForest_cnt = Forest_SecondaryForest * ForestArea;
     for (var i = 0; i < Forest_SecondaryForest_cnt; i++) luc.push([PF, SF]);
     SumLandUseChanges += Forest_SecondaryForest_cnt;
-     
+
     Forest_Cropland = GetValueFromTable('Forest-CropLand');
     Forest_Cropland_cnt = Forest_Cropland * ForestArea;
     for (var i = 0; i < Forest_Cropland_cnt; i++) luc.push([PF, OpenLand]);
     SumLandUseChanges += Forest_Cropland_cnt;
-    
+
     Forest_Settlements = GetValueFromTable('Forest-Settlements');
     Forest_Settlements_cnt = Forest_Settlements * ForestArea;
     for (var i = 0; i < Forest_Settlements_cnt; i++) luc.push([PF, Settlement]);
@@ -486,34 +489,34 @@ function GetLandUseChangeCount() {
     SecondaryForest_Forest_cnt = SecondaryForest_Forest * SecondaryForestArea;
     for (var i = 0; i < SecondaryForest_Forest_cnt; i++) luc.push([SF, PF]);
     SumLandUseChanges += SecondaryForest_Forest_cnt;
-     
+
     SecondaryForest_CropLand = GetValueFromTable('SecondaryForest-CropLand');
     SecondaryForest_CropLand_cnt = SecondaryForest_CropLand * SecondaryForestArea;
     for (var i = 0; i < SecondaryForest_CropLand_cnt; i++) luc.push([SF, OpenLand]);
     SumLandUseChanges += SecondaryForest_CropLand_cnt;
-    
+
     SecondaryForest_Settlements = GetValueFromTable('SecondaryForest-Settlements');
     SecondaryForest_Settlements_cnt = SecondaryForest_Settlements * SecondaryForestArea;
     for (var i = 0; i < SecondaryForest_Settlements_cnt; i++) luc.push([SF, Settlement]);
     SumLandUseChanges += SecondaryForest_Settlements_cnt;
-    
+
     //-------------------
     var CropArea = OpenLand.Count;
     CropLand_Forest = GetValueFromTable('CropLand-Forest');
     CropLand_Forest_cnt = CropLand_Forest * CropArea;
     for (var i = 0; i < CropLand_Forest_cnt; i++) luc.push([OpenLand, PF]);
     SumLandUseChanges += CropLand_Forest_cnt;
-    
+
     CropLand_SecondaryForest = GetValueFromTable('CropLand-SecondaryForest');
     CropLand_SecondaryForest_cnt = CropLand_Forest * CropArea;
     for (var i = 0; i < CropLand_SecondaryForest_cnt; i++) luc.push([OpenLand, SF]);
     SumLandUseChanges += CropLand_SecondaryForest_cnt;
-    
+
     CropLand_Settlements = GetValueFromTable('CropLand-Settlements');
     CropLand_Settlements_cnt = CropLand_Settlements * CropArea;
     for (var i = 0; i < CropLand_Settlements_cnt; i++) luc.push([OpenLand, Settlement]);
     SumLandUseChanges += CropLand_Settlements_cnt;
-    
+
 
     //-------------------
     var SettlementArea = Settlement.Count;
@@ -523,17 +526,17 @@ function GetLandUseChangeCount() {
     for (var i = 0; i < Settlements_Forest_cnt; i++) luc.push([Settlement, PF]);
     SumLandUseChanges += Settlements_Forest_cnt;
 
-    
+
     Settlements_SecondaryForest = GetValueFromTable('Settlements-SecondaryForest');
     Settlements_SecondaryForest_cnt = Settlements_SecondaryForest * SettlementArea;
     for (var i = 0; i < Settlements_SecondaryForest_cnt; i++) luc.push([Settlement, SF]);
     SumLandUseChanges += Settlements_SecondaryForest_cnt;
-    
+
     Settlements_CropLand = GetValueFromTable('Settlements-CropLand');
     Settlements_CropLand_cnt = Settlements_CropLand * SettlementArea;
     for (var i = 0; i < Settlements_CropLand_cnt; i++) luc.push([Settlement, OpenLand]);
     SumLandUseChanges += Settlements_CropLand_cnt;
-     
+
 }
 
 function GetValueFromTable(ID) {
@@ -573,16 +576,13 @@ function GetLandUseType(MapCode) {
     return null;
 }
 
-function InitializePixelCoordinates(image) 
-{
+function InitializePixelCoordinates(image) {
     Pixel_Coordinates = [[], []];
-    for (var r = 0; r < pixels.length; r++) 
-    {
+    for (var r = 0; r < pixels.length; r++) {
         Pixel_Coordinates[r] = [];
 
-        for (var c = 0; c < pixels[0].length; c++) 
-        {
-                Pixel_Coordinates[r][c] = new Coordinate(r, c);
+        for (var c = 0; c < pixels[0].length; c++) {
+            Pixel_Coordinates[r][c] = new Coordinate(r, c);
         }
     }
 }

@@ -31,6 +31,7 @@
         <meta name="description" content="Arjan de Bruijn" />
         <meta charset="utf-8" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src='js/IsScrolledIntoView.js'></script>	
         <script src='js/infinite-rotator.js'></script>	
         <script src='js/jq-sticky-anything.min.js'></script>	
         <script src='js/SetActivePage.js'></script>	
@@ -38,7 +39,6 @@
         <script src="js/Malinau2000.js"></script>
         <script src='js/ImageFunctions.js'></script>
         <script src='js/MalinauFunctions.js'></script>
-        <script src="js/DecompositionMeasurements.js"></script>
         <script src="js/Graph.js"></script>
         <script src="js/DecompositionFunctions.js"></script>
         <script src="js/TableEventHandlers.js"></script>
