@@ -106,9 +106,9 @@ function GetProbability(model) {
     return P;
 }
 
+var FirstCall = true;
+
 function AddModelPoints(canvas) {
-   
-    
 
     var i = 0;
     var s = 0;
@@ -128,7 +128,9 @@ function AddModelPoints(canvas) {
 
     interval_id = setInterval(function () {
 
-        if (isScrolledIntoView(canvas) == true) {
+        if (isScrolledIntoView(canvas) == true || FirstCall) {
+            FirstCall = true;
+
             if (model == null || c == model.length - 1) {
 
                 last_coordinate = null;
@@ -170,7 +172,6 @@ function AddModelPoints(canvas) {
                 for (var p = 0; p < DecompositionMeasurements.length; p++) {
                     RemainingBiomassGraph.AddPoint(1, DecompositionMeasurements[p][0], DecompositionMeasurements[p][1], DecompositionMeasurements[p][2]);
                 }
-
 
                 c = 0;
             }

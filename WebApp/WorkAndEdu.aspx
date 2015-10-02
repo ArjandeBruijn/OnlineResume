@@ -45,7 +45,8 @@
             
         <h3>Accomplishments</h3>
         <ul>
-           <li>Developed a module, PnET-Succession, for the LANDIS-II Forest Landscape Simulation Model simulation platform that better incorporates interactions between climate change and competition for light and water between trees. LANDIS is Windows software developed in C# using Visual Studio. PnET-Succession is currently used in several universities and the Food and Agricultural Organisation (FAO) of the United Nations. </li>
+           <li>Developed a module,  <a href="http://www.landis-ii.org/extensions/pnet-succession">PnET-Succession</a>,
+                  for the LANDIS-II Forest Landscape Simulation Model simulation platform that better incorporates interactions between climate change and competition for light and water between trees. LANDIS is Windows software developed in C# using Visual Studio. PnET-Succession is currently used in several universities and the Food and Agricultural Organisation (FAO) of the United Nations. </li>
            <li>Wrote comprehensive technical documentation that I have kept up to date during the development process.</li>
            <li>Additionally I developed a user interface (see <a href="Portfolio.aspx">Portfolio</a>) as a Windows Forms application. The user interface uses techniques like multithreading and BackgroundWorkers to load maps and data. </li>
         </ul>

@@ -21,15 +21,13 @@
             <h1>Summary of Qualifications</h1>
             <ul>
               <h3 >
-                  <li >More than 8 years of experience in computer simulations, software and GIS </li>
+                  <li>More than 8 years of experience in computer simulations, programming and GIS </li>
                   <div class="margin_bottom_5"></div>
                   <li> Fluent in most coding languages (see <a href="Skills.aspx">skills</a>  page for details)</li>
                   <div class="margin_bottom_5"></div>
-                  <li> Developer of efficient code</li>
-                  <div class="margin_bottom_5"></div>
                   <li> Hard-working</li>
                   <div class="margin_bottom_5"></div>
-                  <li> Willing able and accustomed to travel up to 25%</li>
+                  <li> Willing and able to travel up to 25%</li>
                   <div class="margin_bottom_5"></div>
                   <li> Authorized to work in the USA</li>
                   <div class="margin_bottom_5"></div>
