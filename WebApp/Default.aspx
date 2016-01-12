@@ -9,8 +9,8 @@
         
         <h1 align="center">Professional background</h1>
         My career path has centered on land use modeling and vegetation dynamics, incorporating biogeochemistry, statistics, 
-     and development of simulation software. I have been working in academia for almost a decade now and I would like to move 
-     into the private sector or work for an NGO. I specialize in developing geospatial software applications and data management. Non-technical skills 
+     and development of simulation software. After almost a decade academia I moved to the private sector in search of less bureaucracy and better prospect.
+      I specialize in developing geospatial software applications and data management. Non-technical skills 
      include giving presentations, fluency in English, German, and Dutch, and working within large, widely dispersed development teams. 
 
         I developed this website to give employers additional information beyond the standard resume that is downloadable as a PDF below.

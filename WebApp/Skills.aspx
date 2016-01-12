@@ -5,6 +5,7 @@
 
     <div class="margin_bottom_10"></div>
 
+    <%--
     <h2>Technical</h2>
 
     <div style="width:940px;   float:left; padding : 10px; background-color: white">
@@ -32,7 +33,9 @@
         of optimization algorithm (i.e. see Bayesian calibration in <a href="Portfolio.aspx">Portfolio</a>).<br>
 
     </div>
+    
      <div class="margin_bottom_10 h_divider"></div>
+     --%>
 
     <div style="width:940px;   float:left; padding : 10px; background-color: white">
         <h2>Software</h2>
