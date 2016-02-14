@@ -61,6 +61,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="WillyTheWorm.aspx" />
     <Content Include="js\DecompositionFunctions.js" />
     <Content Include="js\GoogleAnalytics.js" />
     <Content Include="js\IsScrolledIntoView.js" />
@@ -96,6 +97,13 @@
     <Content Include="WorkAndEdu.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="WillyTheWorm.aspx.cs">
+      <DependentUpon>WillyTheWorm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WillyTheWorm.aspx.designer.cs">
+      <DependentUpon>WillyTheWorm.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

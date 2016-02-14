@@ -1,0 +1,4 @@
+C:\Repo\OnlineResumeWebApp\WebApp\bin\Resume.dll
+C:\Repo\OnlineResumeWebApp\WebApp\bin\Resume.pdb
+C:\Repo\OnlineResumeWebApp\WebApp\obj\Debug\Resume.dll
+C:\Repo\OnlineResumeWebApp\WebApp\obj\Debug\Resume.pdb
