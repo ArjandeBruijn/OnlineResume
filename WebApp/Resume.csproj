@@ -84,6 +84,7 @@
     <Content Include="Portfolio.aspx" />
     <Content Include="js\TableEventHandlers.js" />
     <Content Include="js\MarkovChainModel.js" />
+    <Content Include="resources\dissection.jpg" />
     <Content Include="resources\download_arrow.jpg" />
     <Content Include="resources\Favicon\android-icon-144x144.png" />
     <Content Include="resources\Favicon\android-icon-192x192.png" />
