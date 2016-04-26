@@ -8,12 +8,12 @@
  <div  style="width:940px;   float:left; padding:10px; background-color : White">
         
         <h1 align="center">Professional background</h1>
-        My career path has centered on land use modeling and vegetation dynamics, incorporating biogeochemistry, statistics, 
-     and development of simulation software. After almost a decade academia I moved to the private sector in search of less bureaucracy and better prospect.
-      I specialize in developing geospatial software applications and data management. Non-technical skills 
-     include giving presentations, fluency in English, German, and Dutch, and working within large, widely dispersed development teams. 
-
-        I developed this website to give employers additional information beyond the standard resume that is downloadable as a PDF below.
+        My career path has centered on land use simulation software for scientific research. 
+        I was coding computer for most of my working hours in academics. Ironically,
+        I found that coding was the part of my work that I enjoyed the most, beyond the conferences, workshops and publications. 
+        So I moved to a carreer in software development in the fall of 2015.
+        In lieu of a computer science degree, I developed this website to give employers additional information beyond my classic resume that is downloadable as a PDF below.
+        As far as this website is concerned, it is intended to serve as proof of my coding skills beyond the techniques that I have listed <a href="Skills.aspx">here</a>.
 
         <br> 
            
@@ -21,15 +21,15 @@
             <h1>Summary of Qualifications</h1>
             <ul>
               <h3 >
-                  <li>More than 8 years of experience in computer simulations, programming and GIS </li>
+                  <li>More than 8 years of experience in programming and GIS </li>
                   <div class="margin_bottom_5"></div>
                   <li> Fluent in most coding languages (see <a href="Skills.aspx">skills</a>  page for details)</li>
                   <div class="margin_bottom_5"></div>
                   <li> Hard-working</li>
                   <div class="margin_bottom_5"></div>
-                  <li> Willing and able to travel up to 25%</li>
+                  <li> Experience in Agile/SCRUM methodology</li>
                   <div class="margin_bottom_5"></div>
-                  <li> Authorized to work in the USA</li>
+                  <li> Authorized to work for any employer in the USA</li>
                   <div class="margin_bottom_5"></div>
                   
               </h3> 

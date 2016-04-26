@@ -181,8 +181,6 @@
     <Content Include="resources\Maryland\NewMaryland_background - Copy.jpg" />
     <Content Include="resources\Maryland\NewMaryland_background uncut.jpg" />
     <Content Include="resources\Maryland\NewMaryland_background.jpg" />
-    <Content Include="resources\pass.jpg" />
-    <Content Include="resources\passphoto - Copy - Copy.JPG" />
     <Content Include="resources\passphoto.JPG" />
     <Content Include="resources\ProgramIcons\arcgis.png" />
     <Content Include="resources\ProgramIcons\background.jpg" />

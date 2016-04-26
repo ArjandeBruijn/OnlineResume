@@ -3,6 +3,18 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
  
+
+    <div  style="width:940px;    float:left; padding:10px; background-color : white">
+        <h2>Software developer <a href="http://http://landworks.com/">(Landworks inc)</a>  - October 2015 - present </h2>
+        <h3>Responsibilities</h3>
+
+        • Developed GIS solutions for the oil and gas industry using C#, ARCGIS and Microsoft SQL server
+    </div>
+
+    <div class="margin_bottom_10"></div>
+    <div class="margin_bottom_20 h_divider"></div>
+    <div class="margin_bottom_10"></div>
+     
     <div  style="width:940px;    float:left; padding:10px; background-color : white">
         <h2>Contractor <a href="http://harvardforest.fas.harvard.edu/">(Harvard Forest)</a>  - September 2015 - present </h2>
         <h3>Responsibilities</h3>

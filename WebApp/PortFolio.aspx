@@ -6,7 +6,49 @@
      
 </asp:Content>
 
+ 
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    
+    
+    <div  style="width:940px;   float:left; padding:10px; background-color : White">
+
+      
+        <h2>Dissection and undissection</h2>
+           
+         <div  style="float:left; padding:10px; background-color : White">
+             
+             <img   src="resources/dissection.jpg" border="1" />
+             <!--<p>Click to enlarge</p>-->
+             
+             
+              
+         </div>
+        
+          <p>
+          
+            Oil and gas companies typically contract multiple land owners to regulate their access to drilling or pipe locations because multiple actors can have
+            different claims on a tract of lands. Agreements that apply to overlapping tracts of land are difficult to keep track of and the dissection method of Landworks Inc provides 
+            overview  by cutting up tracks of land (clipping polygons in ArcGis) and keeping track of contracts applicable to the resulting subsections. 
+            The reverse method, undissection, merges these sections again when a lease expires.
+            <br>
+            The method was developed in 2006 but through changes that were intentionally or erroneously made through the software versions, 
+            it had become buggy and it delivered unpredictable results. Moreover, it maintained a frequency of calls from the C# code to the SQL database that slowed the 
+            algorithm down. I recoded both the dissection and undissection method from scratch, which increased software performance with approximately 400% and solved the 
+            errors in the algorithm.
+             
+          
+ </p>
+     
+     <br><br>
+   </div>
+
+
+
+
+     
+   <hr>
+     
     <div class="margin_bottom_10"></div>
      
     <div  style="width:940px; float:left; padding:10px; background-color : White">
@@ -44,7 +86,7 @@
             <i>Graphics: location of Malinau Research Forest on Borneo, Indonesia (left)  Malinau region (right)</i>
     </div>
 
-    <div class="margin_bottom_20 h_divider"></div>
+     <hr>
      <div class="margin_bottom_10"></div>
 
 
@@ -153,8 +195,9 @@
             <i>Graphics: Simulated defoliation during outbreaks of Gypsy moth in Green Ridge (deep red = high defoliation) (left) Location of Green Ridge State Forest (right)</i>
     </div> 
 
-     <div class="margin_bottom_20 h_divider"></div>
-                    <div class="margin_bottom_10"></div>
+      <hr>
+     <div class="margin_bottom_10"></div>
+
     <div  style="width:940px;   float:left; padding:10px; background-color : White">
         <h2>Decomposition in Wisconsin and North-Carolina: Bayesian Calibration</h2>
          <div  style="width:525px; height: 250px;   float:left; padding:10px; background-color : White">
@@ -184,8 +227,8 @@
       
    </div>
 
-    <div class="margin_bottom_20 h_divider"></div>
-                    <div class="margin_bottom_10"></div>
+     <hr>
+     <div class="margin_bottom_10"></div>
 
     <div  style="width:940px;    float:left; padding:10px; background-color : White">
         <h2>The PnET-Succession model and its interface</h2>
@@ -221,15 +264,7 @@
            
            The user can drag these output files from the file tree into the workspace where the interface creates dockable windows that allow the user to view the model outputs in various formats. 
             
-          The interface makes use of a variety of freeware:
-            <ul>
-                <li><a href="http://www.codeproject.com/Articles/25976/Visual-Studio-IDE-like-Dock-Container">A Visual Studio IDE like Dock Container</a></li>
-                  <li >Maps, based on <a href="http://mapwingis.codeplex.com/">MapWinGis</a> </li>
-                  <li> Graphs using <a href="http://sourceforge.net/projects/zedgraph/">ZedGraph</a></li>
-                  <li> Spreadsheets that use  <a href="http://www.codeproject.com/Articles/691749/Free-NET-Spreadsheet-Control">a .NET Spreadsheet Control</a></li>
-                  <li> A text editor  </li>
-                 
-            </ul>
+          
  </p>
      <i>Graphics: Landis User Interface, left file view, right workspace. </i>
      <br><br>
