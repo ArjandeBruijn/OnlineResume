@@ -90,7 +90,7 @@
         </div>
         <div style="width:45%;float:left; padding : 10px">
               <img src="resources\ProgramIcons\tortoisesvn.png"   align="left">
-             More than 8 years of experience with software versioning through TortoiseSVN. Some of my projects (including this web page) are on  on <a href="https://github.com/ArjandeBruijn/">github</a>. 
+             More than 8 years of experience with software versioning through TortoiseSVN. Some of my projects are on <a href="https://github.com/ArjandeBruijn/" dir="rtl">github</a>. 
          
         </div>
         <div style="width:45%;float:left; padding : 10px">

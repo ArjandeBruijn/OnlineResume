@@ -28,14 +28,18 @@
           <p>
           
             Oil and gas companies typically contract multiple land owners to regulate their access to drilling or pipe locations because multiple actors can have
-            different claims on a tract of lands. Agreements that apply to overlapping tracts of land are difficult to keep track of and the dissection method of Landworks Inc provides 
-            overview  by cutting up tracks of land (clipping polygons in ArcGis) and keeping track of contracts applicable to the resulting subsections. 
+            different claims on a tract of land. The dissection method of Landworks Inc provides 
+            overview  by cutting up overlapping tracks of land (clipping polygons in ArcGis) and keeping track of contracts applicable to the resulting subsections. 
             The reverse method, undissection, merges these sections again when a lease expires.
             <br>
-            The method was developed in 2006 but through changes that were intentionally or erroneously made through the software versions, 
-            it had become buggy and it delivered unpredictable results. Moreover, it maintained a frequency of calls from the C# code to the SQL database that slowed the 
-            algorithm down. I recoded both the dissection and undissection method from scratch, which increased software performance with approximately 400% and solved the 
-            errors in the algorithm.
+            The method was developed in 2006 but in the course of many development cycles, 
+            it had become buggy and delivered unpredictable results. 
+            
+            Moreover, it maintained a very high frequency of calls from the application to the database which slowed the 
+            algorithm down. 
+            
+            I recoded both the dissection and undissection method from scratch, which increased software performance with approximately 
+            400% and solved the errors in the algorithm.
              
           
  </p>
