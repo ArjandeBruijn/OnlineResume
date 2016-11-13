@@ -1,4 +1,5 @@
-﻿ <div class="margin_bottom_10"></div>
+﻿  
+ <div class="margin_bottom_10"></div>
      
     <div  style="width:940px; float:left; padding:10px; background-color : White">
         <h2>Deforestation in Indonesia</h2>
@@ -30,6 +31,9 @@
              <br>  
               
             The image predicts future land use under selected assumption. 
+
+            <br><br><b>Skills:</b> C++, ArcGIS
+         
     </div>
     <div style="width:940px;  padding-right:20px; float:left;background-color: White; ">
             <i>Graphics: location of Malinau Research Forest on Borneo, Indonesia (left)  Malinau region (right)</i>

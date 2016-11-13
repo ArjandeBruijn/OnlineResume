@@ -97,6 +97,7 @@
          attacks by each insect species. Using the density of various tree species on each pixel, the model calculates an outbreak sensitivity. The actual occurance of 
          simulated outbreaks is random, and increases with outbreak sensitivity.
           
+         <br><br><b>Skills:</b> C++, ArcGIS
      </div>
     
     <div style="width:940px;  padding-right:20px; float:left;background-color: White; ">

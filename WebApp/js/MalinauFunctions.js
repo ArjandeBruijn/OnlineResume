@@ -406,7 +406,19 @@ function DrawLegend() {
     coordinate = AddLegendEntry(coordinate, "Settlements", Red);
 }
 
+function GetName() {
+
+    PageMethods.Name(Success, Failure);
+}
+function Success(result) {
+    alert(result);
+}
+function Failure(error) {
+    alert(error);
+}
 function GetDonatingSite(random_settlement_coord, donating_land_use) {
+
+    var name = GetName();
 
     var d = 1;
 

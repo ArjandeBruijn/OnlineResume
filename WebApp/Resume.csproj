@@ -65,6 +65,7 @@
     <Content Include="DefoliationInGreenRidgeStateForest.aspx" />
     <Content Include="DeforestationInIndonesia.aspx" />
     <Content Include="DissectionAndUndissection.aspx" />
+    <Content Include="ExpressLoader.aspx" />
     <Content Include="js\DecompositionFunctions.js" />
     <Content Include="js\GoogleAnalytics.js" />
     <Content Include="js\IsScrolledIntoView.js" />
@@ -89,6 +90,7 @@
     <Content Include="js\MarkovChainModel.js" />
     <Content Include="resources\dissection.jpg" />
     <Content Include="resources\download_arrow.jpg" />
+    <Content Include="resources\ExpressLoader.png" />
     <Content Include="resources\Favicon\android-icon-144x144.png" />
     <Content Include="resources\Favicon\android-icon-192x192.png" />
     <Content Include="resources\Favicon\android-icon-36x36.png" />
@@ -258,6 +260,13 @@
     </Compile>
     <Compile Include="DissectionAndUndissection.aspx.designer.cs">
       <DependentUpon>DissectionAndUndissection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ExpressLoader.aspx.cs">
+      <DependentUpon>ExpressLoader.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExpressLoader.aspx.designer.cs">
+      <DependentUpon>ExpressLoader.aspx</DependentUpon>
     </Compile>
     <Compile Include="Portfolio.aspx.cs">
       <DependentUpon>Portfolio.aspx</DependentUpon>
