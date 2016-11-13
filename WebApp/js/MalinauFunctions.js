@@ -147,25 +147,16 @@ function SimulateNoSpatialCorrelation() {
             }
             else if (color[0] == LightGreen[0] && color[1] == LightGreen[1] && color[2] == LightGreen[2]) {
 
-                if (rand < SecondaryForest_Forest) {
-                    SetPixel(imageData, row, col, SF, PF);
-                }
-                else if (rand < (+SecondaryForest_Forest + +SecondaryForest_CropLand)) {
+                if (rand < (+SecondaryForest_CropLand)) {
                     SetPixel(imageData, row, col, SF, OpenLand);
                 }
-                else if (rand < (+SecondaryForest_Forest + +SecondaryForest_CropLand + +SecondaryForest_Settlements)) {
+                else if (rand < (+SecondaryForest_CropLand )) {
                     SetPixel(imageData, row, col, SF, Settlement);
                 }
             }
             else if (color[0] == Yellow[0] && color[1] == Yellow[1] && color[2] == Yellow[2]) {
 
-                if (rand < CropLand_Forest) {
-                    SetPixel(imageData, row, col, OpenLand, PF);
-                }
-                else if (rand < (+CropLand_Forest + +CropLand_SecondaryForest)) {
-                    SetPixel(imageData, row, col, OpenLand, SF);
-                }
-                else if (rand < (+CropLand_Forest + +CropLand_SecondaryForest + +CropLand_Settlements)) {
+                if (rand < (+CropLand_Settlements)) {
                     SetPixel(imageData, row, col, OpenLand, Settlement);
                 }
             }
@@ -483,35 +474,15 @@ function GetLandUseChangeCount() {
     for (var i = 0; i < Forest_Settlements_cnt; i++) luc.push([PF, Settlement]);
     SumLandUseChanges += Forest_Settlements_cnt;
 
-    //-------------------
-    var SecondaryForestArea = SF.Count;
-    SecondaryForest_Forest = 0;
-    SecondaryForest_Forest_cnt = SecondaryForest_Forest * SecondaryForestArea;
-    for (var i = 0; i < SecondaryForest_Forest_cnt; i++) luc.push([SF, PF]);
-    SumLandUseChanges += SecondaryForest_Forest_cnt;
+
 
     SecondaryForest_CropLand = 0.005;
+    var SecondaryForestArea = SF.Count;
     SecondaryForest_CropLand_cnt = SecondaryForest_CropLand * SecondaryForestArea;
     for (var i = 0; i < SecondaryForest_CropLand_cnt; i++) luc.push([SF, OpenLand]);
     SumLandUseChanges += SecondaryForest_CropLand_cnt;
 
-    SecondaryForest_Settlements = 0;
-    SecondaryForest_Settlements_cnt = SecondaryForest_Settlements * SecondaryForestArea;
-    for (var i = 0; i < SecondaryForest_Settlements_cnt; i++) luc.push([SF, Settlement]);
-    SumLandUseChanges += SecondaryForest_Settlements_cnt;
-
-    //-------------------
     var CropArea = OpenLand.Count;
-    CropLand_Forest = 0;
-    CropLand_Forest_cnt = CropLand_Forest * CropArea;
-    for (var i = 0; i < CropLand_Forest_cnt; i++) luc.push([OpenLand, PF]);
-    SumLandUseChanges += CropLand_Forest_cnt;
-
-    CropLand_SecondaryForest = 0;
-    CropLand_SecondaryForest_cnt = CropLand_Forest * CropArea;
-    for (var i = 0; i < CropLand_SecondaryForest_cnt; i++) luc.push([OpenLand, SF]);
-    SumLandUseChanges += CropLand_SecondaryForest_cnt;
-
     CropLand_Settlements = 0.01;
     CropLand_Settlements_cnt = CropLand_Settlements * CropArea;
     for (var i = 0; i < CropLand_Settlements_cnt; i++) luc.push([OpenLand, Settlement]);
