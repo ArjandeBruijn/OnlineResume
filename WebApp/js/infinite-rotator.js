@@ -23,7 +23,7 @@ function InitializeRotatingItems(container, FirstIsBackground) {
     var initialFadeIn = 1;
 
     //interval between items (in milliseconds)
-    var itemInterval = 2000;
+    var itemInterval = 500;
 
     //cross-fade time (in milliseconds)
     var fadeTime = 1;

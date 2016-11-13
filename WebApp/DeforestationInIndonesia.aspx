@@ -2,7 +2,7 @@
  <div class="margin_bottom_10"></div>
      
     <div  style="width:940px; float:left; padding:10px; background-color : White">
-        <h2>Deforestation in Indonesia</h2>
+        <h2>Land use change in Indonesia</h2>
          <div  style="width:445px;  float:right; padding:20px; background-color : White">
             <canvas id="canvas_Malinau" style="float:right; border:1px solid black; background-color: White"   width="415px" height="561px" ></canvas>
             <button  onclick = "ShowMalinauMap(2000)" style="  float:right; height: 30px; background-color: DarkGray" type="button">Restart</button>

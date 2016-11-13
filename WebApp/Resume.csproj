@@ -212,6 +212,8 @@
     <Content Include="resources\ProgramIcons\VisualStudioLogo.jpg" />
     <Content Include="resources\RightArrow.png" />
     <Content Include="resources\right_arrow.jpg" />
+    <Content Include="resources\ss_el1.jpg" />
+    <Content Include="resources\ss_el1_thumb.jpg" />
     <Content Include="resources\vertical_divider.jpg" />
     <Content Include="Skills.aspx" />
     <Content Include="StyleSheet.css" />
