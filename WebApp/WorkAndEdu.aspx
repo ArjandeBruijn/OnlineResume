@@ -16,7 +16,7 @@
     <div class="margin_bottom_10"></div>
      
     <div  style="width:940px;    float:left; padding:10px; background-color : white">
-        <h2>Contractor <a href="http://harvardforest.fas.harvard.edu/">(Harvard Forest)</a>  - September 2015 - present </h2>
+        <h2>Contractor <a href="http://harvardforest.fas.harvard.edu/">(Harvard Forest)</a>  - September 2015 - March 2016 </h2>
         <h3>Responsibilities</h3>
 
          I have been working with Harvard University since 2013 (i.e. during my Post-Doctoral assignment 
@@ -31,7 +31,7 @@
     <div class="margin_bottom_10"></div>
 
     <div  style="width:940px;    float:left; padding:10px; background-color : white">
-        <h2>Contractor <a href="http://www.nrs.fs.fed.us/units/iaes/">(USFS Northern Research Station)</a> - September 2015 - present </h2> 
+        <h2>Contractor <a href="http://www.nrs.fs.fed.us/units/iaes/">(USFS Northern Research Station)</a> - September 2015 - March 2016 </h2> 
         <h3>Responsibilities</h3>
          
         I have been working with United States Forest Service since 2011 (i.e. during my Post-Doctoral assignment 
