@@ -6,7 +6,7 @@
             <canvas id="canvas_Malinau" style="float:right; border:1px solid black; background-color: White"   width="415px" height="561px" ></canvas>
             <button  onclick = "ShowMalinauMap(2000)" style="  float:right; height: 30px; background-color: DarkGray" type="button">Restart</button>
         
-            <!--<button  onclick = "SimulateSelectedHypothesis()" style="width: 185px; float:left; height: 30px; background-color: DarkGray" type="button">Simulate 10 years</button>-->
+            
             <div id = "Progress"></div>
          </div>
              A considerable part of my graduation thesis at Wageningen University was done at <a href="http://www.cifor.org/">CIFOR</a>  in Bogor, Indonesia. 
@@ -42,41 +42,4 @@
       <script>          StartMalinauSimulations(document.getElementById('canvas_Malinau'));</script>
 
 
-      <table id = "LUCtable" bgcolor = white border="1" style = "display:none">
-            <tr>
-                <th bgcolor ="#c0c0c0">From / To </th>
-                <th bgcolor ="#c0c0c0">Forest</th>
-                <th bgcolor ="#c0c0c0">Secondary Forest</th>
-                <th bgcolor ="#c0c0c0">Cropland</th>
-                <th bgcolor ="#c0c0c0">Settlements</th>
-            </tr>
-            <tr>
-                <th bgcolor ="#c0c0c0" >Forest</th>
-                <td bgcolor ="#c0c0c0" id="Forest-Forest"><div> 0.998 </div> </th>
-                <td  id="Forest-SecondaryForest"><div contenteditable> 0.002 </div> </th>
-                <td  id="Forest-CropLand"><div contenteditable> 0</div> </th>
-                <td  id= "Forest-Settlements"><div contenteditable> 0.0003 </div> </th>
-            </tr>
-            <tr>
-                <th bgcolor ="#c0c0c0">Secondary Forest</th>
-                <td id="SecondaryForest-Forest"><div contenteditable> 0	 </div> </th>
-                <td bgcolor ="#c0c0c0" id="SecondaryForest-SecondaryForest"><div> 0.995	 </div> </th>
-                <td id = 'SecondaryForest-CropLand'><div contenteditable> 0.005	</div> </th>
-                <td id = 'SecondaryForest-Settlements'><div contenteditable> 0 </div> </th>
-            </tr>
-            <tr>
-                <th bgcolor ="#c0c0c0">Cropland</th>
-                <td id = 'CropLand-Forest'><div contenteditable>0 </div></th>
-                <td id = 'CropLand-SecondaryForest'><div contenteditable>  0	</div></th>
-                <td bgcolor ="#c0c0c0" id = 'CropLand-CropLand'><div> 0.99 </div></th>
-                <td id = 'CropLand-Settlements'><div contenteditable> 0.01 </div></th>
-            </tr>
-            <tr>
-                <th bgcolor ="#c0c0c0">Settlements</th>
-                <td id = 'Settlements-Forest'><div contenteditable>0</div>	 </th>
-                <td id = 'Settlements-SecondaryForest'><div contenteditable> 0	</div>	</th>
-                <td id = 'Settlements-CropLand'><div contenteditable> 0</div>	 </th>
-                <td bgcolor ="#c0c0c0" id = 'Settlements-Settlements'><div>1</div>	  </th>
-             </tr>
-         </table>
-     <script>         watch(document.getElementById('LUCtable'), whenChangeHappens);</script>
+    

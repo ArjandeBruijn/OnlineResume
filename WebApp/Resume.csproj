@@ -61,6 +61,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DecompositionInWisconsinAndNorthCarolina.aspx" />
+    <Content Include="DefoliationInGreenRidgeStateForest.aspx" />
+    <Content Include="DeforestationInIndonesia.aspx" />
     <Content Include="DissectionAndUndissection.aspx" />
     <Content Include="js\DecompositionFunctions.js" />
     <Content Include="js\GoogleAnalytics.js" />
@@ -210,6 +213,7 @@
     <Content Include="resources\vertical_divider.jpg" />
     <Content Include="Skills.aspx" />
     <Content Include="StyleSheet.css" />
+    <Content Include="ThePnETSuccessionModelAndItsInterface.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -220,12 +224,33 @@
     <Content Include="WorkAndEdu.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DecompositionInWisconsinAndNorthCarolina.aspx.cs">
+      <DependentUpon>DecompositionInWisconsinAndNorthCarolina.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DecompositionInWisconsinAndNorthCarolina.aspx.designer.cs">
+      <DependentUpon>DecompositionInWisconsinAndNorthCarolina.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DefoliationInGreenRidgeStateForest.aspx.cs">
+      <DependentUpon>DefoliationInGreenRidgeStateForest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DefoliationInGreenRidgeStateForest.aspx.designer.cs">
+      <DependentUpon>DefoliationInGreenRidgeStateForest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeforestationInIndonesia.aspx.cs">
+      <DependentUpon>DeforestationInIndonesia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeforestationInIndonesia.aspx.designer.cs">
+      <DependentUpon>DeforestationInIndonesia.aspx</DependentUpon>
     </Compile>
     <Compile Include="DissectionAndUndissection.aspx.cs">
       <DependentUpon>DissectionAndUndissection.aspx</DependentUpon>
@@ -255,6 +280,13 @@
     </Compile>
     <Compile Include="Skills.aspx.designer.cs">
       <DependentUpon>Skills.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ThePnETSuccessionModelAndItsInterface.aspx.cs">
+      <DependentUpon>ThePnETSuccessionModelAndItsInterface.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ThePnETSuccessionModelAndItsInterface.aspx.designer.cs">
+      <DependentUpon>ThePnETSuccessionModelAndItsInterface.aspx</DependentUpon>
     </Compile>
     <Compile Include="WorkAndEdu.aspx.cs">
       <DependentUpon>WorkAndEdu.aspx</DependentUpon>

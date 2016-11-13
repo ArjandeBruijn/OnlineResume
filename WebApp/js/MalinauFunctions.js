@@ -43,7 +43,7 @@ function StartMalinauSimulations(elem) {
         if (isScrolledIntoView(elem) == true) {
             SimulateSelectedHypothesis();
         }
-    }, 3000);
+    }, 500);
 
 
 }
@@ -468,51 +468,51 @@ function GetLandUseChangeCount() {
     luc = [];
 
     var ForestArea = PF.Count;
-    Forest_SecondaryForest = GetValueFromTable('Forest-SecondaryForest');
+    Forest_SecondaryForest = 0.002;
     Forest_SecondaryForest_cnt = Forest_SecondaryForest * ForestArea;
     for (var i = 0; i < Forest_SecondaryForest_cnt; i++) luc.push([PF, SF]);
     SumLandUseChanges += Forest_SecondaryForest_cnt;
 
-    Forest_Cropland = GetValueFromTable('Forest-CropLand');
+    Forest_Cropland = 0;
     Forest_Cropland_cnt = Forest_Cropland * ForestArea;
     for (var i = 0; i < Forest_Cropland_cnt; i++) luc.push([PF, OpenLand]);
     SumLandUseChanges += Forest_Cropland_cnt;
 
-    Forest_Settlements = GetValueFromTable('Forest-Settlements');
+    Forest_Settlements = 0.0003;
     Forest_Settlements_cnt = Forest_Settlements * ForestArea;
     for (var i = 0; i < Forest_Settlements_cnt; i++) luc.push([PF, Settlement]);
     SumLandUseChanges += Forest_Settlements_cnt;
 
     //-------------------
     var SecondaryForestArea = SF.Count;
-    SecondaryForest_Forest = GetValueFromTable('SecondaryForest-Forest');
+    SecondaryForest_Forest = 0;
     SecondaryForest_Forest_cnt = SecondaryForest_Forest * SecondaryForestArea;
     for (var i = 0; i < SecondaryForest_Forest_cnt; i++) luc.push([SF, PF]);
     SumLandUseChanges += SecondaryForest_Forest_cnt;
 
-    SecondaryForest_CropLand = GetValueFromTable('SecondaryForest-CropLand');
+    SecondaryForest_CropLand = 0.005;
     SecondaryForest_CropLand_cnt = SecondaryForest_CropLand * SecondaryForestArea;
     for (var i = 0; i < SecondaryForest_CropLand_cnt; i++) luc.push([SF, OpenLand]);
     SumLandUseChanges += SecondaryForest_CropLand_cnt;
 
-    SecondaryForest_Settlements = GetValueFromTable('SecondaryForest-Settlements');
+    SecondaryForest_Settlements = 0;
     SecondaryForest_Settlements_cnt = SecondaryForest_Settlements * SecondaryForestArea;
     for (var i = 0; i < SecondaryForest_Settlements_cnt; i++) luc.push([SF, Settlement]);
     SumLandUseChanges += SecondaryForest_Settlements_cnt;
 
     //-------------------
     var CropArea = OpenLand.Count;
-    CropLand_Forest = GetValueFromTable('CropLand-Forest');
+    CropLand_Forest = 0;
     CropLand_Forest_cnt = CropLand_Forest * CropArea;
     for (var i = 0; i < CropLand_Forest_cnt; i++) luc.push([OpenLand, PF]);
     SumLandUseChanges += CropLand_Forest_cnt;
 
-    CropLand_SecondaryForest = GetValueFromTable('CropLand-SecondaryForest');
+    CropLand_SecondaryForest = 0;
     CropLand_SecondaryForest_cnt = CropLand_Forest * CropArea;
     for (var i = 0; i < CropLand_SecondaryForest_cnt; i++) luc.push([OpenLand, SF]);
     SumLandUseChanges += CropLand_SecondaryForest_cnt;
 
-    CropLand_Settlements = GetValueFromTable('CropLand-Settlements');
+    CropLand_Settlements = 0.01;
     CropLand_Settlements_cnt = CropLand_Settlements * CropArea;
     for (var i = 0; i < CropLand_Settlements_cnt; i++) luc.push([OpenLand, Settlement]);
     SumLandUseChanges += CropLand_Settlements_cnt;
@@ -521,18 +521,18 @@ function GetLandUseChangeCount() {
     //-------------------
     var SettlementArea = Settlement.Count;
 
-    Settlements_Forest = GetValueFromTable('Settlements-Forest');
+    Settlements_Forest = 0;
     Settlements_Forest_cnt = Settlements_Forest * SettlementArea;
     for (var i = 0; i < Settlements_Forest_cnt; i++) luc.push([Settlement, PF]);
     SumLandUseChanges += Settlements_Forest_cnt;
 
 
-    Settlements_SecondaryForest = GetValueFromTable('Settlements-SecondaryForest');
+    Settlements_SecondaryForest = 0;
     Settlements_SecondaryForest_cnt = Settlements_SecondaryForest * SettlementArea;
     for (var i = 0; i < Settlements_SecondaryForest_cnt; i++) luc.push([Settlement, SF]);
     SumLandUseChanges += Settlements_SecondaryForest_cnt;
 
-    Settlements_CropLand = GetValueFromTable('Settlements-CropLand');
+    Settlements_CropLand = 0;
     Settlements_CropLand_cnt = Settlements_CropLand * SettlementArea;
     for (var i = 0; i < Settlements_CropLand_cnt; i++) luc.push([Settlement, OpenLand]);
     SumLandUseChanges += Settlements_CropLand_cnt;
