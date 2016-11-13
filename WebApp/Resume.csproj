@@ -61,11 +61,11 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DissectionAndUndissection.aspx" />
     <Content Include="js\DecompositionFunctions.js" />
     <Content Include="js\GoogleAnalytics.js" />
     <Content Include="js\IsScrolledIntoView.js" />
     <Content Include="js\StatCounter.js" />
-    <Content Include="Miscellaneous.aspx" />
     <Content Include="jquery.mobile.custom.structure.css" />
     <Content Include="jquery.mobile.custom.theme.css" />
     <Content Include="Default.aspx" />
@@ -227,12 +227,12 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Miscellaneous.aspx.cs">
-      <DependentUpon>Miscellaneous.aspx</DependentUpon>
+    <Compile Include="DissectionAndUndissection.aspx.cs">
+      <DependentUpon>DissectionAndUndissection.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Miscellaneous.aspx.designer.cs">
-      <DependentUpon>Miscellaneous.aspx</DependentUpon>
+    <Compile Include="DissectionAndUndissection.aspx.designer.cs">
+      <DependentUpon>DissectionAndUndissection.aspx</DependentUpon>
     </Compile>
     <Compile Include="Portfolio.aspx.cs">
       <DependentUpon>Portfolio.aspx</DependentUpon>
