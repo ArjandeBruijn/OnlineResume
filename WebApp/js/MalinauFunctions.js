@@ -1,34 +1,17 @@
 var White = [255, 255, 255];
 var DarkGreen = [0, 100, 0];   // PF
 var LightGreen = [0, 255, 0]; // SF
-var Color3 = [0, 255, 0];   // Crop??
 var Red = [255, 0, 0];
 var Yellow = [255, 255, 0];  // position 2
-var Cyan = [0, 255, 255];
-var Color7 = [0, 128, 128];   // Crop??
 var Blue = [0, 0, 128];   //Water Body
-var Color9 = [128, 0, 0];
-var Color10 = [0, 0, 255];
-var Color11 = [128, 0, 128];
-var Color12 = [128, 128, 0];
-var Color13 = [0, 0, 0]; //black
 
-NoData = new LandUse(-9999, White);
 PF = new LandUse(1, DarkGreen);
 SF = new LandUse(2, LightGreen);
-LandUse3 = new LandUse(3, Color3, null);
 Settlement = new LandUse(4, Red);
-LandUse5 = new LandUse(5, Cyan);
 OpenLand = new LandUse(6, Yellow);
-LandUse7 = new LandUse(7, Color7);
 Water = new LandUse(8, Blue);
-LandUse9 = new LandUse(9, Color9);
-LandUse10 = new LandUse(10, Color10);
-LandUse11 = new LandUse(11, Color11);
-LandUse12 = new LandUse(12, Color12);
-LandUse13 = new LandUse(13, Color13);
 
-LandUseTypes = [NoData, PF, SF, LandUse3, Settlement, LandUse5, OpenLand, LandUse7, Water, LandUse9, LandUse10, LandUse11, LandUse12, LandUse13];
+LandUseTypes = [PF, SF, Settlement, OpenLand, Water];
 Settlements = [];
 Waters = [];
 
@@ -387,8 +370,6 @@ function DrawProgressBox() {
     Context.clearRect(legendrect.A[0], legendrect.A[1], legendrect.Width, legendrect.Height);
 
     var coordinate = [legendrect.A[0] + 10, legendrect.A[1] + 10];
-
-    /*coordinate = AddLegendEntry(coordinate, "Progress:\t" + Progress + "%", null);*/
 
     coordinate = AddLegendEntry(coordinate, "Year:\t" + Year, null);
 }
