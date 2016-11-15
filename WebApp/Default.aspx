@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
  
- <div  style="width:940px;   float:left; padding:10px; background-color : White">
+ <div  style="width:940px;    float:left; padding:10px; background-color : White">
         
         <h1 align="center">Professional background</h1>
         My career path has centered on land use simulation software for scientific research. 
@@ -54,7 +54,7 @@
              <br>
            <canvas id="MarkovChainDefaultPage" width= 900 height="175" style="background-color:black; ">Your browser does not support the HTML5 canvas tag.
            </canvas>
-           <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+           
 
      
     <script src='js/MarkovChainModel.js'></script>

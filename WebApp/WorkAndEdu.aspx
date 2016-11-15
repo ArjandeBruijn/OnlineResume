@@ -147,7 +147,8 @@
   </div>                
   <div class="margin_bottom_10 h_divider"></div>     
   <div  style="width:940px;    float:left; padding:10px; background-color : White">
-     <h2>Student<a href="http://www.wageningenur.nl/en/Expertise-Services/Chair-groups/Environmental-Sciences/Forest-and-Nature-Conservation-Policy-Group.htm" > Wageningen University </a>  – Wageningen (Netherlands)	1998-2005</h2> 
+     <h2>Student – Wageningen (Netherlands)	1998-2005</h2> 
+     <h2><a href="http://www.wageningenur.nl/en/Expertise-Services/Chair-groups/Environmental-Sciences/Forest-and-Nature-Conservation-Policy-Group.htm" > Wageningen University </a> </h2>
      <h3>Study themes</h3>   
      <p>
         At Wageningen University, it was pretty common to design an individual program for graduation. There were strickt demands for an individual study plan 
@@ -166,7 +167,8 @@
     
           
   <div  style="width:940px;    float:left; padding:10px; background-color : White">
-     <h2>Student<a href=" https://www.uva.nl/en/disciplines/philosophy" > Amsterdam University </a>   – Amsterdam (Netherlands) - 2001-2005</h2> 
+     <h2>Student – Amsterdam (Netherlands) - 2001-2005</h2> 
+     <h2><a href=" https://www.uva.nl/en/disciplines/philosophy" > Amsterdam University </a> </h2>
      <h3>Study themes</h3>   
      <p>
          This was my second study on Philosophy of Science. The study contains a generic year with general topics such as the history of philosophy, logic, knowledge theory.
