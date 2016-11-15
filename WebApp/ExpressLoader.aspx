@@ -7,7 +7,7 @@
           <p>
           
           <!-- Trigger the Modal -->
-          <img id="myImg" style="PADDING-LEFT: 5px" align="right" src="resources/ss_el1.jpg" alt="Express Loader Interface" width="300" height="200">
+          <img class = "popupimg" id="elImage" style="PADDING-LEFT: 5px" align="right" src="resources/ss_el1.jpg" alt="Express Loader Interface" width="300" height="200">
           
          Express Loader (EL) is a tool for securely loading large amounts of data into a Pipeline Open Data Standards database. 
          PODS is an industry standard for pipeline databases that fascilitates data transfer between pipeline companies and 
@@ -36,7 +36,7 @@
        <!--#include file="Modal.aspx"-->
 
        <script>
-           InitPopup('myImg');
+           InitPopup('elImage');
         </script>
 
   
