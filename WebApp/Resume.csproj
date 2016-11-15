@@ -85,6 +85,8 @@
     <Content Include="js\MarkovChainFunctions.js" />
     <Content Include="js\SetActivePage.js" />
     <Content Include="js\MarkovChainMeasurements.js" />
+    <Content Include="Modal.aspx" />
+    <Content Include="PODSStagingAdmin.aspx" />
     <Content Include="Portfolio.aspx" />
     <Content Include="js\TableEventHandlers.js" />
     <Content Include="js\MarkovChainModel.js" />
@@ -188,6 +190,7 @@
     <Content Include="resources\Maryland\NewMaryland_background uncut.jpg" />
     <Content Include="resources\Maryland\NewMaryland_background.jpg" />
     <Content Include="resources\passphoto.JPG" />
+    <Content Include="resources\PODS Staging.png" />
     <Content Include="resources\ProgramIcons\arcgis.png" />
     <Content Include="resources\ProgramIcons\background.jpg" />
     <Content Include="resources\ProgramIcons\cpp.png" />
@@ -270,6 +273,20 @@
     <Compile Include="ExpressLoader.aspx.designer.cs">
       <DependentUpon>ExpressLoader.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Modal.aspx.cs">
+      <DependentUpon>Modal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modal.aspx.designer.cs">
+      <DependentUpon>Modal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PODSStagingAdmin.aspx.cs">
+      <DependentUpon>PODSStagingAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PODSStagingAdmin.aspx.designer.cs">
+      <DependentUpon>PODSStagingAdmin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Portfolio.aspx.cs">
       <DependentUpon>Portfolio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -317,7 +334,6 @@
     <None Include="resources\Maryland\NewMaryland.mxd" />
     <None Include="resources\Maryland\NewMaryland_background2.xcf" />
     <None Include="resources\measurements.xlsx" />
-    <None Include="resources\Resume Arjan de Bruijn 2015.docx" />
     <None Include="resources\Resume.docx" />
     <None Include="resources\Resume.pdf" />
     <None Include="resources\right_arrow.xcf" />

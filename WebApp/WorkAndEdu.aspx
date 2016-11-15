@@ -5,10 +5,11 @@
  
 
     <div  style="width:940px;    float:left; padding:10px; background-color : white">
-        <h2>Software developer <a href="http://http://landworks.com/">(Landworks inc)</a>  - October 2015 - present </h2>
+        <h2>Software engineer II  - October 2015 - present  </h2>
+        <h2><a href="http://www.newcenturysoftware.com/">New Century Software</a></h2>
         <h3>Responsibilities</h3>
 
-        • Developed GIS solutions for the oil and gas industry using C#, ARCGIS and Microsoft SQL server
+        Developed GIS solutions for the oil and gas industry using C#, ARCGIS and Microsoft SQL server
     </div>
 
     <div class="margin_bottom_10"></div>
@@ -16,7 +17,8 @@
     <div class="margin_bottom_10"></div>
      
     <div  style="width:940px;    float:left; padding:10px; background-color : white">
-        <h2>Contractor <a href="http://harvardforest.fas.harvard.edu/">(Harvard Forest)</a>  - September 2015 - March 2016 </h2>
+        <h2>Contractor   - September 2015 - March 2016 </h2>
+        <h2><a href="http://harvardforest.fas.harvard.edu/">Harvard Forest</a></h2>
         <h3>Responsibilities</h3>
 
          I have been working with Harvard University since 2013 (i.e. during my Post-Doctoral assignment 
@@ -31,7 +33,8 @@
     <div class="margin_bottom_10"></div>
 
     <div  style="width:940px;    float:left; padding:10px; background-color : white">
-        <h2>Contractor <a href="http://www.nrs.fs.fed.us/units/iaes/">(USFS Northern Research Station)</a> - September 2015 - March 2016 </h2> 
+        <h2>Contractor  - September 2015 - March 2016 </h2> 
+        <h2><a href="http://www.nrs.fs.fed.us/units/iaes/">USFS Northern Research Station</a></h2>
         <h3>Responsibilities</h3>
          
         I have been working with United States Forest Service since 2011 (i.e. during my Post-Doctoral assignment 
@@ -51,7 +54,8 @@
   
 
     <div  style="width:940px;    float:left; padding:10px; background-color : White">
-        <h2><a href="https://ag.purdue.edu/fnr/Pages/default.aspx">Purdue University</a>  - West Lafayette, IN (USA) - 2011 to August 2015</h2>
+        <h2>Post-Doctoral researcher  - West Lafayette, IN (USA) - 2011 to August 2015 </h2>
+        <h2><a href="https://ag.purdue.edu/fnr/Pages/default.aspx">Purdue University</a></h2>
         <h3>Responsibilities</h3>
             
             I developed simulations to predict the fate of reintroduced American chestnut trees in the Appalachians. By the mid-1900s, American chestnut was wiped out by a blight that was imported from Japan in the early 1900s. 
@@ -79,7 +83,8 @@
      <div class="margin_bottom_20 h_divider"></div>
      <div class="margin_bottom_10"></div>
   <div  style="width:940px;    float:left; padding:10px; background-color : White">
-     <h2><a href="http://www.agroscope.admin.ch/org/00265/07176/index.html?lang=en">Agroscope Reckenholz Taenikon</a> - Zürich (Switzerland) - 2010 to 2011</h2> 
+     <h2>Post-Doctoral researcher - Zürich (Switzerland) - 2010 to 2011 </h2> 
+     <h2><a href="http://www.agroscope.admin.ch/org/00265/07176/index.html?lang=en">Agroscope Reckenholz Taenikon</a></h2>
      <h3>Responsibilities</h3>
       
         I developed simulations to evaluate how differences in soil carbon in grasslands relates to management intensity.
@@ -101,8 +106,9 @@
   </div>
     <div class="margin_bottom_10 h_divider"></div>
 
-  <div  style="width:940px;   float:left; padding:10px; background-color : White">
-         <h2><a href="https://www.wageningenur.nl/en/Expertise-Services/Research-Institutes/alterra.htm">Alterra B.V. </a> - Wageningen (Netherlands) - 2009 to 2010</h2> 
+   <div  style="width:940px;   float:left; padding:10px; background-color : White">
+         <h2>Software developer- Wageningen (Netherlands) - 2009 to 2010  </h2> 
+         <h2><a href="https://www.wageningenur.nl/en/Expertise-Services/Research-Institutes/alterra.htm">Alterra B.V. </a></h2>
          <h3>Responsibilities</h3>
          <p> 
             I debugging and improving various simulation programs. I mostly worked on the Landscape ecological Analysis and Rules for the Configuration of Habitat (LARCH) model.
@@ -117,7 +123,8 @@
     </div>
     <div class="margin_bottom_10 h_divider"></div>           
     <div  style="width:940px;     float:left; padding:10px; background-color : White">
-        <h2><a href="http://imk-ifu.fzk.de/">IMK-IFU </a>  - Garmisch-Partenkirchen (Germany) - 2006 to 2009</h2> 
+        <h2>Graduate student  - Garmisch-Partenkirchen (Germany) - 2006 to 2009</h2> 
+        <h2> <a href="http://imk-ifu.fzk.de/">IMK-IFU </a></h2>
         <h3>Responsibilities</h3>
         <p> 
             I supported the development of a biogeochemical simulation platform "MoBiLE". MoBiLE is a modular plpatform for biogeochemical 
@@ -140,7 +147,7 @@
   </div>                
   <div class="margin_bottom_10 h_divider"></div>     
   <div  style="width:940px;    float:left; padding:10px; background-color : White">
-     <h2><a href="http://www.wageningenur.nl/en/Expertise-Services/Chair-groups/Environmental-Sciences/Forest-and-Nature-Conservation-Policy-Group.htm" > Wageningen University </a>  – Wageningen (Netherlands)	1998-2005</h2> 
+     <h2>Student<a href="http://www.wageningenur.nl/en/Expertise-Services/Chair-groups/Environmental-Sciences/Forest-and-Nature-Conservation-Policy-Group.htm" > Wageningen University </a>  – Wageningen (Netherlands)	1998-2005</h2> 
      <h3>Study themes</h3>   
      <p>
         At Wageningen University, it was pretty common to design an individual program for graduation. There were strickt demands for an individual study plan 
@@ -156,9 +163,10 @@
      </ul>
   </div>             
   <div class="margin_bottom_10 h_divider"></div>
+    
           
   <div  style="width:940px;    float:left; padding:10px; background-color : White">
-     <h2><a href=" https://www.uva.nl/en/disciplines/philosophy" > Amsterdam University </a>   – Amsterdam (Netherlands) - 2001-2005</h2> 
+     <h2>Student<a href=" https://www.uva.nl/en/disciplines/philosophy" > Amsterdam University </a>   – Amsterdam (Netherlands) - 2001-2005</h2> 
      <h3>Study themes</h3>   
      <p>
          This was my second study on Philosophy of Science. The study contains a generic year with general topics such as the history of philosophy, logic, knowledge theory.

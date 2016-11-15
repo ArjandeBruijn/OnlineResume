@@ -11,10 +11,8 @@
         My career path has centered on land use simulation software for scientific research. 
         It involved lots of computer coding and ironically I found that that was the part of being an academic that I enjoyed far more than the conferences, workshops and publications of which I have certainly had my share. 
         So I switched careers and became a software engineer in the fall of 2015.
-        In lieu of a degree in computer science , I developed this website to give employers additional information beyond my classic resume that is downloadable as a PDF below.
-        As far as this website is concerned, I never worked with web technologies like JavaScript, CSS and HTML and it is intended to 
-        demonstrate that I am self-taught in these. 
-        
+        In lieu of a degree in computer science, I developed this website to give employers additional information beyond my classic resume that is downloadable as a PDF below.
+         
 
         <br> 
            
