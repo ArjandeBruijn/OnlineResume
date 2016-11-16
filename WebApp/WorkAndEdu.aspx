@@ -9,7 +9,12 @@
         <h2><a href="http://www.newcenturysoftware.com/">New Century Software</a></h2>
         <h3>Responsibilities</h3>
 
-        Developed GIS solutions for the oil and gas industry using C#, ARCGIS and Microsoft SQL server
+        Developed GIS solutions for the oil and gas industry 
+        
+        <br><br>
+        <b>Skills: </b> C#, ARCGIS, ArcObjects, Microsoft SQL server, Oracle, MVC framework (Razor), REST, JavaScript
+        
+        
     </div>
 
     <div class="margin_bottom_10"></div>
@@ -21,11 +26,13 @@
         <h2><a href="http://harvardforest.fas.harvard.edu/">Harvard Forest</a></h2>
         <h3>Responsibilities</h3>
 
-         I have been working with Harvard University since 2013 (i.e. during my Post-Doctoral assignment 
-        at Purdue University). I received funding from Harvard to add desired features to my simulation model 
+         I worked with Harvard University since 2013 (i.e. during my Post-Doctoral assignment 
+        at Purdue University) and received their funding to add desired features to my simulation model 
         <a href="http://www.landis-ii.org/extensions/pnet-succession/">PnET-Succession</a>
-            after my contract at Purdue ended in September 2015. 
-         This contract will be executed concurrently with my work for the United States Forest Service (i.e. see next entry).
+            when my contract at Purdue ended in September 2015. 
+
+            <br><br>
+             <b>Skills: </b> C#, ARCGIS
     </div>
 
     <div class="margin_bottom_10"></div>
@@ -37,40 +44,34 @@
         <h2><a href="http://www.nrs.fs.fed.us/units/iaes/">USFS Northern Research Station</a></h2>
         <h3>Responsibilities</h3>
          
-        I have been working with United States Forest Service since 2011 (i.e. during my Post-Doctoral assignment 
-        at Purdue University). I received funding from the Forest Service to add desired features to my simulation model 
+        I worked with the United States Forest Service since 2011 during Post-Doctoral assignment 
+        at Purdue University. I received funding from the Forest Service to add desired features to my simulation model 
         <a href="http://www.landis-ii.org/extensions/pnet-succession/">PnET-Succession</a>
             after my contract at Purdue ended in September 2015. 
-         This contract will be executed concurrently with my work for Harvard University (i.e. see previous entry).
+       
+       <br><br>
+        <b>Skills: </b> C#, ARCGIS
 
- 
     </div>
   
      <div class="margin_bottom_10"></div>
      <div class="margin_bottom_20 h_divider"></div>
      <div class="margin_bottom_10"></div>
 
-     
-  
-
+      
     <div  style="width:940px;    float:left; padding:10px; background-color : White">
         <h2>Post-Doctoral researcher  - West Lafayette, IN (USA) - 2011 to August 2015 </h2>
         <h2><a href="https://ag.purdue.edu/fnr/Pages/default.aspx">Purdue University</a></h2>
         <h3>Responsibilities</h3>
             
-            I developed simulations to predict the fate of reintroduced American chestnut trees in the Appalachians. By the mid-1900s, American chestnut was wiped out by a blight that was imported from Japan in the early 1900s. 
-            Asian chestnuts are largely resistant, and recent cross breeds (genetically 94% American and 6% Asian) share blight resistance, therefore are candidates for reintroduction. 
-            However, the Appalachians have changed over the last 100 years due to insect plagues and changes in land management and climate. 
-            I am combining information from lab and field trials with databases such as USGS geo data portal to predict how the new blight-resistant breed would fare upon its reintroduction in the Appalachians.
+            By the mid-1900s, American chestnut was extirpated by a blight that was imported from Japan in the early 1900s. 
+            I developed computerized simulations to predict the fate of reintroduced blight-resistant American chestnut trees in the Appalachians. 
+             I developed a tree physiology simulation module,  <a href="http://www.landis-ii.org/extensions/pnet-succession">PnET-Succession</a>,
+                  for the LANDIS-II Forest Landscape Simulation Model and wrote comprehensive technical documentation that I have kept up to date during the development process.
 
-            
-        <h3>Accomplishments</h3>
-        <ul>
-           <li>Developed a module,  <a href="http://www.landis-ii.org/extensions/pnet-succession">PnET-Succession</a>,
-                  for the LANDIS-II Forest Landscape Simulation Model simulation platform that better incorporates interactions between climate change and competition for light and water between trees. LANDIS is Windows software developed in C# using Visual Studio. PnET-Succession is currently used in several universities and the Food and Agricultural Organisation (FAO) of the United Nations. </li>
-           <li>Wrote comprehensive technical documentation that I have kept up to date during the development process.</li>
-           <li>Additionally I developed a user interface (see <a href="Portfolio.aspx">Portfolio</a>) as a Windows Forms application. The user interface uses techniques like multithreading and BackgroundWorkers to load maps and data. </li>
-        </ul>
+        <br><br>
+        <b>Skills: </b> C#, ARCGIS, SQL
+
         <h3>Publications</h3>
         <ul>
            <li><p>Decomposition rates of American chestnut (Castanea dentata) wood and implications for coarse woody debris pools</p><a href="http://www.nrcresearchpress.com/doi/abs/10.1139/cjfr-2014-0270#.VUlrpvlVhBc">(Canadian Journal of Forest Research)</a> </li>
@@ -86,17 +87,11 @@
      <h2>Post-Doctoral researcher - Zürich (Switzerland) - 2010 to 2011 </h2> 
      <h2><a href="http://www.agroscope.admin.ch/org/00265/07176/index.html?lang=en">Agroscope Reckenholz Taenikon</a></h2>
      <h3>Responsibilities</h3>
-      
-        I developed simulations to evaluate how differences in soil carbon in grasslands relates to management intensity.
-        <!--Carbon is the main consituent of dead organic materials, for example plants or harvest residues.
-        High carbon concentrations in arable lands are good for soil fertility, water retention and mitigation of climate change.
-        Here I evaluated how soil Carbon concentrations depend on management activity and intensity. -->
-     
-     <h3>Accomplishments</h3>
-     <p>   
-        Developed a 1D simulation model to simulate biomass and carbon dynamics in lowland grasslands in Switzerland. The simulation model was developed in C++ and 
-        came with a simple windows forms based UI.
-     </p>  
+        I developed a 1D simulation model to simulate biomass and carbon dynamics in lowland grasslands in Switzerland. 
+
+        <br><br>
+        <b>Skills: </b> C#, ARCGIS, SQL
+
      <h3>Publications</h3>
      <ul>
         <li><p>Differential long-term effects of climate change and management on stocks and distribution of soil organic carbon in productive grasslands</p> <a href="http://www.biogeosciences.net/9/1997/2012/bg-9-1997-2012.html">(Biogeosciences)</a></li>
@@ -111,15 +106,12 @@
          <h2><a href="https://www.wageningenur.nl/en/Expertise-Services/Research-Institutes/alterra.htm">Alterra B.V. </a></h2>
          <h3>Responsibilities</h3>
          <p> 
-            I debugging and improving various simulation programs. I mostly worked on the Landscape ecological Analysis and Rules for the Configuration of Habitat (LARCH) model.
-            LARCH analyse population viability given fragmented habitat. It was used for all kinds of species, plants and animals.
-         </p> 
-         <h3>Accomplishments</h3>   
-         <ul>
-            <li>Improved the LARCH model user interface which is a plug-in for ArcMap to analyse population viability given fragmented habitat.</li>
-            <li>Expanded functionality of the metapopulation simulation model (METAPHOR) interface which operates as a standalone Windows program that uses GIS freeware to embed GIS capabilities into the program interface.</li>
-         </ul>
-         
+            I worked on simulation software that predicts landscape fragmentation, recreation densities and natural areas, plant and animal population densities. 
+          </p>    
+
+          <br><br>
+            <b>Skills: </b> C++, ARCGIS, SQL, MS SQL server, FireFox, ArcObjects
+
     </div>
     <div class="margin_bottom_10 h_divider"></div>           
     <div  style="width:940px;     float:left; padding:10px; background-color : White">
@@ -127,15 +119,13 @@
         <h2> <a href="http://imk-ifu.fzk.de/">IMK-IFU </a></h2>
         <h3>Responsibilities</h3>
         <p> 
-            I supported the development of a biogeochemical simulation platform "MoBiLE". MoBiLE is a modular plpatform for biogeochemical 
-            simulations where the modules are responsible for particular soil biogeochemical unities, like soil water, soil temperature, plant growth, microbial 
-            biomass, biochemistry and chemistry. I developed a module that deals with the microbial biomass part of the platform.
+            I supported the development of a biogeochemical simulation platform "MoBiLE". MoBiLE is a modular platform for biogeochemical 
+            simulations. I developed a module DECONIT that deals with soil chemistry and microbial biomass. Based on this work I received my PhD in Forest and 
+            Environmental Sciences (magna cum laude).
         </p>
-        <h3>Accomplishments</h3>
-        <ul>
-            <li><p>PhD in Forest and Environmental Sciences, magna cum laude. ALBERT LUDWIGS UNIVERSITY – Freiburg, Germany 2006-2009 </p></li>
-            <li><p> Developed a 1D model subroutine DECONIT that was published as an isolated program and later embedded in a larger modelling platform MoBiLE.</p></li>
-        </ul>   
+        
+        <br>
+            <b>Skills: </b> C++, ARCGIS, SQL, Python, R, MatLab
 
         <h3>Publications</h3>   
         <ul>
@@ -151,13 +141,11 @@
      <h2><a href="http://www.wageningenur.nl/en/Expertise-Services/Chair-groups/Environmental-Sciences/Forest-and-Nature-Conservation-Policy-Group.htm" > Wageningen University </a> </h2>
      <h3>Study themes</h3>   
      <p>
-        At Wageningen University, it was pretty common to design an individual program for graduation. There were strickt demands for an individual study plan 
-        based on coherence of the subjects that you follow and the intellectual level of the plan as a whole. 
-        I usually refer to my program at Wageningen University as "Mathematical Ecology", meaning that I had a large amound of mathematics, statistics and quantitative
+        It received my M.S. in Forestry and Environmental Sciences from Wageningen University based on a custom study plan best described as 
+        "Mathematical Ecology", meaning that I had a large amound of mathematics, statistics and quantitative
         ecology in my program. I combined my study at Wageningen University with a study of Philosophy of Science at Amsterdam University. 
      </p> 
-     <h3>Accomplishments</h3>
-     <ul> <li>M.S. in Forestry and Environmental Sciences. </li></ul>
+      
      <h3>Publications</h3>             
      <ul>
         <li><p>Modelling decomposition of standard plant material along an altitudinal gradient: A re-analysis of data of Coûteaux et al. (2002)</p> <a href=" http://www.sciencedirect.com/science/article/pii/S0038071706003099">(Soil Biology and Biochemistry)</a></li>
@@ -171,17 +159,14 @@
      <h2><a href=" https://www.uva.nl/en/disciplines/philosophy" > Amsterdam University </a> </h2>
      <h3>Study themes</h3>   
      <p>
-         This was my second study on Philosophy of Science. The study contains a generic year with general topics such as the history of philosophy, logic, knowledge theory.
+         This was my second study on Philosophy of Science leading to the title of M.A. The study contains a generic year with general topics such as 
+         the history of philosophy, logic, knowledge theory.
          The specialisation year contains a master thesis and some specialization subjects.
      </p>
-     <h3>Accomplishments</h3>
-     <ul>
-        <li>M.A. in Philosophy of Science. </li>
-     </ul>
+     
+     
       <br>
-      <br>
-      <br>
-      <br> 
+      
   </div>        
   
                
