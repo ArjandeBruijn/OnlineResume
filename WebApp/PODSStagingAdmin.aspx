@@ -2,8 +2,8 @@
 
     <div class="margin_bottom_10"></div>
      
-        <div  style="width:940px; float:left; padding:10px; background-color : White">
-            <h2>PODS.Staging Admin</h2>
+         
+            <h2>PODS Staging Admin</h2>
            
               <p>
           
@@ -35,7 +35,7 @@
              <br><br><b>Skills:</b> MS SQL, Oracle, C#, JavaScript, MVC framework, Razor, REST services, Agile / SCRUM
             
        
-        </div>
+        
    
 
          <hr>

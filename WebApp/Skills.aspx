@@ -5,8 +5,7 @@
 
     <div class="margin_bottom_10"></div>
 
-     <div style=" height: 960px;  float:left; padding : 10px; background-color: white">
-
+     
         <div style=" width: 400px;  float:left; padding : 10px; background-color: white">
         
              <h3> Supporting software </h3>
@@ -28,7 +27,7 @@
           
          </div>
 
-          <div style="padding : 10px; float: left; background-color: white">
+          <div style="border-left: 1px solid black;padding : 10px; float: left; background-color: white">
 
              <h3> Back-end </h3>
 
@@ -69,6 +68,6 @@
               <img src="resources\ProgramIcons\SPSS.png"    >-->
         
             </div>
-    </div>
+    
    
 </asp:Content>
