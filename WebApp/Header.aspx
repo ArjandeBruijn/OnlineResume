@@ -1,7 +1,9 @@
 ﻿ 
 <html>
-    <div id = "header">
-                    <div style = "width:100%; background-color: red;">
+    
+     <div id = "header">
+                    <!-- Beige-->
+                    <div style = "width:100%; background-color: Red;">
                         <div id="left" style ="padding: 10px;background-color: White;  float: left"	>
                            <img   src="resources\passphoto.JPG"   >
                         </div>
@@ -18,18 +20,17 @@
                            </a>
                         </div>
                      </div>
+                     <div id="menu">
+                     <ul>
+                        <li id ="default"> <a href="Default.aspx">Home</a> </li>
+                        <li> <a href="Skills.aspx">Skills</a> </li>
+                        <li> <a href="Portfolio.aspx">Portfolio</a> </li>
+                        <li> <a href="WorkAndEdu.aspx">Work & Education</a> </li>
+                    </ul>
+                    </div>
 
-         <div id="menu">
-         <ul>
-             <li id ="default"> <a href="Default.aspx">Home</a> </li>
-             <li> <a href="Skills.aspx">Skills</a> </li>
-             <li> <a href="Portfolio.aspx">Portfolio</a> </li>
-             <li> <a href="WorkAndEdu.aspx">Work & Education</a> </li>
-        </ul>
-
-        <br><br> <br> 
-         </div>
-    </div>
+                    <br><br><br> 
+                </div>
 
     <script>        $('#header').stickThis();</script>
 </html>
