@@ -1,10 +1,10 @@
 ﻿  <html xmlns="http://www.w3.org/1999/xhtml">
      <div class="margin_bottom_10"></div>
      
-        <div  style="width:940px; float:left; padding:10px; background-color : White">
+         
             <h2>Express Loader</h2>
            
-              <p>
+             
           
               <!-- Trigger the Modal -->
               <img class = "popupimg" id="elImage" style="PADDING: 20px" align="right" src="resources/ss_el1.jpg" alt="Express Loader Interface" width="300" height="200">
@@ -22,11 +22,11 @@
             EL is an ongoing development as requirements and preferences of the industry change.  
             I am responsible for maintaining and debugging the software as well as implementing new features.
 
-             </p>
+             
              <br><br><b>Skills:</b> MS SQL, Oracle, C#, VB, Agile / SCRUM
             
        
-        </div>
+       
    
 
          <hr>

@@ -66,6 +66,7 @@
     <Content Include="DeforestationInIndonesia.aspx" />
     <Content Include="DissectionAndUndissection.aspx" />
     <Content Include="ExpressLoader.aspx" />
+    <Content Include="Header.aspx" />
     <Content Include="js\DecompositionFunctions.js" />
     <Content Include="js\GoogleAnalytics.js" />
     <Content Include="js\IsScrolledIntoView.js" />
@@ -272,6 +273,13 @@
     </Compile>
     <Compile Include="ExpressLoader.aspx.designer.cs">
       <DependentUpon>ExpressLoader.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Header.aspx.cs">
+      <DependentUpon>Header.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Header.aspx.designer.cs">
+      <DependentUpon>Header.aspx</DependentUpon>
     </Compile>
     <Compile Include="Modal.aspx.cs">
       <DependentUpon>Modal.aspx</DependentUpon>

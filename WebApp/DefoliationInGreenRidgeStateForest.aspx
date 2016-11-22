@@ -1,19 +1,6 @@
-﻿ <div  style="width:940px;    float:left; background-color : White">
+﻿  
             <h2>Defoliation in Green Ridge State Forest</h2>
-            <style>
-                #rotating-item-wrapper {
-	                position: relative;
-                    height: 420px;
-                }
-                .rotating-item
-                {
-                    display: none;
-	                position: absolute;
-	                top: 0;
-	                left: 0;
-                }
-	
-          </style>
+            
            <div  style="width:420px; height: 430px;   float:left; padding:20px; background-color : White">
                <div class="m" id="rotating-item-wrapper" background-color : Yellow">  
         
@@ -97,12 +84,15 @@
          attacks by each insect species. Using the density of various tree species on each pixel, the model calculates an outbreak sensitivity. The actual occurance of 
          simulated outbreaks is random, and increases with outbreak sensitivity.
           
-         <br><br><b>Skills:</b> C++, ArcGIS
+         <br><br><br><br><b>Skills:</b> C++, ArcGIS
+
+         <br> 
+          <i>Graphics: 
+          <li>Left - Simulated defoliation during outbreaks of Gypsy moth in Green Ridge (deep red = high defoliation) </li>
+          <li>Right - Location of Green Ridge State Forest </li>
+          </i>
      </div>
     
-    <div style="width:940px;  padding-right:20px; float:left;background-color: White; ">
-            <i>Graphics: Simulated defoliation during outbreaks of Gypsy moth in Green Ridge (deep red = high defoliation) (left) Location of Green Ridge State Forest (right)</i>
-    </div> 
-
+    
       <hr>
-     <div class="margin_bottom_10"></div>
+     <br>

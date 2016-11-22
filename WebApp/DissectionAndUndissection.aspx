@@ -1,4 +1,4 @@
-﻿<div  style="width:940px;   float:left; padding:10px; background-color : White">
+﻿ 
 
         
         <h2>Dissection and undissection</h2>
@@ -6,13 +6,11 @@
          <div  style="float:left; padding:10px; background-color : White">
              
              <img   src="resources/dissection.jpg" border="1" />
-             <!--<p>Click to enlarge</p>-->
-             
-             
+            
               
          </div>
         
-          <p>
+          
           
             Oil and gas companies typically contract multiple land owners to regulate their access to drilling or pipe locations because multiple actors can have
             different claims on a tract of land. The dissection and undissection methods provides 
@@ -30,13 +28,9 @@
              
              <br><br><b>Skills</b>: MS SQL, Oracle, C#, VB, ArcGIS, ArcObjects
           
- </p>
+ 
      
      <br><br>
-   </div>
-
-
-
-
+    
      
    <hr>

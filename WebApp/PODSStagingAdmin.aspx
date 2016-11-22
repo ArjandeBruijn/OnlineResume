@@ -5,7 +5,7 @@
          
             <h2>PODS Staging Admin</h2>
            
-              <p>
+              
           
               <!-- Trigger the Modal -->
               <img class = "popupimg" id="podsStagingImg" style="PADDING: 20px" align="left" src="resources/PODS Staging.png" alt="Pods Staging tool" width="300" height="200">
@@ -31,7 +31,7 @@
             <br><br>
        
 
-             </p>
+             
              <br><br><b>Skills:</b> MS SQL, Oracle, C#, JavaScript, MVC framework, Razor, REST services, Agile / SCRUM
             
        

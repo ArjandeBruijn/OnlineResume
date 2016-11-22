@@ -328,3 +328,15 @@ button{
         width: 100%;
     }
 }
+
+#rotating-item-wrapper {
+	                position: relative;
+                    height: 420px;
+                }
+                .rotating-item
+                {
+                    display: none;
+	                position: absolute;
+	                top: 0;
+	                left: 0;
+                }
