@@ -121,7 +121,6 @@
     <Content Include="resources\Favicon\ms-icon-310x310.png" />
     <Content Include="resources\Favicon\ms-icon-70x70.png" />
     <Content Include="resources\GRSF_background.png" />
-    <Content Include="resources\horizontal_divider.jpg" />
     <Content Include="resources\lui - Copy.png" />
     <Content Include="resources\lui.jpg" />
     <Content Include="resources\lui.png" />
@@ -218,7 +217,6 @@
     <Content Include="resources\right_arrow.jpg" />
     <Content Include="resources\ss_el1.jpg" />
     <Content Include="resources\ss_el1_thumb.jpg" />
-    <Content Include="resources\vertical_divider.jpg" />
     <Content Include="Skills.aspx" />
     <Content Include="StyleSheet.css" />
     <Content Include="ThePnETSuccessionModelAndItsInterface.aspx" />
