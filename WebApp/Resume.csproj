@@ -68,9 +68,9 @@
     <Content Include="ExpressLoader.aspx" />
     <Content Include="Header.aspx" />
     <Content Include="js\DecompositionFunctions.js" />
+    <Content Include="js\DeviceDetector.js" />
     <Content Include="js\GoogleAnalytics.js" />
     <Content Include="js\IsScrolledIntoView.js" />
-    <Content Include="js\StatCounter.js" />
     <Content Include="jquery.mobile.custom.structure.css" />
     <Content Include="jquery.mobile.custom.theme.css" />
     <Content Include="Default.aspx" />

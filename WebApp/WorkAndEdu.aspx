@@ -7,12 +7,11 @@
     <h2><a href="http://www.newcenturysoftware.com/">New Century Software</a></h2>
     <h3>Responsibilities</h3>
 
-    I develop GIS software for the oil and gas industry. 
+    I develop GIS software for the oil and gas industry. I worked on Pods Staging Admin - a database driven website, 
+    Express Loader, a data transfer application, and Facility Manager, a GIS-Database application.
         
-    <br><br>
-    <b>Skills: </b> C#, ARCGIS, ArcObjects, Microsoft SQL server, Oracle, MVC framework (Razor), REST, JavaScript
-         
-    <br>
+    <br> 
+     
     <hr>
      
     <h2>Contractor   - September 2015 - March 2016 </h2>
@@ -23,11 +22,8 @@
     at Purdue University) and received their funding to add desired features to my simulation model 
     <a href="http://www.landis-ii.org/extensions/pnet-succession/">PnET-Succession</a>
         when my contract at Purdue ended in September 2015. 
-
-    <br><br>
-    <b>Skills: </b> C#, ARCGIS
-    
-    <br><br>
+         
+    <br> 
     <hr>
      
     <h2>Contractor  - September 2015 - March 2016 </h2> 
@@ -39,13 +35,10 @@
     <a href="http://www.landis-ii.org/extensions/pnet-succession/">PnET-Succession</a>
         after my contract at Purdue ended in September 2015. 
        
-    <br><br>
-    <b>Skills: </b> C#, ARCGIS
-     
-    <br><br>
+    <br> 
+    
     <hr>
-    <br><br>
-
+     
     <h2>Post-Doctoral researcher  - West Lafayette, IN (USA) - 2011 to August 2015 </h2>
     <h2><a href="https://ag.purdue.edu/fnr/Pages/default.aspx">Purdue University</a></h2>
     <h3>Responsibilities</h3>
@@ -56,7 +49,7 @@
         for the LANDIS-II Forest Landscape Simulation Model and wrote comprehensive technical documentation that I have kept up to date during the development process.
 
     <br><br>
-    <b>Skills: </b> C#, ARCGIS, SQL
+   
 
     <h3>Publications</h3>
     <ul>
@@ -65,9 +58,9 @@
        <li><p>Toward more robust projections of forest landscape dynamics under novel environmental conditions: Embedding PnET within LANDIS-II</p><a href="http://www.sciencedirect.com/science/article/pii/S0304380014002415">(Ecological Modeling)</a></li>
     </ul>
   
-    <br>
+   
     <hr>
-    <br>
+     
   
      <h2>Post-Doctoral researcher - Zürich (Switzerland) - 2010 to 2011 </h2> 
      <h2><a href="http://www.agroscope.admin.ch/org/00265/07176/index.html?lang=en">Agroscope Reckenholz Taenikon</a></h2>
@@ -75,7 +68,7 @@
      I developed a 1D simulation model to simulate biomass and carbon dynamics in lowland grasslands in Switzerland. 
 
      <br><br>
-     <b>Skills: </b> C#, ARCGIS, SQL
+    
 
      <h3>Publications</h3>
      <ul>
@@ -88,8 +81,8 @@
     <h2><a href="https://www.wageningenur.nl/en/Expertise-Services/Research-Institutes/alterra.htm">Alterra B.V. </a></h2>
     <h3>Responsibilities</h3>
        I worked on simulation software that predicts landscape fragmentation, recreation densities and natural areas, plant and animal population densities. 
-    <br><br>
-    <b>Skills: </b> C++, ARCGIS, SQL, MS SQL server, FireFox, ArcObjects
+    <br> 
+   
 
     <hr>
  
@@ -101,7 +94,7 @@
             Environmental Sciences (magna cum laude).
         
     <br>
-    <b>Skills: </b> C++, ARCGIS, SQL, Python, R, MatLab
+   
 
     <h3>Publications</h3>   
     <ul>

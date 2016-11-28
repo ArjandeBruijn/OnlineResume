@@ -103,6 +103,7 @@ function Graph(mycanvas, X_axis, Y_axis) {
 
         //from, to in row/column coordinates
         this.MyContext.beginPath();
+         
         this.MyContext.moveTo(from[0], from[1]);
         this.MyContext.lineTo(to[0], to[1]);
         this.MyContext.stroke();

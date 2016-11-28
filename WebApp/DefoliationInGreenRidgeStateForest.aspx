@@ -72,27 +72,33 @@
           
          <script>             InitializeRotatingItems('.rotating-item', true);</script>
          
-         The Green Ridge State Forest is a natural area in the Appalachians that covers parts of Pennsylvania, Maryland and West Virginia. I am using data from Green Ridge to 
-         simulate future scenarios of the the area under various scenarios.  Here you see random configurations of insect outbreaks in Green Ridge.
-         We are interested in insect outbreaks because the sensitivity of tree species to particular insect species tends to be an important driving factor of future species configuration.-
+         The Green Ridge State Forest is a natural area in the Appalachians that covers parts of Pennsylvania, Maryland and West Virginia. I used data from Green Ridge to 
+         simulate future scenarios of the the area under various scenarios.    
+          
+         On the left, you see random configurations of insect outbreaks in Green Ridge.
+         <br><br>
          
-         <div style="padding:10px; float:right;background-color: White; ">
+         The damages that are predicted to occur feed into the 
+          the tree physiology and ecology model 
+         (<a href="http://www.landis-ii.org/extensions/pnet-succession">PnET-Succession</a>) 
+         that I developed by incorporating the PnET physiology model into the landis LANDIS-II spatial ecology simulation platform. 
+         
+          <div style="padding:10px; float:right;background-color: White; ">
                <img  src="resources/GRSF_background.png" height ="190px"  border="1" align = "left" />
             </div>
         
-         Our model (Landis-ii) uses a sensitivity grade that defines how sensitive each tree species is for 
-         attacks by each insect species. Using the density of various tree species on each pixel, the model calculates an outbreak sensitivity. The actual occurance of 
-         simulated outbreaks is random, and increases with outbreak sensitivity.
-          
-         <br><br><br><br><b>Skills:</b> C++, ArcGIS
 
-         <br> 
+         <br><br>
+         PnET-Succession proved to be a very fertile approach with users from Harvard University, the USDA forest service and  the Food 
+         and Agricultural Organisation of the United Nations.
+          
+
+         <br> <br> <br> <br> <br> 
           <i>Graphics: 
           <li>Left - Simulated defoliation during outbreaks of Gypsy moth in Green Ridge (deep red = high defoliation) </li>
           <li>Right - Location of Green Ridge State Forest </li>
           </i>
+          <br> <b>Skills:</b> C#, ArcGIS
      </div>
-    
-    
-      <hr>
+     
      <br>

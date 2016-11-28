@@ -32,13 +32,14 @@
               
             The image predicts future land use under selected assumption. 
 
-            <br><br><b>Skills:</b> C++, ArcGIS
-         
+            
+          <br> 
     
             <br><br> <br><br> 
             <i>Graphics: location of Malinau Research Forest on Borneo, Indonesia (left)  Malinau region (right)</i>
    
-            <br><br> 
+           
+            <br><br><b>Skills:</b> C++, ArcGIS
      <hr>
      
 

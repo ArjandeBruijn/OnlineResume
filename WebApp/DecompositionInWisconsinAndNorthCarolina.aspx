@@ -11,7 +11,7 @@
                I used it to estimate the rate of wood decomposition. You can use an algorithm called a Markov Chain to reiteratively generate semi-random decomposition rates, calculate remaining biomass for 
                a stretch of time and calculate a score that represents how likely the random decomposition rate is. 
                
-               <br>
+               <br><br>
                
                This is what you see at work in this graph: each red line is a decomposition trajectory for some rate of decomposition.-   
                There is a tweak in a Markov Chain that assures that decomposition rates that score well (i.e. the model compares well with measurements) are selected more frequently.
@@ -22,8 +22,9 @@
          
       
       <br>
-      <i>Graphics: Bayesian Calibration  </i>
+      <i>Graphics: Parameter estimation with Markov Chain Monte Carlo  </i>
       
+       <br><br><b>Skills</b>: C#, Math, Statistics
       
    </div>
 

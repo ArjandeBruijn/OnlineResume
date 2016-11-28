@@ -22,13 +22,13 @@
              <br> 
         
              The PODS Staging tool is a web application that connects a front end web user interface, to server side C# code that
-             is used to connect to an ORACLE database via a REST service. My contribution to the Staging.Admin tool was to add an option 
+             is used to connect to an ORACLE database via a REST service. My contribution to the Staging Admin tool was to add an option 
              for the user to select data through pie charts that display relevant selections of data (i.e. per gatekeeper, per duration 
              a project has been idle, etc.). Additionally, I worked to make the code more appliant to the DRY (do not repeat yourself)
              coding standart by using page templates, reusing the strings that are defined in the C# code to form SQL commands, etc. 
           
 
-            <br><br>
+            <br> 
        
 
              
