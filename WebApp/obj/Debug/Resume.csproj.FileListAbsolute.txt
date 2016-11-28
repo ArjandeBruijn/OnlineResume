@@ -11,3 +11,9 @@ C:\Users\Arjan\Documents\OnlineResume\WebApp\bin\Resume.pdb
 C:\Users\Arjan\Documents\OnlineResume\WebApp\obj\Debug\Resume.csprojResolveAssemblyReference.cache
 C:\Users\Arjan\Documents\OnlineResume\WebApp\obj\Debug\Resume.dll
 C:\Users\Arjan\Documents\OnlineResume\WebApp\obj\Debug\Resume.pdb
+C:\Users\adebruijn\Documents\OnlineResume\WebApp\bin\Resume.dll.config
+C:\Users\adebruijn\Documents\OnlineResume\WebApp\bin\Resume.dll
+C:\Users\adebruijn\Documents\OnlineResume\WebApp\bin\Resume.pdb
+C:\Users\adebruijn\Documents\OnlineResume\WebApp\obj\Debug\Resume.csprojResolveAssemblyReference.cache
+C:\Users\adebruijn\Documents\OnlineResume\WebApp\obj\Debug\Resume.dll
+C:\Users\adebruijn\Documents\OnlineResume\WebApp\obj\Debug\Resume.pdb
