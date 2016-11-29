@@ -5,11 +5,19 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
  
         <h1 align="center">Professional background</h1>
+
+
+        <div style ="font-size: 18px;">
         My career path has centered on land use simulation software for scientific research. 
-        It involved lots of computer coding and ironically I found that that was the part of being an academic that I enjoyed far more than the conferences, workshops and publications of which I have certainly had my share. 
+        It involved lots of computer coding and ironically I found that that was the part of being an academic 
+        that I enjoyed far more than publishing research. 
+
         So I switched careers and became a software engineer in the fall of 2015.
-        In lieu of a degree in computer science, I developed this website to give employers additional information beyond my classic resume that is downloadable as a PDF below.
+        In lieu of a degree in computer science, I developed this website to give employers additional information beyond
+         my classic resume that is downloadable as a PDF below.
         
+        </div>
+
         <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
 	 
     
@@ -22,7 +30,7 @@
 
                    <h1>Summary of Qualifications</h1>
 
-                   <ul style ="line-height:40px; font-size: 30px;">
+                   <ul style ="line-height:40px; font-size: 20px;">
               
                           <li>More than 8 years of experience in programming and GIS </li>
                   
@@ -45,7 +53,7 @@
             </div>
 
 
-            <div style="clear:both"></div>
+            <div id = "minTopDiv", style="clear:both"></div>
              
 
             <div id = "bottomDiv" style = "position:absolute" >
@@ -58,15 +66,18 @@
             
     <script>
 
-        $(document).ready(function () { /* code here */
+        $(document).ready(function () {
 
-            var div = document.getElementById("bottomDiv");
+            setInterval(function () {
 
-            console.log("top = " + div.offsetTop);
+                var div = document.getElementById("bottomDiv");
 
-            div.style.top = window.innerHeight - div.offsetHeight -+50 + "px";
+                var div2 = document.getElementById("minTopDiv");
 
+                console.log("top = " + div.offsetTop);
 
+                div.style.top = Math.max(div2.offsetTop + div2.offsetHeight, window.innerHeight - div.offsetHeight - +10) + "px";
+            }, 500);
         });
 
  
