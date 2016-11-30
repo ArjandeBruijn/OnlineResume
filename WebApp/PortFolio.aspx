@@ -16,8 +16,10 @@
   
   <!--#include file="DissectionAndUndissection.aspx"-->
   
+   <!--#include file="DecompositionInWisconsinAndNorthCarolina.aspx"-->
+
     <div id ="decompositionaspx">
-         <!--#include file="DecompositionInWisconsinAndNorthCarolina.aspx"-->
+        
     </div>
 
      <script>

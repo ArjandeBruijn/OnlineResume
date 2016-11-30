@@ -59,7 +59,8 @@ function StartDecompositionFunctions(canvas) {
 
     var x_axis = new Axis(0, 20, "Iterations", 1, 10, "black");
     var y_axis = new Axis(0, 0.1, "Decomposition rate (% per year)", 100, 10, "black");
-    
+
+     
     AddModelPoints(canvas);
 }
 
@@ -94,10 +95,7 @@ function GetProbability(model) {
                 var rss = Math.pow(DecompositionMeasurements[ms][1] -model[md][1], 2);
 
                 var two_sigma_square = 2 * Math.pow(DecompositionMeasurements[ms][2], 2);
-
-//                P *= (DecompositionMeasurements[ms][2] * 2.5059928) * Math.exp(-1 * (rss / two_sigma_square));
-
-               // P -= (rss / two_sigma_square);
+                 
                 P -= (rss / two_sigma_square);
             }
         }
@@ -105,56 +103,88 @@ function GetProbability(model) {
 
     return P;
 }
+var x_axis =null;
+var y_axis =null;
+var RemainingBiomassGraph = null;
 
-var FirstCall = true;
+function GetRemainingBiomassGraph(canvas) {
+
+    if (x_axis == null) {
+        x_axis = new Axis(0, 100, "Time", 1, 10, "black");
+    }
+
+    if (y_axis == null) {
+        y_axis = new Axis(0, 1.2, "Remaining Biomass (%)", 100, 6, "black");
+    }
+    if (RemainingBiomassGraph == null) {
+        RemainingBiomassGraph = new Graph(canvas, x_axis, y_axis);
+        RemainingBiomassGraph.AddCurveList(null, "Black", "Measured");
+        RemainingBiomassGraph.AddCurveList("Red", null, "Modeled");
+        for (var p = 0; p < DecompositionMeasurements.length; p++) {
+            RemainingBiomassGraph.AddPoint(0, DecompositionMeasurements[p][0], DecompositionMeasurements[p][1], DecompositionMeasurements[p][2]);
+        }
+
+    }
+    else RemainingBiomassGraph.ClearCurve(1);
+      
+    return RemainingBiomassGraph
+
+}
+
 
 function AddModelPoints(canvas) {
 
+   
     var i = 0;
     var s = 0;
 
     var lastcoordinate = null;
     var Coordinates = [];
-    var model = null;
+  
     var last_coordinate =null;
 
-    var c = 0;
-
+    
+    var cnt = 0;
     var P_old = null;
     var P = 1;
     var logalpha = 1;
-    var B = 0.05;// Math.random();
+    var B = 0.07;
     var B_sum =0;
 
-    interval_id = setInterval(function () {
+    RemainingBiomassGraph = null;
+  
+    var wait = 5;
 
-        if (isScrolledIntoView(canvas) == true || FirstCall) {
-            FirstCall = true;
+    setInterval(function () {
 
-            if (model == null || c == model.length - 1) {
+        if (isScrolledIntoView(canvas) == true) {
+            RemainingBiomassGraph = null;
+        }
+    }, 50);
 
-                last_coordinate = null;
 
-                var x_axis = new Axis(0, 100, "Time", 1, 10, "black");
-                var y_axis = new Axis(0, 1.2, "Remaining Biomass (%)", 100, 6, "black");
+    interval_id = setInterval(
 
-                RemainingBiomassGraph = new Graph(canvas, x_axis, y_axis);
+        function () {
 
+            if (IsMobileBrowser() == false || cnt == 0) {
+                cnt++;
+
+                canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
+
+                RemainingBiomassGraph = GetRemainingBiomassGraph(canvas);
 
                 var B_old = B;
 
-                B += 0.2 * (Math.random() - 0.5);
+                if (cnt > 1) {
+                    B += 0.2 * (Math.random() - 0.5);
+                }
 
                 if (B < 0) B *= -1;
 
-                model = GetModelCalculations(i++, B, RemainingBiomassGraph.x_min, RemainingBiomassGraph.x_max);
+                var model = GetModelCalculations(i++, B, RemainingBiomassGraph.x_min, RemainingBiomassGraph.x_max);
 
                 P = GetProbability(model);
-
-
-                B_sum += B;
-                var b_av = B_sum / i;
-                RemainingBiomassGraph.LegendText = ["B = " + B, "P = exp(" + P.toFixed(0) + ")", "logalpha = " + logalpha, "b_av = " + b_av];
 
                 if (P_old != null) {
                     logalpha = P - P_old;
@@ -165,22 +195,14 @@ function AddModelPoints(canvas) {
 
                 P_old = P;
 
-                RemainingBiomassGraph.AddCurveList("Red", null, "Modeled");
-
-                RemainingBiomassGraph.AddCurveList(null, "Black", "Measured");
-
-                for (var p = 0; p < DecompositionMeasurements.length; p++) {
-                    RemainingBiomassGraph.AddPoint(1, DecompositionMeasurements[p][0], DecompositionMeasurements[p][1], DecompositionMeasurements[p][2]);
+                for (var mp = 0; mp < model.length; mp++) {
+                    setTimeout(function (RemainingBiomassGraph, model, mp) {
+                        RemainingBiomassGraph.AddPoint(1, model[mp][0], model[mp][1], null);
+                    }, mp * wait, RemainingBiomassGraph, model, mp);
                 }
-
-                c = 0;
             }
-            else c++;
 
-            RemainingBiomassGraph.AddPoint(0, model[c][0], model[c][1], null);
-        }
-
-    }, 5);
+        }, 500);
 }
 
 
