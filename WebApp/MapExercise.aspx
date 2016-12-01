@@ -17,33 +17,10 @@
         <button onclick = "FlyHome()"   style="  float:right; height: 30px; background-color: DarkGray" type="button">Restart</button>
     </div>
       
-
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0zMbmu-Ud5SW3ZOwNmN-1ZeLNp3Rzy5g&callback=initMap">
+      <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0zMbmu-Ud5SW3ZOwNmN-1ZeLNp3Rzy5g&callback=initMap">
+    </script>
     
-    </script>
-    <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
-    <script>
-        function FlyHome()
-        {
-            alert("Flying home");
-
-            $.ajax({
-                type: "POST",
-                url: "MapExercise.aspx/GetData",
-                data: "{}",
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                success: function (msg) {
-
-                    alert(msg.d);
-
-                }
-
-            });
-
-
-        }
-    </script>
+     
   </body>
 </html>
