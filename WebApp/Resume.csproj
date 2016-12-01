@@ -61,6 +61,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\MapExercise.css" />
     <Content Include="DecompositionInWisconsinAndNorthCarolina.aspx" />
     <Content Include="DefoliationInGreenRidgeStateForest.aspx" />
     <Content Include="DeforestationInIndonesia.aspx" />
@@ -83,9 +84,11 @@
     <Content Include="js\Malinau2009.js" />
     <Content Include="js\MalinauFunctions.js" />
     <Content Include="js\infinite-rotator.js" />
+    <Content Include="js\MapExercise.js" />
     <Content Include="js\MarkovChainFunctions.js" />
     <Content Include="js\SetActivePage.js" />
     <Content Include="js\MarkovChainMeasurements.js" />
+    <Content Include="MapExercise.aspx" />
     <Content Include="Modal.aspx" />
     <Content Include="PODSStagingAdmin.aspx" />
     <Content Include="Portfolio.aspx" />
@@ -278,6 +281,13 @@
     </Compile>
     <Compile Include="Header.aspx.designer.cs">
       <DependentUpon>Header.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MapExercise.aspx.cs">
+      <DependentUpon>MapExercise.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MapExercise.aspx.designer.cs">
+      <DependentUpon>MapExercise.aspx</DependentUpon>
     </Compile>
     <Compile Include="Modal.aspx.cs">
       <DependentUpon>Modal.aspx</DependentUpon>
