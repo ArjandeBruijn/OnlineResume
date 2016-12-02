@@ -21,17 +21,20 @@ function ShowImage() {
     img.src = "resources\\plane.png";
     img.style.width = '10%'
     img.style.height = 'auto'
-
+    img.id ="plane";
+    
     var mapelmnt = document.getElementById('map');
 
     //alert(mapelmnt.offsetWidth + " x " + mapelmnt.offsetHeight);
-    img.style.position = "absolute";
-    img.style.left = mapelmnt.offsetLeft + 0.5 * mapelmnt.offsetWidth - 0.5 * img.offsetWidth + "px";
-    img.style.top = mapelmnt.offsetTop + 0.5 * mapelmnt.offsetHeight - 0.5 * img.offsetHeight + "px";
+    //img.style.position = "absolute";
+    //img.style.left = mapelmnt.offsetLeft + 0.5 * mapelmnt.offsetWidth - 0.5 * img.offsetWidth + "px";
+    //img.style.top = mapelmnt.offsetTop + 0.5 * mapelmnt.offsetHeight - 0.5 * img.offsetHeight + "px";
     
     // This next line will just add it to the <body> tag
     document.body.appendChild(img);
-     
+
+    $('#plane').addClass('center');
+   
 }
 
 

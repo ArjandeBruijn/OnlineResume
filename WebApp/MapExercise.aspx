@@ -11,14 +11,12 @@
     <link href="css/MapExercise.css" rel="stylesheet" type="text/css" />
      
   </head>
-  <body>
-    <h3>Interactive maps demo</h3>
-    <div style = "width: 960px">
+  <body style = "overflow: hidden;">
+    
+    <div>
         <div id="map" ></div>
-
-        
-
-        <button onclick = "FlyHome()"   style="  float:right; height: 30px; background-color: DarkGray" type="button">Go!</button>
+         
+        <button onclick = "FlyHome()"   style="position: absolute; height: 30px; background-color: DarkGray" type="button">Go Home!</button>
     </div>
       
       <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
