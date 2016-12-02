@@ -18,7 +18,7 @@
 
         
 
-        <button onclick = "FlyHome()"   style="  float:right; height: 30px; background-color: DarkGray" type="button">Restart</button>
+        <button onclick = "FlyHome()"   style="  float:right; height: 30px; background-color: DarkGray" type="button">Go!</button>
     </div>
       
       <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>

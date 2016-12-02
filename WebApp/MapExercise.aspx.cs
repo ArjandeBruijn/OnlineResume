@@ -44,24 +44,27 @@ namespace Resume
         {
 
         }
-        [WebMethod]
-        public static string GetLocation(string label)
-        {
-            DataRow ftCollinsLocation = locationsTable.Rows.Cast<DataRow>().Where(row => row["location"].ToString() == label).Single();
-
-            return JsonConvert.SerializeObject(ftCollinsLocation);
-        }
+        
         [WebMethod]
         public static string GetFlightPath(string from, string to, string steps)
         {
-            object myobject = new
-            {
-                totalTasks = "1",
-                tasksDone = "1",
-                percentDone = "1"
-            };
+            DataRow location1 = locationsTable.Rows.Cast<DataRow>().Where(loc => loc["location"].ToString() == from).Single();
+            DataRow location2 = locationsTable.Rows.Cast<DataRow>().Where(loc => loc["location"].ToString() == to).Single();
 
-            return JsonConvert.SerializeObject(myobject);
+            DataTable locations = new DataTable();
+
+            locations.Columns.AddRange(new DataColumn[] { new DataColumn("location"), new DataColumn("lng"), new DataColumn("lat") });
+
+            for (int i = 0; i < int.Parse(steps); i++)
+            {
+                DataRow row = locations.NewRow();
+                row["lat"] = double.Parse(location1["lat"].ToString()) + i / double.Parse(steps) * (double.Parse(location2["lat"].ToString()) - double.Parse(location1["lat"].ToString()));
+                row["lng"] = double.Parse(location1["lng"].ToString()) + i / double.Parse(steps) * (double.Parse(location2["lng"].ToString()) - double.Parse(location1["lng"].ToString()));
+
+                locations.Rows.Add(row);
+            }
+
+            return JsonConvert.SerializeObject(locations);
 
              
         }
@@ -69,6 +72,8 @@ namespace Resume
         [WebMethod]
         public static string GetLocations()
         {
+            
+
             return JsonConvert.SerializeObject(locationsTable); 
         }
     }
