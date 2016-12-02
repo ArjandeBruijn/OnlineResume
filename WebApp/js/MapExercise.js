@@ -25,26 +25,32 @@ function initMap() {
         dataType: "json",
         success: function (msg) {
 
-            var object = JSON.parse(msg.d);
+            var locations = JSON.parse(msg.d);
              
-            for (var loc = 0; loc < object.length; loc++) {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 13,
+                center: new google.maps.LatLng(locations[0].lat, locations[0].lng),
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            });
 
-                var uluru = { lat: parseFloat(object[loc].lat), lng: parseFloat(object[loc].lng) };
-                 
-                var map = new google.maps.Map(document.getElementById('map'), {
-                    zoom: 4,
-                    center: uluru
+            var infowindow = new google.maps.InfoWindow();
+
+            var marker, i;
+
+            for (i = 0; i < locations.length; i++) {
+                marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(locations[i].lat, locations[i].lng),
+                    map: map
                 });
 
-                new google.maps.Marker({
-                    position: uluru,
-                    map: map,
-                    title: object[loc].location
-                });
+                google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                    return function () {
+                        infowindow.setContent(locations[i].location);
+                        infowindow.open(map, marker);
+                    }
+                })(marker, i));
             }
-
-            
-
+             
         }
     });
 

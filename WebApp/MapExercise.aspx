@@ -5,7 +5,8 @@
 <html>
   <head>
 
-  
+   <script src="http://maps.google.com/maps/api/js?sensor=false"
+              type="text/javascript"></script>
    <script src="js/MapExercise.js" type="text/javascript"></script>
     <link href="css/MapExercise.css" rel="stylesheet" type="text/css" />
      
@@ -14,6 +15,9 @@
     <h3>Interactive maps demo</h3>
     <div style = "width: 960px">
         <div id="map" ></div>
+
+        
+
         <button onclick = "FlyHome()"   style="  float:right; height: 30px; background-color: DarkGray" type="button">Restart</button>
     </div>
       
