@@ -1,5 +1,5 @@
 ﻿var map;
-
+var steps = 200;
 
 function Interpolate(x, points) {
 
@@ -15,31 +15,52 @@ function Interpolate(x, points) {
     }
 
 }
+function ShowImage() {
+ 
+    var img = document.createElement("img");
+    img.src = "resources\\plane.png";
+    img.style.width = '10%'
+    img.style.height = 'auto'
+
+    var mapelmnt = document.getElementById('map');
+
+    //alert(mapelmnt.offsetWidth + " x " + mapelmnt.offsetHeight);
+    img.style.position = "absolute";
+    img.style.left = mapelmnt.offsetLeft + 0.5 * mapelmnt.offsetWidth - 0.5 * img.offsetWidth + "px";
+    img.style.top = mapelmnt.offsetTop + 0.5 * mapelmnt.offsetHeight - 0.5 * img.offsetHeight + "px";
+    
+    // This next line will just add it to the <body> tag
+    document.body.appendChild(img);
+     
+}
+
 
 function FlyHome() {
-    alert("Flying home");
+    
 
     $.ajax({
         type: "POST",
         url: "MapExercise.aspx/GetFlightPath",
-        data: JSON.stringify({ from: "FortCollins", to: "Dedemsvaart", steps: 20 }),
+        data: JSON.stringify({ from: "FortCollins", to: "Dedemsvaart", steps: steps }),
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function (msg) {
 
+            ShowImage();
+
             var locations = JSON.parse(msg.d);
 
-            var wait = 1000;
+            var wait = 20000 / steps;
 
             for (var i = 0; i < locations.length; i++) {
                 setTimeout(function (location, zoom) {
-                 
-                    map.setZoom(zoom);
+
+                    map.setZoom(4);
                     map.setCenter(new google.maps.LatLng(location.lat, location.lng));
 
-                }, i * wait, locations[i], Interpolate(i, [[0, 13], [3, 4], [18, 4], [19, 7], [20, 13], [21, 13]]));
+                }, i * wait, locations[i], Interpolate(i, [[0, 13], [0.2 * steps, 4], [0.9 * steps, 4], [0.95* steps, 7], [1.2 * steps, 13]]));
             };
- 
+
             marker = new google.maps.Marker({
                 position: new google.maps.LatLng(locations[locations.length - 1].lat, locations[locations.length - 1].lng),
                 map: map
