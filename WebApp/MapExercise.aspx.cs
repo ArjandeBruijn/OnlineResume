@@ -55,7 +55,7 @@ namespace Resume
 
             locations.Columns.AddRange(new DataColumn[] { new DataColumn("location"), new DataColumn("lng"), new DataColumn("lat") });
 
-            for (int i = 0; i < int.Parse(steps); i++)
+            for (int i = 0; i < int.Parse(steps) + 1; i++)
             {
                 DataRow row = locations.NewRow();
                 row["lat"] = double.Parse(location1["lat"].ToString()) + i / double.Parse(steps) * (double.Parse(location2["lat"].ToString()) - double.Parse(location1["lat"].ToString()));
