@@ -3,16 +3,31 @@ var steps = 200;
 
 function Interpolate(x, points) {
 
-    for (var c = 0; c < points.length-1; c++) 
-    {
-        if (x >= points[c][0] && x < points[c + 1][0]) {
+    if (x < 10)
+        return 8;
 
-            var value = points[c][1] + (x - points[c][0]) * (points[c][1] - points[c + 1][1]) / (points[c][0] - points[c + 1][0]);
-             
-            return value;
-        }
-    
-    }
+    else if (x < 30)
+        return 7;
+
+    else if (x < 50)
+        return 6;
+
+    else if (x < 60)
+        return 5;
+
+    else if (x < 160)
+        return 4;
+
+    else if (x < 170)
+        return 5;
+
+    else if (x < 180)
+        return 6;
+
+    else if (x < 190)
+        return 7;
+
+    else return 8;
 
 }
 function ShowImage() {
@@ -24,12 +39,7 @@ function ShowImage() {
     img.id ="plane";
     
     var mapelmnt = document.getElementById('map');
-
-    //alert(mapelmnt.offsetWidth + " x " + mapelmnt.offsetHeight);
-    //img.style.position = "absolute";
-    //img.style.left = mapelmnt.offsetLeft + 0.5 * mapelmnt.offsetWidth - 0.5 * img.offsetWidth + "px";
-    //img.style.top = mapelmnt.offsetTop + 0.5 * mapelmnt.offsetHeight - 0.5 * img.offsetHeight + "px";
-    
+ 
     // This next line will just add it to the <body> tag
     document.body.appendChild(img);
 
@@ -58,10 +68,10 @@ function FlyHome() {
             for (var i = 0; i < locations.length; i++) {
                 setTimeout(function (location, zoom) {
 
-                    map.setZoom(4);
+                    map.setZoom(zoom);
                     map.setCenter(new google.maps.LatLng(location.lat, location.lng));
 
-                }, i * wait, locations[i], Interpolate(i, [[0, 13], [0.2 * steps, 4], [0.9 * steps, 4], [0.95* steps, 7], [1.2 * steps, 13]]));
+                }, i * wait, locations[i], Interpolate(i));
             };
 
             marker = new google.maps.Marker({
