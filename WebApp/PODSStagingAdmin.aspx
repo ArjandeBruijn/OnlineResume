@@ -4,28 +4,22 @@
      
          
             <h2>PODS Staging Admin</h2>
-           
-              
-          
+            
               <!-- Trigger the Modal -->
-              <img class = "popupimg" id="podsStagingImg" style="PADDING: 20px" align="left" src="resources/PODS Staging.png" alt="Pods Staging tool" width="300" height="200">
+              <img class = "popupimg" id="podsStagingImg" style="PADDING: 20px" align="left" src="resources/PODS Staging.jpg" alt="Pods Staging tool" width="300" height="200">
          
-
-             The PODS Staging.Admin tool is used in a data review process used by large 
-             midstream oil and gas companies to maintain data quality standards. PODS.Stagins supports:
-
-             <br> <br> 
-
-             <li> Administrators to assign data quality control managers (gatekeepers).</li>
-             <li> Gatekeepers to review, accept or reject data submission packages  </li>
-          
-             <br> 
-        
-             The PODS Staging tool is a web application that connects a front end web user interface, to server side C# code that
-             is used to connect to an ORACLE database via a REST service. My contribution to the Staging Admin tool was to add an option 
-             for the user to select data through pie charts that display relevant selections of data (i.e. per gatekeeper, per duration 
-             a project has been idle, etc.). Additionally, I worked to make the code more appliant to the DRY (do not repeat yourself)
-             coding standart by using page templates, reusing the strings that are defined in the C# code to form SQL commands, etc. 
+              Midstream oil and gas companies use the PODS Staging.Admin tool to maintain data quality standards through
+               a data review process that determines different levels of priviliges for users of a corporate database.
+               Typically, third party companies that are contracted to do various measurements submit data into a 
+               database copy that contains the same data as the original under a different database schema. The database owner can 
+               quality check this data before copying it into their production database. 
+                <br><br>
+              The PODS Staging tool is a web application that connects a front end web user interface, to server side C# code that
+              is used to connect to an ORACLE or SQL server database via a REST service. I redesigned the application to give users a 
+              better overview of their data. I reduced the amount of code by applying the DRY (do not repeat yourself)
+              coding standart through the use of page templates, reusing the strings that are defined in the C# code to form SQL commands, and 
+              I improved performance by storing some of the data retrieved from the database into the cache of the server, reducing the need for some of the 
+              sql commands. 
           
 
             <br> 

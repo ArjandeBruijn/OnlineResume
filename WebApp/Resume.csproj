@@ -33,6 +33,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
+    <ExcludeApp_Data>true</ExcludeApp_Data>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -201,6 +202,7 @@
     <Content Include="resources\Maryland\NewMaryland_background uncut.jpg" />
     <Content Include="resources\Maryland\NewMaryland_background.jpg" />
     <Content Include="resources\passphoto.JPG" />
+    <Content Include="resources\PODS Staging.jpg" />
     <Content Include="resources\PODS Staging.png" />
     <Content Include="resources\ProgramIcons\arcgis.png" />
     <Content Include="resources\ProgramIcons\background.jpg" />
