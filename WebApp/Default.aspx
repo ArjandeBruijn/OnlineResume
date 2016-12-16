@@ -13,7 +13,7 @@
         that I enjoyed far more than publishing research. 
 
         So I switched careers and became a software engineer in the fall of 2015.
-        In lieu of a degree in computer science, I developed this website to give employers additional information beyond
+        I developed this website to give employers additional information beyond
          my classic resume that is downloadable as a PDF below.
         
         </div>
