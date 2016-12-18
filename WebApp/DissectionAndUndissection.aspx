@@ -26,7 +26,7 @@
             I recoded both the dissection and undissection method from scratch, which increased its performance with approximately 
             400% and solved the errors in the algorithm.
              
-             <br><br><b>Skills</b>: Logic, MS SQL, Oracle, C#, VB, ArcGIS, ArcObjects
+             <br><br><b>Skills</b>: Logic, MS SQL Server, Oracle, C#, VB, ArcGIS, ArcObjects
           
  
      
