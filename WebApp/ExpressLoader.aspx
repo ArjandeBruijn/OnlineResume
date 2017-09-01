@@ -23,7 +23,7 @@
             I am responsible for maintaining and debugging the software as well as implementing new features.
 
              
-             <br><br><b>Skills:</b> MS SQL, Oracle, C#, VB, Agile / SCRUM
+             <br><br><b>Skills:</b> MS SQL Server, Oracle, C#, VB, Agile / SCRUM
             
        
        

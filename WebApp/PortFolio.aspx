@@ -18,9 +18,7 @@
   
    <!--#include file="DecompositionInWisconsinAndNorthCarolina.aspx"-->
 
-    <div id ="decompositionaspx">
-        
-    </div>
+   
 
      <script>
           
@@ -32,9 +30,7 @@
          }
       </script>
      
-  <!--#include file="DeforestationInIndonesia.aspx"-->
-          
-<!--#include file="DefoliationInGreenRidgeStateForest.aspx"-->
+ 
      
 
 </asp:Content>

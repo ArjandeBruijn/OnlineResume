@@ -8,13 +8,12 @@
 
 
         <div style ="font-size: 18px;">
-        My career path has centered on land use simulation software for scientific research. 
-        It involved lots of computer coding and ironically I found that that was the part of being an academic 
-        that I enjoyed far more than publishing research. 
+        I was coding quantitative simulation models as a researcher for almost a decade before I became an actual software engineer in the fall of 2015.
 
-        So I switched careers and became a software engineer in the fall of 2015.
-        I developed this website to give employers additional information beyond
-         my classic resume that is downloadable as a PDF below.
+        I have a couple of years of experience developing commercial software now, being codeveloper or lead developer for several existing applications and 
+        recently started developing an application from scratch.  
+      
+        This website complements my classic resume that is downloadable as a PDF below.
         
         </div>
 

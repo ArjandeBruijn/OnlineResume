@@ -29,7 +29,7 @@
        
 
              
-             <br><br><b>Skills:</b> MS SQL, Oracle, C#, JavaScript, MVC framework, Razor, REST services, Agile / SCRUM
+             <br><br><b>Skills:</b> MS SQL Server, Oracle, C#, JavaScript, MVC framework, Razor, REST services, Agile / SCRUM
             
        
         

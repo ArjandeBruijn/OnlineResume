@@ -3,73 +3,47 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div class="margin_bottom_10"></div>
+        <div style = "background-color: red">
 
+            <div style="width: 49% ; border-right: 1px solid black;  float:left">
      
-        <div style="border-right: 1px solid black; width: 400px;  float:left; padding : 10px; background-color: white">
+                <h3> Front-end </h3>
+                <li><b>MVC, HTML, XML, HTMLCS, ASPX: </b>2 year</li>
+                <li><b>CSS: </b>2 years</li>
+                <li><b>JavaScript, JQuery: </b>2 years</li>
+                <li><b>JSON, AJAX: </b>6 months</li>
         
+                <h3> Back-end </h3>
+                <li><b>C#:</b> 5 years</li>
+                <li><b>C++:</b> 4 years</li>
+                <li><b>Visual Basic:</b> 1 year</li>
+
              <h3> Supporting software </h3>
              <li><b>Visual Studio: </b>More than 10 years. <br></li>
-             <li><b>SVN / tortoise:</b> 5 years   </li>
              <li><b>INNO setup:</b> 2 years   </li>
              <li><b>GitHub: <a href="https://github.com/ArjandeBruijn ">(see account) </a></b> 4 years   </li>
              <li><b>SVN /Tortoise:</b> 3 years   </li>
 
-             <h3> Front-end </h3>
-             <li><b>HTML / HTMLCS / Aspx: </b>2 year</li>
-             <li><b>CSS: </b>2 years</li>
-             <li><b>JavaScript: </b>2 years</li>
+            </div>
           
+            <div style="width: 49%;   float:right">
             <h3> Database technologies </h3>
-
              <li> <b>SQL:</b> 3 years</li>
              <li> <b>FireBird:</b> 1 year</li>
              <li> <b>ORACLE:</b> 2 years</li>
              <li> <b>Microsoft SQL server:</b> 2 years</li>
           
-         </div>
-
-          <div style="padding-left : 30px; float: left; background-color: white">
-
-             <h3> Back-end </h3>
-
-             <li><b>C#:</b> 5 years</li>
-             <li><b>C++:</b> 4 years</li>
-             <li><b>Visual Basic:</b> 1 year</li>
-
              <h3>GIS</h3>
               <li><b>ArcGIS:</b> 6 years </li>
              <li><b>ArcObjects:</b> 6 years </li>
              <li><b>Python:</b> 1 year</li>
 
               <h3> Statistics / scientific programming </h3>
-         
               <li> <b>R:</b> 1 year</li>
               <li> <b>SPSS:</b> 2 years</li>
               <li> <b>MATLAB:</b> 6 months</li>
-          </div>
             
-            
-            <div style=" float:left; padding : 10px; background-color: white">
-             <!--
-              <img src="resources\ProgramIcons\HTML5.png"    >
-              <img src="resources\ProgramIcons\CSS.png"     >
-              <img src="resources\ProgramIcons\javascript.png"   >
-              <img src="resources\ProgramIcons\SQL.png"    >
-              <img src="resources\ProgramIcons\firebird.png"   >
-              <img src="resources\ProgramIcons\arcgis.png"   >
-              <img src="resources\ProgramIcons\python.jpg"    >
-              <img src="resources\ProgramIcons\csharp.png"    >
-              <img src="resources\ProgramIcons\cpp.png"   >
-              <img src="resources\ProgramIcons\VisualBasic.png"    >
-              <img src="resources\ProgramIcons\VisualStudioLogo.jpg"     >
-              <img src="resources\ProgramIcons\tortoisesvn.png"     >
-              <img src="resources\ProgramIcons\INNO.png"     >
-              <img src="resources\ProgramIcons\R.jpg"   >
-              <img src="resources\ProgramIcons\Matlab.png"    >
-              <img src="resources\ProgramIcons\SPSS.png"    >-->
-        
+            </div>
             </div>
     
-   
 </asp:Content>
