@@ -23,6 +23,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -97,6 +98,7 @@
     <Content Include="js\MarkovChainFunctions.js" />
     <Content Include="js\SetActivePage.js" />
     <Content Include="js\MarkovChainMeasurements.js" />
+    <Content Include="LinkedInBtn.aspx" />
     <Content Include="MapExercise.aspx" />
     <Content Include="Modal.aspx" />
     <Content Include="PODSStagingAdmin.aspx" />
@@ -137,8 +139,6 @@
     <Content Include="resources\lui.jpg" />
     <Content Include="resources\lui.png" />
     <Content Include="resources\lui_big.jpg" />
-    <Content Include="resources\Malinau - Copy %282%29 - Copy.png" />
-    <Content Include="resources\Malinau - Copy - Copy.png" />
     <Content Include="resources\Malinau.png" />
     <Content Include="resources\Maryland\GypsyMoth100.png" />
     <Content Include="resources\Maryland\GypsyMoth107.png" />
@@ -201,6 +201,7 @@
     <Content Include="resources\Maryland\NewMaryland_background - Copy.jpg" />
     <Content Include="resources\Maryland\NewMaryland_background uncut.jpg" />
     <Content Include="resources\Maryland\NewMaryland_background.jpg" />
+    <Content Include="resources\Menu.aspx" />
     <Content Include="resources\passphoto.JPG" />
     <Content Include="resources\PODS Staging.jpg" />
     <Content Include="resources\PODS Staging.png" />
@@ -292,6 +293,13 @@
     <Compile Include="Header.aspx.designer.cs">
       <DependentUpon>Header.aspx</DependentUpon>
     </Compile>
+    <Compile Include="LinkedInBtn.aspx.cs">
+      <DependentUpon>LinkedInBtn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LinkedInBtn.aspx.designer.cs">
+      <DependentUpon>LinkedInBtn.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MapExercise.aspx.cs">
       <DependentUpon>MapExercise.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -328,6 +336,13 @@
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="resources\Menu.aspx.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="resources\Menu.aspx.designer.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Skills.aspx.cs">
       <DependentUpon>Skills.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

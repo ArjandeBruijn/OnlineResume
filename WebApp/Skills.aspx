@@ -12,7 +12,7 @@
              <li><b>Visual Studio: </b>More than 10 years. <br></li>
              <li><b>SVN / tortoise:</b> 5 years   </li>
              <li><b>INNO setup:</b> 2 years   </li>
-             <li><b>GitHub: <a href="https://github.com/ArjandeBruijn ">https://github.com/ArjandeBruijn </a></b> 4 years   </li>
+             <li><b>GitHub: <a href="https://github.com/ArjandeBruijn ">(see account) </a></b> 4 years   </li>
              <li><b>SVN /Tortoise:</b> 3 years   </li>
 
              <h3> Front-end </h3>

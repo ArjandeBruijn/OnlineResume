@@ -1,0 +1,7 @@
+C:\Users\adebruijn\Documents\OnlineResume\WebApp\bin\Resume.dll.config
+C:\Users\adebruijn\Documents\OnlineResume\WebApp\bin\Resume.dll
+C:\Users\adebruijn\Documents\OnlineResume\WebApp\bin\Resume.pdb
+C:\Users\adebruijn\Documents\OnlineResume\WebApp\bin\Newtonsoft.Json.dll
+C:\Users\adebruijn\Documents\OnlineResume\WebApp\bin\Newtonsoft.Json.xml
+C:\Users\adebruijn\Documents\OnlineResume\WebApp\obj\Release\Resume.dll
+C:\Users\adebruijn\Documents\OnlineResume\WebApp\obj\Release\Resume.pdb

@@ -57,7 +57,7 @@
              
 
             <div id = "bottomDiv" style = "position:absolute" >
-                <i>Graphics: Simulation of damage by forest tent caterpillars in northern Minnesota </i>
+                <i>Graphics: JavaScript rendering of simulation results </i>
                 <br>
                 <canvas id="MarkovChainDefaultPage" width= "950" height="175" style="background-color:black; ">Your browser does not support the HTML5 canvas tag.
                 </canvas>
