@@ -51,12 +51,7 @@
     <br><br>
    
 
-    <h3>Publications</h3>
-    <ul>
-       <li><p>Decomposition rates of American chestnut (Castanea dentata) wood and implications for coarse woody debris pools</p><a href="http://www.nrcresearchpress.com/doi/abs/10.1139/cjfr-2014-0270#.VUlrpvlVhBc">(Canadian Journal of Forest Research)</a> </li>
-       <li><p>Integrating ecophysiology and forest landscape models to improve projections of drought effects under climate change</p><a href="http://onlinelibrary.wiley.com/doi/10.1111/gcb.12713/abstract">(Global Change Biology)</a></li>
-       <li><p>Toward more robust projections of forest landscape dynamics under novel environmental conditions: Embedding PnET within LANDIS-II</p><a href="http://www.sciencedirect.com/science/article/pii/S0304380014002415">(Ecological Modeling)</a></li>
-    </ul>
+   
   
    
     <hr>
@@ -70,10 +65,7 @@
      <br><br>
     
 
-     <h3>Publications</h3>
-     <ul>
-        <li><p>Differential long-term effects of climate change and management on stocks and distribution of soil organic carbon in productive grasslands</p> <a href="http://www.biogeosciences.net/9/1997/2012/bg-9-1997-2012.html">(Biogeosciences)</a></li>
-     </ul>
+    
      
     <hr>
 
@@ -95,13 +87,7 @@
         
     <br>
    
-
-    <h3>Publications</h3>   
-    <ul>
-        <li><p>An alternative modelling approach to predict emissions of N2O and NO from forest soils</p> <a href="http://link.springer.com/article/10.1007%2Fs10342-010-0468-y#page-1">(European Journal of Forest Research)</a></li>
-        <li><p>Linking carbon and nitrogen mineralization with microbial responses to substrate availability — the DECONIT model</p> <a href="http://link.springer.com/article/10.1007%2Fs11104-009-0108-9">(Plant and Soil)</a></li>
-        <li><p>Model evaluation of different mechanisms driving freeze-thaw N2O emissions</p> <a href="http://www.sciencedirect.com/science/article/pii/S0167880909001340">(Agriculture Ecosystems & Environment)</a> </li>
-    </ul> 
+     
 
    <hr>
   
@@ -114,10 +100,7 @@
       ecology in my program. I combined my study at Wageningen University with a study of Philosophy of Science at Amsterdam University. 
      
       
-   <h3>Publications</h3>             
-   <ul>
-      <li><p>Modelling decomposition of standard plant material along an altitudinal gradient: A re-analysis of data of Coûteaux et al. (2002)</p> <a href=" http://www.sciencedirect.com/science/article/pii/S0038071706003099">(Soil Biology and Biochemistry)</a></li>
-   </ul>
+  
      
    <hr>
      
