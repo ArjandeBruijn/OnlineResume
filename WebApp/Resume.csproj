@@ -377,8 +377,10 @@
     <None Include="resources\Maryland\NewMaryland_background2.xcf" />
     <None Include="resources\measurements.xlsx" />
     <None Include="resources\Resume.docx" />
-    <None Include="resources\Resume.pdf" />
+    <Content Include="resources\Resume.pdf" />
     <None Include="resources\right_arrow.xcf" />
+    <Content Include="Resume.docx" />
+    <Content Include="Resume.pdf" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
